@@ -52,6 +52,37 @@
     }
    ]
   },
+  "15207": {
+   "hash": "c3b89aa6aa79",
+   "checked": "2026-11-11T22:10:42.655Z",
+   "queries": [
+    "في مثل هذا اليوم",
+    "قصة مصورة القصص المصورة شخصيات السنافر 1958",
+    "Comics"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%82%D8%B5%D8%A9_%D9%85%D8%B5%D9%88%D8%B1%D8%A9",
+     "name": "قصة مصورة",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "=== القصص المصورة الفرنسية-البلجيكية والأوروبية ==="
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Comics",
+     "name": "Comics",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "Comics is a medium used to express ideas with images, often combined with text or other visual information. It typically takes the form of a sequence of panels of images. Textual devices such as speech…"
+    }
+   ]
+  },
   "15210": {
    "hash": "42f403827332",
    "checked": "2026-11-09T21:38:43.493Z",
@@ -670,6 +701,107 @@
     }
    ]
   },
+  "15250": {
+   "hash": "d153c82c19a6",
+   "checked": "2026-11-11T22:10:36.790Z",
+   "queries": [
+    "برزت فاطمة الفهرية بوصفها امرأة تركت أثرًا استثنائيًا في تاريخ التعليم",
+    "فاطمة بنت محمد الفهرية فاطمة الفهرية امرأة أثرا",
+    "Fatima al-Fihriya"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%81%D8%A7%D8%B7%D9%85%D8%A9_%D8%A8%D9%86%D8%AA_%D9%85%D8%AD%D9%85%D8%AF_%D8%A7%D9%84%D9%81%D9%87%D8%B1%D9%8A%D8%A9",
+     "name": "فاطمة بنت محمد الفهرية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 76,
+     "quote": "أنشأت فاطمة الفهري إحدى أقدم المكتبات في العالم في جامعة القرويين."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Fatima_al-Fihriya",
+     "name": "Fatima al-Fihriya",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 71,
+     "quote": "Fatima bint Muhammad al-Fihriya al-Qurashiyya (Arabic: فاطمة بنت محمد الفهرية القرشية), known in shorter form as Fatima al-Fihriya or Fatima al-Fihri, was an Arab woman who is credited with founding the…"
+    }
+   ]
+  },
+  "15252": {
+   "hash": "4b19d80665c5",
+   "checked": "2026-11-11T22:10:25.592Z",
+   "queries": [
+    "يُعدّ الشبك من المكوّنات القومية والاجتماعية المميزة في العراق",
+    "سهل نينوى اللغة الشبكية القومية والاجتماعية"
+   ],
+   "sources": []
+  },
+  "15253": {
+   "hash": "a5cce7f010ee",
+   "checked": "2026-11-11T22:10:08.526Z",
+   "queries": [
+    "تبدأ القصة عام 1605 Vendetta",
+    "مؤامرة البارود غاي فوكس البرلمان القناع 1605",
+    "Gunpowder Plot Vendetta"
+   ],
+   "sources": [
+    {
+     "url": "https://screenrant.com/v-vendetta-movie-ending-explained/",
+     "name": "V For Vendetta Ending & Gunpowder Plot Meaning Explained",
+     "site": "ScreenRant",
+     "host": "screenrant.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 81,
+     "quote": "The 2005 dystopian thriller, V for Vendetta, remains relevant on various fronts to this day. Here's the film's ending and Gunpowder plot, explained."
+    },
+    {
+     "url": "https://ua.news/ar/world/vid-porokhovoyi-zmovi-do-anonymous-iak-gai-foks-stav-simvolom-borotbi-z-vladoiu",
+     "name": "من مؤامرة البارود إلى «أنونيموس»: كيف أصبح غاي فوكس رمزًا لمقاومة السلطة",
+     "site": "UA.NEWS",
+     "host": "ua.news",
+     "lang": "ar",
+     "kind": "web",
+     "match": 77,
+     "quote": "وكما يوضح مؤرخو البرلمان البريطاني، كانت المؤامرة من عمل مجموعة صغيرة من المتطرفين، وليس جميع الكاثوليك الإنجليز."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Vendetta",
+     "name": "Vendetta",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Vendetta may refer to:"
+    },
+    {
+     "url": "https://www.independentarabia.com/node/69426/%D8%A7%D9%84%D8%A3%D8%AE%D8%A8%D8%A7%D8%B1/%D9%84%D9%8A%D9%84%D8%A9-%D8%A7%D9%84%D8%B4%D8%B9%D9%84%D8%A9-%D9%83%D9%8A%D9%81-%D8%A7%D8%B1%D8%AA%D8%AF%D8%AA-%D9%85%D8%A4%D8%A7%D9%85%D8%B1%D8%A9-%D8%A7%D9%84%D8%A8%D8%A7%D8%B1%D9%88%D8%AF-%D9%84%D8%B5%D8%A7%D9%84%D8%AD-%D8%BA%D8%A7%D9%8A-%D9%81%D9%88%D9%83%D8%B3-%D9%88%D8%A3%D8%B9%D9%88%D8%A7%D9%86%D9%87",
+     "name": "ليلة الشعلة: كيف ارتدت \"مؤامرة البارود\" لصالح غاي فوكس وأعوانه",
+     "site": "اندبندنت عربية",
+     "host": "independentarabia.com",
+     "lang": "ar",
+     "kind": "news",
+     "match": 66,
+     "quote": "يعيش فوكس نفسه في القرن الواحد والعشرين لا كإرهابي نموذجي بل كأيقونة ترمز لكل أنواع الاحتجاج، فالقناع (المأخوذ من بورتريه قديم له) الذي استعير من الفيلم المعروض أولا عام 2005 والمقتبس من رواية ألان مور المصورة…"
+    },
+    {
+     "url": "https://www.quotes.net/mquote/131162",
+     "name": "Evey Hammond: \"Remember, remember The fifth of November The gunpowder treason and plot. I know of no reason…",
+     "site": "quotes.net",
+     "host": "quotes.net",
+     "lang": "en",
+     "kind": "web",
+     "match": 70,
+     "quote": "A great memorable quote from the V for Vendetta movie on Quotes.net - Evey Hammond: \"Remember, remember The fifth of November The gunpowder treason and plot. I know of no reason Why the gunpowder treason…"
+    }
+   ]
+  },
   "15255": {
    "hash": "48fa0102681f",
    "checked": "2026-11-11T16:22:33.968Z",
@@ -1028,7 +1160,38 @@
      "quote": "\"ترينديول\" إحدى المنصات العالمية الرائدة في مجال التجارة الإلكترونية"
     }
    ]
+  },
+  "15268": {
+   "hash": "4da9b655a44d",
+   "checked": "2026-11-11T22:09:50.381Z",
+   "queries": [
+    "أفضل رائحة في العالم Current Biology",
+    "رائحة تفضيلات الروائح 235شخصا ثقافات 2022",
+    "Current Biology"
+   ],
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Current_Biology",
+     "name": "Current Biology",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Current Biology is a biweekly peer-reviewed scientific journal that covers all areas of biology, especially molecular biology, cell biology, genetics, neurobiology, ecology, and evolutionary biology. The…"
+    },
+    {
+     "url": "https://www.unccd.int/resources/unccd-library/current-biology",
+     "name": "Current Biology",
+     "site": "UNCCD",
+     "host": "unccd.int",
+     "lang": "en",
+     "kind": "web",
+     "match": 66,
+     "quote": "Current Biology is a general journal that publishes original research across all areas of biology together with an extensive and varied set of editorial sections. A primary aim of the journal is to foster…"
+    }
+   ]
   }
  },
- "updated": "2026-11-11T16:22:33.971Z"
+ "updated": "2026-11-11T22:10:42.657Z"
 }
