@@ -1,3 +1,2 @@
 User-agent: *
 Allow: /
-Sitemap: https://tahalobo.github.io/information-iq/sitemap.xml
