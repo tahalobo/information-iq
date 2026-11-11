@@ -670,6 +670,186 @@
     }
    ]
   },
+  "15255": {
+   "hash": "48fa0102681f",
+   "checked": "2026-11-11T16:22:33.968Z",
+   "queries": [
+    "تخيّل مجموعة من المفكرين عاشوا في العراق قبل أكثر من ألف عام",
+    "إخوان الصفا القرن الرابع الهجري المفكرين علوم",
+    "Brethren of Purity"
+   ],
+   "sources": [
+    {
+     "url": "https://plato.stanford.edu/entries/ikhwan-al-safa/",
+     "name": "Ikhwān al-Safā’ (Stanford Encyclopedia of Philosophy)",
+     "site": "plato.stanford.edu",
+     "host": "plato.stanford.edu",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 85,
+     "quote": "The Ikhwān al-Safā' or \"Brethren of Purity\", as their name is commonly translated, are the authors of one of the most complete Medieval encyclopedias of sciences, antecedent at least two centuries to the best…"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A5%D8%AE%D9%88%D8%A7%D9%86_%D8%A7%D9%84%D8%B5%D9%81%D8%A7",
+     "name": "إخوان الصفا",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 55,
+     "quote": "ويعتبر البعض هذه الرسائل بمثابة موسوعة للعلوم الفلسفية."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Brethren_of_Purity",
+     "name": "Brethren of Purity",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 52,
+     "quote": "The Brethren of Purity, also known as The Brethren of Sincerity, were a secret society active during the reign of the Buyid dynasty. "
+    },
+    {
+     "url": "https://www.ahewar.org/debat/s.asp?aid=928476",
+     "name": "في ضيافة إخوان الصفا وخلان الوفا",
+     "site": "الحوار المتمدن",
+     "host": "ahewar.org",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "يُعتبرون من أبرز المفكرين في التاريخ الفكري الإسلامي، وقد أسهموا في بناء موسوعة علمية وفلسفية ضخمة هي «رسائل إخوان الصفا وخلان الوفا» التي بلغت 52 رسالة موزعة على أربعة أجزاء"
+    },
+    {
+     "url": "https://www.ssrcaw.org/ar/show.art.asp?aid=928476",
+     "name": "في ضيافة إخوان الصفا وخلان الوفا",
+     "site": "ssrcaw.org",
+     "host": "ssrcaw.org",
+     "lang": "ar",
+     "kind": "web",
+     "match": 62,
+     "quote": "يُعتبرون من أبرز المفكرين في التاريخ الفكري الإسلامي، وقد أسهموا في بناء موسوعة علمية وفلسفية ضخمة هي «رسائل إخوان الصفا وخلان الوفا» التي بلغت 52 رسالة موزعة على أربعة أجزاء"
+    }
+   ]
+  },
+  "15256": {
+   "hash": "479fe6b21d55",
+   "checked": "2026-11-11T16:22:16.010Z",
+   "queries": [
+    "تخيّل أنك تعيش طوال حياتك داخل كهف مظلم",
+    "أشعة الشمس تخيل طوال"
+   ],
+   "sources": [
+    {
+     "url": "https://maestrovirtuale.com/ar/%D8%A3%D8%B3%D8%B7%D9%88%D8%B1%D8%A9-%D9%83%D9%87%D9%81-%D8%A3%D9%81%D9%84%D8%A7%D8%B7%D9%88%D9%86%3A-%D9%85%D8%B9%D9%86%D9%89-%D9%88%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-%D9%87%D8%B0%D9%87-%D8%A7%D9%84%D9%82%D8%B5%D8%A9-%D8%A7%D9%84%D8%B1%D9%85%D8%B2%D9%8A%D8%A9/",
+     "name": "أسطورة الكهف لأفلاطون (معنى وتاريخ هذه الحكاية الرمزية) Maestrovirtuale.com",
+     "site": "Maestrovirtuale.com",
+     "host": "maestrovirtuale.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 54,
+     "quote": "يصف أفلاطون في هذه الأسطورة حالة سجناء مقيدين في قعر كهف، لم يعرفوا منذ ولادتهم إلا الظلال المنعكسة على الجدار كحقيقة."
+    }
+   ]
+  },
+  "15258": {
+   "hash": "0b18db2065f4",
+   "checked": "2026-11-11T16:22:00.950Z",
+   "queries": [
+    "ما الفرق بين الأسطورة والخرافة؟"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A3%D8%B3%D8%B7%D9%88%D8%B1%D8%A9",
+     "name": "أسطورة",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 56,
+     "quote": "رأى مسعود أنَّ كلمة أسطورة هي تعريب جاهلي للكلمة اليونانية (الإنجليزية: historia)، وتفيد معنى الإخبار، والسرد، والحكاية، والقصة، والخرافة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Myth",
+     "name": "Myth",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 53,
+     "quote": "Myth is a genre of folklore consisting primarily of narratives that play a fundamental role in a society. For scholars, this is different from the ordinary sense of the term myth, meaning a belief that is not…"
+    },
+    {
+     "url": "https://maktaba-amma.com/%D9%87%D9%84-%D8%AA%D8%B9%D8%B1%D9%81-%D8%A7%D9%84%D9%81%D8%B1%D9%82-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%A3%D8%B3%D8%B7%D9%88%D8%B1%D8%A9-%D9%88%D8%A7%D9%84%D8%AE%D8%B1%D8%A7%D9%81%D8%A9-%D8%9F/",
+     "name": "الفرق الرئيسي بين الأسطورة والخرافة يكمن في الحقيقة ، في حين أن الخرافة هي مجرد اعتقاد . في معظم الثقافات ،…",
+     "site": "المكتبة العامة",
+     "host": "maktaba-amma.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "الفرق الرئيسي بين الأسطورة والخرافة يكمن في الحقيقة ، في حين أن الخرافة هي مجرد اعتقاد ."
+    },
+    {
+     "url": "https://maestrovirtuale.com/ar/%D8%A7%D9%84%D8%A7%D8%AE%D8%AA%D9%84%D8%A7%D9%81%D8%A7%D8%AA-%D8%A7%D9%84%D8%AE%D9%85%D8%B3%D8%A9-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%A3%D8%B3%D8%B7%D9%88%D8%B1%D8%A9-%D9%88%D8%A7%D9%84%D8%AE%D8%B1%D8%A7%D9%81%D8%A9/",
+     "name": "5 اختلافات بين الأسطورة والخرافة Maestrovirtuale.com",
+     "site": "Maestrovirtuale.com",
+     "host": "maestrovirtuale.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 62,
+     "quote": "الآن وقد تعرفت على الفرق بين الأسطورة والخرافة، ما رأيك باستكشاف بعض الأمثلة على الأساطير والخرافات التي أثرت في أجيال حول العالم؟"
+    },
+    {
+     "url": "https://e3arabi.com/%D8%B9%D9%84%D9%85-%D8%A7%D9%84%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9/%D8%A7%D9%84%D8%AE%D8%B1%D8%A7%D9%81%D8%A9-%D9%87%D9%84-%D9%87%D9%8A-%D8%A7%D9%84%D8%A3%D8%B3%D8%B7%D9%88%D8%B1%D8%A9-%D9%86%D9%81%D8%B3%D9%87%D8%A7%D8%9F/",
+     "name": "ما الفرق بين الخرافة والأسطورة؟",
+     "site": "e3arabi - إي عربي",
+     "host": "e3arabi.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 55,
+     "quote": "يكمن الفرق الرئيس بين الأسطورة و الخرافة في الحقيقة، حيث أن الخرافة ما هي إلا مجرد اعتقاد، في أغلب الثقافات، توجد أساطير وخرافات تنبع من المجتمع، فالأسطورة حكاية تقليدية بما فيها من بعض العناصر الخارقة…"
+    }
+   ]
+  },
+  "15259": {
+   "hash": "99c95a39e8a0",
+   "checked": "2026-11-11T16:21:49.249Z",
+   "queries": [
+    "كيف تبدو الأرض من سماء المريخ",
+    "مجرة درب التبانة قمرا المريخ سماء صافية"
+   ],
+   "sources": []
+  },
+  "15260": {
+   "hash": "e389334396ce",
+   "checked": "2026-11-11T16:21:34.117Z",
+   "queries": [
+    "تخيّل أن دجاجة تضع بيضة",
+    "دجاج تخيل دجاجة",
+    "Chicken"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AF%D8%AC%D8%A7%D8%AC",
+     "name": "دجاج",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "يمكن للدجاجة المُرباة خصيصًا لإنتاج البيض أن تضع أكثر من 300 بيضة في السنة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Chicken",
+     "name": "Chicken",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "The chicken (Gallus gallus domesticus) is the domesticated subspecies of the red junglefowl (Gallus gallus), originally native to Southeast Asia. It was first domesticated around 8,000 years ago and is one of…"
+    }
+   ]
+  },
   "15262": {
    "hash": "cea8e53a2472",
    "checked": "2026-11-11T15:34:11.667Z",
@@ -850,5 +1030,5 @@
    ]
   }
  },
- "updated": "2026-11-11T15:34:11.670Z"
+ "updated": "2026-11-11T16:22:33.971Z"
 }
