@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>الأخبار والإنجازات | إمبراطورية المعلومات العراقية</title>
+<meta name="description" content="آخر أخبار صفحة إمبراطورية المعلومات العراقية وإنجازاتها وسلاسل محتواها.">
+<meta name="theme-color" content="#03050c">
+<meta property="og:title" content="الأخبار والإنجازات | إمبراطورية المعلومات العراقية">
+<meta property="og:description" content="آخر أخبار صفحة إمبراطورية المعلومات العراقية وإنجازاتها وسلاسل محتواها.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="إمبراطورية المعلومات العراقية">
+<meta property="og:locale" content="ar_IQ">
+<meta property="og:image" content="assets/img/og/default.jpg">
+<meta property="og:url" content="news.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="الإمبراطورية">
+<script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t)d.dataset.theme=JSON.parse(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("fx-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("fx-nav"))d.classList.add("entering")}sessionStorage.removeItem("fx-nav")}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="news">
+<div id="site-header"></div>
+<main>
+  <section class="page-hero" data-sc>
+    <div class="ph-slot" data-gl="galaxy" aria-hidden="true"></div>
+    <div class="ph-giant" aria-hidden="true">إنجازات</div>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><i data-lucide="chevron-left"></i><span>الأخبار والإنجازات</span></nav>
+      <span class="ph-kicker"><b>04</b>من داخل الإمبراطورية</span>
+      <h1 data-split>أخبار الإمبراطورية وإنجازاتها</h1>
+      <p>رحلتنا من صفحة صغيرة إلى مجتمع من عشرات الآلاف من المهتمين بالمعرفة: الأرقام، والمحطات، والجديد.</p>
+    </div>
+    <div class="scroll-cue" aria-hidden="true"><i></i>مرّر</div>
+  </section>
+
+  <section class="section" style="padding-top:36px">
+    <div class="container">
+      <div class="grid grid-4" id="stats"></div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head"><div><span class="kicker">آخر المستجدات</span><h2>الأخبار</h2></div><div class="chips" id="types"></div></div>
+      <div class="grid grid-3" id="news" data-rv-watch></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid" style="gap:40px;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr))">
+        <div>
+          <div class="section-head"><div><span class="kicker">رحلتنا</span><h2>محطات وإنجازات</h2></div></div>
+          <div class="timeline" id="timeline"></div>
+        </div>
+        <div>
+          <div class="section-head"><div><span class="kicker">من هايلايتات الصفحة</span><h2>سلاسل المحتوى</h2></div></div>
+          <div class="grid grid-2" id="series"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div class="cta-band pattern">
+        <h2>كن جزءاً من الإنجاز القادم</h2>
+        <p>أعلن معنا لتصل إلى جمهور عراقي مهتم وواعٍ، أو انضم إلى فريق الإمبراطورية.</p>
+        <div class="btn-row"><a class="btn btn-primary btn-lg" href="about.html#ads"><i data-lucide="megaphone"></i>أعلن معنا</a><a class="btn btn-ghost btn-lg" href="contact.html?type=join"><i data-lucide="user-plus"></i>انضم للفريق</a></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/telegram-data.js"></script>
+<script src="assets/js/static-index.js"></script>
+<script src="assets/js/core.js"></script>
+<script>
+(function () {
+  const { $, esc, ic, icons, fmtDate, modal, shareButtons, countUp } = App;
+  const S = window.SITE;
+  const stat = (n, l, i, compact) => `<div class="card stat-card"><span class="ico">${ic(i)}</span><strong data-count="${n}"${compact ? " data-compact" : ""}>0</strong><span>${l}</span></div>`;
+  $("#stats").innerHTML = stat(S.stats.followers, S.stats.followersLabel, "users", true) + stat(window.FACTS.length, S.stats.factsLabel, "book-open") +
+    stat(window.TOOLS.length, S.stats.toolsLabel, "wrench") + stat(window.SERIES.length, "سلسلة محتوى متخصصة", "layers");
+
+  const news = [...window.NEWS].sort((a, b) => b.date.localeCompare(a.date));
+  const types = ["الكل", ...new Set(news.map((n) => n.type))];
+  let type = "الكل";
+  function render() {
+    $("#types").innerHTML = types.map((t) => `<button class="chip${t === type ? " active" : ""}" data-t="${t}">${t}</button>`).join("");
+    $("#news").innerHTML = news.filter((n) => type === "الكل" || n.type === type).map((n) => `<article class="card card-hover news-card" id="${n.id}" data-open="${n.id}" tabindex="0">
+      <div class="top"><span class="badge">${ic(n.icon)}${esc(n.type)}</span><span class="small muted">${fmtDate(n.date)}</span></div>
+      <h3>${esc(n.title)}</h3><p class="mb-0" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${esc(n.body)}</p>
+      <span class="small text-gold mt-1">اقرأ المزيد</span></article>`).join("");
+    icons();
+  }
+  function open(id) {
+    const n = news.find((x) => x.id === id); if (!n) return;
+    const url = `${location.origin}${location.pathname}#${n.id}`;
+    modal(`<span class="badge mb-2">${ic(n.icon)}${esc(n.type)}</span><h2 style="font-family:var(--font);font-size:1.4rem">${esc(n.title)}</h2>
+      <p class="small muted">${fmtDate(n.date)}</p><p style="font-size:1.05rem">${esc(n.body)}</p><hr class="divider">${shareButtons(url, n.title)}`,
+      { onClose: () => history.replaceState(null, "", location.pathname) });
+    history.replaceState(null, "", "#" + n.id);
+  }
+  $("#types").addEventListener("click", (e) => { const b = e.target.closest("[data-t]"); if (b) { type = b.dataset.t; render(); } });
+  $("#news").addEventListener("click", (e) => { const c = e.target.closest("[data-open]"); if (c) open(c.dataset.open); });
+  $("#news").addEventListener("keydown", (e) => { const c = e.target.closest("[data-open]"); if (c && e.key === "Enter") open(c.dataset.open); });
+  render();
+  if (location.hash) setTimeout(() => open(location.hash.slice(1)), 200);
+
+  $("#timeline").innerHTML = window.MILESTONES.map((m) => `<div class="tl-item"><span class="tl-dot">${ic(m.icon)}</span><span class="tl-date">${esc(m.date)}</span><h3>${esc(m.title)}</h3><p>${esc(m.desc)}</p></div>`).join("");
+  $("#series").innerHTML = window.SERIES.map((s) => `<div class="card"><span class="ico ico-sm mb-2">${ic(s.icon)}</span><h3 style="font-size:1rem">${esc(s.title)}</h3><p class="small mb-0">${esc(s.desc)}</p></div>`).join("");
+  icons(); countUp();
+})();
+</script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/fx.js"></script>
+<script src="assets/js/gl.js"></script>
+</body>
+</html>

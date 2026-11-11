@@ -1,0 +1,1 @@
+window.TG_POST={"id":14975,"type":"literature","cat":"culture","date":"2026-08-29T06:54:35+00:00","title":"صباح الخير.","html":"<p>لم يطلع الصَّباح ليكونَ خيرًا،<br>لكنَّ &quot;الذي&quot; لم ينَم،<br>كانَ صباح الخير هاجس</p>","images":[],"video":null,"poll":null,"views":1310,"reactions":24,"forwardedFrom":null,"links":[],"url":"https://t.me/informationss_iq/14975","sources":[]};

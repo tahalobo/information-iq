@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>تواصل معنا | إمبراطورية المعلومات العراقية</title>
+<meta name="description" content="راسل فريق إمبراطورية المعلومات العراقية: اقتراح معلومة، أو تصحيح، أو إعلان وتعاون، أو بلاغ عن إشاعة، أو الانضمام للفريق.">
+<meta name="theme-color" content="#03050c">
+<meta property="og:title" content="تواصل معنا | إمبراطورية المعلومات العراقية">
+<meta property="og:description" content="راسل فريق إمبراطورية المعلومات العراقية: اقتراح معلومة، أو تصحيح، أو إعلان وتعاون، أو بلاغ عن إشاعة، أو الانضمام للفريق.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="إمبراطورية المعلومات العراقية">
+<meta property="og:locale" content="ar_IQ">
+<meta property="og:image" content="assets/img/og/default.jpg">
+<meta property="og:url" content="contact.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="الإمبراطورية">
+<script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t)d.dataset.theme=JSON.parse(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("fx-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("fx-nav"))d.classList.add("entering")}sessionStorage.removeItem("fx-nav")}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="contact">
+<div id="site-header"></div>
+<main>
+  <section class="page-hero compact" data-sc>
+    <div class="ph-slot" data-gl="globe" aria-hidden="true"></div>
+    <div class="ph-giant" aria-hidden="true">تواصل</div>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><i data-lucide="chevron-left"></i><span>تواصل معنا</span></nav>
+      <span class="ph-kicker"><b>06</b>نقرأ كل رسالة</span>
+      <h1 data-split>تواصل معنا</h1>
+      <p>اقتراح، أو تصحيح، أو إعلان، أو خبر تريدنا أن نتحقق منه… نقرأ كل رسالة. اختر نوع رسالتك لنوجهها للشخص المناسب في الفريق.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:32px">
+    <div class="container">
+      <div class="tool-layout wide-left">
+        <form class="card" id="form" novalidate>
+          <div class="card-title"><span class="ico ico-sm"><i data-lucide="mail-plus"></i></span><h2>أرسل رسالة</h2></div>
+          <span class="label">نوع الرسالة</span>
+          <div class="grid mt-1 mb-3" id="types" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px"></div>
+          <div class="form-row">
+            <div class="field"><label for="name">الاسم</label><input class="input" id="name" name="name" required autocomplete="name"></div>
+            <div class="field"><label for="reply">بريدك أو حسابك على إنستغرام <span class="muted small">(للرد عليك)</span></label><input class="input ltr" id="reply" name="reply" dir="ltr" required placeholder="name@mail.com أو ‎@username"></div>
+          </div>
+          <div class="field" id="extra-wrap" hidden><label for="extra" id="extra-label"></label><input class="input" id="extra" name="extra"></div>
+          <div class="field"><label for="msg" id="msg-label">الرسالة</label><textarea class="textarea" id="msg" name="message" required></textarea><span class="hint" id="msg-hint"></span></div>
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
+          <div id="form-msg" class="mb-2"></div>
+          <button class="btn btn-primary btn-lg" type="submit" id="submit"><i data-lucide="send"></i>إرسال</button>
+        </form>
+
+        <div class="stack">
+          <div class="card">
+            <div class="card-title"><span class="ico ico-sm"><i data-lucide="at-sign"></i></span><h3>قنواتنا المباشرة</h3></div>
+            <div class="stack" id="channels" style="gap:10px"></div>
+          </div>
+          <div class="card">
+            <div class="card-title"><span class="ico ico-sm"><i data-lucide="clock"></i></span><h3>متى نرد؟</h3></div>
+            <p class="small mb-0">نرد عادة خلال <strong>24 إلى 48 ساعة</strong>. طلبات الإعلان لها أولوية، وبلاغات الإشاعات العاجلة نراجعها في اليوم نفسه.</p>
+          </div>
+          <div class="alert alert-warn"><i data-lucide="shield-alert"></i><div><strong>تنبيه من الاحتيال</strong><p>لا نطلب منك أبداً أموالاً أو رموز تحقق أو كلمات مرور. أي حساب يدّعي أنه نحن ويطلب ذلك فهو محتال.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/telegram-data.js"></script>
+<script src="assets/js/static-index.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/contact.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/fx.js"></script>
+<script src="assets/js/gl.js"></script>
+</body>
+</html>

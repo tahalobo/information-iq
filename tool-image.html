@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ضغط الصور والعلامة المائية | إمبراطورية المعلومات العراقية</title>
+<meta name="description" content="صغّر حجم الصور وغيّر مقاساتها وصيغتها وأضف علامتك المائية، مجاناً وداخل متصفحك.">
+<meta name="theme-color" content="#03050c">
+<meta property="og:title" content="ضغط الصور والعلامة المائية | إمبراطورية المعلومات العراقية">
+<meta property="og:description" content="صغّر حجم الصور وغيّر مقاساتها وصيغتها وأضف علامتك المائية، مجاناً وداخل متصفحك.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="إمبراطورية المعلومات العراقية">
+<meta property="og:locale" content="ar_IQ">
+<meta property="og:image" content="assets/img/og/default.jpg">
+<meta property="og:url" content="tool-image.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="الإمبراطورية">
+<script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t)d.dataset.theme=JSON.parse(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("fx-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("fx-nav"))d.classList.add("entering")}sessionStorage.removeItem("fx-nav")}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="tool-image">
+<div id="site-header"></div>
+<main>
+  <section class="page-hero compact" data-sc>
+    <div class="ph-slot" data-gl="wave" aria-hidden="true"></div>
+    <div class="ph-giant" aria-hidden="true">صور</div>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><i data-lucide="chevron-left"></i><a href="tools.html">الأدوات</a><i data-lucide="chevron-left"></i><span>ضغط الصور</span></nav>
+      <span class="ph-kicker"><b>IMG</b>صناعة المحتوى</span>
+      <h1 data-split>ضغط الصور والعلامة المائية</h1>
+      <p>صغّر حجم صورك حتى 90% مع الحفاظ على وضوحها، وجهّزها بمقاسات إنستغرام، وأضف علامتك المائية لتحمي تصاميمك من السرقة.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:32px">
+    <div class="container">
+      <div class="tool-layout wide-left">
+        <div class="stack">
+          <div class="dropzone" id="dz" tabindex="0" role="button" aria-label="اختر صوراً" style="padding:28px 16px">
+            <span class="ico"><i data-lucide="images"></i></span>
+            <strong>اسحب الصور هنا أو اضغط للاختيار</strong>
+            <small>يمكنك اختيار عدة صور معاً · الصق بـ Ctrl+V</small>
+          </div>
+          <input type="file" id="file" accept="image/*" multiple hidden>
+          <div class="card" id="preview-card" hidden>
+            <div class="flex between items-center wrap gap-1 mb-2">
+              <div class="card-title mb-0"><span class="ico ico-sm"><i data-lucide="eye"></i></span><h2>المعاينة</h2></div>
+              <span class="badge" id="pv-stats"></span>
+            </div>
+            <div class="preview-box"><canvas id="pv" style="max-height:460px;width:auto;max-width:100%"></canvas></div>
+          </div>
+          <div class="card" id="list-card" hidden>
+            <div class="flex between items-center wrap gap-1 mb-2">
+              <div class="card-title mb-0"><span class="ico ico-sm"><i data-lucide="list"></i></span><h2>الصور</h2></div>
+              <div class="btn-row"><button class="btn btn-primary btn-sm" id="dl-all"><i data-lucide="download"></i>تحميل الكل</button><button class="btn btn-ghost btn-sm" id="clear"><i data-lucide="trash-2"></i>مسح</button></div>
+            </div>
+            <div class="file-list" id="list"></div>
+          </div>
+        </div>
+
+        <div class="card" style="position:sticky;top:88px">
+          <div class="card-title"><span class="ico ico-sm"><i data-lucide="sliders-horizontal"></i></span><h2>الإعدادات</h2></div>
+          <div class="field"><label for="fmt">صيغة الإخراج</label>
+            <select class="select" id="fmt"><option value="image/jpeg">JPG (الأكثر توافقاً)</option><option value="image/webp">WebP (الأصغر حجماً)</option><option value="image/png">PNG (بدون فقدان، للشعارات)</option></select></div>
+          <div class="field" id="q-field"><label for="q">الجودة: <span id="q-val">82</span>%</label><input type="range" id="q" min="30" max="100" value="82"><span class="hint">80–85% هي أفضل موازنة بين الحجم والوضوح.</span></div>
+          <div class="field"><label for="size">المقاس</label>
+            <select class="select" id="size">
+              <option value="0">المقاس الأصلي</option>
+              <option value="1080">إنستغرام: 1080 بكسل</option>
+              <option value="1440">إنستغرام عالي الدقة: 1440</option>
+              <option value="1920">Full HD: 1920</option>
+              <option value="1280">واتساب/تليغرام: 1280</option>
+              <option value="800">ويب صغير: 800</option>
+            </select><span class="hint">يُصغَّر الضلع الأطول إلى هذا المقاس مع الحفاظ على النسبة.</span></div>
+          <hr class="divider">
+          <label class="check"><input type="checkbox" id="wm"> <strong>إضافة علامة مائية</strong></label>
+          <div id="wm-opts" hidden class="mt-2">
+            <div class="field"><label for="wm-text">النص</label><input class="input" id="wm-text" value="@information_1q"></div>
+            <div class="form-row">
+              <div class="field"><label for="wm-pos">الموضع</label>
+                <select class="select" id="wm-pos"><option value="br">أسفل اليمين</option><option value="bl">أسفل اليسار</option><option value="tr">أعلى اليمين</option><option value="tl">أعلى اليسار</option><option value="c">المنتصف</option><option value="tile">متكرر (حماية قوية)</option></select></div>
+              <div class="field"><label for="wm-color">اللون</label><div class="flex gap-1"><input type="color" id="wm-color" value="#ffffff"><label class="check small"><input type="checkbox" id="wm-shadow" checked>ظل</label></div></div>
+            </div>
+            <div class="field"><label for="wm-size">الحجم: <span id="wm-size-v">4</span>%</label><input type="range" id="wm-size" min="2" max="12" value="4"></div>
+            <div class="field"><label for="wm-op">الشفافية: <span id="wm-op-v">70</span>%</label><input type="range" id="wm-op" min="10" max="100" value="70"></div>
+          </div>
+          <div class="privacy-note"><i data-lucide="shield-check"></i><span>تُحذف الميتاداتا (الموقع والجهاز) تلقائياً من الصور الناتجة.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/static-index.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/tool-image.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/fx.js"></script>
+<script src="assets/js/gl.js"></script>
+</body>
+</html>

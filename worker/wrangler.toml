@@ -1,0 +1,9 @@
+# إعداد نشر عامل البحث العكسي:  npx wrangler deploy   (من داخل مجلد worker)
+name = "empire-reverse"
+main = "reverse-search.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+# بعد معرفة رابط الموقع المنشور، ضعه هنا حتى لا يستخدم العاملَ موقعٌ آخر (لأكثر من رابط افصل بفاصلة)
+# [vars]
+# ALLOWED_ORIGINS = "https://example.com"

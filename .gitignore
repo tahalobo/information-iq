@@ -1,0 +1,10 @@
+# أدوات محلية وملفات لا تُنشر
+ad-video/
+_aitest/
+node_modules/
+.claude/settings.local.json
+خطة-الموقع.md
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini

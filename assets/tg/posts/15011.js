@@ -1,0 +1,1 @@
+window.TG_POST={"id":15011,"type":"literature","cat":"culture","date":"2026-09-07T21:12:01+00:00","title":"أيُّها الساهرُ ليلًا","html":"<p>بينَ ذكرى الأهلينِ➖</p>\n<p>هل أفادَ الليلُ يومًا<br>في رجوعِ الغائبينِ🤍؟</p>","images":[],"video":null,"poll":null,"views":1430,"reactions":30,"forwardedFrom":null,"links":[],"url":"https://t.me/informationss_iq/15011","sources":[]};

@@ -1,0 +1,26 @@
+{
+  "channel": "informationss_iq",
+  "minFactLength": 250,
+  "minNewsLength": 150,
+  "minEventLength": 60,
+  "firstRunPages": 40,
+  "updatePages": 3,
+  "maxPosts": 1000,
+  "downloadImages": true,
+  "maxImagesPerPost": 4,
+  "skipForwarded": false,
+  "stripLinks": ["t.me/informationiq", "t.me/informationss_iq", "instagram.com/information_1q"],
+  "sources": {
+    "enabled": true,
+    "perRun": 25,
+    "maxPerPost": 5,
+    "minScore": 0.5,
+    "retryDays": 14,
+    "types": ["fact", "news"],
+    "block": [],
+    "trusted": []
+  },
+  "overrides": {
+    "_مثال": { "type": "fact", "cat": "iraq", "title": "عنوان مخصص", "hide": false, "sources": [{ "name": "اسم مصدر أضيفه يدوياً", "url": "https://example.com/page" }], "noSources": false }
+  }
+}

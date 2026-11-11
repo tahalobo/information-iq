@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>المحقق الذكي: كشف صور الذكاء الاصطناعي | إمبراطورية المعلومات العراقية</title>
+<meta name="description" content="هل الصورة مولّدة بالذكاء الاصطناعي؟ فحص مجاني داخل متصفحك: أدلة المنشأ في الملف (C2PA وIPTC وبصمات المولّدات) ونماذج كشف مختبَرة، مع تقرير يشرح السبب ودرجة الثقة وحدود النتيجة.">
+<meta name="theme-color" content="#03050c">
+<meta property="og:title" content="المحقق الذكي: كشف صور الذكاء الاصطناعي | إمبراطورية المعلومات العراقية">
+<meta property="og:description" content="هل الصورة مولّدة بالذكاء الاصطناعي؟ فحص مجاني داخل متصفحك: أدلة المنشأ في الملف (C2PA وIPTC وبصمات المولّدات) ونماذج كشف مختبَرة، مع تقرير يشرح السبب ودرجة الثقة وحدود النتيجة.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="إمبراطورية المعلومات العراقية">
+<meta property="og:locale" content="ar_IQ">
+<meta property="og:image" content="assets/img/og/default.jpg">
+<meta property="og:url" content="tool-ai.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="الإمبراطورية">
+<script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t)d.dataset.theme=JSON.parse(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("fx-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("fx-nav"))d.classList.add("entering")}sessionStorage.removeItem("fx-nav")}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="tool-ai">
+<div id="site-header"></div>
+<main>
+  <section class="page-hero compact" data-sc>
+    <div class="ph-slot" data-gl="lens" aria-hidden="true"></div>
+    <div class="ph-giant" aria-hidden="true">ذكاء</div>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><i data-lucide="chevron-left"></i><a href="tools.html">الأدوات</a><i data-lucide="chevron-left"></i><span>المحقق الذكي</span></nav>
+      <span class="ph-kicker"><b>AI</b>جديد · مجاني بالكامل</span>
+      <h1 data-split>المحقق الذكي: هل الصورة مولّدة بالذكاء الاصطناعي؟</h1>
+      <p>ارفع أي صورة لتحصل على تقرير يقول لك بصدق: ما الدليل المكتوب داخل الملف، وماذا ترى نماذج الكشف، ولماذا وصلنا لهذه النتيجة، وكم يمكنك أن تثق بها. كل ذلك داخل جهازك.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:32px">
+    <div class="container">
+      <div class="tool-layout wide-left" id="setup">
+        <div>
+          <div class="dropzone" id="dz" tabindex="0" role="button" aria-label="اختر صورة للفحص">
+            <span class="ico"><i data-lucide="scan-face"></i></span>
+            <strong>اسحب الصورة هنا أو اضغط للاختيار</strong>
+            <small>أو الصق صورة بـ Ctrl+V · ارفع النسخة الأصلية إن أمكن، لا لقطة شاشة</small>
+          </div>
+          <input type="file" id="file" accept="image/*,.heic,.heif,.avif" hidden>
+          <div class="privacy-note"><i data-lucide="lock"></i><span>الصورة لا تغادر جهازك. التحليل كله يجري داخل متصفحك، والنماذج تُحمَّل مرة واحدة ثم تعمل حتى بدون إنترنت.</span></div>
+        </div>
+        <div class="card">
+          <div class="card-title"><span class="ico ico-sm"><i data-lucide="cpu"></i></span><h2>طبقات التحقيق</h2></div>
+          <div class="stack" style="gap:10px">
+            <div class="flex gap-1 items-center small"><span class="text-success"><i data-lucide="check-circle-2"></i></span><span><strong>أدلة داخل الملف:</strong> C2PA ووسم IPTC وبصمات 28 مولّداً وإعدادات Stable Diffusion وComfyUI</span></div>
+            <div class="flex gap-1 items-center small"><span class="text-success"><i data-lucide="check-circle-2"></i></span><span><strong>نماذج كشف مختبَرة:</strong> أبقينا فقط ما نجح في اختبارنا</span></div>
+            <div class="flex gap-1 items-center small"><span class="text-success"><i data-lucide="check-circle-2"></i></span><span><strong>تقرير صادق:</strong> السبب ودرجة الثقة وحدود النتيجة، قابل للنسخ والطباعة</span></div>
+          </div>
+          <hr class="divider">
+          <label class="label" for="mode">نماذج الكشف</label>
+          <select class="select mt-1" id="mode"></select>
+          <p class="small muted mt-1 mb-0" id="model-status"></p>
+          <button class="btn btn-ghost btn-sm mt-1" id="clear-models" hidden><i data-lucide="trash-2"></i>حذف النماذج من الجهاز</button>
+        </div>
+      </div>
+
+      <div id="report" hidden></div>
+    </div>
+  </section>
+
+  <section class="section" id="honest" style="padding-top:0">
+    <div class="container">
+      <div class="section-head"><div><span class="kicker">بصراحة</span><h2>ماذا تستطيع هذه الأداة وماذا لا تستطيع</h2></div></div>
+      <div class="grid grid-3">
+        <div class="card"><span class="ico ico-sm mb-2"><i data-lucide="fingerprint"></i></span><h3>دليل قاطع أحياناً</h3><p class="mb-0 small">إذا بقيت في الملف بصمة المولّد (شهادة C2PA، وسم IPTC، إعدادات التوليد) فالنتيجة مؤكدة. لكن أغلب الصور المتداولة فقدت هذه البيانات عند رفعها إلى مواقع التواصل.</p></div>
+        <div class="card"><span class="ico ico-sm mb-2"><i data-lucide="brain-circuit"></i></span><h3>ترجيح في بقية الحالات</h3><p class="mb-0 small">نماذج الكشف تعطي ترجيحاً لا يقيناً. في اختبارنا على 96 صورة رصدت 82% من الصور المولّدة ولم تتهم أي صورة حقيقية، لكن العينة صغيرة والمولّدات تتطور كل شهر.</p></div>
+        <div class="card"><span class="ico ico-sm mb-2"><i data-lucide="shield-alert"></i></span><h3>لا يوجد كاشف 100%</h3><p class="mb-0 small">«لم نرصد مؤشرات» لا تعني أن الصورة حقيقية، و«على الأرجح مولّدة» لا تكفي لاتهام أحد. التقرير يعرض لك السبب والحدود لتحكم أنت.</p></div>
+      </div>
+      <div class="acc mt-3">
+        <details><summary>لماذا حذفتم بعض النماذج والمؤشرات؟<i data-lucide="chevron-down"></i></summary><div class="acc-body">اختبرنا كل نموذج ومؤشر على صور حقيقية ومولّدة معروفة المصدر، وحذفنا ما أخطأ: نموذج اتهم 6 صور حقيقية من 37، ونموذج فوّت 14 صورة مولّدة من 34، ومؤشرات «الضوضاء» و«الطيف الترددي» و«مستوى الخطأ ELA» و«الألوان» التي لم تفرّق بين الحقيقي والمولّد. مؤشر يخطئ أسوأ من غياب المؤشر، لأنه يعطي ثقة زائفة.</div></details>
+        <details><summary>هل تُرفع صورتي إلى أي خادم؟<i data-lucide="chevron-down"></i></summary><div class="acc-body">لا. الفحص كله يجري داخل متصفحك. النماذج تُحمَّل مرة واحدة من Hugging Face ثم تُحفظ في جهازك وتعمل بلا إنترنت. الخدمة مجانية بلا حساب ولا حد لعدد الصور.</div></details>
+        <details><summary>الأداة قالت «على الأرجح مولّدة» عن صورة أعرف أنها حقيقية، لماذا؟<i data-lucide="chevron-down"></i></summary><div class="acc-body">يحدث ذلك مع الرسوم الرقمية، والصور المعدّلة بقوة أو بفلاتر التجميل، والصور المكبّرة بتطبيقات الذكاء الاصطناعي، ولقطات الشاشة. النماذج تتعلم أنماطاً إحصائية وقد تنخدع. لذلك نعرض درجة الثقة والخلاف بين النماذج بدل حكم قاطع.</div></details>
+        <details><summary>ما الفرق بين هذه الأداة وكاشف التعديل؟<i data-lucide="chevron-down"></i></summary><div class="acc-body">هذه الأداة تسأل: هل وُلدت الصورة كلها من مولّد؟ أما <a class="link" href="tool-forensics.html">كاشف التعديل</a> فيسأل: هل غُيّر جزء من صورة حقيقية؟ و<a class="link" href="tool-metadata.html">عارض الميتاداتا</a> يعرض كل بيانات الملف، و<a class="link" href="tool-reverse.html">البحث العكسي</a> يجد أصل الصورة. استخدمها معاً.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="signs">
+    <div class="container">
+      <div class="section-head"><div><span class="kicker">عينك أقوى أداة</span><h2>افحص بنفسك: 8 علامات للصور المولّدة</h2></div></div>
+      <div class="grid grid-4">
+        <div class="card"><span class="ico ico-sm mb-2"><i data-lucide="hand"></i></span><h3>الأيدي والأصابع</h3><p class="mb-0 small">أصابع زائدة أو ملتحمة، ومفاصل بزوايا مستحيلة.</p></div>
+        <div class="card"><span class="ico ico-sm mb-2"><i data-lucide="type"></i></span><h3>الكتابة واللافتات</h3><p class="mb-0 small">حروف مشوّهة أو كلمات لا معنى لها، وخصوصاً العربية.</p></div>
+        <div class="card"><span class="ico ico-sm mb-2"><i data-lucide="sun"></i></span><h3>الظلال والإضاءة</h3><p class="mb-0 small">ظلال باتجاهات مختلفة، أو إضاءة «مثالية» بلا مصدر واضح.</p></div>
+        <div class="card"><span class="ico ico-sm mb-2"><i data-lucide="glasses"></i></span><h3>الانعكاسات</h3><p class="mb-0 small">انعكاس في المرآة أو النظارة لا يطابق المشهد.</p></div>
+        <div class="card"><span class="ico ico-sm mb-2"><i data-lucide="ear"></i></span><h3>الأذن والأسنان والأقراط</h3><p class="mb-0 small">أسنان كثيرة متشابهة، وأقراط مختلفة بين الأذنين.</p></div>
+        <div class="card"><span class="ico ico-sm mb-2"><i data-lucide="users"></i></span><h3>الخلفية والحشود</h3><p class="mb-0 small">وجوه ذائبة في الخلفية، وأشخاص بلا ملامح.</p></div>
+        <div class="card"><span class="ico ico-sm mb-2"><i data-lucide="sparkle"></i></span><h3>البشرة «البلاستيكية»</h3><p class="mb-0 small">نعومة مبالغ فيها، ولمعان شمعي، وغياب المسام.</p></div>
+        <div class="card"><span class="ico ico-sm mb-2"><i data-lucide="git-compare"></i></span><h3>المنطق العام</h3><p class="mb-0 small">ملابس تندمج بالجلد، وأشياء تطفو، وأعمدة لا تكتمل.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/full.umd.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/static-index.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/imgmeta.js"></script>
+<script src="assets/js/provenance.js"></script>
+<script src="assets/js/ai-detect.js"></script>
+<script src="assets/js/pages/tool-ai.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/fx.js"></script>
+<script src="assets/js/gl.js"></script>
+</body>
+</html>

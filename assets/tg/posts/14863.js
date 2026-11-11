@@ -1,0 +1,1 @@
+window.TG_POST={"id":14863,"type":"discussion","cat":"culture","date":"2026-08-01T19:16:15+00:00","title":"هل كل ما يراه او يشعر به الانسان هو الواقع المطلق؟","html":"<p>ام هو فقط ما يحتاجه للبقاء؟</p>","images":[],"video":null,"poll":null,"views":1690,"reactions":14,"forwardedFrom":null,"links":[],"url":"https://t.me/informationss_iq/14863","sources":[]};

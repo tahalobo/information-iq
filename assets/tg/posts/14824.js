@@ -1,0 +1,1 @@
+window.TG_POST={"id":14824,"type":"discussion","cat":"culture","date":"2026-07-27T07:16:10+00:00","title":"هل المعرفة تمنح الحرية ام تزيد من المسؤولية ؟","html":"<p>هل المعرفة تمنح الحرية ام تزيد من المسؤولية ؟</p>","images":[],"video":null,"poll":null,"views":11700,"reactions":28,"forwardedFrom":null,"links":[],"url":"https://t.me/informationss_iq/14824","sources":[]};

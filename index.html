@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>إمبراطورية المعلومات العراقية | كل ما هو حقيقي ومفيد</title>
+<meta name="description" content="صفحة عراقية مستقلة تهتم بالعلوم والأخبار والثقافة والترفيه. مكتبة معلومات موثّقة بالمصادر وأدوات رقمية مجانية للتحقق من الصور والروابط.">
+<meta name="theme-color" content="#03050c">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="إمبراطورية المعلومات العراقية">
+<meta property="og:locale" content="ar_IQ">
+<meta property="og:image" content="assets/img/og/default.jpg">
+<meta property="og:url" content="index.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="إمبراطورية المعلومات العراقية">
+<meta property="og:description" content="كل ما هو حقيقي ومفيد: معلومات موثّقة وأدوات تحقق مجانية.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="الإمبراطورية">
+<script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t)d.dataset.theme=JSON.parse(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("fx-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("fx-nav"))d.classList.add("entering")}sessionStorage.removeItem("fx-nav")}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="home">
+<div id="site-header"></div>
+
+<main>
+  <!-- 01 · Hero: the ziggurat -->
+  <section class="xhero" data-sc>
+    <div class="container xhero-grid">
+      <div class="xhero-text">
+        <span class="eyebrow"><span class="dot"></span>صفحة عراقية مستقلة · أرشيف حيّ للمعرفة</span>
+        <h1 class="mega" data-split>كل ما هو <span class="gold-text">حقيقي</span> <span class="line2">ومفيد.</span></h1>
+        <p class="lead">علوم وتاريخ وثقافة وأخبار، نختارها بعناية ونوثّقها بالمصادر. ومعها أدوات رقمية مجانية تكشف بها حقيقة الصور والروابط بنفسك.</p>
+        <div class="btn-row">
+          <a href="facts.html" class="btn btn-primary btn-lg"><i data-lucide="book-open"></i>ادخل المكتبة<i data-lucide="arrow-left"></i></a>
+          <a href="tools.html" class="btn btn-ghost btn-lg"><i data-lucide="scan-search"></i>أدوات التحقق</a>
+        </div>
+      </div>
+      <div class="xhero-slot" data-gl="ziggurat" aria-hidden="true">
+        <div class="orbit" id="orbit"></div>
+      </div>
+    </div>
+    <div class="xstats">
+      <div><strong id="st-followers">0</strong><span>متابع على إنستغرام</span></div>
+      <div><strong id="st-facts">0</strong><span>معلومة موثّقة</span></div>
+      <div><strong id="st-tools">0</strong><span>أداة مجانية</span></div>
+    </div>
+  </section>
+
+  <!-- 02 · Manifesto: words light up as you read -->
+  <section class="manifesto">
+    <div class="m-slot" data-gl="globe" aria-hidden="true"></div>
+    <div class="container">
+      <span class="kicker">بياننا</span>
+      <p data-words>في زمنٍ تنتشر فيه <em>الإشاعة</em> أسرع من الضوء، اخترنا طريقاً واحداً: أن ننتقي <em>الحقيقة</em>، ونوثّقها <em>بالمصادر</em>، ونقدّمها بلغةٍ يفهمها الجميع. من ألواح سومر المسمارية إلى مجرّات الفضاء البعيدة، <em>المعرفة</em> إمبراطوريتنا، وأنت أحد أبنائها.</p>
+    </div>
+  </section>
+
+  <!-- 03 · Nine worlds: pinned horizontal 3D gallery -->
+  <section class="hgallery" data-hscroll>
+    <div class="hg-sticky">
+      <div class="container hg-head">
+        <div><span class="kicker">الأقسام</span><h2>تسعة عوالم من <span class="gold-text">المعرفة</span></h2></div>
+        <div class="hg-progress" aria-hidden="true"><i></i></div>
+      </div>
+      <div class="hg-track" id="cats"></div>
+    </div>
+  </section>
+
+  <!-- 04 · Fact of the day: a clay tablet rising into place -->
+  <section class="section tablet-sec" data-sc>
+    <div class="container tablet-wrap">
+      <div class="t-slot" data-gl="tablet" aria-hidden="true"></div>
+      <div class="tablet" id="fotd"></div>
+    </div>
+  </section>
+
+  <!-- 05 · Latest facts on a rising plane -->
+  <section class="section section-alt" data-sc>
+    <div class="container">
+      <div class="section-head">
+        <div><span class="kicker">الأحدث</span><h2 data-split>آخر ما أضفناه إلى <span class="gold-text">الأرشيف</span></h2><p>كل معلومة مع مصادرها، لتعرف من أين جئنا بها.</p></div>
+        <a href="facts.html" class="btn btn-ghost">كل المعلومات<i data-lucide="arrow-left"></i></a>
+      </div>
+      <div class="plane" data-sc><div class="grid grid-3" id="latest"></div></div>
+    </div>
+  </section>
+
+  <!-- 06 · Tools bento -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div><span class="kicker">خدمات رقمية مجانية</span><h2 data-split>أدوات تكشف <span class="gold-text">الحقيقة</span> بنفسك</h2><p>كل الأدوات تعمل داخل متصفحك، فلا تُرفع صورك ولا بياناتك إلى أي سيرفر.</p></div>
+      </div>
+      <div class="bento" id="bento" style="grid-auto-flow:dense"></div>
+    </div>
+  </section>
+
+  <!-- 07 · Portals: verify + quiz -->
+  <section class="section section-alt">
+    <div class="container portals">
+      <a href="verify.html" class="portal" data-tilt="6" style="--pc:rgba(63,224,200,.28)">
+        <span class="p-num" aria-hidden="true">؟</span>
+        <span class="p-ico"><i data-lucide="shield-check"></i></span>
+        <span class="kicker">تحقق معنا</span>
+        <h2>وصلك خبر وما تعرف صحته؟</h2>
+        <p>أجب عن 8 أسئلة بسيطة لتقيس مصداقيته، أو أرسله لنا وفريقنا يتحقق منه.</p>
+        <span class="btn btn-primary mt-1" style="align-self:flex-start"><i data-lucide="gauge"></i>مقياس المصداقية</span>
+      </a>
+      <a href="quiz.html" class="portal" data-tilt="6" style="--pc:rgba(242,194,91,.3)">
+        <span class="p-num" aria-hidden="true">10</span>
+        <span class="p-ico"><i data-lucide="brain"></i></span>
+        <span class="kicker">اختبر نفسك</span>
+        <h2>هل أنت إمبراطور معلومات؟</h2>
+        <p>10 أسئلة من منشوراتنا عن تاريخ العراق والعلوم والفضاء. شارك نتيجتك وتحدَّ أصدقاءك. <span class="text-gold" id="best-score"></span></p>
+        <span class="btn btn-primary mt-1" style="align-self:flex-start"><i data-lucide="play"></i>ابدأ الاختبار</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 08 · News -->
+  <section class="section" style="padding-bottom:40px">
+    <div class="marquee mb-3" data-marquee aria-label="عناوين الأخبار"><div class="mq-track" id="ticker"></div></div>
+    <div class="container mt-4">
+      <div class="section-head">
+        <div><span class="kicker">من داخل الإمبراطورية</span><h2 data-split>أخبار <span class="gold-text">الصفحة</span></h2></div>
+        <a href="news.html" class="btn btn-ghost">الأخبار والإنجازات<i data-lucide="arrow-left"></i></a>
+      </div>
+      <div class="grid grid-3" id="news"></div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/telegram-data.js"></script>
+<script src="assets/js/static-index.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/home.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/fx.js"></script>
+<script src="assets/js/gl.js"></script>
+</body>
+</html>

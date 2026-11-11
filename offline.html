@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>أنت غير متصل | إمبراطورية المعلومات العراقية</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#03050c">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=JSON.parse(t)}catch(e){}</script>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="offline">
+<div id="site-header"></div>
+<main>
+  <section class="page-hero compact">
+    <div class="ph-slot" data-gl="wave" aria-hidden="true"></div>
+    <div class="ph-giant" aria-hidden="true">بلا إنترنت</div>
+    <div class="container">
+      <span class="ph-kicker"><b>!</b>أنت غير متصل الآن</span>
+      <h1>الإنترنت انقطع، <span class="gold-text">والمعرفة باقية</span></h1>
+      <p>هذه الصفحة لم تُحفظ بعد على جهازك. لكن المعلومات التي حفظتها والصفحات التي زرتها سابقاً متاحة لك حتى بدون إنترنت.</p>
+      <div class="btn-row mt-3"><button class="btn btn-primary btn-lg" onclick="location.reload()"><i data-lucide="refresh-cw"></i>حاول مجدداً</button><a class="btn btn-ghost btn-lg" href="index.html"><i data-lucide="home"></i>الرئيسية</a></div>
+    </div>
+  </section>
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+      <div class="section-head"><div><span class="kicker">متاحة بدون إنترنت</span><h2>معلوماتك المحفوظة</h2></div></div>
+      <div class="grid grid-3" id="saved"></div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/telegram-data.js"></script>
+<script src="assets/js/static-index.js"></script>
+<script src="assets/js/core.js"></script>
+<script>
+(function () {
+  var box = document.getElementById("saved");
+  if (!window.App) { box.innerHTML = '<p class="muted">افتح هذه الصفحة بعد عودة الإنترنت.</p>'; return; }
+  var ids = App.saved.all();
+  var items = ids.map(function (id) { return window.FACTS.find(function (f) { return f.id === id; }) || (window.TG_ITEMS || []).find(function (f) { return f.id === id; }); }).filter(Boolean);
+  box.innerHTML = items.length ? items.map(App.factCard).join("") : '<div class="empty" style="grid-column:1/-1"><span class="ico"><i data-lucide="bookmark"></i></span><p>لم تحفظ أي معلومة بعد. اضغط زر الحفظ على أي معلومة لتقرأها لاحقاً بدون إنترنت.</p></div>';
+  App.icons();
+})();
+</script>
+<script src="assets/js/fx.js"></script>
+<script src="assets/js/gl.js"></script>
+</body>
+</html>

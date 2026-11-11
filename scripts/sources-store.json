@@ -1,0 +1,675 @@
+{
+ "posts": {
+  "15203": {
+   "hash": "d7499575d5fa",
+   "checked": "2026-11-09T21:39:01.465Z",
+   "queries": [
+    "لماذا رسم الناس أماكن على الخارطة لم يزوروها؟ Sandy Island",
+    "الأقمار الصناعية الخرائط القديمة الخارطة يزوروها 2012",
+    "Sandy Island"
+   ],
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Sandy_Island",
+     "name": "Sandy Island",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Sandy Island may refer to:"
+    }
+   ]
+  },
+  "15206": {
+   "hash": "d2d2ee2e35e7",
+   "checked": "2026-11-09T21:40:21.407Z",
+   "queries": [
+    "ارسطو نبي المسيحية الذي ولد قبل المسيحية",
+    "المسيحية العصور الوسطى ارسطو تشكيك 2000",
+    "Christianity"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D8%B3%D9%8A%D8%AD%D9%8A%D8%A9",
+     "name": "المسيحية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 74,
+     "quote": "كما وانحدرت الفلسفة المدرسيَّة (السكولاستية) في بيئة المدارس الرهبانية ومدارس الكاتدرائية المسيحية، التي أسهمت في نشأة أقدم الجامعات الأوروبية خلال العصور الوسطى."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Christianity",
+     "name": "Christianity",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 69,
+     "quote": "Christianity is an Abrahamic monotheistic religion based on the Bible and the teachings of Jesus. The Gospels state that Jesus is the Son of God and rose from the dead after his crucifixion, whose coming as…"
+    }
+   ]
+  },
+  "15210": {
+   "hash": "42f403827332",
+   "checked": "2026-11-09T21:38:43.493Z",
+   "queries": [
+    "يُعدّ حجر الشمس من أشهر آثار حضارة الأزتيك في المكسيك",
+    "حجر الشمس مكسيكو سيتي حضارة الأزتيك 1790"
+   ],
+   "sources": []
+  },
+  "15211": {
+   "hash": "320a75dd0da2",
+   "checked": "2026-11-09T21:38:33.772Z",
+   "queries": [
+    "هل يمكن للإنسان أن يتحكم بمشاعره حقا أم أن مشاعره هي التي تتحكم به؟",
+    "تعابير الوجه عالم النفس بمشاعره تتحكم 1998"
+   ],
+   "sources": []
+  },
+  "15213": {
+   "hash": "e902254bc113",
+   "checked": "2026-11-09T21:40:41.113Z",
+   "queries": [
+    "تابوتي… عالمة من بلاد الرافدين",
+    "تاريخ صناعة العطور بلاد الرافدين تابوتي آشورية 1200",
+    "History of perfume"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE_%D8%B5%D9%86%D8%A7%D8%B9%D8%A9_%D8%A7%D9%84%D8%B9%D8%B7%D9%88%D8%B1",
+     "name": "تاريخ صناعة العطور",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 69,
+     "quote": "ومن أقدم صانعات العطور المعروفات بالاسم تابوتي-بيلات-إكالي، التي ورد اسمها في لوح مسماري آشوري متوسط يعود إلى نحو 1200 قبل الميلاد."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/History_of_perfume",
+     "name": "History of perfume",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 65,
+     "quote": "The word perfume is used today to describe scented mixtures and is derived from the Latin word per fumus (lit. 'through smoke'). The word perfumery refers to the art of making perfumes. Perfume was produced by…"
+    }
+   ]
+  },
+  "15215": {
+   "hash": "5abe9e777259",
+   "checked": "2026-11-09T21:38:06.604Z",
+   "queries": [
+    "حجر القمر… قطعة كأنها من السماء بين أيدينا! Moonstone",
+    "حجر القمر تشتت الضوء قطعة السماء",
+    "Moonstone"
+   ],
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Moonstone",
+     "name": "Moonstone",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Moonstone may refer to:"
+    }
+   ]
+  },
+  "15216": {
+   "hash": "4f42a4ef936f",
+   "checked": "2026-11-09T21:40:02.988Z",
+   "queries": [
+    "التكاثر العذري",
+    "بويضة التكاثر العذري الكائنات إخصاب",
+    "Egg cell"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D9%8A%D8%B6%D8%A9",
+     "name": "بويضة",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 56,
+     "quote": "تُلقح البويضة بواسطة الحيوانات المنوية لحدوث عملية الإخصاب، وقد يكون التلقيح داخلياً كما يحدث في معظم الطيور أو خارجياً كما يحدث في معظم الأسماك."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Egg_cell",
+     "name": "Egg cell",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 53,
+     "quote": "The egg cell or ovum (pl.: ova) is the female reproductive cell, or gamete, in most anisogamous organisms (organisms that reproduce sexually with a larger, female gamete and a smaller, male one). The term is…"
+    }
+   ]
+  },
+  "15218": {
+   "hash": "bbe5e9904f94",
+   "checked": "2026-11-09T21:37:36.172Z",
+   "queries": [
+    "النار الإغريقية... السلاح السري المفقود",
+    "النار الإغريقية الإمبراطورية البيزنطية السلاح المفقود",
+    "Greek fire"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%86%D8%A7%D8%B1_%D8%A7%D9%84%D8%A5%D8%BA%D8%B1%D9%8A%D9%82%D9%8A%D8%A9",
+     "name": "النار الإغريقية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "النار الإغريقية سائل حارق استعمله البيزنطيون كسلاح في حروبهم البحرية منذ 674 ميلادية، حيث كانت تُستخدم لإشعال النار على سفن العدو."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Greek_fire",
+     "name": "Greek fire",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "Greek fire was an incendiary weapon used by the Byzantine Empire from the seventh to the fourteenth centuries. The recipe for Greek fire was a closely-guarded state secret and has been lost to history.…"
+    }
+   ]
+  },
+  "15219": {
+   "hash": "af57a8329040",
+   "checked": "2026-11-09T21:37:27.069Z",
+   "queries": [
+    "منارة الإسكندرية... المرآة الغامضة وسلاح الضوء",
+    "منارة الإسكندرية عجائب الدنيا السبع المرآة وسلاح"
+   ],
+   "sources": []
+  },
+  "15220": {
+   "hash": "6b28d8e443a6",
+   "checked": "2026-11-09T21:37:11.236Z",
+   "queries": [
+    "يسعدنا الإعلان عن تجاوز بوت \"رودي\" حاجز 100 rudie",
+    "اللغة العربية رودي حاجز 2000"
+   ],
+   "sources": []
+  },
+  "15222": {
+   "hash": "232f91cf30e5",
+   "checked": "2026-11-09T21:36:56.896Z",
+   "queries": [
+    "شجرة واحدة قد يتجاوز حجمها حجم عدة منازل",
+    "السكويا العملاقة مترا مكعبا شجرة يتجاوز 1487"
+   ],
+   "sources": []
+  },
+  "15223": {
+   "hash": "57b0b72adda0",
+   "checked": "2026-11-09T21:36:42.611Z",
+   "queries": [
+    "\" زرياب.. ابن بغداد الذي نحت اسمه على جدران إسبانيا",
+    "القرن التاسع زرياب بغداد"
+   ],
+   "sources": []
+  },
+  "15225": {
+   "hash": "ae7566ee6837",
+   "checked": "2026-11-09T21:36:31.826Z",
+   "queries": [
+    "حجر الكهرمان... كبسولة الزمن الطبيعية",
+    "كهرمان أشجار الصنوبر الكهرمان راتنج",
+    "Amber"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%83%D9%87%D8%B1%D9%85%D8%A7%D9%86",
+     "name": "كهرمان",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 71,
+     "quote": "الكَهْرَمَان راتنج متحجر من الأشجار الصنوبرية المنقرضة في بعض مناطق الغابات الصنوبرية العالمية وتحجرت وتشكلت قبل آلاف السنين."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Amber",
+     "name": "Amber",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 67,
+     "quote": "Amber is fossilized tree resin. It has been appreciated for its color (orange, brown and, sometimes, red) and natural beauty since Neolithic times, and worked as a gemstone since classical antiquity. Amber is…"
+    }
+   ]
+  },
+  "15226": {
+   "hash": "d09c06650a40",
+   "checked": "2026-11-09T21:36:24.132Z",
+   "queries": [
+    "لماذا ارتبط الثعلب بالمكر عبر التاريخ؟",
+    "الذكاء الفطري عبر التاريخ ارتبط الثعلب"
+   ],
+   "sources": []
+  },
+  "15227": {
+   "hash": "d3cffb683c91",
+   "checked": "2026-11-09T21:36:13.102Z",
+   "queries": [
+    "بطارية بغداد: هل عرف العراقيون الكهرباء قبل 2000 عام؟",
+    "بطارية بغداد توليد الكهرباء العراقيون أثرية 2000",
+    "Baghdad Battery"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B7%D8%A7%D8%B1%D9%8A%D8%A9_%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF",
+     "name": "بطارية بغداد",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "بطارية بغداد هو اسم شائع لعدة قطع صنعت في بلاد الرافدين، خلال فترة حكم الساسانيين أو پارثيا (سنوات قليلة بعد الميلاد)."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Baghdad_Battery",
+     "name": "Baghdad Battery",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "The Baghdad Battery or Parthian Battery (Persian: باتری اشکانی; Arabic: بطارية بغداد) are the names given to an artifact consisting of a ceramic pot, a tube of copper, and a rod of iron fixed together with…"
+    }
+   ]
+  },
+  "15229": {
+   "hash": "8d2e4828ed35",
+   "checked": "2026-11-09T21:36:05.406Z",
+   "queries": [
+    "50 ألف مرآة في الفضاء: هل ستضيء الأرض ليلًا؟ Reflect Orbital",
+    "ضوء الشمس محطات الطاقة مرآة الفضاء 2035",
+    "Reflect Orbital"
+   ],
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Reflect_Orbital",
+     "name": "Reflect Orbital",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Reflect Orbital, Inc is an American privately held space technology company headquartered in Hawthorne, California. Founded in 2021, the company designs and builds satellites with large-scale deployable…"
+    }
+   ]
+  },
+  "15230": {
+   "hash": "714d7b54eca4",
+   "checked": "2026-11-09T21:35:55.157Z",
+   "queries": [
+    "القرامطة وسرقة الحجر الأسود: أغرب حدث في تاريخ مكة",
+    "قرامطة الحجر الأسود القرامطة وسرقة",
+    "Qarmatians"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%82%D8%B1%D8%A7%D9%85%D8%B7%D8%A9",
+     "name": "قرامطة",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 69,
+     "quote": "بلغت دولة القرامطة أوج قوتها في عهد أبي طاهر الجنَّابي (310–332 هـ/923–944 م)، الذي نهب البَصْرة والكُوفة وقطع طريق الحج حتى هدّد بَغْدَاد، ثم هجم على مكَّة في موسم الحج سنة 317 هـ/930 م، فقتل الحجاج واقتلع…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Qarmatians",
+     "name": "Qarmatians",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 65,
+     "quote": "The Qarmatians were an Isma'ili Shia militant movement led by an Arabized dynasty of Persian descent. Claiming an Alid descent, the Qarmatians were centred in al-Ahsa in Eastern Arabia, where they established…"
+    }
+   ]
+  },
+  "15231": {
+   "hash": "cf2445039632",
+   "checked": "2026-11-09T21:35:42.656Z",
+   "queries": [
+    "بدأ الاسكتلندي (Angus Barbieri) تجربة استثنائية تحت إشراف طبي في مستشفى بمدينة Angus Barbieri",
+    "تناول الطعام المشروبات الغازية الاسكتلندي تجربة 1965"
+   ],
+   "sources": []
+  },
+  "15232": {
+   "hash": "ee2950faff9c",
+   "checked": "2026-11-09T21:35:23.335Z",
+   "queries": [
+    "عاش أبو القاسم الزهراوي بين عامي 936 و1013 ميلادي في الأندلس",
+    "الزهراوي أبو القاسم الزهراوي عامي ميلادي 1013",
+    "Al-Zahrawi"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B2%D9%87%D8%B1%D8%A7%D9%88%D9%8A",
+     "name": "الزهراوي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "يعد الزهراوي أكبر المرجعيات الجراحية في العصور الوسطى."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Al-Zahrawi",
+     "name": "Al-Zahrawi",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 56,
+     "quote": "Abū al-Qāsim Khalaf ibn al-'Abbās al-Zahrāwī al-Ansari (c. 936–1013), popularly known as al-Zahrawi, Latinised as Albucasis or Abulcasis (from Arabic Abū al-Qāsim), was an Arab physician, surgeon and chemist…"
+    }
+   ]
+  },
+  "15235": {
+   "hash": "150ba27c6262",
+   "checked": "2026-11-09T21:35:15.752Z",
+   "queries": [
+    "تخيّل أن رجلًا وقف أمامك وقال بثقة: «أنا أكذب دائمًا!» Liar Paradox",
+    "مفارقة الكذاب تخيل دائما",
+    "Liar paradox Liar Paradox"
+   ],
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Liar_paradox",
+     "name": "Liar paradox",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "In philosophy and logic, the classical liar paradox or liar's paradox or antinomy of the liar is the statement of a liar that they are lying: for instance, declaring that \"I am lying\". If the liar is indeed…"
+    }
+   ]
+  },
+  "15236": {
+   "hash": "d11c318e59f7",
+   "checked": "2026-11-09T21:35:05.227Z",
+   "queries": [
+    "وأثناء حصار تيمورلنك لمدينة دمشق",
+    "ابن خلدون سور دمشق 1401م حصار 1401",
+    "Ibn Khaldun"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D8%A8%D9%86_%D8%AE%D9%84%D8%AF%D9%88%D9%86",
+     "name": "ابن خلدون",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 56,
+     "quote": "أقنع ابن خلدون وجهاء دمشق بحقن الدماء وتسليم المدينة ودخلوا على سلطان التتار تيمورلنك وقدموا له الطاعة، وبطلبِ من تيمورلنك أمضى ابن خلدون أياماً في كتابة رسالةٍ يصف بها أحوال المغرب فلمّا سلمها للسطان أمر…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Ibn_Khaldun",
+     "name": "Ibn Khaldun",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 53,
+     "quote": "Ibn Khaldūn (27 May 1332 – 17 March 1406, 732–808 AH) was an Arab Tunisian scholar, historian, philosopher, and sociologist. He is widely acknowledged to be one of the greatest social scientists of the Middle…"
+    }
+   ]
+  },
+  "15237": {
+   "hash": "11e37a6c0d60",
+   "checked": "2026-11-09T21:42:09.198Z",
+   "queries": [
+    "ظهرت أدا لوفلايس",
+    "علم الحاسوب القرن التاسع عشر لوفلايس الرياضيات 1815",
+    "Computer science"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B9%D9%84%D9%85_%D8%A7%D9%84%D8%AD%D8%A7%D8%B3%D9%88%D8%A8",
+     "name": "علم الحاسوب",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 64,
+     "quote": "في عام 1843، أثناء ترجمة مقال فرنسية عن المحرك التحليلي، كتبت آدا لوفلايس في واحدة من العديد من الملاحظات أنها شملت، خوارزمية لحساب أعداد برنولي، والذي يعتبر أول برنامج حاسوب."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Computer_science",
+     "name": "Computer science",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Computer science is the study of computation, information, and automation, together with their associated phenomena. Included broadly in the sciences, computer science spans theoretical disciplines (such as…"
+    }
+   ]
+  },
+  "15239": {
+   "hash": "b3a65d1e074e",
+   "checked": "2026-11-09T21:34:47.614Z",
+   "queries": [
+    "تخيّل آلاف العمال الذين عانوا ظروفًا قاسية في الأراضي الملحية والمستنقعات قرب",
+    "الدولة العباسية القوات العباسية العمال قاسية"
+   ],
+   "sources": []
+  },
+  "15240": {
+   "hash": "42c8baa7b538",
+   "checked": "2026-11-09T21:34:37.835Z",
+   "queries": [
+    "ألّف العالم المسلم أبو حامد الغزالي كتابه الشهير تهافت الفلاسفة",
+    "أبو حامد الغزالي القرن الحادي عشر المسلم كتابه",
+    "Al-Ghazali"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A3%D8%A8%D9%88_%D8%AD%D8%A7%D9%85%D8%AF_%D8%A7%D9%84%D8%BA%D8%B2%D8%A7%D9%84%D9%8A",
+     "name": "أبو حامد الغزالي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 81,
+     "quote": "] الغزالي فلاسفة الإسلام المتأثرين بالفلسفة اليونانية في 3 مسائل، وبدّعهم في 17 عشر مسألة، وألّف كتاباً مخصوصاً للرد عليهم في هذه ال 20 مسألة سمّاه «تهافت الفلاسفة»، وفيه هاجم الفلاسفة بشكل عام والفلاسفة…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Al-Ghazali",
+     "name": "Al-Ghazali",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 76,
+     "quote": "Al-Ghazali (Persian: ابو حامد محمد ابن محمد غزالی طوسی, romanized: Abū Ḥāmid Muḥammad ibn Muḥammad Ghazālī Ṭūsi; c. 1058 – 19 December 1111), latinized as Algazelus, was an Shafi'i Ash'ari Sunni Muslim scholar…"
+    }
+   ]
+  },
+  "15242": {
+   "hash": "5a791e3484c4",
+   "checked": "2026-11-09T21:34:29.663Z",
+   "queries": [
+    "برز ثلاثة إخوة عُرفوا باسم بني موسى بن شاكر",
+    "بنو موسى بني موسى بغداد ثلاثة",
+    "Banū Mūsā brothers"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A8%D9%86%D9%88_%D9%85%D9%88%D8%B3%D9%89",
+     "name": "بنو موسى",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 66,
+     "quote": "محمد (أبو جعفر) وأحمد والحسن بن محمد بن موسى بن شاكر، رياضيون وفلكيون ومشتغلون بالحيل (الميكانيكا)، أخوة من مرو الشاهجان في خراسان، عاشوا في القرن التاسع الميلادي."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Ban%C5%AB_M%C5%ABs%C4%81_brothers",
+     "name": "Banū Mūsā brothers",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 62,
+     "quote": "The Banū Mūsā, literally the Sons of Musa, refers to a Persian family of polymaths, astronomers, mathematicians, and engineers active in 9th century Baghdad. Both their own contributions and their direct…"
+    }
+   ]
+  },
+  "15243": {
+   "hash": "bd03d4266c26",
+   "checked": "2026-11-09T21:34:22.270Z",
+   "queries": [
+    "برزت زنوبيا حاكمةً لمملكة تدمر",
+    "زنوبيا القرن الثالث الميلادي حاكمة لمملكة",
+    "Zenobia"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B2%D9%86%D9%88%D8%A8%D9%8A%D8%A7",
+     "name": "زنوبيا",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 71,
+     "quote": "زنوبيا (بالتدمرية: وتُلفظ: بت زباي) وإسمها بالعربية (الزباء) هي ملكة تدمر، قادت مع زوجها أذينة عصيانًا على الإمبراطورية الرومانية تمكّنا خلاله من السيطرة على معظم سوريا."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Zenobia",
+     "name": "Zenobia",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 67,
+     "quote": "Septimia Zenobia (Palmyrene Aramaic: 𐡡𐡶𐡦𐡡𐡩‎, romanized: Bat-Zabbai; c. 240 – c. 274) was a third-century queen of the Palmyrene Empire in Syria. Many legends surround her ancestry; she was probably not a…"
+    }
+   ]
+  },
+  "15245": {
+   "hash": "857a72b42ace",
+   "checked": "2026-11-09T21:34:15.203Z",
+   "queries": [
+    "تُعدّ الصابئة المندائية من أقدم الديانات التي لا تزال موجودة حتى اليوم",
+    "الصابئة النبي يحيى المندائية الديانات",
+    "Sabians"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B5%D8%A7%D8%A8%D8%A6%D8%A9",
+     "name": "الصابئة",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 68,
+     "quote": "كما يؤمن الصابئة المندائيون بان أول نبي ومعلم لهم هو ادم وابنه شيث (شيتل) وسام بن نوح ويحيى بن زكريا (يوحنا المعمدان) والذي يدعى في لغتهم المندائية ب يهيا يوهنا))"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Sabians",
+     "name": "Sabians",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 64,
+     "quote": "The Sabians, sometimes also spelled Sabaeans or Sabeans, are a religious group mentioned three times in the Quran (as الصابئون al-Ṣābiʾūn, in later sources الصابئة al-Ṣābiʾa), where it is implied that they…"
+    }
+   ]
+  },
+  "15246": {
+   "hash": "90357e310921",
+   "checked": "2026-11-09T21:34:03.153Z",
+   "queries": [
+    "كشفت دراسة علمية نُشرت عام 2023 في مجلة Science Science",
+    "حضارة بلاد الرافدين تحليل مسمارية 2023"
+   ],
+   "sources": []
+  },
+  "15247": {
+   "hash": "a55ce6c9daec",
+   "checked": "2026-11-09T21:33:54.260Z",
+   "queries": [
+    "برزت هيباتيا السكندرية بوصفها واحدة من أشهر عالمات الرياضيات والفلسفة في العالم",
+    "هيباتيا القرن الرابع الميلادي الرياضيات",
+    "Hypatia"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%87%D9%8A%D8%A8%D8%A7%D8%AA%D9%8A%D8%A7",
+     "name": "هيباتيا",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 72,
+     "quote": "وتذكر النصوص التاريخية من القرن الخامس، والسابع، والعاشر، قصة حياة هيباتيا، وموتها، ومساهماتها في الرياضيات والفلسفة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Hypatia",
+     "name": "Hypatia",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 68,
+     "quote": "Hypatia (born c. 350–370 – March 415 AD) was a Neoplatonist philosopher, astronomer, and mathematician who lived in Alexandria, at that time in the province of Egypt and a major city of the Roman Empire. In…"
+    }
+   ]
+  },
+  "15249": {
+   "hash": "d87e62e2caf7",
+   "checked": "2026-11-09T21:33:42.725Z",
+   "queries": [
+    "في شمال العراق وتحديدًا في منطقة سنجار ووادي لالش يعيش الإيزيديون وهم أتباع",
+    "اليزيدية وادي لالش شمال سنجار",
+    "Yezidis"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%8A%D8%B2%D9%8A%D8%AF%D9%8A%D8%A9",
+     "name": "اليزيدية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 72,
+     "quote": "ويؤمنون بإله واحد وبسبعة ملائكة يتصدرهم ملك طاووس ويتجهون نحو الشمس في صلواتهم، وتُعد لالش مركزهم المقدس."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Yezidis",
+     "name": "Yezidis",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 67,
+     "quote": "Yazidis, also spelled Yezidis ( ; Êzidî), are a Kurdish-speaking endogamous religious group indigenous to Kurdistan, a geographical region in West Asia that includes parts of Iraq, Syria, Turkey, and Iran,…"
+    }
+   ]
+  }
+ },
+ "updated": "2026-11-09T21:42:09.202Z"
+}

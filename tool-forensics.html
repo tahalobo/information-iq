@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>كاشف التعديل والفوتوشوب | إمبراطورية المعلومات العراقية</title>
+<meta name="description" content="هل عُدّلت الصورة بالفوتوشوب؟ اكشف الأجزاء الملصوقة والمنسوخة ولقطات الشاشة المزوّرة بتحليل جنائي مجاني يعمل داخل متصفحك.">
+<meta name="theme-color" content="#03050c">
+<meta property="og:title" content="كاشف التعديل والفوتوشوب | إمبراطورية المعلومات العراقية">
+<meta property="og:description" content="اكشف الأجزاء الملصوقة والمنسوخة ولقطات الشاشة المزوّرة بتحليل جنائي مجاني داخل متصفحك.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="إمبراطورية المعلومات العراقية">
+<meta property="og:locale" content="ar_IQ">
+<meta property="og:image" content="assets/img/og/default.jpg">
+<meta property="og:url" content="tool-forensics.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="الإمبراطورية">
+<script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t)d.dataset.theme=JSON.parse(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("fx-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("fx-nav"))d.classList.add("entering")}sessionStorage.removeItem("fx-nav")}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="tool-forensics">
+<div id="site-header"></div>
+<main>
+  <section class="page-hero compact" data-sc>
+    <div class="ph-slot" data-gl="lens" aria-hidden="true"></div>
+    <div class="ph-giant" aria-hidden="true">فوتوشوب</div>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><i data-lucide="chevron-left"></i><a href="tools.html">الأدوات</a><i data-lucide="chevron-left"></i><span>كاشف التعديل</span></nav>
+      <span class="ph-kicker"><b>PS</b>جديد · أداة تحقق جنائي</span>
+      <h1 data-split>هل عُدّلت هذه <span class="gold-text">الصورة؟</span></h1>
+      <p>نفحص صورتك بخمس طرق يستخدمها المحققون الرقميون: مستوى الخطأ، وبصمة الضوضاء، والأجزاء المنسوخة، والصورة الأصلية المخفية في الملف، وآثار برامج التعديل. ثم نضع لك المناطق المشبوهة على الصورة.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px">
+    <div class="container">
+      <div id="upload">
+        <div class="dropzone" id="dz" tabindex="0" role="button" aria-label="اختر صورة للفحص">
+          <span class="ico"><i data-lucide="scan-eye"></i></span>
+          <strong>اسحب الصورة هنا أو اضغط للاختيار</strong>
+          <small>أو الصقها بـ Ctrl+V · JPG وPNG وWebP · أفضل نتيجة: الملف الأصلي، لا لقطة شاشة منه</small>
+        </div>
+        <input type="file" id="file" accept="image/*" hidden>
+        <div class="privacy-note"><i data-lucide="lock"></i><span><strong>صورتك لا تغادر جهازك:</strong> كل التحليل يجري داخل متصفحك، ولا تُرفع الصورة إلى أي سيرفر.</span></div>
+      </div>
+
+      <div id="progress" class="fz-progress card" hidden>
+        <div class="fz-scan" aria-hidden="true"><canvas id="pg-thumb"></canvas><i></i></div>
+        <div>
+          <span class="kicker">التحقيق جارٍ</span>
+          <h2>نفحص الصورة…</h2>
+          <ol class="fz-steps" id="steps">
+            <li data-k="decode">فك الصورة وقراءة الملف</li>
+            <li data-k="ela">تحليل مستوى الخطأ (ELA)</li>
+            <li data-k="noise">مقارنة بصمة الضوضاء</li>
+            <li data-k="clone">البحث عن أجزاء منسوخة</li>
+            <li data-k="meta">الصورة المصغّرة والبيانات المخفية</li>
+          </ol>
+        </div>
+      </div>
+
+      <div id="workspace" class="fz-work" hidden>
+        <div class="fz-main">
+          <div class="card fz-viewer-card">
+            <div class="fz-toolbar">
+              <div class="seg" id="modes" role="tablist" aria-label="طريقة العرض">
+                <button data-m="regions" class="active"><i data-lucide="target"></i>المناطق المشبوهة</button>
+                <button data-m="ela"><i data-lucide="flame"></i>مستوى الخطأ</button>
+                <button data-m="noise"><i data-lucide="waves"></i>الضوضاء</button>
+                <button data-m="clone"><i data-lucide="copy"></i>المنسوخ</button>
+                <button data-m="orig"><i data-lucide="image"></i>الأصل</button>
+              </div>
+              <div class="btn-row">
+                <button class="btn btn-ghost btn-sm" id="dl-view" title="حمّل العرض الحالي"><i data-lucide="download"></i></button>
+                <button class="btn btn-ghost btn-sm" id="full-view" title="تكبير"><i data-lucide="maximize-2"></i></button>
+              </div>
+            </div>
+            <div class="fz-stage" id="stage">
+              <canvas id="cv-orig" aria-label="الصورة الأصلية"></canvas>
+              <canvas id="cv-map" aria-hidden="true"></canvas>
+              <div class="fz-handle" id="handle" role="slider" tabindex="0" aria-label="شريط المقارنة" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"><span><i data-lucide="chevrons-left-right"></i></span></div>
+              <span class="fz-lab l">التحليل</span><span class="fz-lab r">الأصل</span>
+            </div>
+            <div class="fz-controls" id="controls"></div>
+            <p class="fz-explain" id="explain"></p>
+          </div>
+
+          <div class="card" id="thumb-card" hidden>
+            <div class="card-title"><span class="ico ico-sm"><i data-lucide="history"></i></span><h3>الصورة الأصلية المخفية داخل الملف</h3></div>
+            <p class="small muted">حين تلتقط الكاميرا صورة، تحفظ بداخلها نسخة مصغّرة. أغلب برامج التعديل تغيّر الصورة وتنسى تحديث هذه النسخة، فتبقى شاهداً على الأصل.</p>
+            <div class="fz-thumbs"><figure><img id="th-old" alt="الصورة المصغّرة الأصلية"><figcaption>المصغّرة (لحظة التصوير)</figcaption></figure><figure><canvas id="th-now"></canvas><figcaption>الصورة الحالية</figcaption></figure></div>
+          </div>
+        </div>
+
+        <aside class="fz-side">
+          <div class="card fz-verdict" id="verdict"></div>
+          <div class="card" id="tests"></div>
+          <div class="card">
+            <div class="card-title"><span class="ico ico-sm"><i data-lucide="file-search"></i></span><h3>بطاقة الملف</h3></div>
+            <div class="table-wrap"><table class="kv" id="info"></table></div>
+          </div>
+          <div class="btn-row">
+            <button class="btn btn-primary" id="again"><i data-lucide="rotate-ccw"></i>افحص صورة أخرى</button>
+            <a class="btn btn-ghost" href="tool-reverse.html"><i data-lucide="images"></i>ابحث عن أصلها</a>
+            <a class="btn btn-ghost" href="contact.html?type=rumor"><i data-lucide="flag"></i>أرسلها لنا</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container container-narrow">
+      <div class="section-head"><div><span class="kicker">اقرأ النتيجة بذكاء</span><h2>كيف تعمل كل طريقة؟</h2></div></div>
+      <div class="acc">
+        <details open><summary>مستوى الخطأ (ELA)<i data-lucide="chevron-down"></i></summary><div class="acc-body">نعيد حفظ الصورة بجودة معروفة ثم نقيس الفرق. الأجزاء التي ضُغطت مرة واحدة مع الصورة تتغيّر بالقدر نفسه، أما الجزء الملصوق من صورة أخرى أو المعدّل بعد الحفظ فيلمع بشكل مختلف. <strong>انتبه:</strong> الحواف والنصوص والألوان الحادة تلمع طبيعياً، فقارن المناطق المتشابهة ببعضها، لا الحافة بالسماء.</div></details>
+        <details><summary>بصمة الضوضاء<i data-lucide="chevron-down"></i></summary><div class="acc-body">كل حساس كاميرا يترك «حُبيبات» خفيفة متجانسة في كل الصورة. الجزء الملصوق من صورة أخرى يحمل حبيبات مختلفة، والمنطقة التي مُسحت بأداة الاستنساخ أو نُعّمت تصبح ملساء بشكل غريب.</div></details>
+        <details><summary>الأجزاء المنسوخة<i data-lucide="chevron-down"></i></summary><div class="acc-body">نقسّم الصورة إلى آلاف المربعات الصغيرة ونبحث عن مربعات متطابقة في مكانين مختلفين بالإزاحة نفسها. هكذا تُكشف الحشود المضاعفة، والدخان المكرر، والأشياء المحذوفة بتغطيتها بجزء آخر من الصورة. العناصر المكررة طبيعياً كالبلاط والأيقونات قد تظهر أيضاً، فاحكم بعينك.</div></details>
+        <details><summary>الصورة المصغّرة الأصلية<i data-lucide="chevron-down"></i></summary><div class="acc-body">من أقوى الأدلة إن وُجدت: إذا اختلفت عن الصورة الحالية فقد عُدّلت الصورة بعد التصوير. لكن إنستغرام وواتساب وفيسبوك ولقطات الشاشة تحذفها، فغيابها طبيعي.</div></details>
+        <details><summary>لقطات الشاشة والصور المعاد نشرها<i data-lucide="chevron-down"></i></summary><div class="acc-body">كل مرة تُضغط الصورة (واتساب، إنستغرام، لقطة شاشة) تضيع جزءاً من الأدلة. اطلب دائماً الملف الأصلي من مصدره. وفي لقطات الشاشة المزوّرة، ركّز على النص المعدّل: كثيراً ما يلمع في خريطة مستوى الخطأ أو يختلف عن بقية الأسطر.</div></details>
+        <details><summary>هل النتيجة حكم نهائي؟<i data-lucide="chevron-down"></i></summary><div class="acc-body">لا. هذه الأداة تعطيك <strong>مؤشرات</strong> تساعدك على الشك أو الاطمئنان، لا حكماً قاطعاً. التعديل البسيط (إضاءة، قص) ليس تزويراً، والتزوير المتقن قد لا يترك أثراً واضحاً. استخدمها مع <a class="link" href="tool-reverse.html">البحث العكسي</a> و<a class="link" href="tool-metadata.html">عارض الميتاداتا</a> و<a class="link" href="tool-ai.html">المحقق الذكي</a>.</div></details>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/full.umd.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/static-index.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/tamper.js"></script>
+<script src="assets/js/pages/tool-forensics.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/fx.js"></script>
+<script src="assets/js/gl.js"></script>
+</body>
+</html>

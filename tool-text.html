@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>أدوات النص العربي والكابشن | إمبراطورية المعلومات العراقية</title>
+<meta name="description" content="عدّاد كلمات وحدود إنستغرام، وإزالة التشكيل، وتحويل الأرقام، واستخراج الهاشتاغات، ومحوّل التاريخ الهجري والميلادي.">
+<meta name="theme-color" content="#03050c">
+<meta property="og:title" content="أدوات النص العربي والكابشن | إمبراطورية المعلومات العراقية">
+<meta property="og:description" content="عدّاد كلمات وحدود إنستغرام، وإزالة التشكيل، وتحويل الأرقام، واستخراج الهاشتاغات، ومحوّل التاريخ الهجري والميلادي.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="إمبراطورية المعلومات العراقية">
+<meta property="og:locale" content="ar_IQ">
+<meta property="og:image" content="assets/img/og/default.jpg">
+<meta property="og:url" content="tool-text.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="الإمبراطورية">
+<script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t)d.dataset.theme=JSON.parse(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("fx-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("fx-nav"))d.classList.add("entering")}sessionStorage.removeItem("fx-nav")}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="tool-text">
+<div id="site-header"></div>
+<main>
+  <section class="page-hero compact" data-sc>
+    <div class="ph-slot" data-gl="tablet" aria-hidden="true"></div>
+    <div class="ph-giant" aria-hidden="true">نصوص</div>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><i data-lucide="chevron-left"></i><a href="tools.html">الأدوات</a><i data-lucide="chevron-left"></i><span>أدوات النص</span></nav>
+      <span class="ph-kicker"><b>أ ب</b>صناعة المحتوى</span>
+      <h1 data-split>أدوات النص العربي والكابشن</h1>
+      <p>كل ما يحتاجه كاتب المحتوى العربي: عدّاد بحدود إنستغرام، وتنظيف النص وتنسيقه، واستخراج الهاشتاغات، ومحوّل التاريخ الهجري.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:32px">
+    <div class="container">
+      <div class="tool-layout wide-left">
+        <div class="card">
+          <div class="flex between items-center wrap gap-1 mb-2">
+            <div class="card-title mb-0"><span class="ico ico-sm"><i data-lucide="type"></i></span><h2>النص</h2></div>
+            <div class="btn-row"><button class="btn btn-ghost btn-sm" id="undo" disabled><i data-lucide="undo-2"></i>تراجع</button><button class="btn btn-ghost btn-sm" id="copy"><i data-lucide="copy"></i>نسخ</button><button class="btn btn-ghost btn-sm" id="clear"><i data-lucide="trash-2"></i>مسح</button></div>
+          </div>
+          <textarea class="textarea" id="t" style="min-height:260px" placeholder="الصق الكابشن أو أي نص هنا…"></textarea>
+          <div class="grid grid-4 mt-2" id="stats" style="gap:10px"></div>
+          <div class="mt-2" id="limits"></div>
+          <hr class="divider">
+          <strong class="label">تحويلات سريعة</strong>
+          <div class="btn-row mt-1" id="ops">
+            <button class="btn btn-ghost btn-sm" data-op="tashkeel">إزالة التشكيل</button>
+            <button class="btn btn-ghost btn-sm" data-op="tatweel">إزالة التطويل (ـــ)</button>
+            <button class="btn btn-ghost btn-sm" data-op="normalize">توحيد الهمزات والياء</button>
+            <button class="btn btn-ghost btn-sm" data-op="toLatn">١٢٣ ← 123</button>
+            <button class="btn btn-ghost btn-sm" data-op="toArab">123 ← ١٢٣</button>
+            <button class="btn btn-ghost btn-sm" data-op="spaces">تنظيف المسافات</button>
+            <button class="btn btn-ghost btn-sm" data-op="emoji">إزالة الإيموجي</button>
+            <button class="btn btn-ghost btn-sm" data-op="links">إزالة الروابط</button>
+            <button class="btn btn-ghost btn-sm" data-op="punct">علامات ترقيم عربية</button>
+            <button class="btn btn-ghost btn-sm" data-op="hashtag">تحويل النص إلى هاشتاغ</button>
+            <button class="btn btn-ghost btn-sm" data-op="dots">إضافة نقاط فاصلة لإنستغرام</button>
+          </div>
+        </div>
+
+        <div class="stack">
+          <div class="card">
+            <div class="card-title"><span class="ico ico-sm"><i data-lucide="hash"></i></span><h3>المستخرج من النص</h3></div>
+            <div id="extract" class="small muted">اكتب نصاً لاستخراج الهاشتاغات والإشارات والروابط.</div>
+          </div>
+          <div class="card">
+            <div class="card-title"><span class="ico ico-sm"><i data-lucide="calendar-range"></i></span><h3>محوّل التاريخ الهجري والميلادي</h3></div>
+            <div class="seg mb-2" id="dmode"><button class="active" data-d="g2h">ميلادي ← هجري</button><button data-d="h2g">هجري ← ميلادي</button></div>
+            <div id="g2h"><input type="date" class="input" id="gdate"></div>
+            <div id="h2g" hidden>
+              <div class="flex gap-1">
+                <input class="input" id="hd" type="number" min="1" max="30" placeholder="اليوم" aria-label="اليوم">
+                <select class="select" id="hm" aria-label="الشهر"></select>
+                <input class="input" id="hy" type="number" min="1300" max="1600" placeholder="السنة" aria-label="السنة">
+              </div>
+            </div>
+            <div class="alert alert-info mt-2" id="dres"><i data-lucide="calendar"></i><span>—</span></div>
+            <p class="small muted mt-1 mb-0">بحسب تقويم أم القرى. قد يختلف يوم واحد عن رؤية الهلال في العراق.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/static-index.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/tool-text.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/fx.js"></script>
+<script src="assets/js/gl.js"></script>
+</body>
+</html>

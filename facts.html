@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مكتبة المعلومات | إمبراطورية المعلومات العراقية</title>
+<meta name="description" content="أرشيف المعلومات الموثّقة: تاريخ العراق، والعلوم، والفضاء، والتقنية، وجسم الإنسان، والطبيعة، مع المصادر.">
+<meta name="theme-color" content="#03050c">
+<meta property="og:title" content="مكتبة المعلومات | إمبراطورية المعلومات العراقية">
+<meta property="og:description" content="أرشيف المعلومات الموثّقة: تاريخ العراق، والعلوم، والفضاء، والتقنية، وجسم الإنسان، والطبيعة، مع المصادر.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="إمبراطورية المعلومات العراقية">
+<meta property="og:locale" content="ar_IQ">
+<meta property="og:image" content="assets/img/og/default.jpg">
+<meta property="og:url" content="facts.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="الإمبراطورية">
+<script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t)d.dataset.theme=JSON.parse(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("fx-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("fx-nav"))d.classList.add("entering")}sessionStorage.removeItem("fx-nav")}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="facts">
+<div id="site-header"></div>
+<main>
+  <section class="page-hero lib-hero" data-sc id="lib-hero">
+    <div class="ph-slot" data-gl="helix" aria-hidden="true" id="lib-slot"></div>
+    <div class="ph-giant" aria-hidden="true" id="lib-giant">المعرفة</div>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><i data-lucide="chevron-left"></i><a href="facts.html">المعلومات</a><i data-lucide="chevron-left"></i><span id="crumb">المكتبة</span></nav>
+      <span class="ph-kicker"><b id="lib-num">01</b><span id="lib-kick">المكتبة</span></span>
+      <h1 id="title">مكتبة المعلومات</h1>
+      <p id="lib-desc">كل ما نشرناه في مكان واحد، موثّقاً بالمصادر. ابحث وصنّف واحفظ ما يعجبك لتعود إليه لاحقاً.</p>
+      <div class="lib-search" role="search">
+        <i data-lucide="search"></i>
+        <input id="q" type="search" placeholder="ابحث في أرشيف الإمبراطورية… بابل، الدماغ، الفضاء" autocomplete="off" aria-label="ابحث في المعلومات">
+        <kbd class="kbd" id="q-count"></kbd>
+      </div>
+      <div class="lib-suggest" id="suggest" aria-label="عمليات بحث مقترحة"></div>
+      <div class="lib-stats" id="lib-stats"></div>
+    </div>
+  </section>
+
+  <div class="lib-bar-wrap">
+    <div class="container">
+      <div class="lib-bar" id="lib-bar">
+        <div class="chips lib-chips" id="chips" role="tablist" aria-label="الأقسام" data-lenis-prevent></div>
+        <div class="lib-tools">
+          <select class="select" id="sort" aria-label="الترتيب">
+            <option value="new">الأحدث</option>
+            <option value="views">الأكثر مشاهدة</option>
+            <option value="short">الأقصر قراءة</option>
+            <option value="old">الأقدم</option>
+            <option value="az">أبجدياً</option>
+          </select>
+          <div class="seg lib-view" id="view" role="group" aria-label="طريقة العرض">
+            <button data-v="grid" aria-label="بطاقات" title="بطاقات"><i data-lucide="layout-grid"></i></button>
+            <button data-v="list" aria-label="قائمة" title="قائمة"><i data-lucide="list"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section lib-results">
+    <div class="container">
+      <div class="lib-head"><p id="count" aria-live="polite"></p><button class="btn btn-ghost btn-sm" id="reset" hidden><i data-lucide="x"></i>مسح الفلاتر</button></div>
+      <div class="lib-grid" id="grid" data-rv-watch></div>
+      <div class="lib-more"><button class="btn btn-ghost" id="more" hidden><i data-lucide="chevrons-down"></i>عرض المزيد</button></div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/telegram-data.js"></script>
+<script src="assets/js/static-index.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/facts.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/fx.js"></script>
+<script src="assets/js/gl.js"></script>
+</body>
+</html>

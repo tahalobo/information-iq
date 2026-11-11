@@ -1,0 +1,24 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "site",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [".claude/dev_server.py"],
+      "port": 5500
+    },
+    {
+      "name": "site-alt",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-c", "import os, runpy; os.environ['PORT'] = '5510'; runpy.run_path('.claude/dev_server.py')"],
+      "port": 5510
+    },
+    {
+      "name": "site-rs",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-c", "import os, runpy; os.environ['PORT'] = '5520'; runpy.run_path('.claude/dev_server.py')"],
+      "port": 5520,
+      "autoPort": false
+    }
+  ]
+}

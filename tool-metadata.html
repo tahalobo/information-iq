@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>عارض ومزيل الميتاداتا | إمبراطورية المعلومات العراقية</title>
+<meta name="description" content="اكشف البيانات المخفية في صورك (الجهاز، والتاريخ، وموقع GPS) وامسحها بلا فقدان للجودة. تعمل داخل متصفحك دون رفع الصور.">
+<meta name="theme-color" content="#03050c">
+<meta property="og:title" content="عارض ومزيل الميتاداتا | إمبراطورية المعلومات العراقية">
+<meta property="og:description" content="اكشف البيانات المخفية في صورك (الجهاز، والتاريخ، وموقع GPS) وامسحها بلا فقدان للجودة. تعمل داخل متصفحك دون رفع الصور.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="إمبراطورية المعلومات العراقية">
+<meta property="og:locale" content="ar_IQ">
+<meta property="og:image" content="assets/img/og/default.jpg">
+<meta property="og:url" content="tool-metadata.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="الإمبراطورية">
+<script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t)d.dataset.theme=JSON.parse(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("fx-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("fx-nav"))d.classList.add("entering")}sessionStorage.removeItem("fx-nav")}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="tool-metadata">
+<div id="site-header"></div>
+<main>
+  <section class="page-hero compact" data-sc>
+    <div class="ph-slot" data-gl="lens" aria-hidden="true"></div>
+    <div class="ph-giant" aria-hidden="true">ميتاداتا</div>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><i data-lucide="chevron-left"></i><a href="tools.html">الأدوات</a><i data-lucide="chevron-left"></i><span>الميتاداتا</span></nav>
+      <span class="ph-kicker"><b>EXIF</b>أداة تحقق</span>
+      <h1 data-split>عارض ومزيل الميتاداتا</h1>
+      <p>اكتشف ما تخفيه صورتك: نوع الجهاز، ووقت التصوير، وموقعك على الخريطة. ثم امسح كل ذلك بضغطة واحدة دون أن تفقد الصورة شيئاً من جودتها.</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:32px">
+    <div class="container">
+      <div id="upload">
+        <div class="dropzone" id="dz" tabindex="0" role="button" aria-label="اختر صوراً">
+          <span class="ico"><i data-lucide="upload-cloud"></i></span>
+          <strong>اسحب الصور هنا أو اضغط للاختيار</strong>
+          <small>أو الصق صورة بـ Ctrl+V · يدعم JPG وPNG وWebP وHEIC وTIFF · يمكنك اختيار عدة صور</small>
+        </div>
+        <input type="file" id="file" accept="image/*,.heic,.heif,.tif,.tiff" multiple hidden>
+        <div class="privacy-note"><i data-lucide="lock"></i><span><strong>خصوصيتك محفوظة 100%:</strong> تُعالَج الصور داخل متصفحك فقط، ولا تُرفع إلى أي سيرفر. يمكنك حتى فصل الإنترنت بعد فتح الصفحة.</span></div>
+      </div>
+
+      <div id="workspace" hidden>
+        <div class="flex wrap between items-center gap-1 mb-2">
+          <div class="flex gap-1 items-center"><h2 class="mb-0" style="font-size:1.3rem;font-family:var(--font)">الصور</h2><span class="badge" id="count"></span></div>
+          <div class="btn-row">
+            <button class="btn btn-ghost btn-sm" id="add-more"><i data-lucide="plus"></i>إضافة صور</button>
+            <button class="btn btn-primary btn-sm" id="clean-all"><i data-lucide="eraser"></i>تنظيف الكل وتحميل ZIP</button>
+            <button class="btn btn-ghost btn-sm" id="reset"><i data-lucide="rotate-ccw"></i>البدء من جديد</button>
+          </div>
+        </div>
+        <div class="chips mb-3" id="thumbs"></div>
+        <div id="detail"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container container-narrow">
+      <div class="section-head"><div><span class="kicker">دليل سريع</span><h2>أسئلة شائعة عن الميتاداتا</h2></div></div>
+      <div class="acc">
+        <details open><summary>ما هي الميتاداتا (EXIF)؟<i data-lucide="chevron-down"></i></summary><div class="acc-body">بيانات مخفية يحفظها الهاتف أو الكاميرا داخل ملف الصورة، مثل نوع الجهاز، وتاريخ التصوير، وإعدادات العدسة، وأحياناً إحداثيات GPS الدقيقة لمكان التصوير. <a class="link" href="fact.html?id=photo-metadata">اقرأ المزيد في مقالنا</a>.</div></details>
+        <details><summary>هل تقل جودة الصورة بعد التنظيف؟<i data-lucide="chevron-down"></i></summary><div class="acc-body">لا. في صيغ JPG وPNG وWebP نحذف أجزاء البيانات فقط دون إعادة ضغط الصورة، فتبقى البكسلات مطابقة للأصل تماماً. أما الصيغ الأخرى فيُعاد ترميزها بأعلى جودة.</div></details>
+        <details><summary>لماذا أحتفظ بـ«ملف الألوان» و«اتجاه الصورة»؟<i data-lucide="chevron-down"></i></summary><div class="acc-body">ملف الألوان (ICC) يضمن ظهور الألوان بشكل صحيح ولا يحتوي عادةً على معلومات شخصية. واتجاه الصورة يمنع ظهورها مقلوبة أو مائلة بعد التنظيف. يمكنك إلغاء الخيارين إن أردت.</div></details>
+        <details><summary>هل يحذف إنستغرام وواتساب الميتاداتا؟<i data-lucide="chevron-down"></i></summary><div class="acc-body">إنستغرام وفيسبوك وإكس تحذف معظمها عند النشر. واتساب يحذفها عند الإرسال كصورة عادية، لكنها <strong>تبقى</strong> عند الإرسال كـ«مستند». وتليغرام يحتفظ بها عند الإرسال كملف. والبريد الإلكتروني يحتفظ بها دائماً.</div></details>
+        <details><summary>كيف يستفيد المتحققون من الميتاداتا؟<i data-lucide="chevron-down"></i></summary><div class="acc-body">تكشف تاريخ التصوير الحقيقي (هل الصورة قديمة يعاد نشرها؟)، ومكانه، والبرنامج الذي عدّلها (هل مرت على فوتوشوب؟). لكن غيابها لا يعني التزوير، فأغلب المنصات تحذفها تلقائياً. استخدم معها <a class="link" href="tool-reverse.html">البحث العكسي</a>.</div></details>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/exifr@7.1.3/dist/full.umd.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/static-index.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/imgmeta.js"></script>
+<script src="assets/js/pages/tool-metadata.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/fx.js"></script>
+<script src="assets/js/gl.js"></script>
+</body>
+</html>

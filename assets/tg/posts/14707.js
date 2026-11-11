@@ -1,0 +1,1 @@
+window.TG_POST={"id":14707,"type":"literature","cat":"culture","date":"2026-06-16T06:05:02+00:00","title":"09:05 ص","html":"<p>صباح الخير لمن ينجون بمفردهم دائمًا، لأن الآخرون كما قال سارتر &quot;هم الجحيم&quot; !🖤</p>","images":[],"video":null,"poll":null,"views":1480,"reactions":27,"forwardedFrom":null,"links":[],"url":"https://t.me/informationss_iq/14707","sources":[]};

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>مولّد رمز QR | إمبراطورية المعلومات العراقية</title>
+<meta name="description" content="أنشئ رمز QR لرابط أو نص أو شبكة واي فاي أو رقم واتساب أو بطاقة تواصل، وخصّص ألوانه وحمّله مجاناً.">
+<meta name="theme-color" content="#03050c">
+<meta property="og:title" content="مولّد رمز QR | إمبراطورية المعلومات العراقية">
+<meta property="og:description" content="أنشئ رمز QR لرابط أو نص أو شبكة واي فاي أو رقم واتساب أو بطاقة تواصل، وخصّص ألوانه وحمّله مجاناً.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="إمبراطورية المعلومات العراقية">
+<meta property="og:locale" content="ar_IQ">
+<meta property="og:image" content="assets/img/og/default.jpg">
+<meta property="og:url" content="tool-qr.html">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="الإمبراطورية">
+<script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t)d.dataset.theme=JSON.parse(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("fx-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("fx-nav"))d.classList.add("entering")}sessionStorage.removeItem("fx-nav")}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-page="tool-qr">
+<div id="site-header"></div>
+<main>
+  <section class="page-hero compact" data-sc>
+    <div class="ph-slot" data-gl="qr" aria-hidden="true"></div>
+    <div class="ph-giant" aria-hidden="true">QR</div>
+    <div class="container">
+      <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><i data-lucide="chevron-left"></i><a href="tools.html">الأدوات</a><i data-lucide="chevron-left"></i><span>مولّد QR</span></nav>
+      <span class="ph-kicker"><b>QR</b>صناعة المحتوى</span>
+      <h1 data-split>مولّد رمز QR</h1>
+      <p>رمز لمحلّك، أو لشبكة الواي فاي في البيت، أو لرقم الواتساب على كارت العمل. مجاني وبلا علامة مائية وبلا تاريخ انتهاء.</p>
+    </div>
+  </section>
+  <section class="section" style="padding-top:32px">
+    <div class="container">
+      <div class="tool-layout">
+        <div class="card">
+          <div class="seg mb-3" id="types">
+            <button class="active" data-t="url"><i data-lucide="link"></i>رابط / نص</button>
+            <button data-t="wifi"><i data-lucide="wifi"></i>واي فاي</button>
+            <button data-t="wa"><i data-lucide="message-circle"></i>واتساب</button>
+            <button data-t="vcard"><i data-lucide="contact"></i>بطاقة تواصل</button>
+            <button data-t="email"><i data-lucide="mail"></i>بريد</button>
+          </div>
+          <div data-panel="url"><div class="field"><label for="f-url">الرابط أو النص</label><textarea class="textarea" id="f-url" style="min-height:90px">https://www.instagram.com/information_1q/</textarea></div></div>
+          <div data-panel="wifi" hidden>
+            <div class="field"><label for="f-ssid">اسم الشبكة (SSID)</label><input class="input" id="f-ssid" placeholder="Home-WiFi"></div>
+            <div class="form-row">
+              <div class="field"><label for="f-pass">كلمة المرور</label><input class="input ltr" id="f-pass" dir="ltr"></div>
+              <div class="field"><label for="f-enc">التشفير</label><select class="select" id="f-enc"><option value="WPA">WPA/WPA2/WPA3</option><option value="WEP">WEP</option><option value="nopass">بدون كلمة مرور</option></select></div>
+            </div>
+            <label class="check"><input type="checkbox" id="f-hidden">شبكة مخفية</label>
+          </div>
+          <div data-panel="wa" hidden>
+            <div class="field"><label for="f-wa">رقم الواتساب (مع رمز الدولة)</label><input class="input ltr" id="f-wa" dir="ltr" placeholder="9647701234567"><span class="hint">مثال للعراق: 964 ثم الرقم بدون الصفر الأول.</span></div>
+            <div class="field"><label for="f-wamsg">رسالة جاهزة (اختياري)</label><input class="input" id="f-wamsg" placeholder="مرحباً، وصلت من رمز QR"></div>
+          </div>
+          <div data-panel="vcard" hidden>
+            <div class="form-row">
+              <div class="field"><label for="v-name">الاسم</label><input class="input" id="v-name"></div>
+              <div class="field"><label for="v-tel">الهاتف</label><input class="input ltr" id="v-tel" dir="ltr"></div>
+              <div class="field"><label for="v-email">البريد</label><input class="input ltr" id="v-email" dir="ltr"></div>
+              <div class="field"><label for="v-org">الجهة / الشركة</label><input class="input" id="v-org"></div>
+            </div>
+            <div class="field"><label for="v-url">الموقع أو الحساب</label><input class="input ltr" id="v-url" dir="ltr"></div>
+          </div>
+          <div data-panel="email" hidden>
+            <div class="field"><label for="e-to">إلى</label><input class="input ltr" id="e-to" dir="ltr"></div>
+            <div class="field"><label for="e-sub">الموضوع</label><input class="input" id="e-sub"></div>
+            <div class="field"><label for="e-body">الرسالة</label><textarea class="textarea" id="e-body" style="min-height:80px"></textarea></div>
+          </div>
+          <hr class="divider">
+          <div class="form-row">
+            <div class="field"><label>الألوان</label><div class="flex gap-1 items-center"><input type="color" id="fg" value="#0e1a33" aria-label="لون الرمز"><input type="color" id="bg" value="#ffffff" aria-label="لون الخلفية"><button class="btn btn-ghost btn-sm" id="brand">ألوان الإمبراطورية</button></div></div>
+            <div class="field"><label for="style">الشكل</label><select class="select" id="style"><option value="square">مربعات</option><option value="dots">نقاط دائرية</option><option value="rounded">مربعات منحنية</option></select></div>
+            <div class="field"><label for="ec">تصحيح الأخطاء</label><select class="select" id="ec"><option value="M">متوسط (15%)</option><option value="Q">عالٍ (25%)</option><option value="H">أعلى (30%) لإضافة شعار</option><option value="L">منخفض (7%)</option></select></div>
+            <div class="field"><label for="logo">شعار في المنتصف (اختياري)</label><input type="file" id="logo" accept="image/*" class="input" style="padding:8px"></div>
+          </div>
+        </div>
+        <div class="card center" style="position:sticky;top:88px">
+          <div class="preview-box" style="background:var(--surface-2);padding:20px"><canvas id="qr" width="512" height="512" style="width:100%;max-width:340px;height:auto;border-radius:12px"></canvas></div>
+          <p class="small muted mt-1" id="info"></p>
+          <div class="field" style="text-align:start"><label for="px">حجم التحميل: <span id="px-v">1024</span> بكسل</label><input type="range" id="px" min="256" max="2048" step="128" value="1024"></div>
+          <div class="btn-row" style="justify-content:center">
+            <button class="btn btn-primary" id="dl-png"><i data-lucide="download"></i>تحميل PNG</button>
+            <button class="btn btn-ghost" id="dl-svg"><i data-lucide="file-code"></i>تحميل SVG</button>
+            <button class="btn btn-ghost" id="cp"><i data-lucide="copy"></i>نسخ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script src="assets/js/config.js"></script>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/static-index.js"></script>
+<script src="assets/js/core.js"></script>
+<script src="assets/js/pages/tool-qr.js"></script>
+<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/js/fx.js"></script>
+<script src="assets/js/gl.js"></script>
+</body>
+</html>

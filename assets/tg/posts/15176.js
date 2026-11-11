@@ -1,0 +1,1 @@
+window.TG_POST={"id":15176,"type":"discussion","cat":"culture","date":"2026-10-16T13:05:10+00:00","title":"هل الحياة محاولة أم قرار؟","html":"<p>هل الحياة محاولة أم قرار؟</p>","images":["assets/tg/img/15176-1.jpg"],"video":null,"poll":null,"views":1440,"reactions":20,"forwardedFrom":null,"links":[],"url":"https://t.me/informationss_iq/15176","sources":[]};
