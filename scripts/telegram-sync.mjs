@@ -92,7 +92,7 @@ export function parsePage(html, channel) {
   return out;
 }
 
-async function fetchPage(channel, before) {
+export async function fetchPage(channel, before) {
   const url = `https://t.me/s/${channel}${before ? `?before=${before}` : ""}`;
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
@@ -104,7 +104,7 @@ async function fetchPage(channel, before) {
   }
 }
 
-async function download(url, file) {
+export async function download(url, file) {
   try {
     const r = await fetch(url, { headers: { "User-Agent": UA } });
     if (!r.ok) return false;
@@ -114,7 +114,7 @@ async function download(url, file) {
 }
 
 /* ---------- Content shaping ---------- */
-const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+export const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 function stripSignature(text, cfg) {
   let t = text;
   for (const l of cfg.stripLinks) t = t.replace(new RegExp(`\\s*(https?:\\/\\/)?${l.replace(/[.*+?^${}()|[\]\\/]/g, "\\$&")}\\S*`, "gi"), "");
@@ -244,8 +244,9 @@ async function main() {
   /* 4) Prune old posts & orphan files */
   for (const id of Object.keys(store.posts)) if (!keepIds.has(+id)) delete store.posts[id];
   const indexIds = new Set(index.map((p) => String(p.id)));
-  for (const f of await fs.readdir(P.posts)) if (!indexIds.has(f.replace(/\.js$/, ""))) await fs.rm(path.join(P.posts, f));
-  for (const f of await fs.readdir(P.img)) if (!indexIds.has(f.split("-")[0])) await fs.rm(path.join(P.img, f));
+  // only this channel's files (plain numeric names); the other branches' files (news-123.js…) belong to branches-sync.mjs
+  for (const f of await fs.readdir(P.posts)) if (/^\d+\.js$/.test(f) && !indexIds.has(f.replace(/\.js$/, ""))) await fs.rm(path.join(P.posts, f));
+  for (const f of await fs.readdir(P.img)) if (/^\d+-/.test(f) && !indexIds.has(f.split("-")[0])) await fs.rm(path.join(P.img, f));
 
   /* 5) Write */
   store.updated = new Date().toISOString();
@@ -263,4 +264,5 @@ async function main() {
   }
 }
 
-main().catch((e) => { console.error("✖ فشلت المزامنة:", e.message); process.exit(1); });
+// run only when called directly (branches-sync.mjs imports the parser and helpers from here)
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main().catch((e) => { console.error("✖ فشلت المزامنة:", e.message); process.exit(1); });

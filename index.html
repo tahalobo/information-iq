@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>إمبراطورية المعلومات العراقية | كل ما هو حقيقي ومفيد</title>
-<meta name="description" content="صفحة عراقية مستقلة تهتم بالعلوم والأخبار والثقافة والترفيه. مكتبة معلومات موثّقة بالمصادر وأدوات رقمية مجانية للتحقق من الصور والروابط.">
+<title>الإمبراطورية العراقية | كل ما هو حقيقي ومفيد</title>
+<meta name="description" content="الإمبراطورية العراقية: شبكة قنوات عراقية مستقلة للمعلومات والأخبار والألعاب والموسيقى والأنمي والرياضة، مع مكتبة معلومات موثّقة بالمصادر وأدوات تحقق مجانية.">
 <meta name="theme-color" content="#03050c">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="إمبراطورية المعلومات العراقية">
+<meta property="og:site_name" content="الإمبراطورية العراقية">
 <meta property="og:locale" content="ar_IQ">
-<meta property="og:image" content="https://tahalobo.github.io/information-iq/assets/img/og/default.jpg">
-<meta property="og:url" content="https://tahalobo.github.io/information-iq/index.html">
+<meta property="og:image" content="assets/img/og/default.jpg">
+<meta property="og:url" content="index.html">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="og:title" content="إمبراطورية المعلومات العراقية">
-<meta property="og:description" content="كل ما هو حقيقي ومفيد: معلومات موثّقة وأدوات تحقق مجانية.">
+<meta property="og:title" content="الإمبراطورية العراقية">
+<meta property="og:description" content="معلومات وأخبار وألعاب وموسيقى وأنمي ورياضة من فروع الإمبراطورية العراقية، في مكان واحد.">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
@@ -33,9 +33,9 @@
   <section class="xhero" data-sc>
     <div class="container xhero-grid">
       <div class="xhero-text">
-        <span class="eyebrow"><span class="dot"></span>صفحة عراقية مستقلة · أرشيف حيّ للمعرفة</span>
+        <span class="eyebrow"><span class="dot"></span>الإمبراطورية العراقية · ستة فروع في مكان واحد</span>
         <h1 class="mega" data-split>كل ما هو <span class="gold-text">حقيقي</span> <span class="line2">ومفيد.</span></h1>
-        <p class="lead">علوم وتاريخ وثقافة وأخبار، نختارها بعناية ونوثّقها بالمصادر. ومعها أدوات رقمية مجانية تكشف بها حقيقة الصور والروابط بنفسك.</p>
+        <p class="lead">معلومات موثّقة بالمصادر، وأخبار العراق والعالم، والألعاب والموسيقى والأنمي والرياضة، من فروع الإمبراطورية كلها. ومعها أدوات مجانية تكشف بها حقيقة الصور والروابط والأخبار بنفسك.</p>
         <div class="btn-row">
           <a href="facts.html" class="btn btn-primary btn-lg"><i data-lucide="book-open"></i>ادخل المكتبة<i data-lucide="arrow-left"></i></a>
           <a href="tools.html" class="btn btn-ghost btn-lg"><i data-lucide="scan-search"></i>أدوات التحقق</a>
@@ -49,6 +49,22 @@
       <div><strong id="st-followers">0</strong><span>متابع على إنستغرام</span></div>
       <div><strong id="st-facts">0</strong><span>معلومة موثّقة</span></div>
       <div><strong id="st-tools">0</strong><span>أداة مجانية</span></div>
+    </div>
+  </section>
+
+  <!-- 01b · The empire's branches: one tile per channel + the latest news from all of them -->
+  <section class="section br-home" data-sc>
+    <div class="container">
+      <div class="section-head">
+        <div><span class="kicker">الإمبراطورية العراقية</span><h2 data-split>ستة فروع، <span class="gold-text">مكان واحد</span></h2><p>كل قناة من قنواتنا فرع هنا. نأخذ منها الخبر الكامل بعنوانه ووصفه، ونترك الإعلانات والفعاليات. وتتحدث وحدها كل نصف ساعة.</p></div>
+        <a href="branch.html" class="btn btn-ghost">كل الفروع<i data-lucide="arrow-left"></i></a>
+      </div>
+      <div class="br-tiles" id="branches"></div>
+      <div class="section-head mt-4">
+        <div><span class="kicker">الآن من الفروع</span><h3>آخر الأخبار</h3></div>
+        <a href="branch.html?b=news" class="btn btn-ghost btn-sm">كل الأخبار<i data-lucide="arrow-left"></i></a>
+      </div>
+      <div class="grid grid-3" id="br-latest"></div>
     </div>
   </section>
 
@@ -141,6 +157,7 @@
 <script src="assets/js/config.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/telegram-data.js"></script>
+<script src="assets/js/branches-data.js"></script>
 <script src="assets/js/static-index.js"></script>
 <script src="assets/js/core.js"></script>
 <script src="assets/js/pages/home.js"></script>

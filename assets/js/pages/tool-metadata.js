@@ -174,7 +174,7 @@
 
   function exportReport(it) {
     const rep = {
-      tool: "إمبراطورية المعلومات العراقية - عارض الميتاداتا",
+      tool: "الإمبراطورية العراقية - عارض الميتاداتا",
       generated: new Date().toISOString(),
       file: { name: it.file.name, type: it.file.type, size: it.file.size, width: it.dims.w, height: it.dims.h, sha256: it.hash || null },
       risk: { score: it.risk.score, level: it.risk.level, findings: it.risk.findings.map((f) => f.text) },

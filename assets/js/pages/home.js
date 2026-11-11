@@ -38,6 +38,25 @@
     <a class="btn btn-ghost" href="facts.html">${ic("shuffle")}المزيد</a></div>
     ${ic(fd.icon || c.icon, "big-ico")}`;
 
+  // The empire's branches: one tile per channel with its newest headline
+  const BRI = window.BR_ITEMS || [];
+  $("#branches").innerHTML = (window.BRANCHES || []).map((b, i) => {
+    const pool = b.id === "info" ? factsSorted() : BRI.filter((x) => x.branch === b.id);
+    const top = pool[0];
+    return `<a href="${b.href}" class="br-tile" style="--c1:${b.c1};--c2:${b.c2}" data-tilt="4">
+      <span class="br-num">${String(i + 1).padStart(2, "0")}</span>
+      <span class="br-ico">${ic(b.icon)}</span>
+      <h3>${esc(b.name)}</h3>
+      <p>${esc(b.desc)}</p>
+      ${top ? `<span class="br-top">${ic(b.id === "info" ? "sparkles" : "radio")}<span>${esc(top.title)}</span></span>` : ""}
+      <span class="br-foot"><b>${pool.length}</b>${b.id === "info" ? "معلومة" : "خبر"}${ic("arrow-up-left")}</span></a>`;
+  }).join("");
+  const latestNews = [...BRI].sort((a, b) => b.date.localeCompare(a.date) || b.tg.localeCompare(a.tg));
+  // newest first, but no more than two in a row from the same branch
+  const mix = []; const per = {};
+  for (const x of latestNews) { if ((per[x.branch] || 0) < 2) { mix.push(x); per[x.branch] = (per[x.branch] || 0) + 1; } if (mix.length >= 6) break; }
+  $("#br-latest").innerHTML = mix.length ? mix.map(factCard).join("") : `<p class="muted">ستظهر الأخبار هنا مع أول مزامنة للفروع.</p>`;
+
   // Latest facts
   $("#latest").innerHTML = factsSorted().slice(0, 6).map(factCard).join("");
 
@@ -59,7 +78,10 @@
 
   // News ticker + cards
   const news = [...window.NEWS].sort((a, b) => b.date.localeCompare(a.date));
-  $("#ticker").innerHTML = news.map((n, i) => `<a href="news.html#${n.id}" class="${i % 2 ? "ol" : ""}">${esc(n.title)}<span class="sep" aria-hidden="true">✦</span></a>`).join("");
+  // the ticker carries live headlines from the branches when there are any
+  $("#ticker").innerHTML = latestNews.length
+    ? latestNews.slice(0, 14).map((n, i) => `<a href="${App.factUrl(n.id)}" class="${i % 2 ? "ol" : ""}">${esc(cat(n.cat).name)} · ${esc(n.title)}<span class="sep" aria-hidden="true">✦</span></a>`).join("")
+    : news.map((n, i) => `<a href="news.html#${n.id}" class="${i % 2 ? "ol" : ""}">${esc(n.title)}<span class="sep" aria-hidden="true">✦</span></a>`).join("");
   $("#news").innerHTML = news.slice(0, 3).map((n) => `<a href="news.html#${n.id}" class="card card-hover news-card">
     <div class="top"><span class="badge">${ic(n.icon)}${esc(n.type)}</span><span class="small muted">${fmtDate(n.date)}</span></div>
     <h3>${esc(n.title)}</h3><p class="mb-0" style="display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden">${esc(n.body)}</p></a>`).join("");

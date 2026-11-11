@@ -400,7 +400,7 @@
       <p class="small muted vf-disclaimer">${ic("info")}<span>هذا تحقق آلي: يقيس هل تروي المصادر مضمون الخبر، ولا يحكم على صدق المصادر نفسها. النتيجة تساعدك على القرار ولا تغني عن قراءة المصادر.</span></p>
     </article>`;
     icons();
-    const plain = () => [`تقرير التحقق — ${SITE.name || "إمبراطورية المعلومات العراقية"}`, new Date().toLocaleString("ar-IQ-u-nu-latn"), "", `الخبر: ${clip(text, 700)}`, "", `النتيجة: ${v.title} (مؤشر الثقة ${v.score}%)`, v.text, `النصيحة: ${advice}`, "",
+    const plain = () => [`تقرير التحقق — ${SITE.name || "الإمبراطورية العراقية"}`, new Date().toLocaleString("ar-IQ-u-nu-latn"), "", `الخبر: ${clip(text, 700)}`, "", `النتيجة: ${v.title} (مؤشر الثقة ${v.score}%)`, v.text, `النصيحة: ${advice}`, "",
       `المصادر (${sources.length}):`, ...sources.map((s, i) => `${i + 1}. ${s.name} — ${s.site || hostOf(s.url)} [${s.verdict ? RATE[s.verdict][1] : strength(s) === "confirm" ? "يروي الخبر نفسه" : "يتناول الموضوع فقط"}${s.rating ? `، التقييم: ${s.rating}` : `، تطابق ${Math.round(s.ev.score * 100)}%`}]\n   ${s.internal ? new URL(s.url, document.baseURI).href : s.url}${s.quote ? `\n   «${s.quote}»` : ""}`),
       ...(sources.length ? [] : ["لم نجد أي صفحة تطابق هذا الخبر."]), "",
       ...(feat.numbers.length ? [`أرقام الخبر: ${feat.numbers.map((n) => `${n} ${v.numMiss.includes(n) ? "✗" : "✓"}`).join("، ")}`, ""] : []),

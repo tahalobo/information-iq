@@ -27,7 +27,8 @@ const W = { window: {} };
 loadBrowserScript(rel("assets/js/config.js"), W);
 loadBrowserScript(rel("assets/js/data.js"), W);
 loadBrowserScript(rel("assets/js/telegram-data.js"), W);
-const { SITE, FACTS = [], CATEGORIES = [], TG } = W.window;
+loadBrowserScript(rel("assets/js/branches-data.js"), W);
+const { SITE, FACTS = [], CATEGORIES = [], TG, BR, BRANCHES = [] } = W.window;
 
 const siteCfg = existsSync(rel("scripts/site.config.json")) ? JSON.parse(readFileSync(rel("scripts/site.config.json"), "utf8")) : {};
 const SITE_URL = (process.env.SITE_URL || siteCfg.siteUrl || "").replace(/\/+$/, "");
@@ -37,7 +38,8 @@ const abs = (p) => (SITE_URL ? `${SITE_URL}/${p.replace(/^\/+/, "")}` : p);
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const strip = (h) => String(h || "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 const clip = (s, n) => (s.length > n ? s.slice(0, n - 1).replace(/\s+\S*$/, "") + "…" : s);
-const catName = (id) => (CATEGORIES.find((c) => c.id === id) || { name: "معلومات" }).name;
+const branchOf = (id) => BRANCHES.find((b) => b.id === id);
+const catName = (id) => (CATEGORIES.find((c) => c.id === id) || (branchOf(id) && { name: branchOf(id).short }) || { name: "معلومات" }).name;
 const TYPE_NAMES = { fact: "معلومة", news: "خبر", event: "فعالية", discussion: "سؤال للنقاش", literature: "شعر وأدب" };
 const fmtDate = (d) => { try { return new Intl.DateTimeFormat("ar-IQ-u-nu-latn", { year: "numeric", month: "long", day: "numeric" }).format(new Date(d)); } catch { return d; } };
 
@@ -59,12 +61,22 @@ for (const p of (TG && TG.posts) || []) {
   });
 }
 
+for (const p of (BR && BR.posts) || []) {
+  const b = branchOf(p.b) || { name: p.b, channel: "" };
+  const detail = loadBrowserScript(rel(`assets/tg/posts/${p.id}.js`)).TG_POST || {};
+  items.push({
+    id: p.id, type: "news", branch: p.b, title: p.title, desc: p.excerpt, cat: p.b, date: p.date,
+    image: p.image || "assets/img/og/default.jpg", images: detail.images || [], body: detail.html || `<p>${esc(p.excerpt)}</p>`, video: !!p.video,
+    sources: [{ name: `قناة ${b.name} على تليغرام`, url: detail.url || `https://t.me/${b.channel}/${p.msg}` }], tags: p.tags || []
+  });
+}
+
 /* ---------- Page template ---------- */
 function page(it) {
   const file = `post/${it.id}.html`;
   const title = `${it.title} | ${SITE.name}`;
   const desc = clip(strip(it.desc) || strip(it.body), 200);
-  const img = abs(it.image);
+  const img = /^https?:/.test(it.image) ? it.image : abs(it.image);
   const ld = {
     "@context": "https://schema.org", "@type": it.type === "news" ? "NewsArticle" : "Article",
     headline: clip(it.title, 110), description: desc, image: [img], datePublished: it.date, inLanguage: "ar",
@@ -74,7 +86,7 @@ function page(it) {
   };
   const cites = it.sources.filter((s) => s.url && !/\/\/t\.me\//.test(s.url)).map((s) => s.url);
   if (cites.length) ld.citation = cites;
-  const gallery = it.images.length ? `<div class="gallery${it.images.length === 1 ? " single" : ""}">${it.images.map((s, i) => `<img src="${esc(s)}" alt="${esc(it.title)} - صورة ${i + 1}" loading="lazy">`).join("")}</div>` : "";
+  const gallery = it.images.length ? `<div class="gallery${it.images.length === 1 ? " single" : ""}">${it.images.map((s, i) => `<img src="${esc(s)}" alt="${esc(it.title)} - صورة ${i + 1}" loading="lazy" onerror="this.remove()">`).join("")}</div>` : "";
   return `<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
@@ -115,7 +127,7 @@ function page(it) {
 <main>
   <div class="container" style="padding-top:28px;padding-bottom:64px" id="root">
     <article class="container-narrow" style="margin:0 auto">
-      <nav class="breadcrumbs"><a href="index.html">الرئيسية</a> › <a href="facts.html">المعلومات</a> › <a href="facts.html?cat=${esc(it.cat)}">${esc(catName(it.cat))}</a></nav>
+      <nav class="breadcrumbs"><a href="index.html">الرئيسية</a> › ${it.branch ? `<a href="branch.html">الفروع</a> › <a href="branch.html?b=${esc(it.branch)}">${esc(catName(it.cat))}</a>` : `<a href="facts.html">المعلومات</a> › <a href="facts.html?cat=${esc(it.cat)}">${esc(catName(it.cat))}</a>`}</nav>
       ${gallery}
       <span class="badge mb-2">${esc(catName(it.cat))}${TYPE_NAMES[it.type] && it.type !== "fact" ? " · " + TYPE_NAMES[it.type] : ""}</span>
       <h1 style="font-size:clamp(1.6rem,4.5vw,2.4rem);line-height:1.45">${esc(it.title)}</h1>
@@ -133,6 +145,7 @@ function page(it) {
 <script src="assets/js/config.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/telegram-data.js"></script>
+<script src="assets/js/branches-data.js"></script>
 <script src="assets/js/static-index.js"></script>
 <script src="assets/js/core.js"></script>
 <script src="assets/js/pages/fact.js"></script>

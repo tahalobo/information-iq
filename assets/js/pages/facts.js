@@ -54,7 +54,7 @@
     const t = $("#title");
     if (first) t.textContent = name;
     else { t.classList.add("swap-out"); setTimeout(() => { t.textContent = name; t.classList.remove("swap-out"); t.classList.add("swap-in"); setTimeout(() => t.classList.remove("swap-in"), 700); }, 260); }
-    document.title = `${name} | إمبراطورية المعلومات العراقية`;
+    document.title = `${name} | ${window.SITE.name}`;
     const slot = $("#lib-slot"); slot.dataset.gl = SHAPE[state.cat] || "helix";
     if (window.GL3D) window.GL3D.refresh();
   }

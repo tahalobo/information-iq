@@ -7,7 +7,7 @@
   const root = $("#root");
   root.className = "fact-root"; root.removeAttribute("style");
   const id = window.STATIC_ID || param("id");
-  const found = window.FACTS.find((x) => x.id === id) || (window.TG_ITEMS || []).find((x) => x.id === id);
+  const found = window.FACTS.find((x) => x.id === id) || (window.TG_ITEMS || []).find((x) => x.id === id) || (window.BR_ITEMS || []).find((x) => x.id === id);
 
   const SHAPE = { iraq: "ziggurat", science: "helix", space: "galaxy", body: "atom", tech: "lens", nature: "wave", culture: "gate", history: "tablet", mind: "globe" };
   const TYPE_NAMES = { news: "خبر", event: "فعالية", discussion: "سؤال للنقاش", literature: "شعر وأدب" };
@@ -55,10 +55,14 @@
     const minutes = f.minutes || readTime(f.body);
     const images = P && P.images && P.images.length ? P.images : f.image ? [f.image] : [];
     const video = P && P.video ? P.video : null;
-    const sorted = factsSorted();
+    // a branch post (news, games, music, anime, sport) navigates within its own branch
+    const B = f.branch ? App.branchOf(f.branch) : null;
+    const noun = B ? "الخبر" : "المعلومة";
+    const branchPool = B ? (window.BR_ITEMS || []).filter((x) => x.branch === f.branch).sort((a, b) => b.date.localeCompare(a.date) || b.tg.localeCompare(a.tg)) : null;
+    const sorted = branchPool || factsSorted();
     const idx = sorted.findIndex((x) => x.id === f.id);
     const newer = idx > 0 ? sorted[idx - 1] : null, older = idx >= 0 ? sorted[idx + 1] : null;
-    const related = window.FACTS.filter((x) => x.id !== f.id)
+    const related = (branchPool || window.FACTS).filter((x) => x.id !== f.id && x !== newer && x !== older)
       .map((x) => ({ x, score: (x.cat === f.cat ? 2 : 0) + x.tags.filter((t) => f.tags.includes(t)).length + (x.image ? .2 : 0) }))
       .sort((a, b) => b.score - a.score).slice(0, 3).map((r) => r.x);
     const quizCount = window.QUIZ.filter((q) => q.fact === f.id).length;
@@ -66,7 +70,7 @@
     const fb = store.get("fact-feedback", {});
     const isSaved = saved.has(f.id);
 
-    document.title = `${f.title} | إمبراطورية المعلومات العراقية`;
+    document.title = `${f.title} | ${window.SITE.name}`;
     const md = document.querySelector('meta[name="description"]'); if (md) md.content = f.excerpt;
 
     /* ---------- Hero media (right side of the stage) ---------- */
@@ -77,7 +81,7 @@
         <span class="play-dot">${ic("play")}</span>${video.duration ? `<span class="badge badge-glass fx-dur">${ic("clock")}${esc(video.duration)}</span>` : ""}</a>`;
     } else if (images.length) {
       media = `<div class="fx-deck${images.length > 1 ? " multi" : ""}">${images.slice(0, 3).reverse().map((src, i, arr) =>
-        `<img src="${esc(src)}" alt="${i === arr.length - 1 ? "صورة المنشور" : ""}" data-zoom style="--k:${arr.length - 1 - i}" loading="${i === arr.length - 1 ? "eager" : "lazy"}">`).join("")}
+        `<img src="${esc(src)}" alt="${i === arr.length - 1 ? "صورة المنشور" : ""}" data-zoom onerror="this.remove()" style="--k:${arr.length - 1 - i}" loading="${i === arr.length - 1 ? "eager" : "lazy"}">`).join("")}
         ${images.length > 1 ? `<span class="badge badge-glass fx-count">${ic("images")}${images.length} صور</span>` : `<span class="fx-zoomhint">${ic("maximize-2")}</span>`}</div>`;
     } else {
       media = `<div class="fx-orb" data-gl="${SHAPE[f.cat] || "tablet"}" aria-hidden="true"><span class="fx-orb-ico">${ic(f.icon || c.icon)}</span></div>`;
@@ -87,7 +91,7 @@
     const pollHtml = P && P.poll ? `<div class="fx-poll"><div class="card-title"><span class="ico ico-sm">${ic("vote")}</span><h3>${esc(P.poll.q)}</h3></div>
       <div class="fx-poll-opts">${P.poll.options.map((o, i) => `<span><b>${i + 1}</b>${esc(o)}</span>`).join("")}</div>
       <a class="btn btn-primary btn-sm mt-2" href="${esc(P.url)}" target="_blank" rel="noopener">${ic("send")}صوّت في تليغرام</a></div>` : "";
-    const gallery = images.length > 1 ? `<div class="fx-strip" data-lenis-prevent>${images.map((src, i) => `<img src="${esc(src)}" alt="صورة ${i + 1} من المنشور" loading="lazy" data-zoom>`).join("")}</div>` : "";
+    const gallery = images.length > 1 ? `<div class="fx-strip" data-lenis-prevent>${images.map((src, i) => `<img src="${esc(src)}" alt="صورة ${i + 1} من المنشور" loading="lazy" data-zoom onerror="this.remove()">`).join("")}</div>` : "";
     const cinema = video ? `<div class="fx-cinema" id="cinema"><div id="tg-embed">${video.thumb ? `<a href="${esc(P.url)}" target="_blank" rel="noopener" class="fact-cover has-img" style="height:auto;aspect-ratio:16/9"><img src="${esc(video.thumb)}" alt=""><span class="play-dot">${ic("play")}</span></a>` : ""}</div></div>` : "";
 
     const prev = (x, dir) => {
@@ -95,7 +99,7 @@
       const xc = cat(x.cat);
       return `<a href="${App.factUrl(x.id)}" class="fx-next ${dir}" style="--c1:${xc.c1};--c2:${xc.c2}">
         ${x.image ? `<img src="${esc(x.image)}" alt="" loading="lazy" onerror="this.remove()">` : ""}
-        <span class="fx-next-dir">${dir === "newer" ? `${ic("arrow-right")}المعلومة الأحدث` : `المعلومة الأقدم${ic("arrow-left")}`}</span>
+        <span class="fx-next-dir">${dir === "newer" ? `${ic("arrow-right")}${noun} الأحدث` : `${noun} الأقدم${ic("arrow-left")}`}</span>
         <strong>${esc(x.title)}</strong><small>${ic(xc.icon)}${esc(xc.name)} · ${fmtDate(x.date)}</small></a>`;
     };
 
@@ -105,11 +109,11 @@
       <div class="ph-giant" aria-hidden="true">${esc(c.name)}</div>
       <div class="container fx-hero-grid">
         <div class="fx-hero-text">
-          <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a>${ic("chevron-left")}<a href="facts.html">المعلومات</a>${ic("chevron-left")}<a href="facts.html?cat=${c.id}">${esc(c.name)}</a></nav>
+          <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a>${ic("chevron-left")}${B ? `<a href="branch.html">الفروع</a>${ic("chevron-left")}<a href="branch.html?b=${B.id}">${esc(B.short)}</a>` : `<a href="facts.html">المعلومات</a>${ic("chevron-left")}<a href="facts.html?cat=${c.id}">${esc(c.name)}</a>`}</nav>
           <div class="fx-chips">
             <span class="fx-cat" style="--c1:${c.c1};--c2:${c.c2}">${ic(c.icon)}${esc(c.name)}</span>
-            ${TYPE_NAMES[f.type] ? `<span class="badge badge-info">${esc(TYPE_NAMES[f.type])}</span>` : ""}
-            ${f.source === "telegram" ? `<span class="badge badge-info">${ic("send")}من قناة تليغرام</span>` : `<span class="badge">${ic("badge-check")}موثّقة</span>`}
+            ${TYPE_NAMES[f.type] && !B ? `<span class="badge badge-info">${esc(TYPE_NAMES[f.type])}</span>` : ""}
+            ${B ? `<a class="badge badge-info" href="${esc(B.url)}" target="_blank" rel="noopener">${ic("send")}من قناة ${esc(B.name)}</a>` : f.source === "telegram" ? `<span class="badge badge-info">${ic("send")}من قناة تليغرام</span>` : `<span class="badge">${ic("badge-check")}موثّقة</span>`}
             ${extra.length ? `<a href="#sources" class="badge">${ic("badge-check")}موثّقة بـ${countWord(f.sources.length, "مصدر واحد", "مصدرين", "مصادر", "مصدراً")}</a>` : ""}
           </div>
           <h1 class="fx-title" data-split>${esc(f.title)}</h1>
@@ -122,7 +126,7 @@
           <div class="btn-row mt-3">
             <a href="#read" class="btn btn-primary btn-lg">${ic("book-open-text")}ابدأ القراءة</a>
             <button class="btn btn-ghost btn-lg" data-tts hidden>${ic("headphones")}<span>استمع إليها</span></button>
-            <button class="btn btn-ghost btn-lg fx-save${isSaved ? " saved" : ""}" data-fxsave>${ic("bookmark")}<span>${isSaved ? "محفوظة" : "احفظها"}</span></button>
+            ${B ? "" : `<button class="btn btn-ghost btn-lg fx-save${isSaved ? " saved" : ""}" data-fxsave>${ic("bookmark")}<span>${isSaved ? "محفوظة" : "احفظها"}</span></button>`}
           </div>
         </div>
         <div class="fx-hero-media">${media}</div>
@@ -137,29 +141,30 @@
         ${gallery}
         <div class="prose fx-prose" id="prose">${f.body}</div>
         ${pollHtml}
-        ${P ? `<a class="fx-tglink" href="${esc(P.url)}" target="_blank" rel="noopener">${ic("send")}<span><strong>المنشور الأصلي في تليغرام</strong><small>${P.views ? `${fmtNum(P.views)} مشاهدة` : "قناة إمبراطورية المعلومات"}</small></span>${ic("arrow-up-left")}</a>` : ""}
+        ${P ? `<a class="fx-tglink" href="${esc(P.url)}" target="_blank" rel="noopener">${ic("send")}<span><strong>المنشور الأصلي في تليغرام</strong><small>${B ? `${esc(B.name)}${P.views ? " · " : ""}` : ""}${P.views ? `${fmtNum(P.views)} مشاهدة` : B ? "" : "قناة إمبراطورية المعلومات"}</small></span>${ic("arrow-up-left")}</a>` : ""}
 
         ${f.didYouKnow ? `<aside class="fx-dyk"><span class="fx-dyk-label">هل تعلم؟</span><span class="fx-dyk-ico">${ic("lightbulb")}</span><p>${esc(f.didYouKnow)}</p></aside>` : ""}
 
         <section class="fx-cert" id="sources">
           <div class="fx-seal" aria-hidden="true">
             <svg viewBox="0 0 200 200"><defs><path id="sealc" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
-              <text direction="ltr"><textPath href="#sealc" textLength="486" lengthAdjust="spacing">موثّقة بالمصادر ✦ إمبراطورية المعلومات العراقية ✦ كل ما هو حقيقي ومفيد ✦</textPath></text></svg>
+              <text direction="ltr"><textPath href="#sealc" textLength="486" lengthAdjust="spacing">موثّقة بالمصادر ✦ الإمبراطورية العراقية ✦ كل ما هو حقيقي ومفيد ✦</textPath></text></svg>
             <b>${f.sources.length}</b><small>${countWord(f.sources.length, "مصدر واحد", "مصدران", "مصادر", "مصدراً").replace(/^\d+ /, "")}</small>
           </div>
           <div class="fx-cert-body">
             <span class="kicker">شهادة التوثيق</span>
-            <h2>من أين جئنا بهذه المعلومة؟</h2>
+            <h2>${B ? "من أين جاء هذا الخبر؟" : "من أين جئنا بهذه المعلومة؟"}</h2>
             <ol class="fx-sources">${f.sources.map(sourceItem).join("")}</ol>
             ${extra.length ? `<p class="fx-src-note">${ic("search-check")}<span>المصادر الإضافية عثر عليها <strong>محرّك التوثيق</strong> في الموقع: يبحث في الويب عن مضمون المعلومة، ويفتح كل صفحة ويقارن نصّها وأرقامها بالمنشور، ولا يعرض إلا ما تطابق. إن رأيت مصدراً غير مناسب <a class="link" href="contact.html?type=correction&ref=${encodeURIComponent(f.id)}">أخبرنا</a>.</span></p>`
+              : B ? `<p class="fx-src-note">${ic("search-check")}<span>نقلنا الخبر من قناة ${esc(B.name)}. تريد أن تتأكد منه بنفسك؟ <a class="link" href="verify.html?q=${encodeURIComponent(f.title)}">افحصه في محقّق الأخبار</a>، فنبحث عنه في المصادر ونعطيك تقريراً كاملاً.</span></p>`
               : f.source === "telegram" ? `<p class="fx-src-note">${ic("search")}<span>لم يعثر محرّك التوثيق بعد على صفحات مطابقة لهذه المعلومة. ابحث عنها بنفسك: <a class="link" href="https://www.google.com/search?q=${encodeURIComponent(f.title)}" target="_blank" rel="noopener">غوغل</a> · <a class="link" href="https://ar.wikipedia.org/w/index.php?search=${encodeURIComponent(f.title)}" target="_blank" rel="noopener">ويكيبيديا</a></span></p>` : ""}
           </div>
         </section>
 
-        ${f.tags.length ? `<div class="tags fx-tags">${f.tags.map((t) => `<a class="tag-link" href="facts.html?q=${encodeURIComponent(t)}">#${esc(t)}</a>`).join("")}</div>` : ""}
+        ${f.tags.length ? `<div class="tags fx-tags">${f.tags.map((t) => `<a class="tag-link" href="${B ? `branch.html?b=${B.id}&q=` : "facts.html?q="}${encodeURIComponent(t)}">#${esc(t)}</a>`).join("")}</div>` : ""}
 
         <section class="fx-react" id="feedback">
-          <div><span class="kicker">رأيك يهمنا</span><h3>هل أفادتك هذه المعلومة؟</h3></div>
+          <div><span class="kicker">رأيك يهمنا</span><h3>هل أفادك ${B ? "هذا الخبر" : "هذه المعلومة"}؟</h3></div>
           <div class="fx-react-btns">
             <button data-fb="up" aria-label="نعم، مفيدة">${ic("heart")}<span>نعم، أفادتني</span></button>
             <button data-fb="down" aria-label="لا">${ic("meh")}<span>ليس كثيراً</span></button>
@@ -168,7 +173,7 @@
         </section>
 
         <section class="fx-share">
-          <div><span class="kicker">المعرفة تكبر بالمشاركة</span><h3>شارك المعلومة مع من يهمك</h3></div>
+          <div><span class="kicker">المعرفة تكبر بالمشاركة</span><h3>شارك ${noun} مع من يهمك</h3></div>
           <button class="fx-story-cta" data-story>
             <span class="fx-story-thumb" aria-hidden="true"><i></i><i></i><i></i></span>
             <span><strong>صمّم ستوري لإنستغرام</strong><small>صورة جاهزة بمقاس الستوري وبهوية الإمبراطورية، بضغطة واحدة</small></span>${ic("sparkles")}
@@ -184,7 +189,7 @@
 
     <section class="section" style="padding-top:60px" data-sc>
       <div class="container">
-        <div class="section-head"><div><span class="kicker">تابع الرحلة</span><h2 data-split>قد يعجبك <span class="gold-text">أيضاً</span></h2></div><a href="facts.html?cat=${c.id}" class="btn btn-ghost">المزيد من ${esc(c.name)}${ic("arrow-left")}</a></div>
+        <div class="section-head"><div><span class="kicker">تابع الرحلة</span><h2 data-split>قد يعجبك <span class="gold-text">أيضاً</span></h2></div><a href="${B ? `branch.html?b=${B.id}` : `facts.html?cat=${c.id}`}" class="btn btn-ghost">المزيد من ${esc(c.name)}${ic("arrow-left")}</a></div>
         <div class="plane" data-sc><div class="grid grid-3">${related.map(factCard).join("")}</div></div>
       </div>
     </section>
@@ -192,7 +197,7 @@
     <div class="fx-dock" id="dock" role="toolbar" aria-label="أدوات القراءة">
       <button class="fx-ring" id="dock-top" aria-label="للأعلى"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19"/><circle cx="22" cy="22" r="19" id="ring"/></svg><span id="pct">0%</span></button>
       <button data-tts hidden aria-label="استمع إلى المعلومة" title="استمع">${ic("headphones")}</button>
-      <button class="fx-save${isSaved ? " saved" : ""}" data-fxsave aria-label="حفظ" title="احفظ">${ic("bookmark")}</button>
+      ${B ? "" : `<button class="fx-save${isSaved ? " saved" : ""}" data-fxsave aria-label="حفظ" title="احفظ">${ic("bookmark")}</button>`}
       <button id="fs-cycle" aria-label="حجم الخط" title="حجم الخط">${ic("type")}</button>
       <button id="copy-text" aria-label="نسخ النص مع المصادر" title="نسخ النص مع المصادر">${ic("clipboard-copy")}</button>
       <button data-story aria-label="صمّم ستوري لإنستغرام" title="ستوري إنستغرام">${ic("instagram")}</button>
@@ -279,7 +284,7 @@
       const box = $("#tg-embed");
       const w = document.createElement("script");
       w.async = true; w.src = "https://telegram.org/js/telegram-widget.js?22";
-      w.dataset.telegramPost = `${(window.TG && TG.channel) || "informationss_iq"}/${P.id}`; w.dataset.width = "100%"; w.dataset.userpic = "false";
+      w.dataset.telegramPost = P.channel ? `${P.channel}/${P.msg}` : `${(window.TG && TG.channel) || "informationss_iq"}/${P.id}`; w.dataset.width = "100%"; w.dataset.userpic = "false";
       if (document.documentElement.dataset.theme !== "light") w.dataset.dark = "1";
       w.onload = () => setTimeout(() => { const fr = box.querySelector("iframe"); if (fr) { const a = box.querySelector("a.fact-cover"); if (a) a.remove(); } }, 1500);
       box.appendChild(w);
@@ -370,7 +375,7 @@
 
     // brand row
     crown(x, W - M - 100, 84, 100);
-    x.fillStyle = "#f2ecdd"; x.font = "400 52px Lalezar"; x.fillText("إمبراطورية المعلومات", W - M - 128, 140);
+    x.fillStyle = "#f2ecdd"; x.font = "400 52px Lalezar"; x.fillText("الإمبراطورية العراقية", W - M - 128, 140);
     x.fillStyle = "#9ba3bf"; x.font = '500 30px "IBM Plex Sans Arabic"'; x.fillText(`العراقية · @${window.SITE.handle}`, W - M - 128, 182);
 
     // media
@@ -420,7 +425,7 @@
     const tx = W - M - 48;
     x.fillStyle = "#160f02"; x.font = "400 56px Lalezar"; x.fillText("اقرأها كاملة مع مصادرها", tx, cy + 108);
     x.font = '600 31px "IBM Plex Sans Arabic"'; x.fillStyle = "rgba(22,15,2,.78)"; x.fillText("امسح الرمز لتفتحها على", tx, cy + 164);
-    x.fillText("موقع إمبراطورية المعلومات ←", tx, cy + 206);
+    x.fillText("موقع الإمبراطورية العراقية ←", tx, cy + 206);
     x.textAlign = "center"; x.fillStyle = "#9ba3bf"; x.font = '500 28px "IBM Plex Sans Arabic"'; x.fillText("كل ما هو حقيقي ومفيد ✦", W / 2, H - 70);
 
     const blob = await new Promise((r) => cv.toBlob(r, "image/png"));

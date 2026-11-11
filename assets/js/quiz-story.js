@@ -201,7 +201,7 @@
     x.fillStyle = goldGrad(x, -40, -30, 40, 30);
     x.beginPath(); x.moveTo(-34, 14); x.lineTo(-38, -22); x.lineTo(-17, -4); x.lineTo(0, -32); x.lineTo(17, -4); x.lineTo(38, -22); x.lineTo(34, 14); x.closePath(); x.fill();
     x.fillRect(-34, 20, 68, 9); x.restore();
-    x.fillStyle = "#f6ecd2"; x.font = '600 46px "Reem Kufi"'; x.fillText("إمبراطورية المعلومات العراقية", 540, 312);
+    x.fillStyle = "#f6ecd2"; x.font = '600 46px "Reem Kufi"'; x.fillText("الإمبراطورية العراقية", 540, 312);
     x.fillStyle = "rgba(247,207,107,.85)"; x.direction = "ltr"; x.font = '500 28px "IBM Plex Sans Arabic"'; x.fillText("@" + (o.handle || "information_1q"), 540, 352); x.direction = "rtl";
     if (o.date) { x.font = '500 26px "IBM Plex Sans Arabic"'; x.fillStyle = "rgba(255,240,200,.6)"; x.fillText(o.date, 540, 466); }
 
