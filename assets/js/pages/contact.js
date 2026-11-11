@@ -11,6 +11,7 @@
     { id: "join", t: "الانضمام للفريق", i: "user-plus", msg: "عرّفنا بنفسك ومهاراتك (بحث، تصميم، مونتاج، كتابة)، ولماذا تريد الانضمام.", extra: "رابط نماذج أعمالك (اختياري)" }
   ];
   let type = TYPES.find((x) => x.id === param("type")) ? param("type") : "general";
+  const openedAt = Date.now();
 
   $("#types").innerHTML = TYPES.map((x) => `<button type="button" class="type-opt" data-type="${x.id}" role="radio" aria-checked="false">${ic(x.i)}<span>${x.t}</span></button>`).join("");
   function setType(id) {
@@ -57,12 +58,17 @@
     if (S.formEndpoint) {
       const btn = $("#submit"); btn.disabled = true; btn.innerHTML = `${ic("loader")}جارِ الإرسال…`; icons();
       try {
-        const r = await fetch(S.formEndpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify({ type, ...d, _subject: text.split("\n")[0] }) });
-        if (!r.ok) throw new Error();
+        // Formspree يريد JSON، أما سكربت Google فيريد طلباً بسيطاً (text/plain) لأنه لا يجيب على فحص CORS المسبق
+        const headers = /formspree\.io/i.test(S.formEndpoint) ? { "Content-Type": "application/json", Accept: "application/json" } : { "Content-Type": "text/plain;charset=utf-8" };
+        const r = await fetch(S.formEndpoint, { method: "POST", headers, body: JSON.stringify({ type, ...d, _subject: text.split("\n")[0], page: location.href.split("#")[0], t: Date.now() - openedAt }) });
+        const res = await r.json().catch(() => ({}));
+        if (!r.ok || res.ok === false) throw new Error(res.error === "rate" ? "rate" : "");
         e.target.reset(); setType(type);
         $("#form-msg").innerHTML = `<div class="alert alert-success">${ic("badge-check")}<div><strong>وصلت رسالتك!</strong><p>شكراً لك. سنرد عليك قريباً.</p></div></div>`;
-      } catch {
-        $("#form-msg").innerHTML = `<div class="alert alert-danger">${ic("wifi-off")}<span>تعذّر الإرسال. جرّب مرة أخرى أو راسلنا مباشرة عبر إنستغرام.</span></div>`;
+      } catch (err) {
+        $("#form-msg").innerHTML = err && err.message === "rate"
+          ? `<div class="alert alert-warn">${ic("clock")}<span>أرسلت عدة رسائل خلال وقت قصير. انتظر بضع دقائق ثم جرّب مرة أخرى.</span></div>`
+          : `<div class="alert alert-danger">${ic("wifi-off")}<span>تعذّر الإرسال. جرّب مرة أخرى أو راسلنا مباشرة عبر إنستغرام.</span></div>`;
       } finally { btn.disabled = false; btn.innerHTML = `${ic("send")}إرسال`; icons(); }
       return;
     }
