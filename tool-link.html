@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>فاحص الروابط المشبوهة | الإمبراطورية العراقية</title>
-<meta name="description" content="حلّل أي رابط قبل فتحه: اكشف روابط التصيد والنطاقات المزيفة والروابط المختصرة، ونظّف الرابط من أكواد التتبع.">
+<meta name="description" content="حلّل أي رابط قبل فتحه: يكشف التصيد وانتحال المواقع، يفكّ الروابط المختصرة ويفحص وجهتها، ويطابقها مع قوائم التهديدات العالمية. مجاناً.">
 <meta name="theme-color" content="#03050c">
 <meta property="og:title" content="فاحص الروابط المشبوهة | الإمبراطورية العراقية">
-<meta property="og:description" content="حلّل أي رابط قبل فتحه: اكشف روابط التصيد والنطاقات المزيفة والروابط المختصرة، ونظّف الرابط من أكواد التتبع.">
+<meta property="og:description" content="حلّل أي رابط قبل فتحه: يكشف التصيد وانتحال المواقع، يفكّ الروابط المختصرة ويفحص وجهتها، ويطابقها مع قوائم التهديدات العالمية. مجاناً.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="الإمبراطورية العراقية">
 <meta property="og:locale" content="ar_IQ">
@@ -35,28 +35,44 @@
       <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a><i data-lucide="chevron-left"></i><a href="tools.html">الأدوات</a><i data-lucide="chevron-left"></i><span>فاحص الروابط</span></nav>
       <span class="ph-kicker"><b>URL</b>أداة أمان</span>
       <h1 data-split>فاحص الروابط المشبوهة</h1>
-      <p>«مبروك ربحت آيفون!» و«تم تعليق حسابك، اضغط هنا»… قبل أن تضغط، الصق الرابط هنا لنحلّله لك، دون أن نفتحه.</p>
+      <p>«مبروك ربحت آيفون!» و«تم تعليق حسابك، اضغط هنا»… قبل أن تضغط، الصق الرابط هنا. نشرّحه، نكشف وجهته الحقيقية حتى لو كان مختصراً، ونفحصه في قوائم التصيد العالمية، دون أن يُفتح في جهازك.</p>
     </div>
   </section>
   <section class="section" style="padding-top:32px">
     <div class="container container-narrow">
       <div class="card">
-        <label class="label" for="u">الرابط المراد فحصه</label>
-        <div class="input-group mt-1">
-          <input class="input ltr" id="u" dir="ltr" placeholder="https://..." autocomplete="off" spellcheck="false">
-          <button class="btn btn-primary" id="go"><i data-lucide="scan-line"></i>افحص</button>
+        <label class="label" for="u">الرابط المراد فحصه (أو الرسالة التي فيها الرابط)</label>
+        <div class="input-group mt-1 lk-input">
+          <input class="input ltr" id="u" dir="ltr" placeholder="https://..." autocomplete="off" autocapitalize="off" spellcheck="false" inputmode="url">
+          <button class="btn btn-ghost" id="paste" type="button" title="لصق من الحافظة"><i data-lucide="clipboard-paste"></i><span>لصق</span></button>
+          <button class="btn btn-primary" id="go" type="button"><i data-lucide="scan-line"></i>افحص</button>
         </div>
-        <div class="flex wrap gap-1 mt-1 small muted"><span>جرّب أمثلة:</span>
-          <button class="tag-link" data-ex="http://instagram.com-verify-account.xyz/login?id=1">تصيد</button>
-          <button class="tag-link" data-ex="https://bit.ly/3xYz12">مختصر</button>
+        <label class="lk-toggle mt-2"><input type="checkbox" id="live" checked><span>فحص حي عبر الإنترنت: قوائم التصيد، Google Safe Browsing، عمر النطاق، وكشف وجهة الروابط المختصرة. <span class="muted">(أطفئه ليبقى كل شيء داخل متصفحك)</span></span></label>
+        <div class="flex wrap gap-1 mt-2 small muted"><span>جرّب أمثلة:</span>
+          <button class="tag-link" data-ex="http://instagram.com-verify-account.xyz/login?id=1">انتحال</button>
+          <button class="tag-link" data-ex="https://paypa1-secure.com/signin">حرف مستبدل</button>
+          <button class="tag-link" data-ex="https://xn--pple-43d.com/">حروف أجنبية</button>
+          <button class="tag-link" data-ex="https://is.gd/x1">مختصر</button>
+          <button class="tag-link" data-ex="https://www.google.com/url?q=https://free-iphone.tk/claim">تحويل مخفي</button>
+          <button class="tag-link" data-ex="https://google.com@198.51.100.7/login">خدعة @</button>
+          <button class="tag-link" data-ex="https://example.com/invoice.pdf.exe">ملف خطر</button>
           <button class="tag-link" data-ex="https://www.youtube.com/watch?v=dQw4w9WgXcQ&si=AbC123&utm_source=whatsapp&fbclid=IwAR0x">تتبع</button>
-          <button class="tag-link" data-ex="https://xn--pple-43d.com/">حروف مزيفة</button>
         </div>
       </div>
-      <div id="out" class="stack mt-3"></div>
+      <div id="out" class="stack mt-3" aria-live="polite"></div>
     </div>
   </section>
   <section class="section section-alt">
+    <div class="container container-narrow">
+      <div class="section-head"><div><span class="kicker">كيف يعمل</span><h2>ثلاث طبقات فحص، كلها مجانية</h2></div></div>
+      <div class="grid grid-3">
+        <div class="card"><h3>١. تشريح الرابط</h3><p class="mb-0">أكثر من أربعين فحصاً داخل متصفحك: انتحال العلامات، الحروف المتشابهة، خدعة @، عناوين IP المموّهة، الملفات الخطرة، والروابط المخبّأة داخل روابط.</p></div>
+        <div class="card"><h3>٢. كشف الوجهة</h3><p class="mb-0">الرابط المختصر يُفكّ من خادم وسيط حتى آخر محطة، ثم تُفحص الوجهة نفسها كأنك لصقتها. جهازك لا يزور شيئاً.</p></div>
+        <div class="card"><h3>٣. قواعد التهديدات</h3><p class="mb-0">Google Safe Browsing وثلاثة فلاتر DNS أمنية وقوائم PhishTank و OpenPhish و URLhaus، مع عمر النطاق وشهرته.</p></div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
     <div class="container container-narrow">
       <div class="section-head"><div><span class="kicker">احمِ نفسك</span><h2>علامات رابط التصيد</h2></div></div>
       <div class="grid grid-2">
@@ -65,6 +81,8 @@
         <div class="card"><h3>طلب كلمة المرور أو رمز التحقق</h3><p class="mb-0">لا إنستغرام ولا مصرفك ولا زين كاش يطلبون منك رمز التحقق (OTP) أبداً. من يطلبه فهو محتال.</p></div>
         <div class="card"><h3>ملفات APK وروابط التحميل</h3><p class="mb-0">لا تثبّت تطبيقات من روابط واتساب أو تليغرام. حمّل التطبيقات من المتجر الرسمي فقط.</p></div>
       </div>
+      <div class="alert alert-warn mt-3"><i data-lucide="triangle-alert"></i><div><strong>بصراحة: ما الذي قد يفلت من هذه الأداة؟</strong>
+        <p>لا توجد أداة في العالم تلتقط كل رابط خبيث، وهذه ليست استثناء. قد يفلت منها: موقع تصيد عمره دقائق على نطاق قديم مخترق اسمه عادي؛ صفحة احتيال داخل منصة موثوقة (حساب، استمارة، ملف مشترك) لم يُبلَّغ عنها بعد؛ رابط يعرض صفحة بريئة للفاحصين وصفحة خبيثة للضحية؛ ورابط مختصر تعذّر فكّه. لذلك «لا علامات خطر» تعني أننا لم نجد شيئاً، لا أن الرابط آمن. والقاعدة التي لا تخذلك: لا تكتب كلمة مرور أو رمز تحقق في صفحة وصلت إليها من رابط.</p></div></div>
     </div>
   </section>
 </main>
@@ -74,6 +92,7 @@
 <script src="assets/js/data.js"></script>
 <script src="assets/js/static-index.js"></script>
 <script src="assets/js/core.js"></script>
+<script src="assets/js/link-engine.js"></script>
 <script src="assets/js/pages/tool-link.js"></script>
 <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="assets/js/fx.js"></script>

@@ -1636,5 +1636,34 @@ html.hdr-hidden .lib-bar-wrap { top: 6px; }
 .br-hero #br-actions .btn svg { width: 16px; height: 16px; }
 .lib-chip svg { width: 14px; height: 14px; }
 
+/* ==========================================================
+   فاحص الروابط (tool-link)
+   ========================================================== */
+.lk-url { margin-top: 16px; padding: 14px 16px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--border); font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: .95rem; line-height: 1.9; word-break: break-all; text-align: left; color: var(--muted); }
+.lk-url b { color: var(--text); font-weight: 700; padding: 2px 6px; border-radius: 7px; background: color-mix(in srgb, var(--gold) 26%, transparent); box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 55%, transparent); }
+.lk-url b.lk-bad { background: var(--danger-soft); box-shadow: 0 0 0 1px var(--danger); color: var(--danger); }
+.lk-url s { color: var(--danger); text-decoration-thickness: 2px; }
+.lk-url .lk-path { opacity: .7; }
+.lk-advice { padding: 14px 16px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--border); }
+.lk-advice strong { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.lk-advice strong svg { width: 18px; height: 18px; color: var(--gold); }
+.lk-advice ul { margin: 0; padding-inline-start: 20px; display: grid; gap: 6px; font-size: .92rem; line-height: 1.8; }
+.lk-rows { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; }
+.lk-row { display: flex; gap: 12px; align-items: flex-start; padding: 10px 4px; border-bottom: 1px solid var(--border); }
+.lk-row:last-child { border-bottom: 0; }
+.lk-row-ico svg { width: 20px; height: 20px; margin-top: 3px; }
+.lk-row b { display: block; font-size: .9rem; font-weight: 600; }
+.lk-row div span { font-size: .86rem; color: var(--muted); word-break: break-word; }
+.lk-row.is-bad div span { color: var(--danger); } .lk-row.is-warn div span { color: var(--warn); }
+.lk-live { font-size: .68rem; padding: 1px 8px; margin-inline-start: 6px; vertical-align: middle; }
+.lk-pending { display: inline-flex; align-items: center; gap: 6px; }
+#out p > svg, #out .lk-pending svg { display: inline-block; width: 15px; height: 15px; vertical-align: -2px; margin-inline-end: 4px; }
+.lk-chain { margin: 12px 0 0; padding: 0 0 0 22px; display: grid; gap: 6px; font-size: .8rem; text-align: left; color: var(--muted); }
+.lk-chain li { word-break: break-all; } .lk-chain li:last-child { color: var(--text); font-weight: 600; }
+.lk-chain i { font-style: normal; margin-left: 8px; padding: 1px 7px; border-radius: 6px; background: var(--surface-2); border: 1px solid var(--border); font-size: .72rem; }
+.lk-toggle { display: flex; gap: 10px; align-items: flex-start; font-size: .85rem; line-height: 1.7; cursor: pointer; }
+.lk-toggle input { margin-top: 5px; accent-color: var(--gold); width: 16px; height: 16px; flex-shrink: 0; }
+@media (max-width: 560px) { .lk-input { flex-wrap: wrap; } .lk-input .input { flex-basis: 100%; } .lk-input .btn { flex: 1; } .lk-url { font-size: .84rem; } }
+
 /* decorative layers (orbit, aurora, ticker) must never widen the page on phones; clip keeps position: sticky working */
 html, body { overflow-x: clip; }

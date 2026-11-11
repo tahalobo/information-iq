@@ -9,6 +9,9 @@
                    ← الصفحات التي ظهرت فيها الصورة + نسخها + الصور المشابهة + الوسوم
      POST /dates   { urls: ["https://...", ...] }   (حتى 8 روابط)
                    ← تاريخ نشر كل صفحة واسم موقعها (يزور الصفحة ويقرأ رأسها فقط)
+     POST /link    { url: "https://..." } — لفاحص الروابط tool-link.html
+                   ← يتتبّع التحويلات محطةً محطة (حتى 10) دون تنفيذ أي شيء، ويعيد الوجهة النهائية
+                     وعنوان صفحتها وهل فيها حقل كلمة مرور أو بطاقة أو نموذج يرسل لموقع آخر
      POST /verify  { queries: ["نص البحث", ...] }   (حتى عبارتين) — لمحقّق الأخبار verify.html
                    ← يبحث في الويب، يفتح أفضل الصفحات، ويعيد نص كل صفحة ليقارنه الموقع بالخبر
                    محرك البحث: أول مفتاح موجود من SERPER_API_KEY (نتائج غوغل) أو
@@ -54,6 +57,7 @@ export default {
 
     try {
       const route = new URL(req.url).pathname.replace(/\/+$/, "");
+      if (route.endsWith("/link")) return json(await linkTrace(body));
       if (route.endsWith("/verify")) return json(await verifyNews(body, env));
       if (route.endsWith("/dates")) return json(await dates(body));
       return await search(body, json, ctx);
@@ -231,4 +235,52 @@ async function verifyNews(body, env) {
   }
   const results = (await Promise.all(picked.map(vRead))).filter(Boolean);
   return { ok: true, engine, searched: queries, opened: picked.length, results };
+}
+
+/* ---------- 4) فاحص الروابط: تتبّع التحويلات وقراءة رأس الصفحة النهائية ---------- */
+const L_HOPS = 10, L_BYTES = 250_000;
+const lPrivate = (h) => /^(localhost|.*\.(local|internal|lan|home))$/i.test(h) || /^(10\.|127\.|192\.168\.|169\.254\.|172\.(1[6-9]|2\d|3[01])\.|0\.)/.test(h) || h.startsWith("[");
+
+async function linkTrace(body) {
+  let url = typeof body.url === "string" ? body.url.trim() : "";
+  if (!/^https?:\/\//i.test(url) || url.length > 2000) throw fail("bad-request", "url required");
+  const chain = []; let html = "", status = 0, type = "", download = "";
+  for (let i = 0; i < L_HOPS; i++) {
+    let u; try { u = new URL(url); } catch { break; }
+    if (!/^https?:$/.test(u.protocol)) { chain.push({ url, status: 0, via: "scheme" }); break; }
+    if (lPrivate(u.hostname)) { chain.push({ url, status: 0, via: "private" }); break; }
+    let r;
+    try { r = await fetch(url, { redirect: "manual", headers: { "User-Agent": V_UA, Accept: "text/html,*/*;q=0.5", "Accept-Language": "ar,en;q=0.8" }, signal: AbortSignal.timeout(6000) }); }
+    catch { chain.push({ url, status: 0, via: "unreachable" }); status = 0; break; }
+    status = r.status; type = (r.headers.get("content-type") || "").split(";")[0].trim().toLowerCase();
+    const hop = { url, status }; chain.push(hop);
+    const loc = r.headers.get("location");
+    if (status >= 300 && status < 400 && loc) { try { await r.body.cancel(); } catch { /* ignore */ } try { url = new URL(loc, url).href; } catch { break; } continue; }
+    const cd = r.headers.get("content-disposition") || "";
+    if (/attachment/i.test(cd) || (type && !/html|json|text|xml/.test(type) && /octet-stream|zip|x-msdownload|android\.package|x-rar|x-7z|x-apple-diskimage|msi|java-archive/.test(type))) {
+      download = clean((cd.match(/filename\*?=(?:UTF-8'')?["']?([^"';]+)/i) || [])[1] || u.pathname.split("/").pop() || type, 120);
+      try { await r.body.cancel(); } catch { /* ignore */ } break;
+    }
+    if (!/html/.test(type) || !r.body) { try { await r.body.cancel(); } catch { /* ignore */ } break; }
+    const reader = r.body.getReader(), dec = new TextDecoder(); html = ""; let got = 0;
+    while (got < L_BYTES) { const { done, value } = await reader.read(); if (done) break; got += value.length; html += dec.decode(value, { stream: true }); }
+    try { reader.cancel(); } catch { /* ignore */ }
+    // تحويل داخل الصفحة: meta refresh أو سطر JavaScript في صفحة قصيرة
+    const meta = html.match(/<meta[^>]+http-equiv=["']?refresh["']?[^>]*content=["']?\s*\d+\s*;\s*url=['"]?([^"'>\s]+)/i);
+    const js = !meta && html.length < 6000 && html.match(/(?:window\.|document\.|top\.|self\.)?location(?:\.href|\.replace|\.assign)?\s*(?:=|\()\s*["']((?:https?:)?\/\/[^"']+)["']/i);
+    const next = (meta && meta[1]) || (js && js[1]);
+    if (next && i < L_HOPS - 1) { let n; try { n = new URL(unescapeHtml(next), url).href; } catch { n = ""; } if (n && n !== url) { hop.via = meta ? "meta" : "js"; url = n; html = ""; continue; } }
+    break;
+  }
+  const final = chain.length ? chain[chain.length - 1].url : url; const fHost = vHost(final);
+  const formHosts = [...new Set([...html.matchAll(/<form[^>]+action=["']?(https?:\/\/[^"'\s>]+)/gi)].map((m) => vHost(m[1])).filter((h) => h && h !== fHost && !h.endsWith("." + fHost)))].slice(0, 5);
+  return {
+    ok: true, final, status, type, chain,
+    title: clean((html.match(/<meta[^>]+property=["']og:title["'][^>]+content=["']([^"']+)/i) || html.match(/<title[^>]*>([\s\S]*?)<\/title>/i) || [])[1] || "", 200),
+    signals: {
+      password: /<input[^>]+type=["']?password/i.test(html),
+      card: /<input[^>]+(?:name|id|autocomplete|placeholder)=["'][^"']*(?:cvv|cvc|cc-number|card[-_ ]?number|cardnumber|رقم البطاقة)/i.test(html),
+      formHosts, download
+    }
+  };
 }
