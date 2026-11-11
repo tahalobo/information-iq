@@ -1,0 +1,116 @@
+# مزامنة قناة تليغرام مع الموقع ونشره تلقائياً (مجاني على GitHub)
+# كل نصف ساعة: سحب المنشورات وتصنيفها ← مصادر إضافية ← أسئلة الاختبار ← صفحة لكل منشور + sitemap ← نشر على GitHub Pages
+# ويعمل أيضاً عند كل تعديل ترفعه إلى main، ويمكن تشغيله يدوياً من Actions ← Telegram sync ← Run workflow
+#
+# الإعداد مرة واحدة: Settings ← Pages ← Source: GitHub Actions
+name: Telegram sync
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      pages:
+        description: "عدد الصفحات المطلوب سحبها (كل صفحة ≈ 20 منشوراً)"
+        required: false
+        default: "3"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: telegram-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      # رابط الموقع: من متغير المستودع SITE_URL إن وُجد (للدومين الخاص)، وإلا رابط GitHub Pages
+      - name: Resolve site URL
+        env:
+          CUSTOM_URL: ${{ vars.SITE_URL }}
+        run: |
+          REPO="${GITHUB_REPOSITORY#*/}"
+          if [ -n "$CUSTOM_URL" ]; then URL="$CUSTOM_URL";
+          elif [ "$REPO" = "${GITHUB_REPOSITORY_OWNER}.github.io" ]; then URL="https://${GITHUB_REPOSITORY_OWNER}.github.io";
+          else URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/${REPO}"; fi
+          echo "SITE_URL=$URL" >> "$GITHUB_ENV"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Fetch & classify channel posts
+        if: github.event_name != 'push'
+        run: node scripts/telegram-sync.mjs --pages "${{ github.event.inputs.pages || '3' }}"
+
+      # محرّك التوثيق: يبحث في الويب عن مصادر إضافية لأحدث المعلومات (5 منشورات في كل تشغيل)
+      # المفاتيح اختيارية وتُضاف من Settings ← Secrets and variables ← Actions ← Secrets
+      - name: Find extra sources on the web
+        if: github.event_name != 'push'
+        continue-on-error: true
+        timeout-minutes: 8
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_CX: ${{ secrets.GOOGLE_CX }}
+          SERPER_API_KEY: ${{ secrets.SERPER_API_KEY }}
+          BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+        run: node scripts/enrich-sources.mjs --limit 5
+
+      - name: Fingerprint archive images (reverse search)
+        run: |
+          python3 -m pip install --quiet pillow
+          python3 scripts/build-image-index.py
+
+      - name: Build quiz questions
+        run: node scripts/build-quiz.mjs
+
+      - name: Build static pages, previews & sitemap
+        run: node scripts/build-pages.mjs
+
+      - name: Commit changes
+        id: commit
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add -A
+            git commit -m "مزامنة تليغرام وتحديث الصفحات"
+            git pull --rebase --autostash origin main
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "لا جديد"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+  # النشر: عند وجود جديد من القناة، أو عند أي تعديل ترفعه، أو عند التشغيل اليدوي
+  deploy:
+    needs: sync
+    if: needs.sync.outputs.changed == 'true' || github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Keep only the website files
+        run: rm -rf scripts worker .claude README.md
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
