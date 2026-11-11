@@ -24,7 +24,7 @@ window.SITE = {
   // نموذج التواصل: رابط سكربت Google بعد نشره (الخطوات أعلى الملف scripts/contact-form.gs)
   // مثال: "https://script.google.com/macros/s/XXXX/exec" ← الرسائل تصل لكروب الفريق، والتوكن لا يظهر في الموقع أبداً.
   // يقبل أيضاً رابط Formspree. إذا تُرك فارغاً، يجهّز الموقع الرسالة ويرسلها الزائر عبر الدايركت.
-  formEndpoint: "",
+  formEndpoint: "https://script.google.com/macros/s/AKfycbzmMQUVcEF8m8SndhA-T_CZv-dkTZ-FTT9vwc75_yMnSfsHsTS_LfKsQdPLqPnKgPYt/exec",
 
   // البحث العكسي داخل الموقع: رابط عامل Cloudflare بعد نشره (راجع worker/README.md)
   // مثال: "https://empire-reverse.yourname.workers.dev"
