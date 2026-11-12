@@ -1,5 +1,106 @@
 {
  "posts": {
+  "15196": {
+   "hash": "0fa112115cf5",
+   "checked": "2026-11-12T03:13:02.563Z",
+   "queries": [
+    "كم شخصا مات في الفضاء ؟",
+    "رحلات الفضاء مركبة سويوز شخصا حتفهم 1971"
+   ],
+   "sources": []
+  },
+  "15197": {
+   "hash": "136d345972f3",
+   "checked": "2026-11-12T03:12:28.951Z",
+   "queries": [
+    "لماذا تم اختيار عمر ال18 كـ سن الرشد القانوني ؟",
+    "سن الرشد العصور الوسطى اختيار ال18",
+    "Age of majority"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B3%D9%86_%D8%A7%D9%84%D8%B1%D8%B4%D8%AF",
+     "name": "سن الرشد",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 52,
+     "quote": "يُمنح القاصر صفة «قاصر محرر» تلقائيًا عند صدور حكم قضائي بالتحرير من محكمة مختصة، ما يمنحه الأهلية القانونية قبل بلوغه سن الرشد."
+    }
+   ]
+  },
+  "15198": {
+   "hash": "e18602bba57b",
+   "checked": "2026-11-12T03:12:17.820Z",
+   "queries": [
+    "استخراج مياه الشرب من الهواء !! MOFs",
+    "مولد المياه من الغلاف الجوي عمر ياغي استخراج الهواء 1000",
+    "Atmospheric water generator MOFs"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D9%88%D9%84%D8%AF_%D8%A7%D9%84%D9%85%D9%8A%D8%A7%D9%87_%D9%85%D9%86_%D8%A7%D9%84%D8%BA%D9%84%D8%A7%D9%81_%D8%A7%D9%84%D8%AC%D9%88%D9%8A",
+     "name": "مولد المياه من الغلاف الجوي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 55,
+     "quote": "يُعتبر توليد المياه في المباني الخضراء من الحالات الخاصّة والمهمّة، كَون درجة حرارة الهواء المحصور داخل هذا النوع من المباني أعلى بكثير وأكثر رطوبةً من ذلك الذي يقع خارجها."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Atmospheric_water_generator",
+     "name": "Atmospheric water generator",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "An atmospheric water generator (AWG), is a device that extracts water from humid ambient air, producing potable water. Water vapor in the air can be extracted either by condensation — cooling the air below its…"
+    }
+   ]
+  },
+  "15200": {
+   "hash": "6767867a6c7c",
+   "checked": "2026-11-12T03:12:10.213Z",
+   "queries": [
+    "شفرة الأرقام على البيض: ماذا تكشف؟",
+    "الاتحاد الأوروبي بلد المنشأ الأرقام تكشف"
+   ],
+   "sources": []
+  },
+  "15202": {
+   "hash": "e5f19c6030a7",
+   "checked": "2026-11-12T03:11:55.002Z",
+   "queries": [
+    "الكوكاكولا مشروب غازي بدأت كدواء في صيدلية؟",
+    "كوكا كولا مشروب غازي الكوكاكولا صيدلية 1886",
+    "Coca-Cola"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%83%D9%88%D9%83%D8%A7_%D9%83%D9%88%D9%84%D8%A7",
+     "name": "كوكا كولا",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 79,
+     "quote": "تم تسويقه في الأصل مشروباً معتدلاً غير كحولي وكان الغرض منه أن يكون دواءً حاصلًا على براءة اختراع طبية، وقد اخترعه جون ستيث بيمبرتون في أواخر القرن التاسع عشر في أتلانتا، جورجيا."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Coca-Cola",
+     "name": "Coca-Cola",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 74,
+     "quote": "Coca-Cola, or Coke, is a cola soft drink manufactured by the Coca-Cola Company. In 2013, Coke products were sold in over 200 countries and territories worldwide, with consumers drinking more than 1.8 billion…"
+    }
+   ]
+  },
   "15203": {
    "hash": "d7499575d5fa",
    "checked": "2026-11-09T21:39:01.465Z",
@@ -1193,5 +1294,5 @@
    ]
   }
  },
- "updated": "2026-11-11T22:10:42.657Z"
+ "updated": "2026-11-12T03:13:02.567Z"
 }
