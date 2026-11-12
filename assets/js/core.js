@@ -236,7 +236,7 @@
 
     host.outerHTML = `<header class="site-header">
       <div class="container">
-        <a href="index.html" class="brand" aria-label="${esc(S.name)} - الرئيسية">${logo()}<span class="brand-text"><span class="brand-name">${esc(S.shortName)}</span><span class="brand-sub">العراقية · ستة فروع</span></span></a>
+        <a href="index.html" class="brand" aria-label="${esc(S.name)} - الرئيسية">${logo()}<span class="brand-text"><span class="brand-name">${esc(S.shortName)}</span><span class="brand-sub">العراقية · سبعة فروع</span></span></a>
         <nav class="nav" aria-label="القائمة الرئيسية">${navHtml}</nav>
         <div class="header-actions">
           <button class="icon-btn" id="search-btn" aria-label="بحث (اضغط /)">${ic("search")}</button>
