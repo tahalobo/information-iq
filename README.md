@@ -12,7 +12,7 @@
 | كل الأدوات | `tools.html` |
 | عارض ومزيل الميتاداتا | `tool-metadata.html` |
 | البحث العكسي عن الصور (داخل الموقع + أرشيفنا) | `tool-reverse.html` · الإعداد في `worker/README.md` |
-| كاشف التعديل والفوتوشوب (ELA، الضوضاء، النسخ واللصق، الصورة المصغّرة) | `tool-forensics.html` |
+| كاشف التعديل والفوتوشوب (شبكة JPEG، النسخ واللصق، ELA، الضجيج، الصورة المصغّرة، خلاصة وتقرير) | `tool-forensics.html` |
 | فاحص الروابط | `tool-link.html` |
 | ضغط الصور والعلامة المائية | `tool-image.html` |
 | مولّد QR | `tool-qr.html` |
@@ -23,6 +23,7 @@
 | تحقق معنا | `verify.html` |
 | من نحن والإعلان | `about.html` |
 | تواصل معنا | `contact.html` |
+| سياسة الخصوصية (وفق القوانين العراقية) | `privacy.html` · منطق الصفحة في `assets/js/pages/privacy.js` |
 
 ## كيف أعدّل المحتوى؟
 
@@ -32,6 +33,14 @@
   - النص يُكتب داخل `body` بوسوم HTML بسيطة: `<p>` و`<h2>` و`<ul><li>`.
   - أضف أسئلة للمعلومة في `QUIZ` واربطها بها عبر `fact: "id"`.
 - **استلام رسائل نموذج التواصل في كروب تليغرام**: انسخ `scripts/contact-form.gs` إلى سكربت Google مجاني (script.google.com) وضع توكن البوت في خصائصه، ثم ضع رابطه في `formEndpoint`. الخطوات أعلى الملف نفسه. التوكن لا يظهر في الموقع أبداً. بدونه يجهّز الموقع الرسالة ويرسلها المتابع عبر الدايركت أو تليغرام.
+
+## نسخة النشر (dist)
+
+```bash
+node scripts/build-dist.mjs
+```
+
+تنسخ ملفات الموقع فقط إلى `dist/` (بلا `scripts` و`worker` وملفات الاختبار والفيديو)، وتعطي `sw.js` رقم إصدار جديداً من بصمة المحتوى حتى يحدّث الزوار ذاكرتهم. أضف `--pages` لتشغيل `build-pages.mjs` قبلها. ولضغط JS وCSS وJSON ثبّت esbuild مرة واحدة: `npm i --no-save --no-package-lock esbuild`. للمعاينة: إعداد `dist` في `.claude/launch.json` (المنفذ 5580). المجلد `dist/` مستثنى من git.
 
 ## التشغيل محلياً
 
@@ -189,3 +198,33 @@ node scripts/enrich-sources.mjs --stats       # إحصائية
   - [exifr](https://github.com/MikeKovarik/exifr) لقراءة الميتاداتا
   - [qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator) لرموز QR
   - [JSZip](https://stuk.github.io/jszip/) للتحميل الجماعي
+
+## نظام SEO (محركات البحث)
+
+كل شيء يُبنى بأمر واحد، ويعمل تلقائياً داخل الـ Action مع كل منشور جديد:
+
+```bash
+node scripts/build-pages.mjs   # يولّد الصفحات والخرائط والخلاصات
+node scripts/seo-audit.mjs     # يفحص كل الصفحات ويفشل عند أي خطأ
+```
+
+| الملف | ماذا يفعل |
+| --- | --- |
+| `scripts/site.config.json` | `siteUrl`: **القيمة الوحيدة** التي تُبنى منها الروابط المطلقة. غيّرها (ومتغيّر المستودع `SITE_URL`) عند شراء نطاق خاص. |
+| `scripts/seo/content.mjs` | عناوين وأوصاف الصفحات الرئيسية، وشرح وأسئلة كل أداة، وقائمة المواضيع وكلماتها. هذا هو الملف الذي تعدّله بيدك. |
+| `scripts/build-pages.mjs` | `post/` صفحة لكل خبر/معلومة · `topic/` صفحات الأقسام والمواضيع · `archive/` أرشيف مرقّم · `404.html` · `sitemap*.xml` · `feed.xml` و`atom.xml` · `robots.txt` · حقن `<head>` والبيانات المنظّمة في الصفحات الرئيسية والأدوات (بين `<!-- seo:head -->` و`<!-- seo:body -->`، فلا تعدّل ما بينهما يدوياً). |
+| `scripts/seo-audit.mjs` | مدقّق: عنوان/وصف مكرر أو مفقود أو بطول سيئ، canonical، JSON-LD، صور بلا alt، روابط مكسورة، صفحات خارج sitemap. |
+| `scripts/indexnow.mjs` | يخبر Bing و Yandex بالروابط الجديدة. معطّل حتى تضع متغيّر المستودع `INDEXNOW_ENABLED = true`. |
+| `scripts/seo-state.json` | مولَّد: تاريخ آخر تعديل حقيقي لكل صفحة (`lastmod` و`dateModified`). |
+
+لإضافة موضوع جديد: أضف سطراً في `TOPICS` داخل `scripts/seo/content.mjs` ثم أعد البناء. الموضوع الذي يجمع أقل من 4 منشورات لا تُبنى له صفحة.
+
+### معاينة الروابط في مواقع التواصل (Open Graph)
+
+`node scripts/build-pages.mjs` يرسم أيضاً **صورة معاينة 1200×630 لكل خبر وأداة وموضوع وصفحة** في `assets/og/` (JPEG أقل من 300 ك.ب):
+
+- الرسم بمتصفح Chrome بلا واجهة (`scripts/seo/og.mjs`)، فتُشكَّل العربية كما في الموقع. يحتاج محلياً: Chrome أو Edge، ومكتبة `puppeteer-core` (`npm i --no-save puppeteer-core`، أو الموجودة في `ad-video/`). في الـ Action تُثبَّت تلقائياً.
+- تزايدي: اسم الملف يحمل بصمة المحتوى. الصورة الموجودة لا يُعاد رسمها، وتغيير العنوان يعطي اسماً جديداً (فتجلبه المنصات من جديد). لإعادة رسم الكل بعد تغيير التصميم ارفع `TEMPLATE_VERSION` في `scripts/seo/og.mjs`.
+- الخطوط في `scripts/fonts/` (Reem Kufi و Lalezar و Cairo، برخصة OFL).
+- للمعاينة المحلية: افتح `/scripts/share-preview.html` عبر خادم التطوير لترى شكل بطاقة أي صفحة في واتساب وتيليغرام وفيسبوك و X وديسكورد و iMessage.
+- المنصات تخزّن المعاينة القديمة. لإعادة الجلب: [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)، وأرسل الرابط إلى `@WebpageBot` في تيليغرام، وفي واتساب أضف `?v=2` إلى آخر الرابط.

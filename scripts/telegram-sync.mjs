@@ -201,7 +201,7 @@ async function main() {
     if (!visible.has(type) || it.inGroup) continue;
 
     /* 3) Images (Telegram CDN links expire, so keep local copies) */
-    if (cfg.downloadImages && !post.images && ["fact", "news", "event"].includes(type)) {
+    if (cfg.downloadImages && (!post.images || post.images.some((u) => /^https?:/.test(u))) && ["fact", "news", "event"].includes(type)) {
       const srcs = [...(post.photos || []).slice(0, cfg.maxImagesPerPost), ...(post.video?.thumb ? [post.video.thumb] : [])];
       const saved = [];
       for (let i = 0; i < srcs.length; i++) {
@@ -214,8 +214,10 @@ async function main() {
     const imgs = post.images || [];
     const g = it.group;
     const title = ov.title || (g && (g.title || `${g.kind}: ${makeTitle(text)}`)) || (type === "literature" ? (cleanText(text).split("\n")[0].slice(0, 70) + (cleanText(text).split("\n")[0].length > 70 ? "…" : "")) : makeTitle(text)) || TYPES[type];
-    const videoThumb = post.video && post.video.thumb ? imgs[imgs.length - 1] : null;
-    const photos = post.video?.thumb ? imgs.slice(0, -1) : imgs;
+    // a remote entry is a download that failed (it is retried on the next sync): never publish it, its link expires
+    const local = (u) => !!u && !/^https?:/.test(u);
+    const videoThumb = post.video && post.video.thumb && local(imgs[imgs.length - 1]) ? imgs[imgs.length - 1] : null;
+    const photos = (post.video?.thumb ? imgs.slice(0, -1) : imgs).filter(local);
 
     index.push({
       id: post.id, type, cat, media: c.media, date: (post.date || "").slice(0, 10), title,

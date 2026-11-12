@@ -186,15 +186,7 @@
   });
 
   /* ---------- Logo ---------- */
-  const logo = (size = 40) => `<svg class="brand-logo" width="${size}" height="${size}" viewBox="0 0 64 64" aria-hidden="true">
-    <defs><linearGradient id="lg-gold" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3d27a"/><stop offset="1" stop-color="#b8860b"/></linearGradient></defs>
-    <rect x="2" y="2" width="60" height="60" rx="16" fill="#0e1a33"/>
-    <rect x="2.75" y="2.75" width="58.5" height="58.5" rx="15.3" fill="none" stroke="url(#lg-gold)" stroke-opacity=".55" stroke-width="1.5"/>
-    <path d="M15 40 L13 21 L23.5 30 L32 16 L40.5 30 L51 21 L49 40 Z" fill="url(#lg-gold)"/>
-    <rect x="15" y="43" width="34" height="5" rx="2.5" fill="url(#lg-gold)"/>
-    <circle cx="13" cy="20" r="2.6" fill="#f3d27a"/><circle cx="32" cy="15" r="2.8" fill="#f3d27a"/><circle cx="51" cy="20" r="2.6" fill="#f3d27a"/>
-    <path d="M32 27 L35 32 L32 37 L29 32 Z" fill="#0e1a33"/>
-  </svg>`;
+  const logo = (size = 40) => `<img class="brand-logo" src="assets/img/logo-128.png" srcset="assets/img/logo-128.png 1x, assets/img/logo-256.png 2x" width="${size}" height="${size}" alt="" decoding="async">`;
 
   /* ---------- Navigation ---------- */
   const NAV = [
@@ -309,7 +301,8 @@
             <li><a href="facts.html">مكتبة المعلومات</a></li><li><a href="facts.html?saved=1">محفوظاتي</a></li>
             <li><a href="quiz.html">اختبر معلوماتك</a></li><li><a href="news.html">الأخبار والإنجازات</a></li>
             <li><a href="channel.html">من قناة تليغرام</a></li><li><a href="channel.html?type=event">فعاليات القناة</a></li>
-            <li><a href="about.html">من نحن</a></li><li><a href="about.html#ads">أعلن معنا</a></li></ul></div>
+            <li><a href="topic/index.html">فهرس المواضيع</a></li><li><a href="archive/index.html">أرشيف المنشورات</a></li>
+            <li><a href="about.html">من نحن</a></li><li><a href="about.html#ads">أعلن معنا</a></li><li><a href="privacy.html">سياسة الخصوصية</a></li></ul></div>
           <div><h4>أدوات التحقق</h4><ul>
             ${window.TOOLS.filter((t) => t.group === "verify").map((t) => `<li><a href="${t.href}">${esc(t.title)}</a></li>`).join("")}</ul></div>
           <div><h4>أدوات رقمية</h4><ul>
@@ -319,7 +312,7 @@
         <div class="footer-giant" aria-hidden="true">الإمبراطورية العراقية</div>
         <div class="pwa-band" hidden><span class="ico">${ic("smartphone")}</span><div><strong>خلّي الإمبراطورية على شاشة هاتفك</strong><small>ثبّت الموقع كتطبيق، وافتح معلوماتك المحفوظة حتى بدون إنترنت.</small></div><button class="btn btn-primary pwa-install">${ic("download")}ثبّت التطبيق</button></div>
         <div class="footer-bottom">
-          <span>© ${S.year} ${esc(S.name)}. جميع الحقوق محفوظة.</span>
+          <span>© ${S.year} ${esc(S.name)}. جميع الحقوق محفوظة. · <a href="privacy.html">سياسة الخصوصية</a></span>
           <span>${ic("shield-check", "")} أدواتنا تعمل داخل جهازك، ولا نحفظ صورك أو بياناتك.</span>
         </div>
       </div>
@@ -354,7 +347,8 @@
     { t: "تحقق معنا", s: "كشف الإشاعات والأخبار الكاذبة", h: "verify.html", i: "shield-check" },
     { t: "من نحن", s: "رؤيتنا وسياسة التحرير والإعلان", h: "about.html", i: "crown" },
     { t: "أعلن معنا", s: "باقات الإعلان والتعاون", h: "about.html#ads", i: "megaphone" },
-    { t: "تواصل معنا", s: "أرسل اقتراحاً أو تصحيحاً أو طلب إعلان", h: "contact.html", i: "mail" }
+    { t: "تواصل معنا", s: "أرسل اقتراحاً أو تصحيحاً أو طلب إعلان", h: "contact.html", i: "mail" },
+    { t: "سياسة الخصوصية", s: "ما البيانات التي نعالجها وحقوقك", h: "privacy.html", i: "shield-check" }
   ];
   function openSearch() {
     if ($(".search-overlay")) return;

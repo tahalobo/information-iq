@@ -1,4 +1,5 @@
 {
-  "siteUrl": "",
-  "_ملاحظة": "ضع هنا رابط الموقع النهائي بدون / في آخره، مثل https://information-iq.com — على GitHub Pages يُملأ تلقائياً من الـ Action"
+  "siteUrl": "https://tahalobo.github.io/information-iq",
+  "_ملاحظة": "رابط الموقع النهائي بدون / في آخره. هذه القيمة الوحيدة التي تُبنى منها كل الروابط المطلقة (canonical و og و sitemap). عند شراء نطاق خاص غيّرها هنا، وضع النطاق نفسه في متغيّر المستودع SITE_URL (Settings ← Secrets and variables ← Actions ← Variables).",
+  "indexNowKey": "801eb5b3c8c0b3449f9a1950d079dcae"
 }

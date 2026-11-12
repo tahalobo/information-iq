@@ -5,14 +5,14 @@
    - المعلومات المحفوظة: تُخزَّن كاملة لحظة حفظها
    غيّر رقم VERSION عند أي تعديل كبير لتنظيف الذاكرة القديمة.
    ========================================================== */
-const VERSION = "empire-v9";
+const VERSION = "empire-v15";
 const CORE = `${VERSION}-core`, PAGES = `${VERSION}-pages`, MEDIA = `${VERSION}-media`;
 const SAVED = "empire-saved"; // the reader's saved facts: survives version bumps
 const PRECACHE = [
   "./", "index.html", "offline.html", "facts.html", "fact.html", "manifest.webmanifest",
   "assets/css/style.css", "assets/js/config.js", "assets/js/data.js", "assets/js/core.js", "assets/js/fx.js", "assets/js/gl.js",
   "assets/js/static-index.js", "assets/js/telegram-data.js", "assets/js/branches-data.js", "branch.html", "assets/js/pages/branch.js", "assets/js/pages/home.js", "assets/js/pages/facts.js", "assets/js/pages/fact.js",
-  "assets/img/favicon.svg", "assets/img/icon-192.png"
+  "assets/img/favicon.svg", "assets/img/icon-192.png", "assets/img/logo-128.png", "assets/img/logo-256.png"
 ];
 const MEDIA_MAX = 250;
 

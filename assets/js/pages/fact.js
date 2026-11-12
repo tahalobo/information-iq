@@ -362,6 +362,7 @@
     const x = cv.getContext("2d");
     try { await Promise.all(["400 90px Lalezar", '600 44px "IBM Plex Sans Arabic"', '500 40px "IBM Plex Sans Arabic"'].map((s) => document.fonts.load(s))); } catch { /* fallback fonts */ }
     const img = image ? await loadImg(image).catch(() => null) : null;
+    const brandImg = await loadImg("assets/img/logo-256.png").catch(() => null);
 
     // background: lapis night, category glow, gold dust, Mesopotamian diamonds
     let g = x.createLinearGradient(0, 0, 0, H); g.addColorStop(0, "#0a1230"); g.addColorStop(.55, "#050816"); g.addColorStop(1, "#03050c");
@@ -374,7 +375,7 @@
     x.globalAlpha = 1; x.direction = "rtl"; x.textAlign = "right"; x.textBaseline = "alphabetic";
 
     // brand row
-    crown(x, W - M - 100, 84, 100);
+    if (brandImg) x.drawImage(brandImg, W - M - 100, 84, 100, 100); else crown(x, W - M - 100, 84, 100);
     x.fillStyle = "#f2ecdd"; x.font = "400 52px Lalezar"; x.fillText("الإمبراطورية العراقية", W - M - 128, 140);
     x.fillStyle = "#9ba3bf"; x.font = '500 30px "IBM Plex Sans Arabic"'; x.fillText(`العراقية · @${window.SITE.handle}`, W - M - 128, 182);
 

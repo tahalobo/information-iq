@@ -21,7 +21,7 @@ import fs from "node:fs/promises";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { parsePage, fetchPage, esc } from "./telegram-sync.mjs";
+import { parsePage, fetchPage, download, esc } from "./telegram-sync.mjs";
 import { classify, cleanText, norm } from "./telegram-classify.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -30,6 +30,7 @@ const P = {
   infoStore: path.join(ROOT, "scripts/telegram-store.json"),
   stores: path.join(ROOT, "scripts/branches"),
   posts: path.join(ROOT, "assets/tg/posts"),
+  img: path.join(ROOT, "assets/tg/br"),
   index: path.join(ROOT, "assets/js/branches-data.js")
 };
 const args = process.argv.slice(2);
@@ -102,6 +103,16 @@ export function judge(post, b, cfg, seen) {
   return { ok: true, text, ...h };
 }
 
+/* ---------- Images: saved locally, because Telegram's CDN links expire within days ---------- */
+const liveImages = new Set();
+async function localImage(url, name) {
+  if (!url) return null;
+  const file = path.join(P.img, name);
+  if (!existsSync(file) && !(await download(url, file))) return null;   // expired link: no image rather than a broken one
+  liveImages.add(name);
+  return `assets/tg/br/${name}`;
+}
+
 /* ---------- Output helpers ---------- */
 const paragraphs = (t) => t.split("\n").map((p) => p.trim()).filter(Boolean).map((p) => `<p>${esc(p)}</p>`).join("\n");
 const hashtags = (t) => [...new Set((t.match(/#[\p{L}\p{N}_]+/gu) || []).map((h) => h.slice(1).replace(/_/g, " ")))].slice(0, 6);
@@ -110,7 +121,7 @@ async function main() {
   const all = JSON.parse(await fs.readFile(P.config, "utf8"));
   const cfg = all.branches || { list: [] };
   const only = opt("--only"); const report = opt("--report", flag("--report") ? "*" : null);
-  await fs.mkdir(P.stores, { recursive: true }); await fs.mkdir(P.posts, { recursive: true });
+  await fs.mkdir(P.stores, { recursive: true }); await fs.mkdir(P.posts, { recursive: true }); await fs.mkdir(P.img, { recursive: true });
 
   // the info channel's texts: a branch repost of an info post is a duplicate, not news
   const seen = new Map();
@@ -148,10 +159,11 @@ async function main() {
       if (!r.ok) continue;
       shown++;
       const id = `${b.key}-${p.id}`;
-      const images = (p.photos || []).slice(0, 4);
+      const images = (await Promise.all((p.photos || []).slice(0, 4).map((u, i) => localImage(u, `${id}-${i + 1}.jpg`)))).filter(Boolean);
+      const thumb = p.video ? await localImage(p.video.thumb, `${id}-v.jpg`) : null;
       const detail = {
         id, msg: p.id, branch: b.key, channel: b.channel, type: "news", cat: b.key, date: p.date, title: r.title, html: paragraphs(r.body),
-        images, video: p.video ? { thumb: p.video.thumb || null, duration: p.video.duration } : null, poll: null,
+        images, video: p.video ? { thumb, duration: p.video.duration } : null, poll: null,
         views: p.views, reactions: p.reactions, forwardedFrom: null, links: (p.links || []).filter((l) => !/t\.me\//.test(l.href)).slice(0, 5),
         url: `https://t.me/${b.channel}/${p.id}`, sources: []
       };
@@ -159,7 +171,7 @@ async function main() {
       const target = path.join(P.posts, `${id}.js`);
       if (!existsSync(target) || (await fs.readFile(target, "utf8")) !== out) await fs.writeFile(target, out);
       posts.push({ id, b: b.key, msg: p.id, date: (p.date || "").slice(0, 10), ts: p.date || "", title: r.title, excerpt: clip(r.body.replace(/\n+/g, " "), 190),
-        image: images[0] || p.video?.thumb || null, images: images.length, media: p.video ? "video" : images.length > 1 ? "album" : images.length ? "photo" : "text",
+        image: images[0] || thumb || null, images: images.length, media: p.video ? "video" : images.length > 1 ? "album" : images.length ? "photo" : "text",
         video: p.video ? { duration: p.video.duration } : null, views: p.views || 0, len: r.text.length, tags: hashtags(p.text || "") });
     }
     await fs.writeFile(file, JSON.stringify(store));
@@ -171,6 +183,7 @@ async function main() {
   // remove detail files of posts that are no longer shown (only branch files: "<key>-<id>.js")
   const keys = new Set(cfg.list.map((b) => b.key)); const live = new Set(posts.map((p) => `${p.id}.js`));
   for (const f of await fs.readdir(P.posts)) { const k = f.split("-")[0]; if (keys.has(k) && !live.has(f)) await fs.rm(path.join(P.posts, f)); }
+  for (const f of await fs.readdir(P.img)) if (!liveImages.has(f)) await fs.rm(path.join(P.img, f));
 
   posts.sort((a, x) => x.ts.localeCompare(a.ts));
   posts.forEach((p) => delete p.ts);

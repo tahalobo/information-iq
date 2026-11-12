@@ -4,20 +4,103 @@
     {
       "name": "site",
       "runtimeExecutable": "python",
-      "runtimeArgs": [".claude/dev_server.py"],
+      "runtimeArgs": [
+        ".claude/dev_server.py"
+      ],
       "port": 5500
     },
     {
       "name": "site-alt",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-c", "import os, runpy; os.environ['PORT'] = '5510'; runpy.run_path('.claude/dev_server.py')"],
+      "runtimeArgs": [
+        "-c",
+        "import os, runpy; os.environ['PORT'] = '5510'; runpy.run_path('.claude/dev_server.py')"
+      ],
       "port": 5510
     },
     {
       "name": "site-rs",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-c", "import os, runpy; os.environ['PORT'] = '5520'; runpy.run_path('.claude/dev_server.py')"],
+      "runtimeArgs": [
+        "-c",
+        "import os, runpy; os.environ['PORT'] = '5520'; runpy.run_path('.claude/dev_server.py')"
+      ],
       "port": 5520,
+      "autoPort": false
+    },
+    {
+      "name": "site-img",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-c",
+        "import os, runpy; os.environ['PORT'] = '5530'; runpy.run_path('.claude/dev_server.py')"
+      ],
+      "port": 5530,
+      "autoPort": false
+    },
+    {
+      "name": "site-meta",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-c",
+        "import os, runpy; os.environ['PORT'] = '5540'; runpy.run_path('.claude/dev_server.py')"
+      ],
+      "port": 5540,
+      "autoPort": false
+    },
+    {
+      "name": "site-pw",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-c",
+        "import os, runpy; os.environ['PORT'] = '5560'; runpy.run_path('.claude/dev_server.py')"
+      ],
+      "port": 5560,
+      "autoPort": false
+    },
+    {
+      "name": "site-txt",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-c",
+        "import os, runpy; os.environ['PORT'] = '5570'; runpy.run_path('.claude/dev_server.py')"
+      ],
+      "port": 5570,
+      "autoPort": false
+    },
+    {
+      "name": "site-fz",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-c",
+        "import os, runpy; os.environ['PORT'] = '5550'; runpy.run_path('.claude/dev_server.py')"
+      ],
+      "port": 5550,
+      "autoPort": false
+    },
+    {
+      "name": "site-seo",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-c",
+        "import os, runpy; os.environ['PORT'] = '5580'; runpy.run_path('.claude/dev_server.py')"
+      ],
+      "port": 5580,
+      "autoPort": false
+    },
+    {
+      "name": "dist",
+      "runtimeExecutable": "python",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "5580",
+        "--bind",
+        "127.0.0.1",
+        "-d",
+        "dist"
+      ],
+      "port": 5580,
       "autoPort": false
     }
   ]

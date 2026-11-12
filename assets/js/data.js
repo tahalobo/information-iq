@@ -430,14 +430,14 @@ window.FACTS = [
 /* ---------- الأدوات الرقمية ---------- */
 window.TOOLS = [
   { id: "ai", title: "المحقق الذكي: كشف صور الذكاء الاصطناعي", desc: "هل الصورة مولّدة بالذكاء الاصطناعي؟ يفحص أدلة المنشأ داخل الملف ونماذج كشف مختبَرة، ويعطيك تقريراً يشرح السبب ودرجة الثقة وحدود النتيجة.", icon: "scan-face", href: "tool-ai.html", featured: true, group: "verify", isNew: true },
-  { id: "forensics", title: "كاشف التعديل والفوتوشوب", desc: "هل عُدّلت الصورة؟ اكشف الأجزاء الملصوقة والمنسوخة ولقطات الشاشة المزوّرة بخمسة اختبارات جنائية، مع خريطة للمناطق المشبوهة.", icon: "scan-eye", href: "tool-forensics.html", group: "verify", isNew: true },
+  { id: "forensics", title: "كاشف التعديل والفوتوشوب", desc: "هل عُدّلت الصورة؟ افحص آثار اللصق والنسخ داخل الملف: شبكة JPEG، الأجزاء المنسوخة، مستوى الخطأ والضجيج، مع خلاصة للمتحقق وتقرير قابل للتنزيل.", icon: "scan-eye", href: "tool-forensics.html", group: "verify", isNew: true },
   { id: "metadata", title: "عارض ومزيل الميتاداتا", desc: "اكشف البيانات المخفية في صورك (الجهاز، والتاريخ، وموقع GPS على الخريطة) وامسحها بضغطة بلا فقدان للجودة.", icon: "scan-search", href: "tool-metadata.html", featured: true, group: "verify" },
   { id: "reverse", title: "البحث العكسي عن الصور", desc: "اعرف أصل أي صورة وأين نُشرت أول مرة عبر غوغل لنز وياندكس وبنغ وتين آي، مع قص جزء محدد من الصورة.", icon: "images", href: "tool-reverse.html", featured: true, group: "verify" },
   { id: "link", title: "فاحص الروابط المشبوهة", desc: "حلّل أي رابط قبل فتحه: يكشف التصيد وانتحال المواقع، يفكّ الرابط المختصر ويفحص وجهته، ويطابقه مع قوائم التهديدات العالمية.", icon: "link-2", href: "tool-link.html", group: "verify" },
-  { id: "image", title: "ضغط الصور والعلامة المائية", desc: "صغّر حجم الصور وغيّر مقاساتها وصيغتها (JPG وWebP وPNG)، وأضف علامتك المائية لحماية تصاميمك.", icon: "image-down", href: "tool-image.html", group: "create" },
+  { id: "image", title: "ضغط الصور والعلامة المائية", desc: "صغّر الصور بمقارنة قبل وبعد أو بحجم مستهدف، وحوّل صيغها ومقاساتها دفعة واحدة، وأضف علامتك المائية نصاً أو شعاراً.", icon: "image-down", href: "tool-image.html", group: "create" },
   { id: "qr", title: "مولّد رمز QR", desc: "أنشئ رمز QR لرابط أو نص أو شبكة واي فاي أو رقم واتساب، وخصّص ألوانه وحمّله بجودة عالية.", icon: "qr-code", href: "tool-qr.html", group: "create" },
   { id: "password", title: "فاحص ومولّد كلمات المرور", desc: "قِس قوة كلمة مرورك وتأكد هل ظهرت في تسريبات سابقة دون إرسالها، وولّد كلمات مرور قوية.", icon: "key-round", href: "tool-password.html", group: "secure" },
-  { id: "text", title: "أدوات النص العربي والكابشن", desc: "عدّاد كلمات وحدود إنستغرام، وإزالة التشكيل، وتحويل الأرقام، واستخراج الهاشتاغات، ومحوّل التاريخ الهجري.", icon: "type", href: "tool-text.html", group: "create" },
+  { id: "text", title: "أدوات النص العربي والكابشن", desc: "عدّاد دقيق بحدود إنستغرام و X وتيليغرام، وتنظيف النص، وإصلاح الاتجاه، والهاشتاغات، وقوالب الكابشن، وتقسيم السلاسل، ومعاينة المنشور.", icon: "type", href: "tool-text.html", group: "create" },
   { id: "verify", title: "محقّق الأخبار", desc: "الصق أي خبر يصلك، فنبحث عنه في المصادر ونعطيك النتيجة مع تقرير كامل بكل ما وجدناه.", icon: "shield-check", href: "verify.html", group: "verify" }
 ];
 

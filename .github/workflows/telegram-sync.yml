@@ -1,5 +1,5 @@
 # مزامنة قنوات الإمبراطورية العراقية مع الموقع ونشره تلقائياً (مجاني على GitHub)
-# كل نصف ساعة: سحب قناة المعلومات والفروع الخمسة وتصنيفها ← مصادر إضافية ← أسئلة الاختبار ← صفحة لكل منشور + sitemap ← نشر على GitHub Pages
+# كل نصف ساعة: سحب قناة المعلومات والفروع الخمسة وتصنيفها ← مصادر إضافية ← أسئلة الاختبار ← صفحة لكل منشور + مواضيع + sitemap + RSS ← تدقيق SEO ← نشر على GitHub Pages ← IndexNow
 # ويعمل أيضاً عند كل تعديل ترفعه إلى main، ويمكن تشغيله يدوياً من Actions ← Telegram sync ← Run workflow
 #
 # الإعداد مرة واحدة: Settings ← Pages ← Source: GitHub Actions
@@ -81,8 +81,18 @@ jobs:
       - name: Build quiz questions
         run: node scripts/build-quiz.mjs
 
-      - name: Build static pages, previews & sitemap
+      # صور المعاينة (Open Graph) تُرسم بمتصفح Chrome الموجود على خادم GitHub؛ نثبّت مكتبة التحكم فقط (بلا تنزيل متصفح)
+      - name: Install preview-image renderer
+        continue-on-error: true
+        run: npm install --no-save --no-audit --no-fund puppeteer-core@23.11.1
+
+      # صفحة لكل منشور + صفحات المواضيع والأرشيف + sitemap/RSS + البيانات المنظّمة (كل خبر جديد يأخذ SEO كاملاً تلقائياً)
+      - name: Build static pages, topics, sitemaps & feeds
         run: node scripts/build-pages.mjs
+
+      # مدقّق SEO: يوقف النشر إذا ظهر عنوان مكرر، أو canonical مفقود، أو رابط مكسور، أو بيانات منظّمة غير صالحة
+      - name: SEO audit
+        run: node scripts/seo-audit.mjs
 
       - name: Commit changes
         id: commit
@@ -112,6 +122,15 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+          fetch-depth: 2
+      # IndexNow: نحتفظ بالسكربت وقائمة الروابط الجديدة قبل حذف مجلد scripts، ونعرف هل تغيّرت القائمة في آخر commit
+      - name: Stage IndexNow files
+        id: indexnow
+        run: |
+          mkdir -p "$RUNNER_TEMP/indexnow/scripts"
+          cp scripts/indexnow.mjs scripts/site.config.json "$RUNNER_TEMP/indexnow/scripts/" 2>/dev/null || true
+          cp scripts/indexnow-pending.json "$RUNNER_TEMP/indexnow/scripts/" 2>/dev/null || true
+          if git diff --quiet HEAD~1 HEAD -- scripts/indexnow-pending.json 2>/dev/null; then echo "fresh=false" >> "$GITHUB_OUTPUT"; else echo "fresh=true" >> "$GITHUB_OUTPUT"; fi
       - name: Keep only the website files
         run: rm -rf scripts worker .claude README.md
       - uses: actions/configure-pages@v5
@@ -120,3 +139,13 @@ jobs:
           path: .
       - id: deployment
         uses: actions/deploy-pages@v4
+      # إخبار Bing و Yandex بالروابط الجديدة فوراً (مجاني بلا حساب). معطّل حتى تضع متغيّر المستودع INDEXNOW_ENABLED = true
+      # من Settings ← Secrets and variables ← Actions ← Variables، بعد التأكد من النطاق النهائي للموقع.
+      - name: Notify search engines (IndexNow)
+        if: vars.INDEXNOW_ENABLED == 'true' && steps.indexnow.outputs.fresh == 'true'
+        continue-on-error: true
+        env:
+          SITE_URL: ${{ vars.SITE_URL || steps.deployment.outputs.page_url }}
+        run: |
+          sleep 20
+          cd "$RUNNER_TEMP/indexnow" && node scripts/indexnow.mjs --send

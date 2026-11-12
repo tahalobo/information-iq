@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>معاينة بطاقات المشاركة (أداة محلية)</title>
+<style>
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", Tahoma, sans-serif; background: #0b1224; color: #e8ebf3; margin: 0; padding: 24px; line-height: 1.7; }
+  h1 { font-size: 1.5rem; margin: 0 0 4px; } h2 { font-size: 1rem; margin: 0 0 10px; color: #f3d27a; }
+  p.note { color: #9aa3b8; margin: 0 0 18px; font-size: .92rem; max-width: 900px; }
+  form { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 14px; }
+  input { flex: 1 1 320px; padding: 10px 14px; border-radius: 10px; border: 1px solid #2a3558; background: #111a33; color: inherit; font: inherit; direction: ltr; }
+  button, .s { padding: 9px 16px; border-radius: 10px; border: 0; background: #d4a537; color: #111; font: inherit; font-weight: 600; cursor: pointer; }
+  .samples { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; } .s { background: #1b2748; color: #e8ebf3; font-weight: 400; font-size: .86rem; }
+  #grid { display: grid; gap: 22px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 380px), 1fr)); align-items: start; }
+  .box { background: #111a33; border: 1px solid #222d4f; border-radius: 16px; padding: 16px; }
+  .box small { color: #9aa3b8; display: block; margin-top: 8px; font-size: .8rem; }
+  img { display: block; width: 100%; }
+  .clamp1, .clamp2, .clamp3 { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; } .clamp1 { -webkit-line-clamp: 1; } .clamp2 { -webkit-line-clamp: 2; } .clamp3 { -webkit-line-clamp: 3; }
+  /* WhatsApp */
+  .wa { background: #0b141a; padding: 14px; border-radius: 10px; }
+  .wa .bub { background: #005c4b; border-radius: 10px; padding: 4px; max-width: 330px; margin-inline-end: auto; color: #e9edef; }
+  .wa .card { background: #025144; border-radius: 8px; overflow: hidden; } .wa .card img { aspect-ratio: 1.91; object-fit: cover; }
+  .wa .t { padding: 8px 10px 2px; font-weight: 600; font-size: .92rem; } .wa .d { padding: 0 10px; font-size: .8rem; color: #c5d3cf; } .wa .h { padding: 2px 10px 8px; font-size: .74rem; color: #9db5ae; direction: ltr; text-align: right; }
+  .wa .link { padding: 6px 8px 4px; font-size: .84rem; color: #53bdeb; direction: ltr; text-align: left; word-break: break-all; }
+  /* Telegram */
+  .tg { background: #17212b; padding: 14px; border-radius: 10px; } .tg .bub { background: #2b5278; border-radius: 12px; padding: 8px 10px; max-width: 350px; margin-inline-end: auto; color: #fff; }
+  .tg .link { color: #7ec4f7; font-size: .86rem; direction: ltr; text-align: left; word-break: break-all; margin-bottom: 6px; }
+  .tg .pv { border-inline-start: 3px solid #6ab3f3; padding-inline-start: 9px; } .tg .sn { color: #6ab3f3; font-weight: 600; font-size: .86rem; } .tg .t { font-weight: 600; font-size: .9rem; } .tg .d { font-size: .86rem; } .tg img { border-radius: 6px; margin-top: 6px; aspect-ratio: 1.91; object-fit: cover; }
+  /* Facebook / Messenger / Instagram DM / LinkedIn */
+  .fb { background: #fff; color: #050505; border-radius: 10px; overflow: hidden; border: 1px solid #ccd0d5; } .fb img { aspect-ratio: 1.91; object-fit: cover; }
+  .fb .m { background: #f0f2f5; padding: 10px 12px; } .fb .h { font-size: .74rem; color: #65676b; text-transform: uppercase; direction: ltr; text-align: right; } .fb .t { font-weight: 600; font-size: 1rem; line-height: 1.4; } .fb .d { font-size: .86rem; color: #65676b; }
+  /* X */
+  .x { background: #000; border-radius: 10px; padding: 12px; } .x .c { position: relative; border-radius: 16px; overflow: hidden; border: 1px solid #2f3336; } .x img { aspect-ratio: 1.91; object-fit: cover; }
+  .x .t { position: absolute; bottom: 10px; inset-inline-start: 10px; max-width: 90%; background: rgba(0,0,0,.77); color: #fff; padding: 1px 8px; border-radius: 4px; font-size: .8rem; } .x .h { color: #71767b; font-size: .8rem; margin-top: 4px; direction: ltr; text-align: right; }
+  /* Discord */
+  .dc { background: #313338; border-radius: 10px; padding: 12px; } .dc .e { background: #2b2d31; border-inline-start: 4px solid #1e1f22; border-radius: 4px; padding: 10px 14px 14px; max-width: 400px; margin-inline-end: auto; }
+  .dc .sn { font-size: .76rem; color: #dbdee1; } .dc .t { color: #00a8fc; font-weight: 600; } .dc .d { font-size: .86rem; color: #dbdee1; } .dc img { border-radius: 4px; margin-top: 10px; }
+  /* iMessage */
+  .im { background: #fff; border-radius: 10px; padding: 14px; } .im .c { background: #e9e9eb; border-radius: 18px; overflow: hidden; max-width: 300px; margin-inline-end: auto; color: #000; } .im img { aspect-ratio: 1.91; object-fit: cover; }
+  .im .t { padding: 8px 12px 0; font-weight: 600; font-size: .86rem; } .im .h { padding: 0 12px 9px; font-size: .76rem; color: #8a8a8e; direction: ltr; text-align: right; }
+  table { width: 100%; border-collapse: collapse; font-size: .86rem; } td, th { text-align: right; padding: 6px 8px; border-bottom: 1px solid #222d4f; vertical-align: top; word-break: break-word; } th { color: #9aa3b8; font-weight: 400; width: 150px; }
+  .ok { color: #5fd38d; } .bad { color: #ff7b7b; font-weight: 600; }
+</style>
+</head>
+<body>
+<h1>معاينة بطاقات المشاركة</h1>
+<p class="note">أداة محلية للمطوّر (لا تُنشر): تقرأ وسوم Open Graph و Twitter من HTML الثابت لأي صفحة في الموقع، كما يقرؤها زاحف المنصة بلا تشغيل JavaScript، وترسم تقريباً لشكل البطاقة في كل تطبيق. الشكل تقريبي؛ التحقق النهائي يكون بلصق الرابط المنشور في التطبيق نفسه. شغّلها عبر خادم التطوير: <code>/scripts/share-preview.html</code></p>
+<form id="f"><input id="p" placeholder="post/tg-15265.html" list="dl"><button>اعرض</button></form>
+<div class="samples" id="samples"></div>
+<div id="grid"></div>
+<script src="../assets/js/static-index.js"></script>
+<script>
+const SITE_URL = (window.SITE_URL || "").replace(/\/+$/, "");
+const SAMPLES = [["الرئيسية", "index.html"], ["خبر بصورة", "post/tg-15265.html"], ["معلومة بلا صورة", "post/hammurabi-code.html"], ["خبر فرع", Object.keys(window.STATIC_POSTS || {}).find((k) => /^(games|anime|news|music|sport)-/.test(k)) ? "post/" + Object.keys(window.STATIC_POSTS).find((k) => /^(games|anime|news|music|sport)-/.test(k)) + ".html" : "branch.html"],
+  ["أداة", "tool-link.html"], ["موضوع", "topic/بابل.html"], ["قسم", "topic/علوم.html"], ["الأرشيف", "archive/index.html"], ["المعلومات", "facts.html"], ["تحقق معنا", "verify.html"], ["الاختبار", "quiz.html"], ["من نحن", "about.html"]];
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const local = (u) => (SITE_URL && u.startsWith(SITE_URL) ? ".." + u.slice(SITE_URL.length) : u);
+document.getElementById("samples").innerHTML = SAMPLES.map(([n, p]) => `<button class="s" data-p="${esc(p)}">${esc(n)}</button>`).join("");
+document.getElementById("samples").onclick = (e) => { const b = e.target.closest("[data-p]"); if (b) show(b.dataset.p); };
+document.getElementById("f").onsubmit = (e) => { e.preventDefault(); show(document.getElementById("p").value.trim() || "index.html"); };
+
+async function show(p) {
+  document.getElementById("p").value = p; history.replaceState(null, "", "?p=" + encodeURIComponent(p));
+  const grid = document.getElementById("grid");
+  let html; try { const r = await fetch("../" + p, { cache: "no-store" }); if (!r.ok) throw new Error(r.status); html = await r.text(); } catch (e) { grid.innerHTML = `<div class="box bad">تعذّر تحميل ${esc(p)} (${esc(e.message)})</div>`; return; }
+  // كما يفعل الزاحف: HTML الخام فقط، بلا تشغيل أي سكربت
+  const doc = new DOMParser().parseFromString(html, "text/html");
+  const m = (sel) => doc.querySelector(sel)?.getAttribute("content") || "";
+  const og = (n) => m(`meta[property="og:${n}"]`), tw = (n) => m(`meta[name="twitter:${n}"]`);
+  const d = { title: og("title") || doc.title, desc: og("description") || m('meta[name="description"]'), img: og("image"), url: og("url"), site: og("site_name"), type: og("type") };
+  let host = ""; try { host = new URL(d.url).host; } catch {}
+  const src = esc(local(d.img));
+  const size = await new Promise((res) => { const i = new Image(); i.onload = () => res(`${i.naturalWidth}×${i.naturalHeight}`); i.onerror = () => res(null); i.src = local(d.img); });
+  let bytes = null; try { const r = await fetch(local(d.img), { cache: "no-store" }); bytes = (await r.blob()).size; } catch {}
+  const row = (k, v, ok = true) => `<tr><th>${k}</th><td class="${ok ? "" : "bad"}">${esc(v) || '<span class="bad">مفقود</span>'}</td></tr>`;
+  const abs = (u) => /^https:\/\//.test(u);
+  grid.innerHTML = `
+  <div class="box"><h2>واتساب</h2><div class="wa"><div class="bub"><div class="card"><img src="${src}" alt=""><div class="t clamp2">${esc(d.title)}</div><div class="d clamp2">${esc(d.desc)}</div><div class="h">${esc(host)}</div></div><div class="link">${esc(decodeURI(d.url))}</div></div></div><small>يقرأ og:title و og:description و og:image. يتجاهل الصور الأكبر من ~300 ك.ب أو غير المطلقة.</small></div>
+  <div class="box"><h2>تيليغرام</h2><div class="tg"><div class="bub"><div class="link">${esc(decodeURI(d.url))}</div><div class="pv"><div class="sn">${esc(d.site)}</div><div class="t clamp2">${esc(d.title)}</div><div class="d clamp3">${esc(d.desc)}</div><img src="${src}" alt=""></div></div></div><small>يعرض og:site_name ثم العنوان والوصف والصورة الكبيرة.</small></div>
+  <div class="box"><h2>فيسبوك · ماسنجر · إنستغرام DM · لينكدإن</h2><div class="fb"><img src="${src}" alt=""><div class="m"><div class="h">${esc(host)}</div><div class="t clamp2">${esc(d.title)}</div><div class="d clamp1">${esc(d.desc)}</div></div></div><small>تحتاج og:image بنسبة 1.91:1 وعرض 1200 لتظهر البطاقة الكبيرة.</small></div>
+  <div class="box"><h2>X (تويتر)</h2><div class="x"><div class="c"><img src="${src}" alt=""><div class="t clamp1">${esc(tw("title") || d.title)}</div></div><div class="h">From ${esc(host)}</div></div><small>twitter:card = ${esc(tw("card"))}. يعرض الصورة مع العنوان فوقها.</small></div>
+  <div class="box"><h2>ديسكورد</h2><div class="dc"><div class="e"><div class="sn">${esc(d.site)}</div><div class="t clamp2">${esc(d.title)}</div><div class="d clamp3">${esc(d.desc)}</div><img src="${src}" alt=""></div></div></div>
+  <div class="box"><h2>iMessage</h2><div class="im"><div class="c"><img src="${src}" alt=""><div class="t clamp2">${esc(d.title)}</div><div class="h">${esc(host)}</div></div></div></div>
+  <div class="box" style="grid-column:1/-1"><h2>الوسوم كما قُرئت من HTML الثابت</h2><table>
+    ${row("og:title", `${d.title} (${d.title.length} حرفاً)`, d.title.length <= 90)}
+    ${row("og:description", `${d.desc} (${d.desc.length} حرفاً)`, d.desc.length >= 30 && d.desc.length <= 200)}
+    ${row("og:url", d.url, abs(d.url))}${row("og:image", d.img, abs(d.img))}${row("og:image:secure_url", og("image:secure_url"), abs(og("image:secure_url")))}
+    ${row("الصورة فعلياً", size ? `${size} · ${bytes ? Math.round(bytes / 1024) + " ك.ب" : "?"}` : "لم تُحمَّل", size === "1200×630" && bytes && bytes <= 300 * 1024)}
+    ${row("og:image:width × height · type", `${og("image:width")}×${og("image:height")} · ${og("image:type")}`, og("image:width") === "1200" && og("image:height") === "630")}
+    ${row("og:image:alt", og("image:alt"))}${row("og:type", d.type)}${row("og:site_name · og:locale", `${d.site} · ${og("locale")}`, og("locale") === "ar_IQ")}
+    ${d.type === "article" ? row("article:published / modified / section", `${m('meta[property="article:published_time"]')} / ${m('meta[property="article:modified_time"]')} / ${m('meta[property="article:section"]')}`) : ""}
+    ${row("twitter:card · title · image", `${tw("card")} · ${tw("title")} · ${tw("image") ? "✓" : ""}`, tw("card") === "summary_large_image" && !!tw("image"))}
+  </table></div>`;
+}
+show(new URLSearchParams(location.search).get("p") || "post/tg-15265.html");
+</script>
+</body>
+</html>

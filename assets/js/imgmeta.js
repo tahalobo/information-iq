@@ -1,6 +1,9 @@
 /* ==========================================================
    مكتبة الصور: قراءة الميتاداتا وإزالتها بلا فقدان للجودة
    تعمل بالكامل داخل المتصفح.
+   القراءة هنا (read/group) مبسّطة وتعتمد على exifr، وتستخدمها صفحات البحث العكسي
+   وكاشف الذكاء الاصطناعي. القراءة الشاملة في metascan.js. أما التنظيف (strip)
+   فمستقل عن أي مكتبة.
    ========================================================== */
 (function () {
   "use strict";
@@ -119,96 +122,163 @@
     return { score, level, findings };
   }
 
-  /* ---------- Lossless stripping ---------- */
+  /* ---------- Lossless stripping ----------
+     القاعدة: نُبقي فقط ما يلزم لعرض البكسلات كما هي، ونحذف كل ما عداه
+     (قائمة سماح لا قائمة منع)، ونقطع أي بيانات ملحقة بعد نهاية الصورة. */
   function concat(parts) {
     const len = parts.reduce((a, p) => a + p.length, 0); const out = new Uint8Array(len); let o = 0;
     for (const p of parts) { out.set(p, o); o += p.length; } return out;
   }
-  const ascii = (d, i, n) => String.fromCharCode(...d.subarray(i, i + n));
+  const ascii = (d, i, n) => String.fromCharCode(...d.subarray(i, Math.min(d.length, i + n)));
+  const hasData = (d, from) => { for (let k = from; k < d.length; k++) if (d[k]) return true; return false; };
 
+  // little-endian TIFF with a single IFD0 entry: Orientation
+  const orientTiff = (o) => [0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00,
+    0x12, 0x01, 0x03, 0x00, 0x01, 0x00, 0x00, 0x00, o & 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00];
   function minimalOrientationExif(o) {
-    // APP1 "Exif\0\0" + little-endian TIFF with a single IFD0 entry: Orientation
-    const tiff = [0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00,
-      0x12, 0x01, 0x03, 0x00, 0x01, 0x00, 0x00, 0x00, o & 0xFF, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00];
-    const payload = [0x45, 0x78, 0x69, 0x66, 0x00, 0x00, ...tiff];
+    const payload = [0x45, 0x78, 0x69, 0x66, 0x00, 0x00, ...orientTiff(o)];
     const len = payload.length + 2;
     return new Uint8Array([0xFF, 0xE1, (len >> 8) & 0xFF, len & 0xFF, ...payload]);
   }
+  let CRC = null;
+  function crc32(d) {
+    if (!CRC) { CRC = new Uint32Array(256); for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; CRC[n] = c >>> 0; } }
+    let c = 0xFFFFFFFF; for (let i = 0; i < d.length; i++) c = CRC[(c ^ d[i]) & 0xFF] ^ (c >>> 8);
+    return (c ^ 0xFFFFFFFF) >>> 0;
+  }
 
-  const APP_NAMES = { 0xE1: "EXIF / XMP", 0xE2: "ICC / FlashPix", 0xE3: "APP3", 0xEC: "Ducky", 0xED: "IPTC / Photoshop", 0xEE: "Adobe", 0xFE: "تعليق (COM)" };
+  function jpegSegName(m, id) {
+    if (m === 0xE0) return "صورة مصغّرة JFIF";
+    if (m === 0xE1) return /^Exif/.test(id) ? "EXIF" : /xmp\/extension/.test(id) ? "XMP ممتد" : /ns\.adobe\.com\/xap/.test(id) ? "XMP" : "APP1";
+    if (m === 0xE2) return /^ICC_PROFILE/.test(id) ? "ملف الألوان ICC" : /^MPF/.test(id) ? "فهرس الصور المتعددة MPF" : "APP2";
+    if (m === 0xEB) return "C2PA / JUMBF";
+    if (m === 0xEC) return /^Ducky/.test(id) ? "Ducky (فوتوشوب)" : "APP12";
+    if (m === 0xED) return "IPTC / فوتوشوب";
+    if (m === 0xEE) return "Adobe";
+    if (m === 0xFE) return "تعليق (COM)";
+    return `APP${m - 0xE0}`;
+  }
 
   function stripJpeg(d, opts) {
     if (d[0] !== 0xFF || d[1] !== 0xD8) throw new Error("ليست JPEG صالحة");
     const parts = [d.subarray(0, 2)], removed = [];
-    let i = 2, insertedOrient = false;
-    const maybeInsertOrientation = () => {
-      if (!insertedOrient && opts.orientation > 1 && opts.keepOrientation) { parts.push(minimalOrientationExif(opts.orientation)); insertedOrient = true; }
-    };
-    while (i < d.length) {
+    let i = 2, inserted = false, end = -1;
+    const orient = () => { if (!inserted && opts.orientation > 1 && opts.keepOrientation) { parts.push(minimalOrientationExif(opts.orientation)); inserted = true; } };
+    while (i + 2 <= d.length) {
       if (d[i] !== 0xFF) throw new Error("بنية JPEG غير متوقعة");
-      let m = d[i + 1];
-      while (m === 0xFF) { i++; m = d[i + 1]; }
-      if (m === 0xD8 || m === 0x01 || (m >= 0xD0 && m <= 0xD7)) { parts.push(d.subarray(i, i + 2)); i += 2; continue; }
-      if (m === 0xD9) { parts.push(d.subarray(i, i + 2)); break; }
-      if (m === 0xDA) { maybeInsertOrientation(); parts.push(d.subarray(i)); break; }
+      const m = d[i + 1];
+      if (m === 0xFF) { i++; continue; }
+      if (m === 0xD9) { parts.push(d.subarray(i, i + 2)); end = i + 2; break; }
+      if (m === 0x01 || (m >= 0xD0 && m <= 0xD8)) { parts.push(d.subarray(i, i + 2)); i += 2; continue; }
+      if (i + 4 > d.length) throw new Error("ملف JPEG مبتور");
       const len = (d[i + 2] << 8) | d[i + 3];
-      const seg = d.subarray(i, i + 2 + len);
-      let keep = true;
-      if ((m >= 0xE1 && m <= 0xEF) || m === 0xFE) {
+      if (len < 2 || i + 2 + len > d.length) throw new Error("ملف JPEG مبتور");
+      let segEnd = i + 2 + len, keep = true, seg = null;
+      const id = ascii(d, i + 4, 36);
+      if (m !== 0xE0) orient(); // اتجاه الصورة يأتي بعد ترويسة JFIF مباشرة
+      if ((m >= 0xE0 && m <= 0xEF) || m === 0xFE) {
         keep = false;
-        if (m === 0xE2 && opts.keepICC && ascii(d, i + 4, 11) === "ICC_PROFILE") keep = true;
-        if (m === 0xEE && ascii(d, i + 4, 5) === "Adobe") keep = true; // affects colour decoding (CMYK/YCC)
+        if (m === 0xE0 && /^JFIF\0/.test(id)) {
+          keep = true;
+          if (len > 16 && (d[i + 16] || d[i + 17])) { // JFIF يحمل صورة مصغّرة: نُبقي الترويسة فقط
+            seg = new Uint8Array(18); seg.set(d.subarray(i, i + 18)); seg[2] = 0; seg[3] = 16; seg[16] = 0; seg[17] = 0; removed.push("صورة مصغّرة JFIF");
+          }
+        }
+        if (m === 0xE2 && opts.keepICC && /^ICC_PROFILE\0/.test(id)) keep = true;
+        if (m === 0xEE && /^Adobe/.test(id)) keep = true; // affects colour decoding (CMYK/YCC)
       }
-      if (m === 0xE0) keep = true; // JFIF header
-      if (keep) {
-        // place orientation right after APP0/JFIF (or before first non-APP segment)
-        if (!(m >= 0xE0 && m <= 0xEF)) maybeInsertOrientation();
-        parts.push(seg);
-      } else removed.push(APP_NAMES[m] || `APP${m - 0xE0}`);
-      i += 2 + len;
+      if (m === 0xDA) { // scan: header + entropy-coded data up to the next real marker
+        let p = segEnd;
+        for (;;) { p = d.indexOf(0xFF, p); if (p < 0 || p + 1 >= d.length) { p = -1; break; } const n = d[p + 1]; if (n === 0 || (n >= 0xD0 && n <= 0xD7)) { p += 2; continue; } if (n === 0xFF) { p++; continue; } break; }
+        if (p < 0) throw new Error("ملف JPEG مبتور");
+        segEnd = p;
+      }
+      if (keep) parts.push(seg || d.subarray(i, segEnd)); else removed.push(jpegSegName(m, id));
+      i = segEnd;
     }
+    if (end < 0) throw new Error("ملف JPEG مبتور");
+    if (end < d.length && hasData(d, end)) removed.push("بيانات ملحقة بعد نهاية الصورة");
     return { bytes: concat(parts), removed };
   }
 
+  const PNG_KEEP = new Set(["tRNS", "gAMA", "cHRM", "sRGB", "sBIT", "bKGD", "pHYs", "cICP", "mDCV", "cLLI", "acTL", "fcTL", "fdAT"]);
   function stripPng(d, opts) {
     const sig = [137, 80, 78, 71, 13, 10, 26, 10];
     if (!sig.every((b, k) => d[k] === b)) throw new Error("ليست PNG صالحة");
     const parts = [d.subarray(0, 8)], removed = [];
-    const drop = new Set(["tEXt", "zTXt", "iTXt", "eXIf", "tIME", "dSIG"]);
-    if (!opts.keepICC) drop.add("iCCP");
-    let i = 8;
-    while (i + 8 <= d.length) {
+    let i = 8, ended = false, inserted = false;
+    while (i + 12 <= d.length) {
       const len = ((d[i] << 24) >>> 0) + (d[i + 1] << 16) + (d[i + 2] << 8) + d[i + 3];
       const type = ascii(d, i + 4, 4);
       const end = i + 12 + len;
-      if (drop.has(type)) removed.push(type); else parts.push(d.subarray(i, end));
+      if (end > d.length) throw new Error("ملف PNG مبتور");
+      const critical = type.charCodeAt(0) < 0x61; // حرف كبير = قطعة أساسية للعرض
+      if (type === "IDAT" && !inserted && opts.keepOrientation && opts.orientation > 1) {
+        const body = new Uint8Array([0x65, 0x58, 0x49, 0x66, ...orientTiff(opts.orientation)]); // "eXIf" + TIFF
+        const c = crc32(body), n = body.length - 4;
+        parts.push(new Uint8Array([n >>> 24, (n >> 16) & 255, (n >> 8) & 255, n & 255]), body, new Uint8Array([c >>> 24, (c >> 16) & 255, (c >> 8) & 255, c & 255]));
+        inserted = true;
+      }
+      if (critical || PNG_KEEP.has(type) || (type === "iCCP" && opts.keepICC)) parts.push(d.subarray(i, end)); else removed.push(type);
       i = end;
-      if (type === "IEND") break;
+      if (type === "IEND") { ended = true; break; }
     }
+    if (!ended) throw new Error("ملف PNG مبتور");
+    if (i < d.length && hasData(d, i)) removed.push("بيانات ملحقة بعد نهاية الصورة");
     return { bytes: concat(parts), removed };
   }
 
+  const WEBP_KEEP = new Set(["VP8X", "VP8 ", "VP8L", "ALPH", "ANIM", "ANMF"]);
   function stripWebp(d, opts) {
     if (ascii(d, 0, 4) !== "RIFF" || ascii(d, 8, 4) !== "WEBP") throw new Error("ليست WebP صالحة");
-    const parts = [], removed = []; let i = 12, vp8x = null;
-    while (i + 8 <= d.length) {
+    const parts = [], removed = []; let i = 12, vp8x = null, hadExif = false;
+    const riffEnd = Math.min(d.length, 8 + ((d[4] | (d[5] << 8) | (d[6] << 16) | (d[7] << 24)) >>> 0));
+    while (i + 8 <= riffEnd) {
       const type = ascii(d, i, 4);
-      const size = d[i + 4] | (d[i + 5] << 8) | (d[i + 6] << 16) | (d[i + 7] << 24);
+      const size = (d[i + 4] | (d[i + 5] << 8) | (d[i + 6] << 16) | (d[i + 7] << 24)) >>> 0;
       const end = i + 8 + size + (size & 1);
       const chunk = d.slice(i, Math.min(end, d.length));
-      if (type === "EXIF" || type === "XMP " || (type === "ICCP" && !opts.keepICC)) removed.push(type.trim());
-      else { if (type === "VP8X") vp8x = chunk; parts.push(chunk); }
+      if (type === "EXIF") hadExif = true;
+      if (WEBP_KEEP.has(type) || (type === "ICCP" && opts.keepICC)) { if (type === "VP8X") vp8x = chunk; parts.push(chunk); }
+      else removed.push(type.trim());
       i = end;
     }
+    const keepOrient = !!vp8x && hadExif && opts.keepOrientation && opts.orientation > 1;
+    if (keepOrient) { const t = orientTiff(opts.orientation); parts.push(new Uint8Array([0x45, 0x58, 0x49, 0x46, t.length, 0, 0, 0, ...t])); }
     if (vp8x) {
       vp8x[8] &= ~(0x08 | 0x04); // clear EXIF & XMP flags
+      if (keepOrient) vp8x[8] |= 0x08;
       if (!opts.keepICC) vp8x[8] &= ~0x20;
     }
+    if (riffEnd < d.length && hasData(d, riffEnd)) removed.push("بيانات ملحقة بعد نهاية الصورة");
     const body = concat(parts);
     const header = new Uint8Array(12); header.set(d.subarray(0, 12));
     const total = body.length + 4;
     header[4] = total & 0xFF; header[5] = (total >> 8) & 0xFF; header[6] = (total >> 16) & 0xFF; header[7] = (total >> 24) & 0xFF;
     return { bytes: concat([header, body]), removed };
+  }
+
+  /* GIF: نحذف التعليقات وامتدادات التطبيقات (عدا تكرار الحركة) ونُبقي الإطارات كما هي */
+  function stripGif(d) {
+    if (!/^GIF8[79]a/.test(ascii(d, 0, 6))) throw new Error("ليست GIF صالحة");
+    let p = 13; if (d[10] & 0x80) p += 3 * (1 << ((d[10] & 7) + 1));
+    const parts = [d.subarray(0, p)], removed = []; let ended = false;
+    const skip = (q) => { while (q < d.length && d[q]) q += 1 + d[q]; return q + 1; };
+    while (p < d.length) {
+      const b = d[p], start = p;
+      if (b === 0x3B) { parts.push(d.subarray(p, p + 1)); p++; ended = true; break; }
+      if (b === 0x2C) { const packed = d[p + 9]; p += 10; if (packed & 0x80) p += 3 * (1 << ((packed & 7) + 1)); p = skip(p + 1); parts.push(d.subarray(start, p)); continue; }
+      if (b === 0x21) {
+        const label = d[p + 1];
+        if (label === 0xFE) { p = skip(p + 2); removed.push("تعليق"); continue; }
+        if (label === 0xFF) { const id = ascii(d, p + 3, 11); p = skip(p + 14); if (/^(NETSCAPE2\.0|ANIMEXTS1\.0)$/.test(id)) parts.push(d.subarray(start, p)); else removed.push(id.trim() === "XMP DataXMP" ? "XMP" : `امتداد ${id.replace(/[^\x20-\x7E]/g, "").trim()}`); continue; }
+        p = skip(p + 2); parts.push(d.subarray(start, p)); continue;
+      }
+      throw new Error("بنية GIF غير متوقعة");
+    }
+    if (!ended || p > d.length) throw new Error("ملف GIF مبتور");
+    if (p < d.length && hasData(d, p)) removed.push("بيانات ملحقة بعد نهاية الصورة");
+    return { bytes: concat(parts), removed };
   }
 
   async function reencode(file, type, quality = 0.95) {
@@ -235,10 +305,14 @@
     const o = { keepICC: true, keepOrientation: true, orientation: 1, ...opts };
     const d = new Uint8Array(await file.arrayBuffer());
     const kind = sniff(d);
+    if (ascii(d, 0, 5) === "%PDF-" || (kind === "other" && /^(ftyp|moov|mdat|wide|free)$/.test(ascii(d, 4, 4)))) {
+      const err = new Error("التنظيف يدعم الصور فقط. لم نضف تنظيف الفيديو والـ PDF لأن إعادة كتابتهما داخل المتصفح بلا مخاطرة على الملف غير مضمونة."); err.kind = "unsupported"; throw err;
+    }
     try {
       if (kind === "jpeg") { const r = stripJpeg(d, o); return { blob: new Blob([r.bytes], { type: "image/jpeg" }), removed: r.removed, method: "lossless", ext: "jpg" }; }
       if (kind === "png") { const r = stripPng(d, o); return { blob: new Blob([r.bytes], { type: "image/png" }), removed: r.removed, method: "lossless", ext: "png" }; }
       if (kind === "webp") { const r = stripWebp(d, o); return { blob: new Blob([r.bytes], { type: "image/webp" }), removed: r.removed, method: "lossless", ext: "webp" }; }
+      if (kind === "gif") { const r = stripGif(d); return { blob: new Blob([r.bytes], { type: "image/gif" }), removed: r.removed, method: "lossless", ext: "gif" }; }
     } catch (e) { /* fall back to re-encoding */ }
     const isPngish = kind === "gif" || kind === "png" || file.type === "image/bmp";
     const type = isPngish ? "image/png" : "image/jpeg";
@@ -246,7 +320,8 @@
       const blob = await reencode(file, type);
       return { blob, removed: ["كل البيانات (إعادة ترميز)"], method: "reencode", ext: isPngish ? "png" : "jpg" };
     } catch (e) {
-      const err = new Error(kind === "heic" ? "صيغة HEIC لا يدعمها هذا المتصفح للتعديل. حوّل الصورة إلى JPG أولاً، أو التقط صورك بصيغة «الأكثر توافقاً» من إعدادات الكاميرا." : "تعذّر معالجة هذا الملف في المتصفح.");
+      const err = new Error(kind === "heic" ? "هذا المتصفح لا يستطيع فتح صور HEIC لإعادة حفظها (سفاري يستطيع). افتح الصفحة في سفاري على آيفون أو ماك، أو حوّل الصورة إلى JPG أولاً، أو اختر «الأكثر توافقاً» من إعدادات كاميرا الآيفون."
+        : kind === "tiff" ? "المتصفحات لا تفتح صور TIFF، فلا نستطيع إعادة حفظها. حوّلها إلى JPG أو PNG ببرنامج صور ثم نظّفها هنا." : "تعذّرت معالجة هذا الملف في المتصفح.");
       err.kind = kind; throw err;
     }
   }
@@ -282,5 +357,5 @@
     return hints;
   }
 
-  window.ImgMeta = { read, group, risk, strip, sha256, dims, sniff, sourceHints, fmtValue, LABELS };
+  window.ImgMeta = { read, group, risk, strip, sha256, dims, sniff, sourceHints, fmtValue, LABELS, crc32 };
 })();
