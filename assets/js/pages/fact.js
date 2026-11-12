@@ -59,10 +59,14 @@
     const B = f.branch ? App.branchOf(f.branch) : null;
     const noun = B ? "الخبر" : "المعلومة";
     const branchPool = B ? (window.BR_ITEMS || []).filter((x) => x.branch === f.branch).sort((a, b) => b.date.localeCompare(a.date) || b.tg.localeCompare(a.tg)) : null;
-    const sorted = branchPool || factsSorted();
+    // static pages get newer/older/related precomputed at build time (same rules, see CTX in scripts/build-pages.mjs),
+    // so they do not have to download the whole channel archive
+    const SC = window.STATIC_CTX && window.STATIC_ID === f.id && !window.TG && !window.BR ? window.STATIC_CTX : null;
+    const pick = (i) => (i && (window.FACTS.find((x) => x.id === i) || (window.TG_ITEMS || []).find((x) => x.id === i) || (window.BR_ITEMS || []).find((x) => x.id === i))) || null;
+    const sorted = SC ? [] : branchPool || factsSorted();
     const idx = sorted.findIndex((x) => x.id === f.id);
-    const newer = idx > 0 ? sorted[idx - 1] : null, older = idx >= 0 ? sorted[idx + 1] : null;
-    const related = (branchPool || window.FACTS).filter((x) => x.id !== f.id && x !== newer && x !== older)
+    const newer = SC ? pick(SC.n) : idx > 0 ? sorted[idx - 1] : null, older = SC ? pick(SC.o) : idx >= 0 ? sorted[idx + 1] : null;
+    const related = SC ? SC.r.map(pick).filter(Boolean) : (branchPool || window.FACTS).filter((x) => x.id !== f.id && x !== newer && x !== older)
       .map((x) => ({ x, score: (x.cat === f.cat ? 2 : 0) + x.tags.filter((t) => f.tags.includes(t)).length + (x.image ? .2 : 0) }))
       .sort((a, b) => b.score - a.score).slice(0, 3).map((r) => r.x);
     const quizCount = window.QUIZ.filter((q) => q.fact === f.id).length;
@@ -256,15 +260,18 @@
     /* ---------- Reading dock: progress ring, appears after the hero ---------- */
     const dock = $("#dock"), ring = $("#ring"), pct = $("#pct"), art = $("#article"), hero = $(".fx-hero", root);
     const C = 2 * Math.PI * 19; ring.style.strokeDasharray = C;
-    let lastP = -1;
+    // measured once per scroll/resize burst (it used to re-measure the layout on every frame, forever)
+    let lastP = -1, tickQueued = false;
     const tick = () => {
+      tickQueued = false;
       const r = art.getBoundingClientRect(), vh = innerHeight;
       const p = Math.max(0, Math.min(1, (vh * 0.6 - r.top) / Math.max(1, r.height - vh * 0.4)));
       if (Math.abs(p - lastP) > 0.002) { lastP = p; ring.style.strokeDashoffset = C * (1 - p); pct.textContent = `${Math.round(p * 100)}%`; }
       dock.classList.toggle("show", hero.getBoundingClientRect().bottom < vh * 0.5 && r.bottom > vh * 0.3);
-      requestAnimationFrame(tick);
     };
-    requestAnimationFrame(tick);
+    const queueTick = () => { if (!tickQueued) { tickQueued = true; requestAnimationFrame(tick); } };
+    addEventListener("scroll", queueTick, { passive: true }); addEventListener("resize", queueTick, { passive: true }); addEventListener("load", queueTick);
+    queueTick();
 
     /* ---------- Feedback ---------- */
     const fbBox = $("#feedback");

@@ -44,13 +44,15 @@
     document.title = `${b ? b.name : "فروع الإمبراطورية"} | ${window.SITE.name}`;
   }
 
-  function render() {
+  function render(append) {
     let L = state.b === "all" ? items : items.filter((x) => x.branch === state.b);
     if (state.q) L = L.filter((x) => matches(`${x.title} ${x.excerpt} ${x.tags.join(" ")} ${cat(x.cat).name}`, state.q));
     L = [...L].sort((a, b) => state.sort === "views" ? (b.views || 0) - (a.views || 0) : b.date.localeCompare(a.date) || b.tg.localeCompare(a.tg));
     $("#count").textContent = L.length ? `${fmtNum(L.length)} خبر${state.q ? ` لـ«${state.q}»` : ""}` : "";
     $("#q-count").textContent = state.q ? L.length : "";
-    $("#grid").innerHTML = L.length ? L.slice(0, state.shown).map(factCard).join("")
+    const grid = $("#grid"), have = append === true ? grid.querySelectorAll(":scope > .fc").length : 0;
+    if (have && L.length) grid.insertAdjacentHTML("beforeend", L.slice(have, state.shown).map(factCard).join(""));
+    else grid.innerHTML = L.length ? L.slice(0, state.shown).map(factCard).join("")
       : `<div class="empty" style="grid-column:1/-1">${ic(items.length ? "search-x" : "loader")}<p class="mt-1">${items.length ? `لا أخبار تطابق «${esc(state.q)}».` : "لم تُسحب أخبار الفروع بعد. ستظهر هنا مع أول مزامنة."}</p></div>`;
     $("#more").hidden = L.length <= state.shown;
     $("#br-note").innerHTML = items.length ? `${ic("filter")} نعرض من كل قناة الخبر الذي يصلح عنواناً ووصفاً فقط. الإعلانات والفعاليات والمسابقات والأخبار ذات السطر الواحد والمكرر لا تظهر هنا، تجدها كلها في القناة نفسها.` : "";
@@ -69,7 +71,7 @@
   });
   $("#q").addEventListener("input", debounce((e) => { state.q = e.target.value.trim(); state.shown = PAGE; sync(); render(); }, 150));
   $("#sort").addEventListener("change", (e) => { state.sort = e.target.value; render(); });
-  $("#more").addEventListener("click", () => { state.shown += PAGE; render(); });
+  $("#more").addEventListener("click", () => { state.shown += PAGE; render(true); });
 
   chips(); hero(); render(); icons();
 })();

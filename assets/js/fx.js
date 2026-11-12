@@ -5,35 +5,53 @@
 (function () {
   "use strict";
   const doc = document.documentElement, body = document.body;
-  const RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const OS_RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const FINE = matchMedia("(pointer: fine)").matches;
+  // «الوضع الخفيف»: يحدّده السكربت المضمَّن في <head> (صنف lite على <html>) أو زر الترويسة.
+  // RM = وضع هادئ: إما أن النظام يطلب تقليل الحركة، أو أن الوضع الخفيف مفعّل. كل المؤثرات الثقيلة تُفحص عليه وقت التنفيذ.
+  let LITE = doc.classList.contains("lite");
+  let RM = OS_RM || LITE;
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
   doc.classList.add("fx-on"); if (RM) doc.classList.add("rm");
+  const loadScript = (src) => new Promise((res) => { const s = document.createElement("script"); s.src = src; s.onload = () => res(true); s.onerror = () => res(false); document.head.appendChild(s); });
+  const idle = (fn) => (window.requestIdleCallback ? requestIdleCallback(fn, { timeout: 1500 }) : setTimeout(fn, 200));
   try { sessionStorage.setItem("fx-seen", "1"); } catch { /* ignore */ }
 
   /* ---------- Grain + aurora layers ---------- */
-  const deco = document.createElement("div"); deco.className = "fx-deco"; deco.setAttribute("aria-hidden", "true");
-  deco.innerHTML = `<i class="aur a1"></i><i class="aur a2"></i><i class="aur a3"></i>`;
-  const grain = document.createElement("div"); grain.className = "fx-grain"; grain.setAttribute("aria-hidden", "true");
-  body.prepend(deco); body.append(grain);
+  let deco = null, grain = null;
+  function decoOn() {
+    if (deco) return;
+    deco = document.createElement("div"); deco.className = "fx-deco"; deco.setAttribute("aria-hidden", "true");
+    deco.innerHTML = `<i class="aur a1"></i><i class="aur a2"></i><i class="aur a3"></i>`;
+    grain = document.createElement("div"); grain.className = "fx-grain"; grain.setAttribute("aria-hidden", "true");
+    body.prepend(deco); body.append(grain);
+  }
+  function decoOff() { if (deco) { deco.remove(); grain.remove(); deco = grain = null; } }
+  if (!LITE) decoOn();
 
   /* ---------- Smooth scroll (Lenis) ---------- */
-  let lenis = null;
-  if (!RM && window.Lenis && FINE) {
+  let lenis = null, lenisMO = null;
+  const LENIS_SRC = "assets/js/vendor/lenis-1.1.13.min.js";
+  async function lenisOn() {
+    if (RM || !FINE || lenis) return;
+    if (!window.Lenis) await loadScript(LENIS_SRC);
+    if (RM || lenis || !window.Lenis) return;
     lenis = new window.Lenis({
       lerp: 0.1, smoothWheel: true, wheelMultiplier: 1,
       prevent: (n) => !!(n.closest && n.closest(".modal-backdrop, .search-overlay, .drawer, .nav-menu, .search-results, .table-wrap, textarea, [data-lenis-prevent]"))
     });
-    const raf = (t) => { lenis.raf(t); requestAnimationFrame(raf); };
+    const raf = (t) => { if (!lenis) return; lenis.raf(t); requestAnimationFrame(raf); };
     requestAnimationFrame(raf);
     // stop when overlays open
     const sync = () => {
       const lock = body.classList.contains("drawer-open") || !!document.querySelector(".modal-backdrop, .search-overlay");
-      lock ? lenis.stop() : lenis.start();
+      if (lenis) lock ? lenis.stop() : lenis.start();
     };
-    new MutationObserver(sync).observe(body, { childList: true, attributes: true, attributeFilter: ["class"] });
+    lenisMO = new MutationObserver(sync); lenisMO.observe(body, { childList: true, attributes: true, attributeFilter: ["class"] });
   }
+  function lenisOff() { if (lenisMO) { lenisMO.disconnect(); lenisMO = null; } if (lenis) { lenis.destroy(); lenis = null; } }
+  lenisOn();
   const scrollToY = (y) => { if (lenis) lenis.scrollTo(y, { duration: 1.4 }); else window.scrollTo({ top: y, behavior: RM ? "auto" : "smooth" }); };
   // hash anchors + to-top go through the smooth scroller
   document.addEventListener("click", (e) => {
@@ -44,9 +62,9 @@
   }, true);
 
   /* ---------- Page transitions ---------- */
-  if (!RM) {
+  {
     document.addEventListener("click", (e) => {
-      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      if (RM || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
       const a = e.target.closest("a[href]"); if (!a) return;
       if (a.target && a.target !== "_self") return; if (a.hasAttribute("download")) return;
       const href = a.getAttribute("href"); if (!href || href.startsWith("#") || href.startsWith("mailto:") || href.startsWith("tel:") || href.startsWith("javascript:")) return;
@@ -62,9 +80,9 @@
   }
 
   /* ---------- Header: hide on scroll down, show on scroll up ---------- */
-  let lastY = scrollY;
+  let lastY = 0, hdr = null; // set by the first pass: asking for scrollY here would force a full layout in the middle of start-up
   function headerTick(y) {
-    const h = document.querySelector(".site-header"); if (!h) return;
+    const h = hdr || (hdr = document.querySelector(".site-header")); if (!h) return;
     h.classList.toggle("scrolled", y > 24);
     if (!body.classList.contains("drawer-open")) {
       if (y > 220 && y > lastY + 6) h.classList.add("hdr-hide");
@@ -106,7 +124,9 @@
   }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 }) : null;
 
   function arm(root) {
-    $$("[data-split]", root).forEach((el) => { split(el); if (io) io.observe(el); else el.classList.add("in"); });
+    // light mode: nothing is hidden-then-revealed, so there is nothing to prepare (and no style writes on hundreds of elements)
+    if (LITE) return;
+    $$("[data-split]", root).forEach((el) => { if (LITE) return; split(el); if (io && !RM) io.observe(el); else el.classList.add("in"); });
     const els = root.matches && root.matches(REVEAL) ? [root, ...$$(REVEAL, root)] : $$(REVEAL, root);
     els.forEach((el) => {
       if (el.classList.contains("rv") || el.closest(".modal-backdrop, .search-overlay, .drawer, [data-norv], .hgallery, .no-rv")) return;
@@ -127,6 +147,7 @@
   /* ---------- Scroll-linked CSS variables: --e (enter) --p (through) --x (exit) ---------- */
   let scEls = $$("[data-sc]");
   function scTick() {
+    if (LITE) return;
     const vh = innerHeight;
     for (const el of scEls) {
       const r = el.getBoundingClientRect();
@@ -169,7 +190,7 @@
   function hsLayout() {
     hs.forEach((h) => {
       if (!h.track) return;
-      if (RM) { h.sec.style.height = ""; return; }
+      if (RM) { h.sec.style.height = ""; h.track.style.transform = ""; return; }
       h.dist = Math.max(0, h.track.scrollWidth - h.track.clientWidth);
       h.sec.style.height = `${innerHeight + h.dist}px`;
     });
@@ -193,23 +214,30 @@
   }
 
   /* ---------- Main loop ---------- */
-  let ly = -1, lw = innerWidth;
+  // one rAF per scroll burst: nothing runs while the page is still
+  let ly = -1, ticking = false;
   function loop() {
+    ticking = false;
     const y = scrollY;
     if (y !== ly) { headerTick(y); scTick(); maniTick(); hsTick(); ly = y; }
-    requestAnimationFrame(loop);
   }
-  addEventListener("resize", () => { hsLayout(); scTick(); hsTick(); if (innerWidth !== lw) { lw = innerWidth; } });
+  const kick = () => { if (!ticking) { ticking = true; requestAnimationFrame(loop); } };
+  addEventListener("scroll", kick, { passive: true });
+  let rsT = 0;
+  addEventListener("resize", () => { clearTimeout(rsT); rsT = setTimeout(() => { hsLayout(); scTick(); hsTick(); }, 120); }, { passive: true });
   addEventListener("load", () => { hsLayout(); scTick(); hsTick(); });
-  hsLayout(); scTick(); maniTick(); hsTick(); headerTick(scrollY);
-  requestAnimationFrame(loop);
+  // first pass. Light mode: wait for the frame, so every layout read at start-up shares the browser's own layout
+  // instead of forcing an extra one. Full mode: run now, so scroll-linked elements never paint in their un-set state.
+  const first = () => { hsLayout(); scTick(); maniTick(); hsTick(); const y = scrollY; lastY = y; headerTick(y); };
+  if (LITE) requestAnimationFrame(first); else first();
 
   /* ---------- Tilt + spotlight (delegated) ---------- */
   const TILT = ".card-hover, .tool-card, .cat-tile, [data-tilt], .stat-card, .world, .bento > *";
-  if (FINE && !RM) {
+  if (FINE) {
     let cur = null;
     const reset = (el) => { el.style.setProperty("--rx", "0deg"); el.style.setProperty("--ry", "0deg"); el.classList.remove("hot"); };
     document.addEventListener("pointermove", (e) => {
+      if (RM) return;
       const card = e.target.closest(".card, .world, [data-tilt], .bento > *");
       if (card) {
         const r = card.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
@@ -227,8 +255,9 @@
   }
 
   /* ---------- Magnetic buttons ---------- */
-  if (FINE && !RM) {
+  if (FINE) {
     document.addEventListener("pointermove", (e) => {
+      if (RM) return;
       $$(".mag-on").forEach((b) => { if (!b.contains(e.target)) { b.style.translate = ""; b.classList.remove("mag-on"); } });
       const b = e.target.closest(".btn-lg, [data-magnetic], .header-actions .icon-btn"); if (!b) return;
       const r = b.getBoundingClientRect(), x = e.clientX - (r.left + r.width / 2), y = e.clientY - (r.top + r.height / 2);
@@ -237,14 +266,23 @@
   }
 
   /* ---------- Cursor follower ---------- */
-  if (FINE && !RM) {
+  if (FINE) {
     const ring = document.createElement("div"); ring.className = "cur-ring"; ring.setAttribute("aria-hidden", "true");
     const dot = document.createElement("div"); dot.className = "cur-dot"; dot.setAttribute("aria-hidden", "true");
     body.append(ring, dot);
-    let mx = -100, my = -100, rx = -100, ry = -100, shown = false;
+    let mx = -100, my = -100, rx = -100, ry = -100, shown = false, curRaf = 0;
+    // the follower only animates while it still has distance to cover
+    const tick = () => {
+      curRaf = 0; if (RM || !shown) return;
+      rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18;
+      ring.style.transform = `translate3d(${rx}px,${ry}px,0)`; dot.style.transform = `translate3d(${mx}px,${my}px,0)`;
+      if (Math.abs(mx - rx) > 0.1 || Math.abs(my - ry) > 0.1) curRaf = requestAnimationFrame(tick);
+    };
     addEventListener("pointermove", (e) => {
       if (e.pointerType !== "mouse") return;
+      if (RM) { if (shown) { shown = false; doc.classList.remove("cur-show", "cur-text"); } return; }
       mx = e.clientX; my = e.clientY; if (!shown) { shown = true; rx = mx; ry = my; doc.classList.add("cur-show"); }
+      if (!curRaf) curRaf = requestAnimationFrame(tick);
       const t = e.target;
       const hov = t.closest && t.closest("a, button, [role=button], label, select, summary, .chip, [data-tilt], .card-hover, .world");
       const txt = t.closest && t.closest("input, textarea, [contenteditable], .crop-wrap");
@@ -252,11 +290,57 @@
     }, { passive: true });
     document.addEventListener("pointerleave", () => { doc.classList.remove("cur-show"); shown = false; });
     addEventListener("pointerdown", () => ring.classList.add("down")); addEventListener("pointerup", () => ring.classList.remove("down"));
-    (function tick() { rx += (mx - rx) * 0.18; ry += (my - ry) * 0.18; ring.style.transform = `translate3d(${rx}px,${ry}px,0)`; dot.style.transform = `translate3d(${mx}px,${my}px,0)`; requestAnimationFrame(tick); })();
   }
 
   /* ---------- Marquee: duplicate content for a seamless loop ---------- */
   $$("[data-marquee]").forEach((m) => { const t = m.querySelector(".mq-track"); if (t && !t.dataset.dup) { t.dataset.dup = "1"; t.innerHTML += t.innerHTML; } });
+
+  /* ---------- WebGL sculpture: loaded only when the heavy mode is on, after the page is usable ---------- */
+  let glAsked = false;
+  function glOn() {
+    if (RM) return;
+    if (window.GL3D) { window.GL3D.start(); return; }
+    if (glAsked) return; glAsked = true;
+    const go = () => idle(() => { if (RM) { glAsked = false; return; } loadScript("assets/js/gl.js").then(() => { if (RM && window.GL3D) window.GL3D.stop(); }); });
+    if (document.readyState === "complete") go(); else addEventListener("load", go, { once: true });
+  }
+  function glOff() { if (window.GL3D) window.GL3D.stop(); doc.classList.add("no-gl"); }
+  glOn();
+
+  /* ---------- Switching the light mode on/off without a reload (header button, watchdog) ---------- */
+  function applyLite(on) {
+    LITE = !!on; RM = OS_RM || LITE;
+    doc.classList.toggle("rm", RM);
+    if (RM) {
+      lenisOff(); glOff(); if (LITE) decoOff();
+      doc.classList.remove("is-loading", "entering", "leaving", "cur-show", "cur-text");
+      $$(".rv:not(.in), .split:not(.in)").forEach((el) => el.classList.add("in"));
+      $$(".hot").forEach((el) => { el.classList.remove("hot"); el.style.removeProperty("--rx"); el.style.removeProperty("--ry"); });
+      mani.forEach((m) => { m.n = -1; });
+    } else { decoOn(); lenisOn(); glOn(); arm(document); }  // elements armed now reveal as they scroll into view
+    hsLayout(); ly = -1; kick();
+  }
+  document.addEventListener("lite-change", (e) => applyLite(e.detail && e.detail.on));
+
+  /* ---------- Watchdog: if the device cannot keep up with the effects, fall back to the light mode by itself ---------- */
+  if (!RM && window.App && App.liteMode && App.liteMode() === "auto") {
+    const start = () => {
+      let n = 0, slow = 0, bad = 0, wins = 0, last = 0;
+      const tick = (t) => {
+        if (RM) return;
+        const d = t - last; last = t;
+        if (d > 0 && d < 400 && !document.hidden) { n++; if (d > 33) slow++; }
+        if (n >= 45) {
+          bad = slow / n > 0.4 ? bad + 1 : 0; n = slow = 0; wins++;
+          if (bad >= 2) { App.setLite(true, true); return; }
+        }
+        if (wins < 16) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame((t) => { last = t; requestAnimationFrame(tick); });
+    };
+    const armDog = () => setTimeout(start, doc.classList.contains("is-loading") ? 3200 : 1200);
+    if (document.readyState === "complete") armDog(); else addEventListener("load", armDog, { once: true });
+  }
 
   window.FX = {
     refresh(root = document) { arm(root); scEls = $$("[data-sc]"); hsLayout(); scTick(); hsTick(); if (window.GL3D) window.GL3D.refresh(); },

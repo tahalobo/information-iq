@@ -23,7 +23,7 @@
     }).join("");
   }
 
-  function render() {
+  function render(append) {
     const q = $("#q").value.trim();
     let list = items.filter((x) => (state.type === "all" || x.type === state.type)
       && (state.media === "all" || (state.media === "photo" ? (x.media === "photo" || x.media === "album") : x.media === state.media))
@@ -31,7 +31,8 @@
     const s = $("#sort").value;
     list.sort((a, b) => s === "views" ? b.views - a.views : s === "long" ? b.len - a.len : b.tg - a.tg);
     $("#count").textContent = `${fmtNum(list.length)} منشور`;
-    $("#grid").innerHTML = list.length ? list.slice(0, state.shown).map((x) => {
+    const grid = $("#grid"), have = append === true ? grid.querySelectorAll(":scope > .fc").length : 0;
+    const cardOf = (x) => {
       const card = factCard(x);
       if (!state.admin) return card;
       const conf = Math.round((x.conf || 0) * 100);
@@ -39,7 +40,9 @@
         <div class="flex between"><strong>#${x.tg}</strong><span class="${conf >= 40 ? "text-success" : "text-warn"}">ثقة ${conf}%</span></div>
         <ul class="muted" style="margin:6px 0 0;padding-inline-start:1.1em">${(x.why || []).map((w) => `<li>${esc(w)}</li>`).join("")}</ul>
         <a class="link" href="https://t.me/${TG.channel}/${x.tg}" target="_blank" rel="noopener">فتح في تليغرام</a></div></article>`);
-    }).join("") : `<div class="empty" style="grid-column:1/-1"><span class="ico">${ic("search-x")}</span><h3>لا توجد منشورات</h3><p>جرّب نوعاً أو كلمة بحث أخرى.</p></div>`;
+    };
+    if (have && list.length) grid.insertAdjacentHTML("beforeend", list.slice(have, state.shown).map(cardOf).join(""));
+    else grid.innerHTML = list.length ? list.slice(0, state.shown).map(cardOf).join("") : `<div class="empty" style="grid-column:1/-1"><span class="ico">${ic("search-x")}</span><h3>لا توجد منشورات</h3><p>جرّب نوعاً أو كلمة بحث أخرى.</p></div>`;
     $("#more").hidden = list.length <= state.shown;
     icons();
     const u = new URL(location.href); state.type === "all" ? u.searchParams.delete("type") : u.searchParams.set("type", state.type); history.replaceState(null, "", u);
@@ -49,7 +52,7 @@
   $$("#media [data-m]").forEach((b) => b.addEventListener("click", () => { state.media = b.dataset.m; state.shown = PAGE; $$("#media [data-m]").forEach((x) => x.classList.toggle("active", x === b)); render(); }));
   $("#q").addEventListener("input", debounce(() => { state.shown = PAGE; render(); }, 150));
   $("#sort").addEventListener("change", render);
-  $("#more").addEventListener("click", () => { state.shown += PAGE; render(); });
+  $("#more").addEventListener("click", () => { state.shown += PAGE; render(true); });
   $("#admin").addEventListener("change", (e) => { state.admin = e.target.checked; store.set("tg-admin", state.admin); render(); });
   chips(); render();
 })();

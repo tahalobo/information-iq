@@ -257,9 +257,9 @@ for (const f of readdirSync(ROOT).filter((x) => x.endsWith(".html") && !["404.ht
 /* ==========================================================
    القوالب
    ========================================================== */
-const THEME_BOOT = `<script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t)d.dataset.theme=JSON.parse(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("fx-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("fx-nav"))d.classList.add("entering")}sessionStorage.removeItem("fx-nav")}catch(e){}</script>`;
+const THEME_BOOT = `<script>try{var d=document.documentElement,L=localStorage,S=sessionStorage,n=navigator,c=n.connection||{},M=function(q){return matchMedia(q).matches},t=L.getItem("theme"),m=L.getItem("lite"),r=M("(prefers-reduced-motion: reduce)");if(t)d.dataset.theme=JSON.parse(t);if(m=='"on"'||m!='"off"'&&(r||c.saveData||/2g|3g/.test(c.effectiveType||"")||n.deviceMemory<=4||n.hardwareConcurrency<=4||+L.getItem("lite-auto")>Date.now()||M("(pointer: coarse)")&&M("(max-width: 1100px)")&&!(n.deviceMemory>=8&&n.hardwareConcurrency>=8)&&!/iP(hone|ad|od)/.test(n.userAgent)))d.className+=" lite rm no-gl";else if(r)d.className+=" rm";else if(!S.getItem("fx-seen"))d.className+=" is-loading";else if(S.getItem("fx-nav"))d.className+=" entering";S.removeItem("fx-nav")}catch(e){}</script>`;
 const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">`;
 const ICONS = `<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="manifest.webmanifest">
@@ -327,14 +327,12 @@ ${scripts}
 </html>
 `;
 }
-const LIGHT_SCRIPTS = `<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+const LIGHT_SCRIPTS = `<script src="assets/js/vendor/lucide-subset.js"></script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/static-index.js"></script>
 <script src="assets/js/core.js"></script>
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="assets/js/fx.js"></script>
-<script src="assets/js/gl.js"></script>`;
+<script src="assets/js/fx.js"></script>`;
 
 /* بطاقة ثابتة بنفس تصميم بطاقات الموقع (fc) */
 function card(it, eager = false) {
@@ -363,6 +361,40 @@ function pager(pathOf, page, pages) {
 }
 
 /* ---------- صفحة المنشور ---------- */
+/* ---------- سياق المنشور للواجهة (window.STATIC_CTX) ----------
+   صفحة المنشور كانت تحمّل telegram-data.js و branches-data.js كاملين (نحو 550 ك.ب) لتعرف ثلاثة أشياء فقط:
+   سجلّ المنشور نفسه، والأحدث/الأقدم منه، وثلاثة منشورات مشابهة. نحسبها هنا وقت البناء ونضمّنها في الصفحة.
+   المنطق منسوخ حرفياً من assets/js/pages/fact.js (render) و core.js (tgToItem/brToItem/factsSorted): أي تعديل هناك يُكرَّر هنا. */
+const CTX = (() => {
+  const catIds = new Set(CATEGORIES.map((c) => c.id));
+  const tgPosts = (TG && TG.posts) || [], brPosts = (BR && BR.posts) || [];
+  const tgMini = (p) => ({ id: "tg-" + p.id, date: p.date, tg: p.id, cat: catIds.has(p.cat) ? p.cat : "culture", tags: p.tags || [], image: p.image, raw: p, kind: "tg" });
+  const brMini = (p) => ({ id: p.id, date: p.date, tg: p.id, cat: p.b, tags: p.tags || [], image: p.image, raw: p, kind: "br", branch: p.b });
+  const tgAll = tgPosts.map(tgMini), brAll = brPosts.map(brMini);
+  // window.FACTS في المتصفح: معلومات data.js ثم منشورات القناة من نوع "معلومة"
+  const facts = [...FACTS.map((f) => ({ id: f.id, date: f.date, tg: 0, cat: f.cat, tags: f.tags || [], image: f.image })), ...tgAll.filter((x) => x.raw.type === "fact")];
+  const factsSorted = [...facts].sort((a, b) => b.date.localeCompare(a.date) || (b.tg || 0) - (a.tg || 0));
+  const branchPools = new Map();
+  const branchPool = (id) => branchPools.get(id) || branchPools.set(id, brAll.filter((x) => x.branch === id).sort((a, b) => b.date.localeCompare(a.date) || b.tg.localeCompare(a.tg))).get(id);
+  const byId = new Map();
+  for (const x of [...brAll].reverse()) byId.set(x.id, x);
+  for (const x of [...tgAll].reverse()) byId.set(x.id, x);
+  for (const x of [...facts].reverse()) byId.set(x.id, x); // نفس أولوية البحث في fact.js: FACTS ثم TG_ITEMS ثم BR_ITEMS
+  return (id) => {
+    const f = byId.get(id); if (!f) return null;
+    const pool = f.branch && branchOf(f.branch) ? branchPool(f.branch) : null;
+    const sorted = pool || factsSorted;
+    const idx = sorted.findIndex((x) => x.id === f.id);
+    const newer = idx > 0 ? sorted[idx - 1] : null, older = idx >= 0 ? sorted[idx + 1] || null : null;
+    const related = (pool || facts).filter((x) => x.id !== f.id && x !== newer && x !== older)
+      .map((x) => ({ x, score: (x.cat === f.cat ? 2 : 0) + x.tags.filter((t) => f.tags.includes(t)).length + (x.image ? .2 : 0) }))
+      .sort((a, b) => b.score - a.score).slice(0, 3).map((r) => r.x);
+    const need = [f, newer, older, ...related].filter(Boolean);
+    const raw = (kind) => [...new Set(need.filter((x) => x.kind === kind).map((x) => x.raw))];
+    return { n: newer ? newer.id : null, o: older ? older.id : null, r: related.map((x) => x.id), tg: raw("tg"), br: raw("br") };
+  };
+})();
+
 function postPage(it) {
   const p = postPath(it);
   const sec = sectionHub(it);
@@ -410,18 +442,17 @@ function postPage(it) {
     </div>
   </section>
 </main>`;
-  const scripts = `<script>window.STATIC_ID=${JSON.stringify(it.id)};</script>
-<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  const ctx = CTX(it.id);
+  const scripts = `<script>window.STATIC_ID=${JSON.stringify(it.id)};${ctx ? `window.STATIC_CTX=${json(ctx)};` : ""}</script>
+<script src="assets/js/vendor/lucide-subset.js"></script>
 <script src="assets/js/config.js"></script>
-<script src="assets/js/data.js"></script>
+<script src="assets/js/data.js"></script>${ctx ? "" : `
 <script src="assets/js/telegram-data.js"></script>
-<script src="assets/js/branches-data.js"></script>
+<script src="assets/js/branches-data.js"></script>`}
 <script src="assets/js/static-index.js"></script>
 <script src="assets/js/core.js"></script>
 <script src="assets/js/pages/fact.js"></script>
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="assets/js/fx.js"></script>
-<script src="assets/js/gl.js"></script>`;
+<script src="assets/js/fx.js"></script>`;
   const preload = main && !main.remote ? `<link rel="preload" as="image" href="${esc(main.src)}" fetchpriority="high">\n` : "";
   return shell({ seo, body, bodyAttr: 'data-page="fact" data-progress', scripts, preload });
 }

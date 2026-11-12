@@ -35,9 +35,9 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="الإمبراطورية">
-<script>try{var d=document.documentElement,t=localStorage.getItem("theme");if(t)d.dataset.theme=JSON.parse(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches){if(!sessionStorage.getItem("fx-seen"))d.classList.add("is-loading");else if(sessionStorage.getItem("fx-nav"))d.classList.add("entering")}sessionStorage.removeItem("fx-nav")}catch(e){}</script>
+<script>try{var d=document.documentElement,L=localStorage,S=sessionStorage,n=navigator,c=n.connection||{},M=function(q){return matchMedia(q).matches},t=L.getItem("theme"),m=L.getItem("lite"),r=M("(prefers-reduced-motion: reduce)");if(t)d.dataset.theme=JSON.parse(t);if(m=='"on"'||m!='"off"'&&(r||c.saveData||/2g|3g/.test(c.effectiveType||"")||n.deviceMemory<=4||n.hardwareConcurrency<=4||+L.getItem("lite-auto")>Date.now()||M("(pointer: coarse)")&&M("(max-width: 1100px)")&&!(n.deviceMemory>=8&&n.hardwareConcurrency>=8)&&!/iP(hone|ad|od)/.test(n.userAgent)))d.className+=" lite rm no-gl";else if(r)d.className+=" rm";else if(!S.getItem("fx-seen"))d.className+=" is-loading";else if(S.getItem("fx-nav"))d.className+=" entering";S.removeItem("fx-nav")}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body data-page="topic">
@@ -100,18 +100,16 @@
 </article></div>
       
       
-      <div class="seo-topics mt-4"><h2 class="seo-h">تصفّح مواضيع أخرى</h2><div class="seo-chips"><a class="chip" href="topic/ثقافة-وحضارة.html">ثقافة وحضارة<span class="count">120</span></a><a class="chip" href="topic/أخبار-الأنمي-والمانغا.html">أخبار الأنمي والمانغا<span class="count">93</span></a><a class="chip" href="topic/تاريخ-العراق.html">تاريخ العراق<span class="count">83</span></a><a class="chip" href="topic/العراق.html">العراق<span class="count">73</span></a><a class="chip" href="topic/علوم.html">علوم<span class="count">72</span></a><a class="chip" href="topic/تاريخ-وشخصيات.html">تاريخ وشخصيات<span class="count">69</span></a><a class="chip" href="topic/أخبار-الموسيقى-والمشاهير.html">أخبار الموسيقى والمشاهير<span class="count">66</span></a><a class="chip" href="topic/طبيعة-وغرائب.html">طبيعة وغرائب<span class="count">60</span></a><a class="chip" href="topic/جسم-الإنسان.html">جسم الإنسان<span class="count">50</span></a><a class="chip" href="topic/أخبار-العراق-والعالم.html">أخبار العراق والعالم<span class="count">47</span></a><a class="chip" href="topic/أخبار-الألعاب.html">أخبار الألعاب<span class="count">46</span></a><a class="chip" href="topic/فضاء.html">فضاء<span class="count">45</span></a><a class="chip" href="topic/فلسفة-وعلم-نفس.html">فلسفة وعلم نفس<span class="count">41</span></a><a class="chip" href="topic/المانغا.html">المانغا<span class="count">26</span></a><a class="chip" href="topic/تقنية.html">تقنية<span class="count">23</span></a><a class="chip" href="topic/الذكاء-الاصطناعي.html">الذكاء الاصطناعي<span class="count">19</span></a><a class="chip" href="topic/بغداد.html">بغداد<span class="count">18</span></a><a class="chip" href="topic/الآثار-والمتاحف.html">الآثار والمتاحف<span class="count">18</span></a><a class="chip" href="topic/index.html">كل المواضيع</a><a class="chip" href="archive/index.html">الأرشيف الكامل</a></div></div>
+      <div class="seo-topics mt-4"><h2 class="seo-h">تصفّح مواضيع أخرى</h2><div class="seo-chips"><a class="chip" href="topic/ثقافة-وحضارة.html">ثقافة وحضارة<span class="count">120</span></a><a class="chip" href="topic/أخبار-الأنمي-والمانغا.html">أخبار الأنمي والمانغا<span class="count">93</span></a><a class="chip" href="topic/تاريخ-العراق.html">تاريخ العراق<span class="count">83</span></a><a class="chip" href="topic/العراق.html">العراق<span class="count">73</span></a><a class="chip" href="topic/علوم.html">علوم<span class="count">72</span></a><a class="chip" href="topic/تاريخ-وشخصيات.html">تاريخ وشخصيات<span class="count">69</span></a><a class="chip" href="topic/أخبار-الموسيقى-والمشاهير.html">أخبار الموسيقى والمشاهير<span class="count">66</span></a><a class="chip" href="topic/طبيعة-وغرائب.html">طبيعة وغرائب<span class="count">60</span></a><a class="chip" href="topic/جسم-الإنسان.html">جسم الإنسان<span class="count">50</span></a><a class="chip" href="topic/أخبار-العراق-والعالم.html">أخبار العراق والعالم<span class="count">47</span></a><a class="chip" href="topic/أخبار-الألعاب.html">أخبار الألعاب<span class="count">46</span></a><a class="chip" href="topic/فضاء.html">فضاء<span class="count">45</span></a><a class="chip" href="topic/فلسفة-وعلم-نفس.html">فلسفة وعلم نفس<span class="count">41</span></a><a class="chip" href="topic/أخبار-الأفلام.html">أخبار الأفلام<span class="count">38</span></a><a class="chip" href="topic/السينما-والأفلام.html">السينما والأفلام<span class="count">33</span></a><a class="chip" href="topic/المانغا.html">المانغا<span class="count">26</span></a><a class="chip" href="topic/تقنية.html">تقنية<span class="count">23</span></a><a class="chip" href="topic/الذكاء-الاصطناعي.html">الذكاء الاصطناعي<span class="count">20</span></a><a class="chip" href="topic/index.html">كل المواضيع</a><a class="chip" href="archive/index.html">الأرشيف الكامل</a></div></div>
     </div>
   </section>
 </main>
 <div id="site-footer"></div>
-<script src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+<script src="assets/js/vendor/lucide-subset.js"></script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/data.js"></script>
 <script src="assets/js/static-index.js"></script>
 <script src="assets/js/core.js"></script>
-<script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
 <script src="assets/js/fx.js"></script>
-<script src="assets/js/gl.js"></script>
 </body>
 </html>

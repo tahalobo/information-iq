@@ -2039,3 +2039,75 @@ details.mx-sec { padding: 0; }
 .seo-steps h3 { font-family: var(--font-display); font-size: 1.06rem; font-weight: 600; margin: 0 0 6px; }
 .seo-steps p { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.9; }
 .seo-faq { max-width: 900px; border: 1px solid var(--border); border-radius: 20px; background: var(--card); overflow: hidden; }
+
+/* ==========================================================
+   زر الوضع الخفيف (في الترويسة والقائمة الجانبية)
+   ========================================================== */
+.lite-btn[aria-pressed="true"] { color: var(--gold); border-color: color-mix(in srgb, var(--gold) 60%, transparent); background: var(--gold-soft); }
+.lite-row { display: flex; align-items: center; gap: 12px; width: 100%; padding: 9px 12px; border-radius: 14px; border: 0; background: none; color: var(--text); font-size: .95rem; cursor: pointer; text-align: start; }
+.lite-row:hover { background: var(--surface-2); }
+.lite-row > svg { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; }
+.lite-row > span { flex: 1; min-width: 0; line-height: 1.4; }
+.lite-row small { display: block; color: var(--muted); font-size: .76rem; }
+.lite-row .sw { position: relative; flex-shrink: 0; width: 42px; height: 24px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border-2); transition: background .2s, border-color .2s; }
+.lite-row .sw::after { content: ""; position: absolute; top: 2px; inset-inline-start: 2px; width: 18px; height: 18px; border-radius: 50%; background: var(--muted); transition: inset-inline-start .2s, background .2s; }
+.lite-row[aria-pressed="true"] .sw { background: var(--gold-soft); border-color: var(--gold); }
+.lite-row[aria-pressed="true"] .sw::after { inset-inline-start: 20px; background: var(--gold); }
+@media (max-width: 380px) { .header-actions { gap: 4px; } .header-actions .icon-btn { width: 38px; height: 38px; } }
+
+/* ==========================================================
+   الوضع الخفيف: html.lite
+   يضعه السكربت المضمَّن في <head> قبل أول رسم (هواتف وأجهزة ضعيفة، أو اختيار الزائر)،
+   ويرافقه دائماً html.rm (تقليل الحركة) و html.no-gl (خلفية ثابتة بدل WebGL).
+   الهدف: لا تمويه خلفي، لا حركات لا تنتهي، لا طبقات ثلاثية الأبعاد، ظلال أبسط. الشكل العام يبقى كما هو.
+   ========================================================== */
+html.lite { --glass: rgba(9, 13, 30, .95); --glass-2: rgba(7, 10, 24, .98); --shadow-lg: 0 18px 36px -20px rgba(0, 0, 0, .85); --glow: 0 0 0 1px rgba(242, 194, 91, .28); }
+html.lite[data-theme="light"] { --glass: rgba(255, 252, 244, .96); --glass-2: rgba(255, 252, 244, .99); --shadow-lg: 0 18px 36px -22px rgba(40, 30, 10, .45); --glow: 0 0 0 1px rgba(200, 144, 26, .35); }
+
+/* 1) التمويه الخلفي أغلى ما في الصفحة على معالجات الرسوم الضعيفة */
+html.lite *, html.lite *::before, html.lite *::after { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+html.lite .fc-tag, html.lite .badge-glass, html.lite .play-dot { background-color: rgba(3, 5, 12, .72); }
+
+/* 2) الحركات: تنتهي فوراً (مثل prefers-reduced-motion) فلا يبقى شيء يعيد الرسم في كل إطار… */
+html.lite *, html.lite *::before, html.lite *::after { animation-duration: .01ms !important; animation-delay: 0s !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+/* …ما عدا مؤشرات الانتظار، فهي تخبر الزائر أن العمل جارٍ */
+html.lite .lucide-loader, html.lite .spin, html.lite .fz-steps li.on::before, html.lite .vf-steps li.on i, html.lite .vf-progress .card-title svg { animation-duration: 1s !important; animation-iteration-count: infinite !important; }
+html.lite .fx-deco, html.lite .fx-grain, html.lite .gl-stage, html.lite .cur-ring, html.lite .cur-dot, html.lite .fx-amb:not(.grad), html.lite .fc-ring, html.lite .scroll-cue { display: none !important; }
+
+/* 3) بطاقات بلا تحويلات ثلاثية الأبعاد: كل بطاقة كانت طبقة مستقلة في ذاكرة معالج الرسوم */
+html.lite .rv, html.lite .card-hover, html.lite .tool-card, html.lite .cat-tile, html.lite .stat-card, html.lite [data-tilt], html.lite .bento > *, html.lite .world {
+  transform: none !important; opacity: 1; transition: border-color .2s, background-color .2s, color .2s;
+}
+html.lite .split .wi { opacity: 1 !important; transform: none !important; filter: none !important; transition: none; }
+html.lite .page-hero > .container, html.lite .xhero-text, html.lite .fx-hero-text, html.lite .ab-hero-text, html.lite .ph-giant, html.lite .footer-giant, html.lite .xstats { transform: none !important; opacity: 1 !important; }
+html.lite .fc-media img { transform: none; transition: none; }
+html.lite .orbit { display: none; }
+html.lite .hg-track { will-change: auto; }
+
+/* 4) ظلال وفلاتر أخف */
+html.lite .brand-logo, html.lite .fc-gen > svg, html.lite .fact-cover svg, html.lite .world .big, html.lite .fx-dyk-ico svg { filter: none; }
+html.lite .fc, html.lite .card, html.lite .site-header > .container { box-shadow: none; }
+html.lite .fc h3 { text-shadow: none; }
+
+/* 5) القائمة الجانبية والترويسة: ظهور مباشر بدل قناع دائري متحرك */
+html.lite .drawer { clip-path: none; opacity: 0; transition: opacity .18s, visibility 0s .18s; }
+html.lite body.drawer-open .drawer { clip-path: none; opacity: 1; transition: opacity .18s, visibility 0s; }
+html.lite .drawer-main a, html.lite .drawer-side { opacity: 1 !important; transform: none !important; transition: none !important; }
+html.lite .site-header { transition: transform .25s; }
+html.lite .nav-menu { transform: none; transition: opacity .15s, visibility .15s; }
+
+/* 6) ما هو خارج الشاشة لا يُرسم حتى يقترب منه التمرير */
+html.lite .site-footer { content-visibility: auto; contain-intrinsic-block-size: auto 1100px; }
+html.lite .lib-grid > .fc, html.lite .grid > .fc { content-visibility: auto; contain-intrinsic-block-size: auto 420px; }
+
+/* 7) بديل ثابت لمنحوتة WebGL: هالة ذهبية خفيفة في مكان كل منحوتة، وشعار الإمبراطورية في خانات الواجهة */
+html.no-gl [data-gl] { background-image: radial-gradient(closest-side, rgba(242, 194, 91, .2), rgba(75, 116, 255, .1) 55%, transparent 72%); background-repeat: no-repeat; background-position: center; }
+html.no-gl .xhero-slot, html.no-gl .ph-slot, html.no-gl .fx-orb, html.no-gl .f-slot, html.no-gl .ab-crown {
+  background-image: url("../img/logo-256.webp"), radial-gradient(closest-side, rgba(242, 194, 91, .24), rgba(75, 116, 255, .12) 55%, transparent 72%);
+  background-size: 34% auto, auto;
+}
+html.no-gl .m-slot, html.no-gl .ab-core { background-image: none; }
+/* على الهاتف تقع هاتان الخانتان خلف العنوان: هالة فقط حتى لا يزاحم الشعار النص */
+@media (max-width: 899px) { html.no-gl .ph-slot, html.no-gl .ab-crown { background-image: radial-gradient(closest-side, rgba(242, 194, 91, .16), rgba(75, 116, 255, .1) 55%, transparent 72%); background-size: auto; } }
+/* 8) أقسام الصفحة الرئيسية وأقسام الشرح أسفل الصفحات: لا تُخطَّط ولا تُرسم حتى يقترب منها التمرير */
+html.lite body[data-page="home"] main > section:not(.xhero), html.lite .seo-browse, html.lite .seo-guide, html.lite .seo-related { content-visibility: auto; contain-intrinsic-block-size: auto 800px; }

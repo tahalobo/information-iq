@@ -73,14 +73,16 @@
     return { L, q, s };
   }
 
-  function render(keepScroll) {
+  function render(keepScroll, append) {
     const { L, q, s } = list();
     const grid = $("#grid");
     grid.className = `lib-grid ${state.view}${state.view === "grid" && !q && s === "new" && state.cat !== "saved" && L.length > 4 ? " mosaic" : ""}`;
     $("#count").innerHTML = `<b>${fmtNum(L.length)}</b> ${L.length === 1 ? "معلومة" : L.length === 2 ? "معلومتان" : L.length <= 10 ? "معلومات" : "معلومة"}${q ? ` عن «${esc(q)}»` : ""}`;
     $("#q-count").textContent = q ? fmtNum(L.length) : "/";
     $("#reset").hidden = !q && state.cat === "all" && s === "new";
-    grid.innerHTML = L.length ? L.slice(0, state.shown).map(factCard).join("") :
+    const have = append ? grid.querySelectorAll(":scope > .fc").length : 0;
+    if (have && L.length) grid.insertAdjacentHTML("beforeend", L.slice(have, state.shown).map(factCard).join(""));
+    else grid.innerHTML = L.length ? L.slice(0, state.shown).map(factCard).join("") :
       `<div class="empty lib-empty"><span class="ico">${ic(state.cat === "saved" ? "bookmark" : "search-x")}</span>
        <h3>${state.cat === "saved" ? "لا توجد محفوظات بعد" : "لا توجد نتائج"}</h3>
        <p>${state.cat === "saved" ? "اضغط على أيقونة الحفظ في أي معلومة لتظهر هنا. تُحفظ في متصفحك وتبقى متاحة بدون إنترنت." : "جرّب كلمة بحث أخرى أو قسماً مختلفاً."}</p>
@@ -114,7 +116,7 @@
   $("#sort").addEventListener("change", () => { state.shown = PAGE; render(); });
   $("#view").addEventListener("click", (e) => { const b = e.target.closest("[data-v]"); if (!b) return; state.view = b.dataset.v; store.set("lib-view", state.view); render(true); });
   $("#reset").addEventListener("click", () => { $("#q").value = ""; $("#sort").value = "new"; state.cat = "all"; state.shown = PAGE; chips(); hero(); render(); });
-  $("#more").addEventListener("click", () => { state.shown += PAGE; render(true); });
+  $("#more").addEventListener("click", () => { state.shown += PAGE; render(true, true); });
   // infinite scroll: load the next batch as the button approaches
   if ("IntersectionObserver" in window) new IntersectionObserver((en) => { if (en[0].isIntersecting && !$("#more").hidden) $("#more").click(); }, { rootMargin: "600px 0px" }).observe($("#more"));
   document.addEventListener("saved-change", () => { chips(); if (state.cat === "saved") { lastCat = null; hero(); render(true); } });

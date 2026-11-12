@@ -7,14 +7,15 @@
 (function () {
   "use strict";
   const doc = document.documentElement;
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) { doc.classList.add("no-gl"); return; }
+  // never runs in the light mode or when the system asks for less motion (fx.js only loads this file otherwise)
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches || doc.classList.contains("lite")) { doc.classList.add("no-gl"); return; }
 
   const canvas = document.createElement("canvas");
   canvas.className = "gl-stage"; canvas.setAttribute("aria-hidden", "true");
   const gl = canvas.getContext("webgl", { antialias: false, alpha: true, premultipliedAlpha: true, powerPreference: "high-performance" });
   if (!gl) { doc.classList.add("no-gl"); return; }
   document.body.prepend(canvas);
-  doc.classList.add("has-gl");
+  doc.classList.remove("no-gl"); doc.classList.add("has-gl");
 
   const small = innerWidth < 760 || (navigator.hardwareConcurrency || 8) <= 4;
   const N = small ? 6500 : 13000;
@@ -399,11 +400,14 @@ void main(){ vec2 c = gl_PointCoord - 0.5; float d = length(c); if (d > 0.5) dis
   let resizeTimer; addEventListener("resize", () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(readSlotStyle, 150); });
 
   /* ---------- Loop ---------- */
-  let t0 = performance.now(), spin = 0, running = true;
-  document.addEventListener("visibilitychange", () => { running = !document.hidden; if (running) requestAnimationFrame(frame); });
+  // the loop runs only while the tab is visible and the sculpture is switched on; exactly one rAF chain at a time
+  let t0 = performance.now(), spin = 0, enabled = true, rafId = 0;
+  const wake = () => { if (enabled && !document.hidden && !rafId) rafId = requestAnimationFrame(frame); };
+  document.addEventListener("visibilitychange", wake);
 
   function frame(now) {
-    if (!running) return;
+    rafId = 0;
+    if (!enabled || document.hidden) return;
     const t = (now - t0) / 1000;
     if (slotsDirty) readSlotStyle();
 
@@ -460,9 +464,21 @@ void main(){ vec2 c = gl_PointCoord - 0.5; float d = length(c); if (d > 0.5) dis
       bindAttr(S.a, loc.aA, 3); bindAttr(S.b, loc.aB, 3); bindAttr(S.ca, loc.cA, 3); bindAttr(S.cb, loc.cB, 3); bindAttr(S.r, loc.aR, 4);
       gl.drawArrays(gl.POINTS, 0, N);
     }
-    requestAnimationFrame(frame);
+    rafId = requestAnimationFrame(frame);
   }
-  requestAnimationFrame(frame);
+  wake();
 
-  window.GL3D = { refresh: collect, morphTo };
+  // stop(): used when the visitor (or the watchdog) switches to the light mode; start() brings it back
+  function stop() {
+    if (!enabled) return; enabled = false;
+    if (rafId) { cancelAnimationFrame(rafId); rafId = 0; }
+    canvas.remove(); doc.classList.remove("has-gl"); doc.classList.add("no-gl");
+  }
+  function start() {
+    if (enabled) return; enabled = true;
+    document.body.prepend(canvas); doc.classList.remove("no-gl"); doc.classList.add("has-gl");
+    lastY = scrollY; resize(); collect(); wake();
+  }
+
+  window.GL3D = { refresh: collect, morphTo, stop, start };
 })();
