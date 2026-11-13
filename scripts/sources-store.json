@@ -1,5 +1,76 @@
 {
  "posts": {
+  "15164": {
+   "hash": "71494b9a6a45",
+   "checked": "2026-11-13T15:38:22.231Z",
+   "queries": [
+    "«مزيل رائحة الفم» قبل آلاف السنين… كيف اعتنى المصريون بأسنانهم؟",
+    "مستحضر تجميل رائحة الفم مزيل المصريون",
+    "Cosmetics"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%AA%D8%AD%D8%B6%D8%B1_%D8%AA%D8%AC%D9%85%D9%8A%D9%84",
+     "name": "مستحضر تجميل",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "مستحضرات التجميل (الإنجليزية: Cosmetics) يشتهر باسم المكياج وهي مواد تستخدم لتعزيز، أو حماية مظهر، أو رائحة الجسم البشري."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Cosmetics",
+     "name": "Cosmetics",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 50,
+     "quote": "Cosmetics are substances that are intended for application to the body for cleansing, beautifying, promoting attractiveness, or altering appearance. They are mixtures of chemical compounds derived from either…"
+    }
+   ]
+  },
+  "15165": {
+   "hash": "f9316e3a3ef1",
+   "checked": "2026-11-13T15:38:16.150Z",
+   "queries": [
+    "حين يصبح كل شيء أسهل… لماذا لا نصبح أسعد؟",
+    "وسائل نقل يصبح أسهل"
+   ],
+   "sources": []
+  },
+  "15167": {
+   "hash": "62ce61d82d98",
+   "checked": "2026-11-13T15:38:11.215Z",
+   "queries": [
+    "حاسوب عمره 2000 عام!",
+    "آلة أنتيكيثيرا حطام سفينة حاسوب عمره 2000",
+    "Antikythera mechanism"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A2%D9%84%D8%A9_%D8%A3%D9%86%D8%AA%D9%8A%D9%83%D9%8A%D8%AB%D9%8A%D8%B1%D8%A7",
+     "name": "آلة أنتيكيثيرا",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 66,
+     "quote": "كانت هذه القطعة الأثرية من بين حطام السفينة التي انتشلت من قبالة ساحل جزيرة أنتيكيثيرا اليونانية في عام 1901."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Antikythera_mechanism",
+     "name": "Antikythera mechanism",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 62,
+     "quote": "The Antikythera mechanism ( AN-tik-ih-THEER-ə, US also  AN-ty-kih-) is an ancient Greek hand-powered orrery (model of the Solar System) built in the 2nd century BC and discovered in 1901. It is the oldest…"
+    }
+   ]
+  },
   "15168": {
    "hash": "a939388fb3cf",
    "checked": "2026-11-13T07:32:13.013Z",
@@ -1871,7 +1942,47 @@
      "quote": "Netflix is bringing the Twilight universe back to life with Midnight Sun, a fresh, animated take on a familiar love story. Explore what is known so far about it."
     }
    ]
+  },
+  "15273": {
+   "hash": "9d9b31c8992f",
+   "checked": "2026-11-13T15:38:03.728Z",
+   "queries": [
+    "حصن الاخيضر",
+    "حصن الاخيضر مدينة كربلاء جنوب بأسواره"
+   ],
+   "sources": []
+  },
+  "15274": {
+   "hash": "787f100b9e93",
+   "checked": "2026-11-13T15:37:58.419Z",
+   "queries": [
+    "كيف ظهرت علامات الترقيم؟",
+    "أريستوفانيس البيزنطي علامات الترقيم اليونانية النص",
+    "Aristophanes of Byzantium"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A3%D8%B1%D9%8A%D8%B3%D8%AA%D9%88%D9%81%D8%A7%D9%86%D9%8A%D8%B3_%D8%A7%D9%84%D8%A8%D9%8A%D8%B2%D9%86%D8%B7%D9%8A",
+     "name": "أريستوفانيس البيزنطي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 66,
+     "quote": "وصادَف ذلك العصر انتشار اليونانية كلغة مشتركة في شرقي البحر الأبيض المتوسط عقب فتوحات الإسكندر الأكبر، فصممت علامات النبر لمساعدة غير الناطقين بها على نطق النصوص الأدبية القديمة بدقة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Aristophanes_of_Byzantium",
+     "name": "Aristophanes of Byzantium",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 62,
+     "quote": "Aristophanes of Byzantium (Ancient Greek: Ἀριστοφάνης ὁ Βυζάντιος Aristophánēs ho Buzántios; Byzantium c. 257 BC – Alexandria c. 185–180 BC), not to be confused with Aristophanes of Athens, was a Hellenistic…"
+    }
+   ]
   }
  },
- "updated": "2026-11-13T07:32:13.015Z"
+ "updated": "2026-11-13T15:38:22.233Z"
 }
