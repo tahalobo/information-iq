@@ -1,5 +1,72 @@
 {
  "posts": {
+  "15174": {
+   "hash": "72fcb2336d45",
+   "checked": "2026-11-13T00:38:11.948Z",
+   "queries": [
+    "هل نبحث عن الحقيقة فعلًا… أم عن حقيقة تُرضينا؟",
+    "نبحث الحقيقة فعلا ترضينا نشعر"
+   ],
+   "sources": []
+  },
+  "15175": {
+   "hash": "9f4ea5997a8f",
+   "checked": "2026-11-13T00:38:07.277Z",
+   "queries": [
+    "تدفئة تحت الأرض قبل 2000 عام… كيف سخّن الرومان مبانيهم؟ Hypocaust",
+    "تدفئة تحت الأرض الحمامات العامة الرومان ألفي 2000",
+    "Underfloor heating Hypocaust"
+   ],
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Hypocaust",
+     "name": "Hypocaust",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "A hypocaust (Latin: hypocaustum) is a system of central heating in a building that produces and circulates hot air below the floor of a room, and may also warm the walls with a series of pipes through which…"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%AF%D9%81%D8%A6%D8%A9_%D8%AA%D8%AD%D8%AA_%D8%A7%D9%84%D8%A3%D8%B1%D8%B6",
+     "name": "تدفئة تحت الأرض",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 55,
+     "quote": "تتوفر مجموعة من التصاميم للتدفئة الأرضية التي تناسب أنواعًا مختلفة من الأرضيات."
+    }
+   ]
+  },
+  "15177": {
+   "hash": "0e94b0cf634a",
+   "checked": "2026-11-13T00:37:53.382Z",
+   "queries": [
+    "جيلاتي موطا… حكاية عراقية منذ 1963",
+    "الآيس كريم اسم تجاري جيلاتي موطا 1963"
+   ],
+   "sources": []
+  },
+  "15179": {
+   "hash": "466360b371ea",
+   "checked": "2026-11-13T00:37:37.754Z",
+   "queries": [
+    "من أين بدأ شعورنا بالخير والشر؟",
+    "والشر السلوكيات الاجتماعية والانزعاج جذور"
+   ],
+   "sources": []
+  },
+  "15180": {
+   "hash": "86bce692549c",
+   "checked": "2026-11-13T00:37:22.475Z",
+   "queries": [
+    "أول دليل سياحي وثقافي تفاعلي ذكي في العراق",
+    "مدينة السلام تنسيق الموقع دليل سياحي 1000"
+   ],
+   "sources": []
+  },
   "15181": {
    "hash": "ca247d6679d2",
    "checked": "2026-11-12T19:24:03.538Z",
@@ -1646,5 +1713,5 @@
    ]
   }
  },
- "updated": "2026-11-12T19:24:03.540Z"
+ "updated": "2026-11-13T00:38:11.949Z"
 }
