@@ -5,7 +5,7 @@
    - المعلومات المحفوظة: تُخزَّن كاملة لحظة حفظها
    غيّر رقم VERSION عند أي تعديل كبير لتنظيف الذاكرة القديمة.
    ========================================================== */
-const VERSION = "empire-v16";
+const VERSION = "empire-v17";
 const CORE = `${VERSION}-core`, PAGES = `${VERSION}-pages`, MEDIA = `${VERSION}-media`;
 const SAVED = "empire-saved"; // the reader's saved facts: survives version bumps
 const PRECACHE = [
