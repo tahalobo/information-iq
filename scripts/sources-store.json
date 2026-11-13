@@ -1,5 +1,136 @@
 {
  "posts": {
+  "15157": {
+   "hash": "b5829fa92fbb",
+   "checked": "2026-11-13T21:46:37.447Z",
+   "queries": [
+    "حضارة بلا قصور ولا ملوك؟ لغز وادي السند الذي حيّر المؤرخين",
+    "حضارة وادي السند شمال غرب الهند قصور ملوك",
+    "Indus Valley Civilisation"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B6%D8%A7%D8%B1%D8%A9_%D9%88%D8%A7%D8%AF%D9%8A_%D8%A7%D9%84%D8%B3%D9%86%D8%AF",
+     "name": "حضارة وادي السند",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 52,
+     "quote": "ونمت بمرور الوقت حضارة وادي السند لتشمل معظم ما يُسمَّى اليوم باكستان وأجزاء مما يعرف اليوم بأفغانستان، وشمال غربي الهند."
+    }
+   ]
+  },
+  "15158": {
+   "hash": "4d8ac0f348b2",
+   "checked": "2026-11-13T21:46:28.656Z",
+   "queries": [
+    "اللحظة التي لا يمكنك الامساك بها",
+    "اللحظة يمكنك الامساك نعيش وعينا"
+   ],
+   "sources": []
+  },
+  "15159": {
+   "hash": "616db7041bb6",
+   "checked": "2026-11-13T21:46:11.748Z",
+   "queries": [
+    "ابن الهيثم في الزنزانة: حين تحوّل السجن إلى مختبرٍ للضوء",
+    "ابن الهيثم الحاكم بأمر الله الزنزانة مختبر",
+    "Ibn al-Haytham"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D8%A8%D9%86_%D8%A7%D9%84%D9%87%D9%8A%D8%AB%D9%85",
+     "name": "ابن الهيثم",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 75,
+     "quote": "في مجال الهندسة المدنية، يعد أهم أعماله المدنية استدعاء الخليفة الفاطمي الحاكم بأمر الله له لتنظيم فيضان النيل في مصر."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Ibn_al-Haytham",
+     "name": "Ibn al-Haytham",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 70,
+     "quote": "Ibn al-Haytham, Latinized as Alhazen (c. 965 – c. 1040), was a mathematician, astronomer, and physicist of the Islamic Golden Age from Iraq. Referred to as \"the father of modern optics\", he made significant…"
+    }
+   ]
+  },
+  "15160": {
+   "hash": "8d88afcad8c4",
+   "checked": "2026-11-13T21:45:47.747Z",
+   "queries": [
+    "جائزة نوبل للاقتصاد 2026",
+    "جائزة نوبل العلوم الاقتصادية للاقتصاد الاثنين 2026",
+    "Nobel Prize"
+   ],
+   "sources": [
+    {
+     "url": "https://www.nobelists.org/en/all/",
+     "name": "Nobel Prize laureates: full list by year and prize",
+     "site": "www.nobelists.org",
+     "host": "nobelists.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Complete, up-to-date list of Nobel Prize laureates. Filter by year, prize, gender, citizenship and language."
+    },
+    {
+     "url": "https://asharq.com/reports/199261/%D9%85%D8%A7-%D9%87%D9%8A-%D8%A7%D9%84%D9%86%D8%B8%D8%B1%D9%8A%D8%A9-%D8%A7%D9%84%D8%AA%D9%8A-%D8%AD%D8%B5%D9%84%D8%AA-%D8%B9%D9%84%D9%89-%D8%AC%D8%A7%D8%A6%D8%B2%D8%A9-%D9%86%D9%88%D8%A8%D9%84-%D9%84%D9%84%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-2026/",
+     "name": "ما هي النظرية التي حصلت على جائزة نوبل للاقتصاد 2026؟",
+     "site": "Asharq News",
+     "host": "asharq.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 80,
+     "quote": "أعلنت الأكاديمية الملكية السويدية للعلوم، الاثنين، منح جائزة البنك المركزي السويدي في العلوم الاقتصادية، والمعروفة ب جائزة نوبل في الاقتصاد لعام 2026، إلى الأميركيين روبرت إي هول (Robert E."
+    },
+    {
+     "url": "https://www.nobelprize.org/",
+     "name": "Official homepage of the Nobel Prize",
+     "site": "NobelPrize.org",
+     "host": "nobelprize.org",
+     "lang": "en",
+     "kind": "official",
+     "match": 70,
+     "quote": "The Nobel Prize rewards science, humanism and peace efforts."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D8%A6%D8%B2%D8%A9_%D9%86%D9%88%D8%A8%D9%84",
+     "name": "جائزة نوبل",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 65,
+     "quote": "في العام التالي، مُنحت جائزة سفيرغيز ريسكبانك في العلوم الاقتصادية لإحياء ذكرى ألفريد نوبل لأول مرة."
+    },
+    {
+     "url": "https://www.bbc.co.uk/bitesize/articles/znm4fdm",
+     "name": "What is the Nobel Peace prize and who was the winner?",
+     "site": "BBC Bitesize",
+     "host": "bbc.co.uk",
+     "lang": "en",
+     "kind": "news",
+     "match": 70,
+     "quote": "What is a Nobel Prize? When is the Nobel Prize ceremony in 2026? And who were the 2026 Nobel Prize winners? Find out all this and more with this article!"
+    }
+   ]
+  },
+  "15161": {
+   "hash": "c84fcb99f24b",
+   "checked": "2026-11-13T21:45:28.336Z",
+   "queries": [
+    "اللحظة التي تدرك فيها أن أعماق المحيط تُخفي شخصيات طفولتك",
+    "نسخة طبق الأصل سبونج بوب أعماق المحيط"
+   ],
+   "sources": []
+  },
   "15164": {
    "hash": "71494b9a6a45",
    "checked": "2026-11-13T15:38:22.231Z",
@@ -1984,5 +2115,5 @@
    ]
   }
  },
- "updated": "2026-11-13T15:38:22.233Z"
+ "updated": "2026-11-13T21:46:37.452Z"
 }
