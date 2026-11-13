@@ -1,5 +1,165 @@
 {
  "posts": {
+  "15168": {
+   "hash": "a939388fb3cf",
+   "checked": "2026-11-13T07:32:13.013Z",
+   "queries": [
+    "حروب النمل.. معارك دامية تحت أقدامنا",
+    "سان دييغو حروب معارك"
+   ],
+   "sources": []
+  },
+  "15169": {
+   "hash": "89eec376f400",
+   "checked": "2026-11-13T07:31:51.453Z",
+   "queries": [
+    "هل شعرت يومًا أن الوقت أصبح يمر أسرع؟",
+    "منطقة توهوكو وكالة ناسا شعرت يوما 2011"
+   ],
+   "sources": [
+    {
+     "url": "https://www.nippon.com/ar/articles/-/47250",
+     "name": "إعادة الإعمار والوضع الحالي بعد 10 سنوات من كارثة زلزال وتسونامي 2011",
+     "site": "Nippon.com",
+     "host": "nippon.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 52,
+     "quote": "تحيي اليابان في 11 مارس/ آذار الذكرى العاشرة لزلزال شرق اليابان الكبير الذي أحدث هزة قوية في معظم أنحاء اليابان ودمر ساحل المحيط الهادئ في منطقة توهوكو بتسونامي هائل."
+    }
+   ]
+  },
+  "15170": {
+   "hash": "d4736a0096e7",
+   "checked": "2026-11-13T07:31:25.428Z",
+   "queries": [
+    "ذكرى اكتشاف النفط في العراق",
+    "بابا كركر شركة النفط التركية اكتشاف اكتوبر 1927",
+    "Baba Gurgur"
+   ],
+   "sources": [
+    {
+     "url": "https://www.aljazeera.net/ebusiness/2021/10/17/%D9%82%D8%A8%D9%84-94-%D8%B9%D8%A7%D9%85%D8%A7-%D8%AD%D9%83%D8%A7%D9%8A%D8%A9-%D8%A7%D9%83%D8%AA%D8%B4%D8%A7%D9%81-%D8%A3%D9%88%D9%84-%D8%AD%D9%82%D9%84-%D9%86%D9%81%D8%B7%D9%8A-%D9%81%D9%8A",
+     "name": "نفط العراق.. حكاية اكتشاف أول حقل للبترول في كركوك قبل 94 عاما",
+     "site": "الجزيرة نت",
+     "host": "aljazeera.net",
+     "lang": "ar",
+     "kind": "news",
+     "match": 64,
+     "quote": "حقل بابا كركر النفطي في كركوك تفجر النفط منه بغزارة عام 1927 (رويترز)"
+    },
+    {
+     "url": "https://www.worldatlas.com/articles/baba-gurgur-eternal-fire-of-iraq.html",
+     "name": "Eternal Fire Of Iraq",
+     "site": "WorldAtlas",
+     "host": "worldatlas.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 70,
+     "quote": "Discovered in the 1920s, this oil field has been burning for two-and-a-half millennia."
+    },
+    {
+     "url": "https://pastduehistory.com/2026/09/baba-gurgurs-1927-gusher-deadly-gas-a-fortune-and-a-decade-of-rivalry/",
+     "name": "Baba Gurgur’s 1927 gusher: deadly gas, a fortune, and a decade of rivalry",
+     "site": "pastduehistory.com",
+     "host": "pastduehistory.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 70,
+     "quote": "The site was called Baba Gurgur, \"Father of Eternal Fire,\" named for gas seepages that had burned there for generations before anyone drilled. The well belonged to the Turkish Petroleum Company (TPC), one of…"
+    },
+    {
+     "url": "https://babagurguruni.edu.iq/",
+     "name": "Babagurgur University",
+     "site": "Babagurgur University",
+     "host": "babagurguruni.edu.iq",
+     "lang": "en",
+     "kind": "science",
+     "match": 56,
+     "quote": "Babagurgur University is a modern academic institution established in 2024 and officially recognized by the Iraqi Ministry of Higher Education and ..."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A8%D8%A7%D8%A8%D8%A7_%D9%83%D8%B1%D9%83%D8%B1",
+     "name": "بابا كركر",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 53,
+     "quote": "وفي منطقة بابا كركر توجد مباني لدور مهندسي وموظفي شركة النفط التي بنتها شركة نفط العراق، وتبعد منطقة بابا كركر حوالي 16 كم عن منطقة عرفة القريبة من مركز مدينة كركوك."
+    }
+   ]
+  },
+  "15172": {
+   "hash": "9581f40970ac",
+   "checked": "2026-11-13T07:31:04.102Z",
+   "queries": [
+    "قبل الإنترنت بـ2000 عام… كان الرومان يتركون «تعليقاتهم» على الجدران",
+    "بركان فيزوف تحت الرماد الإنترنت الجدران 2000"
+   ],
+   "sources": []
+  },
+  "15173": {
+   "hash": "a27826b791f6",
+   "checked": "2026-11-13T07:30:45.024Z",
+   "queries": [
+    "شير آمي",
+    "شير آمي الحرب العالمية الاولى جندي كتيبة 1918",
+    "Cher Ami"
+   ],
+   "sources": [
+    {
+     "url": "https://www.military.com/daily-news/investigations-and-features/2026/02/06/how-wounded-pigeon-named-cher-ami-saved-lost-battalion-friendly-fire-wwi.html",
+     "name": "How a Wounded Pigeon Named Cher Ami Saved the Lost Battalion in WWI",
+     "site": "Military.com",
+     "host": "military.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 79,
+     "quote": "A wounded pigeon named Cher Ami helped save a battalion of American soldiers, becoming one of the most recognized animals in U.S. military history."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B4%D9%8A%D8%B1_%D8%A2%D9%85%D9%8A",
+     "name": "شير آمي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 62,
+     "quote": "مدفعيتنا تُمطرنا بوابل من القذائف مباشرةً؛ بحق السماء، أوقفوا ذلك.أعطى الرسالة للجندي عمر ريتشاردز، الذي وضعها في كبسولة وأخذ أحد الحمامتين المتبقيتين من سلة حمامه."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Cher_Ami",
+     "name": "Cher Ami",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 58,
+     "quote": "Cher Ami (French for \"dear friend\", in the masculine) was a male homing pigeon known for his military service during World War I, especially the Meuse-Argonne offensive in October 1918. According to popular…"
+    },
+    {
+     "url": "https://www.thenmusa.org/biographies/cher-ami/",
+     "name": "National Museum of the United States Army",
+     "site": "thenmusa.org",
+     "host": "thenmusa.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 67,
+     "quote": "Cher Ami had 12 successful missions — a high success rate among homing pigeons. When the Germans became aware of the Army's use of pigeons in carrying important information, they began training to shoot them…"
+    },
+    {
+     "url": "https://discoverwildscience.com/the-incredible-journey-of-cher-ami-the-pigeon-who-saved-lives-in-world-war-i-6-269353/",
+     "name": "The Incredible Journey of Cher Ami: The Pigeon Who Saved Lives in World War I",
+     "site": "discoverwildscience",
+     "host": "discoverwildscience.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 60,
+     "quote": "During World War I, war pigeons played a crucial role in communication. Cher Ami, one such hero, saved nearly 200 soldiers with a message."
+    }
+   ]
+  },
   "15174": {
    "hash": "72fcb2336d45",
    "checked": "2026-11-13T00:38:11.948Z",
@@ -1713,5 +1873,5 @@
    ]
   }
  },
- "updated": "2026-11-13T00:38:11.949Z"
+ "updated": "2026-11-13T07:32:13.015Z"
 }
