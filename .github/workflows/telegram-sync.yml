@@ -35,7 +35,7 @@ jobs:
       changed: ${{ steps.commit.outputs.changed }}
     steps:
       # الـ actions مثبّتة برقم الـ commit (SHA) لا بالوسم: الوسم يمكن تحريكه إلى كود آخر، والـ SHA لا. Dependabot يحدّثها.
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       # رابط الموقع: من متغير المستودع SITE_URL إن وُجد (للدومين الخاص)، وإلا رابط GitHub Pages
       - name: Resolve site URL
@@ -142,7 +142,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: main
           fetch-depth: 2
