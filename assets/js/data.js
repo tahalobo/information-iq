@@ -18,13 +18,13 @@ window.CATEGORIES = [
 /* فروع الإمبراطورية العراقية (قنوات تليغرام). المعلومات لها مكتبتها الخاصة،
    والبقية تسحبها scripts/branches-sync.mjs (قائمة السحب في scripts/telegram.config.json) */
 window.BRANCHES = [
-  { id: "info",  name: "إمبراطورية المعلومات", short: "المعلومات", icon: "book-open", c1: "#8a5a14", c2: "#d4a537", channel: "informationss_iq", href: "facts.html", desc: "معلومات موثّقة بالمصادر في التاريخ والعلوم والفضاء والثقافة." },
-  { id: "news",  name: "إمبراطورية الأخبار",   short: "الأخبار",   icon: "newspaper", c1: "#5c1414", c2: "#d9443a", channel: "newss_iq",    desc: "أخبار العراق والعالم الحصرية: سياسية واجتماعية وتقنية وفنية ورياضية، بمصداقية وحياد." },
-  { id: "games", name: "إمبراطورية الألعاب",   short: "الألعاب",   icon: "gamepad-2", c1: "#2a0f5c", c2: "#7b4dff", channel: "gamersss_iq", desc: "آخر أخبار الألعاب والتقنية: الإصدارات والمبيعات والتقييمات." },
-  { id: "music", name: "إمبراطورية الموسيقى",  short: "الموسيقى",  icon: "music",     c1: "#5c0f45", c2: "#e0559f", channel: "mussic_iq",   desc: "أخبار الموسيقى والفن والمشاهير حول العالم ومحلياً: الموسيقى والرسم والأزياء والرقص." },
-  { id: "anime", name: "إمبراطورية الأنمي",    short: "الأنمي",    icon: "sparkles",  c1: "#0f3f5c", c2: "#36b3e0", channel: "anime_iq3",   desc: "أخبار الأنمي والمانغا والاستوديوهات وأبرز التحديثات." },
-  { id: "sport", name: "إمبراطورية الرياضة",   short: "الرياضة",   icon: "trophy",    c1: "#0f4d24", c2: "#2fbf63", channel: "sportts_iq",  desc: "أخبار الرياضات حول العالم: كرة القدم والتنس والسلة والملاكمة وغيرها." },
-  { id: "movies", name: "إمبراطورية الأفلام",  short: "الأفلام",   icon: "clapperboard", c1: "#5c2a0a", c2: "#e8772e", channel: "moviess_iq",  desc: "أبرز أخبار السينما حول العالم: الأفلام والمسلسلات والنجوم والجوائز وشباك التذاكر." }
+  { id: "info", logo: "assets/img/logo-256.webp",  name: "إمبراطورية المعلومات", short: "المعلومات", icon: "book-open", c1: "#8a5a14", c2: "#d4a537", channel: "informationss_iq", href: "facts.html", desc: "معلومات موثّقة بالمصادر في التاريخ والعلوم والفضاء والثقافة." },
+  { id: "news", logo: "assets/img/branches/news.webp",  name: "إمبراطورية الأخبار",   short: "الأخبار",   icon: "newspaper", c1: "#5c1414", c2: "#d9443a", channel: "newss_iq",    desc: "أخبار العراق والعالم الحصرية: سياسية واجتماعية وتقنية وفنية ورياضية، بمصداقية وحياد." },
+  { id: "games", logo: "assets/img/branches/games.webp", name: "إمبراطورية الألعاب",   short: "الألعاب",   icon: "gamepad-2", c1: "#2a0f5c", c2: "#7b4dff", channel: "gamersss_iq", desc: "آخر أخبار الألعاب والتقنية: الإصدارات والمبيعات والتقييمات." },
+  { id: "music", logo: "assets/img/branches/music.webp", name: "إمبراطورية الموسيقى",  short: "الموسيقى",  icon: "music",     c1: "#5c0f45", c2: "#e0559f", channel: "mussic_iq",   desc: "أخبار الموسيقى والفن والمشاهير حول العالم ومحلياً: الموسيقى والرسم والأزياء والرقص." },
+  { id: "anime", logo: "assets/img/branches/anime.webp", name: "إمبراطورية الأنمي",    short: "الأنمي",    icon: "sparkles",  c1: "#0f3f5c", c2: "#36b3e0", channel: "anime_iq3",   desc: "أخبار الأنمي والمانغا والاستوديوهات وأبرز التحديثات." },
+  { id: "sport", logo: "assets/img/branches/sport.webp", name: "إمبراطورية الرياضة",   short: "الرياضة",   icon: "trophy",    c1: "#0f4d24", c2: "#2fbf63", channel: "sportts_iq",  desc: "أخبار الرياضات حول العالم: كرة القدم والتنس والسلة والملاكمة وغيرها." },
+  { id: "movies", logo: "assets/img/branches/movies.webp", name: "إمبراطورية الأفلام",  short: "الأفلام",   icon: "clapperboard", c1: "#5c2a0a", c2: "#e8772e", channel: "moviess_iq",  desc: "أبرز أخبار السينما حول العالم: الأفلام والمسلسلات والنجوم والجوائز وشباك التذاكر." }
 ];
 window.BRANCHES.forEach((b) => { b.href = b.href || `branch.html?b=${b.id}`; b.url = `https://t.me/${b.channel}`; });
 

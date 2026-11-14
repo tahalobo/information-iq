@@ -2113,3 +2113,11 @@ html.no-gl .m-slot, html.no-gl .ab-core { background-image: none; }
 @media (max-width: 899px) { html.no-gl .ph-slot, html.no-gl .ab-crown { background-image: radial-gradient(closest-side, rgba(242, 194, 91, .16), rgba(75, 116, 255, .1) 55%, transparent 72%); background-size: auto; } }
 /* 8) أقسام الصفحة الرئيسية وأقسام الشرح أسفل الصفحات: لا تُخطَّط ولا تُرسم حتى يقترب منها التمرير */
 html.lite body[data-page="home"] main > section:not(.xhero), html.lite .seo-browse, html.lite .seo-guide, html.lite .seo-related { content-visibility: auto; contain-intrinsic-block-size: auto 800px; }
+
+/* ---------- شعارات الفروع (صور القنوات) بدل الأيقونات ---------- */
+.b-logo { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: inherit; }
+.b-logo.sm { display: inline-block; width: 22px; height: 22px; border-radius: 7px; flex-shrink: 0; }
+.has-logo { padding: 0 !important; overflow: hidden; }
+.br-ico.has-logo { width: 58px; height: 58px; border-color: rgba(255,255,255,.35); backdrop-filter: none; }
+.ab-planet.has-logo { border-radius: 50%; overflow: visible; }
+.ab-planet.has-logo .b-logo { border-radius: 50%; }

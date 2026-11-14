@@ -186,7 +186,7 @@
   const pos = B.map((b, i) => { const a = -Math.PI / 2 + i * 2 * Math.PI / B.length; return [Math.cos(a), Math.sin(a)]; });
   ring.innerHTML = `<svg viewBox="0 0 100 100" aria-hidden="true">${pos.map(([x, y], i) => `<line data-i="${i}" x1="50" y1="50" x2="${50 + 41 * x}" y2="${50 + 41 * y}"/>`).join("")}</svg>`
     + B.map((b, i) => `<button class="ab-node" data-i="${i}" style="--cx:${pos[i][0].toFixed(4)};--cy:${pos[i][1].toFixed(4)};--c1:${b.c1};--c2:${b.c2}" aria-label="${esc(b.name)}">
-      <span><span class="ab-planet">${ic(b.icon)}</span><b>${esc(b.short)}</b></span></button>`).join("");
+      <span><span class="ab-planet${b.logo ? " has-logo" : ""}">${App.bIcon(b)}</span><b>${esc(b.short)}</b></span></button>`).join("");
   let cur = 0, auto = true;
   function show(i, user) {
     cur = i; if (user) auto = false;

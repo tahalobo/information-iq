@@ -45,7 +45,7 @@
     const top = pool[0];
     return `<a href="${b.href}" class="br-tile" style="--c1:${b.c1};--c2:${b.c2}" data-tilt="4">
       <span class="br-num">${String(i + 1).padStart(2, "0")}</span>
-      <span class="br-ico">${ic(b.icon)}</span>
+      <span class="br-ico${b.logo ? " has-logo" : ""}">${App.bIcon(b)}</span>
       <h3>${esc(b.name)}</h3>
       <p>${esc(b.desc)}</p>
       ${top ? `<span class="br-top">${ic(b.id === "info" ? "sparkles" : "radio")}<span>${esc(top.title)}</span></span>` : ""}
