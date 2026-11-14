@@ -1,0 +1,7 @@
+# Dependabot: يقترح تحديث الـ actions المثبّتة بالـ SHA في .github/workflows (طلب دمج أسبوعي عند وجود تحديث)
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"

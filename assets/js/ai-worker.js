@@ -1,18 +1,41 @@
 /* عامل تشغيل نماذج الكشف (ONNX) خارج الخيط الرئيسي، حتى لا تتجمّد الصفحة أثناء الفحص.
    الصورة لا تغادر الجهاز: يستلم العامل مصفوفة البكسلات المجهّزة ويعيد درجة النموذج فقط. */
 const ORT_VER = "1.30.0";
+const ORT_BASE = `https://cdn.jsdelivr.net/npm/onnxruntime-web@${ORT_VER}/dist/`;
+/* بصمات SHA-384 لملفات المحرّك بهذا الإصدار. الملفات تأتي من CDN عام، فلا ننفّذ أي ملف
+   إلا إذا طابق بصمته هنا (المقابل اليدوي لخاصية integrity في وسم script). عند ترقية ORT_VER حدّث البصمات. */
+const ORT_SRI = {
+  "ort.min.js": "N94xSNjPDbfBJj4+QINst0nbHpcCm8kc1qNlIP/wA0muqjR3aVyIuDkMeccPrLvQ",
+  "ort-wasm-simd-threaded.jsep.mjs": "oE7XJ3WFQfuTdk0T1EGXViKSjtupvq5xVNx8ODzs7dq8qjGnN5P2tZBPr8XKceJ4",
+  "ort-wasm-simd-threaded.jsep.wasm": "Ueht0ynFKexyaENvQBCXJQmjjdEzUgnesolNNQPAhnDeYvh1YA53nYHw1mrWvaM1"
+};
+async function verified(name) {
+  const r = await fetch(ORT_BASE + name, { credentials: "omit", referrerPolicy: "no-referrer" });
+  if (!r.ok) throw new Error("http " + r.status);
+  const buf = await r.arrayBuffer();
+  const h = new Uint8Array(await crypto.subtle.digest("SHA-384", buf));
+  let bin = ""; for (let i = 0; i < h.length; i++) bin += String.fromCharCode(h[i]);
+  if (btoa(bin) !== ORT_SRI[name]) throw new Error("integrity");
+  return buf;
+}
 const CACHE = "iq-ai-models-v1";
 let ready = null;
 const sessions = {};
 
 function loadOrt() {
-  if (!ready) ready = new Promise((res, rej) => {
+  if (!ready) ready = (async () => {
     try {
-      importScripts(`https://cdn.jsdelivr.net/npm/onnxruntime-web@${ORT_VER}/dist/ort.min.js`);
-      ort.env.wasm.wasmPaths = `https://cdn.jsdelivr.net/npm/onnxruntime-web@${ORT_VER}/dist/`;
-      res();
-    } catch (e) { ready = null; rej(new Error("تعذّر تحميل محرك التشغيل (تحقق من الاتصال)")); }
-  });
+      const [js, mjs, wasm] = await Promise.all([verified("ort.min.js"), verified("ort-wasm-simd-threaded.jsep.mjs"), verified("ort-wasm-simd-threaded.jsep.wasm")]);
+      const u = URL.createObjectURL(new Blob([js], { type: "text/javascript" }));
+      try { importScripts(u); } finally { URL.revokeObjectURL(u); }
+      ort.env.wasm.numThreads = 1;
+      ort.env.wasm.wasmPaths = { mjs: URL.createObjectURL(new Blob([mjs], { type: "text/javascript" })) };
+      ort.env.wasm.wasmBinary = wasm;
+    } catch (e) {
+      ready = null;
+      throw new Error(e && e.message === "integrity" ? "ملف محرك التشغيل لا يطابق بصمته المعتمدة، فأوقفنا تشغيله حمايةً لك" : "تعذّر تحميل محرك التشغيل (تحقق من الاتصال)");
+    }
+  })();
   return ready;
 }
 

@@ -48,7 +48,7 @@
       const k = KIND[s.kind] || (s.manual ? ["badge-check", "مصدر"] : null);
       const meta = [s.site && s.site !== s.name && s.site !== host(s.url) ? esc(s.site) : "", s.url ? `<i class="ltr">${esc(host(s.url))}</i>` : ""].filter(Boolean).join(" · ");
       const chips = `${k ? `<em class="src-kind k-${esc(s.kind || "web")}">${ic(k[0])}${k[1]}</em>` : ""}${LANG[s.lang] ? `<em class="src-kind">${LANG[s.lang]}</em>` : ""}${s.match ? `<em class="src-kind src-match" title="نسبة تطابق مضمون الصفحة مع المعلومة">تطابق ${s.match}%</em>` : ""}`;
-      return `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener">` : "<div>"}
+      return `<li>${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noopener noreferrer">` : "<div>"}
         <b>${String(i + 1).padStart(2, "0")}</b><span><strong${s.lang && s.lang !== "ar" ? ' dir="auto"' : ""}>${esc(s.name)}</strong>${meta ? `<small>${meta}</small>` : ""}${chips ? `<span class="src-chips">${chips}</span>` : ""}${s.quote ? `<q${s.lang && s.lang !== "ar" ? ' dir="auto"' : ""}>${esc(s.quote)}</q>` : ""}</span>${s.url ? ic("arrow-up-left") : ""}${s.url ? "</a>" : "</div>"}</li>`;
     };
     const c = cat(f.cat);
@@ -85,7 +85,7 @@
         <span class="play-dot">${ic("play")}</span>${video.duration ? `<span class="badge badge-glass fx-dur">${ic("clock")}${esc(video.duration)}</span>` : ""}</a>`;
     } else if (images.length) {
       media = `<div class="fx-deck${images.length > 1 ? " multi" : ""}">${images.slice(0, 3).reverse().map((src, i, arr) =>
-        `<img src="${esc(src)}" alt="${i === arr.length - 1 ? "صورة المنشور" : ""}" data-zoom onerror="this.remove()" style="--k:${arr.length - 1 - i}" loading="${i === arr.length - 1 ? "eager" : "lazy"}">`).join("")}
+        `<img src="${esc(src)}" alt="${i === arr.length - 1 ? "صورة المنشور" : ""}" data-zoom data-err="remove" style="--k:${arr.length - 1 - i}" loading="${i === arr.length - 1 ? "eager" : "lazy"}">`).join("")}
         ${images.length > 1 ? `<span class="badge badge-glass fx-count">${ic("images")}${images.length} صور</span>` : `<span class="fx-zoomhint">${ic("maximize-2")}</span>`}</div>`;
     } else {
       media = `<div class="fx-orb" data-gl="${SHAPE[f.cat] || "tablet"}" aria-hidden="true"><span class="fx-orb-ico">${ic(f.icon || c.icon)}</span></div>`;
@@ -94,30 +94,30 @@
     /* ---------- Article body ---------- */
     const pollHtml = P && P.poll ? `<div class="fx-poll"><div class="card-title"><span class="ico ico-sm">${ic("vote")}</span><h3>${esc(P.poll.q)}</h3></div>
       <div class="fx-poll-opts">${P.poll.options.map((o, i) => `<span><b>${i + 1}</b>${esc(o)}</span>`).join("")}</div>
-      <a class="btn btn-primary btn-sm mt-2" href="${esc(P.url)}" target="_blank" rel="noopener">${ic("send")}صوّت في تليغرام</a></div>` : "";
-    const gallery = images.length > 1 ? `<div class="fx-strip" data-lenis-prevent>${images.map((src, i) => `<img src="${esc(src)}" alt="صورة ${i + 1} من المنشور" loading="lazy" data-zoom onerror="this.remove()">`).join("")}</div>` : "";
-    const cinema = video ? `<div class="fx-cinema" id="cinema"><div id="tg-embed">${video.thumb ? `<a href="${esc(P.url)}" target="_blank" rel="noopener" class="fact-cover has-img" style="height:auto;aspect-ratio:16/9"><img src="${esc(video.thumb)}" alt=""><span class="play-dot">${ic("play")}</span></a>` : ""}</div></div>` : "";
+      <a class="btn btn-primary btn-sm mt-2" href="${esc(P.url)}" target="_blank" rel="noopener noreferrer">${ic("send")}صوّت في تليغرام</a></div>` : "";
+    const gallery = images.length > 1 ? `<div class="fx-strip" data-lenis-prevent>${images.map((src, i) => `<img src="${esc(src)}" alt="صورة ${i + 1} من المنشور" loading="lazy" data-zoom data-err="remove">`).join("")}</div>` : "";
+    const cinema = video ? `<div class="fx-cinema" id="cinema"><div id="tg-embed">${video.thumb ? `<a href="${esc(P.url)}" target="_blank" rel="noopener noreferrer" class="fact-cover has-img" style="height:auto;aspect-ratio:16/9"><img src="${esc(video.thumb)}" alt=""><span class="play-dot">${ic("play")}</span></a>` : ""}</div></div>` : "";
 
     const prev = (x, dir) => {
       if (!x) return `<span></span>`;
       const xc = cat(x.cat);
       return `<a href="${App.factUrl(x.id)}" class="fx-next ${dir}" style="--c1:${xc.c1};--c2:${xc.c2}">
-        ${x.image ? `<img src="${esc(x.image)}" alt="" loading="lazy" onerror="this.remove()">` : ""}
+        ${x.image ? `<img src="${esc(x.image)}" alt="" loading="lazy" data-err="remove">` : ""}
         <span class="fx-next-dir">${dir === "newer" ? `${ic("arrow-right")}${noun} الأحدث` : `${noun} الأقدم${ic("arrow-left")}`}</span>
         <strong>${esc(x.title)}</strong><small>${ic(xc.icon)}${esc(xc.name)} · ${fmtDate(x.date)}</small></a>`;
     };
 
     root.innerHTML = `
     <section class="fx-hero${images.length || video ? " has-media" : ""}" data-sc>
-      ${images[0] || (video && video.thumb) ? `<div class="fx-amb" style="background-image:url('${esc(images[0] || video.thumb)}')" aria-hidden="true"></div>` : `<div class="fx-amb grad" style="--c1:${c.c1};--c2:${c.c2}" aria-hidden="true"></div>`}
+      ${images[0] || (video && video.thumb) ? `<div class="fx-amb" style="background-image:url('${esc(encodeURI(images[0] || video.thumb).replace(/['()]/g, escape))}')" aria-hidden="true"></div>` : `<div class="fx-amb grad" style="--c1:${c.c1};--c2:${c.c2}" aria-hidden="true"></div>`}
       <div class="ph-giant" aria-hidden="true">${esc(c.name)}</div>
       <div class="container fx-hero-grid">
         <div class="fx-hero-text">
-          <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a>${ic("chevron-left")}${B ? `<a href="branch.html">الفروع</a>${ic("chevron-left")}<a href="branch.html?b=${B.id}">${esc(B.short)}</a>` : `<a href="facts.html">المعلومات</a>${ic("chevron-left")}<a href="facts.html?cat=${c.id}">${esc(c.name)}</a>`}</nav>
+          <nav class="breadcrumbs" aria-label="مسار التنقل"><a href="index.html">الرئيسية</a>${ic("chevron-left")}${B ? `<a href="branch.html">الفروع</a>${ic("chevron-left")}<a href="branch.html?b=${encodeURIComponent(B.id)}">${esc(B.short)}</a>` : `<a href="facts.html">المعلومات</a>${ic("chevron-left")}<a href="facts.html?cat=${c.id}">${esc(c.name)}</a>`}</nav>
           <div class="fx-chips">
             <span class="fx-cat" style="--c1:${c.c1};--c2:${c.c2}">${ic(c.icon)}${esc(c.name)}</span>
             ${TYPE_NAMES[f.type] && !B ? `<span class="badge badge-info">${esc(TYPE_NAMES[f.type])}</span>` : ""}
-            ${B ? `<a class="badge badge-info" href="${esc(B.url)}" target="_blank" rel="noopener">${ic("send")}من قناة ${esc(B.name)}</a>` : f.source === "telegram" ? `<span class="badge badge-info">${ic("send")}من قناة تليغرام</span>` : `<span class="badge">${ic("badge-check")}موثّقة</span>`}
+            ${B ? `<a class="badge badge-info" href="${esc(B.url)}" target="_blank" rel="noopener noreferrer">${ic("send")}من قناة ${esc(B.name)}</a>` : f.source === "telegram" ? `<span class="badge badge-info">${ic("send")}من قناة تليغرام</span>` : `<span class="badge">${ic("badge-check")}موثّقة</span>`}
             ${extra.length ? `<a href="#sources" class="badge">${ic("badge-check")}موثّقة بـ${countWord(f.sources.length, "مصدر واحد", "مصدرين", "مصادر", "مصدراً")}</a>` : ""}
           </div>
           <h1 class="fx-title" data-split>${esc(f.title)}</h1>
@@ -145,7 +145,7 @@
         ${gallery}
         <div class="prose fx-prose" id="prose">${f.body}</div>
         ${pollHtml}
-        ${P ? `<a class="fx-tglink" href="${esc(P.url)}" target="_blank" rel="noopener">${ic("send")}<span><strong>المنشور الأصلي في تليغرام</strong><small>${B ? `${esc(B.name)}${P.views ? " · " : ""}` : ""}${P.views ? `${fmtNum(P.views)} مشاهدة` : B ? "" : "قناة إمبراطورية المعلومات"}</small></span>${ic("arrow-up-left")}</a>` : ""}
+        ${P ? `<a class="fx-tglink" href="${esc(P.url)}" target="_blank" rel="noopener noreferrer">${ic("send")}<span><strong>المنشور الأصلي في تليغرام</strong><small>${B ? `${esc(B.name)}${P.views ? " · " : ""}` : ""}${P.views ? `${fmtNum(P.views)} مشاهدة` : B ? "" : "قناة إمبراطورية المعلومات"}</small></span>${ic("arrow-up-left")}</a>` : ""}
 
         ${f.didYouKnow ? `<aside class="fx-dyk"><span class="fx-dyk-label">هل تعلم؟</span><span class="fx-dyk-ico">${ic("lightbulb")}</span><p>${esc(f.didYouKnow)}</p></aside>` : ""}
 
@@ -161,7 +161,7 @@
             <ol class="fx-sources">${f.sources.map(sourceItem).join("")}</ol>
             ${extra.length ? `<p class="fx-src-note">${ic("search-check")}<span>المصادر الإضافية عثر عليها <strong>محرّك التوثيق</strong> في الموقع: يبحث في الويب عن مضمون المعلومة، ويفتح كل صفحة ويقارن نصّها وأرقامها بالمنشور، ولا يعرض إلا ما تطابق. إن رأيت مصدراً غير مناسب <a class="link" href="contact.html?type=correction&ref=${encodeURIComponent(f.id)}">أخبرنا</a>.</span></p>`
               : B ? `<p class="fx-src-note">${ic("search-check")}<span>نقلنا الخبر من قناة ${esc(B.name)}. تريد أن تتأكد منه بنفسك؟ <a class="link" href="verify.html?q=${encodeURIComponent(f.title)}">افحصه في محقّق الأخبار</a>، فنبحث عنه في المصادر ونعطيك تقريراً كاملاً.</span></p>`
-              : f.source === "telegram" ? `<p class="fx-src-note">${ic("search")}<span>لم يعثر محرّك التوثيق بعد على صفحات مطابقة لهذه المعلومة. ابحث عنها بنفسك: <a class="link" href="https://www.google.com/search?q=${encodeURIComponent(f.title)}" target="_blank" rel="noopener">غوغل</a> · <a class="link" href="https://ar.wikipedia.org/w/index.php?search=${encodeURIComponent(f.title)}" target="_blank" rel="noopener">ويكيبيديا</a></span></p>` : ""}
+              : f.source === "telegram" ? `<p class="fx-src-note">${ic("search")}<span>لم يعثر محرّك التوثيق بعد على صفحات مطابقة لهذه المعلومة. ابحث عنها بنفسك: <a class="link" href="https://www.google.com/search?q=${encodeURIComponent(f.title)}" target="_blank" rel="noopener noreferrer">غوغل</a> · <a class="link" href="https://ar.wikipedia.org/w/index.php?search=${encodeURIComponent(f.title)}" target="_blank" rel="noopener noreferrer">ويكيبيديا</a></span></p>` : ""}
           </div>
         </section>
 
@@ -185,7 +185,7 @@
           ${shareButtons(url, f.title)}
         </section>
 
-        ${quizCount ? `<a href="quiz.html?fact=${f.id}" class="fx-quiz"><span class="ico">${ic("brain")}</span><span><strong>هل فهمتها جيداً؟ اختبر نفسك</strong><small>${countWord(quizCount, "سؤال واحد", "سؤالان", "أسئلة", "سؤالاً")} عن هذه المعلومة</small></span>${ic("arrow-left")}</a>` : ""}
+        ${quizCount ? `<a href="quiz.html?fact=${encodeURIComponent(f.id)}" class="fx-quiz"><span class="ico">${ic("brain")}</span><span><strong>هل فهمتها جيداً؟ اختبر نفسك</strong><small>${countWord(quizCount, "سؤال واحد", "سؤالان", "أسئلة", "سؤالاً")} عن هذه المعلومة</small></span>${ic("arrow-left")}</a>` : ""}
       </article>
     </div>
 
@@ -277,7 +277,7 @@
     const fbBox = $("#feedback");
     const showThanks = (v) => {
       fbBox.classList.add("done");
-      fbBox.innerHTML = `<div class="fx-thanks">${ic(v === "up" ? "heart" : "message-square")}<div><h3>${v === "up" ? "شكراً لك! يسعدنا أنها أفادتك." : "شكراً لملاحظتك، سنعمل على تحسينها."}</h3>${v === "down" ? `<a class="btn btn-ghost btn-sm mt-1" href="contact.html?type=suggest&ref=${f.id}">أخبرنا كيف نحسّنها</a>` : `<p class="muted mb-0">شاركها مع صديق ليستفيد مثلك.</p>`}</div></div>`;
+      fbBox.innerHTML = `<div class="fx-thanks">${ic(v === "up" ? "heart" : "message-square")}<div><h3>${v === "up" ? "شكراً لك! يسعدنا أنها أفادتك." : "شكراً لملاحظتك، سنعمل على تحسينها."}</h3>${v === "down" ? `<a class="btn btn-ghost btn-sm mt-1" href="contact.html?type=suggest&ref=${encodeURIComponent(f.id)}">أخبرنا كيف نحسّنها</a>` : `<p class="muted mb-0">شاركها مع صديق ليستفيد مثلك.</p>`}</div></div>`;
       icons();
     };
     if (fb[f.id]) showThanks(fb[f.id]);
@@ -286,15 +286,30 @@
       fb[f.id] = b.dataset.fb; store.set("fact-feedback", fb); showThanks(b.dataset.fb); toast("وصل تقييمك", "heart");
     });
 
-    /* ---------- Video via Telegram's official embed ---------- */
+    /* ---------- Video via Telegram's official embed ----------
+       نفتح إطار المنشور (t.me/…?embed=1) مباشرة داخل iframe معزول، بدل تحميل سكربت telegram-widget.js
+       داخل صفحتنا: السكربت الخارجي يملك صلاحية كاملة على الصفحة، أما الإطار فلا يصل إلى شيء منها. */
     if (video) {
       const box = $("#tg-embed");
-      const w = document.createElement("script");
-      w.async = true; w.src = "https://telegram.org/js/telegram-widget.js?22";
-      w.dataset.telegramPost = P.channel ? `${P.channel}/${P.msg}` : `${(window.TG && TG.channel) || "informationss_iq"}/${P.id}`; w.dataset.width = "100%"; w.dataset.userpic = "false";
-      if (document.documentElement.dataset.theme !== "light") w.dataset.dark = "1";
-      w.onload = () => setTimeout(() => { const fr = box.querySelector("iframe"); if (fr) { const a = box.querySelector("a.fact-cover"); if (a) a.remove(); } }, 1500);
-      box.appendChild(w);
+      const post = P.channel ? `${P.channel}/${P.msg}` : `${(window.TG && TG.channel) || "informationss_iq"}/${P.id}`;
+      if (/^[A-Za-z0-9_]{3,40}\/\d{1,12}$/.test(post)) {
+        const fr = document.createElement("iframe");
+        fr.src = `https://t.me/${post}?embed=1&userpic=false${document.documentElement.dataset.theme !== "light" ? "&dark=1" : ""}`;
+        fr.title = "فيديو المنشور على تليغرام"; fr.id = `telegram-post-${post.replace(/[^a-z0-9_]/ig, "-")}`;
+        fr.setAttribute("sandbox", "allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox allow-presentation");
+        fr.setAttribute("allowfullscreen", ""); fr.setAttribute("scrolling", "no"); fr.referrerPolicy = "strict-origin";
+        fr.style.cssText = "display:block;width:100%;height:0;border:0;overflow:hidden;color-scheme:light dark";
+        // الإطار يخبرنا بارتفاعه: نقبل الرسالة منه وحده ومن أصل t.me وحده
+        addEventListener("message", (e) => {
+          if (e.origin !== "https://t.me" || e.source !== fr.contentWindow) return;
+          let d; try { d = JSON.parse(e.data); } catch { return; }
+          if (!d || d.event !== "resize" || !(d.height > 0)) return;
+          fr.style.height = Math.min(4000, Math.round(d.height)) + "px";
+          const a = box.querySelector("a.fact-cover"); if (a) a.remove();
+        });
+        fr.addEventListener("load", () => { try { fr.contentWindow.postMessage(JSON.stringify({ event: "visible", frame: fr.id }), "https://t.me"); } catch { /* ignore */ } });
+        box.appendChild(fr);
+      }
     }
 
     /* ---------- Zoom images ---------- */
@@ -354,7 +369,7 @@
     return window.SITE.links.instagram || `https://www.instagram.com/${window.SITE.handle}/`;
   }
   async function qrFor(text) {
-    if (!window.qrcode) await new Promise((res) => { const s = document.createElement("script"); s.src = "https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"; s.onload = res; s.onerror = res; document.head.appendChild(s); });
+    if (!window.qrcode) await new Promise((res) => { const s = document.createElement("script"); s.src = "assets/js/vendor/qrcode-generator-1.4.4.min.js"; s.onload = res; s.onerror = res; document.head.appendChild(s); });
     if (!window.qrcode) return null;
     try {
       qrcode.stringToBytes = (s) => Array.from(new TextEncoder().encode(s));

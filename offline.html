@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- seo:head -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-EOj1Dmn9/D7RpGyLndcgHPBpdVRfz1EMNcV1nVrLXgc='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'self'; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="same-origin">
 <title>أنت غير متصل | الإمبراطورية العراقية</title>
 <meta name="description" content="شبكة قنوات عراقية مستقلة للمعلومات والأخبار والألعاب والموسيقى والأنمي والرياضة.">
 <meta name="robots" content="noindex, follow">
@@ -45,7 +47,7 @@
       <span class="ph-kicker"><b>!</b>أنت غير متصل الآن</span>
       <h1>الإنترنت انقطع، <span class="gold-text">والمعرفة باقية</span></h1>
       <p>هذه الصفحة لم تُحفظ بعد على جهازك. لكن المعلومات التي حفظتها والصفحات التي زرتها سابقاً متاحة لك حتى بدون إنترنت.</p>
-      <div class="btn-row mt-3"><button class="btn btn-primary btn-lg" onclick="location.reload()"><i data-lucide="refresh-cw"></i>حاول مجدداً</button><a class="btn btn-ghost btn-lg" href="index.html"><i data-lucide="home"></i>الرئيسية</a></div>
+      <div class="btn-row mt-3"><button class="btn btn-primary btn-lg" type="button" data-reload><i data-lucide="refresh-cw"></i>حاول مجدداً</button><a class="btn btn-ghost btn-lg" href="index.html"><i data-lucide="home"></i>الرئيسية</a></div>
     </div>
   </section>
   <section class="section" style="padding-top:20px">
@@ -62,16 +64,7 @@
 <script src="assets/js/telegram-data.js"></script>
 <script src="assets/js/static-index.js"></script>
 <script src="assets/js/core.js"></script>
-<script>
-(function () {
-  var box = document.getElementById("saved");
-  if (!window.App) { box.innerHTML = '<p class="muted">افتح هذه الصفحة بعد عودة الإنترنت.</p>'; return; }
-  var ids = App.saved.all();
-  var items = ids.map(function (id) { return window.FACTS.find(function (f) { return f.id === id; }) || (window.TG_ITEMS || []).find(function (f) { return f.id === id; }); }).filter(Boolean);
-  box.innerHTML = items.length ? items.map(App.factCard).join("") : '<div class="empty" style="grid-column:1/-1"><span class="ico"><i data-lucide="bookmark"></i></span><p>لم تحفظ أي معلومة بعد. اضغط زر الحفظ على أي معلومة لتقرأها لاحقاً بدون إنترنت.</p></div>';
-  App.icons();
-})();
-</script>
+<script src="assets/js/pages/offline.js"></script>
 <script src="assets/js/fx.js"></script>
 </body>
 </html>

@@ -28,6 +28,8 @@ import { existsSync } from "node:fs";
 import path from "node:path";
 import crypto from "node:crypto";
 import { spawnSync } from "node:child_process";
+import dns from "node:dns/promises";
+import net from "node:net";
 import { fileURLToPath } from "node:url";
 import { norm, cleanText, makeTitle } from "./telegram-classify.mjs";
 
@@ -67,7 +69,28 @@ const KINDS = [
 const KIND_BOOST = { encyclopedia: 0.12, science: 0.1, official: 0.1, news: 0.06, web: 0 };
 const hostOf = (u) => { try { return new URL(u).hostname.replace(/^(www|m|mobile|amp)\./, "").toLowerCase(); } catch { return ""; } };
 const kindOf = (host, extra = []) => { for (const [k, re] of KINDS) if (re.test(host)) return k; return extra.some((d) => host === d || host.endsWith("." + d)) ? "news" : "web"; };
-const blocked = (host, extra) => !host || /^\d+\.\d+\.\d+\.\d+$|^localhost$|^\[/.test(host) || [...BLOCK, ...extra].some((b) => b.endsWith(".") ? host.includes(b) : host === b || host.endsWith("." + b));
+// أسماء لا تُجلب أبداً من خادم البناء: عناوين IP حرفية، أسماء داخلية، وخدمات تحوّل الاسم إلى IP خاص
+const internalName = (host) => !host || !host.includes(".") || /^[\d.]+$|^\[|:/.test(host) || /(^|\.)(localhost|local|internal|lan|home|corp|intranet|test|invalid|onion|arpa|nip\.io|sslip\.io|xip\.io|localtest\.me|lvh\.me)$/i.test(host);
+const privateIp = (ip) => {
+  if (net.isIPv6(ip)) { const v4 = ip.match(/^::ffff:(\d+\.\d+\.\d+\.\d+)$/i); return v4 ? privateIp(v4[1]) : !/^[23]/.test(ip); }  // نسمح بالعناوين العامة 2000::/3 فقط
+  const [a, b] = ip.split(".").map(Number);
+  return a === 0 || a === 10 || a === 127 || a >= 224 || (a === 100 && b >= 64 && b <= 127) || (a === 169 && b === 254) || (a === 172 && b >= 16 && b <= 31) || (a === 192 && (b === 168 || b === 0)) || (a === 198 && (b === 18 || b === 19));
+};
+/* هل يجوز لخادم البناء جلب هذا الرابط؟ http/https عام فقط، واسمه لا يشير إلى عنوان داخلي (حماية من SSRF) */
+const SAFE_HOSTS = new Map();
+async function safeTarget(url) {
+  let u; try { u = new URL(url); } catch { return false; }
+  if (!/^https?:$/.test(u.protocol) || u.username || u.password || (u.port && u.port !== "80" && u.port !== "443")) return false;
+  const host = u.hostname.toLowerCase().replace(/\.+$/, "");
+  if (internalName(host)) return false;
+  if (!SAFE_HOSTS.has(host)) {
+    let ok = false;
+    try { const list = await dns.lookup(host, { all: true }); ok = list.length > 0 && !list.some((x) => privateIp(x.address)); } catch { ok = false; }
+    SAFE_HOSTS.set(host, ok);
+  }
+  return SAFE_HOSTS.get(host);
+}
+const blocked = (host, extra) => internalName(host) || [...BLOCK, ...extra].some((b) => b.endsWith(".") ? host.includes(b) : host === b || host.endsWith("." + b));
 // one source per site: en.wikipedia.org and ar.wikipedia.org stay distinct, sub.site.com folds into site.com
 const siteKey = (host) => /wikipedia\.org$/.test(host) ? host : host.split(".").slice(/\.(co|com|org|net|gov|edu|ac)\.[a-z]{2}$/.test(host) ? -3 : -2).join(".");
 
@@ -151,7 +174,17 @@ const untag = (s) => decode(String(s).replace(/<[^>]+>/g, "")).replace(/\s+/g, "
 async function get(url, { ua = BROWSER_UA, timeout = 12000, max = 900_000, headers = {}, method = "GET", body } = {}) {
   const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), timeout);
   try {
-    const r = await fetch(url, { method, body, signal: ctl.signal, redirect: "follow", headers: { "User-Agent": ua, "Accept-Language": "ar,en;q=0.8", Accept: "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.5", ...headers } });
+    // التحويلات تُتبَّع يدوياً ويُعاد فحص كل محطة (صفحة عامة لا تستطيع تحويلنا إلى عنوان داخلي)
+    let r;
+    for (let hop = 0; ; hop++) {
+      if (!(await safeTarget(url))) return { ok: false, status: 0, error: "blocked" };
+      r = await fetch(url, { method, body, signal: ctl.signal, redirect: "manual", headers: { "User-Agent": ua, "Accept-Language": "ar,en;q=0.8", Accept: "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.5", ...headers } });
+      const loc = r.headers.get("location");
+      if (r.status < 300 || r.status >= 400 || !loc) break;
+      try { await r.body?.cancel(); } catch { /* ignore */ }
+      if (hop >= 5 || method !== "GET") return { ok: false, status: r.status, error: "redirect" };
+      url = new URL(loc, url).href;
+    }
     if (!r.ok) return { ok: false, status: r.status };
     const type = r.headers.get("content-type") || "";
     if (!/html|json|xml|text\/plain/.test(type)) return { ok: false, status: 415 };
@@ -160,7 +193,7 @@ async function get(url, { ua = BROWSER_UA, timeout = 12000, max = 900_000, heade
     const buf = Buffer.concat(chunks);
     let cs = (type.match(/charset=([\w-]+)/i) || [])[1] || (buf.subarray(0, 2048).toString("latin1").match(/<meta[^>]+charset=["']?([\w-]+)/i) || [])[1] || "utf-8";
     let text; try { text = new TextDecoder(cs).decode(buf); } catch { text = buf.toString("utf8"); }
-    return { ok: true, status: r.status, text, url: r.url, type };
+    return { ok: true, status: r.status, text, url, type };
   } catch (e) { return { ok: false, status: 0, error: e.name }; } finally { clearTimeout(timer); }
 }
 const getJson = async (url, o) => { const r = await get(url, o); if (!r.ok) return null; try { return JSON.parse(r.text); } catch { return null; } };

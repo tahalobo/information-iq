@@ -15,7 +15,9 @@
   const LABEL = { "image/jpeg": "JPG", "image/webp": "WebP", "image/png": "PNG", "image/avif": "AVIF" };
 
   const items = []; let current = 0, uid = 0, gen = 0, running = false, activeJob = 0;
-  let logoData = store.get(LOGO_KEY, ""), logoVer = 0, stampKey = "", stampId = 0, hasStamp = false;
+  // الشعار المحفوظ يجب أن يكون صورة PNG مضمّنة لا غير (قيمة التخزين المحلي لا تُعامَل كـ HTML ولا كرابط خارجي)
+  const okLogo = (v) => (typeof v === "string" && /^data:image\/png;base64,[A-Za-z0-9+/=]+$/.test(v) ? v : "");
+  let logoData = okLogo(store.get(LOGO_KEY, "")), logoVer = 0, stampKey = "", stampId = 0, hasStamp = false;
   let before = { key: "", url: "" };
 
   /* ---------- engine: worker when possible, same code on the page otherwise ---------- */
@@ -74,7 +76,7 @@
       : "تُحذف الميتاداتا (الموقع والجهاز والتاريخ) من الصور الناتجة، وكل المعالجة داخل متصفحك: صورك لا تُرفع لأي خادم.";
     $$("#t-chips .chip").forEach((c) => c.classList.toggle("active", c.dataset.t === `${+S.tval},${S.tunit}`));
     $("#logo-del").hidden = !logoData;
-    $("#logo-pv").innerHTML = logoData ? `<img src="${logoData}" alt="الشعار">` : ic("image-plus"); if (!logoData) icons();
+    if (logoData) { const im = new Image(); im.alt = "الشعار"; im.src = logoData; $("#logo-pv").replaceChildren(im); } else { $("#logo-pv").innerHTML = ic("image-plus"); icons(); }
   }
 
   const apply = debounce(() => { store.set(KEY, S); invalidate(); }, 200);

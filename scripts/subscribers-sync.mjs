@@ -27,7 +27,7 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 async function subscribers(channel) {
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
-      const r = await fetch(`https://t.me/${channel}`, { headers: { "User-Agent": UA, "Accept-Language": "en" } });
+      const r = await fetch(`https://t.me/${channel}`, { headers: { "User-Agent": UA, "Accept-Language": "en" }, signal: AbortSignal.timeout(20000) });
       if (r.ok) {
         const m = (await r.text()).match(/tgme_page_extra">\s*([\d\s .,]+)\s*(?:subscribers|members)/i);
         const n = m ? +m[1].replace(/\D/g, "") : 0;

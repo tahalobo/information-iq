@@ -1000,12 +1000,12 @@
       if (pv.sourceType === "ai" || pv.sourceType === "composite-ai" || names.length) {
         ai = true;
         V("danger", "bot", "الملف نفسه يصرّح بأنه من إنتاج الذكاء الاصطناعي",
-          [names.length ? `المولّد المذكور: <strong>${names.join("، ")}</strong> (في ${pv.generators.map((g) => g.where).join("، ")}).` : "", pv.sourceType ? `وسم «نوع المصدر الرقمي» يقول: ${pv.sourceType === "ai" ? "مولَّدة بنموذج ذكاء اصطناعي" : "مركّبة تتضمن عناصر مولَّدة"} (من ${pv.sourceTypeFrom}).` : "", "هذا تصريح مكتوب داخل الملف، وهو أقوى من أي تخمين بصري، لكن حذفه سهل، فغيابه لا يثبت العكس."].filter(Boolean).join(" "));
+          [names.length ? `المولّد المذكور: ${names.join("، ")} (في ${pv.generators.map((g) => g.where).join("، ")}).` : "", pv.sourceType ? `وسم «نوع المصدر الرقمي» يقول: ${pv.sourceType === "ai" ? "مولَّدة بنموذج ذكاء اصطناعي" : "مركّبة تتضمن عناصر مولَّدة"} (من ${pv.sourceTypeFrom}).` : "", "هذا تصريح مكتوب داخل الملف، وهو أقوى من أي تخمين بصري، لكن حذفه سهل، فغيابه لا يثبت العكس."].filter(Boolean).join(" "));
       }
       if (pv.c2pa) {
         const c = pv.c2pa;
         V("info", "badge-check", "تحمل «بيانات اعتماد المحتوى» (C2PA)",
-          [c.generator ? `أنشأها: <strong>${c.generator}</strong>.` : "", c.signers.length ? `الجهة الموقِّعة: ${c.signers.join("، ")}.` : "", c.actions.length ? `العمليات المسجّلة: ${c.actions.map((a) => (window.Provenance && window.Provenance.C2PA_ACTIONS[a]) || a).join("، ")}.` : "", "نقرأ محتوى السجل فقط ولا نتحقق من صحة التوقيع الرقمي. للتحقق من التوقيع استخدم الموقع الرسمي contentcredentials.org/verify."].filter(Boolean).join(" "));
+          [c.generator ? `أنشأها: ${c.generator}.` : "", c.signers.length ? `الجهة الموقِّعة: ${c.signers.join("، ")}.` : "", c.actions.length ? `العمليات المسجّلة: ${c.actions.map((a) => (window.Provenance && window.Provenance.C2PA_ACTIONS[a]) || a).join("، ")}.` : "", "نقرأ محتوى السجل فقط ولا نتحقق من صحة التوقيع الرقمي. للتحقق من التوقيع استخدم الموقع الرسمي contentcredentials.org/verify."].filter(Boolean).join(" "));
       } else if (R.has.c2pa) V("info", "badge-check", "تحتوي حاوية JUMBF", "قد تكون بيانات اعتماد محتوى (C2PA) لم نتمكن من قراءتها.");
       if (pv.aiEditors.length) V("warn", "sparkles", "عولجت بتطبيق تحسين بالذكاء الاصطناعي", `${pv.aiEditors.map((e) => e.name).join("، ")}. الصورة قد تكون حقيقية الأصل لكن تفاصيلها (الوجوه خصوصاً) أعاد النموذج رسمها.`);
     }

@@ -288,7 +288,7 @@
     if (r.special) return `<div class="lk-url ltr" dir="ltr"><b class="lk-bad">${esc(r.label)}</b><span>${esc(r.input.slice(r.label.length, 200))}</span></div>`;
     const u = r.url; const sub = r.host.endsWith(r.reg) ? r.host.slice(0, r.host.length - r.reg.length) : "";
     const cut = (s, n) => (s.length > n ? s.slice(0, n) + "…" : s);
-    return `<div class="lk-url ltr" dir="ltr"><span>${esc(u.protocol)}//</span>${u.username ? `<s title="يُتجاهل">${esc(cut(decodeURIComponent(u.username), 40))}${u.password ? ":…" : ""}@</s>` : ""}<span>${esc(sub)}</span><b>${esc(r.reg)}</b>${u.port ? `<span>:${esc(u.port)}</span>` : ""}<span class="lk-path">${esc(cut(u.pathname === "/" ? "" : u.pathname, 90))}${esc(cut(u.search, 90))}${esc(cut(u.hash, 40))}</span></div>`;
+    return `<div class="lk-url ltr" dir="ltr"><span>${esc(u.protocol)}//</span>${u.username ? `<s title="يُتجاهل">${esc(cut((() => { try { return decodeURIComponent(u.username); } catch { return u.username; } })(), 40))}${u.password ? ":…" : ""}@</s>` : ""}<span>${esc(sub)}</span><b>${esc(r.reg)}</b>${u.port ? `<span>:${esc(u.port)}</span>` : ""}<span class="lk-path">${esc(cut(u.pathname === "/" ? "" : u.pathname, 90))}${esc(cut(u.search, 90))}${esc(cut(u.hash, 40))}</span></div>`;
   }
   function tableHTML(r) {
     if (r.special) return "";
@@ -368,7 +368,7 @@
       ${S.main && Object.keys(S.main.rows).length ? `<div class="card">
         <div class="card-title"><span class="ico ico-sm">${ic("radar")}</span><h3>الفحوص الحية${dr ? ` للرابط نفسه (${esc(r.reg)})` : ""}</h3></div>
         <ul class="lk-rows">${rowsHTML(S.main)}</ul>
-        <p class="small muted mt-2 mb-0">${ic("info")} يُرسل اسم النطاق فقط إلى هذه المصادر${x ? " (والرابط كاملاً إلى خدمة كشف الوجهة)" : ""}. قوائم التصيد تُحمَّل إلى متصفحك وتُطابق فيه.</p>
+        <p class="small muted mt-2 mb-0">${ic("info")} يُرسل اسم النطاق فقط إلى هذه المصادر (ومعه مسار الصفحة إلى فحص «التصفح الآمن» من غوغل)${x ? " (والرابط كاملاً إلى خدمة كشف الوجهة)" : ""}. قوائم التصيد تُحمَّل إلى متصفحك وتُطابق فيه.</p>
       </div>` : ""}
 
       <div class="card">
@@ -409,5 +409,5 @@
   $("#u").addEventListener("paste", () => setTimeout(go, 30));
   $$("[data-ex]").forEach((b) => b.addEventListener("click", () => { $("#u").value = b.dataset.ex; go(); }));
   const pasteBtn = $("#paste"); if (pasteBtn) pasteBtn.addEventListener("click", async () => { try { const t = await navigator.clipboard.readText(); if (t) { $("#u").value = t.trim(); go(); } } catch { toast && toast("اسمح للموقع بقراءة الحافظة أو الصق يدوياً", "circle-alert"); } });
-  const init = param("u"); if (init) { $("#u").value = init; go(); }
+  const init = param("u"); if (init) { $("#u").value = init.slice(0, 2000); if (App.fromOwnSite()) go(); }
 })();

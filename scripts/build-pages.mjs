@@ -20,6 +20,7 @@ import { esc, strip, oneLine, clip, norm, tokens, stem, buildIndex, neighbours, 
 import { imageSize } from "./seo/imgsize.mjs";
 import { renderOgCards, pruneOg, TEMPLATE_VERSION } from "./seo/og.mjs";
 import { PAGES, TOOLS as TOOL_SEO, TOPICS, TOPIC_MIN, PER_PAGE } from "./seo/content.mjs";
+import { THEME_BOOT_JS, securityMeta } from "./seo/csp.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const rel = (...p) => path.join(ROOT, ...p);
@@ -257,7 +258,7 @@ for (const f of readdirSync(ROOT).filter((x) => x.endsWith(".html") && !["404.ht
 /* ==========================================================
    القوالب
    ========================================================== */
-const THEME_BOOT = `<script>try{var d=document.documentElement,L=localStorage,S=sessionStorage,n=navigator,c=n.connection||{},M=function(q){return matchMedia(q).matches},t=L.getItem("theme"),m=L.getItem("lite"),r=M("(prefers-reduced-motion: reduce)");if(t)d.dataset.theme=JSON.parse(t);if(m=='"on"'||m!='"off"'&&(r||c.saveData||/2g|3g/.test(c.effectiveType||"")||n.deviceMemory<=4||n.hardwareConcurrency<=4||+L.getItem("lite-auto")>Date.now()||M("(pointer: coarse)")&&M("(max-width: 1100px)")&&!(n.deviceMemory>=8&&n.hardwareConcurrency>=8)&&!/iP(hone|ad|od)/.test(n.userAgent)))d.className+=" lite rm no-gl";else if(r)d.className+=" rm";else if(!S.getItem("fx-seen"))d.className+=" is-loading";else if(S.getItem("fx-nav"))d.className+=" entering";S.removeItem("fx-nav")}catch(e){}</script>`;
+const THEME_BOOT = `<script>${THEME_BOOT_JS}</script>`;
 const FONTS = `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600;700&family=Reem+Kufi:wght@500;600;700&family=Lalezar&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">`;
@@ -305,12 +306,13 @@ function seoTags({ title, desc, path: p, image = DEF_IMG, imageAlt, ogType = "we
   return out.filter(Boolean).join("\n");
 }
 
-function shell({ seo, base = "../", body, bodyAttr = "", scripts = "", preload = "" }) {
+function shell({ seo, base = "../", body, bodyAttr = "", scripts = "", preload = "", csp = "hub" }) {
   return `<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+${securityMeta(csp, SITE)}
 <base href="${base}">
 ${seo}
 <meta name="theme-color" content="#03050c">
@@ -338,7 +340,7 @@ const LIGHT_SCRIPTS = `<script src="assets/js/vendor/lucide-subset.js"></script>
 function card(it, eager = false) {
   const c = it.c, im = it.img;
   return `<article class="fc fact-card${im ? " has-img" : ""}" style="--c1:${c.c1};--c2:${c.c2}">
-  <div class="fc-media"><div class="fc-gen" aria-hidden="true"><span class="fc-ring"></span><span class="fc-ring r2"></span>${ic(c.icon)}</div>${im ? `<img src="${esc(im.src)}" alt="${esc(it.title)}"${im.width ? ` width="${im.width}" height="${im.height}"` : ""} loading="${eager ? "eager" : "lazy"}" decoding="async" onerror="this.closest('.fc').classList.remove('has-img');this.remove()">` : ""}</div>
+  <div class="fc-media"><div class="fc-gen" aria-hidden="true"><span class="fc-ring"></span><span class="fc-ring r2"></span>${ic(c.icon)}</div>${im ? `<img src="${esc(im.src)}" alt="${esc(it.title)}"${im.width ? ` width="${im.width}" height="${im.height}"` : ""} loading="${eager ? "eager" : "lazy"}" decoding="async" data-err="card">` : ""}</div>
   <div class="fc-veil"></div>
   <div class="fc-top"><span class="fc-cat">${ic(c.icon)}${esc(c.name)}</span>${TYPE_NAMES[it.type] && it.type !== "fact" && !it.branch ? `<span class="fc-tag">${esc(TYPE_NAMES[it.type])}</span>` : ""}${it.video ? `<span class="fc-tag">${ic("play")}فيديو</span>` : ""}</div>
   <div class="fc-body"><h3><a href="${esc(postPath(it))}" class="fc-link">${esc(it.title)}</a></h3><p class="fc-ex">${esc(clip(it.seoDesc, 150))}</p>
@@ -420,7 +422,7 @@ function postPage(it) {
   if (cites.length) article.citation = cites;
   const seo = seoTags({ title: it.fullTitle, ogTitle: cleanTitle(it.title), desc: it.seoDesc, path: p, image: shareImg, imageAlt: cleanTitle(it.title), ogType: "article",
     article: { published: iso(it.date), modified: it.modified, section: it.c.name, tags: topics.map((h) => h.name) }, ld: [article, crumbsLd(crumbs)] });
-  const figure = images.length ? `<figure class="gallery${images.length === 1 ? " single" : ""}">${images.map((m, i) => `<img src="${esc(m.src)}" alt="${esc(cleanTitle(it.title))}${images.length > 1 ? ` - صورة ${i + 1}` : ""}"${m.width ? ` width="${m.width}" height="${m.height}"` : ""} loading="${i ? "lazy" : "eager"}"${i ? "" : ' fetchpriority="high"'} decoding="async" onerror="this.remove()">`).join("")}</figure>` : "";
+  const figure = images.length ? `<figure class="gallery${images.length === 1 ? " single" : ""}">${images.map((m, i) => `<img src="${esc(m.src)}" alt="${esc(cleanTitle(it.title))}${images.length > 1 ? ` - صورة ${i + 1}` : ""}"${m.width ? ` width="${m.width}" height="${m.height}"` : ""} loading="${i ? "lazy" : "eager"}"${i ? "" : ' fetchpriority="high"'} decoding="async" data-err="remove">`).join("")}</figure>` : "";
   const body = `<main>
   <div class="container" style="padding-top:28px;padding-bottom:64px" id="root">
     <article class="container-narrow" style="margin:0 auto">
@@ -443,7 +445,8 @@ function postPage(it) {
   </section>
 </main>`;
   const ctx = CTX(it.id);
-  const scripts = `<script>window.STATIC_ID=${JSON.stringify(it.id)};${ctx ? `window.STATIC_CTX=${json(ctx)};` : ""}</script>
+  // بيانات لا تُنفَّذ (يقرؤها core.js): لا تحتاج استثناءً في سياسة أمن المحتوى، و json() يهرّب < فلا يمكن إغلاق الوسم من داخلها
+  const scripts = `<script type="application/json" id="static-ctx">${json({ id: it.id, ctx: ctx || undefined })}</script>
 <script src="assets/js/vendor/lucide-subset.js"></script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/data.js"></script>${ctx ? "" : `
@@ -454,7 +457,7 @@ function postPage(it) {
 <script src="assets/js/pages/fact.js"></script>
 <script src="assets/js/fx.js"></script>`;
   const preload = main && !main.remote ? `<link rel="preload" as="image" href="${esc(main.src)}" fetchpriority="high">\n` : "";
-  return shell({ seo, body, bodyAttr: 'data-page="fact" data-progress', scripts, preload });
+  return shell({ seo, body, bodyAttr: 'data-page="fact" data-progress', scripts, preload, csp: "post" });
 }
 
 /* ---------- صفحة موضوع / قسم ---------- */
@@ -486,7 +489,7 @@ function hubPage(h, page) {
   <section class="section" style="padding-top:36px">
     <div class="container">
       <div class="section-head"><div><span class="kicker">${page > 1 ? `الصفحة ${page} من ${h.pages}` : "الأحدث أولاً"}</span><h2>${esc(h.kind === "topic" ? `كل ما نشرناه عن ${h.name}` : h.name)}</h2></div>
-        ${h.channel ? `<a href="${esc(h.channel)}" class="btn btn-ghost btn-sm" target="_blank" rel="noopener">${ic("send")}القناة على تليغرام</a>` : ""}</div>
+        ${h.channel ? `<a href="${esc(h.channel)}" class="btn btn-ghost btn-sm" target="_blank" rel="noopener noreferrer">${ic("send")}القناة على تليغرام</a>` : ""}</div>
       <div class="grid grid-3 seo-grid">${list.map((it, i) => card(it, i < 3)).join("\n")}</div>
       ${pager((n) => hubUrl(h, n), page, h.pages)}
       ${near.length ? `<div class="seo-topics mt-4"><h2 class="seo-h">مواضيع قريبة من ${esc(h.name)}</h2><div class="seo-chips">${chips(near)}</div></div>` : ""}
@@ -572,9 +575,8 @@ function notFoundPage() {
     <ul class="seo-list">${items.slice(0, 9).map((r) => `<li><a href="${esc(postPath(r))}"><strong>${esc(r.title)}</strong><small>${esc(r.c.name)} · ${esc(fmtDate(r.date))}</small></a></li>`).join("")}</ul>
     <div class="seo-topics mt-4"><h2 class="seo-h">تصفّح حسب الموضوع</h2><div class="seo-chips">${chips(topHubs(24))}</div></div>
   </div></section>
-</main>
-<script>/* روابط قديمة: fact.html?id=… أو post/… بلا لاحقة */(function(){var m=location.pathname.match(/\\/post\\/([^\\/.]+)\\/?$/);if(m)location.replace(${JSON.stringify(SITE_PATH)}+"post/"+m[1]+".html")})();</script>`;
-  return shell({ seo, base: SITE_PATH, body, bodyAttr: 'data-page="404"', scripts: LIGHT_SCRIPTS });
+</main>`;
+  return shell({ seo, base: SITE_PATH, body, bodyAttr: 'data-page="404"', scripts: `<script src="assets/js/pages/404.js"></script>\n${LIGHT_SCRIPTS}`, csp: "404.html" });
 }
 
 /* ==========================================================
@@ -653,12 +655,12 @@ function shareRow(url, text) {
   const u = encodeURIComponent(url), t = encodeURIComponent(text);
   return `<div class="share-row">
       <button class="btn btn-ghost btn-sm" type="button" data-copy="${esc(url)}">${ic("link")}نسخ الرابط</button>
-      <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://wa.me/?text=${t}%20${u}">${ic("message-circle")}واتساب</a>
-      <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://t.me/share/url?url=${u}&amp;text=${t}">${ic("send")}تليغرام</a>
-      <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://x.com/intent/post?text=${t}&amp;url=${u}">${ic("twitter")}إكس</a>
-      <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener" href="https://www.facebook.com/sharer/sharer.php?u=${u}">${ic("facebook")}فيسبوك</a>
+      <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener noreferrer" href="https://wa.me/?text=${t}%20${u}">${ic("message-circle")}واتساب</a>
+      <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener noreferrer" href="https://t.me/share/url?url=${u}&amp;text=${t}">${ic("send")}تليغرام</a>
+      <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener noreferrer" href="https://x.com/intent/post?text=${t}&amp;url=${u}">${ic("twitter")}إكس</a>
+      <a class="btn btn-ghost btn-sm" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=${u}">${ic("facebook")}فيسبوك</a>
       <button class="btn btn-ghost btn-sm" type="button" data-native-share hidden>${ic("share-2")}مشاركة</button>
-    </div><script>if(navigator.share)document.querySelectorAll("[data-native-share][hidden]").forEach(function(b){b.hidden=false})</script>`;
+    </div>`;
 }
 function toolBlock(file, t) {
   const others = Object.entries(TOOL_SEO).filter(([f]) => f !== file);
@@ -733,12 +735,16 @@ for (const f of rootPages) {
   let tags = seoTags({ title, desc, path: p, ld, robots, ogTitle: rawTitle, image: ogImg(`page:${f}`) || DEF_IMG });
   if (robots) tags = tags.replace(/<link rel="canonical"[^>]*>\n/, "");
   head = head.replace(HEAD_RE, "").replace(OLD_TAGS, "");
-  head = head.replace(/(<meta name="viewport"[^>]*>)/, `$1\n<!-- seo:head -->\n${tags}\n<!-- /seo:head -->`);
+  // دالة استبدال لا نص: عنوان منشور فيه $1 أو $& كان يُفسَّر كنمط استبدال فيفسد الصفحة ويوقف البناء
+  head = head.replace(/(<meta name="viewport"[^>]*>)/, (m) => `${m}\n<!-- seo:head -->\n${securityMeta(f, SITE)}\n${tags}\n<!-- /seo:head -->`);
+  // سكربت منع الوميض يُكتب من المصدر الواحد حتى تطابق بصمته سياسة أمن المحتوى دائماً
+  head = head.replace(/<script>try\{var d=document\.documentElement[\s\S]*?<\/script>/, () => THEME_BOOT);
   rest = rest.replace(BODY_RE, "");
-  if (block) rest = rest.replace(/\n?<\/main>/, `\n<!-- seo:body -->\n${block}\n<!-- /seo:body -->\n</main>`);
-  if (f === "fact.html" && !rest.includes("seo:redirect")) {
+  if (block) rest = rest.replace(/\n?<\/main>/, () => `\n<!-- seo:body -->\n${block}\n<!-- /seo:body -->\n</main>`);
+  if (f === "fact.html") {
     // الروابط القديمة fact.html?id=… تُحوَّل إلى الصفحة الثابتة إن وُجدت (ويبقى العرض الديناميكي لغيرها)
-    rest = rest.replace(/(<script src="assets\/js\/static-index\.js"><\/script>)/, `$1\n<script>/* seo:redirect */(function(){try{var id=new URLSearchParams(location.search).get("id");if(id&&window.STATIC_POSTS&&STATIC_POSTS[id])location.replace("post/"+encodeURIComponent(id)+".html"+location.hash)}catch(e){}})();</script>`);
+    rest = rest.replace(/\n?<script>\/\* seo:redirect \*\/[\s\S]*?<\/script>/, "");
+    if (!rest.includes("assets/js/pages/fact-redirect.js")) rest = rest.replace(/(<script src="assets\/js\/static-index\.js"><\/script>)/, (m) => `${m}\n<script src="assets/js/pages/fact-redirect.js"></script>`);
   }
   const next = head + rest;
   if (next !== orig) { await fs.writeFile(file, next); written++; }
@@ -755,7 +761,9 @@ for (const f of Object.keys(state.pages)) if (!rootPages.includes(f)) delete sta
 /* ==========================================================
    sitemap / feeds / robots / IndexNow
    ========================================================== */
-const xml = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" }[c]));
+// تاريخ معطوب في منشور واحد لا يوقف البناء كله
+const isoSafe = (d) => { const t = new Date(d); return isNaN(t) ? new Date(TODAY + "T09:00:00+03:00").toISOString() : t.toISOString(); };
+const xml = (s) => String(s ?? "").replace(/[^\x09\x0A\x0D\x20-\uD7FF\uE000-\uFFFD\u{10000}-\u{10FFFF}]/gu, "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" }[c]));
 const urlset = (list, ns = "") => `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"${ns}>\n${list.join("\n")}\n</urlset>\n`;
 const urlEntry = (u) => `  <url><loc>${xml(abs(u.path))}</loc><lastmod>${u.lastmod}</lastmod>${(u.images || []).map((m) => `<image:image><image:loc>${xml(m.loc)}</image:loc></image:image>`).join("")}</url>`;
 const IMG_NS = ' xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"';
@@ -817,8 +825,8 @@ ${feed.map((it) => `<entry>
 <title>${xml(cleanTitle(it.title))}</title>
 <id>${xml(abs(postPath(it)))}</id>
 <link href="${xml(abs(postPath(it)))}" rel="alternate" type="text/html"/>
-<published>${new Date(iso(it.date)).toISOString()}</published>
-<updated>${new Date(it.modified).toISOString()}</updated>
+<published>${isoSafe(iso(it.date))}</published>
+<updated>${isoSafe(it.modified)}</updated>
 <category term="${xml(it.c.name)}"/>
 <summary>${xml(it.seoDesc)}</summary>
 <content type="html">${xml(html(it))}</content>

@@ -47,6 +47,9 @@ var TYPES = {
   join: ["الانضمام للفريق", "نماذج الأعمال"]
 };
 var LIMITS = { name: 80, reply: 120, extra: 400, message: 3500, page: 300 };
+var MAX_BODY = 20000;          // أقصى حجم للطلب كله (حروف)
+// الصفحات المسموح ظهور رابطها في الرسالة: موقعنا فقط (حتى لا يُدَسّ رابط تصيّد للفريق)
+var SITE_PREFIXES = ["https://tahalobo.github.io/information-iq/"];
 var MIN_FILL_MS = 2500;        // البوتات تملأ النموذج فوراً
 var WINDOW_SEC = 600;          // نافذة العدّ: 10 دقائق
 var MAX_PER_SENDER = 3;        // رسائل لكل وسيلة رد خلال النافذة
@@ -68,11 +71,13 @@ function handle_(e) {
   if (!token || !chat) return { ok: false, error: "unavailable" };
 
   var b;
-  try { b = JSON.parse((e && e.postData && e.postData.contents) || ""); } catch (err) { return { ok: false, error: "bad-request" }; }
-  if (!b || typeof b !== "object") return { ok: false, error: "bad-request" };
+  var raw = (e && e.postData && e.postData.contents) || "";
+  if (raw.length > MAX_BODY) return { ok: false, error: "bad-request" };
+  try { b = JSON.parse(raw); } catch (err) { return { ok: false, error: "bad-request" }; }
+  if (!b || typeof b !== "object" || Array.isArray(b)) return { ok: false, error: "bad-request" };
 
-  // فخ البوتات: الحقل المخفي ممتلئ، أو النموذج أُرسل أسرع من أي إنسان ← نتظاهر بالنجاح ولا نرسل
-  if (b._gotcha || (typeof b.t === "number" && b.t < MIN_FILL_MS)) return { ok: true };
+  // فخ البوتات: الحقل المخفي ممتلئ، أو زمن التعبئة مفقود/غير رقمي/أسرع من أي إنسان ← نتظاهر بالنجاح ولا نرسل
+  if (b._gotcha || typeof b.t !== "number" || !isFinite(b.t) || b.t < MIN_FILL_MS) return { ok: true };
 
   var d = {
     type: TYPES.hasOwnProperty(b.type) ? b.type : "general",
@@ -83,7 +88,12 @@ function handle_(e) {
     page: field_(b.page, LIMITS.page)
   };
   if (!d.name || !d.reply || d.message.length < 10) return { ok: false, error: "missing" };
-  if (limited_(d.reply)) return { ok: false, error: "rate" };
+  if (!SITE_PREFIXES.some(function (p) { return d.page.indexOf(p) === 0; })) d.page = "";
+  // القفل يمنع تجاوز العدّاد بطلبات متزامنة
+  var lock = LockService.getScriptLock();
+  if (!lock.tryLock(5000)) return { ok: false, error: "rate" };
+  var over; try { over = limited_(d.reply); } finally { lock.releaseLock(); }
+  if (over) return { ok: false, error: "rate" };
 
   var payload = { chat_id: chat, text: format_(d), parse_mode: "HTML", link_preview_options: { is_disabled: true } };
   var thread = props.getProperty("TELEGRAM_THREAD_ID");
@@ -109,14 +119,18 @@ function format_(d) {
     (email ? "✉️ <b>البريد للرد:</b> " : "💬 <b>للرد:</b> ") + "<code>" + esc_(d.reply) + "</code>"
   ];
   if (d.extra) lines.push("📎 <b>" + esc_(extraLabel || "إضافة") + ":</b> " + esc_(d.extra));
-  lines.push("", "<b>الرسالة:</b>", esc_(d.message), "", "🕒 " + time + " (بغداد)");
-  if (d.page) lines.push("🔗 " + esc_(d.page));
-  return lines.join("\n").slice(0, 4096);
+  // نقصّ نص الرسالة قبل التهريب (لا نقطع الناتج في منتصف &amp; أو وسم، فيرفضه تليغرام وتضيع الرسالة)
+  var head = lines.join("\n") + "\n\n<b>الرسالة:</b>\n";
+  var tail = "\n\n🕒 " + time + " (بغداد)" + (d.page ? "\n🔗 " + esc_(d.page) : "");
+  var msg = d.message;
+  while (msg && (head + esc_(msg) + tail).length > 4096) msg = msg.slice(0, -50);
+  return head + esc_(msg) + tail;
 }
 
 function field_(v, max, multiline) {
   var s = typeof v === "string" ? v : "";
-  s = s.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, "");
+  // محارف التحكم + محارف الاتجاه والمحارف غير المرئية (تُستعمل لتزييف شكل النص)
+  s = s.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u200B-\u200F\u202A-\u202E\u2066-\u2069\uFEFF]/g, "");
   s = multiline ? s.replace(/\r\n?/g, "\n").replace(/\n{4,}/g, "\n\n\n") : s.replace(/\s+/g, " ");
   return s.trim().slice(0, max);
 }

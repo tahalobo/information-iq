@@ -48,10 +48,12 @@
     e.preventDefault();
     const fd = new FormData(e.target);
     if (fd.get("_gotcha")) return; // bot
-    const d = { name: fd.get("name").trim(), reply: fd.get("reply").trim(), extra: (fd.get("extra") || "").trim(), message: fd.get("message").trim() };
+    // الحدود نفسها التي يفرضها الخادم (scripts/contact-form.gs)
+    const cut = (k, n) => String(fd.get(k) || "").trim().slice(0, n);
+    const d = { name: cut("name", 80), reply: cut("reply", 120), extra: cut("extra", 400), message: cut("message", 3500) };
     const errs = [];
     if (!d.name) errs.push("الاسم"); if (!d.reply) errs.push("وسيلة الرد"); if (d.message.length < 10) errs.push("الرسالة (10 أحرف على الأقل)");
-    if (errs.length) { $("#form-msg").innerHTML = `<div class="alert alert-danger">${ic("alert-circle")}<span>يرجى إكمال: ${errs.join("، ")}</span></div>`; icons(); return; }
+    if (errs.length) { $("#form-msg").innerHTML = `<div class="alert alert-danger">${ic("alert-circle")}<span>يرجى إكمال: ${esc(errs.join("، "))}</span></div>`; icons(); return; }
     $("#form-msg").innerHTML = "";
     const text = compose(d);
 
@@ -60,7 +62,7 @@
       try {
         // Formspree يريد JSON، أما سكربت Google فيريد طلباً بسيطاً (text/plain) لأنه لا يجيب على فحص CORS المسبق
         const headers = /formspree\.io/i.test(S.formEndpoint) ? { "Content-Type": "application/json", Accept: "application/json" } : { "Content-Type": "text/plain;charset=utf-8" };
-        const r = await fetch(S.formEndpoint, { method: "POST", headers, body: JSON.stringify({ type, ...d, _subject: text.split("\n")[0], page: location.href.split("#")[0], t: Date.now() - openedAt }) });
+        const r = await fetch(S.formEndpoint, { method: "POST", headers, body: JSON.stringify({ type, ...d, _subject: text.split("\n")[0], page: location.origin + location.pathname, t: Date.now() - openedAt }) });
         const res = await r.json().catch(() => ({}));
         if (!r.ok || res.ok === false) throw new Error(res.error === "rate" ? "rate" : "");
         e.target.reset(); setType(type);

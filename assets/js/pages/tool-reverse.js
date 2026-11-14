@@ -182,8 +182,10 @@
     if (d < 365) { const m = Math.round(d / 30); return m === 1 ? "قبل شهر" : m === 2 ? "قبل شهرين" : `قبل ${m} أشهر`; }
     const y = Math.round(d / 365 * 10) / 10; return y < 2 ? "قبل سنة" : `قبل ${y.toString().replace(".0", "")} سنوات`;
   };
-  const fav = (u) => `https://icons.duckduckgo.com/ip3/${hostOf(u)}.ico`;
-  const im = (src, cls = "") => `<img class="${cls}" src="${esc(src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" onerror="this.closest('[data-img]')?.remove()">`;
+  const fav = (u) => `https://icons.duckduckgo.com/ip3/${encodeURIComponent(hostOf(u))}.ico`;
+  // نتائج البحث تأتي من خادم خارجي: لا نضع في href إلا روابط http/https
+  const href = (u) => esc(App.safeUrl(u) || "#");
+  const im = (src, cls = "") => `<img class="${cls}" src="${esc(src)}" alt="" loading="lazy" decoding="async" referrerpolicy="no-referrer" data-err="wrap">`;
 
   const DATE_PAGES = 48, DATE_CHUNK = 8;
   const api = (path, body) => fetch(ENDPOINT.replace(/\/+$/, "") + path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
@@ -247,9 +249,9 @@
       <div id="rs-t"></div>
       ${copies.length ? `<div class="rs-block"><div class="rs-h"><span class="ico ico-sm">${ic("copy")}</span><h3>نسخ الصورة في الإنترنت</h3></div>
         <p class="small muted">النسخة الأعلى دقة أقرب غالباً إلى الأصل. قارنها بصورتك: هل قُصّت أو عُدّلت؟</p>
-        <div class="rs-grid">${copies.map((c, i) => `<a class="${i === 0 && c.w ? "best" : ""}" href="${esc(c.url)}" target="_blank" rel="noopener noreferrer" data-img>${im(c.src)}<span class="rs-res">${c.w ? `${c.w}×${c.h}` : ""}</span></a>`).join("")}</div></div>` : ""}
+        <div class="rs-grid">${copies.map((c, i) => `<a class="${i === 0 && c.w ? "best" : ""}" href="${href(c.url)}" target="_blank" rel="noopener noreferrer" data-img>${im(c.src)}<span class="rs-res">${+c.w ? `${+c.w}×${+c.h}` : ""}</span></a>`).join("")}</div></div>` : ""}
       ${d.similar.length ? `<div class="rs-block"><div class="rs-h"><span class="ico ico-sm">${ic("layout-grid")}</span><h3>صور مشابهة <small class="muted">ليست الصورة نفسها</small></h3></div>
-        <div class="rs-grid similar">${d.similar.map((s) => `<a href="${esc(s.url || s.thumb)}" target="_blank" rel="noopener noreferrer" title="${esc(s.title)}" data-img>${im(s.thumb)}</a>`).join("")}</div></div>` : ""}`;
+        <div class="rs-grid similar">${d.similar.map((s) => `<a href="${href(s.url || s.thumb)}" target="_blank" rel="noopener noreferrer" title="${esc(s.title)}" data-img>${im(s.thumb)}</a>`).join("")}</div></div>` : ""}`;
     paint();
     if (window.FX) FX.refresh(R);
   }
@@ -290,22 +292,22 @@
       </div>`;
 
     $("#rs-fc").innerHTML = s.fc.length ? `<div class="rs-block"><div class="rs-h"><span class="ico ico-sm">${ic("badge-check")}</span><h3>ماذا قال مدققو الحقائق؟</h3></div>
-        <div class="rs-facts">${s.fc.map((f) => `<a class="rs-fact" href="${esc(f.url)}" target="_blank" rel="noopener noreferrer">
+        <div class="rs-facts">${s.fc.map((f) => `<a class="rs-fact" href="${href(f.url)}" target="_blank" rel="noopener noreferrer">
           <span class="rs-rating">تدقيق حقائق</span><strong>${esc(f.title || f.host)}</strong>
           ${f.desc ? `<p>${esc(f.desc)}</p>` : ""}
-          <small>${esc(f.site || f.host)}${f.date ? ` · ${fmtDate(f.date.slice(0, 10))}` : ""}</small></a>`).join("")}</div></div>` : "";
+          <small>${esc(f.site || f.host)}${f.date ? ` · ${esc(fmtDate(String(f.date).slice(0, 10)))}` : ""}</small></a>`).join("")}</div></div>` : "";
 
     const row = (p, i) => {
       const k = KIND[p.kind], first = i === 0 && p.date, wait = loading && !p.checked && p.i < DATE_PAGES;
       return `<li class="rs-page ${p.kind}${first ? " first" : ""}">
         <span class="rs-dot"></span>
-        <div class="rs-when">${p.date ? `<b>${fmtDate(p.date.slice(0, 10))}</b><small>${ago(p.date)}</small>` : wait ? `<b class="muted">…</b><small>نقرأ التاريخ</small>` : `<b>بلا تاريخ</b><small>لم يُعلن</small>`}</div>
-        <a class="rs-card" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">
+        <div class="rs-when">${p.date ? `<b>${esc(fmtDate(String(p.date).slice(0, 10)))}</b><small>${esc(ago(p.date))}</small>` : wait ? `<b class="muted">…</b><small>نقرأ التاريخ</small>` : `<b>بلا تاريخ</b><small>لم يُعلن</small>`}</div>
+        <a class="rs-card" href="${href(p.url)}" target="_blank" rel="noopener noreferrer">
           ${p.thumb ? `<span class="rs-thumb" data-img>${im(p.thumb)}</span>` : ""}
           <span class="rs-meta">
-            <span class="rs-site"><img src="${fav(p.url)}" alt="" referrerpolicy="no-referrer" onerror="this.remove()"> ${esc(p.site || p.host)} <span class="badge ${k[1]}">${ic(k[2])}${k[0]}</span>${first ? `<span class="badge badge-warn">${ic("flag")}أقدم ظهور</span>` : ""}</span>
+            <span class="rs-site"><img src="${fav(p.url)}" alt="" referrerpolicy="no-referrer" data-err="remove"> ${esc(p.site || p.host)} <span class="badge ${k[1]}">${ic(k[2])}${k[0]}</span>${first ? `<span class="badge badge-warn">${ic("flag")}أقدم ظهور</span>` : ""}</span>
             <strong>${esc(p.title || p.host)}</strong>
-            <small class="ltr">${esc(p.host)}${p.w ? ` · ${p.w}×${p.h}` : ""}</small>
+            <small class="ltr">${esc(p.host)}${+p.w ? ` · ${+p.w}×${+p.h}` : ""}</small>
           </span>${ic("arrow-up-left")}</a></li>`;
     };
     $("#rs-t").innerHTML = pages.length ? `<div class="rs-block"><div class="rs-h"><span class="ico ico-sm">${ic("history")}</span><h3>أين ومتى ظهرت؟ <small class="muted">مرتّبة من الأقدم</small></h3></div>
@@ -402,5 +404,5 @@
 
   dropzone($("#dz"), $("#file"), setFile);
   $("#change").addEventListener("click", () => $("#file").click());
-  const qUrl = App.param("url"); if (qUrl) { $('[data-mode="url"]').click(); $("#url").value = qUrl; $("#url-go").click(); }
+  const qUrl = App.param("url"); if (qUrl) { $('[data-mode="url"]').click(); $("#url").value = qUrl.slice(0, 2000); if (App.fromOwnSite()) $("#url-go").click(); }
 })();

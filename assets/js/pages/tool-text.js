@@ -499,7 +499,7 @@
      ========================================================== */
   let tab = store.get("text-tab", "clean");
   function showTab(id) {
-    if (!$(`[data-panel="${id}"]`)) id = "clean";
+    if (!/^[a-z0-9-]+$/i.test(String(id)) || !$(`[data-panel="${id}"]`)) id = "clean";
     tab = id; store.set("text-tab", id);
     $$("#tabs [data-tab]").forEach((b) => b.classList.toggle("active", b.dataset.tab === id));
     $$(".tx-panel").forEach((p) => (p.hidden = p.dataset.panel !== id));
@@ -617,7 +617,7 @@
   const curTpl = () => TPL.find((x) => x.id === tplId) || TPL[0];
   function renderTplFields() {
     const T = curTpl();
-    $("#tpl-pick").innerHTML = TPL.map((x) => `<button data-tpl="${x.id}"${x.id === T.id ? ' class="active"' : ""}>${x.name}</button>`).join("");
+    $("#tpl-pick").innerHTML = TPL.map((x) => `<button data-tpl="${x.id}"${x.id === T.id ? ' class="active"' : ""}>${esc(x.name)}</button>`).join("");
     $("#tpl-fields").innerHTML = T.f.map(([k, label, ph, multi]) => `<div class="field"><label for="tf-${k}">${label}</label>${multi
       ? `<textarea class="textarea tx-mini" id="tf-${k}" data-k="${k}" dir="auto" data-lenis-prevent placeholder="${esc(ph)}">${esc(tplVals[k] || "")}</textarea>`
       : `<input class="input" id="tf-${k}" data-k="${k}" dir="auto" placeholder="${esc(ph)}" value="${esc(tplVals[k] || "")}">`}</div>`).join("");
@@ -707,7 +707,7 @@
   function renderFonts() {
     const src = $("#font-in").value || "Iraq Empire 2026";
     fontOut = FONTS.map((f) => stylize(src, f));
-    $("#font-out").innerHTML = FONTS.map((f, i) => `<div class="tx-font"><small>${f.name}</small><bdi class="ltr">${esc(fontOut[i])}</bdi><div class="btn-row"><button class="btn btn-ghost btn-sm" data-fcp="${i}">${ic("copy")}نسخ</button><button class="btn btn-ghost btn-sm" data-fin="${i}">أدرِج</button></div></div>`).join("");
+    $("#font-out").innerHTML = FONTS.map((f, i) => `<div class="tx-font"><small>${esc(f.name)}</small><bdi class="ltr">${esc(fontOut[i])}</bdi><div class="btn-row"><button class="btn btn-ghost btn-sm" data-fcp="${i}">${ic("copy")}نسخ</button><button class="btn btn-ghost btn-sm" data-fin="${i}">أدرِج</button></div></div>`).join("");
     icons();
   }
   $("#font-in").addEventListener("input", debounce(renderFonts, 120));

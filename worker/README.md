@@ -25,11 +25,11 @@
 2. اذهب إلى **Workers & Pages ← Create ← Create Worker**:
    - سمّه `empire-reverse` واضغط **Deploy**.
    - اضغط **Edit code**، واحذف المثال، والصق محتوى الملف `worker/reverse-search.js` كاملاً، ثم **Deploy**.
-3. (مستحسن) من **Settings ← Variables and Secrets** أضف:
+3. (إلزامي) من **Settings ← Variables and Secrets** أضف:
 
    | الاسم | النوع | القيمة |
    |---|---|---|
-   | `ALLOWED_ORIGINS` | Text | رابط موقعك، مثل `https://information-iq.com` (لأكثر من رابط افصل بفاصلة) |
+   | `ALLOWED_ORIGINS` | Text | **إلزامي.** أصل موقعك بلا مسار، مثل `https://tahalobo.github.io` (لأكثر من أصل افصل بفاصلة). بلا هذه القيمة يرفض العامل كل الطلبات. القيمة مضبوطة مسبقاً في `wrangler.toml`. |
 
    هكذا لا يستطيع موقع آخر استخدام عاملك.
 4. انسخ رابط العامل، وهو يشبه `https://empire-reverse.yourname.workers.dev`.

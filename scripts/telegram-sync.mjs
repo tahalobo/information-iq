@@ -96,7 +96,7 @@ export async function fetchPage(channel, before) {
   const url = `https://t.me/s/${channel}${before ? `?before=${before}` : ""}`;
   for (let attempt = 1; attempt <= 3; attempt++) {
     try {
-      const r = await fetch(url, { headers: { "User-Agent": UA, "Accept-Language": "ar,en;q=0.8" } });
+      const r = await fetch(url, { headers: { "User-Agent": UA, "Accept-Language": "ar,en;q=0.8" }, signal: AbortSignal.timeout(30000) });
       if (r.status === 429) { await sleep(5000 * attempt); continue; }
       if (!r.ok) throw new Error(`HTTP ${r.status}`);
       return await r.text();
@@ -104,11 +104,23 @@ export async function fetchPage(channel, before) {
   }
 }
 
+/* تنزيل صورة منشور: من خوادم صور تليغرام فقط (https)، بمهلة وحدّ للحجم، ولا يُحفظ إلا ما هو صورة فعلاً.
+   هكذا لا يستطيع محتوى قناة أن يجعل خادم البناء يجلب عنواناً آخر أو يودع ملفاً غير صورة في المستودع. */
+const IMG_HOSTS = /(^|\.)(telesco\.pe|cdn-telegram\.org|telegram-cdn\.org|telegram\.org|t\.me)$/i;
+const IMG_MAX = 8_000_000;
+export const isImageUrl = (url) => { try { const u = new URL(url); return u.protocol === "https:" && !u.username && !u.port && IMG_HOSTS.test(u.hostname); } catch { return false; } };
+export const isImageBytes = (b) => b.length > 12 && ((b[0] === 0xFF && b[1] === 0xD8 && b[2] === 0xFF) || (b[0] === 0x89 && b.toString("latin1", 1, 4) === "PNG") ||
+  (b.toString("latin1", 0, 4) === "RIFF" && b.toString("latin1", 8, 12) === "WEBP") || b.toString("latin1", 0, 4) === "GIF8");
 export async function download(url, file) {
+  if (!isImageUrl(url)) return false;
   try {
-    const r = await fetch(url, { headers: { "User-Agent": UA } });
-    if (!r.ok) return false;
-    await fs.writeFile(file, Buffer.from(await r.arrayBuffer()));
+    const r = await fetch(url, { headers: { "User-Agent": UA }, signal: AbortSignal.timeout(20000) });
+    if (!r.ok || !isImageUrl(r.url || url) || +(r.headers.get("content-length") || 0) > IMG_MAX) return false;
+    const chunks = []; let size = 0;
+    for await (const c of r.body) { size += c.length; if (size > IMG_MAX) return false; chunks.push(c); }
+    const buf = Buffer.concat(chunks);
+    if (!isImageBytes(buf)) return false;
+    await fs.writeFile(file, buf);
     return true;
   } catch { return false; }
 }
@@ -122,11 +134,11 @@ function stripSignature(text, cfg) {
   t = t.split("\n").filter((line) => !(/@[A-Za-z0-9_]{4,}/.test(line) && (line.replace(/@[A-Za-z0-9_]+/g, "").match(/[ء-ي]/g) || []).length < 6)).join("\n");
   return t.replace(/[\s|•·-]+$/g, "").trim();
 }
-function bodyHtml(text, title) {
+export function bodyHtml(text, title) {
   let t = text;
   if (title && t.startsWith(title) && t.slice(title.length).trim()) t = t.slice(title.length).replace(/^[\s.:،-]+/, "");
   return t.split(/\n{2,}/).map((p) => p.trim()).filter(Boolean)
-    .map((p) => `<p>${esc(p).replace(/\n/g, "<br>").replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')}</p>`).join("\n");
+    .map((p) => `<p>${esc(p).replace(/\n/g, "<br>").replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>')}</p>`).join("\n");
 }
 const hashtags = (t) => [...new Set((t.match(/#[\p{L}\p{N}_]+/gu) || []).map((h) => h.slice(1).replace(/_/g, " ")))].slice(0, 6);
 
@@ -215,7 +227,7 @@ async function main() {
     const g = it.group;
     const title = ov.title || (g && (g.title || `${g.kind}: ${makeTitle(text)}`)) || (type === "literature" ? (cleanText(text).split("\n")[0].slice(0, 70) + (cleanText(text).split("\n")[0].length > 70 ? "…" : "")) : makeTitle(text)) || TYPES[type];
     // a remote entry is a download that failed (it is retried on the next sync): never publish it, its link expires
-    const local = (u) => !!u && !/^https?:/.test(u);
+    const local = (u) => typeof u === "string" && /^assets\/tg\/img\/[\w.-]+$/.test(u);
     const videoThumb = post.video && post.video.thumb && local(imgs[imgs.length - 1]) ? imgs[imgs.length - 1] : null;
     const photos = (post.video?.thumb ? imgs.slice(0, -1) : imgs).filter(local);
 
@@ -230,7 +242,7 @@ async function main() {
 
     // Event detail: every part of the event in order, winners highlighted
     const eventHtml = g ? `${bodyHtml(text, "")}\n<h2>فقرات الفعالية</h2>\n<ol class="event-parts">${g.members.filter((m) => m !== g.leader && m !== g.winners).map((m) =>
-      `<li>${m.post.poll ? `<strong>${esc(m.post.poll.q)}</strong><br>${m.post.poll.options.map((o) => "◦ " + esc(o)).join("<br>")}` : esc(cleanText(m.text)).replace(/\n+/g, "<br>")} <a class="link small" href="https://t.me/${ch}/${m.id}" target="_blank" rel="noopener">#${m.id}</a></li>`).join("")}</ol>
+      `<li>${m.post.poll ? `<strong>${esc(m.post.poll.q)}</strong><br>${m.post.poll.options.map((o) => "◦ " + esc(o)).join("<br>")}` : esc(cleanText(m.text)).replace(/\n+/g, "<br>")} <a class="link small" href="https://t.me/${ch}/${m.id}" target="_blank" rel="noopener noreferrer">#${m.id}</a></li>`).join("")}</ol>
       ${g.winners ? `<div class="didyouknow"><span>🏆</span><div><strong>الفائزون</strong>${esc(cleanText(g.winners.text)).replace(/\n/g, "<br>")}</div></div>` : ""}` : "";
 
     const detail = {

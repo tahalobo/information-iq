@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- seo:head -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-EOj1Dmn9/D7RpGyLndcgHPBpdVRfz1EMNcV1nVrLXgc='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self' data: blob:; connect-src 'self' https://script.google.com https://script.googleusercontent.com https://formspree.io; worker-src 'self' blob:; frame-src 'none'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta name="referrer" content="same-origin">
 <title>تواصل مع الإمبراطورية العراقية: اقتراح أو تصحيح أو إعلان</title>
 <meta name="description" content="راسل فريق الإمبراطورية العراقية لاقتراح معلومة، أو طلب تصحيح، أو الإعلان والتعاون، أو الإبلاغ عن إشاعة، أو الانضمام إلى الفريق.">
 <link rel="canonical" href="https://tahalobo.github.io/information-iq/contact.html">
@@ -63,11 +65,11 @@
           <span class="label">نوع الرسالة</span>
           <div class="grid mt-1 mb-3" id="types" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px"></div>
           <div class="form-row">
-            <div class="field"><label for="name">الاسم</label><input class="input" id="name" name="name" required autocomplete="name"></div>
-            <div class="field"><label for="reply">بريدك أو حسابك على إنستغرام <span class="muted small">(للرد عليك)</span></label><input class="input ltr" id="reply" name="reply" dir="ltr" required placeholder="name@mail.com أو ‎@username"></div>
+            <div class="field"><label for="name">الاسم</label><input class="input" id="name" name="name" required maxlength="80" autocomplete="name"></div>
+            <div class="field"><label for="reply">بريدك أو حسابك على إنستغرام <span class="muted small">(للرد عليك)</span></label><input class="input ltr" id="reply" name="reply" dir="ltr" required maxlength="120" placeholder="name@mail.com أو ‎@username"></div>
           </div>
-          <div class="field" id="extra-wrap" hidden><label for="extra" id="extra-label"></label><input class="input" id="extra" name="extra"></div>
-          <div class="field"><label for="msg" id="msg-label">الرسالة</label><textarea class="textarea" id="msg" name="message" required></textarea><span class="hint" id="msg-hint"></span></div>
+          <div class="field" id="extra-wrap" hidden><label for="extra" id="extra-label"></label><input class="input" id="extra" name="extra" maxlength="400"></div>
+          <div class="field"><label for="msg" id="msg-label">الرسالة</label><textarea class="textarea" id="msg" name="message" required maxlength="3500"></textarea><span class="hint" id="msg-hint"></span></div>
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
           <div id="form-msg" class="mb-2"></div>
           <button class="btn btn-primary btn-lg" type="submit" id="submit"><i data-lucide="send"></i>إرسال</button>

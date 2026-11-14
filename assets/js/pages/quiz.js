@@ -136,7 +136,7 @@
       <div class="row"><span class="ic">${ic(ok ? (streak >= 3 ? "flame" : "check") : k === -1 ? "alarm-clock-off" : "x")}</span>
         <div><strong>${title}</strong><p>الإجابة الصحيحة: <b>${esc(q.opts[q.correct])}</b>${q.explain ? ` (${esc(q.explain)})` : ""}</p></div></div>
       <div class="acts"><button class="btn btn-primary" id="next">${i + 1 < qs.length ? "السؤال التالي" : "اكشف لقبي"}${ic("arrow-left")}</button>
-        ${f ? `<a class="btn btn-ghost" href="${App.factUrl(f.id)}" target="_blank">${ic("book-open")}اقرأ المعلومة</a>` : q.link ? `<a class="btn btn-ghost" href="${esc(q.link)}" target="_blank" rel="noopener">${ic("send")}المنشور في تليغرام</a>` : ""}</div>
+        ${f ? `<a class="btn btn-ghost" href="${App.factUrl(f.id)}" target="_blank" rel="noopener">${ic("book-open")}اقرأ المعلومة</a>` : q.link ? `<a class="btn btn-ghost" href="${esc(q.link)}" target="_blank" rel="noopener">${ic("send")}المنشور في تليغرام</a>` : ""}</div>
     </div>`;
     icons();
     const nx = $("#next");

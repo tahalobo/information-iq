@@ -1,5 +1,7 @@
 """Local dev server with caching disabled (so edits show up on reload).
 
+Local only: binds to 127.0.0.1, and the deploy job deletes .claude/ before publishing.
+
 Also accepts PUT uploads into assets/img/og/ only, so scripts/og-maker.html
 can save the share-preview images it draws in the browser.
 """
@@ -21,7 +23,9 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
     def do_PUT(self):
         m = re.fullmatch(r"/assets/img/og/([A-Za-z0-9_\-]+)\.jpg", self.path)
-        if not m or self.client_address[0] != "127.0.0.1":
+        # Host must be the loopback name itself: a web page that re-binds its own domain to 127.0.0.1 (DNS rebinding) is refused
+        host = (self.headers.get("Host") or "").rsplit(":", 1)[0]
+        if not m or self.client_address[0] != "127.0.0.1" or host not in ("127.0.0.1", "localhost"):
             self.send_error(403)
             return
         length = int(self.headers.get("Content-Length", 0))

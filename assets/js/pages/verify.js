@@ -342,7 +342,7 @@
     const k = KIND[s.kind] || KIND.web; const st = s.verdict ? RATE[s.verdict] : strength(s) === "confirm" ? ["success", "يروي الخبر نفسه"] : ["warn", "يتناول الموضوع فقط"];
     const nums = (s.ev.nums || []).length ? `<span class="vf-nums">${s.ev.nums.map((x) => `<em class="${x.ok ? "ok" : "no"}" title="${x.ok ? "الرقم مذكور في المصدر" : "الرقم غير مذكور في المصدر"}">${ic(x.ok ? "check" : "x")}${esc(x.n)}</em>`).join("")}</span>` : "";
     return `<li class="vf-src t-${st[0]}">
-      <div class="vf-src-head"><b>${String(i + 1).padStart(2, "0")}</b><div><a href="${esc(s.url)}" ${s.internal ? "" : 'target="_blank" rel="noopener"'}><strong dir="auto">${esc(s.name)}</strong></a>
+      <div class="vf-src-head"><b>${String(i + 1).padStart(2, "0")}</b><div><a href="${esc(s.internal ? s.url : App.safeUrl(s.url) || "#")}" ${s.internal ? "" : 'target="_blank" rel="noopener noreferrer"'}><strong dir="auto">${esc(s.name)}</strong></a>
         <small>${esc(s.site || "")}${s.internal ? "" : ` · <i class="ltr">${esc(hostOf(s.url))}</i>`}${s.date ? ` · ${esc(fmtDate ? fmtDate(s.date) : s.date)}` : ""}</small></div></div>
       <div class="vf-chips"><em class="vf-chip">${ic(k[0])}${k[1]}</em><em class="vf-chip c-${st[0]}">${st[1]}</em>${s.rating ? `<em class="vf-chip c-${st[0]}">التقييم: ${esc(clip(s.rating, 40))}</em>` : `<em class="vf-chip">تطابق ${Math.round(s.ev.score * 100)}%</em>`}${s.lang && s.lang !== "ar" ? `<em class="vf-chip">${s.lang === "en" ? "بالإنجليزية" : esc(s.lang)}</em>` : ""}${s.twinOf ? `<em class="vf-chip">المقابل لمقالة «${esc(s.twinOf)}»</em>` : ""}</div>
       ${s.claim ? `<p class="vf-claim"><span>الادعاء المدقَّق:</span> ${esc(clip(s.claim, 200))}</p>` : ""}
@@ -413,5 +413,5 @@
     $("#vf-report").scrollIntoView({ behavior: "smooth", block: "start" });
   }
   icons();
-  if (pre) run();
+  if (pre && App.fromOwnSite()) run();
 })();

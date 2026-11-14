@@ -4,6 +4,7 @@ main = "reverse-search.js"
 compatibility_date = "2026-11-01"
 workers_dev = true
 
-# بعد معرفة رابط الموقع المنشور، ضعه هنا حتى لا يستخدم العاملَ موقعٌ آخر (لأكثر من رابط افصل بفاصلة)
-# [vars]
-# ALLOWED_ORIGINS = "https://example.com"
+# إلزامي: أصل موقعك (بلا مسار). بلا هذه القيمة يرفض العامل كل الطلبات.
+# لأكثر من نطاق افصل بفاصلة، مثل: "https://tahalobo.github.io,https://example.com"
+[vars]
+ALLOWED_ORIGINS = "https://tahalobo.github.io"

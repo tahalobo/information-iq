@@ -13,3 +13,12 @@ scripts/.og-template.html
 dist/
 _fztest/
 *.zip
+
+# أسرار ومفاتيح: لا تدخل المستودع أبداً
+.env
+.env.*
+*.pem
+*.key
+*.p12
+.dev.vars
+worker/.wrangler/

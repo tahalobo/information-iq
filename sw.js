@@ -4,17 +4,23 @@
    - الصور والخطوط: من الذاكرة أولاً
    - المعلومات المحفوظة: تُخزَّن كاملة لحظة حفظها
    غيّر رقم VERSION عند أي تعديل كبير لتنظيف الذاكرة القديمة.
+
+   الأمان: لا نخزّن إلا ردوداً ناجحة من موقعنا نفسه (type "basic")، ومن خطوط Google و jsDelivr بالاسم الكامل للنطاق.
+   لا نخزّن ردوداً معتمة من أي نطاق آخر، ولكل ذاكرة حدّ أقصى، والصفحات تبقى «الشبكة أولاً» فلا تعلق نسخة قديمة.
    ========================================================== */
-const VERSION = "empire-v18";
+const VERSION = "empire-v19";
 const CORE = `${VERSION}-core`, PAGES = `${VERSION}-pages`, MEDIA = `${VERSION}-media`;
 const SAVED = "empire-saved"; // the reader's saved facts: survives version bumps
 const PRECACHE = [
   "./", "index.html", "offline.html", "facts.html", "fact.html", "manifest.webmanifest",
   "assets/css/style.css", "assets/js/vendor/lucide-subset.js", "assets/js/config.js", "assets/js/data.js", "assets/js/core.js", "assets/js/fx.js", "assets/js/gl.js", "assets/js/vendor/lenis-1.1.13.min.js",
-  "assets/js/static-index.js", "assets/js/telegram-data.js", "assets/js/branches-data.js", "branch.html", "assets/js/pages/branch.js", "assets/js/pages/home.js", "assets/js/pages/facts.js", "assets/js/pages/fact.js",
+  "assets/js/static-index.js", "assets/js/telegram-data.js", "assets/js/branches-data.js", "branch.html", "assets/js/pages/branch.js", "assets/js/pages/home.js", "assets/js/pages/facts.js", "assets/js/pages/fact.js", "assets/js/pages/offline.js",
   "assets/img/favicon.svg", "assets/img/icon-192.png", "assets/img/logo-128.webp", "assets/img/logo-256.webp"
 ];
-const MEDIA_MAX = 250;
+const MEDIA_MAX = 250, PAGES_MAX = 400;
+const CDN_HOSTS = new Set(["fonts.googleapis.com", "fonts.gstatic.com", "cdn.jsdelivr.net"]);
+// رد يصلح للتخزين: ناجح ومن أصل موقعنا مباشرة (لا تحويل إلى نطاق آخر ولا رد معتم)
+const sameOriginOk = (res) => !!res && res.ok && res.type === "basic";
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CORE).then((c) => Promise.all(PRECACHE.map((u) => c.add(u).catch(() => {})))).then(() => self.skipWaiting()));
@@ -32,7 +38,7 @@ async function trim(name, max) {
 async function networkFirst(req, cacheName, fallback) {
   try {
     const res = await fetch(req);
-    if (res && res.ok) { const c = await caches.open(cacheName); c.put(req, res.clone()); }
+    if (sameOriginOk(res)) { const c = await caches.open(cacheName); c.put(req, res.clone()).then(() => trim(cacheName, PAGES_MAX)).catch(() => {}); }
     return res;
   } catch {
     const hit = await caches.match(req) || await caches.match(req, { ignoreSearch: true });
@@ -54,7 +60,7 @@ async function cacheFirst(req, cacheName) {
   if (hit) return hit;
   try {
     const res = await fetch(req);
-    if (res && (res.ok || res.type === "opaque")) { const c = await caches.open(cacheName); c.put(req, res.clone()); trim(cacheName, MEDIA_MAX); }
+    if (sameOriginOk(res)) { const c = await caches.open(cacheName); c.put(req, res.clone()).then(() => trim(cacheName, MEDIA_MAX)).catch(() => {}); }
     return res;
   } catch { return Response.error(); }
 }
@@ -76,7 +82,7 @@ self.addEventListener("fetch", (e) => {
     return;
   }
   // fonts, icon library, smooth scroll, exif readers… from public CDNs
-  if (/(fonts\.googleapis\.com|fonts\.gstatic\.com|unpkg\.com|cdn\.jsdelivr\.net|cdnjs\.cloudflare\.com)$/.test(url.hostname)) {
+  if (url.protocol === "https:" && CDN_HOSTS.has(url.hostname)) {
     e.respondWith(staleWhileRevalidate(req, MEDIA));
   }
 });
@@ -85,6 +91,9 @@ self.addEventListener("fetch", (e) => {
 self.addEventListener("message", (e) => {
   const d = e.data || {};
   if (d.type !== "cache" || !Array.isArray(d.urls)) return;
-  e.waitUntil(caches.open(SAVED).then((c) => Promise.all(d.urls.filter((u) => new URL(u).origin === self.location.origin)
-    .map((u) => fetch(u).then((r) => r.ok && c.put(u, r)).catch(() => {})))));
+  // الرسالة تُقبل من صفحات موقعنا فقط، ولروابط موقعنا فقط، وبعدد محدود
+  if (!e.source || new URL(e.source.url).origin !== self.location.origin) return;
+  const same = (u) => { try { return typeof u === "string" && new URL(u).origin === self.location.origin; } catch { return false; } };
+  e.waitUntil(caches.open(SAVED).then((c) => Promise.all(d.urls.filter(same).slice(0, 20)
+    .map((u) => fetch(u).then((r) => sameOriginOk(r) && c.put(u, r)).catch(() => {})))));
 });

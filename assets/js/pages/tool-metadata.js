@@ -137,7 +137,7 @@
       <span class="badge badge-${st.cls}">${ic(st.icon)}${st.t}</span>
       <h3 class="mx-headline">${esc(A.headline)}</h3>
       <p class="muted mb-0">${esc(A.sub)}</p>
-      ${A.verify.length ? `<div class="stack mt-2" style="gap:8px">${A.verify.map((f) => `<div class="alert alert-${f.level}">${ic(f.icon)}<div><strong>${esc(f.title)}</strong><p>${f.text}</p></div></div>`).join("")}</div>` : ""}
+      ${A.verify.length ? `<div class="stack mt-2" style="gap:8px">${A.verify.map((f) => `<div class="alert alert-${f.level}">${ic(f.icon)}<div><strong>${esc(f.title)}</strong><p>${esc(f.text)}</p></div></div>`).join("")}</div>` : ""}
       <details class="mx-limits"><summary>${ic("scale")}كيف أقرأ هذه النتائج؟ (حدود الأداة)${ic("chevron-down")}</summary>
         <ul>
           <li><strong>غياب الميتاداتا لا يعني التزييف.</strong> فيسبوك وإنستغرام وإكس وواتساب وتليغرام تحذفها من كل صورة، حقيقية كانت أم مفبركة.</li>
