@@ -1,5 +1,226 @@
 {
  "posts": {
+  "15150": {
+   "hash": "0495f69b9c27",
+   "checked": "2026-11-14T01:57:11.710Z",
+   "queries": [
+    "حين كانت البيرة عملة يومية في سومر",
+    "سومر بلاد الرافدين عملة يومية",
+    "Sumer"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D9%85%D8%B1",
+     "name": "سومر",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "وقد برزت مُدُن كُبرى مثل أور وأوروك ولگش ونيپور بوصفها مراكز سياسيَّة ودينيَّة واقتصاديَّة مُستقلَّة، تنافست فيما بينها على النُفُوذ والصدارة، وأسهم هذا التنافُس في دفع عجلة التطور العمراني والإداري والثقافي…"
+    }
+   ]
+  },
+  "15151": {
+   "hash": "76518585c1b5",
+   "checked": "2026-11-14T01:56:48.301Z",
+   "queries": [
+    "ماذا لو تذكرت كل يوم من حياتك؟ Hyperthymesia",
+    "جيل برايس فرط الذاكرة ماذا تذكرت 2006",
+    "Hyperthymesia"
+   ],
+   "sources": [
+    {
+     "url": "https://www.disabled-world.com/disability/publications/journals/hyperthymesia.php",
+     "name": "Hyperthymesia: Living With a Memory That Won",
+     "site": "Disabled World",
+     "host": "disabled-world.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "How hyperthymesia, or highly superior autobiographical memory, works, why fewer than 100 people have it, and the emotional toll of never being able to forget"
+    },
+    {
+     "url": "https://www.healthline.com/health/hyperthymesia",
+     "name": "Hyperthymesia (HSAM): What Is It?",
+     "site": "Healthline",
+     "host": "healthline.com",
+     "lang": "en",
+     "kind": "science",
+     "match": 75,
+     "quote": "They have a condition called hyperthymesia syndrome. This is often referred to as highly superior autobiographical memory (HSAM)."
+    },
+    {
+     "url": "https://www.medicalnewstoday.com/articles/hyperthymesia",
+     "name": "Hyperthymesia: Definition, causes, and symptoms",
+     "site": "medicalnewstoday.com",
+     "host": "medicalnewstoday.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 75,
+     "quote": "Hyperthymesia, or highly superior autobiographical memory, is when a person can accurately remember most of the details of their life. Learn more about it here."
+    },
+    {
+     "url": "https://www.psychologs.com/hyperthymesia-the-gift-and-curse-of-perfect-memory/",
+     "name": "Hyperthymesia: The Gift and Curse of Perfect Memory",
+     "site": "Psychologs Magazine | Mental Health Magazine | Psychology Magazine | Self-Help Magazine",
+     "host": "psychologs.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 75,
+     "quote": "The cause of Hyperthymesia is unknown; some specialists believe it is genetic, while others assume it is molecular."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Hyperthymesia",
+     "name": "Hyperthymesia",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Hyperthymesia, also known as hyperthymestic syndrome or highly superior autobiographical memory (HSAM), is a condition that leads people to be able to remember an abnormally large number of their life…"
+    }
+   ]
+  },
+  "15153": {
+   "hash": "ed21ab8e8a34",
+   "checked": "2026-11-14T01:56:23.910Z",
+   "queries": [
+    "نوبل للآداب 2026 Anne Carson"
+   ],
+   "sources": [
+    {
+     "url": "https://www.okaz.com.sa/variety/na/2269915",
+     "name": "من هي آن كارسون.. الكندية التي حصدت نوبل للآداب 2026؟",
+     "site": "عكاظ",
+     "host": "okaz.com.sa",
+     "lang": "ar",
+     "kind": "news",
+     "match": 87,
+     "quote": "أعلنت الأكاديمية السويدية، اليوم الخميس 8 أكتوبر 2026، فوز الشاعرة والكاتبة الكندية آن كارسون بجائزة نوبل للآداب لعام 2026، لتتوج بذلك مسيرة أدبية استثنائية امتدت لعقود، تميزت بمزج الشعر والنثر والترجمة…"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A2%D9%86_%D9%83%D8%A7%D8%B1%D8%B3%D9%88%D9%86",
+     "name": "آن كارسون",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 68,
+     "quote": "آن باتريشيا كارسون (ولدت في 21 يونيو 1950) هي أكاديمية وكاتبة كندية، حازت جائزة نوبل في الأدب لعام 2026، تقديرًا «لأعمالها الجريئة والمبتكرة التي ابتكرت، في حوار مرح مع التراث الكلاسيكي، أشكالًا جديدة للأدب…"
+    },
+    {
+     "url": "https://www.annahar.com/articles/355227/%D8%A7%D9%84%D9%83%D9%86%D8%AF%D9%8A%D8%A9-%D9%86-%D9%83%D8%A7%D8%B1%D8%B3%D9%88%D9%86-%D8%AA%D9%81%D9%88%D8%B2-%D8%A8%D8%AC%D8%A7%D8%A6%D8%B2%D8%A9-%D9%86%D9%88%D8%A8%D9%84-%D9%84%D9%84%D8%A3%D8%AF%D8%A8-2026",
+     "name": "آن كارسون تفوز بجائزة نوبل للأدب 2026... ماذا نعرف عنها؟",
+     "site": "annahar.com",
+     "host": "annahar.com",
+     "lang": "ar",
+     "kind": "news",
+     "match": 74,
+     "quote": "منحت الأكاديمية السويدية جائزة نوبل للآداب لعام 2026 للشاعرة والكاتبة الكندية آن كارسون (Anne Carson)، تقديراً لمسيرتها الأدبية التي كسرت الحدود بين الشعر و الرواية و الفلسفة والترجمة."
+    },
+    {
+     "url": "https://al-ain.com/article/nobel-prize-literature-2026-winner",
+     "name": "الفائز بـ جائزة نوبل الآداب 2026.. الشاعرة والكاتبة الكندية آن كارسون",
+     "site": "العين الإخبارية",
+     "host": "al-ain.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 79,
+     "quote": "أعلنت الأكاديمية السويدية منح جائزة نوبل للآداب لعام 2026 إلى الشاعرة والكاتبة الكندية آن كارسون، تقديرا لمسيرتها الأدبية التي وصفتها اللجنة بأنها أعمال جريئة ومبتكرة أعادت من خلالها تشكيل العلاقة بين الأدب…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Anne_Carson",
+     "name": "Anne Carson",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 64,
+     "quote": "Anne Patricia Carson (born June 21, 1950) is a Canadian academic and author who was awarded the 2026 Nobel Prize in Literature \"for her bold and inventive oeuvre that, in playful dialogue with the classical…"
+    }
+   ]
+  },
+  "15154": {
+   "hash": "b37884f5c857",
+   "checked": "2026-11-14T01:56:01.508Z",
+   "queries": [
+    "سفينة ثيسيوس: أنت لست انت",
+    "سفينة ثيسيوس تخيل تغير"
+   ],
+   "sources": [
+    {
+     "url": "https://khalieah.com/paradox-theseus-ship/",
+     "name": "مفارقة سفينة \"ثيسيوس\": إذا استبدلت كل أجزائك.. هل تبقى \"أنت\" أم تصبح شخصاً آخر؟",
+     "site": "خلية",
+     "host": "khalieah.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 62,
+     "quote": "ربما تظن أن مفارقة سفينة ثيسيوس بعيدة عن حياتك العملية."
+    }
+   ]
+  },
+  "15156": {
+   "hash": "95e3618a2874",
+   "checked": "2026-11-14T01:55:37.035Z",
+   "queries": [
+    "نوبل الكيمياء 2026",
+    "كينسو سواي التخليق العضوي نوبل الكيمياء 2026"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%83%D9%8A%D9%86%D8%B3%D9%88_%D8%B3%D9%88%D8%A7%D9%8A",
+     "name": "كينسو سواي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 77,
+     "quote": "كينسو سواي (硤合 憲三، Soai Kensō، born 3 May 1950) هو كيميائي عضوي ياباني، وأستاذ فخري في قسم الكيمياء التطبيقية بجامعة طوكيو للعلوم."
+    },
+    {
+     "url": "https://al-ain.com/article/henri-kagan-kenso-soai-nobel-chemistry",
+     "name": "لماذا ذهبت نوبل الكيمياء 2026 إلى هنري كاغان وكينسو سواي؟",
+     "site": "العين الإخبارية",
+     "host": "al-ain.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 88,
+     "quote": "لماذا ذهبت نوبل الكيمياء 2026 إلى هنري كاغان وكينسو سواي؟"
+    },
+    {
+     "url": "https://www.aljarida.com/article/146734",
+     "name": "نوبل الكيمياء 2026 للفرنسي هنري كاغان والياباني كينسو سواي",
+     "site": "جريدة الجريدة الكويتية",
+     "host": "aljarida.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 85,
+     "quote": "أعلنت الأكاديمية الملكية السويدية للعلوم اليوم الأربعاء منح (جائزة نوبل) في الكيمياء لعام 2026 للعالم الفرنسي هنري بي كاغان والعالم الياباني كينسو سواي تقديرا لاكتشافاتهما في مجال التأثيرات غير الخطية والتحفيز…"
+    },
+    {
+     "url": "https://www.aljazeera.net/science/2026/10/7/%D9%86%D9%88%D8%A8%D9%84-%D9%84%D9%84%D9%83%D9%8A%D9%85%D9%8A%D8%A7%D8%A1-2026-%D8%AA%D8%B0%D9%87%D8%A8-%D8%A5%D9%84%D9%89-%D9%81%D8%B1%D9%86%D8%B3%D9%8A-%D9%88%D9%8A%D8%A7%D8%A8%D8%A7%D9%86%D9%8A",
+     "name": "نوبل للكيمياء لعام 2026 تذهب إلى فرنسي وياباني جعلا الأدوية \"أنقى\"",
+     "site": "الجزيرة نت",
+     "host": "aljazeera.net",
+     "lang": "ar",
+     "kind": "news",
+     "match": 78,
+     "quote": "أعلنت الأكاديمية الملكية السويدية للعلوم منح جائزة نوبل في الكيمياء لعام 2026 للعالم الفرنسي هنري بي كاغان من جامعة باريس-سود، والعالم الياباني كينسو سواي من جامعة طوكيو للعلوم، \"لاكتشاف التأثيرات غير الخطية…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Kens%C5%8D_Soai",
+     "name": "Kensō Soai",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 72,
+     "quote": "Kensō Soai (硤合 憲三, Soai Kensō; born 3 May 1950) is a Japanese organic chemist, Professor Emeritus in the Department of Applied Chemistry at Tokyo University of Science."
+    }
+   ]
+  },
   "15157": {
    "hash": "b5829fa92fbb",
    "checked": "2026-11-13T21:46:37.447Z",
@@ -2115,5 +2336,5 @@
    ]
   }
  },
- "updated": "2026-11-13T21:46:37.452Z"
+ "updated": "2026-11-14T01:57:11.712Z"
 }
