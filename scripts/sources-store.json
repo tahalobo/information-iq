@@ -1,5 +1,116 @@
 {
  "posts": {
+  "15123": {
+   "hash": "2333272ddffd",
+   "checked": "2026-11-14T23:46:55.137Z",
+   "queries": [
+    "مع بداية موسم الشتاء وعودة الأمطار في العراق",
+    "مطر حمضي الأمطار الحمضية الشتاء التلوث",
+    "Acid rain"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B7%D8%B1_%D8%AD%D9%85%D8%B6%D9%8A",
+     "name": "مطر حمضي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 64,
+     "quote": "تتكون الأمطار الحمضية من تفاعل الغازات المحتوية على الكبريت."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Acid_rain",
+     "name": "Acid rain",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Acid rain is rain or any other form of precipitation that is unusually acidic, meaning that it has elevated levels of hydrogen ions (low pH). Most water, including drinking water, has a neutral pH that exists…"
+    }
+   ]
+  },
+  "15124": {
+   "hash": "6d59523f8455",
+   "checked": "2026-11-14T23:46:49.762Z",
+   "queries": [
+    "وحدة اللغات والتنوع اللغوي: كيف تتشابه اللغات رغم اختلافها؟ Cavus",
+    "لغة أم وحدة اللغات"
+   ],
+   "sources": []
+  },
+  "15126": {
+   "hash": "6d2b105b83a4",
+   "checked": "2026-11-14T23:46:43.388Z",
+   "queries": [
+    "السماء المضيئة! Aurora Borealis",
+    "الشفق القطبي سماء الليل السماء لوفوتين"
+   ],
+   "sources": []
+  },
+  "15128": {
+   "hash": "f55e6ab889ba",
+   "checked": "2026-11-14T23:46:36.779Z",
+   "queries": [
+    "هل تعلم كيف انتهى عصر العبودية في العراق؟",
+    "عبودية العبودية في العراق تعلم الرق 1924",
+    "Slavery"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B9%D8%A8%D9%88%D8%AF%D9%8A%D8%A9",
+     "name": "عبودية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 59,
+     "quote": "خلال القرن السادس عشر، بدأت أوروبا تتفوق على العالم العربي في حركة التصدير، علي حركة العبودية من إفريقيا إلى الأمريكتين استورد الهولنديون العبيد من آسيا إلى مستعمرتهم في جنوب إفريقيا في 1807 بريطانيا، امتدت…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Slavery",
+     "name": "Slavery",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 55,
+     "quote": "Slavery is the ownership of a person as property, especially in regard to their labour. It is an economic phenomenon and its history resides in economic history. Slavery typically involves compulsory work,…"
+    }
+   ]
+  },
+  "15130": {
+   "hash": "7923edd82026",
+   "checked": "2026-11-14T23:46:30.462Z",
+   "queries": [
+    "لماذا ليس هناك الى الان مترو في العراق؟",
+    "مترو بغداد الحرب العراقية الإيرانية تعلم الإنشاء 1987",
+    "Baghdad Metro"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%AA%D8%B1%D9%88_%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF",
+     "name": "مترو بغداد",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "أعلن صدام حسين عن مشروع مترو الأنفاق عام 1983 لتخفيف الازدحام المروري في شوارع بغداد، لكن لم يكتمل المشروع بسبب الحرب العراقية الإيرانية."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Baghdad_Metro",
+     "name": "Baghdad Metro",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 53,
+     "quote": "The Baghdad Metro (Arabic: مترو بغداد), also known as Baghdad Elevated Train (BET) is a planned rapid transit public railway system consisting of an underground metro as well as an elevated railway in the…"
+    }
+   ]
+  },
   "15133": {
    "hash": "9313d77f03b1",
    "checked": "2026-11-14T20:02:12.360Z",
@@ -2714,5 +2825,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-14T20:02:12.362Z"
+ "updated": "2026-11-14T23:46:55.141Z"
 }
