@@ -99,11 +99,18 @@
     const walk = (node) => {
       Array.from(node.childNodes).forEach((n) => {
         if (n.nodeType === 3) {
-          const parts = n.textContent.split(/(\s+)/); const frag = document.createDocumentFragment();
+          const frag = document.createDocumentFragment();
+          // consecutive Latin words stay in ONE piece: split apart, each becomes its own box and the right-to-left
+          // line puts them in reverse order ("Neil Druckmann" would read "Druckmann Neil")
+          const parts = []; const isLat = (p) => /[A-Za-z0-9]/.test(p) && !/[֐-ࣿיִ-ﻼ]/.test(p);
+          n.textContent.split(/(\s+)/).forEach((p) => {
+            const a = parts[parts.length - 2], ws = parts[parts.length - 1];
+            if (p && isLat(p) && a && isLat(a) && /^\s+$/.test(ws)) { parts.pop(); parts[parts.length - 1] = a + ws + p; } else parts.push(p);
+          });
           parts.forEach((p) => {
             if (!p) return;
             if (/^\s+$/.test(p)) { frag.appendChild(document.createTextNode(p)); return; }
-            const w = document.createElement("span"); w.className = "w";
+            const w = document.createElement("span"); w.className = /\s/.test(p) ? "w run" : "w";
             const wi = document.createElement("span"); wi.className = "wi"; wi.style.setProperty("--i", i++); wi.textContent = p;
             w.appendChild(wi); frag.appendChild(w);
           });

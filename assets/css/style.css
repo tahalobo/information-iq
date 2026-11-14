@@ -324,6 +324,7 @@ body.drawer-open .drawer-side { opacity: 1; transform: none; }
 /* Split words */
 .split .w { display: inline-block; perspective: 600px; }
 .split .wi { display: inline-block; transform-origin: 50% 100%; }
+.split .w.run, .split .w.run .wi { display: inline; }  /* a multi-word Latin name: stays inline so it wraps normally and keeps its word order */
 .fx-on .split:not(.in) .wi { opacity: 0; transform: translateY(.6em) rotateX(-75deg); filter: blur(6px); }
 .fx-on .split .wi { transition: opacity .9s var(--ease), transform 1.2s var(--ease), filter .9s var(--ease); transition-delay: calc(var(--i) * 70ms + 80ms); }
 

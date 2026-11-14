@@ -61,9 +61,19 @@ export function headline(t) {
   let title = lines[0], body = lines.slice(1).join("\n");
   if (title.length > 150) {
     // a long opening paragraph: its first sentence (or clause) is the headline, the rest is the description
-    const m = title.match(/^(.{20,150}?[.!؟?…]["”»]?)(\s+|$)/) || title.match(/^(.{30,130}?)[،:]\s/);
+    const full = title;
+    const m = title.match(/^(.{20,150}?[.!؟?…]["”»]?)(\s+|$)/);
     if (m) { body = [title.slice(m[0].length).trim(), body].filter(Boolean).join("\n"); title = m[1]; }
-    else { body = [title, body].filter(Boolean).join("\n"); title = clip(title, 110); }
+    else {
+      // no sentence end in reach: cut at a clause boundary. A colon inside a Latin name ("Intergalactic: The Heretic Prophet")
+      // or a time/ratio is not a boundary, so it must have Arabic (non-Latin) text on both sides.
+      const cuts = [...title.matchAll(/،\s|(?<![A-Za-z0-9]):\s(?![A-Za-z0-9])/g)].map((x) => x.index);
+      // the longest clause that still fits a headline reads most complete (an early comma often only closes a name: "X، مؤدي صوت Y، ...")
+      const at = cuts.filter((i) => i >= 60 && i <= 120).pop() ?? cuts.find((i) => i >= 45 && i <= 130) ?? cuts.find((i) => i >= 30 && i <= 130);
+      title = at ? title.slice(0, at) : clip(title, 110);
+      // the headline is only part of a sentence here, so the description keeps the whole paragraph (never starts mid-sentence)
+      body = [full, body].filter(Boolean).join("\n");
+    }
   }
   title = title.replace(/[\s\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}️‍!]+$/u, (m) => (m.includes("!") ? "!" : "")).replace(/[.:،\s]+$/u, "").trim();
   // a headline wrapped in quotes loses them; a quote opened inside it gets closed
