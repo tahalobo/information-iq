@@ -1,0 +1,1 @@
+window.TG_POST={"id":15280,"type":"literature","cat":"culture","date":"2026-11-14T18:06:45+00:00","title":"امبراطورية المعلومات العراقية pinned a video","html":"<p>امبراطورية المعلومات العراقية pinned a video</p>","images":[],"video":null,"poll":null,"views":0,"reactions":0,"forwardedFrom":null,"links":[],"url":"https://t.me/informationss_iq/15280","sources":[]};

@@ -1,5 +1,125 @@
 {
  "posts": {
+  "15133": {
+   "hash": "9313d77f03b1",
+   "checked": "2026-11-14T20:02:12.360Z",
+   "queries": [
+    "هل الزمن يسير بنفس السرعة في كل مكان؟",
+    "سرعة الضوء الأقمار الصناعية يسير السرعة",
+    "Speed of light"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B3%D8%B1%D8%B9%D8%A9_%D8%A7%D9%84%D8%B6%D9%88%D8%A1",
+     "name": "سرعة الضوء",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 65,
+     "quote": "كان أولي رومر أول من برهن أن الضوء يسير بسرعة ثابتة، وذلك في عام 1676."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Speed_of_light",
+     "name": "Speed of light",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 61,
+     "quote": "The speed of light is the speed of electromagnetic waves. Light travels at slower speed inside materials like glass or water; its highest speed is in a vacuum. The speed of light in vacuum is a universal…"
+    }
+   ]
+  },
+  "15134": {
+   "hash": "c269d4ff6e0a",
+   "checked": "2026-11-14T20:01:59.271Z",
+   "queries": [
+    "لماذا لا نرى الجانب الآخر من القمر؟",
+    "الجانب الآخر من القمر ضوء الشمس ونحن نفسه"
+   ],
+   "sources": [
+    {
+     "url": "https://www.aljazeera.net/science/2026/10/18/%D8%A7%D9%84%D9%88%D8%AC%D9%87-%D8%A7%D9%84%D8%A8%D8%B9%D9%8A%D8%AF-%D9%84%D9%84%D9%82%D9%85%D8%B1-%D9%85%D9%86-%D8%A3%D8%B3%D9%85%D8%A7%D8%A1-%D8%A7%D9%84%D8%B9%D9%84%D9%85%D8%A7%D8%A1",
+     "name": "القمر يكشف وجهه الآخر.. والصين تبحث في أعمق ندوبه",
+     "site": "الجزيرة نت",
+     "host": "aljazeera.net",
+     "lang": "ar",
+     "kind": "news",
+     "match": 62,
+     "quote": "وتُعرف هذه الحالة بالتقييد المدي (Tidal Locking)، وهي التي تجعل الجانب نفسه مواجها لنا باستمرار."
+    },
+    {
+     "url": "https://www.albayan.ae/technology/science-technology/space/1560227",
+     "name": "لغز الجانب المظلم من القمر.. مفاجأة تقلب المفاهيم",
+     "site": "البيان",
+     "host": "albayan.ae",
+     "lang": "ar",
+     "kind": "news",
+     "match": 53,
+     "quote": "وتستغرق دورته حول محوره نحو شهر، وهي المدة نفسها تقريبًا التي يستغرقها لإكمال دورة حول الأرض، ولذلك يظل الجانب ذاته مواجهًا لنا باستمرار."
+    }
+   ]
+  },
+  "15135": {
+   "hash": "2265fad20c8d",
+   "checked": "2026-11-14T20:01:41.196Z",
+   "queries": [
+    "اليوم العالمي للمعلمين"
+   ],
+   "sources": [
+    {
+     "url": "https://www.marefa.org/%D8%A7%D9%84%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A_%D9%84%D9%84%D9%85%D8%B9%D9%84%D9%85%D9%8A%D9%86",
+     "name": "اليوم العالمي للمعلمين",
+     "site": "المعرفة",
+     "host": "marefa.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "يوم المعلم العالمي يحتفل به سنويًا في 5 أكتوبر من كل عام، وذلك منذ 1994 ، للإشادة بدور المعلمين حول العالم."
+    },
+    {
+     "url": "https://www.unesco.org/ar/days/teachers",
+     "name": "اليوم العالمي للمعلمين",
+     "site": "unesco.org",
+     "host": "unesco.org",
+     "lang": "ar",
+     "kind": "official",
+     "match": 58,
+     "quote": "يُنظَّم اليوم العالمي للمعلمين سنوياً بتاريخ 5 تشرين الأول/أكتوبر احتفاءً بجميع المعلمين في العالم."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%8A%D9%88%D9%85_%D8%A7%D9%84%D9%85%D8%B9%D9%84%D9%85_%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A",
+     "name": "يوم المعلم العالمي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "للاحتفال باليوم العالمي للمعلمين، تنظم اليونسكو ومنظمة التعليم الدولية (EI) حملة كل عام للمساعدة في إعطاء العالم فهمًا أفضل للمعلمين والدور الذي يلعبونه في تنمية الطلاب والمجتمع."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/World_Teachers%27_Day",
+     "name": "World Teachers' Day",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "World Teachers' Day is an international day held annually on October 5 to celebrate the work of teachers. Established in 1994, it commemorates the signing of the 1966 \"ILO/UNESCO Recommendation concerning the…"
+    },
+    {
+     "url": "https://www.alweeam.com.sa/1297375/2026/world-teachers-day-2026-saudi-arabia/",
+     "name": "اليوم العالمي للمعلم 2026.. موعده وشعار هذا العام ولماذا 5 أكتوبر؟",
+     "site": "صحيفة الوئام",
+     "host": "alweeam.com.sa",
+     "lang": "ar",
+     "kind": "web",
+     "match": 57,
+     "quote": "5 أكتوبر اليوم العالمي للمعلمين تاريخ يوم المعلم شعار يوم المعلم 2026 يوم المعلم"
+    }
+   ]
+  },
   "15136": {
    "hash": "9df7fde01923",
    "checked": "2026-11-14T15:16:19.855Z",
@@ -2552,7 +2672,47 @@
      "quote": "إسرائيل تكشف وثائق حول تدميرها مفاعل تموز العراقي النووي"
     }
    ]
+  },
+  "15278": {
+   "hash": "3ba60b0ce625",
+   "checked": "2026-11-14T20:01:27.588Z",
+   "queries": [
+    "مياه بلون الصدأ وسط جبال القوقاز",
+    "جبال القوقاز الكبرى جبال القوقاز مياه ينابيع",
+    "Greater Caucasus"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A8%D8%A7%D9%84_%D8%A7%D9%84%D9%82%D9%88%D9%82%D8%A7%D8%B2_%D8%A7%D9%84%D9%83%D8%A8%D8%B1%D9%89",
+     "name": "جبال القوقاز الكبرى",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "تمتد الحدود بين روسيا مع جورجيا وأذربيجان على طول معظم جبال القوقاز."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Greater_Caucasus",
+     "name": "Greater Caucasus",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 53,
+     "quote": "The Greater Caucasus is the major mountain range of the Caucasus Mountains. It stretches for about 1,200 kilometres (750 mi) from west-northwest to east-southeast, from the Taman Peninsula of the Black Sea to…"
+    }
+   ]
+  },
+  "15279": {
+   "hash": "074d55d8f784",
+   "checked": "2026-11-14T20:01:01.149Z",
+   "queries": [
+    "من قنوات… إلى منصة إخبارية عراقية متكاملة",
+    "كلمات المرور قنوات منصة"
+   ],
+   "sources": []
   }
  },
- "updated": "2026-11-14T15:16:19.858Z"
+ "updated": "2026-11-14T20:02:12.362Z"
 }
