@@ -130,11 +130,14 @@ for (const it of items) {
 const BRAND = ` | ${SITE.name}`;
 const cleanTitle = (t) => oneLine(t).replace(/^[\s\-–—:·•|]+|[\s\-–—:·•|]+$/g, "");
 function seoTitle(it) {
-  let t = cleanTitle(it.title);
-  if (t.length < 30) {
-    // عنوان قصير لا يقول شيئاً لمحرك البحث: نكمله بأول جملة من النص
-    const rest = oneLine(it.plain.startsWith(t) ? it.plain.slice(t.length) : it.plain).replace(/^[\s:،.\-–—]+/, "");
-    const add = clip(rest.split(/(?<=[.؟!])\s/)[0] || rest, Math.max(24, 62 - t.length), 12).replace(/[.…،]+$/, "");
+  const raw = cleanTitle(it.title);
+  // الإيموجي في عنوان نتيجة البحث يُحذف أو يشوّهه: نزيله من العنوان فقط (يبقى في نص الصفحة)
+  const noSym = (x) => cleanTitle(x.replace(/[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}\u{FE0F}\u{200D}\u{2190}-\u{21FF}\u{25A0}-\u{27BF}\u{2B00}-\u{2BFF}]/gu, " "));
+  let t = noSym(raw) || raw;
+  if (t.length < 42) {
+    // عنوان قصير لا يقول الخبر لمحرك البحث (مثل اسم المتحدث فقط): نكمله بأول جملة من النص
+    const rest = oneLine(it.plain.startsWith(raw) ? it.plain.slice(raw.length) : it.plain.startsWith(t) ? it.plain.slice(t.length) : it.plain).replace(/^[\s:،.\-–—"”»]+/, "");
+    const add = clip(noSym(rest.split(/(?<=[.؟!])\s/)[0] || rest), Math.max(30, 84 - t.length), 12).replace(/[.،\s]+$/u, "");
     if (add && add.length > 8) t = `${t.replace(/[.:؟!،]+$/, "")}: ${add}`;
   }
   if (t.length > 90) t = clip(t, 90, 50);
@@ -420,7 +423,7 @@ function postPage(it) {
   };
   if (topics.length) article.keywords = topics.map((h) => h.name).join("، ");
   if (cites.length) article.citation = cites;
-  const seo = seoTags({ title: it.fullTitle, ogTitle: cleanTitle(it.title), desc: it.seoDesc, path: p, image: shareImg, imageAlt: cleanTitle(it.title), ogType: "article",
+  const seo = seoTags({ title: it.fullTitle, ogTitle: it.seoTitle, desc: it.seoDesc, path: p, image: shareImg, imageAlt: cleanTitle(it.title), ogType: "article",
     article: { published: iso(it.date), modified: it.modified, section: it.c.name, tags: topics.map((h) => h.name) }, ld: [article, crumbsLd(crumbs)] });
   const figure = images.length ? `<figure class="gallery${images.length === 1 ? " single" : ""}">${images.map((m, i) => `<img src="${esc(m.src)}" alt="${esc(cleanTitle(it.title))}${images.length > 1 ? ` - صورة ${i + 1}` : ""}"${m.width ? ` width="${m.width}" height="${m.height}"` : ""} loading="${i ? "lazy" : "eager"}"${i ? "" : ' fetchpriority="high"'} decoding="async" data-err="remove">`).join("")}</figure>` : "";
   const body = `<main>
