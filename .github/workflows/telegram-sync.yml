@@ -89,7 +89,7 @@ jobs:
 
       - name: Fingerprint archive images (reverse search)
         run: |
-          python3 -m pip install --quiet "pillow==11.0.0"
+          python3 -m pip install --quiet --only-binary=:all: "pillow==12.3.0"
           python3 scripts/build-image-index.py
 
       - name: Build quiz questions
