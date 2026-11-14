@@ -1,5 +1,66 @@
 {
  "posts": {
+  "15136": {
+   "hash": "9df7fde01923",
+   "checked": "2026-11-14T15:16:19.855Z",
+   "queries": [
+    "لا عجب أن هذه السمكة تُعرف باسم \"سمكة السيف\" (cutlassfish)! cutlassfish",
+    "سمكة السيف السمكة تشبه",
+    "Cutlassfish cutlassfish"
+   ],
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/Cutlassfish",
+     "name": "Cutlassfish",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "The cutlassfishes are about 45 species of predatory ray-finned fish in the family Trichiuridae of the order Scombriformes found in seas throughout the world. Fish of this family are long, slender, and…"
+    }
+   ]
+  },
+  "15138": {
+   "hash": "864d4fb72ece",
+   "checked": "2026-11-14T15:16:13.070Z",
+   "queries": [
+    "كيف تحولت كنيسة بمساحة 8 أمتار إلى واحدة من أجمل كنائس العالم؟ Asamkirche",
+    "كنيسة القديس يوحنا كنيسة القديس أمتار ميونيخ 1733"
+   ],
+   "sources": []
+  },
+  "15141": {
+   "hash": "0689b0efb5f3",
+   "checked": "2026-11-14T15:16:02.666Z",
+   "queries": [
+    "المانيين و اخر امريكي تقاسمو جائزة نوبل للطب عن اكتشافاتهم المتعلقة بالقنوات Optogenetics",
+    "جائزة نوبل في الطب أو علم وظائف الأعضاء جائزة نوبل للطب اكتشافاتهم البصريات 2026",
+    "Nobel Prize in Physiology or Medicine Optogenetics"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A7%D8%A6%D8%B2%D8%A9_%D9%86%D9%88%D8%A8%D9%84_%D9%81%D9%8A_%D8%A7%D9%84%D8%B7%D8%A8_%D8%A3%D9%88_%D8%B9%D9%84%D9%85_%D9%88%D8%B8%D8%A7%D8%A6%D9%81_%D8%A7%D9%84%D8%A3%D8%B9%D8%B6%D8%A7%D8%A1",
+     "name": "جائزة نوبل في الطب أو علم وظائف الأعضاء",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "كان آخر الفائزين بجائزة نوبل في علم وظائف الأعضاء الكلاسيكي جون إيكلس، وآلن هودجكين، وأندرو هكسلي، وذلك في عام 1963 لاكتشافاتهم المتعلقة بـ«الأحداث الإلكترونية الوحدوية في الجملة العصبية المركزية والمحيطية»."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Optogenetics",
+     "name": "Optogenetics",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Optogenetics is a biological technique used to characterize and manipulate the activity of neurons or other cell types with light. This is achieved by expression of light-sensitive ion channels, pumps or…"
+    }
+   ]
+  },
   "15142": {
    "hash": "8986a5454930",
    "checked": "2026-11-14T08:23:42.021Z",
@@ -2422,7 +2483,76 @@
      "quote": "Aristophanes of Byzantium (Ancient Greek: Ἀριστοφάνης ὁ Βυζάντιος Aristophánēs ho Buzántios; Byzantium c. 257 BC – Alexandria c. 185–180 BC), not to be confused with Aristophanes of Athens, was a Hellenistic…"
     }
    ]
+  },
+  "15276": {
+   "hash": "d9e6524e4cd4",
+   "checked": "2026-11-14T15:15:46.164Z",
+   "queries": [
+    "70",
+    "متابع عائلة سبعون والمعلومة والثقافة"
+   ],
+   "sources": []
+  },
+  "15277": {
+   "hash": "9a84c0e7c6a5",
+   "checked": "2026-11-14T15:15:26.769Z",
+   "queries": [
+    "مفاعل تموز... أول منشآت النووي العراقي Osirak",
+    "مفاعل تموز مفاعل نووي منشآت النووي 1981"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D9%81%D8%A7%D8%B9%D9%84_%D8%AA%D9%85%D9%88%D8%B2",
+     "name": "مفاعل تموز",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 90,
+     "quote": "كان البرنامج النووي العراقي خاضعًا لضمانات الوكالة الدولية للطاقة الذرية، وقد ارتبط مشروع مفاعلي تموز منذ مرحلة التعاقد مع فرنسا بإجراءات تتعلق بالاستخدام السلمي للمواد والمنشآت النووية."
+    },
+    {
+     "url": "https://www.aljazeera.net/encyclopedia/2016/12/14/%D8%B9%D9%85%D9%84%D9%8A%D8%A9-%D8%A3%D9%88%D8%A8%D8%B1%D8%A7-%D8%BA%D8%A7%D8%B1%D8%A9-%D8%A5%D8%B3%D8%B1%D8%A7%D8%A6%D9%8A%D9%84%D9%8A%D8%A9-%D8%AF%D9%85%D8%B1%D8%AA-%D9%85%D9%81%D8%A7%D8%B9%D9%84",
+     "name": "مفاعل تموز العراقي أول منشأة نووية تتعرض للقصف في العالم",
+     "site": "الجزيرة نت",
+     "host": "aljazeera.net",
+     "lang": "ar",
+     "kind": "news",
+     "match": 92,
+     "quote": "مفاعل تموز -ويسمى أيضا مفاعل أوزيراك أو مشروع 17 تموز- هو مفاعل نووي عراقي بني بالتعاون مع فرنسا في منطقة التويثة قرب بغداد، واستهدفته عملية استخبارية إسرائيلية بقصف جوي يوم 7 يونيو/حزيران 1981، قبل يوم واحد…"
+    },
+    {
+     "url": "https://www.marefa.org/%D9%85%D9%81%D8%A7%D8%B9%D9%84_%D8%A7%D9%88%D8%B3%D9%8A%D8%B1%D8%A7%D9%83",
+     "name": "مفاعل اوسيراك",
+     "site": "المعرفة",
+     "host": "marefa.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 79,
+     "quote": "وتناولت بعض وسائل الإعلام عن دور إيران في تسهيل الهجوم الإسرائيلي على المفاعل النووية العراقي تموز ذ من خلال تزويد إسرائيل بصور وخرائط عن المفاعل."
+    },
+    {
+     "url": "https://www.alaraby.com/news/%D9%85%D9%81%D8%A7%D8%B9%D9%84-%D8%AA%D9%85%D9%88%D8%B2-%D8%A7%D8%B3%D8%AA%D9%87%D8%AF%D9%81-%D8%B9%D8%A7%D9%85-1981-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82-%D9%8A%D9%88%D8%A7%D8%B5%D9%84-%D8%AC%D9%87%D9%88%D8%AF%D9%87-%D9%84%D8%A7%D8%AD%D8%AA%D9%88%D8%A7%D8%A1-%D8%A7%D9%84%D8%AA%D9%84%D9%88%D8%AB-%D8%A7%D9%84%D8%A5%D8%B4%D8%B9%D8%A7%D8%B9%D9%8A",
+     "name": "مفاعل تموز استُهدف عام 1981.. العراق يواصل جهوده لاحتواء التلوث الإشعاعي",
+     "site": "التلفزيون العربي",
+     "host": "alaraby.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 58,
+     "quote": "لكنّ إسرائيل استغلّت الحرب الإيرانية العراقية ، للقضاء على طموح العراق النووي، وشنّت في 7 يونيو/ حزيران 1981 عملية أُطلق عليها اسم \"عملية أوبرا\" أو \"عملية بابل\"، حيث قصفت مقاتلات إسرائيلية مفاعل \"تموز\" العراقي…"
+    },
+    {
+     "url": "https://www.trtarabi.com/article/5841335",
+     "name": "بعد 40 عاماً.. إسرائيل تكشف وثائق حول تدميرها مفاعل تموز العراقي النووي",
+     "site": "trtarabi.com",
+     "host": "trtarabi.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 58,
+     "quote": "إسرائيل تكشف وثائق حول تدميرها مفاعل تموز العراقي النووي"
+    }
+   ]
   }
  },
- "updated": "2026-11-14T08:23:42.023Z"
+ "updated": "2026-11-14T15:16:19.858Z"
 }
