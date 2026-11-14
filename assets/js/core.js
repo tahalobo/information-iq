@@ -45,6 +45,8 @@
   const nf = new Intl.NumberFormat("ar-IQ-u-nu-latn");
   const fmtNum = (n) => nf.format(n);
   const fmtCompact = (n) => new Intl.NumberFormat("ar-u-nu-latn", { notation: "compact", maximumFractionDigits: 1 }).format(n);
+  // عدد المشتركين بصيغة 182K (بلا كسور) ليُقرأ كما في تطبيقات التواصل
+  const fmtK = (n) => (n >= 1e6 ? (Math.floor(n / 1e5) / 10 + "M") : n >= 1e3 ? Math.floor(n / 1e3) + "K" : String(n));
   const fmtDate = (iso) => {
     try { return new Intl.DateTimeFormat("ar-IQ-u-nu-latn", { year: "numeric", month: "long", day: "numeric" }).format(new Date(iso + "T12:00:00")); }
     catch { return iso; }
@@ -315,7 +317,7 @@
           <div>
             <span class="kicker">كل ما هو حقيقي ومفيد</span>
             <h2 data-split>انضم إلى <span class="gold-text">الإمبراطورية</span></h2>
-            <p>تابعنا لتصلك المعلومة الموثّقة أولاً بأول، وشاركنا اقتراحاتك وتصحيحاتك. أكثر من ${fmtCompact(S.stats.followers)} شخص سبقوك.</p>
+            <p>تابعنا لتصلك المعلومة الموثّقة أولاً بأول، وشاركنا اقتراحاتك وتصحيحاتك. أكثر من ${fmtK(S.stats.followers)} شخص سبقوك.</p>
             <div class="btn-row">${big.map(([i, h, l], k) => `<a class="btn ${k === 0 ? "btn-primary" : "btn-ghost"} btn-lg" href="${h}" target="_blank" rel="noopener">${ic(i)}${l}</a>`).join("")}</div>
           </div>
           <div class="f-slot" data-gl="crown" aria-hidden="true"></div>
@@ -461,9 +463,9 @@
     const els = $$("[data-count]", root); if (!els.length) return;
     const io = new IntersectionObserver((entries) => entries.forEach((en) => {
       if (!en.isIntersecting) return; io.unobserve(en.target);
-      const el = en.target, end = +el.dataset.count, compact = el.dataset.compact !== undefined, dur = 1200, t0 = performance.now();
+      const el = en.target, end = +el.dataset.count, compact = el.dataset.compact !== undefined, fmtC = el.dataset.compact === "k" ? fmtK : fmtCompact, dur = 1200, t0 = performance.now();
       const step = (t) => { const p = Math.min(1, (t - t0) / dur), v = Math.round(end * (1 - Math.pow(1 - p, 3)));
-        el.textContent = compact ? fmtCompact(v) : fmtNum(v); if (p < 1) requestAnimationFrame(step); };
+        el.textContent = compact ? fmtC(v) : fmtNum(v); if (p < 1) requestAnimationFrame(step); };
       requestAnimationFrame(step);
     }), { threshold: .4 });
     els.forEach((e) => io.observe(e));
@@ -537,6 +539,6 @@
     cacheForOffline(urls);
   }
 
-  window.App = { $, $$, esc, ic, icons, store, toast, copy, download, modal, debounce, param, fmtNum, fmtCompact, fmtDate, fmtBytes,
+  window.App = { $, $$, esc, ic, icons, store, toast, copy, download, modal, debounce, param, fmtNum, fmtCompact, fmtK, fmtDate, fmtBytes,
     readTime, norm, matches, saved, isLite, liteMode, setLite, factUrl, cat, branchOf, factsSorted, factCard, ensureBR, coverStyle, logo, countUp, dropzone, shareButtons, socialLinks, ensureTG, cacheForOffline };
 })();

@@ -4,7 +4,7 @@
 
   // Stats
   const f = $("#st-followers");
-  f.dataset.count = S.stats.followers; f.dataset.compact = "";
+  f.dataset.count = S.stats.followers; f.dataset.compact = "k";
   $("#st-facts").dataset.count = window.FACTS.length;
   $("#st-tools").dataset.count = window.TOOLS.length;
 

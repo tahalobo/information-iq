@@ -178,8 +178,8 @@
   const S = window.SITE, B = window.BRANCHES || [];
 
   /* Hero ticker */
-  const tk = (n, l, compact) => `<div><strong data-count="${n}"${compact ? " data-compact" : ""}>0</strong><span>${l}</span></div>`;
-  $("#ticker").innerHTML = tk(S.stats.followers, "متابع على إنستغرام", true) + tk(B.length, "فروع وقنوات") + tk(window.FACTS.length, "معلومة موثّقة") + tk(window.TOOLS.length, "أداة تحقق مجانية");
+  const tk = (n, l, compact) => `<div><strong data-count="${n}"${compact ? ' data-compact="k"' : ""}>0</strong><span>${l}</span></div>`;
+  $("#ticker").innerHTML = tk(S.stats.followers, "مشترك على تليغرام", true) + tk(B.length, "فروع وقنوات") + tk(window.FACTS.length, "معلومة موثّقة") + tk(window.TOOLS.length, "أداة تحقق مجانية");
 
   /* 02 Branch solar system */
   const ring = $("#ring"), panel = $("#br-panel");
@@ -255,7 +255,7 @@
 
   /* 07 Advertise */
   const rc = (n, l, raw) => `<div class="xr"><strong>${raw || n}</strong><span>${l}</span></div>`;
-  $("#reach").innerHTML = rc(0, "متابع على إنستغرام", fmtCompact(S.stats.followers)) + rc(B.length, "قنوات على تليغرام") + rc(window.FACTS.length, "معلومة في الأرشيف") + rc(0, "تغطية", "العراق والعالم العربي");
+  $("#reach").innerHTML = rc(0, "مشترك على تليغرام", App.fmtK(S.stats.followers)) + rc(B.length, "قنوات على تليغرام") + rc(window.FACTS.length, "معلومة في الأرشيف") + rc(0, "تغطية", "العراق والعالم العربي");
   const PK = [
     { t: "منشور ممول", i: "image", d: "تصميم احترافي بهوية الصفحة يبقى في الحساب، مع ذكر علامتك التجارية.", f: ["تصميم بهويتنا البصرية", "يبقى منشوراً في الحساب", "علامة «إعلان» واضحة"] },
     { t: "ستوري ورابط", i: "smartphone", d: "ستوري مع رابط مباشر لمتجرك أو حسابك، ويمكن تثبيته في الهايلايت.", f: ["رابط مباشر", "إمكانية التثبيت في الهايلايت"] },

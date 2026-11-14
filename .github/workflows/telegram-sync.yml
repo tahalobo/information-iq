@@ -60,6 +60,11 @@ jobs:
         continue-on-error: true
         run: node scripts/branches-sync.mjs
 
+      # مجموع مشتركي القنوات السبع على تليغرام (الرقم الذي يعرضه الموقع بدل متابعي إنستغرام)
+      - name: Count Telegram subscribers
+        continue-on-error: true
+        run: node scripts/subscribers-sync.mjs
+
       # محرّك التوثيق: يبحث في الويب عن مصادر إضافية لأحدث المعلومات (5 منشورات في كل تشغيل)
       # المفاتيح اختيارية وتُضاف من Settings ← Secrets and variables ← Actions ← Secrets
       - name: Find extra sources on the web

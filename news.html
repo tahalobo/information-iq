@@ -105,7 +105,7 @@
 (function () {
   const { $, esc, ic, icons, fmtDate, modal, shareButtons, countUp } = App;
   const S = window.SITE;
-  const stat = (n, l, i, compact) => `<div class="card stat-card"><span class="ico">${ic(i)}</span><strong data-count="${n}"${compact ? " data-compact" : ""}>0</strong><span>${l}</span></div>`;
+  const stat = (n, l, i, compact) => `<div class="card stat-card"><span class="ico">${ic(i)}</span><strong data-count="${n}"${compact ? ' data-compact="k"' : ""}>0</strong><span>${l}</span></div>`;
   $("#stats").innerHTML = stat(S.stats.followers, S.stats.followersLabel, "users", true) + stat(window.FACTS.length, S.stats.factsLabel, "book-open") +
     stat(window.TOOLS.length, S.stats.toolsLabel, "wrench") + stat(window.SERIES.length, "سلسلة محتوى متخصصة", "layers");
 
