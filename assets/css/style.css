@@ -1612,7 +1612,7 @@ html.hdr-hidden .lib-bar-wrap { top: 6px; }
   border: 1px solid color-mix(in srgb, var(--c2) 40%, transparent); transition: transform .5s var(--ease), box-shadow .4s, border-color .3s; isolation: isolate; }
 .br-tile::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(135deg, rgba(255,255,255,.035) 0 2px, transparent 2px 12px); z-index: -1; }
 .br-tile:hover { transform: translateY(-6px); box-shadow: 0 30px 60px -30px var(--c2); border-color: var(--c2); }
-.br-num { position: absolute; top: 14px; inset-inline-start: 20px; font-family: var(--font-mega); font-weight: 700; font-size: 3.4rem; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.28); }
+.br-num { position: absolute; top: 14px; inset-inline-end: 20px; font-family: var(--font-mega); font-weight: 700; font-size: 3.4rem; line-height: 1; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.28); }
 .br-ico { width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.22); backdrop-filter: blur(6px); }
 .br-ico svg { width: 26px; height: 26px; }
 .br-tile h3 { margin: 6px 0 0; font-family: var(--font-mega); font-weight: 700; font-size: 1.55rem; color: #fff; }
