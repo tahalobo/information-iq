@@ -2266,3 +2266,14 @@ html.rm .nr-live i, html.lite .nr-live i { animation: none; }
 .nav-menu-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding-top: 6px; margin-top: 6px; border-top: 1px solid var(--border); }
 .nav-menu-pair a { justify-content: center; gap: 6px; font-weight: 600; }
 .nav-menu-pair svg { width: 16px; height: 16px; color: var(--gold); }
+
+/* ---------- محفوظاتي ---------- */
+.sv-empty { display: grid; justify-items: center; gap: 10px; text-align: center; padding: 50px 16px; }
+.sv-empty h2 { margin: 6px 0 0; }
+.sv-empty p { margin: 0 0 8px; color: var(--muted); }
+.sv-old { display: flex; gap: 12px; padding: 12px; border-radius: 20px; border: 1px solid var(--border); background: var(--card); }
+.sv-old img { flex-shrink: 0; width: 86px; height: 86px; border-radius: 14px; object-fit: cover; }
+.sv-old div { display: grid; gap: 6px; align-content: start; min-width: 0; }
+.sv-old small { color: var(--muted); font-size: .76rem; }
+.sv-old h3 { margin: 0; font-size: 1rem; line-height: 1.6; }
+.sv-old .btn { justify-self: start; }

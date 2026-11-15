@@ -140,11 +140,18 @@
   /* ---------- Saved facts ---------- */
   const saved = {
     all: () => store.get("saved-facts", []),
+    find: (id) => (window.FACTS || []).find((x) => x.id === id) || (window.TG_ITEMS || []).find((x) => x.id === id) || (window.BR_ITEMS || []).find((x) => x.id === id) || (window.CUR_ITEM && window.CUR_ITEM.id === id ? window.CUR_ITEM : null),
+    meta: (id) => store.get("saved-meta", {})[id] || null,
     has: (id) => saved.all().includes(id),
     toggle(id) {
       const list = saved.all(); const i = list.indexOf(id);
       if (i >= 0) list.splice(i, 1); else list.unshift(id);
       store.set("saved-facts", list);
+      // لقطة صغيرة (عنوان وصورة وتاريخ) تبقي المحفوظ ظاهراً في «محفوظاتي» حتى لو خرج الخبر من قائمة الفرع لاحقاً
+      const meta = store.get("saved-meta", {});
+      if (i >= 0) delete meta[id];
+      else { const x = saved.find(id); if (x) meta[id] = { title: x.title, image: x.image || null, date: String(x.date || "").slice(0, 10), cat: x.cat, branch: x.branch || null }; }
+      store.set("saved-meta", meta);
       if (i < 0) offlineSave(id);
       toast(i >= 0 ? "أُزيلت من المحفوظات" : "حُفظت في المحفوظات", i >= 0 ? "bookmark-minus" : "bookmark-check");
       return i < 0;
@@ -232,7 +239,7 @@
       </div>
       <div class="fc-veil"></div>
       <div class="fc-top"><span class="fc-cat">${ic(c.icon)}${esc(c.name)}</span>${type}${media}${verified}</div>
-      ${f.branch ? "" : `<button class="save-btn${saved.has(f.id) ? " saved" : ""}" data-save="${esc(f.id)}" aria-label="حفظ المعلومة">${ic("bookmark")}</button>`}
+      <button class="save-btn${saved.has(f.id) ? " saved" : ""}" data-save="${esc(f.id)}" aria-label="${f.branch ? "حفظ الخبر" : "حفظ المعلومة"}">${ic("bookmark")}</button>
       ${f.media === "video" ? `<span class="play-dot" aria-hidden="true">${ic("play")}</span>` : ""}
       <div class="fc-body">
         <h3><a href="${href}" class="fc-link">${esc(f.title)}</a></h3>
@@ -325,6 +332,7 @@
           ${(window.BRANCHES || []).map((b) => `<a href="${b.href}"${page === "branch" && curBranch === b.id ? ' class="active"' : ""}>${bIcon(b, "sm")}${esc(b.name)}</a>`).join("")}
           <a href="trending.html"${page === "trending" ? ' class="active"' : ""}>${ic("flame")}الأكثر قراءة</a>
           <a href="files.html"${page === "files" ? ' class="active"' : ""}>${ic("layers")}ملفات وتغطيات</a>
+          <a href="saved.html"${page === "saved" ? ' class="active"' : ""}>${ic("bookmark")}محفوظاتي</a>
           <div class="drawer-label">الأدوات الرقمية</div>
           ${window.TOOLS.map((t) => `<a href="${t.href}"${page === "tool-" + t.id ? ' class="active"' : ""}>${ic(t.icon)}${esc(t.title)}</a>`).join("")}
           <a href="tools.html">${ic("layout-grid")}كل الأدوات</a>
@@ -373,7 +381,7 @@
             ${(window.BRANCHES || []).map((b) => `<li><a href="${b.href}">${esc(b.name)}</a></li>`).join("")}
             <li><a href="branch.html">كل الفروع</a></li></ul></div>
           <div><h4>الموقع</h4><ul>
-            <li><a href="facts.html">مكتبة المعلومات</a></li><li><a href="facts.html?saved=1">محفوظاتي</a></li>
+            <li><a href="facts.html">مكتبة المعلومات</a></li><li><a href="saved.html">محفوظاتي</a></li>
             <li><a href="quiz.html">اختبر معلوماتك</a></li><li><a href="news.html">الأخبار والإنجازات</a></li>
             <li><a href="channel.html">من قناة تليغرام</a></li><li><a href="channel.html?type=event">فعاليات القناة</a></li>
             <li><a href="topic/index.html">فهرس المواضيع</a></li><li><a href="archive/index.html">أرشيف المنشورات</a></li>
@@ -432,7 +440,7 @@
     { t: "مكتبة المعلومات", s: "كل المعلومات الموثّقة", h: "facts.html", i: "book-open" },
     { t: "فروع الإمبراطورية", s: "الأخبار والألعاب والموسيقى والأنمي والرياضة", h: "branch.html", i: "layout-grid" },
     ...(window.BRANCHES || []).filter((b) => b.id !== "info").map((b) => ({ t: b.name, s: b.desc, h: b.href, i: b.icon })),
-    { t: "محفوظاتي", s: "المعلومات التي حفظتها", h: "facts.html?saved=1", i: "bookmark" },
+    { t: "محفوظاتي", s: "الأخبار والمعلومات التي حفظتها", h: "saved.html", i: "bookmark" },
     { t: "اختبر معلوماتك", s: "كويز تفاعلي", h: "quiz.html", i: "brain" },
     { t: "الأخبار والإنجازات", s: "أخبار الصفحة وإنجازاتها", h: "news.html", i: "newspaper" },
     { t: "من قناة تليغرام", s: "منشورات القناة مصنّفة تلقائياً", h: "channel.html", i: "send" },
@@ -619,7 +627,7 @@
     navigator.serviceWorker.controller.postMessage({ type: "cache", urls: urls.map((u) => new URL(u, document.baseURI).href) });
   }
   function offlineSave(id) {
-    const f = window.FACTS.find((x) => x.id === id) || (window.TG_ITEMS || []).find((x) => x.id === id);
+    const f = saved.find(id);
     const urls = [factUrl(id)];
     if (f && f.tg) urls.push(`assets/tg/posts/${f.tg}.js`);
     if (f && f.image) urls.push(f.image);

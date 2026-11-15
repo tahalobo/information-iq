@@ -73,6 +73,8 @@
     const url = window.SITE_URL && window.STATIC_POSTS && window.STATIC_POSTS[f.id] ? `${window.SITE_URL}/post/${encodeURIComponent(f.id)}.html` : new URL(App.factUrl(f.id), document.baseURI).href;
     const fb = store.get("fact-feedback", {});
     const isSaved = saved.has(f.id);
+    const saveWord = B ? "احفظ الخبر" : "احفظها", savedWord = B ? "محفوظ" : "محفوظة";
+    window.CUR_ITEM = f;   // حتى يحفظ core.js عنوانه وصورته مع المحفوظات
 
     document.title = `${f.title} | ${window.SITE.name}`;
     const md = document.querySelector('meta[name="description"]'); if (md) md.content = f.excerpt;
@@ -145,8 +147,8 @@
           </div>
           <div class="btn-row mt-3">
             <a href="#read" class="btn btn-primary btn-lg">${ic("book-open-text")}ابدأ القراءة</a>
-            <button class="btn btn-ghost btn-lg" data-tts hidden>${ic("headphones")}<span>استمع إليها</span></button>
-            ${B ? "" : `<button class="btn btn-ghost btn-lg fx-save${isSaved ? " saved" : ""}" data-fxsave>${ic("bookmark")}<span>${isSaved ? "محفوظة" : "احفظها"}</span></button>`}
+            <button class="btn btn-ghost btn-lg" data-tts hidden>${ic("headphones")}<span>${B ? "استمع إلى الخبر" : "استمع إليها"}</span></button>
+            <button class="btn btn-ghost btn-lg fx-save${isSaved ? " saved" : ""}" data-fxsave>${ic("bookmark")}<span>${isSaved ? savedWord : saveWord}</span></button>
           </div>
         </div>
         <div class="fx-hero-media">${media}</div>
@@ -217,8 +219,8 @@
 
     <div class="fx-dock" id="dock" role="toolbar" aria-label="أدوات القراءة">
       <button class="fx-ring" id="dock-top" aria-label="للأعلى"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="19"/><circle cx="22" cy="22" r="19" id="ring"/></svg><span id="pct">0%</span></button>
-      <button data-tts hidden aria-label="استمع إلى المعلومة" title="استمع">${ic("headphones")}</button>
-      ${B ? "" : `<button class="fx-save${isSaved ? " saved" : ""}" data-fxsave aria-label="حفظ" title="احفظ">${ic("bookmark")}</button>`}
+      <button data-tts hidden aria-label="${B ? "استمع إلى الخبر" : "استمع إلى المعلومة"}" title="استمع">${ic("headphones")}</button>
+      <button class="fx-save${isSaved ? " saved" : ""}" data-fxsave aria-label="حفظ" title="احفظ">${ic("bookmark")}</button>
       <button id="fs-cycle" aria-label="حجم الخط" title="حجم الخط">${ic("type")}</button>
       <button id="copy-text" aria-label="نسخ النص مع المصادر" title="نسخ النص مع المصادر">${ic("clipboard-copy")}</button>
       <button data-story aria-label="صمّم ستوري لإنستغرام" title="ستوري إنستغرام">${ic("instagram")}</button>
@@ -242,7 +244,7 @@
     root.addEventListener("click", (e) => {
       const b = e.target.closest("[data-fxsave]"); if (!b) return;
       const on = saved.toggle(f.id);
-      $$("[data-fxsave]").forEach((x) => { x.classList.toggle("saved", on); const s = $("span", x); if (s) s.textContent = on ? "محفوظة" : "احفظها"; });
+      $$("[data-fxsave]").forEach((x) => { x.classList.toggle("saved", on); const s = $("span", x); if (s) s.textContent = on ? savedWord : saveWord; });
       $$(`[data-save="${CSS.escape(f.id)}"]`).forEach((x) => x.classList.toggle("saved", on));
     });
 
@@ -257,7 +259,7 @@
     });
 
     /* ---------- Share as Instagram story ---------- */
-    root.addEventListener("click", (e) => { if (e.target.closest("[data-story]")) makeStory({ f, c, url, image: images[0] || (video && video.thumb) }); });
+    root.addEventListener("click", (e) => { if (e.target.closest("[data-story]")) makeStory({ f, c, url, image: images[0] || (video && video.thumb), B }); });
 
     /* ---------- Read aloud ---------- */
     setupTTS(f);
@@ -395,13 +397,15 @@
     } catch { return null; }
   }
 
-  async function makeStory({ f, c, url, image }) {
+  async function makeStory({ f, c, url, image, B }) {
+    // الخبر: شعار فرعه واسمه، وخط رسمي واضح للعنوان. المعلومة: هوية الإمبراطورية كما هي.
+    const PLEX = '"IBM Plex Sans Arabic"', titleFont = (s) => (B ? `700 ${Math.round(s * .8)}px ${PLEX}` : `400 ${s}px Lalezar`);
     toast("نصمّم الستوري…", "sparkles");
     const W = 1080, H = 1920, M = 80, cv = document.createElement("canvas"); cv.width = W; cv.height = H;
     const x = cv.getContext("2d");
-    try { await Promise.all(["400 90px Lalezar", '600 44px "IBM Plex Sans Arabic"', '500 40px "IBM Plex Sans Arabic"'].map((s) => document.fonts.load(s))); } catch { /* fallback fonts */ }
+    try { await Promise.all(["400 90px Lalezar", '700 70px "IBM Plex Sans Arabic"', '600 44px "IBM Plex Sans Arabic"', '500 40px "IBM Plex Sans Arabic"'].map((s) => document.fonts.load(s))); } catch { /* fallback fonts */ }
     const img = image ? await loadImg(image).catch(() => null) : null;
-    const brandImg = await loadImg("assets/img/logo-256.png").catch(() => null);
+    const brandImg = await loadImg(B && B.logo ? B.logo : "assets/img/logo-256.png").catch(() => null);
 
     // background: lapis night, category glow, gold dust, Mesopotamian diamonds
     let g = x.createLinearGradient(0, 0, 0, H); g.addColorStop(0, "#0a1230"); g.addColorStop(.55, "#050816"); g.addColorStop(1, "#03050c");
@@ -414,9 +418,9 @@
     x.globalAlpha = 1; x.direction = "rtl"; x.textAlign = "right"; x.textBaseline = "alphabetic";
 
     // brand row
-    if (brandImg) x.drawImage(brandImg, W - M - 100, 84, 100, 100); else crown(x, W - M - 100, 84, 100);
-    x.fillStyle = "#f2ecdd"; x.font = "400 52px Lalezar"; x.fillText("الإمبراطورية العراقية", W - M - 128, 140);
-    x.fillStyle = "#9ba3bf"; x.font = '500 30px "IBM Plex Sans Arabic"'; x.fillText(`العراقية · @${window.SITE.handle}`, W - M - 128, 182);
+    if (brandImg) { x.save(); if (B) { rr(x, W - M - 100, 84, 100, 100, 26); x.clip(); } x.drawImage(brandImg, W - M - 100, 84, 100, 100); x.restore(); } else crown(x, W - M - 100, 84, 100);
+    x.fillStyle = "#f2ecdd"; x.font = B ? `700 46px ${PLEX}` : "400 52px Lalezar"; x.fillText(B ? B.name : "الإمبراطورية العراقية", W - M - 128, 140);
+    x.fillStyle = "#9ba3bf"; x.font = '500 30px "IBM Plex Sans Arabic"'; x.fillText(B ? `الإمبراطورية العراقية · @${B.channel}` : `العراقية · @${window.SITE.handle}`, W - M - 128, 182);
 
     // media
     const top = 250, mh = img ? 640 : 520;
@@ -435,11 +439,11 @@
     x.font = '700 34px "IBM Plex Sans Arabic"'; const pw = x.measureText(c.name).width + 64;
     const pg = x.createLinearGradient(W - M - pw, 0, W - M, 0); pg.addColorStop(0, c.c1); pg.addColorStop(1, c.c2);
     rr(x, W - M - pw, y, pw, 66, 33); x.fillStyle = pg; x.fill(); x.fillStyle = "#fff"; x.fillText(c.name, W - M - 32, y + 45);
-    x.font = '600 30px "IBM Plex Sans Arabic"'; x.fillStyle = "#f2c25b"; x.fillText(`✓ موثّقة بالمصادر`, W - M - pw - 28, y + 44);
+    x.font = '600 30px "IBM Plex Sans Arabic"'; x.fillStyle = "#f2c25b"; x.fillText(B ? App.fmtDate(String(f.date).slice(0, 10)) : `✓ موثّقة بالمصادر`, W - M - pw - 28, y + 44);
     y += 110;
 
     // title (auto-fit up to 4 lines)
-    let size = 92, lines; do { x.font = `400 ${size}px Lalezar`; lines = wrap(x, f.title, W - 2 * M); size -= 6; } while (lines.length > 4 && size > 54);
+    let size = 92, lines; do { x.font = titleFont(size); lines = wrap(x, f.title, W - 2 * M); size -= 6; } while (lines.length > 4 && size > 54);
     size += 6; const lh = size * 1.36;
     const tg = x.createLinearGradient(M, 0, W - M, 0); tg.addColorStop(0, "#f2c25b"); tg.addColorStop(1, "#ffe7a6");
     x.fillStyle = tg; lines.slice(0, 4).forEach((l, i) => x.fillText(l, W - M, y + size + i * lh));
@@ -463,8 +467,8 @@
       for (let r = 0; r < qm.n; r++) for (let k = 0; k < qm.n; k++) if (qm.dark(r, k)) x.fillRect(qx + k * cell, qy + r * cell, Math.ceil(cell), Math.ceil(cell));
     }
     const tx = W - M - 48;
-    x.fillStyle = "#160f02"; x.font = "400 56px Lalezar"; x.fillText("اقرأها كاملة مع مصادرها", tx, cy + 108);
-    x.font = '600 31px "IBM Plex Sans Arabic"'; x.fillStyle = "rgba(22,15,2,.78)"; x.fillText("امسح الرمز لتفتحها على", tx, cy + 164);
+    x.fillStyle = "#160f02"; x.font = B ? `700 50px ${PLEX}` : "400 56px Lalezar"; x.fillText(B ? "اقرأ الخبر كاملاً" : "اقرأها كاملة مع مصادرها", tx, cy + 108);
+    x.font = '600 31px "IBM Plex Sans Arabic"'; x.fillStyle = "rgba(22,15,2,.78)"; x.fillText(B ? "امسح الرمز لتفتحه على" : "امسح الرمز لتفتحها على", tx, cy + 164);
     x.fillText("موقع الإمبراطورية العراقية ←", tx, cy + 206);
     x.textAlign = "center"; x.fillStyle = "#9ba3bf"; x.font = '500 28px "IBM Plex Sans Arabic"'; x.fillText("كل ما هو حقيقي ومفيد ✦", W / 2, H - 70);
 
@@ -476,7 +480,7 @@
     const m = App.modal(`<div class="story-modal">
       <img src="${src}" alt="معاينة الستوري">
       <div><span class="kicker">ستوري جاهزة</span><h2>انشرها على إنستغرام</h2>
-        <ol><li>${canShare ? "اضغط «شارك» واختر إنستغرام ← ستوري." : "حمّل الصورة، ثم ارفعها ستوري من إنستغرام."}</li><li>الباركود في الصورة يفتح المعلومة مباشرة، ويمكنك أيضاً إضافة ملصق <strong>«الرابط»</strong>.</li></ol>
+        <ol><li>${canShare ? "اضغط «شارك» واختر إنستغرام ← ستوري." : "حمّل الصورة، ثم ارفعها ستوري من إنستغرام."}</li><li>الباركود في الصورة يفتح ${f.branch ? "الخبر" : "المعلومة"} مباشرة، ويمكنك أيضاً إضافة ملصق <strong>«الرابط»</strong>.</li></ol>
         <div class="btn-row mt-2">
           ${canShare ? `<button class="btn btn-primary" data-act="share">${ic("share-2")}شارك</button>` : ""}
           <button class="btn ${canShare ? "btn-ghost" : "btn-primary"}" data-act="dl">${ic("download")}حمّل الصورة</button>
@@ -519,7 +523,7 @@
     };
     const ui = () => btns().forEach((b) => {
       b.classList.toggle("tts-playing", playing);
-      const label = playing ? "إيقاف مؤقت" : idx > 0 ? "أكمل الاستماع" : "استمع إليها";
+      const label = playing ? "إيقاف مؤقت" : idx > 0 ? "أكمل الاستماع" : f.branch ? "استمع إلى الخبر" : "استمع إليها";
       b.innerHTML = b.classList.contains("btn") ? `${ic(playing ? "pause" : "headphones")}<span>${label}</span>` : ic(playing ? "pause" : "headphones");
       b.setAttribute("aria-label", label);
     }) || icons();
