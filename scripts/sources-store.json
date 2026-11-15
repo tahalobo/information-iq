@@ -1,5 +1,164 @@
 {
  "posts": {
+  "15087": {
+   "hash": "c0b7433612fb",
+   "checked": "2026-11-15T11:49:45.808Z",
+   "queries": [
+    "استقبلوه بالكرم.. فكيف كافأهم كولومبوس؟",
+    "هايتي كريستوفر كولومبوس الأمريكتين إسبانيولا",
+    "Haiti"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%87%D8%A7%D9%8A%D8%AA%D9%8A",
+     "name": "هايتي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "نزل كريستوفر كولومبوس في هايتي في 6 ديسمبر 1492، في منطقة سماها مول سانت نيكولاس، وطالب بالجزيرة لتاج قشتالة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Haiti",
+     "name": "Haiti",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "Haiti, officially the Republic of Haiti, is a country in the Caribbean on the island of Hispaniola in the Caribbean Sea, east of Cuba and Jamaica and south of The Bahamas. It occupies the western side of the…"
+    }
+   ]
+  },
+  "15089": {
+   "hash": "6a98541a9bec",
+   "checked": "2026-11-15T11:49:25.308Z",
+   "queries": [
+    "كيف تتكون أجسام التوائم الملتصقة؟ Conjoined Twins"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D8%A3%D9%85%D8%A7%D9%86_%D9%85%D9%84%D8%AA%D8%B5%D9%82%D8%A7%D9%86",
+     "name": "توأمان ملتصقان",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 59,
+     "quote": "وعادة ما يتم تصنيف التوائم الملتصقة حسب نقطة التصاق أجسادهم."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Conjoined_twins",
+     "name": "Conjoined twins",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 56,
+     "quote": "Conjoined twins, popularly referred to as Siamese twins, are twins joined in utero. It is estimated to occur in anywhere between one in 50,000 births to one in 200,000 births, with a somewhat higher incidence…"
+    },
+    {
+     "url": "https://alelm.net/health/300396/%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%A6%D9%85-%D8%A7%D9%84%D9%85%D9%84%D8%AA%D8%B5%D9%82%D8%A9-%D9%83%D9%8A%D9%81-%D8%AA%D8%AA%D9%83%D9%88%D9%86-%D9%87%D8%B0%D9%87-%D8%A7%D9%84%D8%AD%D8%A7%D9%84%D8%A9-%D9%88%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D9%84%D8%A7-%D9%8A%D8%B9%D8%B1%D9%81-%D8%A7%D9%84%D8%B9%D9%84%D9%85%D8%A7%D8%A1-%D8%B3%D8%A8%D8%A8%D9%87%D8%A7-%D8%A7%D9%84%D8%AF%D9%82%D9%8A%D9%82",
+     "name": "التوائم الملتصقة.. كيف تتكون ولماذا يجهل العلماء أسبابها؟",
+     "site": "العلم",
+     "host": "alelm.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 64,
+     "quote": "لا تتشابه جميع حالات التوائم الملتصقة من الناحية التشريحية؛ فشكل الالتصاق يتوقف على المنطقة التي يتصل فيها الجنينان، والأعضاء التي يشتركان فيها، ومدى اكتمال نمو كل عضو."
+    },
+    {
+     "url": "https://arabpsychology.com/dictionary/conjoined-twins-psychology-and-identity/",
+     "name": "التوائم الملتصقة: لغز الهوية والوعي المشترك",
+     "site": "عرب سايكلوجي",
+     "host": "arabpsychology.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 62,
+     "quote": "تُعرف ظاهرة التوائم الملتصقة (Conjoined Twins) بأنها حالة نادرة الحدوث تنشأ عن عدم اكتمال انفصال البويضة المخصبة المفردة أثناء المراحل الجنينية المبكرة، وتحديداً في مرحلة الكيسة الأريمية، أو نتيجة اندماج ثانوي…"
+    },
+    {
+     "url": "https://www.sehatok.com/%D8%B7%D8%A8/%D8%A8%D8%A7%D9%84%D8%AA%D9%81%D8%B5%D9%8A%D9%84-%D8%A7%D9%84%D8%AA%D9%88%D8%A7%D8%A6%D9%85-%D8%A7%D9%84%D9%85%D9%84%D8%AA%D8%B5%D9%82%D8%A9-%D8%A3%D9%88-%D8%A7%D9%84%D8%B3%D9%8A%D8%A7%D9%85%D9%8A%D8%A9",
+     "name": "بالتفصيل.. التوائم الملتصقة أو السيامية",
+     "site": "صحتك",
+     "host": "sehatok.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 60,
+     "quote": "عادة ما يتم تصنيف التوائم الملتصقة حسب نقطة التصاق أجسادها."
+    }
+   ]
+  },
+  "15090": {
+   "hash": "a63aa60a3d94",
+   "checked": "2026-11-15T11:49:03.144Z",
+   "queries": [
+    "لماذا نكتب باللغة العربية من اليمين إلى اليسار؟",
+    "أبجدية عربية باللغة العربية اليمين اليسار"
+   ],
+   "sources": [
+    {
+     "url": "https://www.annahar.com/arabic/article/1061079-%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D9%86%D9%83%D8%AA%D8%A8-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-%D9%85%D9%86-%D8%A7%D9%84%D9%8A%D9%85%D9%8A%D9%86-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%8A%D8%B3%D8%A7%D8%B1",
+     "name": "لماذا نكتب العربية من اليمين إلى اليسار؟!",
+     "site": "annahar.com",
+     "host": "annahar.com",
+     "lang": "ar",
+     "kind": "news",
+     "match": 76,
+     "quote": "وبحسب المؤرخين فإنّه هنالك نظرية تشرح أسباب اعتماد الإنسان القديم على الكتابة من اليمين إلى اليسار، حيث تشير إلى أنّه كان يعتمد بالكتابة على نحت الحجارة، وذلك عبر مطرقة يمكسها بيده اليمين لأنّها الأقوى، وإزميل…"
+    },
+    {
+     "url": "https://www.marefa.org/%D8%A7%D9%84%D8%A3%D8%A8%D8%AC%D8%AF%D9%8A%D8%A9_%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+     "name": "الأبجدية العربية",
+     "site": "المعرفة",
+     "host": "marefa.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 61,
+     "quote": "تكتب الحروف العربية من اليمين إلى اليسار، بنمط يعتمد على وصل حروف الكلمة الواحدة ببعضها، وتشمل هذه الأبجدية 28 حرفا أساسيا."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A3%D8%A8%D8%AC%D8%AF%D9%8A%D8%A9_%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9",
+     "name": "أبجدية عربية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 56,
+     "quote": "ومرةً أخرى، فإن وضع الحروف في الاتجاه الصحيح أمرٌ متروكٌ للمحرك، وذلك باستخدام قدرة يونيكود على الكتابة النصية في الاتجاهين.في هذا الصدد، إذا كانت الكلمات العربية على هذه الصفحة مكتوبةً من اليسار إلى اليمين،…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Arabic_alphabet",
+     "name": "Arabic alphabet",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 53,
+     "quote": "The Arabic alphabet, or the Arabic abjad, is the Arabic script as specifically codified for writing the Arabic language. It is a unicameral script written from right-to-left in a cursive style, and includes 28…"
+    },
+    {
+     "url": "https://nuhaira.com/ar/%D8%A7%D9%84%D8%A3%D8%A8%D8%AC%D8%AF%D9%8A%D8%A9-%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9-%D9%85%D9%86-%D8%A7%D9%84%D8%A3%D8%AD%D8%B1%D9%81-%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A9-%D8%A5/",
+     "name": "استكشاف الأبجدية العربية: دليل مفصل من عدد الحروف إلى اليونيكود",
+     "site": "Nuhaira.com",
+     "host": "nuhaira.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "انتبه إلى اتجاه الكتابة من اليمين إلى اليسار وكيفية اتصال الحروف بسلاسة."
+    }
+   ]
+  },
+  "15091": {
+   "hash": "f659960b3f00",
+   "checked": "2026-11-15T11:48:47.873Z",
+   "queries": [
+    "مركز التدريب النـ𐩑ـووي في بغداد — 1956 CENTO",
+    "النظائر المشعة حلف بغداد مركز التدريب 1956"
+   ],
+   "sources": []
+  },
   "15093": {
    "hash": "34748a91261c",
    "checked": "2026-11-15T04:01:01.248Z",
@@ -2783,11 +2942,11 @@
    ]
   },
   "15276": {
-   "hash": "d9e6524e4cd4",
-   "checked": "2026-11-14T15:15:46.164Z",
+   "hash": "3c383c21507e",
+   "checked": "2026-11-15T11:48:32.481Z",
    "queries": [
     "70",
-    "متابع عائلة سبعون والمعلومة والثقافة"
+    "والاخبار إنجاز ثمرة ثقتكم وتفاعلكم"
    ],
    "sources": []
   },
@@ -2892,5 +3051,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-15T04:01:01.249Z"
+ "updated": "2026-11-15T11:49:45.817Z"
 }
