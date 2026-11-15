@@ -1,5 +1,72 @@
 {
  "posts": {
+  "15093": {
+   "hash": "34748a91261c",
+   "checked": "2026-11-15T04:01:01.248Z",
+   "queries": [
+    "الحيوان الذي لا يموت! Turritopsis",
+    "قنديل البحر الخالد قنديل البحر الحيوان يموت",
+    "Turritopsis dohrnii Turritopsis"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%82%D9%86%D8%AF%D9%8A%D9%84_%D8%A7%D9%84%D8%A8%D8%AD%D8%B1_%D8%A7%D9%84%D8%AE%D8%A7%D9%84%D8%AF",
+     "name": "قنديل البحر الخالد",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 62,
+     "quote": "لوحظت هذه الظاهرة للمرة الأولى في تسعينيات القرن العشرين ولهذا السبب أطلق على الحيوان اسم قنديل البحر الخالد."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Turritopsis",
+     "name": "Turritopsis",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Turritopsis is a genus of hydrozoans in the family Oceaniidae."
+    }
+   ]
+  },
+  "15094": {
+   "hash": "0efbc40fd9e9",
+   "checked": "2026-11-15T04:00:55.300Z",
+   "queries": [
+    "أيلول 2026 | يوم السيادة الوطني العراقي informationiq",
+    "أيلول السيادة الوطني أبناؤه تضحيات 2026"
+   ],
+   "sources": []
+  },
+  "15095": {
+   "hash": "6132e3d4888d",
+   "checked": "2026-11-15T04:00:46.567Z",
+   "queries": [
+    "لماذا تُفتح بعض الأبواب إلى الداخل وأخرى إلى الخارج؟",
+    "تحديد اتجاه قانون البناء الدولي تفتح الأبواب"
+   ],
+   "sources": []
+  },
+  "15097": {
+   "hash": "26e32084ee35",
+   "checked": "2026-11-15T04:00:29.605Z",
+   "queries": [
+    "الخبز لمسح الأخطاء!",
+    "قلم الرصاص القرن الثامن عشر لمسح ممحاة 1770"
+   ],
+   "sources": []
+  },
+  "15098": {
+   "hash": "585405a092c1",
+   "checked": "2026-11-15T04:00:15.852Z",
+   "queries": [
+    "هل نرى الألوان…أم نرى الضوء؟",
+    "الأطوال الموجية التأثير الكهروضوئي موجود تفاحة"
+   ],
+   "sources": []
+  },
   "15123": {
    "hash": "2333272ddffd",
    "checked": "2026-11-14T23:46:55.137Z",
@@ -2825,5 +2892,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-14T23:46:55.141Z"
+ "updated": "2026-11-15T04:01:01.249Z"
 }
