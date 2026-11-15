@@ -271,6 +271,14 @@ const coverage = [];
   }
   coverage.sort((x, y) => y.to.localeCompare(x.to) || y.n - x.n);
 }
+// لكل خبر: الملف الذي ينتمي إليه + أقرب ستة أخبار منه في الملف (يُضمَّن في صفحة الخبر ليظهر قسم «جزء من ملف»)
+const byPostId = new Map(items.map((x) => [x.id, x]));
+const fileOf = new Map();
+for (const f of coverage) f.ids.forEach((id, k) => {
+  const from = Math.max(0, Math.min(k - 2, f.ids.length - 6));
+  fileOf.set(id, { id: f.id, title: f.title, n: f.n, from: f.from, to: f.to,
+    items: f.ids.slice(from, from + 6).map((i) => ({ id: i, title: clip(cleanTitle(byPostId.get(i).title), 110, 50), date: day(byPostId.get(i).date) })) });
+});
 
 /* ==========================================================
    صور المعاينة المصمَّمة (Open Graph): بطاقة 1200×630 لكل خبر وموضوع وأداة وصفحة
@@ -501,7 +509,7 @@ function postPage(it) {
 </main>`;
   const ctx = CTX(it.id);
   // بيانات لا تُنفَّذ (يقرؤها core.js): لا تحتاج استثناءً في سياسة أمن المحتوى، و json() يهرّب < فلا يمكن إغلاق الوسم من داخلها
-  const scripts = `<script type="application/json" id="static-ctx">${json({ id: it.id, ctx: ctx || undefined })}</script>
+  const scripts = `<script type="application/json" id="static-ctx">${json({ id: it.id, ctx: ctx || undefined, file: fileOf.get(it.id) })}</script>
 <script src="assets/js/vendor/lucide-subset.js"></script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/data.js"></script>${ctx ? "" : `

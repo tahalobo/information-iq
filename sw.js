@@ -8,7 +8,7 @@
    الأمان: لا نخزّن إلا ردوداً ناجحة من موقعنا نفسه (type "basic")، ومن خطوط Google و jsDelivr بالاسم الكامل للنطاق.
    لا نخزّن ردوداً معتمة من أي نطاق آخر، ولكل ذاكرة حدّ أقصى، والصفحات تبقى «الشبكة أولاً» فلا تعلق نسخة قديمة.
    ========================================================== */
-const VERSION = "empire-v22";
+const VERSION = "empire-v23";
 const CORE = `${VERSION}-core`, PAGES = `${VERSION}-pages`, MEDIA = `${VERSION}-media`;
 const SAVED = "empire-saved"; // the reader's saved facts: survives version bumps
 const PRECACHE = [

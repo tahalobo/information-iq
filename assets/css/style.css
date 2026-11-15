@@ -2243,3 +2243,26 @@ html.rm .nr-live i, html.lite .nr-live i { animation: none; }
 .ad-cta { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-top: 30px; padding: 26px; border-radius: 26px; border: 1px solid var(--stroke); background: radial-gradient(90% 120% at 0% 100%, var(--gold-soft), transparent 60%), var(--card); }
 .ad-cta h2 { margin: 0 0 6px; }
 .ad-cta p { margin: 0; color: var(--muted); max-width: 60ch; }
+
+/* ---------- قسم «هذا الخبر جزء من ملف» في صفحة الخبر ---------- */
+.fx-file { margin-top: 44px; }
+.fx-file-box { display: grid; gap: 16px; padding: 22px; border-radius: 26px; border: 1px solid var(--stroke); background: radial-gradient(90% 120% at 100% 0%, var(--gold-soft), transparent 60%), var(--card); }
+.fx-file-head { display: grid; gap: 8px; color: var(--text); }
+.fx-file-head .fl-tag { background: var(--surface-2); border-color: var(--border); color: var(--gold); }
+.fx-file-head strong { font-size: clamp(1.1rem, 2.4vw, 1.4rem); line-height: 1.6; }
+.fx-file-head small { display: flex; align-items: center; gap: 5px; flex-wrap: wrap; color: var(--muted); font-size: .8rem; }
+.fx-file-head small svg { width: 13px; height: 13px; }
+.fx-file-list { list-style: none; margin: 0; padding: 0; border-inline-start: 2px solid var(--border); }
+.fx-file-list li { position: relative; }
+.fx-file-list li::before { content: ""; position: absolute; inset-inline-start: -7px; top: 18px; width: 12px; height: 12px; border-radius: 50%; background: var(--card); border: 2px solid var(--border-2, var(--border)); }
+.fx-file-list li.cur::before { background: var(--gold); border-color: var(--gold); box-shadow: 0 0 12px var(--gold); }
+.fx-file-list a { display: grid; gap: 2px; padding: 10px 18px; color: var(--text); border-radius: 12px; transition: background .3s; }
+.fx-file-list a:hover { background: var(--surface-2); }
+.fx-file-list time { color: var(--muted); font-size: .76rem; }
+.fx-file-list span { font-size: .95rem; line-height: 1.65; }
+.fx-file-list li.cur span { font-weight: 700; }
+.fx-file-list em { justify-self: start; font-style: normal; font-size: .72rem; font-weight: 700; padding: 1px 10px; border-radius: 999px; background: var(--gold-soft); color: var(--gold); }
+.fx-file-box > .btn { justify-self: start; }
+.nav-menu-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; padding-top: 6px; margin-top: 6px; border-top: 1px solid var(--border); }
+.nav-menu-pair a { justify-content: center; gap: 6px; font-weight: 600; }
+.nav-menu-pair svg { width: 16px; height: 16px; color: var(--gold); }

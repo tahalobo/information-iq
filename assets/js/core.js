@@ -8,7 +8,7 @@
   // سياق الصفحة الثابتة يأتي كبيانات JSON (لا كسكربت مضمّن) حتى تبقى سياسة أمن المحتوى صارمة
   (function () {
     const el = document.getElementById("static-ctx"); if (!el) return;
-    try { const d = JSON.parse(el.textContent); if (d && typeof d.id === "string") { window.STATIC_ID = d.id; if (d.ctx) window.STATIC_CTX = d.ctx; } } catch { /* ignore */ }
+    try { const d = JSON.parse(el.textContent); if (d && typeof d.id === "string") { window.STATIC_ID = d.id; if (d.ctx) window.STATIC_CTX = d.ctx; if (d.file) window.STATIC_FILE = d.file; } } catch { /* ignore */ }
   })();
 
   /* ---------- Utils ---------- */
@@ -296,7 +296,7 @@
     const branchMenu = (window.BRANCHES || []).map((b) => `<a href="${b.href}"><span class="ico ico-sm${b.logo ? " has-logo" : ""}" style="background:linear-gradient(135deg,${b.c1},${b.c2});color:#fff">${bIcon(b)}</span><span>${esc(b.name)}<small>${esc(b.desc.split(/[:،]/)[0])}</small></span></a>`).join("");
     const navHtml = NAV.map((n) => n.drop
       ? `<div class="nav-drop${isActive(n) ? " active" : ""}"><button type="button" aria-haspopup="true">${n.label}${ic("chevron-down")}</button><div class="nav-menu">${n.drop === "branches"
-          ? `${branchMenu}<a href="branch.html" style="justify-content:center;color:var(--gold);font-weight:600">كل الفروع ${ic("arrow-left")}</a>`
+          ? `${branchMenu}<div class="nav-menu-pair"><a href="trending.html">${ic("flame")}الأكثر قراءة</a><a href="files.html">${ic("layers")}ملفات وتغطيات</a></div><a href="branch.html" style="justify-content:center;color:var(--gold);font-weight:600">كل الفروع ${ic("arrow-left")}</a>`
           : `${toolsMenu}<a href="tools.html" style="justify-content:center;color:var(--gold);font-weight:600">كل الأدوات ${ic("arrow-left")}</a>`}</div></div>`
       : `<a href="${n.href}"${isActive(n) ? ' class="active" aria-current="page"' : ""}>${n.label}</a>`).join("");
     const mainLinks = NAV.map((n, i) => n.drop === "tools" ? { ...n, href: "tools.html" } : n)
@@ -323,6 +323,8 @@
         <div class="drawer-side">
           <div class="drawer-label">فروع الإمبراطورية</div>
           ${(window.BRANCHES || []).map((b) => `<a href="${b.href}"${page === "branch" && curBranch === b.id ? ' class="active"' : ""}>${bIcon(b, "sm")}${esc(b.name)}</a>`).join("")}
+          <a href="trending.html"${page === "trending" ? ' class="active"' : ""}>${ic("flame")}الأكثر قراءة</a>
+          <a href="files.html"${page === "files" ? ' class="active"' : ""}>${ic("layers")}ملفات وتغطيات</a>
           <div class="drawer-label">الأدوات الرقمية</div>
           ${window.TOOLS.map((t) => `<a href="${t.href}"${page === "tool-" + t.id ? ' class="active"' : ""}>${ic(t.icon)}${esc(t.title)}</a>`).join("")}
           <a href="tools.html">${ic("layout-grid")}كل الأدوات</a>

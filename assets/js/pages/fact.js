@@ -98,6 +98,22 @@
     const gallery = images.length > 1 ? `<div class="fx-strip" data-lenis-prevent>${images.map((src, i) => `<img src="${esc(src)}" alt="صورة ${i + 1} من المنشور" loading="lazy" data-zoom data-err="remove">`).join("")}</div>` : "";
     const cinema = video ? `<div class="fx-cinema" id="cinema"><div id="tg-embed">${video.thumb ? `<a href="${esc(P.url)}" target="_blank" rel="noopener noreferrer" class="fact-cover has-img" style="height:auto;aspect-ratio:16/9"><img src="${esc(video.thumb)}" alt=""><span class="play-dot">${ic("play")}</span></a>` : ""}</div></div>` : "";
 
+    // الخبر جزء من ملف (تغطية): عنوان الملف، وأقرب أخباره بترتيبها الزمني، ورابط الملف كاملاً
+    const FL = window.STATIC_FILE && window.STATIC_ID === f.id ? window.STATIC_FILE : null;
+    const flUrl = FL ? `files.html?f=${encodeURIComponent(FL.id)}` : "";
+    const fileBlock = FL ? `<section class="container fx-file" aria-label="ملف هذا الخبر">
+      <div class="fx-file-box">
+        <a class="fx-file-head" href="${flUrl}">
+          <span class="fl-tag">${ic("layers")}هذا الخبر جزء من ملف</span>
+          <strong>${esc(FL.title)}</strong>
+          <small>${ic("newspaper")}${FL.n} أخبار · ${ic("calendar")}${esc(App.fmtDate(FL.from))}${FL.from === FL.to ? "" : " ← " + esc(App.fmtDate(FL.to))}</small>
+        </a>
+        <ol class="fx-file-list">${FL.items.map((x) => `<li${x.id === f.id ? ' class="cur"' : ""}><a href="${App.factUrl(x.id)}"${x.id === f.id ? ' aria-current="page"' : ""}>
+          <time datetime="${esc(x.date)}">${esc(App.fmtDate(x.date))}</time><span>${esc(x.title)}</span>${x.id === f.id ? "<em>أنت هنا</em>" : ""}</a></li>`).join("")}</ol>
+        <a class="btn btn-primary" href="${flUrl}">${ic("layers")}افتح الملف كاملاً بخطه الزمني${ic("arrow-left")}</a>
+      </div>
+    </section>` : "";
+
     const prev = (x, dir) => {
       if (!x) return `<span></span>`;
       const xc = cat(x.cat);
@@ -189,6 +205,7 @@
       </article>
     </div>
 
+    ${fileBlock}
     <nav class="container fx-nextnav" aria-label="معلومات أخرى">${prev(newer, "newer")}${prev(older, "older")}</nav>
 
     <section class="section" style="padding-top:60px" data-sc>
