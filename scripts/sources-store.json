@@ -1,5 +1,76 @@
 {
  "posts": {
+  "15083": {
+   "hash": "7dced58c7672",
+   "checked": "2026-11-15T18:18:59.989Z",
+   "queries": [
+    "بغداد في تصنيفين عالميين لافتين IQAir",
+    "القدرة على التكيف تلوث الهواء بغداد تصنيفين"
+   ],
+   "sources": []
+  },
+  "15085": {
+   "hash": "3dabcaa195d4",
+   "checked": "2026-11-15T18:18:51.219Z",
+   "queries": [
+    "توربينات تحت الماء تستغل قوة المحيط في اليابان  NEDO",
+    "توليد الكهرباء تحت الماء توربينات المحيط",
+    "Electricity generation NEDO"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D9%84%D9%8A%D8%AF_%D8%A7%D9%84%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A1",
+     "name": "توليد الكهرباء",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 58,
+     "quote": "فهي تولد الطاقة عن طريق حرق الغاز الطبيعي في توربينات الغاز وتستخدام الحرارة المتبقية من تلك العملية لتوليد طاقة كهربائية إضافية من البخار."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Electricity_generation",
+     "name": "Electricity generation",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "Electricity generation is the process of generating electric power from sources of primary energy. For utilities in the electric power industry, it is the stage prior to its delivery (transmission,…"
+    }
+   ]
+  },
+  "15086": {
+   "hash": "e26e5fde87a1",
+   "checked": "2026-11-15T18:18:46.388Z",
+   "queries": [
+    "وُجّه إلى الشاعر الكبير محمد مهدي الجواهري سؤال عن مستقبل العراق السياسي",
+    "محمد مهدي الجواهري الشاعر مستقبل 1994",
+    "Muhammad Mahdi al-Jawahiri"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D9%85%D8%AF_%D9%85%D9%87%D8%AF%D9%8A_%D8%A7%D9%84%D8%AC%D9%88%D8%A7%D9%87%D8%B1%D9%8A",
+     "name": "محمد مهدي الجواهري",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 81,
+     "quote": "محمد مهدي الجواهري (26 يوليو 1899م – 27 يوليو 1997م): شاعر عربي عراقي، يُعد من بين أفضل شعراء العرب في العصر الحديث."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Muhammad_Mahdi_al-Jawahiri",
+     "name": "Muhammad Mahdi al-Jawahiri",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 76,
+     "quote": "Muhammad Mahdi al-Jawahiri (Arabic: محمد مهدي الجواهري); (26 July 1899 – 27 July 1997) was an Iraqi poet. Considered by many as one of the best and greatest Arabian poets in the 20th century, he was also…"
+    }
+   ]
+  },
   "15087": {
    "hash": "c0b7433612fb",
    "checked": "2026-11-15T11:49:45.808Z",
@@ -3049,7 +3120,25 @@
     "كلمات المرور قنوات منصة"
    ],
    "sources": []
+  },
+  "15282": {
+   "hash": "2b40e8d9d1c3",
+   "checked": "2026-11-15T18:18:42.144Z",
+   "queries": [
+    "ما أصل كلمة فلسفة؟ Philo",
+    "أصل كلمة اللغة اليونانية القديمة فلسفة عربية"
+   ],
+   "sources": []
+  },
+  "15283": {
+   "hash": "6d40eb7a3acd",
+   "checked": "2026-11-15T18:18:36.882Z",
+   "queries": [
+    "رحلة في تاريخ الأديان والمعتقدات : الإنسان والدين.. كيف بدأت الفكرة؟",
+    "تاريخ الأديان علم التاريخ رحلة والمعتقدات"
+   ],
+   "sources": []
   }
  },
- "updated": "2026-11-15T11:49:45.817Z"
+ "updated": "2026-11-15T18:18:59.991Z"
 }
