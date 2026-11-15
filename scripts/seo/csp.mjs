@@ -49,9 +49,12 @@ export function cspFor(file, site = {}) {
   const worker = { "tool-reverse.html": [site.reverseSearchEndpoint], "tool-link.html": [site.linkCheckEndpoint, site.reverseSearchEndpoint], "verify.html": [site.verifyEndpoint, site.reverseSearchEndpoint] }[file] || [];
   for (const o of worker.map(origin).filter(Boolean)) if (!connect.includes(o)) connect.push(o);
   if (file === "contact.html") { const o = origin(site.formEndpoint); if (o && !connect.includes(o)) connect.push(o); }
+  // إحصاءات Cloudflare بلا كوكيز: تُسمح فقط إن وُضع رمزها في config.js
+  const cf = /^[a-f0-9]{32}$/i.test((site.analytics && site.analytics.cloudflareToken) || "");
+  if (cf) connect.push("https://cloudflareinsights.com");
   const d = [
     ["default-src", ["'self'"]],
-    ["script-src", ["'self'", `'${THEME_BOOT_HASH}'`, ...(x.script || [])]],
+    ["script-src", ["'self'", `'${THEME_BOOT_HASH}'`, ...(x.script || []), ...(cf ? ["https://static.cloudflareinsights.com"] : [])]],
     ["style-src", ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"]],
     ["font-src", ["'self'", "https://fonts.gstatic.com"]],
     ["img-src", img],

@@ -49,6 +49,11 @@ window.SITE = {
     toolsLabel: "أداة رقمية مجانية"
   },
 
+  // إحصاءات الزيارات بلا تتبّع (Cloudflare Web Analytics، مجاني وبلا كوكيز): ضع رمز الموقع (32 حرفاً) من
+  // dash.cloudflare.com ← Analytics & Logs ← Web Analytics ← Add a site. فارغ = لا إحصاءات.
+  // بعد وضعه شغّل node scripts/build-pages.mjs حتى تسمح سياسة أمن المحتوى بسكربت الإحصاءات.
+  analytics: { cloudflareToken: "" },
+
   founded: "",              // سنة تأسيس الصفحة، مثال: "2019"
   year: new Date().getFullYear()
 };

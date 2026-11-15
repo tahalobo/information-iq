@@ -63,4 +63,7 @@ const src = await fs.readFile(P.site, "utf8");
 const out = src.replace(/(\bfollowers:\s*)\d+/, `$1${total}`);
 if (out === src && !new RegExp(`\\bfollowers:\\s*${total}\\b`).test(src)) { console.error("✖ لم أجد السطر followers في assets/js/config.js"); process.exit(1); }
 if (out !== src) await fs.writeFile(P.site, out);
+// الأرقام التفصيلية لصفحة «أعلن معنا»
+const pub = { total, updated: store.updated, channels: Object.fromEntries(Object.entries(store.channels).map(([k, c]) => [k, { channel: c.channel, subscribers: c.subscribers }])) };
+await fs.writeFile(path.join(ROOT, "assets/js/subs-data.js"), `/* مولّد تلقائياً بواسطة scripts/subscribers-sync.mjs — لا تعدّله يدوياً */\nwindow.SUBS=${JSON.stringify(pub)};\n`);
 console.log(`✔ مشتركو تليغرام: ${total.toLocaleString("en")} في ${Object.keys(store.channels).length} قنوات (قُرئ الآن ${fresh}) · ${Object.entries(store.channels).map(([k, c]) => `${k} ${c.subscribers}`).join(" · ")}`);

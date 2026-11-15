@@ -2215,3 +2215,31 @@ html.rm .nr-live i, html.lite .nr-live i { animation: none; }
   html.no-gl .xhero-slot { position: relative; inset: auto; order: -1; width: min(46vw, 190px); margin: 0 auto 6px; background-size: 62% auto, auto; --R: min(40vw, 165px); }
   html.no-gl .xhero-text { padding-top: 0; }
 }
+
+/* ---------- المنهجية، وأعلن معنا ---------- */
+.mt-prose { max-width: 860px; margin-inline: auto; }
+.mt-updated { color: var(--muted); font-size: .9rem; }
+.ad-totals { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+.ad-total { display: grid; gap: 4px; padding: 20px; border-radius: 22px; border: 1px solid var(--border); background: var(--card); }
+.ad-total span svg { width: 22px; height: 22px; color: var(--gold); }
+.ad-total b { font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1.2; }
+.ad-total small { color: var(--muted); font-size: .84rem; }
+.ad-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.ad-card { display: grid; gap: 14px; align-content: start; padding: 20px; border-radius: 22px; border: 1px solid var(--border); background: linear-gradient(160deg, color-mix(in srgb, var(--c2) 16%, transparent), transparent 55%), var(--card); }
+.ad-card-head { display: flex; align-items: center; gap: 12px; }
+.ad-card-head h3 { margin: 0; font-size: 1.1rem; }
+.ad-card-head a { color: var(--muted); }
+.ad-logo { flex-shrink: 0; width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; color: #fff; background: linear-gradient(135deg, var(--c1), var(--c2)); }
+.ad-logo svg { width: 24px; height: 24px; }
+.ad-subs { display: flex; align-items: baseline; gap: 8px; }
+.ad-subs b { font-size: 2rem; line-height: 1; color: var(--c2); }
+.ad-subs small { color: var(--muted); }
+.ad-card dl { margin: 0; display: grid; gap: 0; border-top: 1px solid var(--border); }
+.ad-card dl div { display: flex; justify-content: space-between; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); font-size: .88rem; }
+.ad-card dt { color: var(--muted); }
+.ad-card dd { margin: 0; font-weight: 700; }
+.ad-card p { margin: 0; color: var(--muted); line-height: 1.8; }
+#ad-note svg { width: 14px; height: 14px; display: inline; vertical-align: -2px; }
+.ad-cta { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-top: 30px; padding: 26px; border-radius: 26px; border: 1px solid var(--stroke); background: radial-gradient(90% 120% at 0% 100%, var(--gold-soft), transparent 60%), var(--card); }
+.ad-cta h2 { margin: 0 0 6px; }
+.ad-cta p { margin: 0; color: var(--muted); max-width: 60ch; }

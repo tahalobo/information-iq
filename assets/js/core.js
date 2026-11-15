@@ -375,7 +375,7 @@
             <li><a href="quiz.html">اختبر معلوماتك</a></li><li><a href="news.html">الأخبار والإنجازات</a></li>
             <li><a href="channel.html">من قناة تليغرام</a></li><li><a href="channel.html?type=event">فعاليات القناة</a></li>
             <li><a href="topic/index.html">فهرس المواضيع</a></li><li><a href="archive/index.html">أرشيف المنشورات</a></li>
-            <li><a href="about.html">من نحن</a></li><li><a href="about.html#ads">أعلن معنا</a></li><li><a href="privacy.html">سياسة الخصوصية</a></li></ul></div>
+            <li><a href="about.html">من نحن</a></li><li><a href="methodology.html">المنهجية والتصحيح</a></li><li><a href="advertise.html">أعلن معنا</a></li><li><a href="privacy.html">سياسة الخصوصية</a></li></ul></div>
           <div><h4>أدوات التحقق</h4><ul>
             ${window.TOOLS.filter((t) => t.group === "verify").map((t) => `<li><a href="${t.href}">${esc(t.title)}</a></li>`).join("")}</ul></div>
           <div><h4>أدوات رقمية</h4><ul>
@@ -623,6 +623,14 @@
     if (f && f.image) urls.push(f.image);
     cacheForOffline(urls);
   }
+
+  /* إحصاءات زيارات بلا كوكيز ولا تعرّف على الزائر: تُحمَّل فقط إن وُضع رمزها في config.js، وتحترم «عدم التتبّع» */
+  (function () {
+    const tok = window.SITE && SITE.analytics && SITE.analytics.cloudflareToken;
+    if (!tok || !/^[a-f0-9]{32}$/i.test(tok) || location.protocol !== "https:" || navigator.doNotTrack === "1" || navigator.globalPrivacyControl) return;
+    const sc = document.createElement("script"); sc.defer = true; sc.src = "https://static.cloudflareinsights.com/beacon.min.js";
+    sc.setAttribute("data-cf-beacon", JSON.stringify({ token: tok })); document.head.appendChild(sc);
+  })();
 
   window.App = { $, $$, esc, safeUrl, ic, icons, store, toast, copy, download, modal, debounce, param, fmtNum, fmtCompact, fmtK, bIcon, ago, newsRow, fmtDate, fmtBytes,
     readTime, norm, matches, saved, imageDims, fromOwnSite, isLite, liteMode, setLite, factUrl, cat, branchOf, factsSorted, factCard, ensureBR, coverStyle, logo, countUp, dropzone, shareButtons, socialLinks, ensureTG, cacheForOffline };

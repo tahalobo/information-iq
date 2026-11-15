@@ -293,7 +293,7 @@ for (const h of hubs) ogCard(`hub:${h.slug}`, `t/${hash(h.slug)}`, { kind: "topi
   foot: h.kind === "topic" ? "موضوع" : h.kind === "type" ? "من قناة تليغرام" : "قسم", bg: (h.items.find((i) => !i.cover && i.img && !i.img.remote) || {}).image || null, c1: h.c1, c2: h.c2 });
 ogCard("topic-index", "s/topics", { kind: "page", title: "فهرس المواضيع", sub: `${hubs.length} قسماً وموضوعاً تجمع ${items.length} منشوراً`, badge: "المواضيع", badgeIcon: "hash", icon: "library", foot: SITE.tagline });
 ogCard("archive", "s/archive", { kind: "page", title: "أرشيف المنشورات", sub: "كل الأخبار والمعلومات مرتّبة حسب التاريخ", badge: `${items.length} منشوراً`, badgeIcon: "archive", icon: "archive", foot: SITE.tagline });
-const PAGE_ICONS = { "index.html": "crown", "facts.html": "book-open", "branch.html": "newspaper", "channel.html": "send", "news.html": "megaphone", "trending.html": "flame", "files.html": "layers", "tools.html": "wrench", "quiz.html": "brain", "about.html": "crown", "contact.html": "mail", "privacy.html": "shield-check" };
+const PAGE_ICONS = { "index.html": "crown", "facts.html": "book-open", "branch.html": "newspaper", "channel.html": "send", "news.html": "megaphone", "methodology.html": "shield-check", "advertise.html": "megaphone", "trending.html": "flame", "files.html": "layers", "tools.html": "wrench", "quiz.html": "brain", "about.html": "crown", "contact.html": "mail", "privacy.html": "shield-check" };
 for (const f of readdirSync(ROOT).filter((x) => x.endsWith(".html") && !["404.html", "fact.html", "offline.html"].includes(x)).sort()) {
   const tool = TOOL_SEO[f], cfg = PAGES[f];
   const t = TOOLS.find((x) => x.href === f);
