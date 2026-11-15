@@ -108,7 +108,7 @@ for (const p of (BR && BR.posts) || []) {
   items.push({
     id: p.id, type: "news", branch: p.b, title: p.title, desc: p.excerpt, cat: p.b, date: detail.date || p.date,
     image: images[0] || null, images, body: detail.html || `<p>${esc(p.excerpt)}</p>`, video: p.video || null,
-    sources: [{ name: `قناة ${b.name} على تليغرام`, url: detail.url || `https://t.me/${b.channel}/${p.msg}` }], tags: p.tags || []
+    sources: [{ name: `قناة ${b.name} على تليغرام`, url: detail.url || `https://t.me/${b.channel}/${p.msg}` }], tags: p.tags || [], views: p.views || 0
   });
 }
 items.sort((a, b) => String(iso(b.date)).localeCompare(String(iso(a.date))) || String(b.id).localeCompare(String(a.id), "en", { numeric: true }));
@@ -221,6 +221,58 @@ items.forEach((it, i) => {
 });
 
 /* ==========================================================
+   ملفات وتغطيات: أخبار الحدث الواحد تُجمع آلياً في ملف بخط زمني
+   خبران من الفروع يرتبطان إذا تشابه نصّاهما بقوة (TF-IDF) ونُشرا خلال ثلاثة أسابيع؛ كل مجموعة مترابطة
+   من 3 أخبار فأكثر تصير ملفاً. الناتج assets/js/files-data.js تقرؤه files.html والرئيسية.
+   ========================================================== */
+const FILE_SIM = +(process.env.FILE_SIM || 0.16), FILE_MIN = 3, FILE_DAYS = 21;
+const coverage = [];
+{
+  const T = (it) => new Date(iso(it.ts || it.date)).getTime();
+  const par = new Map(); const find = (x) => { while (par.get(x) !== x) { par.set(x, par.get(par.get(x))); x = par.get(x); } return x; };
+  const weight = new Map();
+  items.forEach((it, i) => { if (it.branch) par.set(i, i); });
+  // التشابه العام لا يكفي («الإعلان رسمياً عن أنمي جديد» يشبه كل إعلان): يجب أن يشترك العنوانان في كلمتين مميّزتين
+  // على الأقل (اسم لعبة، شخص، مكان)، أي كلمات ترد في عناوين قليلة فقط.
+  const df = new Map();
+  for (const i of par.keys()) for (const t of new Set(items[i].titleStems)) df.set(t, (df.get(t) || 0) + 1);
+  const rareMax = Math.max(6, Math.round(par.size * 0.03));
+  // العبارات الافتتاحية المتكررة («حققت الحلقة…»، «الإعلان رسمياً عن…»، «Fun Fact…») ليست موضوعاً: كلمة تفتتح ثلاثة عناوين فأكثر لا تُحسب مميّزة
+  const opener = new Map();
+  for (const i of par.keys()) for (const t of new Set(items[i].titleStems.slice(0, 3))) opener.set(t, (opener.get(t) || 0) + 1);
+  const rare = new Map([...par.keys()].map((i) => [i, new Set(items[i].titleStems.filter((t) => t.length > 2 && df.get(t) >= 2 && df.get(t) <= rareMax && (opener.get(t) || 0) < 3))]));
+  const shared = (i, j) => { let n = 0; for (const t of rare.get(i)) if (rare.get(j).has(t)) n++; return n; };
+  // ربط متدرّج من الأقوى: مجموعتان تندمجان فقط إذا اشترك أغلب أزواج أخبارهما في الكلمات المميّزة.
+  // بهذا لا تتكوّن «سلسلة» تجرّ أخباراً لا علاقة بينها (أ يشبه ب، وب يشبه ج، وأ لا يشبه ج).
+  const edges = [];
+  for (const i of par.keys()) for (const [j, sc] of neighbours(index, i, 10)) {
+    if (j <= i || !par.has(j) || sc < FILE_SIM || shared(i, j) < 2 || Math.abs(T(items[i]) - T(items[j])) > FILE_DAYS * 86400e3) continue;
+    edges.push([sc, i, j]);
+  }
+  const members = new Map([...par.keys()].map((i) => [i, [i]]));
+  for (const [sc, i, j] of edges.sort((x, y) => y[0] - x[0])) {
+    const a = find(i), b = find(j); if (a === b) continue;
+    const A = members.get(a), B = members.get(b);
+    let ok = 0; for (const x of A) for (const y of B) if (shared(x, y) >= 2) ok++;
+    if (ok / (A.length * B.length) < 0.6) continue;
+    par.set(a, b); members.set(b, B.concat(A)); members.delete(a);
+    for (const x of [i, j]) weight.set(x, (weight.get(x) || 0) + sc);
+  }
+  const groups = new Map();
+  for (const i of par.keys()) { const r = find(i); (groups.get(r) || groups.set(r, []).get(r)).push(i); }
+  for (const g of groups.values()) {
+    const list = g.map((i) => items[i]).sort((x, y) => T(x) - T(y));
+    if (new Set(list.map((x) => norm(x.title))).size < FILE_MIN) continue;   // ثلاثة عناوين مختلفة على الأقل (لا منشوراً مكرراً)
+    const lead = items[[...g].sort((x, y) => (weight.get(y) || 0) - (weight.get(x) || 0))[0]];   // الخبر الأكثر ارتباطاً بالبقية يسمّي الملف
+    const bc = {}; list.forEach((x) => (bc[x.branch] = (bc[x.branch] || 0) + 1));
+    coverage.push({ id: `f-${list[0].id}`, title: clip(cleanTitle(lead.title), 90, 40), branch: Object.entries(bc).sort((x, y) => y[1] - x[1])[0][0],
+      from: day(list[0].date), to: day(list[list.length - 1].date), n: list.length, views: list.reduce((v, x) => v + (x.views || 0), 0),
+      image: (list.slice().reverse().find((x) => x.image && !/^https?:/.test(x.image)) || {}).image || null, ids: list.map((x) => x.id) });
+  }
+  coverage.sort((x, y) => y.to.localeCompare(x.to) || y.n - x.n);
+}
+
+/* ==========================================================
    صور المعاينة المصمَّمة (Open Graph): بطاقة 1200×630 لكل خبر وموضوع وأداة وصفحة
    ========================================================== */
 const ogJobs = new Map();
@@ -241,7 +293,7 @@ for (const h of hubs) ogCard(`hub:${h.slug}`, `t/${hash(h.slug)}`, { kind: "topi
   foot: h.kind === "topic" ? "موضوع" : h.kind === "type" ? "من قناة تليغرام" : "قسم", bg: (h.items.find((i) => !i.cover && i.img && !i.img.remote) || {}).image || null, c1: h.c1, c2: h.c2 });
 ogCard("topic-index", "s/topics", { kind: "page", title: "فهرس المواضيع", sub: `${hubs.length} قسماً وموضوعاً تجمع ${items.length} منشوراً`, badge: "المواضيع", badgeIcon: "hash", icon: "library", foot: SITE.tagline });
 ogCard("archive", "s/archive", { kind: "page", title: "أرشيف المنشورات", sub: "كل الأخبار والمعلومات مرتّبة حسب التاريخ", badge: `${items.length} منشوراً`, badgeIcon: "archive", icon: "archive", foot: SITE.tagline });
-const PAGE_ICONS = { "index.html": "crown", "facts.html": "book-open", "branch.html": "newspaper", "channel.html": "send", "news.html": "megaphone", "tools.html": "wrench", "quiz.html": "brain", "about.html": "crown", "contact.html": "mail", "privacy.html": "shield-check" };
+const PAGE_ICONS = { "index.html": "crown", "facts.html": "book-open", "branch.html": "newspaper", "channel.html": "send", "news.html": "megaphone", "trending.html": "flame", "files.html": "layers", "tools.html": "wrench", "quiz.html": "brain", "about.html": "crown", "contact.html": "mail", "privacy.html": "shield-check" };
 for (const f of readdirSync(ROOT).filter((x) => x.endsWith(".html") && !["404.html", "fact.html", "offline.html"].includes(x)).sort()) {
   const tool = TOOL_SEO[f], cfg = PAGES[f];
   const t = TOOLS.find((x) => x.href === f);
@@ -633,6 +685,9 @@ const sitemap = { pages: [], posts: [], topics: [] }; // { path, lastmod, images
 }
 await put("404.html", notFoundPage());
 
+await put("assets/js/files-data.js", `/* مولّد تلقائياً بواسطة scripts/build-pages.mjs — لا تعدّله يدوياً */
+window.FILES=${JSON.stringify(coverage)};
+`);
 await fs.writeFile(rel("assets/js/static-index.js"),
   `/* مولّد تلقائياً بواسطة scripts/build-pages.mjs */\nwindow.SITE_URL=${JSON.stringify(SITE_URL)};\nwindow.STATIC_POSTS=${JSON.stringify(Object.fromEntries(items.map((i) => [i.id, 1])))};\n`);
 

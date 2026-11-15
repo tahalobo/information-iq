@@ -47,6 +47,8 @@
 <div id="site-header"></div>
 
 <main>
+  <!-- 00 · Breaking strip: the newest headline, first thing on the page -->
+  <div class="container nr-top"><a class="nr-flash" id="nr-flash" href="branch.html" hidden><b id="nr-flash-tag">عاجل</b><span id="nr-flash-text"></span><small id="nr-flash-time"></small></a></div>
   <!-- 01 · Hero: the ziggurat -->
   <section class="xhero" data-sc>
     <div class="container xhero-grid">
@@ -70,6 +72,26 @@
     </div>
   </section>
 
+  <!-- 01a · Newsroom: breaking strip + the latest news from every branch -->
+  <section class="section nr" id="newsroom">
+    <div class="container">
+      <div class="nr-head">
+        <div><span class="nr-live"><i></i>يتحدّث تلقائياً من قنواتنا</span><h2>آخر الأخبار</h2></div>
+        <a href="branch.html" class="btn btn-ghost btn-sm">كل الأخبار<i data-lucide="arrow-left"></i></a>
+      </div>
+      <div class="nr-grid">
+        <div id="nr-lead"></div>
+        <div class="nr-panel">
+          <ol class="nr-feed" id="nr-list"></ol>
+          <div class="nr-links">
+            <a href="trending.html"><i data-lucide="flame"></i><span><b>الأكثر قراءة</b><small>اليوم وهذا الأسبوع</small></span></a>
+            <a href="files.html"><i data-lucide="layers"></i><span><b>ملفات وتغطيات</b><small>الموضوع بخط زمني</small></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 01b · The empire's branches: one tile per channel + the latest news from all of them -->
   <section class="section br-home" data-sc>
     <div class="container">
@@ -78,11 +100,6 @@
         <a href="branch.html" class="btn btn-ghost">كل الفروع<i data-lucide="arrow-left"></i></a>
       </div>
       <div class="br-tiles" id="branches"></div>
-      <div class="section-head mt-4">
-        <div><span class="kicker">الآن من الفروع</span><h3>آخر الأخبار</h3></div>
-        <a href="branch.html?b=news" class="btn btn-ghost btn-sm">كل الأخبار<i data-lucide="arrow-left"></i></a>
-      </div>
-      <div class="grid grid-3" id="br-latest"></div>
     </div>
   </section>
 

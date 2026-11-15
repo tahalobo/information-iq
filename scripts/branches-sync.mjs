@@ -196,7 +196,6 @@ async function main() {
   for (const f of await fs.readdir(P.img)) if (!liveImages.has(f)) await fs.rm(path.join(P.img, f));
 
   posts.sort((a, x) => x.ts.localeCompare(a.ts));
-  posts.forEach((p) => delete p.ts);
   const data = { updated: new Date().toISOString(), branches, posts };
   await fs.writeFile(P.index, `/* مولّد تلقائياً بواسطة scripts/branches-sync.mjs — لا تعدّله يدوياً */\nwindow.BR=${JSON.stringify(data)};\n`);
   console.log(`✔ المجموع: ${posts.length} خبراً في ${branches.length} فروع`);

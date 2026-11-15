@@ -51,11 +51,32 @@
       ${top ? `<span class="br-top">${ic(b.id === "info" ? "sparkles" : "radio")}<span>${esc(top.title)}</span></span>` : ""}
       <span class="br-foot"><b>${pool.length}</b>${b.id === "info" ? "معلومة" : "خبر"}${ic("arrow-up-left")}</span></a>`;
   }).join("");
-  const latestNews = [...BRI].sort((a, b) => b.date.localeCompare(a.date) || b.tg.localeCompare(a.tg));
-  // newest first, but no more than two in a row from the same branch
+  const latestNews = [...BRI].sort((a, b) => String(b.ts).localeCompare(String(a.ts)));
+  // Newsroom: the newest story leads, the next ones follow as a list (no more than three in a row from one branch)
   const mix = []; const per = {};
-  for (const x of latestNews) { if ((per[x.branch] || 0) < 2) { mix.push(x); per[x.branch] = (per[x.branch] || 0) + 1; } if (mix.length >= 6) break; }
-  $("#br-latest").innerHTML = mix.length ? mix.map(factCard).join("") : `<p class="muted">ستظهر الأخبار هنا مع أول مزامنة للفروع.</p>`;
+  for (const x of latestNews) { if ((per[x.branch] || 0) < 3) { mix.push(x); per[x.branch] = (per[x.branch] || 0) + 1; } if (mix.length >= 7) break; }
+  if (mix.length) {
+    const lead = mix.slice(0, 4).find((x) => x.image) || mix[0];   // the lead story is the newest one that has a picture
+    const br = (x) => (window.BRANCHES || []).find((b) => b.id === x.branch) || {};
+    const lb = br(lead);
+    $("#nr-lead").innerHTML = `<a class="nr-hero${lead.image ? "" : " noimg"}" href="${App.factUrl(lead.id)}" style="--c1:${esc(lb.c1 || "#13204f")};--c2:${esc(lb.c2 || "#d4a537")}">
+      ${lead.image ? `<img src="${esc(lead.image)}" alt="" fetchpriority="high" decoding="async" data-err="remove">` : ""}
+      <span class="nr-hero-body">
+        <span class="nr-chip">${App.bIcon(lb, "sm")}${esc(lb.short || "")}${lead.video ? `<i>${ic("play")}</i>` : ""}</span>
+        <strong>${esc(lead.title)}</strong>
+        ${lead.excerpt ? `<span class="nr-hero-x">${esc(lead.excerpt)}</span>` : ""}
+        <small>${ic("clock")}${esc(App.ago(lead.ts))}${lead.views ? `<span>${ic("eye")}${App.fmtCompact(lead.views)}</span>` : ""}</small>
+      </span></a>`;
+    $("#nr-list").innerHTML = mix.filter((x) => x !== lead).slice(0, 5).map((x) => { const b = br(x); return `<li><a href="${App.factUrl(x.id)}">
+      <span class="nr-feed-t"><b style="color:${esc(b.c2 || "inherit")}">${esc(b.short || "")}</b><small>${esc(App.ago(x.ts))}</small></span>
+      <strong>${esc(x.title)}</strong>
+      ${x.image ? `<span class="nr-feed-img"><img src="${esc(x.image)}" alt="" loading="lazy" decoding="async" data-err="remove">${x.video ? `<i>${ic("play")}</i>` : ""}</span>` : ""}</a></li>`; }).join("");
+    // the strip: "عاجل" only for a story from the news branch published in the last three hours
+    const hot = latestNews.find((x) => x.branch === "news") || latestNews[0];
+    const fresh = Date.now() - new Date(hot.ts).getTime() < 3 * 3600e3;
+    const fl = $("#nr-flash"); fl.hidden = false; fl.href = App.factUrl(hot.id); fl.classList.toggle("hot", fresh);
+    $("#nr-flash-tag").textContent = fresh ? "عاجل" : "آخر خبر"; $("#nr-flash-text").textContent = hot.title; $("#nr-flash-time").textContent = App.ago(hot.ts);
+  } else $("#newsroom").hidden = true;
 
   // Latest facts
   $("#latest").innerHTML = factsSorted().slice(0, 6).map(factCard).join("");

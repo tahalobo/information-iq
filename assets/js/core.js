@@ -68,6 +68,22 @@
   const fmtCompact = (n) => new Intl.NumberFormat("ar-u-nu-latn", { notation: "compact", maximumFractionDigits: 1 }).format(n);
   // عدد المشتركين بصيغة 182K (بلا كسور) ليُقرأ كما في تطبيقات التواصل
   const fmtK = (n) => (n >= 1e6 ? (Math.floor(n / 1e5) / 10 + "M") : n >= 1e3 ? Math.floor(n / 1e3) + "K" : String(n));
+  // "قبل 20 دقيقة": عمر الخبر بالنسبة للآن
+  const ago = (ts) => {
+    const m = Math.max(0, Math.round((Date.now() - new Date(ts).getTime()) / 60000));
+    if (!isFinite(m)) return "";
+    if (m < 1) return "الآن"; if (m < 60) return m === 1 ? "قبل دقيقة" : m === 2 ? "قبل دقيقتين" : m <= 10 ? `قبل ${m} دقائق` : `قبل ${m} دقيقة`;
+    const h = Math.round(m / 60); if (h < 24) return h === 1 ? "قبل ساعة" : h === 2 ? "قبل ساعتين" : h <= 10 ? `قبل ${h} ساعات` : `قبل ${h} ساعة`;
+    const d = Math.round(h / 24); if (d < 30) return d === 1 ? "أمس" : d === 2 ? "قبل يومين" : d <= 10 ? `قبل ${d} أيام` : `قبل ${d} يوماً`;
+    return fmtDate(String(ts).slice(0, 10));
+  };
+  // صف خبر مضغوط (صورة صغيرة + فرع + عنوان + وقت): يُستعمل في غرفة الأخبار والأكثر قراءة
+  const newsRow = (x, rank) => {
+    const b = branchOf(x.branch) || {};
+    return `<li class="nrow"><a href="${factUrl(x.id)}">${rank ? `<b class="nrow-rank">${rank}</b>` : ""}
+      <span class="nrow-img"${x.image ? "" : ` style="background:linear-gradient(135deg,${b.c1 || "#13204f"},${b.c2 || "#d4a537"})"`}>${x.image ? `<img src="${esc(x.image)}" alt="" loading="lazy" decoding="async" data-err="remove">` : ic(b.icon || "newspaper")}${x.video ? `<i class="nrow-play">${ic("play")}</i>` : ""}</span>
+      <span class="nrow-body"><small><span style="color:${b.c2 || "inherit"}">${esc(b.short || "")}</span> · ${esc(ago(x.ts))}${x.views ? ` · ${ic("eye")}${fmtCompact(x.views)}` : ""}</small><strong>${esc(x.title)}</strong></span></a></li>`;
+  };
   const fmtDate = (iso) => {
     try { return new Intl.DateTimeFormat("ar-IQ-u-nu-latn", { year: "numeric", month: "long", day: "numeric" }).format(new Date(iso + "T12:00:00")); }
     catch { return iso; }
@@ -164,7 +180,7 @@
   function brToItem(p) {
     const b = branchOf(p.b) || { short: p.b, name: p.b, channel: "" };
     return {
-      id: p.id, tg: p.id, branch: p.b, type: "news", title: p.title, cat: p.b, date: p.date, excerpt: p.excerpt, body: "",
+      id: p.id, tg: p.id, branch: p.b, type: "news", title: p.title, cat: p.b, date: p.date, ts: p.ts || p.date, excerpt: p.excerpt, body: "",
       minutes: Math.max(1, Math.round(p.len / 5 / 180)), image: p.image, images: p.images, media: p.media, video: p.video, views: p.views, tags: p.tags || [], len: p.len,
       sources: [{ name: `قناة ${b.name} على تليغرام`, url: `https://t.me/${b.channel}/${p.msg}`, kind: "telegram" }], srcCount: 1, source: "telegram"
     };
@@ -608,6 +624,6 @@
     cacheForOffline(urls);
   }
 
-  window.App = { $, $$, esc, safeUrl, ic, icons, store, toast, copy, download, modal, debounce, param, fmtNum, fmtCompact, fmtK, bIcon, fmtDate, fmtBytes,
+  window.App = { $, $$, esc, safeUrl, ic, icons, store, toast, copy, download, modal, debounce, param, fmtNum, fmtCompact, fmtK, bIcon, ago, newsRow, fmtDate, fmtBytes,
     readTime, norm, matches, saved, imageDims, fromOwnSite, isLite, liteMode, setLite, factUrl, cat, branchOf, factsSorted, factCard, ensureBR, coverStyle, logo, countUp, dropzone, shareButtons, socialLinks, ensureTG, cacheForOffline };
 })();
