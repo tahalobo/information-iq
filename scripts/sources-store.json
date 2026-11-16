@@ -1,5 +1,44 @@
 {
  "posts": {
+  "15053": {
+   "hash": "f3a07e86bde3",
+   "checked": "2026-11-16T20:38:30.977Z",
+   "queries": [
+    "امبراطورية المعلومات العراقية pinned «تُعلن إمبراطورية المعلومات العراقية على pinned",
+    "نشر المعلومات المجتمع العراقي امبراطورية العراقية"
+   ],
+   "sources": []
+  },
+  "15054": {
+   "hash": "a4960c739d89",
+   "checked": "2026-11-16T20:38:25.664Z",
+   "queries": [
+    "لماذا يتغير مذاق الطعام عندما نصاب بالزكام؟",
+    "حاسة التذوق حاسة الشم مذاق الطعام"
+   ],
+   "sources": []
+  },
+  "15055": {
+   "hash": "2ef42315bd22",
+   "checked": "2026-11-16T20:38:20.285Z",
+   "queries": [
+    "من اخر معاقل العبودية العربية",
+    "عبودية المملكة العربية السعودية معاقل العبودية 1962",
+    "Slavery"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B9%D8%A8%D9%88%D8%AF%D9%8A%D8%A9",
+     "name": "عبودية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "خلال القرن السادس عشر، بدأت أوروبا تتفوق على العالم العربي في حركة التصدير، علي حركة العبودية من إفريقيا إلى الأمريكتين استورد الهولنديون العبيد من آسيا إلى مستعمرتهم في جنوب إفريقيا في 1807 بريطانيا، امتدت…"
+    }
+   ]
+  },
   "15058": {
    "hash": "8daea01f22f6",
    "checked": "2026-11-16T10:26:43.850Z",
@@ -3643,7 +3682,67 @@
      "quote": "في مثل هذا اليوم 12 نوفمبر/تشرين الثاني من عام 1817 وُلد ميرزا حسين علي نوري المعروف ببهاء الله مؤسس الديانة البهائية."
     }
    ]
+  },
+  "15290": {
+   "hash": "d1ea93c60088",
+   "checked": "2026-11-16T20:38:13.805Z",
+   "queries": [
+    "حيث أعادت دراسة فلكية بناء سماء صيف عام 1889 باستخدام برامج المحاكاة",
+    "كوكب الزهرة متحف فان جوخ سماء برامج 1889"
+   ],
+   "sources": []
+  },
+  "15291": {
+   "hash": "8fc9518278ee",
+   "checked": "2026-11-16T20:37:57.165Z",
+   "queries": [
+    "داء النوستالجيا Nostalgia",
+    "فقدان الشهية خفقان القلب النوستالجيا سويسري",
+    "Nostalgia"
+   ],
+   "sources": [
+    {
+     "url": "https://www.webmd.com/balance/what-to-know-about-nostalgia",
+     "name": "What to Know About Nostalgia",
+     "site": "WebMD",
+     "host": "webmd.com",
+     "lang": "en",
+     "kind": "science",
+     "match": 97,
+     "quote": "We link nostalgia to memories from our childhood. What is nostalgia? Find out how nostalgia works, whether nostalgia is healthy, and why we have nostalgia."
+    },
+    {
+     "url": "https://dictionary.cambridge.org/dictionary/english/nostalgia",
+     "name": "nostalgia",
+     "site": "dictionary.cambridge.org",
+     "host": "dictionary.cambridge.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "NOSTALGIA definition: 1. a feeling of pleasure and also slight sadness when you think about things that happened in the…. Learn more."
+    },
+    {
+     "url": "https://www.psychologytoday.com/us/blog/hide-and-seek/201411/the-meaning-of-nostalgia",
+     "name": "The Meaning of Nostalgia",
+     "site": "Psychology Today",
+     "host": "psychologytoday.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "The psychology and philosophy of nostalgia."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Nostalgia",
+     "name": "Nostalgia",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Nostalgia is an emotion which is often described as a bittersweet longing for the past, typically for a period of time accompanied by happy memories or emotions. It is often described as a sort of sad…"
+    }
+   ]
   }
  },
- "updated": "2026-11-16T10:26:43.856Z"
+ "updated": "2026-11-16T20:38:30.979Z"
 }
