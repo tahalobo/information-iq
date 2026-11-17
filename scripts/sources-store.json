@@ -1,5 +1,73 @@
 {
  "posts": {
+  "15040": {
+   "hash": "6ae757303a7b",
+   "checked": "2026-11-17T12:15:12.584Z",
+   "queries": [
+    "سمكة أبو قشر… عندما تتحول الأنثى إلى ذكر Wrasse",
+    "الأعضاء التناسلية سمكة تتحول"
+   ],
+   "sources": []
+  },
+  "15041": {
+   "hash": "6932004373f1",
+   "checked": "2026-11-17T12:14:57.928Z",
+   "queries": [
+    "الحضارة: هل جعلت الإنسان أكثر سعادة… أم أبعدته عن طبيعته؟",
+    "الحيوانات المفترسة وسائل النقل الحضارة الإنسان"
+   ],
+   "sources": []
+  },
+  "15042": {
+   "hash": "a4c96df610ab",
+   "checked": "2026-11-17T12:14:42.012Z",
+   "queries": [
+    "الزواج عند الطيور ليس دائماً كما يبدو Extra-pair",
+    "طائر موسم التكاثر الزواج الطيور",
+    "Bird Extra-pair"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B7%D8%A7%D8%A6%D8%B1",
+     "name": "طائر",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "تتفاوت مُدَّة ونوعية الاعتناء الأبوي بالفراخ بين فصائل وأنواع الطيور."
+    },
+    {
+     "url": "https://ar.insterne.com/%D9%85%D9%88%D8%B3%D9%85-%D8%A7%D9%84%D8%AA%D8%B2%D8%A7%D9%88%D8%AC-%D9%84%D9%84%D8%B7%D9%8A%D9%88%D8%B1/",
+     "name": "متى يكون موسم الطيور التزاوج؟",
+     "site": "ar.insterne.com",
+     "host": "ar.insterne.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 58,
+     "quote": "الطيور لا تتزاوج للحصول على المتعة ، فقط من أجل الإنجاب ، والعديد من الطيور الذكور تكون عقيمة خارج موسم التكاثر."
+    },
+    {
+     "url": "https://www.animals-wd.com/%D9%83%D9%8A%D9%81-%D8%AA%D8%AA%D9%83%D8%A7%D8%AB%D8%B1-%D8%A7%D9%84%D8%B7%D9%8A%D9%88%D8%B1%D8%9F/",
+     "name": "موسوعة عالم الحيوانات",
+     "site": "موسوعة عالم الحيوانات - أحدث أخبار عالم الحيوانات و تربية الحيوانات موسوعة شاملة تهتم بالحيوانات",
+     "host": "animals-wd.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 55,
+     "quote": "يرتبط موسم التزاوج وتكاثر الطيور بطول ساعات النهار ، حيث تحدث تغيرات فسيولوجية لتهيئة الطيور للتكاثر مع زيادة ساعات النهار ابتداء من الربيع ، لذلك تبدأ الطيور في البحث عن موقع يلتقي بالعديد من الطيور."
+    }
+   ]
+  },
+  "15043": {
+   "hash": "1323c55a55f9",
+   "checked": "2026-11-17T12:14:20.593Z",
+   "queries": [
+    "مفارقة الاختيار: لماذا نرغب دائمًا فيما لم نختره؟",
+    "مفارقة الاختيار فيما ستندم"
+   ],
+   "sources": []
+  },
   "15044": {
    "hash": "bb2db9d4a4f7",
    "checked": "2026-11-17T03:21:47.043Z",
@@ -3837,7 +3905,58 @@
      "quote": "Nostalgia is an emotion which is often described as a bittersweet longing for the past, typically for a period of time accompanied by happy memories or emotions. It is often described as a sort of sad…"
     }
    ]
+  },
+  "15293": {
+   "hash": "905e63607f0d",
+   "checked": "2026-11-17T12:13:59.702Z",
+   "queries": [
+    "المعروفة أيضًا باسم «اليارسانية» أو «أهل الحق»",
+    "الكاكائية إقليم كردستان جذور كركوك",
+    "Yarsanism"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%83%D8%A7%D9%83%D8%A7%D8%A6%D9%8A%D8%A9",
+     "name": "الكاكائية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 69,
+     "quote": "تتعدد المزارات الدينية للطائفة الكاكائية، ومن بينها: مزار سلطان إسحاق الموجود في جبل هورامان بإقليم كردستان العراق، ومزار سيد ابراهيم ببغداد، والباب الأوسط ببغداد."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Yarsanism",
+     "name": "Yarsanism",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 64,
+     "quote": "Yarsanism (Kurdish: یارسان, romanized: Yarsan), Ahl-e Haqq (Kurdish: ئەهلی حەق, romanized: Ehlî Ḧeq; Persian: اهل حق), or Kaka'i, is a syncretic ethnoreligion founded by Sultan Sahak in the late 14th century…"
+    },
+    {
+     "url": "https://ultrairaq.ultrasawt.com/%D9%85%D8%A7%D8%B0%D8%A7-%D8%AA%D8%B9%D8%B1%D9%81-%D8%B9%D9%86-%D8%A7%D9%84%D8%AF%D9%8A%D8%A7%D9%86%D8%A9-%D8%A7%D9%84%D9%83%D8%A7%D9%83%D8%A7%D8%A6%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82%D8%9F/%D8%A7%D9%84%D8%AA%D8%B1%D8%A7-%D8%B9%D8%B1%D8%A7%D9%82/%D9%85%D8%AC%D8%AA%D9%85%D8%B9",
+     "name": "ماذا تعرف عن الديانة الكاكائية في العراق؟",
+     "site": "Ultra Iraq",
+     "host": "ultrairaq.ultrasawt.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 61,
+     "quote": "يُعرف العراق بتنوعه من ناحية تعدد الأفكار والأديان والطوائف والقوميات في مختلف مدنه ومحافظاته، ومنهم ما يعرف بـ\"الكاكائية\"، وهي أقلية دينية تعيش داخل إقليم كردستان العراق ومناطق أخرى تتوزع على محافظات نينوى…"
+    },
+    {
+     "url": "https://nabd.com/s/178170177-0621e1/%D8%A7%D9%84%D9%83%D8%A7%D9%83%D8%A7%D8%A6%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82..-%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-%D9%88%D9%85%D8%B9%D8%AA%D9%82%D8%AF%D8%A7%D8%AA-%D9%88%D9%87%D9%88%D9%8A%D8%A9-%D8%AF%D9%8A%D9%86%D9%8A%D8%A9",
+     "name": "الكاكائية في العراق.. تاريخ ومعتقدات وهوية دينية",
+     "site": "موقع نبض",
+     "host": "nabd.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 59,
+     "quote": "يُعد الكاكائيون من أقدم الأقليات الدينية في العراق، ويتركز وجودهم في محافظات كركوك وديالى والسليمانية وأربيل، إضافة إلى مناطق خانقين وداقوق وسهل نينوى، وتحيط بهذه الجماعة خصوصية دينية وثقافية جعلتها محل جدل…"
+    }
+   ]
   }
  },
- "updated": "2026-11-17T03:21:47.053Z"
+ "updated": "2026-11-17T12:15:12.587Z"
 }
