@@ -1,5 +1,100 @@
 {
  "posts": {
+  "15044": {
+   "hash": "bb2db9d4a4f7",
+   "checked": "2026-11-17T03:21:47.043Z",
+   "queries": [
+    "هل يمكن للإنسان أن يعرف ما سيحدث مستقبلًا؟",
+    "بيير لابلاس قوانين الطبيعة سيحدث الذرات 1814"
+   ],
+   "sources": []
+  },
+  "15045": {
+   "hash": "8b7bcd9086cb",
+   "checked": "2026-11-17T03:21:28.360Z",
+   "queries": [
+    "هل الأخلاق فطرية أم مكتسبة؟",
+    "علم النفس عدم وجود الأخلاق فطرية 2007"
+   ],
+   "sources": []
+  },
+  "15048": {
+   "hash": "c2d478f36786",
+   "checked": "2026-11-17T03:21:07.427Z",
+   "queries": [
+    "\"هاينريش سيفيرلوه\"",
+    "هاينريش سيفيرلوه أوماها جندي ألماني 1500"
+   ],
+   "sources": []
+  },
+  "15050": {
+   "hash": "2bc98262d6dd",
+   "checked": "2026-11-17T03:20:53.387Z",
+   "queries": [
+    "أبرد مكان معروف في الكون"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B3%D8%AF%D9%8A%D9%85_%D8%A8%D9%88%D9%85%D9%8A%D8%B1%D8%A7%D9%86%D8%BA",
+     "name": "سديم بوميرانغ",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 85,
+     "quote": "و تصل درجة حرارة السديم عند 1 كلفن (−272.15 درجة مئوية − 457.87 درجة فهرنهايت) مما يجعله المكان الطبيعي الأبرد المعروف حالياً في الكون."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Boomerang_Nebula",
+     "name": "Boomerang Nebula",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 80,
+     "quote": "The Boomerang Nebula is a bipolar reflection young planetary nebula located approximately 5,000 light-years from Earth in the constellation Centaurus."
+    },
+    {
+     "url": "https://www.albayan.ae/technology/science-technology/space/1234034",
+     "name": "أبرد مكان في الكون.. اكتشاف يفوق الخيال!",
+     "site": "البيان",
+     "host": "albayan.ae",
+     "lang": "ar",
+     "kind": "news",
+     "match": 83,
+     "quote": "هذا الإشعاع يُعرف باسم إشعاع الخلفية الكونية الميكروي، وهو بقايا الانفجار العظيم، وتبلغ حرارته حوالي 2.7 كلفن، أي ما يعادل تقريبا -270 درجة مئوية."
+    },
+    {
+     "url": "https://www.elbalad.news/6954028",
+     "name": "ثلج يفوق الخيال.. كيف كشف العلماء أبرد مكان معروف في الكون؟",
+     "site": "صدى البلد",
+     "host": "elbalad.news",
+     "lang": "ar",
+     "kind": "web",
+     "match": 77,
+     "quote": "في اكتشاف لافت، رصد العلماء جرما كونيا يتجاوز حتى برودة الفضاء العميق، وهو \"سديم بوميرانج\"، الواقع على بعد نحو 5000 سنة ضوئية في كوكبة قنطورس ويُعد هذا السديم أبرد جسم معروف حتى الآن، حيث تصل حرارته إلى نحو…"
+    },
+    {
+     "url": "https://ar.meteorologiaenred.com/%D8%A3%D8%A8%D8%B1%D8%AF-%D9%85%D9%83%D8%A7%D9%86-%D9%81%D9%8A-%D8%A7%D9%84%D9%83%D9%88%D9%86.html",
+     "name": "أبرد مكان في الكون: كل ما تريد معرفته",
+     "site": "Meteorología en Red",
+     "host": "ar.meteorologiaenred.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 70,
+     "quote": "هناك تم تحديد درجة حرارة السديم وجعلها أبرد مكان في الكون."
+    }
+   ]
+  },
+  "15052": {
+   "hash": "7393478ab58b",
+   "checked": "2026-11-17T03:20:32.275Z",
+   "queries": [
+    "تُعلن إمبراطورية المعلومات العراقية على منصة التليكرام عن حاجتها لأدمنية في",
+    "نشر المعلومات المجتمع العراقي التليكرام حاجتها"
+   ],
+   "sources": []
+  },
   "15053": {
    "hash": "f3a07e86bde3",
    "checked": "2026-11-16T20:38:30.977Z",
@@ -3744,5 +3839,5 @@
    ]
   }
  },
- "updated": "2026-11-16T20:38:30.979Z"
+ "updated": "2026-11-17T03:21:47.053Z"
 }
