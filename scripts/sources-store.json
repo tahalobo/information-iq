@@ -1,5 +1,91 @@
 {
  "posts": {
+  "15033": {
+   "hash": "401ecfa4f7e9",
+   "checked": "2026-11-17T21:12:26.976Z",
+   "queries": [
+    "الرجولة: كيف عُرّفت قديمًا؟ وكيف يراها عصرنا اليوم؟",
+    "عبر التاريخ الرجولة يراها"
+   ],
+   "sources": []
+  },
+  "15037": {
+   "hash": "572bddc758a0",
+   "checked": "2026-11-17T21:12:10.258Z",
+   "queries": [
+    "لماذا تبدو ذكور بعض الحيوانات «أجمل» من إناثها؟",
+    "عالم الحيوان ذكور الحيوانات"
+   ],
+   "sources": []
+  },
+  "15038": {
+   "hash": "065ed806704f",
+   "checked": "2026-11-17T21:11:51.353Z",
+   "queries": [
+    "المبنى ألاقبح في باريس",
+    "ناطحة سحاب مركز باريس المبنى ألاقبح 1973"
+   ],
+   "sources": []
+  },
+  "15039": {
+   "hash": "b43d6a8994a9",
+   "checked": "2026-11-17T21:11:37.249Z",
+   "queries": [
+    "نظرية التطور: بين الحقيقة العلمية والجدل"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AA%D8%B7%D9%88%D8%B1",
+     "name": "التطور",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 79,
+     "quote": "ويُعد التطور النظرية العلمية السائدة بين علماء الأحياء كتفسير لتنوع الكائنات الحية علي الأرض."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Evolution",
+     "name": "Evolution",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 75,
+     "quote": "Evolution is the change in the heritable characteristics of biological populations over successive generations. It happens when individuals in a population vary in their genetic characteristics and in the…"
+    },
+    {
+     "url": "https://nasainarabic.net/main/articles/view/evolution",
+     "name": "نظرية التّطور بين الحقيقة وإساءة الفهم",
+     "site": "ناسا بالعربي",
+     "host": "nasainarabic.net",
+     "lang": "ar",
+     "kind": "science",
+     "match": 57,
+     "quote": "- ماذا عن القول الشائع أنّ الكثير من علماء الأحياء يُعارضون نظرية التّطور؟"
+    },
+    {
+     "url": "https://evolutioninarabic.com/articles/366/",
+     "name": "التّطوّر: حقيقة ونظريّة ومسارا",
+     "site": "نظرية التطور - التطور بالعربية",
+     "host": "evolutioninarabic.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 62,
+     "quote": "التّطوّر نظريّةً: إنّ ترسيخ حقيقة التّطوّر كان فقط نصف هدف داروين."
+    },
+    {
+     "url": "https://www.aljazeera.net/science/2019/2/20/%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D8%AD%D9%82%D9%8A%D9%82%D8%A9-%D9%88%D8%A7%D9%84%D9%86%D8%B8%D8%B1%D9%8A%D8%A9-%D9%85%D8%A7-%D8%A7%D9%84%D8%B0%D9%8A-%D9%8A%D8%AF%D9%81%D8%B9",
+     "name": "بين الحقيقة والخرافة.. ما الذي يدفع العلماء لتصديق التطور؟",
+     "site": "الجزيرة نت",
+     "host": "aljazeera.net",
+     "lang": "ar",
+     "kind": "news",
+     "match": 52,
+     "quote": "ثم إن التغير في الكائنات الحية كان مرصودا، حتّى قبل أن تظهر البيولوجيا التطورية أو البيولوجيا ككل في الصورة، ما الذي يمكن أن يجمع تلك المشاهد المتفرقة معا؟"
+    }
+   ]
+  },
   "15040": {
    "hash": "6ae757303a7b",
    "checked": "2026-11-17T12:15:12.584Z",
@@ -3956,7 +4042,67 @@
      "quote": "يُعد الكاكائيون من أقدم الأقليات الدينية في العراق، ويتركز وجودهم في محافظات كركوك وديالى والسليمانية وأربيل، إضافة إلى مناطق خانقين وداقوق وسهل نينوى، وتحيط بهذه الجماعة خصوصية دينية وثقافية جعلتها محل جدل…"
     }
    ]
+  },
+  "15296": {
+   "hash": "2f0442d41094",
+   "checked": "2026-11-17T21:11:17.193Z",
+   "queries": [
+    "لم يكن الحمام الزاجل يعرف عناوين الأماكن كما نفعل اليوم",
+    "حمام الزاجل الحمام الزاجل عناوين الأماكن"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AD%D9%85%D8%A7%D9%85_%D8%A7%D9%84%D8%B2%D8%A7%D8%AC%D9%84",
+     "name": "حمام الزاجل",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "يُسمَّى فن تربية حمام الزاجل وترويضه على العمل المنوط به زَجَالة ومن عمل بها زجَّال."
+    },
+    {
+     "url": "https://mafahem.com/%D8%A7%D9%84%D8%AD%D9%85%D8%A7%D9%85-%D8%A7%D9%84%D8%B2%D8%A7%D8%AC%D9%84",
+     "name": "مواصفات الحمام الزاجل وأشهر السباقات له",
+     "site": "Mafaheem",
+     "host": "mafahem.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 64,
+     "quote": "هناك الكثير من أنواع الحمام الزاجل، التي تم تصنيفها بحسب الغرض من تربيتها، منها ما هو للزينة، ومنها ما يتم تدريبه للسباقات، والرسائل."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Homing_pigeon",
+     "name": "Homing pigeon",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "The homing pigeon is a variety of domestic pigeon (Columba livia domestica), selectively bred for its ability to find its way home over extremely long distances. Because of this skill, homing pigeons were used…"
+    },
+    {
+     "url": "https://www.edarabia.com/ar/18-%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A9-%D8%B9%D9%86-%D8%A7%D9%84%D8%AD%D9%85%D8%A7%D9%85-%D8%A7%D9%84%D8%B2%D8%A7%D8%AC%D9%84/",
+     "name": "18 معلومة عن الحمام الزاجل",
+     "site": "إيد أرابيا",
+     "host": "edarabia.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 54,
+     "quote": "يقوم الحمام الزاجل باحتضان ابنائه حتى عندما يستطيعون الطيران"
+    },
+    {
+     "url": "https://www.ainpedia.com/article/%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA-%D8%B9%D9%86-%D8%A7%D9%84%D8%AD%D9%85%D9%8E%D8%A7%D9%85-%D8%A7%D9%84%D8%B2%D8%A7%D8%AC%D9%84",
+     "name": "معلومات عن الحمَام الزاجل",
+     "site": "موسوعة عين",
+     "host": "ainpedia.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 52,
+     "quote": "أصبحت سباقات الحمَام العالميّة مُؤخَّراََ كثيرة الانتشار، وقد أُنشِئت العديد من أندية الحمَام في العالَم؛ بهدف المُشارَكة في هذه السباقات، كما أنّ الكثير من الناس يرغبون في تربية الحمَام الزاجل، ليس للمشاركة…"
+    }
+   ]
   }
  },
- "updated": "2026-11-17T12:15:12.587Z"
+ "updated": "2026-11-17T21:12:26.979Z"
 }
