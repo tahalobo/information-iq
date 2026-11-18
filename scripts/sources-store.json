@@ -1,5 +1,147 @@
 {
  "posts": {
+  "15023": {
+   "hash": "a58adfad636d",
+   "checked": "2026-11-18T03:02:23.311Z",
+   "queries": [
+    "النقطة العمياء: خلل في تركيب العين البشرية",
+    "العين البشرية العصب البصري النقطة العمياء"
+   ],
+   "sources": [
+    {
+     "url": "https://www.marefa.org/%D9%86%D9%82%D8%B7%D8%A9_%D8%B9%D9%85%D9%8A%D8%A7%D8%A1_(%D8%B1%D8%A4%D9%8A%D8%A9)",
+     "name": "نقطة عمياء (رؤية)",
+     "site": "المعرفة",
+     "host": "marefa.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 53,
+     "quote": "النقطة العمياء ، عتمة ، هي تعتيم على المجال البصري ."
+    },
+    {
+     "url": "https://e3arabi.com/%D8%A7%D9%84%D8%B5%D8%AD%D8%A9/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D8%AA%D9%88%D8%AC%D8%AF-%D8%A8%D9%82%D8%B9%D8%A9-%D8%B9%D9%85%D9%8A%D8%A7%D8%A1-%D9%81%D9%8A-%D8%B9%D9%8A%D9%86%D9%8A%D8%9F/",
+     "name": "ما الذي يسبب بقعة عمياء في العين؟",
+     "site": "e3arabi - إي عربي",
+     "host": "e3arabi.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 55,
+     "quote": "إذا أغلقت عينك اليسرى ونظرت إلى النقطة بالعين اليمنى وكرر الأمر ، يجب أن تختفي علامة الجمع في المنطقة العمياء من عينك الأخرى."
+    },
+    {
+     "url": "https://arabpsychology.com/dictionary/eye-structure-psychology/",
+     "name": "بنية العين: بوابة الإدراك الحسي البصري",
+     "site": "عرب سايكلوجي",
+     "host": "arabpsychology.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 52,
+     "quote": "تشكل محاور خلايا العقدة الشبكية في مؤخرة العين ما يُعرف بـ العصب البصري، والذي يخرج عبر بقعة محددة تفتقر إلى المستقبلات الضوئية وتسمى “القرص البصري” أو النقطة العمياء."
+    }
+   ]
+  },
+  "15024": {
+   "hash": "bb37b8320d3a",
+   "checked": "2026-11-18T03:02:05.558Z",
+   "queries": [
+    "كيف استطاع فيلسوف أن يصنع طغاة؟",
+    "نيكولو مكيافيلي نيكولو ميكافيلي فيلسوف طغاة",
+    "Niccolò Machiavelli"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%86%D9%8A%D9%83%D9%88%D9%84%D9%88_%D9%85%D9%83%D9%8A%D8%A7%D9%81%D9%8A%D9%84%D9%8A",
+     "name": "نيكولو مكيافيلي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 53,
+     "quote": "وهكذا كان ميكافيلي نقطة تحول مهمة في تاريخ الفكر السياسي."
+    }
+   ]
+  },
+  "15026": {
+   "hash": "59e197d3b623",
+   "checked": "2026-11-18T03:01:40.035Z",
+   "queries": [
+    "حبٌّ يستمر مدى الحياة؟",
+    "مدى الحياة عالم الحيوان يستمر شريكه"
+   ],
+   "sources": []
+  },
+  "15030": {
+   "hash": "76f4c3f686da",
+   "checked": "2026-11-18T03:01:15.610Z",
+   "queries": [
+    "الثلاثي المظلم ∆ — الجانب الخفي من الشخصية",
+    "نرجسية علم النفس الثلاثي المظلم",
+    "Narcissism"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%86%D8%B1%D8%AC%D8%B3%D9%8A%D8%A9",
+     "name": "نرجسية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "يصف هذا النموذج كيف ترتبط النرجسية بالسلوكيات التلاعبية وانعدام التعاطف، إذ تشترك هذه السمات الثلاث في نزعة أنانية واستغلالية تركز على المصلحة الذاتية دون اعتبار لمشاعر أو حقوق الآخرين."
+    },
+    {
+     "url": "https://arabpsychology.com/dictionary/dark-triad-personality-scale-dtps/",
+     "name": "مقياس الثالوث المظلم: سبر أغوار الشخصية المظلمة",
+     "site": "عرب سايكلوجي",
+     "host": "arabpsychology.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 64,
+     "quote": "يمثل مقياس سمات الثالوث المظلم للشخصية (Dark Triad Personality Scale – DTPS) أداة سيكومترية رائدة صُممت خصيصاً لرصد وقياس تضافر ثلاث سمات نفسية متداخلة وغير سريرية تتسم بالقسوة واستغلال الآخرين، وهي: النرجسية،…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Narcissism",
+     "name": "Narcissism",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 50,
+     "quote": "Narcissism is a self-centered personality style characterized as having an excessive preoccupation with oneself and one's own needs, often at the expense of others. Named after the Greek mythological figure…"
+    }
+   ]
+  },
+  "15032": {
+   "hash": "c01c117d50e3",
+   "checked": "2026-11-18T03:00:48.607Z",
+   "queries": [
+    "عندما تفوّق الشمبانزي على الإنسان Numerical Memory Task",
+    "إنسان تفوق الشمبانزي",
+    "Human Numerical Memory Task"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A5%D9%86%D8%B3%D8%A7%D9%86",
+     "name": "إنسان",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "انفصل الإنسان عن الشمبانزي قبل 4 – 8 مليون عام، في عصر الميوسين المتأخر."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Human",
+     "name": "Human",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "Humans (Homo sapiens, meaning 'thinking man' or 'wise man', and collectively referred to as 'mankind' or 'humanity') are the most abundant and widespread species of primates, characterized by bipedalism,…"
+    }
+   ]
+  },
   "15033": {
    "hash": "401ecfa4f7e9",
    "checked": "2026-11-17T21:12:26.976Z",
@@ -4104,5 +4246,5 @@
    ]
   }
  },
- "updated": "2026-11-17T21:12:26.979Z"
+ "updated": "2026-11-18T03:02:23.314Z"
 }
