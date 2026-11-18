@@ -1,5 +1,93 @@
 {
  "posts": {
+  "15017": {
+   "hash": "e912a2501576",
+   "checked": "2026-11-18T11:23:09.932Z",
+   "queries": [
+    "أبراج التجارة العالمية | الليلة الأخيرة قبل أن يتغيّر العالم",
+    "أبراج التجارة الليلة الأخيرة يتغير 1966"
+   ],
+   "sources": []
+  },
+  "15019": {
+   "hash": "555cb8741ffa",
+   "checked": "2026-11-18T11:22:41.375Z",
+   "queries": [
+    "الصورة التي تتحرك رغم أنها لا تتحرك Rotating Snakes Illusion",
+    "الصورة تتحرك وكأنها تدور حركة"
+   ],
+   "sources": []
+  },
+  "15020": {
+   "hash": "0354671817eb",
+   "checked": "2026-11-18T11:22:23.436Z",
+   "queries": [
+    "الانترنت - الشريان الرقمي للعصر الحديث Packet Switching",
+    "إنترنت شبكة الإنترنت الانترنت الشريان",
+    "Internet Packet Switching"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA",
+     "name": "إنترنت",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 73,
+     "quote": "حيث بدأت شركات الاتصالات بتوفير خدمة الدخول isp على الإنترنت بواسطة الشبكة الهاتفية عام (1995)."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Internet",
+     "name": "Internet",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 69,
+     "quote": "The internet (or Internet) is the global system of interconnected computer networks that uses the internet protocol suite (TCP/IP) to communicate between networks and devices. It is a network of networks that…"
+    },
+    {
+     "url": "https://www.annahar.com/technology/356200/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA-%D8%A7%D9%84%D8%AD%D9%82%D9%8A%D9%82%D9%8A-%D8%A8%D8%AF%D8%A3-%D8%A8%D8%AD%D8%B1%D9%81%D9%8A%D9%86-%D9%81%D9%82%D8%B7-%D9%82%D8%A8%D9%84-%D8%A3%D9%83%D8%AB%D8%B1-%D9%85%D9%86-%D9%86%D8%B5%D9%81-%D9%82%D8%B1%D9%86",
+     "name": "تاريخ الإنترنت الحقيقي: من أول رسالة عام 1969 إلى الويب",
+     "site": "annahar.com",
+     "host": "annahar.com",
+     "lang": "ar",
+     "kind": "news",
+     "match": 57,
+     "quote": "الإنترنت هو البنية التي تربط الشبكات وتنقل البيانات، بينما الويب نظام الصفحات والمواقع والروابط التي يتصفحها المستخدمون."
+    },
+    {
+     "url": "https://networkencyclopedia.com/packet-switching/",
+     "name": "Packet Switching Explained: How the Internet Moves Data",
+     "site": "NETWORK ENCYCLOPEDIA",
+     "host": "networkencyclopedia.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 56,
+     "quote": "Packet switching explained in depth: how it works, why it scales, and why it powers the modern Internet."
+    },
+    {
+     "url": "https://www.codesafari.blog/blog/packet-switching-explained",
+     "name": "Packet Switching Explained: Why the Internet Chops Everything Into Pieces",
+     "site": "codesafari.blog",
+     "host": "codesafari.blog",
+     "lang": "en",
+     "kind": "web",
+     "match": 56,
+     "quote": "How does data actually move across the internet? A plain-English explanation of packet switching — why messages are broken into packets, how that differs from old phone networks, and why this one idea made the…"
+    }
+   ]
+  },
+  "15021": {
+   "hash": "4a610510326b",
+   "checked": "2026-11-18T11:22:02.866Z",
+   "queries": [
+    "كيف لسؤال أن يصنع مجتمعات أفضل؟",
+    "أفكار جديدة حياة أفضل لسؤال مجتمعات"
+   ],
+   "sources": []
+  },
   "15023": {
    "hash": "a58adfad636d",
    "checked": "2026-11-18T03:02:23.311Z",
@@ -4244,7 +4332,67 @@
      "quote": "أصبحت سباقات الحمَام العالميّة مُؤخَّراََ كثيرة الانتشار، وقد أُنشِئت العديد من أندية الحمَام في العالَم؛ بهدف المُشارَكة في هذه السباقات، كما أنّ الكثير من الناس يرغبون في تربية الحمَام الزاجل، ليس للمشاركة…"
     }
    ]
+  },
+  "15298": {
+   "hash": "2ad0d84ccbfa",
+   "checked": "2026-11-18T11:21:44.097Z",
+   "queries": [
+    "ثقب في السماء… كاد أن يترك الأرض مكشوفة أمام أشعة الشمس! CFCs",
+    "نضوب الأوزون أشعة الشمس طبقة القارة 1987"
+   ],
+   "sources": [
+    {
+     "url": "https://rs.ksu.edu.sa/ar/issue-1325/10115",
+     "name": "طبقة الأوزون و«بروتوكول مونتريال 1987» «1",
+     "site": "rs.ksu.edu.sa",
+     "host": "rs.ksu.edu.sa",
+     "lang": "ar",
+     "kind": "science",
+     "match": 77,
+     "quote": "بالنسبة لثقب الأوزون «Ozone Hole» فإنه يتركز فوق القطب الجنوبي «القارة القطبية الجنوبية» في الجزء السفلي من طبقة الستراتوسفير، ويعتقد علماء البيئة أن سبب نضوب واستنزاف طبقة الأوزون «Ozone Depletion» يعود لعدة…"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%86%D8%B6%D9%88%D8%A8_%D8%A7%D9%84%D8%A3%D9%88%D8%B2%D9%88%D9%86",
+     "name": "نضوب الأوزون",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 68,
+     "quote": "هذه المركبات المستقرة كيميائية تستطيع أن تصل إلى طبقة الستراتوسفير حيث تعمل الأشعة فوق البنفسجية على تفكيك كل من الكلور والفلور.."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Ozone_depletion",
+     "name": "Ozone depletion",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 64,
+     "quote": "Ozone depletion in the stratosphere (the ozone layer) consists of two related phenomena observed since the late 1970s: a lowered total amount of ozone in Earth's upper stratosphere, and a much larger…"
+    },
+    {
+     "url": "https://www.bbc.com/arabic/science-and-tech-49717408",
+     "name": "لماذا نجح العالم في معالجة \"ثقب\" الأوزون وتلكأ في معالجة التغير المناخي؟",
+     "site": "BBC News عربي",
+     "host": "bbc.com",
+     "lang": "ar",
+     "kind": "news",
+     "match": 67,
+     "quote": "وفي عام 1987، وقع بروتوكول مونتريال الذي منع استخدام المواد الكيميائية المضعفة لطبقة الأوزون."
+    },
+    {
+     "url": "https://www.marefa.org/%D9%86%D8%B6%D9%88%D8%A8_%D8%A7%D9%84%D8%A3%D9%88%D8%B2%D9%88%D9%86",
+     "name": "نضوب الأوزون",
+     "site": "المعرفة",
+     "host": "marefa.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "توقع العلماء أن لا يقتصر نضوب طبقة الأوزون على القطبين."
+    }
+   ]
   }
  },
- "updated": "2026-11-18T03:02:23.314Z"
+ "updated": "2026-11-18T11:23:09.938Z"
 }
