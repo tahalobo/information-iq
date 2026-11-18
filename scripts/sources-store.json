@@ -1,5 +1,54 @@
 {
  "posts": {
+  "15013": {
+   "hash": "8a1a0ed652c4",
+   "checked": "2026-11-18T19:29:40.115Z",
+   "queries": [
+    "كيف سيبدو العالم من دون الرياضيات؟",
+    "العمليات الحسابية الرنين المغناطيسي سيبدو الرياضيات"
+   ],
+   "sources": []
+  },
+  "15014": {
+   "hash": "4e9ae25dce76",
+   "checked": "2026-11-18T19:29:29.275Z",
+   "queries": [
+    "زيلانديا: القارة الكاملة التي تختبئ تحت المحيط Zealandia",
+    "زيلانديا المحيط الهادئ القارة تختبئ",
+    "Zealandia zuhtwo"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B2%D9%8A%D9%84%D8%A7%D9%86%D8%AF%D9%8A%D8%A7",
+     "name": "زيلانديا",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 59,
+     "quote": "زيلانديا هي قارة مغمورة في المحيط الهادئ بعد انفصالها عن أستراليا قبل 60 مليون سنة وانفصالها عن القارة القطبية الجنوبية قبل 130 مليون سنة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Zealandia",
+     "name": "Zealandia",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 55,
+     "quote": "Zealandia (pronounced ), also known as Te Riu-a-Māui (Māori) or Tasmantis (from the Tasman Sea), is an almost entirely submerged mass of continental crust in Oceania that subsided after breaking away from…"
+    }
+   ]
+  },
+  "15015": {
+   "hash": "9c28c0e7471e",
+   "checked": "2026-11-18T19:29:20.044Z",
+   "queries": [
+    "\"أنت هو الكون الذي يتأمل نفسه\"",
+    "نفسه تخيل النجوم والمجرات والكواكب"
+   ],
+   "sources": []
+  },
   "15017": {
    "hash": "e912a2501576",
    "checked": "2026-11-18T11:23:09.932Z",
@@ -4392,7 +4441,69 @@
      "quote": "توقع العلماء أن لا يقتصر نضوب طبقة الأوزون على القطبين."
     }
    ]
+  },
+  "15299": {
+   "hash": "2e55c10bb18f",
+   "checked": "2026-11-18T19:29:15.335Z",
+   "queries": [
+    "حيث وصلت المركبة «فوياجر 1» إلى مسافة يوم ضوئي كامل عن الأرض Gliese",
+    "برنامج فوياجر ألف سنة وصلت المركبة",
+    "Voyager program Gliese"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC_%D9%81%D9%88%D9%8A%D8%A7%D8%AC%D8%B1",
+     "name": "برنامج فوياجر",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 61,
+     "quote": "اعتبارًا من عام 2024، تتحرك المركبة الفضائية فوياجر 2 بسرعة 55,347 كيلومترًا في الساعة (34,391 ميلًا في الساعة)، أو 15 كيلومترًا في الثانية، بالنسبة للشمس، وتبعد 20,439,100,000 كيلومتر (1.27003×1010 ميل) عن…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Voyager_program",
+     "name": "Voyager program",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "The Voyager program is an American scientific program that employs two interstellar probes, Voyager 1 and Voyager 2. They were launched in 1977 to take advantage of a favorable planetary alignment to explore…"
+    }
+   ]
+  },
+  "15300": {
+   "hash": "92571d71b9ee",
+   "checked": "2026-11-18T19:29:07.883Z",
+   "queries": [
+    "رحلة في تاريخ الأديان والمعتقدات",
+    "بلاد الرافدين تاريخ الأديان الآلهة والأساطير",
+    "Mesopotamia"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A8%D9%84%D8%A7%D8%AF_%D8%A7%D9%84%D8%B1%D8%A7%D9%81%D8%AF%D9%8A%D9%86",
+     "name": "بلاد الرافدين",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 61,
+     "quote": "عندما صعدت بابل إلى السلطة، صعدت الأساطير مردوخ من موقعه الأصلي باعتباره إله الزراعة إلى الإله الرئيسي في البانتيون (مجمع الألهه)."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Mesopotamia",
+     "name": "Mesopotamia",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "Mesopotamia is a historical region of West Asia situated within the Tigris–Euphrates river system, in the northern part of the Fertile Crescent. It corresponds roughly to the territory of modern Iraq. Just…"
+    }
+   ]
   }
  },
- "updated": "2026-11-18T11:23:09.938Z"
+ "updated": "2026-11-18T19:29:40.117Z"
 }
