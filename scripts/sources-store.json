@@ -1,5 +1,186 @@
 {
  "posts": {
+  "14997": {
+   "hash": "6b24aa827033",
+   "checked": "2026-11-19T09:01:54.463Z",
+   "queries": [
+    "الخطأ الذي أنقذ حياة أكثر من 200 مليون إنسان",
+    "ألكسندر فلمنج مضاد حيوي أنقذ مليون 1928"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A3%D9%84%D9%83%D8%B3%D9%86%D8%AF%D8%B1_%D9%81%D9%84%D9%85%D9%86%D8%AC",
+     "name": "ألكسندر فلمنج",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 65,
+     "quote": "اكتشاف فلمنج للبنسلين قد غيّر عالم الطب الحديث عن طريق إدخال عصر المضادات الحيوية المفيدة؛ وقد أنقذ البنسلين، ولا يزال ينقذ الملايين من الناس في جميع أنحاء العالم."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Alexander_Fleming",
+     "name": "Alexander Fleming",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 61,
+     "quote": "Sir Alexander Fleming (6 August 1881 – 11 March 1955) was a Scottish physician and microbiologist. He shared the 1945 Nobel Prize in Physiology or Medicine with Howard Florey and Ernst Chain \"for the discovery…"
+    },
+    {
+     "url": "https://examens.tn/encyclopedie/alexandre-fleming-et-la-penicilline/",
+     "name": "ألكسندر فلمنج والبنسلين: قصة اكتشاف المضاد الحيوي",
+     "site": "Examens.TN كتب مخططات إمتحانات تفاعلية",
+     "host": "examens.tn",
+     "lang": "ar",
+     "kind": "web",
+     "match": 69,
+     "quote": "ألكسندر فلمنج والبنسلين هما جزء من قصة مذهلة غيرت مجرى الطب وأنقذت ملايين الأرواح في تونس والعالم."
+    },
+    {
+     "url": "https://www.arrajol.com/content/408541/%D8%B5%D8%AD%D8%A9/%D8%A3%D9%84%D9%83%D8%B3%D9%86%D8%AF%D8%B1-%D9%81%D9%84%D9%85%D9%86%D8%AC-%D9%88%D8%A7%D9%83%D8%AA%D8%B4%D8%A7%D9%81-%D8%A7%D9%84%D8%A8%D9%86%D8%B3%D9%84%D9%8A%D9%86-%D9%83%D9%8A%D9%81-%D8%A3%D8%AF%D8%AA-%D9%85%D8%B5%D8%A7%D8%AF%D9%81%D8%A9-%D8%A5%D9%84%D9%89-%D8%A5%D9%86%D9%82%D8%A7%D8%B0-%D8%A7%D9%84%D9%85%D9%84%D8%A7%D9%8A%D9%8A%D9%86%D8%9F",
+     "name": "ألكسندر فلمنج واكتشاف البنسلين.. كيف أدت مصادفة إلى إنقاذ الملايين؟",
+     "site": "الرجل",
+     "host": "arrajol.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 66,
+     "quote": "ربّما لم نكُن لنعرف شيئًا عن المضادات الحيوية التي أنقذت حياة الملايين، لولا \"ألكسندر فلمنج\" المتحدث بتلك الكلمات، ومُكتشِف البنسلين: أوّل مضاد حيوي عرفته البشرية، بعد أن تسلّل فطر البنسليوم إلى عيّنة من…"
+    },
+    {
+     "url": "https://www.dorar-aliraq.net/threads/1390373-%D8%A3%D9%84%D9%83%D8%B3%D9%86%D8%AF%D8%B1-%D9%81%D9%84%D9%85%D9%86%D8%AC-%D9%88%D8%A7%D9%83%D8%AA%D8%B4%D8%A7%D9%81-%D8%A7%D9%84%D8%A8%D9%86%D8%B3%D9%84%D9%8A%D9%86-%D9%83%D9%8A%D9%81-%D8%A3%D8%AF%D8%AA-%D9%85%D8%B5%D8%A7%D8%AF%D9%81%D8%A9-%D8%A5%D9%84%D9%89-%D8%A5%D9%86%D9%82%D8%A7%D8%B0-%D8%A7%D9%84%D9%85%D9%84%D8%A7%D9%8A%D9%8A%D9%86-%D8%9F",
+     "name": "ألكسندر فلمنج واكتشاف البنسلين.. كيف أدت مصادفة إلى إنقاذ الملايين ؟",
+     "site": "درر العراق",
+     "host": "dorar-aliraq.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 59,
+     "quote": "ربّما لم نكُن لنعرف شيئًا عن المضادات الحيوية التي أنقذت حياة الملايين، لولا \"ألكسندر فلمنج\" المتحدث بتلك الكلمات، ومُكتشِف البنسلين: أوّل مضاد حيوي عرفته البشرية، بعد أن تسلّل فطر البنسليوم إلى عيّنة من…"
+    }
+   ]
+  },
+  "14998": {
+   "hash": "c60dc6f15a6e",
+   "checked": "2026-11-19T09:01:38.988Z",
+   "queries": [
+    "أول دار عرض سينمائي في بغداد",
+    "الأفلام الصامتة دار عرض سينمائي بغداد"
+   ],
+   "sources": [
+    {
+     "url": "https://nabd.com/s/129619276-8b8b2e/%D9%85%D8%A7-%D9%87%D9%88-%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D9%81%D9%8A-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82%D8%9F-%D9%88%D9%85%D8%AA%D9%89-%D9%83%D8%A7%D9%86-%D8%A3%D9%88%D9%84-%D8%B9%D8%B1%D8%B6-%D8%B3%D9%8A%D9%86%D9%85%D8%A7%D8%A6%D9%8A-%D8%B5%D8%A7%D9%85%D8%AA%D8%9F-%D9%88%D9%83%D9%8A%D9%81-%D8%A3%D8%B5%D8%A8%D8%AD%D8%AA-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%A2%D9%86%D8%9F",
+     "name": "ما هو تاريخ السينما في العراق؟ ومتى كان أول عرض سينمائي صامت؟ وكيف أصبحت السينمات الآن؟",
+     "site": "موقع نبض",
+     "host": "nabd.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "ومضى في حديثه \"كان أهالي بغداد يطلقون اسم السينما المتحركة على منطقة العبخانة، وتطور الأمر بعد نهاية العشرينيات ليتولى رجال الأعمال بناء دور عرض نظامية للأفلام الناطقة التي أقصت نظيرتها الصامتة في عام 1931،…"
+    },
+    {
+     "url": "https://algardenia.com/tarfiya/menouats/6558-2013-09-25-22-10-17.html",
+     "name": "بدايات السينما في العراق .. كيف شاهــد جمهــور بغــــــداد أول فيلم ســينمائي ؟",
+     "site": "algardenia.com",
+     "host": "algardenia.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 60,
+     "quote": "كيف شاهــد جمهــور بغــــــداد أول فيلم ســينمائي ؟"
+    },
+    {
+     "url": "https://almadasupplements.com/2025/05/04/%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%85%D8%A7-%D9%81%D9%8A-%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF-%D8%A8%D8%AF%D8%A7%D9%8A%D8%A7%D8%AA-%D9%88%D8%AA%D8%B7%D9%88%D8%B1/",
+     "name": "السينما في بغداد .. بدايات وتطور",
+     "site": "ملاحق المدى",
+     "host": "almadasupplements.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 54,
+     "quote": "وبذلك تكون هذه السينما ـ أي بلوكي ـ هي أول دار عرض سينمائي تُفتتح في مدينة بغداد عام 1911 ."
+    }
+   ]
+  },
+  "15001": {
+   "hash": "623497fa7ee3",
+   "checked": "2026-11-19T09:01:18.599Z",
+   "queries": [
+    "بالتأكيد سمعتَ من قبل عن 'رصاصة الرحمة'",
+    "الإعدام رميا بالرصاص الرصاص الحي بالتأكيد سمعت",
+    "Execution by firing squad"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A5%D8%B9%D8%AF%D8%A7%D9%85_%D8%B1%D9%85%D9%8A%D8%A7_%D8%A8%D8%A7%D9%84%D8%B1%D8%B5%D8%A7%D8%B5",
+     "name": "الإعدام رميا بالرصاص",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 64,
+     "quote": "يُعدّ الإعدام رميًا بالرصاص من الممارسات المحددة التي تختلف عن أشكال الإعدام الأخرى باستخدام الأسلحة النارية، مثل الإعدام برصاصة (أو عدة رصاصات) في مؤخرة الرأس أو الرقبة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Execution_by_firing_squad",
+     "name": "Execution by firing squad",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Execution by firing squad, historically called fusillading (from the French fusil, rifle), is a method of capital punishment, particularly common in times of war. Some reasons for its use are that firearms are…"
+    }
+   ]
+  },
+  "15003": {
+   "hash": "b3da18be5c2c",
+   "checked": "2026-11-19T09:00:51.691Z",
+   "queries": [
+    "العراقي الذي حاول صنع قلب صناعي يشبه القلب الحقيقي",
+    "قلب صناعي مواد نانوية محمود تصميم 2020"
+   ],
+   "sources": []
+  },
+  "15004": {
+   "hash": "9087bed2b4c1",
+   "checked": "2026-11-19T09:00:23.791Z",
+   "queries": [
+    "شارع الباوباب",
+    "مدغشقر شارع الباوباب 1000",
+    "Madagascar"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.tierient.com/%D8%B4%D8%A7%D8%B1%D8%B9-%D8%A8%D8%A7%D9%88%D8%A8%D8%A7%D8%A8%D8%B3/",
+     "name": "شارع باوبابس ، شارع باوبابز",
+     "site": "ar.tierient.com",
+     "host": "ar.tierient.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 72,
+     "quote": "في مدغشقر ، هناك جادة باوباب - نوع من الجاذبية التي تسمح لك بمشاهدة هذه الأشجار في كل مجدها."
+    },
+    {
+     "url": "https://ida2at.org/article/127025-%D8%B4%D8%A7%D8%B1%D8%B9-%D8%A7%D9%84%D8%A8%D8%A7%D9%88%D8%A8%D8%A7%D8%A8-%D9%81%D9%8A-%D9%85%D8%AF%D8%BA%D8%B4%D9%82%D8%B1-%D8%B7%D8%B1%D9%8A%D9%82-%D8%AA%D8%AD%D8%B1%D8%B3%D9%87-%D8%A3%D8%B4%D8%AC%D8%A7%D8%B1-%D8%A3%D9%85-%D8%A7%D9%84%D8%BA%D8%A7%D8%A8%D8%A9-%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82%D8%A9",
+     "name": "شارع الباوباب في مدغشقر: معلم طبيعي يحفظ بقايا غابة استوائية قديمة",
+     "site": "إضآءات",
+     "host": "ida2at.org",
+     "lang": "ar",
+     "kind": "web",
+     "match": 72,
+     "quote": "يتكوّن شارع الباوباب من أشجار باوباب غرانديدييه (Adansonia grandidieri)، وهي واحدة من ستة أنواع متوطنة من الباوباب لا توجد إلا في مدغشقر."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%AF%D8%BA%D8%B4%D9%82%D8%B1",
+     "name": "مدغشقر",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "الوضع السياسي في مدغشقر متسم بالصراع من أجل الحكم."
+    }
+   ]
+  },
   "15006": {
    "hash": "e93300f077c7",
    "checked": "2026-11-19T01:24:44.527Z",
@@ -4562,5 +4743,5 @@
    ]
   }
  },
- "updated": "2026-11-19T01:24:44.674Z"
+ "updated": "2026-11-19T09:01:54.466Z"
 }
