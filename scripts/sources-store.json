@@ -1,5 +1,216 @@
 {
  "posts": {
+  "14986": {
+   "hash": "07f54376c2a8",
+   "checked": "2026-11-20T00:47:50.984Z",
+   "queries": [
+    "العصا التي تتحول الى بندقية Cane Gun",
+    "سلاح ناري الولايات المتحدة بندقية مخفي 1858",
+    "Cane gun Cane Gun"
+   ],
+   "sources": [
+    {
+     "url": "https://www.recoilweb.com/dapper-concealment-remington-cane-gun-166146.html",
+     "name": "Dapper Concealment: Remington Cane Gun",
+     "site": "Recoil",
+     "host": "recoilweb.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Read: Dapper Concealment: Remington Cane Gun from Ashley Hlebinsky on March 11, 2021 for Recoil."
+    },
+    {
+     "url": "https://athlonoutdoors.com/article/remington-cane-guns/",
+     "name": "Security & Style in 1858",
+     "site": "Athlon Outdoors Exclusive Firearm Updates, Reviews & News",
+     "host": "athlonoutdoors.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 81,
+     "quote": "Delve into the story of the Cane Gun, a testament to Remington's commitment to invention & creativity in firearms design."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Cane_gun",
+     "name": "Cane gun",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "A cane gun is a walking cane with a hidden gun built into it. Cane guns are sometimes mistaken for similar-looking \"poacher's guns\"."
+    },
+    {
+     "url": "https://gatdaily.com/articles/the-cane-gun-a-deceptive-open-carry-option/",
+     "name": "A Deceptive Open Carry Option",
+     "site": "GAT Daily (Guns Ammo Tactical)",
+     "host": "gatdaily.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 66,
+     "quote": "The Cane Gun is a gentleman's option. It's a dandy gun for open carry that's not really open carry and they had their time in the sun."
+    }
+   ]
+  },
+  "14987": {
+   "hash": "ce2231352523",
+   "checked": "2026-11-20T00:47:30.134Z",
+   "queries": [
+    "عندما لا تكون السينما مجرد ترفيه… بل لحظة إدراك متأخرة تغيّر نظرتك للحياة Fight Club",
+    "السينما هويتنا نشتري الأشياء نشعر",
+    "Fight Club"
+   ],
+   "sources": [
+    {
+     "url": "https://fightclub-us.com/",
+     "name": "Home | Fight Club",
+     "site": "fightclub-us.com",
+     "host": "fightclub-us.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Fight Club creates consistent, structured spaces where boys and girls can slow down, connect, and work through real pressure without being judged, fixed, or forced to perform."
+    },
+    {
+     "url": "https://archive.org/details/fight.club.10th.anniversary.edition.1999.1080p.brrip.x264.yify_201908",
+     "name": "Fight. Club. 10th. Anniversary. Edition. 1999.1080p. Br Rip.x 264. YIFY",
+     "site": "Internet Archive",
+     "host": "archive.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "fight club movie"
+    },
+    {
+     "url": "https://www.rottentomatoes.com/m/fight_club",
+     "name": "Rotten Tomatoes",
+     "site": "Rotten Tomatoes",
+     "host": "rottentomatoes.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Discover reviews, ratings, and trailers for Fight Club on Rotten Tomatoes. Stay updated with critic and audience scores today!"
+    },
+    {
+     "url": "https://www.justwatch.com/us/movie/fight-club",
+     "name": "Fight Club streaming: where to watch movie online?",
+     "site": "JustWatch",
+     "host": "justwatch.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Find out how and where to watch \"Fight Club\" online on Netflix, Prime Video, and Disney+ today – including 4K and free options."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Fight_Club",
+     "name": "Fight Club",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Fight Club is a 1999 American film directed by David Fincher starring Brad Pitt, Edward Norton, and Helena Bonham Carter. It is based on the 1996 novel Fight Club by Chuck Palahniuk. Norton plays the unnamed…"
+    }
+   ]
+  },
+  "14988": {
+   "hash": "df49e13786f2",
+   "checked": "2026-11-20T00:46:56.418Z",
+   "queries": [
+    "إنخيدوانا | أول شاعرة معروفة في التاريخ informationiq",
+    "إنخيدوانا شاعرة أمها",
+    "Enheduanna informationiq"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A5%D9%86%D8%AE%D9%8A%D8%AF%D9%88%D8%A7%D9%86%D8%A7",
+     "name": "إنخيدوانا",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "هي أميرة أكدية (ابنة الملك سرجون الأكدي، وأمها كاهنة عالية المقام من كاهنات إله القمر نانا (سين) والكاهنة الأعلى للإله نانا إلهه القمر عند السومريين في مدينة أور (أقدم شخصية معروفة تحمل هذا اللقب)، وهو منصب…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Enheduanna",
+     "name": "Enheduanna",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "Enheduanna (Sumerian: 𒂗𒃶𒌌𒀭𒈾 Enḫéduanna, also transliterated as Enheduana, En-he2-du7-an-na, or variants; fl. c. 2300 BCE) was the entu (high) priestess of the moon god Nanna (Sīn) in the Sumerian…"
+    }
+   ]
+  },
+  "14989": {
+   "hash": "0eba6ece55c6",
+   "checked": "2026-11-20T00:46:36.663Z",
+   "queries": [
+    "هل لدينا دماغ ثانٍ غير الموجود في الرأس؟"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AC%D9%87%D8%A7%D8%B2_%D8%B9%D8%B5%D8%A8%D9%8A_%D9%85%D8%B9%D9%88%D9%8A",
+     "name": "جهاز عصبي معوي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 71,
+     "quote": "على الرغم من أن البعض كانوا يعتبرونه مجرد تجمع بسيط من العقد العصبية، يعرف الجهاز العصبي المعوي حاليا لكونه دماغا ثانيا مستقلا بذاته."
+    },
+    {
+     "url": "https://ar.neurotrackerx.com/%D8%A8%D8%B1%D9%8A%D8%AF/%D9%87%D9%84-%D9%84%D8%AF%D9%8A%D9%83-%D8%B9%D9%82%D9%84-%D8%AB%D8%A7%D9%86%D9%8D%D8%9F",
+     "name": "هل لديك دماغ ثانٍ؟",
+     "site": "ar.neurotrackerx.com",
+     "host": "ar.neurotrackerx.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 79,
+     "quote": "داخل الجهاز العصبي المعوي ، وهو شبكة واسعة من الخلايا العصبية تتحكم في الجهاز الهضمي، تُرسل الرسائل إلى الدماغ."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Enteric_nervous_system",
+     "name": "Enteric nervous system",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 67,
+     "quote": "The enteric nervous system (ENS) is one of the three divisions of the autonomic nervous system (ANS), the others being the sympathetic nervous system (SNS) and parasympathetic nervous system (PSNS). The ENS is…"
+    },
+    {
+     "url": "https://d3m-shabab.yoo7.com/t1671-%D9%87%D9%84-%D9%81%D8%B9%D9%84%D8%A7-%D9%8A%D9%88%D8%AC%D8%AF-%D8%AF%D9%85%D8%A7%D8%BA-%D8%A7%D8%AE%D8%B1-%D9%84%D8%AF%D9%8A%D9%86%D8%A7",
+     "name": "هل فعلا يوجد دماغ اخر لدينا؟",
+     "site": "d3m-shabab.yoo7.com",
+     "host": "d3m-shabab.yoo7.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 75,
+     "quote": "على الرغم من أن البعض كانوا يعتبرونه مجرد جمع بسيط من العقد العصبية, يعرف الجهاز العصبي المعوي حاليا بكونه دماغا ثانيا مستقلا بذاته."
+    },
+    {
+     "url": "https://hayeti.el-emarat.com/%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D8%BA-%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A-%D9%81%D9%8A-%D8%AC%D8%B3%D9%85-%D8%A7%D9%84%D8%A7%D9%86%D8%B3%D8%A7%D9%86/",
+     "name": "الدماغ الثاني في جسم الانسان!",
+     "site": "حياتي",
+     "host": "hayeti.el-emarat.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 66,
+     "quote": "على الرغم من أنالبعض كانوا يعتبرونه مجرد جمع بسيط من العقد العصبية, يعرف الجهاز العصبيالمعوي حاليا بكونه دماغا ثانيا مستقلا بذاته."
+    }
+   ]
+  },
+  "14990": {
+   "hash": "633b66ef7f90",
+   "checked": "2026-11-20T00:46:19.648Z",
+   "queries": [
+    "حين رُفع الستار عن تمثال الملك گِلگامش في جامعة سيدني",
+    "جامعة سيدني _ لو الستار تمثال"
+   ],
+   "sources": []
+  },
   "14991": {
    "hash": "b26b227dcdba",
    "checked": "2026-11-19T18:06:08.187Z",
@@ -4953,5 +5164,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-19T18:06:08.190Z"
+ "updated": "2026-11-20T00:47:50.987Z"
 }
