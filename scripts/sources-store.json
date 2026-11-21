@@ -1,5 +1,156 @@
 {
  "posts": {
+  "14954": {
+   "hash": "25c34aa6609d",
+   "checked": "2026-11-21T11:57:36.533Z",
+   "queries": [
+    "لماذا لا يمكنك الهروب من الثقب الأسود؟",
+    "الثقب الأسود أفق الحدث يمكنك الهروب"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D9%84%D8%A7-%D9%8A%D9%85%D9%83%D9%86%D9%83-%D8%A7%D9%84%D9%87%D8%B1%D9%88%D8%A8-%D9%85%D9%86-%D8%A7%D9%84%D8%AB%D9%82%D8%A8-%D8%A7%D9%84%D8%A3%D8%B3%D9%88%D8%AF%D8%9F/",
+     "name": "لماذا لا يمكنك الهروب من الثقب الأسود؟",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "عند عبور أفق الحدث للثقب الأسود تدخل منطقة لا يمكنك فيها العودة إلى الخارج مهما حاولت تغيير اتجاهك كل الطرق تقود إلى مركز الثقب الأسود حيث يوجد ما يسمى بالتفرد."
+    },
+    {
+     "url": "https://kids.frontiersin.org/ar/articles/10.3389/frym.2022.804654-ar",
+     "name": "لماذا يستحيل الهروب من ثقب أسود؟",
+     "site": "Frontiers for Young Minds",
+     "host": "kids.frontiersin.org",
+     "lang": "ar",
+     "kind": "web",
+     "match": 54,
+     "quote": "شكل 2 - في هذه المقارنة التشبيهية بالنهر، يشبه أفق الحدث في ثقب أسود الشلال، فعندما تسقط من شلال، لا يمكنك السباحة لأعلى للعودة إلى القمة."
+    }
+   ]
+  },
+  "14957": {
+   "hash": "ed165a6fc154",
+   "checked": "2026-11-21T11:57:07.949Z",
+   "queries": [
+    "المخترع الذي أراد أن يجعل الصم يسمعون الموسيقى",
+    "المخترع أراد الصم يسمعون الموسيقى 1920"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%B1%D8%B9-%D8%A7%D9%84%D8%B0%D9%8A-%D8%A3%D8%B1%D8%A7%D8%AF-%D8%A3%D9%86-%D9%8A%D8%AC%D8%B9%D9%84-%D8%A7%D9%84%D8%B5%D9%85-%D9%8A%D8%B3%D9%85%D8%B9%D9%88%D9%86-%D8%A7/",
+     "name": "المخترع الذي أراد أن يجعل الصم يسمعون الموسيقى",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "في عام 1920 كان المخترع هوغو غيرنسباك يعمل على فكرة غريبة هل يمكن لشخص أصم أن يدرك الموسيقى دون أن يسمعها؟"
+    }
+   ]
+  },
+  "14958": {
+   "hash": "d497fccd72d0",
+   "checked": "2026-11-21T11:56:50.934Z",
+   "queries": [
+    "الإشارات والتنبيهات لابن سينا من أشهر كتبه الفلسفية",
+    "الإشارات والتنبيهات واجب الوجود لابن سينا 1971",
+    "Al-Isharat wa al-Tanbihat"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A5%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA_%D9%88%D8%A7%D9%84%D8%AA%D9%86%D8%A8%D9%8A%D9%87%D8%A7%D8%AA",
+     "name": "الإشارات والتنبيهات",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 91,
+     "quote": "الإشارات والتنبيهات كتاب فلسفي ألّفه الفيلسوف والطبيب المسلم ابن سينا باللغة العربية، ويرجح أنه كتبه بين سنتي 421 و425 هـ، الموافقتين لنحو 1030 و1034 م."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Al-Isharat_wa_al-Tanbihat",
+     "name": "Al-Isharat wa al-Tanbihat",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 85,
+     "quote": "Al-Isharat wa’l-tanbihat (Arabic: الإشارات والتنبيهات, \"The Book of Directives and Remarks\") is apparently one of the last books of Avicenna which is written in Arabic."
+    },
+    {
+     "url": "https://www.middle-east-online.com/%D8%A7%D9%84%D8%A5%D8%B4%D8%A7%D8%B1%D8%A7%D8%AA-%D9%88%D8%A7%D9%84%D8%AA%D9%86%D8%A8%D9%8A%D9%87%D8%A7%D8%AA-%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86-%D8%A7%D9%84%D8%B3%D9%8A%D9%86%D9%88%D9%8A-%D8%A7%D9%84%D8%A3%D8%AE%D9%8A%D8%B1",
+     "name": "الإشارات والتنبيهات.. البيان السينوي الأخير",
+     "site": "MEO",
+     "host": "middle-east-online.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "وكلام ابن سينا في هذا الكتاب يعبر عن خلاصة رأيه في المباحث الفلسفية بعد طول بحثه."
+    }
+   ]
+  },
+  "14962": {
+   "hash": "ec2bb2d85fc3",
+   "checked": "2026-11-21T11:56:29.904Z",
+   "queries": [
+    "هل التوتر النفسي يسبب الشيب؟",
+    "توتر نفسي التوتر النفسي يسبب تشير"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AA%D9%88%D8%AA%D8%B1_%D9%86%D9%81%D8%B3%D9%8A",
+     "name": "توتر نفسي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "يمكن أن يرتبط التوتر باضطرابات نفسية كاضطراب القلق العام، والكآبة واضطراب الكرب التالي للرضح."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Psychological_stress",
+     "name": "Psychological stress",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "In psychology, stress is a feeling of emotional strain and pressure. Stress is a form of psychological and mental discomfort. Small amounts of stress may be beneficial, as it can improve athletic performance,…"
+    },
+    {
+     "url": "https://tareqeltaafy.com/%D8%A7%D9%84%D8%AA%D9%88%D8%AA%D8%B1-%D8%A7%D9%84%D9%86%D9%81%D8%B3%D9%8A-%D8%A3%D8%B3%D8%A8%D8%A7%D8%A8%D9%87-%D9%88%D8%A3%D8%B9%D8%B1%D8%A7%D8%B6%D9%87-%D9%88%D8%B7%D8%B1%D9%82-%D8%B9%D9%84%D8%A7/",
+     "name": "التوتر النفسي أسبابه وأعراضه وطرق علاجه",
+     "site": "طريق التعافي لعلاج الادمان",
+     "host": "tareqeltaafy.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 55,
+     "quote": "يُعد فهم أسباب التوتر النفسي خطوة ضرورية لعلاجه بشكل فعال."
+    },
+    {
+     "url": "https://www.ammonnews.net/article/985857",
+     "name": "هل التوتر النفسي يزيد مساحة الشيب؟",
+     "site": "وكالة عمون الاخبارية",
+     "host": "ammonnews.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 55,
+     "quote": "لكن السؤال الشائع: هل يمكن أن يؤثر التوتر والضغط النفسي في ظهور الشيب؟"
+    },
+    {
+     "url": "https://www.zahratalkhaleej.ae/article/4647273/%D9%87%D9%84-%D8%A7%D9%84%D8%AA%D9%88%D8%AA%D8%B1-%D8%A7%D9%84%D9%86%D9%81%D8%B3%D9%8A-%D9%8A%D8%B2%D9%8A%D8%AF-%D9%85%D8%B3%D8%A7%D8%AD%D8%A9-%D8%A7%D9%84%D8%B4%D9%8A%D8%A8",
+     "name": "هل التوتر النفسي يزيد مساحة الشيب؟",
+     "site": "زهرة الخليج",
+     "host": "zahratalkhaleej.ae",
+     "lang": "ar",
+     "kind": "web",
+     "match": 55,
+     "quote": "لكن السؤال الشائع: هل يمكن أن يؤثر التوتر والضغط النفسي في ظهور الشيب؟"
+    }
+   ]
+  },
   "14963": {
    "hash": "cc93a01ee3e0",
    "checked": "2026-11-21T03:42:03.859Z",
@@ -5861,7 +6012,66 @@
      "quote": "يقع مثلث برمودا في القسم الغربي من المحيط الأطلسي الشمالي (North Atlantic Ocean) ويحده:"
     }
    ]
+  },
+  "15305": {
+   "hash": "05bbbd4ae629",
+   "checked": "2026-11-21T11:56:12.171Z",
+   "queries": [
+    "يرتبط الثعبان في الرموز الطبية القديمة بالإله الإغريقي أسكليبيوس"
+   ],
+   "sources": [
+    {
+     "url": "https://symbolopedia.com/ar/rod-of-asclepius-symbolism/",
+     "name": "رمزية ومعنى عصا أسكليبيوس",
+     "site": "Symbolopedia",
+     "host": "symbolopedia.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 73,
+     "quote": "عصا أسكليبيوس، التي تتميز بثعبان واحد ملتف حول عصا، رمز عالمي للطب والشفاء والمهنة الطبية."
+    },
+    {
+     "url": "https://wakalatalanbae.ma/%D8%A7%D9%84%D8%A3%D9%81%D8%B9%D9%89-%D9%88%D8%A7%D9%84%D8%B5%D9%8A%D8%AF%D9%84%D8%A9-%D9%82%D8%B5%D8%A9-%D8%A7%D9%84%D8%B1%D9%85%D8%B2-%D8%A7%D9%84%D8%B0%D9%8A-%D8%AD%D9%8A%D9%91%D8%B1-%D8%A7%D9%84/",
+     "name": "الأفعى والصيدلة: قصة الرمز الذي حيّر الكثيرين",
+     "site": "وكالة الأنباء المغربية",
+     "host": "wakalatalanbae.ma",
+     "lang": "ar",
+     "kind": "web",
+     "match": 73,
+     "quote": "يرتبط هذا الرمز ارتباطًا وثيقًا بشخصية أسطورية في الميثولوجيا الإغريقية تُدعى “أسكليبيوس”، وهو إله الطب والشفاء عند الإغريق، وكان يُصوَّر حاملاً عصا يلتف حولها ثعبان."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A3%D8%B3%D9%82%D9%84%D9%8A%D8%A8%D9%8A%D9%88%D8%B3",
+     "name": "أسقليبيوس",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "كان واحدًا من أبناء أبوللو، تشارك مع أبوللو على لقب (\"الشافي\") وتعد عصا أسكليبيوس التي يلتف حولها الثعبان من الرموز التي استخدمت اليوم كرمز للطب."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Asclepius",
+     "name": "Asclepius",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "Asclepius (; Ancient Greek: Ἀσκληπιός Asklēpiós [asklɛːpiós]; Latin: Aesculapius) is a hero and god of medicine in ancient Greek religion and mythology. He is the son of Apollo and Coronis, or Arsinoe, or of…"
+    },
+    {
+     "url": "https://www.masrawy.com/howa_w_hya/relationship/details/2026/4/6/2968037/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D8%A7%D8%AE%D8%AA%D8%A7%D8%B1%D8%AA-%D9%83%D9%84%D9%8A%D8%A9-%D8%A7%D9%84%D8%B5%D9%8A%D8%AF%D9%84%D8%A9-%D8%A7%D9%84%D8%A3%D9%81%D8%B9%D9%89-%D8%B1%D9%85%D8%B2%D8%A7-%D9%84%D9%87%D8%A7-",
+     "name": "سر اختيار الثعبان رمزا لكلية الصيدلة والطب- لن تتوقعه",
+     "site": "مصراوي.كوم",
+     "host": "masrawy.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 62,
+     "quote": "كان انسلاخ جلد الثعبان يرمز لديهم إلى الولادة الجديدة والتجدد، مما جعله رمزا مناسبا للشفاء والتجديد في الطب."
+    }
+   ]
   }
  },
- "updated": "2026-11-21T03:42:03.874Z"
+ "updated": "2026-11-21T11:57:36.538Z"
 }
