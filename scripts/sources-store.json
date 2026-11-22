@@ -1,5 +1,125 @@
 {
  "posts": {
+  "14931": {
+   "hash": "2d389a82eb57",
+   "checked": "2026-11-22T12:47:38.594Z",
+   "queries": [
+    "فيلم Loving Vincent لم يكن مجرد عمل سينمائي Loving Vincent",
+    "لوحة زيتية فيلم روائي سينمائي تجربة",
+    "Loving Vincent"
+   ],
+   "sources": [
+    {
+     "url": "https://www.commonsensemedia.org/movie-reviews/loving-vincent",
+     "name": "Parents' Guide & Movie Review",
+     "site": "Common Sense Media",
+     "host": "commonsensemedia.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 81,
+     "quote": "Gorgeous, hand-painted images + pulpy murder story. Read Common Sense Media's Loving Vincent review, age rating, and parents guide."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Loving_Vincent",
+     "name": "Loving Vincent",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Loving Vincent is a 2017 experimental adult animated historical drama film directed  by Dorota Kobiela and Hugh Welchman, and written by Kobiela, Welchman, and Jacek Dehnel. It is based on the life of the…"
+    },
+    {
+     "url": "https://www.vangoghmuseum.nl/en/art-and-stories/loving-vincent",
+     "name": "Loving Vincent",
+     "site": "Van Gogh Museum",
+     "host": "vangoghmuseum.nl",
+     "lang": "en",
+     "kind": "web",
+     "match": 66,
+     "quote": "Loving Vincent is the world's first fully painted feature film. It tells the story of the last years of Vincent van Gogh's life."
+    },
+    {
+     "url": "https://manassa.news/stories/1818",
+     "name": "Loving Vincent.. جمالٌ ينساب من صورة سينمائية",
+     "site": "manassa.news",
+     "host": "manassa.news",
+     "lang": "ar",
+     "kind": "web",
+     "match": 65,
+     "quote": "وما الذي أفادته التجربة السينمائية من بطولة اللوحات الزيتية لفيلم متحرك؟"
+    }
+   ]
+  },
+  "14932": {
+   "hash": "459ae159db0f",
+   "checked": "2026-11-22T12:47:20.284Z",
+   "queries": [
+    "لماذا تبدو الملعقة مشوهة داخل الماء؟",
+    "انكسار الضوء تحت الماء تبدو الملعقة"
+   ],
+   "sources": [
+    {
+     "url": "https://shbabbek.com/show/261189",
+     "name": "عند وضع ملعقة في كوب من الشاي تبدو وكأنها مكسورة بسبب ماذا؟",
+     "site": "شبابيك",
+     "host": "shbabbek.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 79,
+     "quote": "عند وضع ملعقة في كوب من الشاي تبدو وكأنها مكسورة بسبب ماذا؟"
+    },
+    {
+     "url": "https://general-information.ahlamontada.com/t82-%D8%A7%D9%86%D9%83%D8%B3%D8%A7%D8%B1-%D8%A7%D9%84%D8%B6%D9%88%D8%A1-%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D8%AA%D8%A8%D8%AF%D9%88-%D8%A7%D9%84%D8%A3%D8%B4%D9%8A%D8%A7%D8%A1-%D9%85%D9%83%D8%B3%D9%88%D8%B1%D8%A9-%D8%AF%D8%A7%D8%AE%D9%84-%D8%A7%D9%84%D9%85%D8%A7%D8%A1",
+     "name": "انكسار الضوء: لماذا تبدو الأشياء مكسورة داخل الماء؟",
+     "site": "معلومات عامة",
+     "host": "general-information.ahlamontada.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 62,
+     "quote": "انكسار الضوء: لماذا تبدو الأشياء مكسورة داخل الماء؟"
+    }
+   ]
+  },
+  "14933": {
+   "hash": "0e5051a2e23a",
+   "checked": "2026-11-22T12:47:07.150Z",
+   "queries": [
+    "5 وظائف كانت ضرورية… واليوم تكاد تختفي",
+    "وظائف والنوافذ صباحا انتشار الحليب"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/5-%D9%88%D8%B8%D8%A7%D8%A6%D9%81-%D9%83%D8%A7%D9%86%D8%AA-%D8%B6%D8%B1%D9%88%D8%B1%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D9%8A%D9%88%D9%85-%D8%AA%D9%83%D8%A7%D8%AF-%D8%AA%D8%AE%D8%AA%D9%81%D9%8A-2/",
+     "name": "5 وظائف كانت ضرورية… واليوم تكاد تختفي",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "1_ موقظ الناس ٫ كان يطرق الأبواب والنوافذ صباحًا لإيقاظ العمال قبل انتشار المنبّهات."
+    },
+    {
+     "url": "https://www.ra2ej.com/%D9%88%D8%B8%D8%A7%D8%A6%D9%81-%D8%A7%D8%AE%D8%AA%D9%81%D8%AA-%D9%85%D9%86-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85-%D9%85%D9%87%D9%86-%D9%83%D8%A7%D9%86%D8%AA-%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A9-%D9%88%D8%A3%D8%B5%D8%A8%D8%AD%D8%AA-%D8%A8%D9%84%D8%A7-%D9%88%D8%AC%D9%88%D8%AF-%D8%AA%D9%82%D8%B1%D9%8A%D8%A8%D8%A7%D9%8B-895498.html",
+     "name": "وظائف اختفت من العالم.. مهن كانت أساسية وأصبحت بلا وجود تقريباً",
+     "site": "رائج",
+     "host": "ra2ej.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 60,
+     "quote": "قبل انتشار المنبّهات والساعات الحديثة، استعان بعض سكّان المدن الأوروبيّة بأشخاص عُرفوا باسم قارعي الأبواب، وكانت مهمّتهم إيقاظ العمّال والموظّفين في أوقات محدّدة صباحًا."
+    }
+   ]
+  },
+  "14934": {
+   "hash": "ed0679e9be3f",
+   "checked": "2026-11-22T12:46:46.670Z",
+   "queries": [
+    "انا لا أملك غير قلمي",
+    "غائب طعمة فرمان الحكم الملكي أملك قلمي 1957"
+   ],
+   "sources": []
+  },
   "14935": {
    "hash": "ff895372cbdf",
    "checked": "2026-11-22T04:18:54.327Z",
@@ -6558,7 +6678,16 @@
      "quote": "في نيو ساوث ويلز، تظهر ومضات التوهج الحيوي في أجزاء من خليج جيرفيس خلال فترات معينة من العام، إذ تتفاعل العوالق المضيئة مع حركة الأمواج لتنتج ضوءًا أزرق واضحًا في الظلام، بينما تختلف فرص رؤيتها من موسم لآخر."
     }
    ]
+  },
+  "15308": {
+   "hash": "f6db90c5b9a3",
+   "checked": "2026-11-22T12:46:26.559Z",
+   "queries": [
+    "اكتشف عمال منجم في منطقة نيكا بالمكسيك كهفًا يحتوي على بلورات جبسية عملاقة",
+    "درجة مئوية عمال منجم 2000"
+   ],
+   "sources": []
   }
  },
- "updated": "2026-11-22T04:18:54.336Z"
+ "updated": "2026-11-22T12:47:38.598Z"
 }
