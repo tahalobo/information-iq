@@ -423,7 +423,9 @@
     x.fillStyle = "#9ba3bf"; x.font = '500 30px "IBM Plex Sans Arabic"'; x.fillText(B ? `الإمبراطورية العراقية · @${B.channel}` : `العراقية · @${window.SITE.handle}`, W - M - 128, 182);
 
     // media
-    const top = 250, mh = img ? 640 : 520;
+    // عنوان طويل: نقصّر الصورة حتى يتسع العنوان كاملاً فوق صندوق الباركود
+    x.font = titleFont(64); const longTitle = wrap(x, f.title, W - 2 * M).length > 3;
+    const top = 250, mh = img ? (longTitle ? 430 : 640) : (longTitle ? 340 : 520);
     if (img) {
       x.save(); x.shadowColor = "rgba(0,0,0,.7)"; x.shadowBlur = 80; x.shadowOffsetY = 40; rr(x, M, top, W - 2 * M, mh, 52); x.fillStyle = "#0b1128"; x.fill(); x.restore();
       x.save(); rr(x, M, top, W - 2 * M, mh, 52); x.clip();
@@ -443,17 +445,22 @@
     y += 110;
 
     // title (auto-fit up to 4 lines)
-    let size = 92, lines; do { x.font = titleFont(size); lines = wrap(x, f.title, W - 2 * M); size -= 6; } while (lines.length > 4 && size > 54);
-    size += 6; const lh = size * 1.36;
+    // العنوان يتصغّر تلقائياً حتى يتسع كله في المساحة فوق صندوق الباركود (لا يُقطع ولا يغطّيه الصندوق)
+    const ctaTop = H - 450, room = ctaTop - 44 - y, ratio = B ? 1.14 : 1.36;
+    let size = 92, lines, lh;
+    for (;;) { x.font = titleFont(size); lines = wrap(x, f.title, W - 2 * M); lh = size * ratio; if (lines.length * lh <= room || size <= 40) break; size -= 4; }
+    if (lines.length * lh > room) { // عنوان أطول من أن يتسع حتى بأصغر خط: نكتفي بما يتسع وننهيه بثلاث نقاط
+      const fit = Math.max(1, Math.floor(room / lh)); lines = lines.slice(0, fit); lines[fit - 1] = lines[fit - 1].replace(/\s*\S+$/, "") + "…";
+    }
     const tg = x.createLinearGradient(M, 0, W - M, 0); tg.addColorStop(0, "#f2c25b"); tg.addColorStop(1, "#ffe7a6");
-    x.fillStyle = tg; lines.slice(0, 4).forEach((l, i) => x.fillText(l, W - M, y + size + i * lh));
-    y += Math.min(lines.length, 4) * lh + 40;
+    x.fillStyle = tg; lines.forEach((l, i) => x.fillText(l, W - M, y + size * (B ? .86 : 1) + i * lh));
+    y += lines.length * lh + 30;
 
     // excerpt, as many lines as fit above the call-to-action
     x.font = '500 40px "IBM Plex Sans Arabic"'; x.fillStyle = "#d9dcea";
-    const el = 40 * 1.75, room = Math.max(0, Math.floor((H - 480 - y) / el));
+    const el = 40 * 1.75, exRoom = Math.max(0, Math.floor((ctaTop - 30 - y) / el));
     let ex = wrap(x, f.excerpt, W - 2 * M);
-    if (ex.length > room) { ex = ex.slice(0, room); if (room) ex[room - 1] = ex[room - 1].replace(/\s*\S+$/, "") + "…"; }
+    if (ex.length > exRoom) { ex = ex.slice(0, exRoom); if (exRoom) ex[exRoom - 1] = ex[exRoom - 1].replace(/\s*\S+$/, "") + "…"; }
     ex.forEach((l, i) => x.fillText(l, W - M, y + 42 + i * el));
 
     // call to action: a gold box with a QR code that opens this fact on the site
