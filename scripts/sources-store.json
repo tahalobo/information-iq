@@ -1,5 +1,93 @@
 {
  "posts": {
+  "14935": {
+   "hash": "ff895372cbdf",
+   "checked": "2026-11-22T04:18:54.327Z",
+   "queries": [
+    "من قلب طبيعة روسيا القاسية.. اكتشافٌ معدنيٌ يغير قواعد اللعبة",
+    "شبه جزيرة كولا شبه جزيرة روسيا اكتشاف"
+   ],
+   "sources": []
+  },
+  "14936": {
+   "hash": "3a1e245eaac8",
+   "checked": "2026-11-22T04:18:15.719Z",
+   "queries": [
+    "من اقدم الأدلة التاريخية للتمييز الجندري وجدت في بلاد الرافدين القديمة (1750",
+    "مسلة حمورابي بلاد الرافدين التاريخية للتمييز 1750"
+   ],
+   "sources": []
+  },
+  "14937": {
+   "hash": "75a65e3b32a9",
+   "checked": "2026-11-22T04:17:51.004Z",
+   "queries": [
+    "الدليل الأقوى ليس صورة أو فيديو",
+    "التربة القمرية سطح القمر فيديو رواد"
+   ],
+   "sources": []
+  },
+  "14939": {
+   "hash": "7f6118fbbbf2",
+   "checked": "2026-11-22T04:17:23.218Z",
+   "queries": [
+    "هل يمكننا الوثوق بالتاريخ؟",
+    "مصادر مستقلة يمكننا الوثوق"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D9%87%D9%84-%D9%8A%D9%85%D9%83%D9%86%D9%86%D8%A7-%D8%A7%D9%84%D9%88%D8%AB%D9%88%D9%82-%D8%A8%D8%A7%D9%84%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%D8%9F/",
+     "name": "هل يمكننا الوثوق بالتاريخ؟",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "ومع ذلك، فالتاريخ ليس يقيناً مطلقاً كالرياضيات؛ لأن المصادر قد تكون ناقصة أو منحازة، لذلك يميّز المؤرخون بين ما هو مؤكد، ومرجّح، ومختلف عليه، وهذه ليست نقطة ضعف، بل قوة؛ لأن التاريخ الحقيقي هو الذي يقبل…"
+    },
+    {
+     "url": "https://www.taalimhub.com/2026/10/blog-post.html",
+     "name": "هل التاريخ كذب؟ كيف يفرّق المنهج العلمي بين الحقيقة والتزييف",
+     "site": "taalimhub.com",
+     "host": "taalimhub.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 56,
+     "quote": "يقارن بين مصادر مستقلة ، فاتفاقها يقوّي الخبر، وتعارضها يستدعي التفسير."
+    }
+   ]
+  },
+  "14940": {
+   "hash": "8d740546dbaa",
+   "checked": "2026-11-22T04:16:55.889Z",
+   "queries": [
+    "نـاطحة السحاب الاكبر قــارة أمريكا الجنوبية",
+    "الأمريكتان ناطحة السحاب أمريكا الجنوبية",
+    "Americas"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D9%8A%D9%83%D8%AA%D8%A7%D9%86",
+     "name": "الأمريكتان",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 63,
+     "quote": "لقد انفصلت أمريكا الجنوبية عن غرب القارة العظمى غندوانا منذ حوالي 135 مليون سنة وتشكَّلت بذلك قارتها الخاصة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Americas",
+     "name": "Americas",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 59,
+     "quote": "The Americas, also collectively  known as America, are a landmass comprising the totality of North America and South America. When viewed as a single continent, the Americas are the second largest continent by…"
+    }
+   ]
+  },
   "14944": {
    "hash": "e92d87d7ba98",
    "checked": "2026-11-21T23:34:17.768Z",
@@ -6472,5 +6560,5 @@
    ]
   }
  },
- "updated": "2026-11-21T23:34:17.772Z"
+ "updated": "2026-11-22T04:18:54.336Z"
 }
