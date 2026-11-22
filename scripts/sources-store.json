@@ -1,5 +1,211 @@
 {
  "posts": {
+  "14924": {
+   "hash": "204bbab619ca",
+   "checked": "2026-11-22T14:33:22.368Z",
+   "queries": [
+    "اختلاف ألوان الدم بين الكائنات"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D8%A7%D8%AE%D8%AA%D9%84%D8%A7%D9%81-%D8%A3%D9%84%D9%88%D8%A7%D9%86-%D8%A7%D9%84%D8%AF%D9%85-%D8%A8%D9%8A%D9%86-%D8%A7%D9%84%D9%83%D8%A7%D8%A6%D9%86%D8%A7%D8%AA/",
+     "name": "اختلاف ألوان الدم بين الكائنات",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "فالإنسان ومعظم الفقاريات تمتلك دم أحمر لاحتوائه على الهيموغلوبين الغني بالحديد، بينما تمتلك بعض الكائنات، مثل الأخطبوط وسرطان حدوة الحصان، دم أزرق لاحتوائه على الهيموسيانين الذي يعتمد على النحاس."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AF%D9%85",
+     "name": "دم",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 77,
+     "quote": "يكون لون الدم أحمر فاتح عندما يمر الدم عبر الشرايين والشعيرات الدموية حيث يضفي الأكسجين لوناً أحمراً قوياً علي مجموعة الهيم، وذلك في الفقاريات والكائنات الأخرى التي تستخدم الهيموجلوبين."
+    },
+    {
+     "url": "https://www.ra2ej.com/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D8%AA%D9%85%D8%AA%D9%84%D9%83-%D8%A8%D8%B9%D8%B6-%D8%A7%D9%84%D8%AD%D9%8A%D9%88%D8%A7%D9%86%D8%A7%D8%AA-%D8%AF%D9%85%D8%A7%D9%8B-%D8%A3%D8%B2%D8%B1%D9%82-%D8%A8%D8%AF%D9%84%D8%A7%D9%8B-%D9%85%D9%86-%D8%A7%D9%84%D8%A3%D8%AD%D9%85%D8%B1%D8%9F-894802.html",
+     "name": "لماذا تمتلك بعض الحيوانات دماً أزرق بدلاً من الأحمر؟",
+     "site": "رائج",
+     "host": "ra2ej.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 85,
+     "quote": "لا يحمل الدم اللون الأحمر لدى جميع الكائنات الحية؛ فبعض الحيوانات تمتلك دماً أزرق، وأخرى يكون سائلاً أخضر أو بنفسجياً أو شفافاً تقريباً."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Blood",
+     "name": "Blood",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 72,
+     "quote": "Blood is a specialized form of connective tissue  and body fluid in the circulatory system of humans and other vertebrates that delivers necessary substances such as nutrients and oxygen to the cells of the…"
+    },
+    {
+     "url": "https://www.gedarbaghdad.com/2026/11/blog-post_450.html",
+     "name": "علماء يوضحون سبب اختلاف ألوان دماء الحيوانات",
+     "site": "gedarbaghdad.com",
+     "host": "gedarbaghdad.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 79,
+     "quote": "أما الأخطبوطات والحبار والروبيان وسرطان البحر وسرطان حدوة الحصان، فتعتمد على الهيموسيانين، وهو بروتين يحتوي على النحاس بدلا من الحديد، لنقل الأكسجين."
+    }
+   ]
+  },
+  "14925": {
+   "hash": "7127c3d13e87",
+   "checked": "2026-11-22T14:33:05.892Z",
+   "queries": [
+    "الطبيب الذي عالج طفلة بالكهرباء",
+    "ويليام واتسون القرن الثامن عشر الطبيب طفلة 1762"
+   ],
+   "sources": []
+  },
+  "14926": {
+   "hash": "f4ffc6e40117",
+   "checked": "2026-11-22T14:32:37.224Z",
+   "queries": [
+    "اختلاف ألوان الرمال"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D8%A7%D8%AE%D8%AA%D9%84%D8%A7%D9%81-%D8%A3%D9%84%D9%88%D8%A7%D9%86-%D8%A7%D9%84%D8%B1%D9%85%D8%A7%D9%84/",
+     "name": "وكالة هنا العراق الاخبارية",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "فالرمال البيضاء تتكون غالبا من بقايا الشعاب المرجانية والأصداف، بينما تكتسب الرمال السوداء لونها من الصخور البركانية الغنية بالبازلت، أما الرمال الحمراء فتحتوي على نسب مرتفعة من أكاسيد الحديد."
+    },
+    {
+     "url": "https://www.ra2ej.com/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D8%AA%D8%AE%D8%AA%D9%84%D9%81-%D8%A3%D9%84%D9%88%D8%A7%D9%86-%D8%A7%D9%84%D8%B1%D9%85%D8%A7%D9%84-%D9%85%D9%86-%D8%B4%D8%A7%D8%B7%D8%A6-%D8%A5%D9%84%D9%89-%D8%A2%D8%AE%D8%B1%D8%9F-886043.html",
+     "name": "لماذا تختلف ألوان الرمال من شاطئ إلى آخر؟",
+     "site": "رائج",
+     "host": "ra2ej.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 81,
+     "quote": "وتظهر هذه الرمال في مناطق بركانية مختلفة حول العالم، وقد تبدو سوداء أو رمادية أو حتى تميل إلى درجات خضراء بحسب تركيب الصخور والمعادن الموجودة فيها."
+    },
+    {
+     "url": "https://tldrlss.com/ar/article/2026/05/why-is-the-sand-on-the-beach-has-a-different-color/",
+     "name": "لماذا يختلف لون رمال الشاطئ؟ كيف تتحدد بنية الرمال؟ هل توجد شواطئ خضراء أو بنفسجية؟ أين تقع هذه \\",
+     "site": "TLDRLSS",
+     "host": "tldrlss.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 74,
+     "quote": "الشواطئ ذات الرمال السوداء: شظايا مبردة من الحمم البركانية"
+    },
+    {
+     "url": "https://www.masrawy.com/howa_w_hya/relationship/details/2026/11/15/3079090/%D8%B4%D8%A7%D8%B7%D8%A6-%D8%AA%D8%AA%D8%AD%D9%88%D9%84-%D8%B1%D9%85%D8%A7%D9%84%D9%87-%D8%A5%D9%84%D9%89-%D8%A7%D9%84%D9%84%D9%88%D9%86-%D8%A7%D9%84%D8%A3%D8%B3%D9%88%D8%AF-%D9%83%D9%8A%D9%81-%D9%8A%D8%AD%D8%AF%D8%AB-%D8%B0%D9%84%D9%83-",
+     "name": "لماذا تتحول رمال بعض الشواطئ إلى اللون الأسود؟",
+     "site": "مصراوي.كوم",
+     "host": "masrawy.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 70,
+     "quote": "يُعد النشاط البركاني أحد أبرز أسباب ظهور الشواطئ ذات الرمال السوداء، إذ تتكون هذه الرمال عندما تصل الحمم البركانية الداكنة والغنية بالحديد والمغنيسيوم، مثل صخور البازلت، إلى مياه المحيط أو تتدفق نحو السواحل."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B1%D9%85%D9%84",
+     "name": "رمل",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 58,
+     "quote": "الزهريات: تستخدم الحيوانات الزهرية كاللاسعات البحرية القاعية المرتبطة بالشعاب المرجانية وشقائق النعمان البحرية الرمال للحصول على قوة هيكلية."
+    }
+   ]
+  },
+  "14927": {
+   "hash": "0f01691d07d5",
+   "checked": "2026-11-22T14:32:18.290Z",
+   "queries": [
+    "كيف تتكون الأحجار الكريمة؟"
+   ],
+   "sources": [
+    {
+     "url": "https://www.arageek.com/l/%D9%83%D9%8A%D9%81-%D8%AA%D8%AA%D9%83%D9%88%D9%86-%D8%A7%D9%84%D8%A3%D8%AD%D8%AC%D8%A7%D8%B1-%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85%D8%A9%D8%9F",
+     "name": "كيف تتكون الأحجار الكريمة؟",
+     "site": "أراجيك - Arageek",
+     "host": "arageek.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 86,
+     "quote": "وحسب المعادن الموجودة في طبقات الأرض والمدة التي يتم فيها تبريد السوائل بالإضافة إلى الضغط المطبق، تتكون أنواع الأحجار الكريمة ومن أهمها الألماس و الكوارتز، والعقيق."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AD%D8%AC%D8%B1_%D9%83%D8%B1%D9%8A%D9%85",
+     "name": "حجر كريم",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 72,
+     "quote": "وبعض الأحجار الكريمة تتكون في باطن الأرض على أعماق مختلفة، وقد تتحد مع عناصر أخرى أو تكون في صورة حرة، مثل الياقوت والزمرد والألماس الذي يوجد في بعض الأحيان على عمق 160 متراً تقريباً، ويخرج ضمن الحمم البركانية…"
+    },
+    {
+     "url": "https://exteranews.com/%D9%83%D9%8A%D9%81-%D8%AA%D8%AA%D9%83%D9%88%D9%86-%D8%A7%D9%84%D8%A3%D8%AD%D8%AC%D8%A7%D8%B1-%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85%D8%A9-%D8%AF%D8%A7%D8%AE%D9%84-%D8%A7%D9%84%D8%A3%D8%B1%D8%B6%D8%9F/",
+     "name": "كيف تتكون الأحجار الكريمة داخل الأرض؟",
+     "site": "جريدة اكستيرا الان - كل ما هو جديد في عالم الفن والاعلام",
+     "host": "exteranews.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 81,
+     "quote": "ومع تبريدها تبدأ المعادن في التبلور، وقد تتكون خلالها بعض الأحجار الكريمة."
+    },
+    {
+     "url": "https://public.amwaly.com/blog/213818/%D8%A7%D9%84%D8%A3%D8%AD%D8%AC%D8%A7%D8%B1-%D8%A7%D9%84%D9%83%D8%B1%D9%8A%D9%85%D8%A9-%D8%A3%D9%86%D9%88%D8%A7%D8%B9%D9%87%D8%A7-%D9%88%D8%A3%D8%B3%D8%B1%D8%A7%D8%B1-%D8%AA%D9%83%D9%88%D9%8A%D9%86%D9%87%D8%A7-%D9%88%D8%B7%D8%B1%D9%82-%D9%85%D8%B9%D8%B1%D9%81%D8%A9-%D9%82%D9%8A%D9%85%D8%AA%D9%87%D8%A7",
+     "name": "الأحجار الكريمة: أنواعها وأسرار تكوينها وطرق معرفة قيمتها",
+     "site": "public.amwaly.com",
+     "host": "public.amwaly.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 80,
+     "quote": "هل تساءلت يومًا كيف تتكون الأحجار الكريمة داخل الأرض؟"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Gemstone",
+     "name": "Gemstone",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 68,
+     "quote": "A gemstone (also called a fine gem, jewel, precious stone, semiprecious stone, or simply gem) is a piece of mineral crystal which, when cut or polished, is used to make jewelry or other adornments. Certain…"
+    }
+   ]
+  },
+  "14930": {
+   "hash": "ef75d3a0a30c",
+   "checked": "2026-11-22T14:32:06.782Z",
+   "queries": [
+    "أشياء غيّرت العالم… بدأت من العراق",
+    "أنظمة الكتابة الكتابة المسمارية بلاد الرافدين"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D8%A3%D8%B4%D9%8A%D8%A7%D8%A1-%D8%BA%D9%8A%D9%91%D8%B1%D8%AA-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85-%D8%A8%D8%AF%D8%A3%D8%AA-%D9%85%D9%86-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82/",
+     "name": "أشياء غيّرت العالم… بدأت من العراق",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 92,
+     "quote": "3 ـ ” العجلة والمركبات ” تُعد بلاد الرافدين من أقدم المناطق التي ظهرت فيها العجلة والمركبات ذات العجلات، والتي مهّدت لتطور وسائل النقل وصولًا إلى السيارات الحديثة."
+    }
+   ]
+  },
   "14931": {
    "hash": "2d389a82eb57",
    "checked": "2026-11-22T12:47:38.594Z",
@@ -6689,5 +6895,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-22T12:47:38.598Z"
+ "updated": "2026-11-22T14:33:22.372Z"
 }
