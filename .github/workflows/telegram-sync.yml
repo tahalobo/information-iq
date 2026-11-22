@@ -161,6 +161,17 @@ jobs:
       - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
           path: .
+      # أحياناً يتأخر ظهور الملف المرفوع في قائمة GitHub ثوانيَ، فيفشل النشر بخطأ «No artifacts named github-pages»: ننتظر حتى يظهر (دقيقتان كحد أقصى)
+      - name: Wait for the Pages artifact to be listed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for i in $(seq 1 24); do
+            n=$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts" -q '[.artifacts[] | select(.name=="github-pages")] | length' 2>/dev/null || echo 0)
+            if [ "$n" = "1" ]; then echo "artifact listed after $((i*5-5))s"; exit 0; fi
+            sleep 5
+          done
+          echo "artifact still not listed after 2 minutes; trying the deploy anyway"
       - id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
       # إخبار Bing و Yandex بالروابط الجديدة فوراً (مجاني بلا حساب). معطّل حتى تضع متغيّر المستودع INDEXNOW_ENABLED = true
