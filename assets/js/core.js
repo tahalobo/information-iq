@@ -80,7 +80,7 @@
   // صف خبر مضغوط (صورة صغيرة + فرع + عنوان + وقت): يُستعمل في غرفة الأخبار والأكثر قراءة
   const newsRow = (x, rank) => {
     const b = branchOf(x.branch) || {};
-    return `<li class="nrow"><a href="${factUrl(x.id)}">${rank ? `<b class="nrow-rank">${rank}</b>` : ""}
+    return `<li class="nrow"><button class="nrow-share" data-share-id="${esc(x.id)}" data-share-title="${esc(x.title)}" aria-label="شارك الرابط" title="شارك الرابط">${ic("share-2")}</button><a href="${factUrl(x.id)}">${rank ? `<b class="nrow-rank">${rank}</b>` : ""}
       <span class="nrow-img"${x.image ? "" : ` style="background:linear-gradient(135deg,${b.c1 || "#13204f"},${b.c2 || "#d4a537"})"`}>${x.image ? `<img src="${esc(x.image)}" alt="" loading="lazy" decoding="async" data-err="remove">` : ic(b.icon || "newspaper")}${x.video ? `<i class="nrow-play">${ic("play")}</i>` : ""}</span>
       <span class="nrow-body"><small><span style="color:${b.c2 || "inherit"}">${esc(b.short || "")}</span> · ${esc(ago(x.ts))}${x.views ? ` · ${ic("eye")}${fmtCompact(x.views)}` : ""}</small><strong>${esc(x.title)}</strong></span></a></li>`;
   };
@@ -240,6 +240,7 @@
       <div class="fc-veil"></div>
       <div class="fc-top"><span class="fc-cat">${ic(c.icon)}${esc(c.name)}</span>${type}${media}${verified}</div>
       <button class="save-btn${saved.has(f.id) ? " saved" : ""}" data-save="${esc(f.id)}" aria-label="${f.branch ? "حفظ الخبر" : "حفظ المعلومة"}">${ic("bookmark")}</button>
+      <button class="save-btn share-btn" data-share-id="${esc(f.id)}" data-share-title="${esc(f.title)}" aria-label="شارك الرابط" title="شارك الرابط">${ic("share-2")}</button>
       ${f.media === "video" ? `<span class="play-dot" aria-hidden="true">${ic("play")}</span>` : ""}
       <div class="fc-body">
         <h3><a href="${href}" class="fc-link">${esc(f.title)}</a></h3>
@@ -251,6 +252,15 @@
       </div>
     </article>`;
   }
+
+  /* شارك رابط أي خبر أو معلومة من بطاقتها مباشرة: نافذة المشاركة في الهاتف، ونسخ الرابط حيث لا توجد */
+  document.addEventListener("click", (e) => {
+    const b = e.target.closest("[data-share-id]"); if (!b) return;
+    e.preventDefault(); e.stopPropagation();
+    const url = new URL(factUrl(b.dataset.shareId), document.baseURI).href, title = b.dataset.shareTitle || document.title;
+    if (navigator.share) navigator.share({ title, text: title, url }).catch((err) => { if (!err || err.name !== "AbortError") copy(url, "نُسخ رابط المنشور"); });
+    else copy(url, "نُسخ رابط المنشور");
+  });
 
   document.addEventListener("click", (e) => {
     const b = e.target.closest("[data-save]"); if (!b) return;

@@ -2277,3 +2277,11 @@ html.rm .nr-live i, html.lite .nr-live i { animation: none; }
 .sv-old small { color: var(--muted); font-size: .76rem; }
 .sv-old h3 { margin: 0; font-size: 1rem; line-height: 1.6; }
 .sv-old .btn { justify-self: start; }
+
+/* ---------- زر «شارك الرابط» على كل بطاقة وصف ---------- */
+.fact-card > .share-btn { top: 12px; inset-inline-end: 58px; }
+.nrow { position: relative; }
+.nrow > a { padding-inline-end: 50px; }
+.nrow-share { position: absolute; z-index: 2; inset-inline-end: 8px; top: 50%; transform: translateY(-50%); width: 36px; height: 36px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--border); background: var(--surface-2); color: var(--muted); cursor: pointer; transition: color .3s, border-color .3s; }
+.nrow-share:hover { color: var(--gold); border-color: var(--gold); }
+.nrow-share svg { width: 16px; height: 16px; }
