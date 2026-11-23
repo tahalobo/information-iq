@@ -1,5 +1,176 @@
 {
  "posts": {
+  "14822": {
+   "hash": "839a6b47a609",
+   "checked": "2026-11-23T22:17:08.900Z",
+   "queries": [
+    "أوصى الممثل والمخرج الفرنسي فرناند أربيلوت بأن يُصمم قبره بحيث يبقى وجهه متجهًا",
+    "مقبرة بير لاشيز أوصى الممثل",
+    "Père Lachaise Cemetery"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D9%82%D8%A8%D8%B1%D8%A9_%D8%A8%D9%8A%D8%B1_%D9%84%D8%A7%D8%B4%D9%8A%D8%B2",
+     "name": "مقبرة بير لاشيز",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "مقبرة بير لاشيز أو مقبرة الأب لاشيز (الفرنسية: Cimetière du Père-Lachaise) هي أكبر مقبرة في باريس في فرنسا."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/P%C3%A8re_Lachaise_Cemetery",
+     "name": "Père Lachaise Cemetery",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "Père Lachaise Cemetery (French: Cimetière du Père-Lachaise [simtjɛʁ dy pɛʁ laʃɛːz], formerly Cimetière de l'Est, lit. 'Cemetery of the East') is the largest cemetery in Paris, France, at 44 hectares (110…"
+    }
+   ]
+  },
+  "14823": {
+   "hash": "54eeb319a644",
+   "checked": "2026-11-23T22:17:05.454Z",
+   "queries": [
+    "عندما يختفي التلوث الضوئي... تظهر السماء بهذا الجمال!",
+    "تلوث ضوئي التلوث الضوئي السماء الجمال",
+    "Light pollution"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AA%D9%84%D9%88%D8%AB_%D8%B6%D9%88%D8%A6%D9%8A",
+     "name": "تلوث ضوئي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 79,
+     "quote": "يؤثر التلوث الضوئي على رؤية أجسام السماء المنتشرة مثل السدم والمجرات -أكثر من النجوم- بسبب انخفاض سطوع سطحها."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Light_pollution",
+     "name": "Light pollution",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 75,
+     "quote": "Light pollution is the alteration of the natural patterns of light and dark in ecosystems, resulting from the unnecessary and inefficient use of artificial lighting. Specific categories of light pollution…"
+    }
+   ]
+  },
+  "14825": {
+   "hash": "7ff02de97896",
+   "checked": "2026-11-23T22:16:57.566Z",
+   "queries": [
+    "امرأة احتفظت بأظافرها 25 عامًا تكريمًا لابنتها",
+    "ولاية مينيسوتا موسوعة غينيس للأرقام القياسية امرأة بأظافرها 1997"
+   ],
+   "sources": []
+  },
+  "14826": {
+   "hash": "6fa385a0bbff",
+   "checked": "2026-11-23T22:16:43.076Z",
+   "queries": [
+    "صحراء ناميب",
+    "صحراء ناميب مليون سنة الصحارى الغربي"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D8%B5%D8%AD%D8%B1%D8%A7%D8%A1-%D9%86%D8%A7%D9%85%D9%8A%D8%A8/",
+     "name": "وكالة هنا العراق الاخبارية",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "تعد صحراء ناميب من أقدم الصحارى على وجه الأرض، إذ يقدر العلماء أن عمرها يتجاوز 55 مليون سنة."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B5%D8%AD%D8%B1%D8%A7%D8%A1_%D9%86%D8%A7%D9%85%D9%8A%D8%A8",
+     "name": "صحراء ناميب",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 66,
+     "quote": "صحراء ناميب (الإنجليزية: Namib)، تعتبر صحراء ناميب أقدم صحاري العالم، وهي تمتد بمحاذاة ساحل جنوب أفريقيا الغربي وإلى حد بعيد داخل ناميبيا."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Namib",
+     "name": "Namib",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 62,
+     "quote": "The Namib (, NAH-mib; Portuguese: Namibe) is a coastal desert in Southern Africa. According to the broadest definition, the Namib stretches for more than 2,000 kilometres (1,200 mi) along the Atlantic coasts…"
+    },
+    {
+     "url": "https://www.aljazeera.net/encyclopedia/2014/10/30/%D9%86%D8%A7%D9%85%D9%8A%D8%A8%D9%8A%D8%A7",
+     "name": "ناميبيا دولة أفريقية في أقدم صحاري العالم",
+     "site": "الجزيرة نت",
+     "host": "aljazeera.net",
+     "lang": "ar",
+     "kind": "news",
+     "match": 60,
+     "quote": "صحراء ناميب (الناميب) هي صحراء ساحلية في جنوب أفريقيا، وهي واحدة من أقدم الصحاري، إذ تعود إلى نحو 43 مليون سنة."
+    },
+    {
+     "url": "https://www.masa-pro.com/2023/11/Namib-desert.html",
+     "name": "حقائق وأسرار عن صحراء ناميب بوابة الجحيم، أحد أقدم الصحاري في العالم .",
+     "site": "masa-pro.com",
+     "host": "masa-pro.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 65,
+     "quote": "يقدر علماء الجيولوجيا عمر صحراء ناميب بأكثر من 80 مليون سنة، وبذلك فهي أقدم صحراء في العالم."
+    }
+   ]
+  },
+  "14827": {
+   "hash": "964509e3bb99",
+   "checked": "2026-11-23T22:16:28.427Z",
+   "queries": [
+    "متى تنتهي موجة الحر؟",
+    "شهر أيلول مناطق العراق تنتهي موجة"
+   ],
+   "sources": [
+    {
+     "url": "https://www.egypttelegraph.com/article/258968/%D9%85%D8%AA%D9%89-%D8%AA%D9%86%D8%AA%D9%87%D9%8A-%D8%A7%D9%84%D9%85%D9%88%D8%AC%D8%A9-%D8%A7%D9%84%D8%AD%D8%A7%D8%B1%D8%A9-%D9%88%D8%AA%D8%AD%D8%B3%D9%86-%D8%AD%D8%A7%D9%84%D8%A9-%D8%A7%D9%84%D8%B7%D9%82%D8%B3",
+     "name": "متى تنتهي الموجة الحارة وتحسن حالة الطقس؟.. الأرصاد تجيب",
+     "site": "تليجراف مصر",
+     "host": "egypttelegraph.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 70,
+     "quote": "تشهد البلاد، ارتفاعا شديدا في درجات الحرارة مع ارتفاع نسبة الرطوبة، حيث وصلت الحرارة إلى 38 درجة، ما يدفع الكثيرون للتساؤل عن “متى تنتهي موجة الحر الحالية”، لمعرفة موعد انخفاض درجات الحرارة وتحسن الأحوال…"
+    },
+    {
+     "url": "https://shbabbek.com/show/276064",
+     "name": "متى تنتهي موجة الحر في مصر 2026؟.. رطوبة عالية وطقس ساخن",
+     "site": "شبابيك",
+     "host": "shbabbek.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 61,
+     "quote": "وتتصدر تساؤلات مثل متى تنتهي الموجة الحارة في مصر؟"
+    },
+    {
+     "url": "https://www.alraeesnews.com/330046",
+     "name": "متى تنتهي موجة الحر؟.. «الأرصاد» تكشف موعد عودة درجات الحرارة لمعدلاتها الطبيعية",
+     "site": "الرئيس نيوز",
+     "host": "alraeesnews.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 59,
+     "quote": "كشف الدكتور محمود القياتي، المتنبئ الجوي بمركز التنبؤات والإنذار المبكر بهيئة الأرصاد الجوية، موعد انتهاء الارتفاع الحالي في درجات الحرارة، موضحًا أن الأجواء الحارة ستستمر حتى نهاية الأسبوع، على أن تبدأ حالة…"
+    }
+   ]
+  },
   "14828": {
    "hash": "b62b56cdeb58",
    "checked": "2026-11-23T22:02:39.841Z",
@@ -8185,5 +8356,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-23T22:02:39.846Z"
+ "updated": "2026-11-23T22:17:08.904Z"
 }
