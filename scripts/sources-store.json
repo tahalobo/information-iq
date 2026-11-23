@@ -1,5 +1,128 @@
 {
  "posts": {
+  "14801": {
+   "hash": "61d744806aa3",
+   "checked": "2026-11-23T23:01:52.634Z",
+   "queries": [
+    "الموسيقى في الحضارة السومرية",
+    "سومر الحضارة السومرية الموسيقى آلات",
+    "Sumer"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B3%D9%88%D9%85%D8%B1",
+     "name": "سومر",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "آلات الموسيقى الوترية (3217 ق.هـ / 2500 ق.م تقريباً): تطوير القيثارات والكنارات السومرية المكتشفة في المقابر الملكية."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Sumer",
+     "name": "Sumer",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "Sumer ( SOO-mər) is the earliest known civilization, located in the historical region of southern Mesopotamia (now south-central Iraq), emerging during the Chalcolithic and early Bronze Ages between the 5th…"
+    }
+   ]
+  },
+  "14803": {
+   "hash": "352a7572e2ed",
+   "checked": "2026-11-23T23:01:49.182Z",
+   "queries": [
+    "مفاعل نووي كونتها الطبيعة",
+    "يورانيوم مفاعل نووي الطبيعة فرنسيون 1972",
+    "Uranium"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%8A%D9%88%D8%B1%D8%A7%D9%86%D9%8A%D9%88%D9%85",
+     "name": "يورانيوم",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 67,
+     "quote": "أما اليورانيوم-238 فهو قابل للانشطار بواسطة النيوترونات السريعة، وهو أيضًا مادة خصيبة، وهذا يعني أنه يمكن تحويله لبلوتونيوم-239 انشطاري في المفاعلات النووية."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Uranium",
+     "name": "Uranium",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 63,
+     "quote": "Uranium is a chemical element; it has symbol U and atomic number 92. It is a silvery-grey metal in the actinide series of the periodic table. A uranium atom has 92 protons and 92 electrons, of which 6 are…"
+    }
+   ]
+  },
+  "14804": {
+   "hash": "547e1e471343",
+   "checked": "2026-11-23T23:01:38.421Z",
+   "queries": [
+    "لو أمكن فرد جميع الشعيرات الدموية الموجودة في جسم إنسان بالغ وربطها ببعضها في",
+    "دم الشعيرات الدموية أمكن بالغ",
+    "Blood"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AF%D9%85",
+     "name": "دم",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 61,
+     "quote": "يكون لون الدم أحمر فاتح عندما يمر الدم عبر الشرايين والشعيرات الدموية حيث يضفي الأكسجين لوناً أحمراً قوياً علي مجموعة الهيم، وذلك في الفقاريات والكائنات الأخرى التي تستخدم الهيموجلوبين."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Blood",
+     "name": "Blood",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "Blood is a specialized form of connective tissue  and body fluid in the circulatory system of humans and other vertebrates that delivers necessary substances such as nutrients and oxygen to the cells of the…"
+    }
+   ]
+  },
+  "14805": {
+   "hash": "3dc21d96df2e",
+   "checked": "2026-11-23T23:01:33.373Z",
+   "queries": [
+    "في تموز 2026أعلن فريق دولي من علماء الأحياء عن اكتشاف فصيلة جديدة من قرود",
+    "علماء الأحياء الغابات المطيرة تموز فريق 2026"
+   ],
+   "sources": []
+  },
+  "14808": {
+   "hash": "941c16718a2a",
+   "checked": "2026-11-23T23:01:28.364Z",
+   "queries": [
+    "اكتشف تلسكوب إقليدس التابع لوكالة الفضاء الأوروبية ثقبين أسودين هائلين يعودان",
+    "إقليدس تلسكوب إقليدس لوكالة الأوروبية",
+    "Euclid"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A5%D9%82%D9%84%D9%8A%D8%AF%D8%B3_(%D9%85%D9%82%D8%B1%D8%A7%D8%A8_%D9%81%D8%B6%D8%A7%D8%A6%D9%8A)",
+     "name": "إقليدس (مقراب فضائي)",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 52,
+     "quote": "تدعم مهمة إقليدس وتكمل مهمة مقراب بلانك التابع لوكالة الفضاء الأوروبية."
+    }
+   ]
+  },
   "14811": {
    "hash": "739d9f71e1ed",
    "checked": "2026-11-23T22:47:40.192Z",
@@ -8685,5 +8808,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-23T22:47:40.197Z"
+ "updated": "2026-11-23T23:01:52.638Z"
 }
