@@ -1,5 +1,254 @@
 {
  "posts": {
+  "14889": {
+   "hash": "0e1a22fa49fa",
+   "checked": "2026-11-23T01:02:22.632Z",
+   "queries": [
+    "ما أقدم مكتبة معروفة في التاريخ؟",
+    "إبلا الشرق الأدنى القديم مكتبة معروفة",
+    "Ebla"
+   ],
+   "sources": [
+    {
+     "url": "https://www.newworldencyclopedia.org/entry/Ebla",
+     "name": "New World Encyclopedia",
+     "site": "newworldencyclopedia.org",
+     "host": "newworldencyclopedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 97,
+     "quote": "Ebla (Arabic: عبيل، إيبلا, modern Tell Mardikh, Syria) was an ancient city about 55 km southwest of Aleppo. It was an important city-state in two periods, first in the late third millennium B.C.E., then again…"
+    },
+    {
+     "url": "https://honairaqnew.iq/%D9%85%D8%A7-%D8%A3%D9%82%D8%AF%D9%85-%D9%85%D9%83%D8%AA%D8%A8%D8%A9-%D9%85%D8%B9%D8%B1%D9%88%D9%81%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%D8%9F/",
+     "name": "ما أقدم مكتبة معروفة في التاريخ؟",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "تعد مكتبة إيبلا في سوريا حاليا، من أقدم المكتبات المعروفة في التاريخ، إذ يعود تاريخها إلى نحو 2500 قبل الميلاد."
+    },
+    {
+     "url": "https://www.ancient-hebrew.org/biblical-history/archives-of-ebla-and-the-bible.htm",
+     "name": "The Archives of Ebla and the Bible",
+     "site": "ancient-hebrew.org",
+     "host": "ancient-hebrew.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "The ancient archives of the city of Ebla from the 3rd millennium B.C. were written in a Semitic language very similar to Hebrew and has provided revelation into the biblical text and has assisted scholars in…"
+    },
+    {
+     "url": "https://www.thearchaeologist.org/blog/the-forgotten-city-of-ebla",
+     "name": "The Forgotten City of Ebla",
+     "site": "The Archaeologist",
+     "host": "thearchaeologist.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Introduction to Ebla Ebla, located in modern-day Syria, was a major urban center during the Bronze Age, flourishing around 2500–2250 BCE. Rediscovered in the 1970s, it is known for its massive palace complex,…"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A5%D8%A8%D9%84%D8%A7",
+     "name": "إبلا",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 72,
+     "quote": "تشير التقنيات المتطورة لترتيب النصوص، إلى جانب تكوينها، إلى قدم ممارسات المحفوظات والمكتبات، والتي قد تكون أقدم بكثير مما كان مفترضًا قبل اكتشاف مكتبة إيبلا."
+    }
+   ]
+  },
+  "14890": {
+   "hash": "f8b48a2a55ce",
+   "checked": "2026-11-23T01:01:54.744Z",
+   "queries": [
+    "هل يمكن أن تتكون سحب داخل الكهوف؟",
+    "درجات الحرارة تتكون الكهوف"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D9%87%D9%84-%D9%8A%D9%85%D9%83%D9%86-%D8%A3%D9%86-%D8%AA%D8%AA%D9%83%D9%88%D9%86-%D8%B3%D8%AD%D8%A8-%D8%AF%D8%A7%D8%AE%D9%84-%D8%A7%D9%84%D9%83%D9%87%D9%88%D9%81%D8%9F/",
+     "name": "هل يمكن أن تتكون سحب داخل الكهوف؟",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "في بعض الكهوف العملاقة يمكن أن تتكون سحب أو ضباب داخلي نتيجة اختلاف درجات الحرارة والرطوبة بين أجزاء الكهف."
+    }
+   ]
+  },
+  "14891": {
+   "hash": "20ab7f98625d",
+   "checked": "2026-11-23T01:01:22.248Z",
+   "queries": [
+    "شلال تحت الماء قرب جزيرة موريشيوس",
+    "جزيرة موريشيوس تحت الماء شلال مورن"
+   ],
+   "sources": [
+    {
+     "url": "https://www.annahar.com/lifestyle/travel/172356/%D9%81%D9%8A-%D8%AC%D8%B2%D9%8A%D8%B1%D8%A9-%D9%85%D9%88%D8%B1%D9%8A%D8%B4%D9%8A%D9%88%D8%B3-%D9%85%D8%B4%D9%87%D8%AF-%D8%B3%D8%A7%D8%AD%D8%B1-%D9%84%D8%B4%D9%84%D8%A7%D9%84-%D8%AA%D8%AD%D8%AA-%D8%A7%D9%84%D9%85%D8%A7-%D8%B5%D9%88%D8%B1",
+     "name": "في جزيرة موريشيوس... مشهد ساحر لشلال تحت الماء (صور)",
+     "site": "annahar.com",
+     "host": "annahar.com",
+     "lang": "ar",
+     "kind": "news",
+     "match": 78,
+     "quote": "تقع جزيرة جميلة تجذب مئات السائحين كل عام، تسمى \"موريشيوس\"، وسط المحيط الهندي، على بعد حوالي 860 كم عن مدغشقر، وتتميز بأكثر الظواهر الطبيعية غرابةً، أبرزها وجود شلال تحت الماء."
+    },
+    {
+     "url": "https://mauritius-direct.com/ar/%D8%B4%D9%84%D8%A7%D9%84%D8%A7%D8%AA-%D8%AA%D8%AD%D8%AA-%D8%A7%D9%84%D9%85%D8%A7%D8%A1-%D9%81%D9%8A-%D9%85%D9%88%D8%B1%D9%8A%D8%B4%D9%8A%D9%88%D8%B3/",
+     "name": "شلالات تحت الماء في موريشيوس %-%اسم",
+     "site": "Mauritius Direct",
+     "host": "mauritius-direct.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 74,
+     "quote": "شلالات تحت الماء في موريشيوس %-%اسم - Mauritius Direct - من الإيجارات الخاصة في موريشيوس"
+    },
+    {
+     "url": "https://mornebrabant.org/ar/%D8%A7%D9%84%D8%B4%D9%84%D8%A7%D9%84-%D8%AA%D8%AD%D8%AA-%D8%A7%D9%84%D9%85%D8%A7%D8%A1-%D9%81%D9%8A-%D9%85%D9%88%D8%B1%D9%8A%D8%B4%D9%8A%D9%88%D8%B3",
+     "name": "الشلال تحت الماء في موريشيوس وحقيقته وكيفية رؤيته",
+     "site": "mornebrabant.org",
+     "host": "mornebrabant.org",
+     "lang": "ar",
+     "kind": "web",
+     "match": 71,
+     "quote": "Atlas Obscura عن الشلال تحت الماء في موريشيوس مرجع للظاهرة البصرية قبالة شبه جزيرة لو مورن."
+    },
+    {
+     "url": "https://www.booking.com/attractions/mu/pra6qfxcgb6a-mauritius-underwater-waterfall-guided-tour-by-helicopter-ride.ar.html",
+     "name": "جولة شلال موريشيوس تحت الماء مع مرشد سياحي بطائرة هليكوبتر",
+     "site": "Booking.com",
+     "host": "booking.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 61,
+     "quote": "جولة شلال موريشيوس تحت الماء مع مرشد سياحي بطائرة هليكوبتر"
+    }
+   ]
+  },
+  "14892": {
+   "hash": "02934efb3b07",
+   "checked": "2026-11-23T01:00:46.873Z",
+   "queries": [
+    "أصل كلمة دينار Denarius"
+   ],
+   "sources": [
+    {
+     "url": "https://mwade3.com/%D8%A3%D8%B5%D9%84-%D9%88%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-%D9%83%D9%84%D9%85%D8%A9-%D8%AF%D9%8A%D9%86%D8%A7%D8%B1/",
+     "name": "أصل وتاريخ كلمة دينار",
+     "site": "مواضيع",
+     "host": "mwade3.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 92,
+     "quote": "يُعتقد أن كلمة “دينار” مشتقة من الكلمة اللاتينية “ديناريوس” (Denarius)، وهي وحدة نقدية كانت تستخدم في الإمبراطورية الرومانية."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AF%D9%8A%D9%86%D8%A7%D8%B1",
+     "name": "دينار",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 74,
+     "quote": "وتعود أصل الكلمة إلى الإغريقية: δηνάριον (ديناريوس) والتي تعني وحدة ذهبيّة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Dinar",
+     "name": "Dinar",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 69,
+     "quote": "The dinar (, ) is the name of the principal currency unit in several countries near the Mediterranean Sea, with a more widespread historical use. The English word \"dinar\" is the transliteration of the Arabic…"
+    },
+    {
+     "url": "https://mawdoo3.com/%D9%85%D8%A7_%D8%A3%D8%B5%D9%84_%D9%83%D9%84%D9%85%D8%A9_%D8%AF%D9%8A%D9%86%D8%A7%D8%B1",
+     "name": "ما أصل كلمة دينار",
+     "site": "موضوع",
+     "host": "mawdoo3.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 69,
+     "quote": "وقد كان يعرف أيضاً بأنّ العملة التي تحمل اسم دينار هي حتماً تكون وحدة ذهبيّة، إلاّ أنّ كلمة درهم كانت تدلّ على وحدة فضيّة ."
+    },
+    {
+     "url": "https://www.ainpedia.com/article/%D9%85%D8%A7-%D8%A3%D8%B5%D9%84-%D9%83%D9%84%D9%85%D8%A9-%D8%AF%D9%8A%D9%86%D8%A7%D8%B1",
+     "name": "ما أصل كلمة دينار؟",
+     "site": "موسوعة عين",
+     "host": "ainpedia.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 56,
+     "quote": "والبعض الاخر ينسب كلمة دينار الى كلمة دينارا اللاتينية ومعناها العملة الفضية التي كانت تستخدم قديما في روما"
+    }
+   ]
+  },
+  "14893": {
+   "hash": "2b9c98b5ffaf",
+   "checked": "2026-11-23T01:00:31.814Z",
+   "queries": [
+    "اكتشاف؟ أم حقيقة علمية قديمة؟ .. قصة الأسماك العمياء في العراق 🇮🇶 Garra"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%AD%D8%A7%D9%81%D8%B8%D8%A9_%D8%A7%D9%84%D8%A3%D9%86%D8%A8%D8%A7%D8%B1",
+     "name": "محافظة الأنبار",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "في أغسطس 2026، تداولت وسائل إعلام عراقية وعربية مقطعًا مصورًا لأسماك تعيش في المياه الجوفية داخل خسفة في محافظة الأنبار."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Al_Anbar_Governorate",
+     "name": "Al Anbar Governorate",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 56,
+     "quote": "Al Anbar Governorate (Arabic: محافظة الأنبار; muḥāfaẓat al-’Anbār), or Anbar Province, is the largest governorate in Iraq by area. Encompassing much of the country's western territory, it shares borders with…"
+    },
+    {
+     "url": "https://www.aljazeera.net/misc/2026/8/12/%D9%85%D8%A7-%D9%82%D8%B5%D8%A9-%D8%A7%D9%84%D8%A3%D8%B3%D9%85%D8%A7%D9%83-%D8%A7%D9%84%D8%B9%D9%85%D9%8A%D8%A7%D8%A1-%D9%81%D9%8A-%D8%B5%D8%AD%D8%B1%D8%A7%D8%A1",
+     "name": "ما قصة \"الأسماك العمياء\" في صحراء الأنبار؟",
+     "site": "الجزيرة نت",
+     "host": "aljazeera.net",
+     "lang": "ar",
+     "kind": "news",
+     "match": 60,
+     "quote": "وثّقت وزارة الداخلية العراقية حدثا بيئيا وجيولوجيا، عقب إعلان شرطة البيئة عن اكتشاف كهف وثقب هبوط أرضي يُعرف بـ \"الخسفة\" في عمق صحراء محافظة الأنبار ، يحتوي على نهر جارٍ تحت الأرض تعيش فيه سلالات نادرة جدا من…"
+    },
+    {
+     "url": "https://www.ajnet.me/misc/2026/8/12/%D9%85%D8%A7-%D9%82%D8%B5%D8%A9-%D8%A7%D9%84%D8%A3%D8%B3%D9%85%D8%A7%D9%83-%D8%A7%D9%84%D8%B9%D9%85%D9%8A%D8%A7%D8%A1-%D9%81%D9%8A-%D8%B5%D8%AD%D8%B1%D8%A7%D8%A1",
+     "name": "ما قصة \"الأسماك العمياء\" في صحراء الأنبار؟",
+     "site": "الجزيرة نت",
+     "host": "ajnet.me",
+     "lang": "ar",
+     "kind": "web",
+     "match": 60,
+     "quote": "وثّقت وزارة الداخلية العراقية حدثا بيئيا وجيولوجيا، عقب إعلان شرطة البيئة عن اكتشاف كهف وثقب هبوط أرضي يُعرف بـ \"الخسفة\" في عمق صحراء محافظة الأنبار ، يحتوي على نهر جارٍ تحت الأرض تعيش فيه سلالات نادرة جدا من…"
+    },
+    {
+     "url": "https://www.masrawy.com/news/news_publicaffairs/details/2026/8/12/3031737/%D8%A7%D9%84%D8%A3%D9%88%D9%84-%D9%85%D9%86-%D9%86%D9%88%D8%B9%D9%87-%D8%A7%D9%83%D8%AA%D8%B4%D8%A7%D9%81-%D9%83%D9%87%D9%81-%D9%85%D8%A7%D8%A6%D9%8A-%D9%81%D9%8A-%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82-%D9%8A%D8%B6%D9%85-%D8%A3%D8%B3%D9%85%D8%A7%D9%83-%D8%A7-%D8%B9%D9%85%D9%8A%D8%A7%D8%A1-%D9%85%D9%87%D8%AF%D8%AF%D8%A9-%D8%A8%D8%A7%D9%84%D8%A7%D9%86%D9%82%D8%B1%D8%A7%D8%B6",
+     "name": "كهف مائي سري في العراق يكشف عن أسماك عمياء نادرة ومهددة بالانقراض",
+     "site": "مصراوي.كوم",
+     "host": "masrawy.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 51,
+     "quote": "كشفت السلطات العراقية عن اكتشاف كهف مائي جوفي نادر في منطقة الخسفة بقضاء حديثة بمحافظة الأنبار، يضم مجرى مائيًا تحت الأرض وأسماكًا كهفية نادرة فقدت حاسة الإبصار نتيجة تكيفها مع الحياة في بيئة مظلمة."
+    }
+   ]
+  },
   "14894": {
    "hash": "5f79566f3945",
    "checked": "2026-11-22T20:06:27.655Z",
@@ -7143,5 +7392,5 @@
    ]
   }
  },
- "updated": "2026-11-22T20:06:27.659Z"
+ "updated": "2026-11-23T01:02:22.636Z"
 }
