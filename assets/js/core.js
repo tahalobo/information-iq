@@ -279,6 +279,7 @@
     { href: "branch.html", label: "الفروع", icon: "layout-grid", id: "branch", drop: "branches" },
     { href: "facts.html", label: "المعلومات", icon: "book-open", id: "facts" },
     { href: "branch.html?b=news", label: "الأخبار", icon: "newspaper", id: "news-branch" },
+    { href: "creators/index.html", label: "مبدعون", icon: "palette", id: "creators" },
     { label: "الأدوات", icon: "wrench", id: "tools", drop: "tools" },
     { href: "quiz.html", label: "اختبر نفسك", icon: "brain", id: "quiz" },
     { href: "verify.html", label: "تحقق معنا", icon: "shield-check", id: "verify" },
@@ -342,6 +343,7 @@
           ${(window.BRANCHES || []).map((b) => `<a href="${b.href}"${page === "branch" && curBranch === b.id ? ' class="active"' : ""}>${bIcon(b, "sm")}${esc(b.name)}</a>`).join("")}
           <a href="trending.html"${page === "trending" ? ' class="active"' : ""}>${ic("flame")}الأكثر قراءة</a>
           <a href="files.html"${page === "files" ? ' class="active"' : ""}>${ic("layers")}ملفات وتغطيات</a>
+          <a href="creators/index.html"${page === "creators" ? ' class="active"' : ""}>${ic("palette")}مبدعون عراقيون</a>
           <a href="saved.html"${page === "saved" ? ' class="active"' : ""}>${ic("bookmark")}محفوظاتي</a>
           <div class="drawer-label">الأدوات الرقمية</div>
           ${window.TOOLS.map((t) => `<a href="${t.href}"${page === "tool-" + t.id ? ' class="active"' : ""}>${ic(t.icon)}${esc(t.title)}</a>`).join("")}
@@ -391,7 +393,7 @@
             ${(window.BRANCHES || []).map((b) => `<li><a href="${b.href}">${esc(b.name)}</a></li>`).join("")}
             <li><a href="branch.html">كل الفروع</a></li></ul></div>
           <div><h4>الموقع</h4><ul>
-            <li><a href="facts.html">مكتبة المعلومات</a></li><li><a href="saved.html">محفوظاتي</a></li>
+            <li><a href="facts.html">مكتبة المعلومات</a></li><li><a href="creators/index.html">مبدعون عراقيون</a></li><li><a href="saved.html">محفوظاتي</a></li>
             <li><a href="quiz.html">اختبر معلوماتك</a></li><li><a href="news.html">الأخبار والإنجازات</a></li>
             <li><a href="channel.html">من قناة تليغرام</a></li><li><a href="channel.html?type=event">فعاليات القناة</a></li>
             <li><a href="topic/index.html">فهرس المواضيع</a></li><li><a href="archive/index.html">أرشيف المنشورات</a></li>
@@ -450,6 +452,8 @@
     { t: "مكتبة المعلومات", s: "كل المعلومات الموثّقة", h: "facts.html", i: "book-open" },
     { t: "فروع الإمبراطورية", s: "الأخبار والألعاب والموسيقى والأنمي والرياضة", h: "branch.html", i: "layout-grid" },
     ...(window.BRANCHES || []).filter((b) => b.id !== "info").map((b) => ({ t: b.name, s: b.desc, h: b.href, i: b.icon })),
+    { t: "مبدعون عراقيون", s: "موسوعة المبدعين العراقيين وأعمالهم وشهادة الترحيب", h: "creators/index.html", i: "palette" },
+    { t: "رشّح مبدعاً", s: "رشّح نفسك أو مبدعاً عراقياً تعرفه", h: "contact.html?type=creator", i: "user-plus" },
     { t: "محفوظاتي", s: "الأخبار والمعلومات التي حفظتها", h: "saved.html", i: "bookmark" },
     { t: "اختبر معلوماتك", s: "كويز تفاعلي", h: "quiz.html", i: "brain" },
     { t: "الأخبار والإنجازات", s: "أخبار الصفحة وإنجازاتها", h: "news.html", i: "newspaper" },

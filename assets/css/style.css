@@ -2278,6 +2278,77 @@ html.rm .nr-live i, html.lite .nr-live i { animation: none; }
 .sv-old h3 { margin: 0; font-size: 1rem; line-height: 1.6; }
 .sv-old .btn { justify-self: start; }
 
+/* ---------- مبدعون عراقيون: الفهرس وصفحة المبدع والشهادة ---------- */
+.cr-tools { display: grid; gap: 12px; margin-bottom: 14px; }
+@media (min-width: 720px) { .cr-tools { grid-template-columns: minmax(0, 1fr) 220px; } .cr-fields { grid-column: 1 / -1; } }
+.cr-fields .chip { cursor: pointer; font: inherit; font-size: .88rem; }
+.cr-grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr)); margin-top: 14px; }
+.cr-card { display: flex; gap: 16px; align-items: flex-start; padding: 18px; border-radius: 24px; background: var(--card); border: 1px solid var(--border); color: var(--text); transition: border-color .25s, transform .25s; min-width: 0; }
+.cr-card[hidden] { display: none; }
+.cr-card:hover { border-color: color-mix(in srgb, var(--gold) 70%, transparent); transform: translateY(-3px); }
+.cr-avatar { flex-shrink: 0; width: 84px; height: 84px; border-radius: 50%; object-fit: cover; background: var(--surface); border: 2px solid var(--stroke); }
+.cr-avatar-gen { display: grid; place-items: center; font-size: 2rem; font-weight: 700; color: var(--on-gold); background: var(--btn-gold); }
+.cr-card-body { display: grid; gap: 8px; min-width: 0; flex: 1; }
+.cr-card-body strong { font-size: 1.12rem; line-height: 1.5; overflow-wrap: anywhere; }
+.cr-card-body small { color: var(--muted); font-size: .86rem; line-height: 1.8; }
+.cr-card-meta { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; color: var(--muted); font-size: .82rem; }
+.cr-card-meta > span:not(.badge) { display: inline-flex; align-items: center; gap: 4px; }
+.cr-card-meta svg { width: 14px; height: 14px; }
+.cr-card-go { flex-shrink: 0; color: var(--gold); opacity: .7; }
+.cr-card-go svg { width: 18px; height: 18px; }
+.cr-how { padding-top: 26px; border-top: 1px solid var(--border); }
+
+.cr-page { padding-top: 28px; padding-bottom: 40px; }
+.cr-layout { display: grid; gap: 24px; align-items: start; grid-template-columns: minmax(0, 1fr); }
+.cr-layout > * { min-width: 0; }
+@media (min-width: 940px) {
+  .cr-layout { grid-template-columns: minmax(0, 1fr) 330px; grid-template-areas: "head info" "body info"; column-gap: 44px; grid-template-rows: auto 1fr; }
+  .cr-head { grid-area: head; } .cr-body { grid-area: body; }
+  .cr-info { grid-area: info; position: sticky; top: calc(var(--header-h) + 16px); }
+}
+.cr-head h1 { font-size: clamp(1.8rem, 5vw, 2.8rem); line-height: 1.4; margin: 0 0 12px; overflow-wrap: anywhere; }
+.cr-lead { font-size: 1.08rem; line-height: 2; color: var(--muted); margin: 0; }
+.cr-info { padding: 18px; border-radius: 26px; background: var(--card); border: 1px solid var(--stroke); }
+.cr-info .cr-avatar { display: block; width: min(100%, 240px); height: auto; aspect-ratio: 1; margin: 4px auto 14px; border-radius: 26px; }
+.cr-info .cr-avatar-gen { display: grid; font-size: 5rem; }
+.cr-info-name { text-align: center; font-weight: 700; font-size: 1.15rem; margin: 0 0 10px; overflow-wrap: anywhere; }
+.cr-info .kv th { width: 44%; }
+.cr-links { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
+.cr-links a { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 14px; border: 1px solid var(--border); color: var(--text); font-size: .92rem; transition: border-color .25s; }
+.cr-links a:hover { border-color: var(--gold); color: var(--gold); }
+.cr-links a span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.cr-links svg { width: 18px; height: 18px; flex-shrink: 0; color: var(--gold); }
+.cr-links svg:last-child { width: 15px; height: 15px; opacity: .6; }
+.cr-body > h2 { font-size: 1.4rem; margin: 1.6em 0 .7em; scroll-margin-top: calc(var(--header-h) + 16px); }
+.cr-body > h2:first-child { margin-top: 0; }
+.cr-works { display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr)); }
+.cr-work { display: flex; flex-direction: column; border-radius: 22px; overflow: hidden; background: var(--card); border: 1px solid var(--border); }
+.cr-work > img, .cr-work-gen { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: var(--surface); }
+.cr-work-gen { display: grid; place-items: center; color: var(--gold); background: radial-gradient(80% 80% at 50% 30%, var(--gold-soft), transparent 70%), var(--surface); }
+.cr-work-gen svg { width: 44px; height: 44px; }
+.cr-work > div { padding: 14px 16px 16px; display: grid; gap: 6px; }
+.cr-work h3 { margin: 0; font-size: 1.02rem; line-height: 1.6; }
+.cr-work small { color: var(--gold); font-size: .8rem; }
+.cr-work p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.8; }
+.cr-work .link { display: inline-flex; align-items: center; gap: 4px; font-size: .9rem; justify-self: start; }
+.cr-work .link svg { width: 15px; height: 15px; }
+.cr-cert { display: flex; gap: 16px; align-items: flex-start; border-color: var(--stroke); }
+.cr-cert > div { min-width: 0; flex: 1; }
+.cr-cert p { color: var(--text); }
+.cr-cert p.muted { color: var(--muted); }
+@media (max-width: 520px) { .cr-cert { flex-direction: column; } .cr-cert .btn { flex: 1 1 100%; justify-content: center; } }
+.cert-modal h2 { font-size: 1.4rem; margin: 0 0 12px; padding-inline-end: 44px; overflow-wrap: anywhere; }
+.cert-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.cert-tabs .chip { cursor: pointer; font: inherit; font-size: .88rem; }
+.cert-view { display: grid; place-items: center; min-height: 180px; margin-bottom: 16px; border-radius: 16px; background: var(--surface-2); border: 1px solid var(--border); padding: 10px; }
+.cert-view img { display: block; max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .7); }
+.cert-view[data-kind="story"] img { max-height: 56vh; width: auto; }
+.cert-view p { margin: 0; }
+.cr-consent { display: flex; gap: 10px; align-items: flex-start; padding: 14px 16px; border-radius: 16px; border: 1px solid var(--stroke); background: var(--gold-soft); font-size: .9rem; line-height: 1.9; margin-bottom: 18px; cursor: pointer; }
+.cr-consent input { flex-shrink: 0; width: 20px; height: 20px; margin-top: 5px; accent-color: var(--gold); }
+.cr-who { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+.cr-who .chip { cursor: pointer; font: inherit; font-size: .9rem; }
+
 /* ---------- زر «شارك الرابط» على كل بطاقة وصف ---------- */
 .fact-card > .share-btn { top: 12px; inset-inline-end: 58px; }
 .nrow { position: relative; }

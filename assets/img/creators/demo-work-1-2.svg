@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600" viewBox="0 0 800 600" role="img" aria-label="عمل تجريبي">
+<defs><linearGradient id="g" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#13204f"/><stop offset="1" stop-color="#4b74ff"/></linearGradient></defs>
+<rect width="800" height="600" fill="url(#g)"/>
+<g fill="#f2c25b" fill-opacity=".85"><path d="M120 470 320 170 470 380 560 270 690 470Z"/><circle cx="600" cy="150" r="52" fill-opacity=".6"/></g>
+<g fill="none" stroke="#fff" stroke-opacity=".18" stroke-width="2"><path d="M0 520h800M0 80h800"/></g>
+</svg>

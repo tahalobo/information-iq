@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600" role="img" aria-label="صورة رمزية تجريبية 3">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a1d3f"/><stop offset="1" stop-color="#d46a9f"/></linearGradient></defs>
+<rect width="600" height="600" fill="url(#g)"/>
+<g fill="none" stroke="#f2c25b" stroke-opacity=".28" stroke-width="3"><path d="M300 40 560 300 300 560 40 300Z"/><path d="M300 110 490 300 300 490 110 300Z"/></g>
+<circle cx="300" cy="235" r="92" fill="#f2c25b" fill-opacity=".92"/>
+<path d="M120 560c0-110 80-190 180-190s180 80 180 190Z" fill="#f2c25b" fill-opacity=".92"/>
+<text x="300" y="262" text-anchor="middle" font-family="Arial, sans-serif" font-size="84" font-weight="700" fill="#4a1d3f">3</text>
+</svg>

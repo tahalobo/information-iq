@@ -28,7 +28,7 @@ const warn = (page, msg) => warnings.push(`${page}: ${msg}`);
 /* ---------- Collect pages ---------- */
 const pages = [];
 for (const f of readdirSync(ROOT)) if (f.endsWith(".html") && !/^google[0-9a-f]+\.html$/.test(f)) pages.push(f);
-for (const dir of ["post", "topic", "archive"]) if (existsSync(rel(dir))) for (const f of readdirSync(rel(dir))) if (f.endsWith(".html")) pages.push(`${dir}/${f}`);
+for (const dir of ["post", "topic", "archive", "creators"]) if (existsSync(rel(dir))) for (const f of readdirSync(rel(dir))) if (f.endsWith(".html")) pages.push(`${dir}/${f}`);
 
 const unescape = (s) => String(s).replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
 const text = (h) => unescape(String(h).replace(/<[^>]+>/g, " ")).replace(/\s+/g, " ").trim();

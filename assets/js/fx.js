@@ -198,7 +198,10 @@
     hs.forEach((h) => {
       if (!h.track) return;
       if (RM) { h.sec.style.height = ""; h.track.style.transform = ""; return; }
-      h.dist = Math.max(0, h.track.scrollWidth - h.track.clientWidth);
+      // data-hs-items: المسافة من منتصف أول بطاقة إلى منتصف آخرها (offsetLeft لا يتأثر بإمالة البطاقات ثلاثية الأبعاد، بعكس scrollWidth)
+      const k = h.track.children;
+      h.dist = h.sec.hasAttribute("data-hs-items") ? (k.length > 1 ? Math.abs((k[k.length - 1].offsetLeft + k[k.length - 1].offsetWidth / 2) - (k[0].offsetLeft + k[0].offsetWidth / 2)) : 0)
+        : Math.max(0, h.track.scrollWidth - h.track.clientWidth);
       h.sec.style.height = `${innerHeight + h.dist}px`;
     });
   }

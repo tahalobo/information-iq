@@ -66,6 +66,10 @@ html, body { width: ${OG_W}px; height: ${OG_H}px; overflow: hidden; background: 
 .hasicon #icon { display: grid; }
 #title { font-family: "Kufi"; font-weight: 700; line-height: 1.42; text-shadow: 0 3px 18px rgba(0,0,0,.85); overflow: hidden; text-wrap: balance; }
 .mega #title { font-family: "Mega"; font-weight: 400; line-height: 1.25; }
+/* بطاقة مبدع: صورته في دائرة، واسمه بخط رسمي واضح لا بالخط المزخرف */
+.creator #title { font-family: "Body"; font-weight: 800; line-height: 1.3; }
+.avatar #icon { width: 150px; height: 150px; border-radius: 50%; overflow: hidden; border-width: 4px; }
+.avatar #icon img { width: 100%; height: 100%; object-fit: cover; display: block; }
 #sub { font-size: 29px; line-height: 1.6; font-weight: 500; color: #d9deea; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-shadow: 0 2px 10px rgba(0,0,0,.8); }
 #sub:empty { display: none; }
 #foot { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 4px; padding-top: 16px; border-top: 2px solid rgba(243,210,122,.55); font-size: 23px; font-weight: 600; color: #f3d27a; }
@@ -90,13 +94,19 @@ window.draw = async (s) => {
   const svg = ico(s.icon);
   $("#wm").innerHTML = svg; $("#icon").innerHTML = svg;
   if (svg && big) card.classList.add("hasicon");
+  if (s.kind === "creator") card.classList.add("creator");
+  if (s.avatar) {
+    const av = new Image();
+    const ok = await new Promise((res) => { const t = setTimeout(() => res(false), 9000); av.onload = () => { clearTimeout(t); res(true); }; av.onerror = () => { clearTimeout(t); res(false); }; av.src = s.avatar; });
+    if (ok) { $("#icon").replaceChildren(av); card.classList.add("hasicon", "avatar"); }
+  }
   let photo = false;
   bg.removeAttribute("src");
   if (s.bg) photo = await new Promise((res) => { const t = setTimeout(() => res(false), 9000); bg.onload = () => { clearTimeout(t); res(bg.naturalWidth > 80); }; bg.onerror = () => { clearTimeout(t); res(false); }; bg.src = s.bg; });
   if (photo) { card.classList.add("photo"); if (big) card.classList.add("dim"); }
   await document.fonts.ready;
   // تصغير تلقائي: أكبر حجم يُبقي العنوان ضمن الارتفاع المتاح
-  const t = $("#title"), maxH = big ? (svg ? 190 : 250) : (s.sub ? 250 : 300);
+  const t = $("#title"), maxH = big ? (card.classList.contains("avatar") ? 170 : svg ? 190 : 250) : (s.sub ? 250 : 300);
   let size = big ? 104 : 68; const min = big ? 54 : 38;
   t.style.display = "block"; t.style.webkitLineClamp = "";
   for (; size >= min; size -= 2) { t.style.fontSize = size + "px"; if (t.scrollHeight <= maxH) break; }
@@ -128,7 +138,8 @@ export async function renderOgCards(root, jobs, { log = console.log } = {}) {
     await page.goto(pathToFileURL(tmp).href, { waitUntil: "load" });
     for (const j of missing) {
       try {
-        const spec = { ...j.spec, bg: j.spec.bg ? (/^https?:/.test(j.spec.bg) ? j.spec.bg : pathToFileURL(path.join(root, j.spec.bg)).href) : null };
+        const spec = { ...j.spec, bg: j.spec.bg ? (/^https?:/.test(j.spec.bg) ? j.spec.bg : pathToFileURL(path.join(root, j.spec.bg)).href) : null,
+          avatar: j.spec.avatar ? pathToFileURL(path.join(root, j.spec.avatar)).href : null };
         const photo = await page.evaluate((s) => window.draw(s), spec);
         const useFallback = j.fallback && !photo;
         if (useFallback && has(j.fallback)) continue; // ما زالت الصورة غير متاحة والبطاقة النصّية موجودة

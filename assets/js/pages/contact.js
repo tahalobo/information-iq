@@ -8,8 +8,29 @@
     { id: "correction", t: "تصحيح خطأ", i: "pencil-line", msg: "ما الخطأ وما التصحيح؟ يُفضّل إرفاق مصدر يثبت ذلك.", extra: "المعلومة المقصودة (العنوان أو الرابط)" },
     { id: "rumor", t: "تحقق من خبر", i: "shield-question", msg: "انسخ الخبر أو الإشاعة كما وصلتك، واذكر أين رأيتها.", extra: "رابط الخبر أو المنشور (إن وجد)" },
     { id: "ads", t: "إعلان وتعاون", i: "megaphone", msg: "عرّفنا بنشاطك التجاري ونوع الإعلان الذي تريده والميزانية التقريبية.", extra: "اسم الشركة أو النشاط" },
+    { id: "creator", t: "ترشيح مبدع", i: "palette", msg: "نبذة قصيرة: من هو، ماذا يصنع، وما أبرز أعماله؟", extra: "روابط الأعمال والحسابات (إنستغرام، موقع، معرض…)" },
     { id: "join", t: "الانضمام للفريق", i: "user-plus", msg: "عرّفنا بنفسك ومهاراتك (بحث، تصميم، مونتاج، كتابة)، ولماذا تريد الانضمام.", extra: "رابط نماذج أعمالك (اختياري)" }
   ];
+  /* ترشيح لقسم «مبدعون عراقيون»: حقول إضافية + إقرار صريح بالموافقة على النشر (الصفحة علنية وتُفهرس) */
+  const PROVINCES = ["بغداد", "البصرة", "نينوى", "أربيل", "السليمانية", "دهوك", "كركوك", "الأنبار", "بابل", "كربلاء", "النجف", "القادسية", "المثنى", "ذي قار", "ميسان", "واسط", "صلاح الدين", "ديالى", "حلبجة", "خارج العراق"];
+  const FIELDS = ["رسام", "مصمم", "مبرمج", "كاتب", "شاعر", "مصوّر", "صانع محتوى", "موسيقي", "خطاط", "مخرج", "حرفي", "باحث"];
+  const CONSENT = {
+    self: "أوافق على نشر اسمي وصورتي ونبذتي وروابط أعمالي في صفحة عامة على موقع الإمبراطورية العراقية تظهر في محركات البحث، وأعلم أنني أستطيع طلب تعديلها أو حذفها في أي وقت.",
+    other: "أعلم أن صفحة المبدع لن تُنشر إلا بعد أن يتواصل الفريق معه ويأخذ موافقته هو، وأن بياناته التي أرسلها تُستعمل لهذا الغرض فقط."
+  };
+  let who = "self";
+  $("#cr-prov").innerHTML = `<option value="">اختر المحافظة</option>` + PROVINCES.map((p) => `<option>${esc(p)}</option>`).join("");
+  $("#cr-field-list").innerHTML = FIELDS.map((f) => `<option value="${esc(f)}">`).join("");
+  function setWho(w) {
+    who = w === "other" ? "other" : "self";
+    $$("#cr-who [data-who]").forEach((b) => { const on = b.dataset.who === who; b.classList.toggle("active", on); b.setAttribute("aria-checked", on); });
+    $("#cr-name-wrap").hidden = who !== "other";
+    $("#cr-consent-text").textContent = CONSENT[who];
+    $("#cr-consent").checked = false;
+    $("#msg-label").textContent = who === "other" ? "نبذة عن المبدع" : "نبذة عنك";
+  }
+  $("#cr-who").addEventListener("click", (e) => { const b = e.target.closest("[data-who]"); if (b) setWho(b.dataset.who); });
+
   let type = TYPES.find((x) => x.id === param("type")) ? param("type") : "general";
   const openedAt = Date.now();
 
@@ -19,7 +40,12 @@
     $$("#types [data-type]").forEach((b) => { const on = b.dataset.type === id; b.classList.toggle("active", on); b.setAttribute("aria-checked", on); });
     $("#msg").placeholder = T.msg;
     $("#extra-wrap").hidden = !T.extra; $("#extra-label").textContent = T.extra || "";
-    $("#msg-hint").textContent = id === "rumor" ? "يمكنك أيضاً إرسال الصورة أو لقطة الشاشة لنا عبر الدايركت بعد الإرسال." : "";
+    const cr = id === "creator";
+    $("#creator-fields").hidden = !cr; $("#cr-consent-wrap").hidden = !cr;
+    $("#name-label").textContent = cr ? "اسمك" : "الاسم";
+    if (cr) setWho(who); else $("#msg-label").textContent = "الرسالة";
+    $("#submit").innerHTML = `${ic("send")}${cr ? "أرسل الترشيح" : "إرسال"}`; icons();
+    $("#msg-hint").textContent = cr ? "الصورة الشخصية وصور الأعمال نطلبها منك لاحقاً عند التواصل. النشر بعد مراجعة الفريق." : id === "rumor" ? "يمكنك أيضاً إرسال الصورة أو لقطة الشاشة لنا عبر الدايركت بعد الإرسال." : "";
   }
   $("#types").addEventListener("click", (e) => { const b = e.target.closest("[data-type]"); if (b) setType(b.dataset.type); });
   setType(type);
@@ -52,7 +78,15 @@
     const cut = (k, n) => String(fd.get(k) || "").trim().slice(0, n);
     const d = { name: cut("name", 80), reply: cut("reply", 120), extra: cut("extra", 400), message: cut("message", 3500) };
     const errs = [];
-    if (!d.name) errs.push("الاسم"); if (!d.reply) errs.push("وسيلة الرد"); if (d.message.length < 10) errs.push("الرسالة (10 أحرف على الأقل)");
+    if (!d.name) errs.push("الاسم"); if (!d.reply) errs.push("وسيلة الرد"); if (d.message.length < 10) errs.push(type === "creator" ? "النبذة (10 أحرف على الأقل)" : "الرسالة (10 أحرف على الأقل)");
+    if (type === "creator") {
+      const c = { name: who === "other" ? cut("cr_name", 80) : d.name, field: cut("cr_field", 40), prov: cut("cr_prov", 40) };
+      if (who === "other" && !c.name) errs.push("اسم المبدع"); if (!c.field) errs.push("المجال"); if (!c.prov) errs.push("المحافظة");
+      if (!d.extra) errs.push("رابط واحد على الأقل لأعمال المبدع");
+      if (!$("#cr-consent").checked) errs.push(who === "other" ? "الإقرار بأن النشر بعد موافقة المبدع" : "الموافقة على النشر");
+      // الحقول الخاصة بالترشيح تُكتب داخل نص الرسالة، فتصل كاملة حتى لو لم يُحدَّث سكربت الاستقبال
+      d.message = `ترشيح لقسم «مبدعون عراقيون»\nالترشيح: ${who === "other" ? "يرشّح مبدعاً آخر (لا يُنشر إلا بعد موافقة المبدع نفسه)" : "يرشّح نفسه"}\nاسم المبدع: ${c.name}\nالمجال: ${c.field}\nالمحافظة: ${c.prov}\nالإقرار: ${who === "other" ? "أقرّ المرشِّح بأن النشر بعد موافقة صاحب الشأن" : "وافق على نشر اسمه وصورته ونبذته وروابطه في صفحة عامة تُفهرس"}\n\nالنبذة:\n${d.message}`.slice(0, 3500);
+    }
     if (errs.length) { $("#form-msg").innerHTML = `<div class="alert alert-danger">${ic("alert-circle")}<span>يرجى إكمال: ${esc(errs.join("، "))}</span></div>`; icons(); return; }
     $("#form-msg").innerHTML = "";
     const text = compose(d);
@@ -65,7 +99,7 @@
         const r = await fetch(S.formEndpoint, { method: "POST", headers, body: JSON.stringify({ type, ...d, _subject: text.split("\n")[0], page: location.origin + location.pathname, t: Date.now() - openedAt }) });
         const res = await r.json().catch(() => ({}));
         if (!r.ok || res.ok === false) throw new Error(res.error === "rate" ? "rate" : "");
-        e.target.reset(); setType(type);
+        e.target.reset(); who = "self"; setType(type);
         $("#form-msg").innerHTML = `<div class="alert alert-success">${ic("badge-check")}<div><strong>وصلت رسالتك!</strong><p>شكراً لك. سنرد عليك قريباً.</p></div></div>`;
       } catch (err) {
         $("#form-msg").innerHTML = err && err.message === "rate"

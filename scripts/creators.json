@@ -1,0 +1,82 @@
+{
+  "_شرح": "مصدر بيانات قسم «مبدعون عراقيون». عدّل هذا الملف ثم شغّل: node scripts/build-pages.mjs  — الشرح الكامل خطوة بخطوة في scripts/creators-guide.md",
+  "_تنبيه": "المبدعون الثلاثة أدناه تجريبيون (demo: true) لعرض الشكل فقط. احذفهم مع صورهم assets/img/creators/demo-* قبل الإعلان عن القسم.",
+  "creators": [
+    {
+      "slug": "demo-creator-1",
+      "serial": 1,
+      "demo": true,
+      "published": true,
+      "name": "مبدع تجريبي ١",
+      "field": "رسام",
+      "province": "بغداد",
+      "city": "الكرادة",
+      "bio": "صفحة تجريبية لعرض شكل صفحة المبدع. هذا الشخص غير حقيقي والنص هنا مكان النبذة القصيرة التي تظهر في البطاقة ونتائج البحث.",
+      "about": [
+        "هذه فقرة تجريبية تبيّن أين يظهر التعريف المفصّل بالمبدع: بدايته، وأسلوبه، وما يميّز أعماله. تُكتب بلغة بسيطة وبصيغة الغائب كما في الموسوعات.",
+        "وهذه فقرة ثانية تجريبية. يمكن إضافة أي عدد من الفقرات، وكل فقرة سطر مستقل في ملف البيانات."
+      ],
+      "photo": "assets/img/creators/demo-creator-1.svg",
+      "works": [
+        { "title": "عمل تجريبي: لوحة أولى", "desc": "وصف قصير للعمل يوضع هنا.", "image": "assets/img/creators/demo-work-1-1.svg", "url": "https://example.com/demo-work-1", "year": 2025 },
+        { "title": "عمل تجريبي: لوحة ثانية", "desc": "عمل بصورة وبلا رابط خارجي.", "image": "assets/img/creators/demo-work-1-2.svg", "year": 2024 }
+      ],
+      "links": [
+        { "label": "إنستغرام", "url": "https://example.com/demo-creator-1" },
+        { "label": "الموقع الشخصي", "url": "https://example.com/" }
+      ],
+      "added": "2026-11-22",
+      "consent": { "given": true, "date": "2026-11-22", "via": "بيانات تجريبية، لا شخص حقيقي" }
+    },
+    {
+      "slug": "demo-creator-2",
+      "serial": 2,
+      "demo": true,
+      "published": true,
+      "name": "مبدعة تجريبية ٢",
+      "field": "مبرمجة",
+      "province": "البصرة",
+      "city": "",
+      "bio": "صفحة تجريبية ثانية لعرض شكل الفهرس والتصفية بالمجال والمحافظة. الشخصية غير حقيقية والنص مكان النبذة القصيرة.",
+      "about": [
+        "فقرة تجريبية عن مبدعة تعمل في البرمجة. تُذكر هنا المشاريع التي بنتها والتقنيات التي تعمل بها وما قدّمته للمجتمع."
+      ],
+      "photo": "assets/img/creators/demo-creator-2.svg",
+      "works": [
+        { "title": "عمل تجريبي: تطبيق", "desc": "عمل برابط خارجي وصورة.", "image": "assets/img/creators/demo-work-2-1.svg", "url": "https://example.com/demo-app", "year": 2026 },
+        { "title": "عمل تجريبي: مكتبة مفتوحة المصدر", "desc": "عمل برابط فقط وبلا صورة.", "url": "https://example.com/demo-library", "year": 2025 },
+        { "title": "عمل تجريبي: موقع", "desc": "", "image": "assets/img/creators/demo-work-2-2.svg", "year": 2023 }
+      ],
+      "links": [
+        { "label": "GitHub", "url": "https://example.com/demo-creator-2" }
+      ],
+      "added": "2026-11-22",
+      "consent": { "given": true, "date": "2026-11-22", "via": "بيانات تجريبية، لا شخص حقيقي" }
+    },
+    {
+      "slug": "demo-creator-3",
+      "serial": 3,
+      "demo": true,
+      "published": true,
+      "name": "مبدع تجريبي ٣ باسم طويل لاختبار الشهادة",
+      "field": "مصوّر",
+      "province": "نينوى",
+      "city": "الموصل",
+      "bio": "صفحة تجريبية ثالثة باسم طويل للتأكد من أن الاسم يتصغّر تلقائياً داخل الشهادة ولا يخرج عن حدودها. الشخصية غير حقيقية.",
+      "about": [
+        "فقرة تجريبية عن مصوّر. تُذكر هنا المعارض التي شارك فيها والمواضيع التي يصوّرها."
+      ],
+      "photo": "assets/img/creators/demo-creator-3.svg",
+      "works": [
+        { "title": "عمل تجريبي: سلسلة صور", "desc": "وصف قصير للسلسلة.", "image": "assets/img/creators/demo-work-3-1.svg", "year": 2026 },
+        { "title": "عمل تجريبي: معرض", "desc": "وصف قصير للمعرض.", "image": "assets/img/creators/demo-work-3-2.svg", "url": "https://example.com/demo-exhibition", "year": 2024 }
+      ],
+      "links": [
+        { "label": "تيليغرام", "url": "https://example.com/demo-creator-3" },
+        { "label": "يوتيوب", "url": "https://example.com/demo-channel" }
+      ],
+      "added": "2026-11-22",
+      "consent": { "given": true, "date": "2026-11-22", "via": "بيانات تجريبية، لا شخص حقيقي" }
+    }
+  ]
+}

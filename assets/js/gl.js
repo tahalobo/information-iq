@@ -2,7 +2,7 @@
    منحوتة الجسيمات ثلاثية الأبعاد (WebGL خام، بلا مكتبات)
    - المنحوتة تعيش داخل "خانات" في الصفحة: أي عنصر فيه data-gl="shape"
    - تنتقل بين الخانات أثناء التمرير وتتحوّل من شكل إلى آخر
-   - الأشكال: ziggurat, globe, helix, galaxy, lens, crown, atom, shield, tablet, wave, gate, qr
+   - الأشكال: ziggurat, globe, helix, galaxy, lens, palette, crown, atom, shield, tablet, wave, gate, qr
    ========================================================== */
 (function () {
   "use strict";
@@ -137,6 +137,25 @@
         else { const ax = R() < 0.5; const t = (R() < 0.5 ? -1 : 1) * (1.58 + R() * 0.42); x = ax ? t : jit(0.02); y = ax ? jit(0.02) : t; return [x, y, 0, GOLD]; }
         x = Math.cos(a) * r; y = Math.sin(a) * r;
         return [x, y, z + jit(0.04), sprinkle(c)];
+      });
+    },
+    palette() {
+      // لوح ألوان الرسام: قرص بفتحة إبهام وتجويف جانبي، ستّ بقع لون بارزة، وفرشاة مائلة أمامه
+      const WOOD = mixc(GOLD, AMBER, 0.35), CORAL = [0.98, 0.42, 0.48];
+      const inPal = (x, y) => (x / 1.62) ** 2 + (y / 1.18) ** 2 < 1 && (x + 1.3) ** 2 + (y + 0.82) ** 2 > 0.3 && (x + 0.62) ** 2 + (y + 0.22) ** 2 > 0.045;
+      const blobs = [[-0.95, 0.5, GOLD2], [-0.38, 0.82, LAPIS], [0.25, 0.86, TEAL], [0.86, 0.62, AMBER], [1.2, 0.08, CORAL], [0.95, -0.5, WHITE]];
+      return build(() => {
+        const q = R();
+        if (q < 0.4) { let x, y; do { x = (R() * 2 - 1) * 1.62; y = (R() * 2 - 1) * 1.18; } while (!inPal(x, y)); return [x, y, jit(0.05), sprinkle(WOOD)]; }
+        if (q < 0.5) { let x, y, e; do { const a = R() * TAU; x = Math.cos(a) * 1.62; y = Math.sin(a) * 1.18; e = R() * 0.05; x *= 1 - e; y *= 1 - e; } while (!inPal(x * 0.995, y * 0.995)); return [x, y, 0.03 + jit(0.03), GOLD2]; }
+        if (q < 0.8) {
+          const [bx, by, c] = blobs[Math.floor(R() * blobs.length)], b = R() * TAU, e = Math.acos(R()), rr = 0.2 * (0.85 + R() * 0.3);
+          return [bx + Math.sin(e) * Math.cos(b) * rr, by + Math.sin(e) * Math.sin(b) * rr, 0.05 + Math.cos(e) * rr * 0.75, c];
+        }
+        const t = R(), x0 = -0.2, y0 = -1.25, x1 = 1.85, y1 = 1.05, x = x0 + (x1 - x0) * t, y = y0 + (y1 - y0) * t;
+        if (t > 0.82) { const w = 0.11 * (1 - (t - 0.82) / 0.18) + 0.01; return [x + jit(w), y + jit(w), 0.42 + jit(w), LAPIS]; }
+        if (t > 0.76) return [x + jit(0.07), y + jit(0.07), 0.42 + jit(0.07), GOLD2];
+        return [x + jit(0.05), y + jit(0.05), 0.42 + jit(0.05), t < 0.3 ? GOLD : WHITE];
       });
     },
     crown() {

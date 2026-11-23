@@ -49,7 +49,7 @@ const SITE = W.window.SITE || {};
    ========================================================== */
 const htmlFiles = [
   ...readdirSync(ROOT).filter((f) => f.endsWith(".html")),
-  ...["post", "topic", "archive"].flatMap((d) => (existsSync(rel(d)) ? readdirSync(rel(d)).filter((f) => f.endsWith(".html")).map((f) => `${d}/${f}`) : []))
+  ...["post", "topic", "archive", "creators"].flatMap((d) => (existsSync(rel(d)) ? readdirSync(rel(d)).filter((f) => f.endsWith(".html")).map((f) => `${d}/${f}`) : []))
 ];
 const cspKey = (f) => (f.startsWith("post/") ? "post" : f.includes("/") ? "hub" : f);
 const expected = new Map();
@@ -232,7 +232,7 @@ for (const [f, name] of [["assets/js/telegram-data.js", "TG"], ["assets/js/branc
   const tracked = git.status === 0 ? git.stdout.split("\0").filter(Boolean) : [];
   if (!tracked.length) warn("تعذّر قراءة قائمة ملفات git: فحص الأسرار اقتصر على ملفات المشروع الأساسية");
   const list = (tracked.length ? tracked : [...clientJs, ...buildJs, ...htmlFiles.filter((f) => !f.includes("/"))])
-    .filter((f) => !/\.(png|jpe?g|webp|gif|svg|ico|woff2?|ttf|mp4|zip|onnx|wasm)$/i.test(f) && !/^(post|topic|archive)\//.test(f) && !/^assets\/js\/vendor\//.test(f));
+    .filter((f) => !/\.(png|jpe?g|webp|gif|svg|ico|woff2?|ttf|mp4|zip|onnx|wasm)$/i.test(f) && !/^(post|topic|archive|creators)\//.test(f) && !/^assets\/js\/vendor\//.test(f));
   let scanned = 0;
   for (const f of list) {
     if (!existsSync(rel(f)) || statSync(rel(f)).size > 30e6) continue;

@@ -21,6 +21,7 @@ import { imageSize } from "./seo/imgsize.mjs";
 import { renderOgCards, pruneOg, TEMPLATE_VERSION } from "./seo/og.mjs";
 import { PAGES, TOOLS as TOOL_SEO, TOPICS, TOPIC_MIN, PER_PAGE } from "./seo/content.mjs";
 import { THEME_BOOT_JS, securityMeta } from "./seo/csp.mjs";
+import { loadCreators } from "./seo/creators.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const rel = (...p) => path.join(ROOT, ...p);
@@ -312,6 +313,12 @@ for (const f of readdirSync(ROOT).filter((x) => x.endsWith(".html") && !["404.ht
     ogCard(`page:${f}`, `s/${f.replace(".html", "")}`, { kind: "page", title: head, sub: tail || (cfg ? clip(cfg.desc, 100, 40) : ""), badge: f === "index.html" ? "" : (cfg && cfg.crumb) || "", icon: PAGE_ICONS[f] || "crown", foot: SITE.tagline });
   }
 }
+/* مبدعون عراقيون: بطاقة معاينة لكل مبدع باسمه وصورته */
+const { list: creators, warnings: creatorWarnings, broken: creatorsBroken } = loadCreators(ROOT);
+for (const w of creatorWarnings) console.log(`  ⚠ مبدعون: ${w}`);
+ogCard("creators-index", "s/creators", { kind: "page", title: "مبدعون عراقيون", sub: "موسوعة صغيرة للمبدعين العراقيين وأعمالهم", badge: "موسوعة", badgeIcon: "palette", icon: "palette", foot: SITE.tagline });
+for (const c of creators) ogCard(`creator:${c.slug}`, `c/${c.slug}`, { kind: "creator", title: c.name, sub: [c.field, c.city, c.province].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i).join(" · "), badge: "مبدعون عراقيون", badgeIcon: "palette", icon: "palette",
+  avatar: c.photo, av: c.photoHash, foot: "موسوعة المبدعين العراقيين" });
 {
   const jobs = [...ogJobs.values()];
   var ogStats = await renderOgCards(ROOT, jobs);
@@ -369,7 +376,7 @@ function seoTags({ title, desc, path: p, image = DEF_IMG, imageAlt, ogType = "we
   return out.filter(Boolean).join("\n");
 }
 
-function shell({ seo, base = "../", body, bodyAttr = "", scripts = "", preload = "", csp = "hub" }) {
+function shell({ seo, base = "../", body, bodyAttr = "", scripts = "", preload = "", csp = "hub", css = "" }) {
   return `<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
@@ -381,7 +388,7 @@ ${seo}
 <meta name="theme-color" content="#03050c">
 ${ICONS}
 ${THEME_BOOT}
-${preload}${FONTS}
+${preload}${FONTS}${css}
 </head>
 <body ${bodyAttr}>
 <div id="site-header"></div>
@@ -693,6 +700,252 @@ const sitemap = { pages: [], posts: [], topics: [] }; // { path, lastmod, images
 }
 await put("404.html", notFoundPage());
 
+/* ==========================================================
+   مبدعون عراقيون: فهرس creators/index.html + صفحة لكل مبدع creators/<slug>.html
+   المصدر scripts/creators.json (يُقرأ ويُتحقق منه في scripts/seo/creators.mjs). الشرح: scripts/creators-guide.md
+   ========================================================== */
+const CR_NAME = "مبدعون عراقيون";
+const crPath = (c) => `creators/${c.slug}.html`;
+const crCount = (n) => (n === 0 ? "لا مبدعين بعد" : n === 1 ? "مبدع واحد" : n === 2 ? "مبدعان" : n <= 10 ? `${n} مبدعين` : `${n} مبدعاً`);
+const crPlace = (c) => [c.city, c.province].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i).join("، ");
+const crAvatar = (c, size, eager) => (c.photo
+  ? `<img class="cr-avatar" src="${esc(c.photo)}" alt="صورة ${esc(c.name)}" width="${size}" height="${size}" loading="${eager ? "eager" : "lazy"}" decoding="async" data-err="remove">`
+  : `<span class="cr-avatar cr-avatar-gen" aria-hidden="true">${esc([...c.name][0] || "م")}</span>`);
+const LINK_ICONS = [[/instagram\.com/, "instagram"], [/(^|\.)t\.me|telegram\./, "send"], [/youtube\.com|youtu\.be/, "youtube"], [/github\.com/, "github"], [/facebook\.com|fb\.com/, "facebook"],
+  [/(^|\.)x\.com|twitter\.com/, "twitter"], [/tiktok\.com/, "music-2"], [/linkedin\.com/, "linkedin"], [/behance\.net|dribbble\.com|artstation\.com/, "palette"]];
+const linkIcon = (u) => { const h = new URL(u).hostname; return (LINK_ICONS.find(([re]) => re.test(h)) || [0, "globe"])[1]; };
+const EXT = 'target="_blank" rel="noopener noreferrer"';
+const crScripts = (...files) => LIGHT_SCRIPTS.replace(`<script src="assets/js/fx.js"></script>`, () => `${files.map((f) => `<script src="assets/js/pages/${f}"></script>`).join("\n")}\n<script src="assets/js/fx.js"></script>`);
+/* صفحات «مبدعون عراقيون» تصميمها في assets/css/creators.css وحركتها ثلاثية الأبعاد في assets/js/pages/cr3d.js */
+const CR_CSS = `\n<link rel="stylesheet" href="assets/css/creators.css">`;
+const crSerial = (c) => `#${String(c.serial || 0).padStart(3, "0")}`;
+const arNum = (n) => String(n);
+/* بطاقة مبدع ثلاثية الأبعاد (الفهرس و«مبدعون آخرون»). صنف cr-card وخصائص data-* يقرؤها creators.js للبحث والتصفية */
+const crCard = (c, i, small) => `<a class="cr-card crx-card${small ? " crx-card-sm" : ""}" href="${esc(crPath(c))}" data-tilt data-field="${esc(c.field)}" data-prov="${esc(c.province)}" data-q="${esc(`${c.name} ${c.field} ${crPlace(c)}`)}">
+        <span class="crx-card-in">
+          <span class="crx-serial ltr" aria-hidden="true">${crSerial(c)}</span>${c.demo ? `<span class="badge badge-warn crx-demo">تجريبي</span>` : ""}
+          <span class="crx-card-frame">${crAvatar(c, 240, !small && i < 6)}</span>
+          <span class="crx-card-body"><strong>${esc(c.name)}</strong>
+            <span class="crx-card-meta"><span class="badge">${esc(c.field)}</span>${crPlace(c) ? `<span>${ic("map-pin")}${esc(crPlace(c))}</span>` : ""}</span>
+            ${c.bio && !small ? `<small>${esc(clip(c.bio, 110))}</small>` : ""}</span>
+          <span class="crx-card-go" aria-hidden="true">${ic("arrow-up-left")}</span>
+        </span>
+        <span class="crx-glare" aria-hidden="true"></span>
+      </a>`;
+
+function creatorsIndexPage() {
+  const p = "creators/index.html", canon = "creators/";
+  const crumbs = [["الرئيسية", ""], [CR_NAME, p]];
+  const title = `${CR_NAME}: موسوعة المبدعين العراقيين وأعمالهم`;
+  const desc = `${CR_NAME}: موسوعة صغيرة في موقع ${SITE.name} تعرّف بالمبدعين العراقيين وأعمالهم، من رسامين ومبرمجين وكتّاب ومصوّرين وصنّاع محتوى، ولكل مبدع صفحة باسمه.`;
+  const fields = [...new Set(creators.map((c) => c.field))].sort((a, b) => a.localeCompare(b, "ar"));
+  const provs = [...new Set(creators.map((c) => c.province).filter(Boolean))].sort((a, b) => a.localeCompare(b, "ar"));
+  const worksN = creators.reduce((n, c) => n + c.works.length, 0);
+  const ld = [{ "@type": "CollectionPage", "@id": abs(canon), url: abs(canon), name: title, description: desc, inLanguage: "ar", isPartOf: { "@id": SITE_ID }, publisher: { "@id": ORG_ID },
+    mainEntity: itemListLd(creators.map((c) => ({ path: crPath(c), name: c.name })), CR_NAME) }, crumbsLd(crumbs)];
+  const seo = seoTags({ title: (title + BRAND).length <= 70 ? title + BRAND : title, ogTitle: title, desc, path: canon, image: ogImg("creators-index") || DEF_IMG, ld });
+  // حلقة البورتريهات الدوّارة: زخرفية (نفس الروابط موجودة في الشبكة أدناه)، وتُكرَّر البطاقات حتى تمتلئ الحلقة
+  const ringN = creators.length ? Math.max(8, creators.length) : 0;
+  const ring = Array.from({ length: ringN }, (_, k) => { const c = creators[k % creators.length];
+    return `<a class="crx-ring-item" href="${esc(crPath(c))}" tabindex="-1" style="--i:${k}">${crAvatar(c, 160, k < 4)}<b>${esc(clip(c.name, 20))}</b><small>${esc(c.field)}</small></a>`; }).join("");
+  const cta = `<a class="btn btn-primary btn-lg" href="contact.html?type=creator" data-magnetic>${ic("user-plus")}رشّح نفسك أو رشّح مبدعاً</a>`;
+  const stats = [[creators.length, creators.length === 1 ? "مبدع" : "مبدعاً في القاعة"], [fields.length, "مجالات إبداع"], [provs.length, "محافظات"], [worksN, "عملاً معروضاً"]];
+  const body = `<main class="crx">
+  <section class="crx-hero" data-sc>
+    <div class="crx-giant" aria-hidden="true">إبداع</div>
+    <div class="container">${crumbsHtml(crumbs)}</div>
+    <div class="container crx-hero-grid">
+      <div class="crx-hero-text">
+        <span class="crx-kicker">${ic("palette")}قاعة المبدعين العراقيين</span>
+        <h1><span class="l1">مبدعون</span><span class="l2">عراقيون</span></h1>
+        <p class="crx-lead">موسوعة صغيرة للعراقيين الذين يصنعون شيئاً جميلاً أو نافعاً: نعرّف بهم وبأعمالهم، ولكل مبدع صفحة برابط خاص وشهادة ترحيب باسمه.</p>
+        <div class="btn-row">${cta}${creators.length ? `<a class="btn btn-ghost btn-lg" href="#crx-list">${ic("arrow-down")}تجوّل في القاعة</a>` : ""}</div>
+      </div>
+      <div class="crx-ring-wrap" aria-hidden="true">
+        <div class="crx-gl" data-gl="palette"></div>
+        <div class="crx-floor"></div>
+        ${ringN ? `<div class="crx-ring" style="--n:${ringN}" data-ring>${ring}</div>` : `<div class="crx-empty-emblem">${ic("palette")}</div>`}
+        ${ringN ? `<p class="crx-hint">${ic("hand")}اسحب لتدوير القاعة</p>` : ""}
+      </div>
+    </div>
+    <div class="crx-stats">${stats.map(([n, l]) => `<div><strong>${arNum(n)}</strong><span>${esc(l)}</span></div>`).join("")}</div>
+  </section>
+  <section class="section crx-hall" id="crx-list"><div class="container">
+    <div class="crx-head rv"><span class="kicker">المعرض</span><h2>وجوه تصنع الجمال</h2><p>كل بطاقة باب إلى صفحة مبدع: أعماله، وروابطه، وشهادة انضمامه.</p></div>
+    ${creators.length ? `<div class="cr-tools crx-tools" id="cr-tools" hidden>
+      <div class="search-box cr-search">${ic("search")}<input class="input" id="cr-q" type="search" placeholder="ابحث باسم المبدع…" autocomplete="off" aria-label="ابحث باسم المبدع"></div>
+      <select class="select" id="cr-prov" aria-label="تصفية بالمحافظة"><option value="">كل المحافظات</option>${provs.map((v) => `<option value="${esc(v)}">${esc(v)}</option>`).join("")}</select>
+      <div class="seo-chips cr-fields" id="cr-fields" role="group" aria-label="تصفية بالمجال"><button type="button" class="chip active" data-field="" aria-pressed="true">كل المجالات<span class="count">${creators.length}</span></button>${fields.map((v) => `<button type="button" class="chip" data-field="${esc(v)}" aria-pressed="false">${esc(v)}<span class="count">${creators.filter((c) => c.field === v).length}</span></button>`).join("")}</div>
+    </div>
+    <p class="small muted" id="cr-count" role="status" aria-live="polite">${esc(crCount(creators.length))}</p>
+    <div class="cr-grid crx-grid" id="cr-grid">
+      ${creators.map((c, i) => crCard(c, i)).join("\n      ")}
+    </div>
+    <div class="sv-empty" id="cr-none" hidden>${ic("search-x")}<h2>لا نتائج</h2><p>لم نجد مبدعاً بهذا الاسم أو التصفية. جرّب كلمة أخرى، أو رشّح من تعرفه.</p><a class="btn btn-ghost" href="contact.html?type=creator">${ic("user-plus")}رشّح مبدعاً</a></div>`
+    : `<div class="sv-empty">${ic("palette")}<h2>الموسوعة تفتح أبوابها قريباً</h2><p>لم نضف مبدعين بعد. كن من الأوائل: رشّح نفسك أو مبدعاً تعرفه.</p>${cta}</div>`}
+  </div></section>
+  <section class="section crx-join" data-sc><div class="container">
+    <div class="crx-head rv"><span class="kicker">الانضمام</span><h2 class="seo-h">كيف ينضم المبدع؟</h2><p>ثلاث خطوات من الترشيح إلى صفحتك وشهادتك.</p></div>
+    <ol class="crx-steps">
+      <li class="rv"><span class="crx-step-n" aria-hidden="true">1</span><span class="crx-step-ic">${ic("user-plus")}</span><h3>الترشيح</h3><p>املأ <a class="link" href="contact.html?type=creator">نموذج الترشيح</a>: الاسم والمجال والمحافظة ونبذة وروابط الأعمال. يمكنك أن ترشّح نفسك أو مبدعاً تعرفه.</p></li>
+      <li class="rv"><span class="crx-step-n" aria-hidden="true">2</span><span class="crx-step-ic">${ic("badge-check")}</span><h3>المراجعة والموافقة</h3><p>يراجع فريقنا الأعمال ويتواصل مع المبدع نفسه. لا ننشر صفحة أحد إلا بعد موافقته الصريحة على نشر اسمه وصورته وروابطه.</p></li>
+      <li class="rv"><span class="crx-step-n" aria-hidden="true">3</span><span class="crx-step-ic">${ic("award")}</span><h3>الصفحة والشهادة</h3><p>تُنشر صفحته برابط خاص، ويستلم شهادة ترحيب رمزية باسمه يحمّلها أو يشاركها. ويستطيع طلب تعديل صفحته أو حذفها متى شاء.</p></li>
+    </ol>
+    <div class="crx-cta rv"><div><h2>مكانك في القاعة محجوز</h2><p>الانضمام مجاني. الشهادة ترحيب وتكريم رمزي من صفحتنا، وليست اعتماداً رسمياً أو مهنياً. التفاصيل في <a class="link" href="methodology.html#creators">المنهجية</a> و<a class="link" href="privacy.html#creators">سياسة الخصوصية</a>.</p></div>${cta}</div>
+  </div></section>
+</main>`;
+  return shell({ seo, body, bodyAttr: 'data-page="creators"', scripts: crScripts("creators.js", "cr3d.js"), css: CR_CSS });
+}
+
+function creatorPage(c, lastmod) {
+  const p = crPath(c), url = abs(p), place = crPlace(c);
+  const crumbs = [["الرئيسية", ""], [CR_NAME, "creators/index.html"], [c.name, p]];
+  const base = `${c.name}: ${c.field}${c.province ? ` من ${c.province}` : ""}`;
+  const title = `${base} | ${CR_NAME}`.length <= 70 || base.length < 15 ? `${base} | ${CR_NAME}` : base;
+  let desc = oneLine(`${c.name}، ${c.field}${place ? ` من ${place}` : ""}. ${c.bio}`);
+  if (desc.length < 100) desc = oneLine(`${desc} الصفحة التعريفية والأعمال وروابط الحسابات في «${CR_NAME}»، موسوعة المبدعين العراقيين على موقع ${SITE.name}.`);
+  desc = clip(desc, 165, 100);
+  const photo = c.photo ? imgInfo(c.photo) || { url: abs(c.photo) } : null;
+  const person = { "@type": "Person", "@id": url + "#person", name: c.name, url, jobTitle: c.field, ...(c.bio ? { description: c.bio } : {}),
+    ...(photo ? { image: photo.width ? { "@type": "ImageObject", url: photo.url, width: photo.width, height: photo.height } : photo.url } : {}),
+    ...(c.province ? { address: { "@type": "PostalAddress", ...(c.city ? { addressLocality: c.city } : {}), addressRegion: c.province, addressCountry: "IQ" } } : {}),
+    ...(c.links.length ? { sameAs: c.links.map((l) => l.url) } : {}) };
+  const ld = [{ "@type": "ProfilePage", "@id": url + "#webpage", url, name: title, description: desc, inLanguage: "ar", isPartOf: { "@id": SITE_ID }, publisher: { "@id": ORG_ID },
+    dateCreated: iso(c.added), dateModified: iso(lastmod < c.added ? c.added : lastmod), mainEntity: person }, crumbsLd(crumbs)];
+  let seo = seoTags({ title, ogTitle: base, desc, path: p, image: ogImg(`creator:${c.slug}`) || DEF_IMG, imageAlt: `${c.name}، ${c.field}`, ogType: "profile", ld,
+    robots: c.demo ? "noindex, follow" : undefined });
+  if (c.demo) seo = seo.replace(/<link rel="canonical"[^>]*>\n/, ""); // الصفحة التجريبية لا تُفهرس
+  const others = creators.filter((x) => x !== c).slice(0, 6);
+  const info = [["المجال", esc(c.field)], c.province ? ["المحافظة", esc(c.province)] : null, c.city && c.city !== c.province ? ["المدينة", esc(c.city)] : null,
+    ["انضم في", `<time datetime="${esc(c.added)}">${esc(fmtDate(c.added))}</time>`], c.works.length ? ["الأعمال المعروضة", String(c.works.length)] : null, ["رقم الشهادة", `<span class="ltr">${esc(c.code)}</span>`]].filter(Boolean);
+  const shortUrl = decodeURI(url).replace(/^https?:\/\//, "");
+  const body = `<main class="crx crd">
+  <section class="crd-hero" data-sc>
+    <div class="crx-giant" aria-hidden="true">${esc(c.field)}</div>
+    <div class="container">
+      ${crumbsHtml(crumbs)}
+      ${c.demo ? `<div class="alert alert-warn mb-3">${ic("triangle-alert")}<div><strong>صفحة تجريبية</strong><p>هذه الصفحة مثال لعرض شكل القسم، والشخص المذكور فيها غير حقيقي.</p></div></div>` : ""}
+      <div class="crd-hero-grid">
+        <div class="crd-stage">
+          <div class="crd-gl" data-gl="palette" aria-hidden="true"></div>
+          <figure class="crd-portrait" data-tilt>
+            <span class="crd-plate" aria-hidden="true"></span>
+            <span class="crd-frame">${crAvatar(c, 480, true)}</span>
+            <figcaption class="crd-label"><b>${esc(c.name)}</b><small>${esc(c.field)}${place ? ` · ${esc(place)}` : ""}</small><span class="ltr">${crSerial(c)}</span></figcaption>
+          </figure>
+        </div>
+        <header class="crd-head">
+          <span class="crx-kicker">${ic("palette")}${esc(CR_NAME)}<span class="ltr crd-serial">${crSerial(c)}</span></span>
+          <h1>${esc(c.name)}</h1>
+          <p class="crd-lead">${esc(c.field)}${place ? ` من ${esc(place)}` : ""}${c.bio ? `. ${esc(c.bio)}` : ""}</p>
+          <ul class="crd-facts">
+            <li>${ic("sparkles")}<span>${esc(c.field)}</span></li>
+            ${place ? `<li>${ic("map-pin")}<span>${esc(place)}</span></li>` : ""}
+            <li>${ic("calendar")}<span>منذ <time datetime="${esc(c.added)}">${esc(fmtDate(c.added))}</time></span></li>
+            ${c.works.length ? `<li>${ic("images")}<span>${c.works.length === 1 ? "عمل واحد" : c.works.length === 2 ? "عملان" : `${c.works.length} أعمال`}</span></li>` : ""}
+          </ul>
+          ${c.links.length ? `<ul class="cr-links crd-links">${c.links.map((l) => `<li><a href="${esc(l.url)}" ${EXT}>${ic(linkIcon(l.url))}<span>${esc(l.label)}</span>${ic("arrow-up-left")}</a></li>`).join("")}</ul>` : ""}
+          <div class="btn-row">${c.works.length ? `<a class="btn btn-primary btn-lg" href="#works" data-magnetic>${ic("images")}تجوّل في الأعمال</a>` : ""}<a class="btn ${c.works.length ? "btn-ghost" : "btn-primary"} btn-lg" href="#certificate">${ic("award")}شهادة الانضمام</a></div>
+        </header>
+      </div>
+    </div>
+  </section>
+  <div class="container crd-body" id="root">
+    ${c.about.length ? `<section class="crd-sec crd-about rv" aria-labelledby="about">
+      <div class="crd-sec-head"><span class="kicker">الحكاية</span><h2 id="about">نبذة</h2></div>
+      <div class="prose">${c.about.map((x) => `<p>${esc(x)}</p>`).join("")}</div>
+    </section>` : ""}
+    ${c.works.length ? `<section class="crd-sec crd-works hgallery" data-hscroll data-hs-items aria-labelledby="works">
+      <div class="hg-sticky">
+      <div class="crd-sec-head"><div><span class="kicker">المعرض</span><h2 id="works">الأعمال</h2>${c.works.length > 1 ? `<div class="hg-progress" aria-hidden="true"><i></i></div>` : ""}</div>
+        ${c.works.length > 1 ? `<div class="crd-nav"><button class="icon-btn" type="button" data-cf="prev" aria-label="العمل السابق">${ic("arrow-right")}</button><button class="icon-btn" type="button" data-cf="next" aria-label="العمل التالي">${ic("arrow-left")}</button></div>` : ""}</div>
+      <div class="hg-track crd-track" data-coverflow tabindex="0" role="group" aria-label="معرض أعمال ${esc(c.name)}">
+        ${c.works.map((w, i) => `<article class="crd-work" style="--k:${i}"><div class="crd-work-in">
+          ${w.image ? `<img src="${esc(w.image)}" alt="${esc(w.title)}" width="800" height="600" loading="lazy" decoding="async" data-err="remove">` : `<span class="cr-work-gen" aria-hidden="true">${ic(w.url ? "link" : "sparkles")}</span>`}
+          <div class="crd-work-cap"><h3>${esc(w.title)}</h3>${w.year ? `<small>${w.year}</small>` : ""}${w.desc ? `<p>${esc(w.desc)}</p>` : ""}
+          ${w.url ? `<a class="link" href="${esc(w.url)}" ${EXT}>شاهد العمل${ic("arrow-up-left")}</a>` : ""}</div></div></article>`).join("\n        ")}
+      </div>
+      </div>
+    </section>` : ""}
+    <section class="crd-sec crd-id rv" aria-label="بطاقة تعريف ${esc(c.name)}">
+      <div class="crd-idcard" data-tilt>
+        <div class="crd-id-photo">${crAvatar(c, 200, false)}</div>
+        <div class="crd-id-body"><p class="crd-id-name">${esc(c.name)}</p>
+          <table class="kv">${info.map(([k, v]) => `<tr><th scope="row">${k}</th><td>${v}</td></tr>`).join("")}</table></div>
+      </div>
+    </section>
+    <section class="crd-sec crd-cert-sec" aria-labelledby="certificate">
+      <div class="crd-sec-head"><span class="kicker">التكريم</span><h2 id="certificate">شهادة الانضمام</h2></div>
+      <div class="crd-cert-grid">
+        <div class="crd-cert3d" data-flip tabindex="0" role="button" aria-pressed="false" aria-label="اقلب الشهادة لترى وجهها الآخر">
+          <div class="crd-cface crd-front" aria-hidden="false">
+            <span class="crd-band" aria-hidden="true"></span>
+            <div class="crd-tab">
+              <span class="crd-cert-crown">${ic("crown")}</span>
+              <small>شهادة ترحيب</small>
+              <strong class="crd-cert-name">${esc(clip(c.name, 30))}</strong>
+              <p>عضو في «${esc(CR_NAME)}» منذ ${esc(fmtDate(c.added))}</p>
+              <span class="crd-cert-code ltr">${esc(c.code)}</span>
+            </div>
+            <span class="crd-band" aria-hidden="true"></span>
+          </div>
+          <div class="crd-cface crd-back">
+            <span class="crd-cert-crown">${ic("qr-code")}</span>
+            <small>رقم الشهادة</small>
+            <strong class="ltr">${esc(c.code)}</strong>
+            <p class="ltr">${esc(shortUrl)}</p>
+            <span class="crd-cert-flip">${ic("rotate-3d")}اقلب</span>
+          </div>
+        </div>
+        <div class="crd-cert-copy">
+          <p><strong>${esc(c.name)}</strong> عضو في «${esc(CR_NAME)}» منذ ${esc(fmtDate(c.added))}، ورقم الشهادة <span class="ltr">${esc(c.code)}</span>.</p>
+          <div class="btn-row"><button class="btn btn-primary" type="button" data-cert="open">${ic("download")}حمّل شهادتك</button><button class="btn btn-ghost" type="button" data-cert="share">${ic("share-2")}شارك الشهادة</button><button class="btn btn-ghost" type="button" data-copy="${esc(url)}#certificate">${ic("link")}انسخ رابط الشهادة</button></div>
+          <p class="small muted mb-0 mt-2">${ic("rotate-3d")} اضغط الشهادة لتقلبها. هي شهادة ترحيب وتكريم رمزية من ${esc(SITE.name)}، وليست اعتماداً رسمياً أو مهنياً.</p>
+        </div>
+      </div>
+    </section>
+    <section class="crd-sec crd-share">
+      <div class="crd-sec-head"><span class="kicker">انشرها</span><h2>شارك الصفحة</h2></div>
+      ${shareRow(url, `${c.name} في «${CR_NAME}»`)}
+      <p class="small muted mt-3">هل هذه صفحتك وتريد تعديلها أو حذفها؟ <a class="link" href="contact.html?type=correction&amp;ref=${encodeURIComponent(`صفحة المبدع ${c.name} (${p})`)}">راسلنا</a> وننفّذ طلبك. آخر تحديث للصفحة: <time datetime="${esc(lastmod)}">${esc(fmtDate(lastmod))}</time>.</p>
+    </section>
+  </div>
+  <section class="section seo-related crx-more"><div class="container">
+    ${others.length ? `<div class="section-head"><div><span class="kicker">${esc(CR_NAME)}</span><h2>مبدعون آخرون في القاعة</h2></div><a class="btn btn-ghost btn-sm" href="creators/index.html">كل المبدعين${ic("arrow-left")}</a></div>
+    <div class="crx-grid crx-grid-sm">${others.map((o, i) => crCard(o, i, true)).join("\n      ")}</div>` : ""}
+    <div class="crx-cta mt-4"><div><h2>تعرف مبدعاً عراقياً؟</h2><p>رشّحه لنا، أو رشّح نفسك. لا ننشر صفحة أحد إلا بعد موافقته.</p></div><a class="btn btn-primary btn-lg" href="contact.html?type=creator" data-magnetic>${ic("user-plus")}رشّح مبدعاً</a></div>
+  </div></section>
+</main>`;
+  const scripts = `<script type="application/json" id="creator-data">${json({ slug: c.slug, name: c.name, field: c.field, place, added: c.added, code: c.code, url })}</script>
+${crScripts("creator.js", "cr3d.js")}`;
+  return shell({ seo, body, bodyAttr: 'data-page="creators"', scripts, css: CR_CSS });
+}
+
+{
+  state.creators ||= {};
+  const stamp = (key, content) => { const h = hash(content), st = state.creators[key]; if (!st || st.h !== h) state.creators[key] = { h, lastmod: TODAY }; return state.creators[key].lastmod; };
+  if (creatorsBroken) {
+    // ملف البيانات معطوب: لا نلمس الصفحات الموجودة (ولا نحذفها)، ونبقيها في sitemap
+    for (const f of existsSync(rel("creators")) ? readdirSync(rel("creators")).filter((x) => x.endsWith(".html")) : []) {
+      if (/name="robots" content="noindex/.test(readFileSync(rel("creators", f), "utf8"))) continue;
+      const key = f === "index.html" ? "index" : f.replace(/\.html$/, "");
+      sitemap.pages.push({ path: f === "index.html" ? "creators/" : `creators/${f}`, lastmod: (state.creators[key] || {}).lastmod || TODAY });
+    }
+  } else {
+    const keep = new Set(["index.html"]), keys = new Set(["index"]);
+    for (const c of creators) {
+      const lastmod = stamp(c.slug, JSON.stringify(c));
+      keep.add(`${c.slug}.html`); keys.add(c.slug);
+      await put(crPath(c), creatorPage(c, lastmod));
+      if (!c.demo) sitemap.pages.push({ path: crPath(c), lastmod });
+    }
+    await put("creators/index.html", creatorsIndexPage());
+    sitemap.pages.push({ path: "creators/", lastmod: stamp("index", JSON.stringify(creators.map((c) => [c.slug, c.name, c.field, c.province, c.city, c.bio, c.photoHash, c.demo]))) });
+    await prune("creators", keep);
+    for (const k of Object.keys(state.creators)) if (!keys.has(k)) delete state.creators[k];
+  }
+}
+
 await put("assets/js/files-data.js", `/* مولّد تلقائياً بواسطة scripts/build-pages.mjs — لا تعدّله يدوياً */
 window.FILES=${JSON.stringify(coverage)};
 `);
@@ -921,9 +1174,10 @@ await put("robots.txt", `User-agent: *\nAllow: /\n${SITE_URL ? `\nSitemap: ${SIT
 
 /* state: مرتّب المفاتيح حتى لا يتغيّر الملف بلا سبب */
 const sortObj = (o) => Object.fromEntries(Object.keys(o).sort().map((k) => [k, o[k]]));
-await put("scripts/seo-state.json", JSON.stringify({ _: "مولّد تلقائياً: تواريخ آخر تعديل حقيقي لكل صفحة. لا تعدّله يدوياً.", posts: sortObj(state.posts), pages: sortObj(state.pages), urls: sortObj(state.urls) }) + "\n");
+await put("scripts/seo-state.json", JSON.stringify({ _: "مولّد تلقائياً: تواريخ آخر تعديل حقيقي لكل صفحة. لا تعدّله يدوياً.", posts: sortObj(state.posts), pages: sortObj(state.pages), urls: sortObj(state.urls), creators: sortObj(state.creators || {}) }) + "\n");
 
 console.log(`✔ ${items.length} صفحة منشور في post/ (حُذف ${removedPosts} قديمة) · ${hubs.length} موضوعاً/قسماً (${sitemap.topics.length - archivePages - 1} صفحة) · ${archivePages} صفحة أرشيف`);
+console.log(`  مبدعون عراقيون: ${creatorsBroken ? "ملف البيانات معطوب، تُركت الصفحات كما هي" : `${creators.length} صفحة مبدع + الفهرس${creators.some((c) => c.demo) ? ` (منهم ${creators.filter((c) => c.demo).length} تجريبي: احذفهم قبل الإعلان)` : ""}`}`);
 console.log(`  صور المعاينة: ${ogStats.total} بطاقة · رُسمت الآن ${ogStats.rendered}${ogStats.failed ? ` · فشل ${ogStats.failed}` : ""}${ogStats.skipped ? " · (تعذّر الرسم: راجع التنبيه أعلاه)" : ""} · حُذفت ${ogPruned} قديمة`);
 console.log(`  ملفات تغيّرت في هذا البناء: ${written} · روابط جديدة/معدّلة لـ IndexNow: ${changedCount}`);
 console.log(SITE_URL ? `  الرابط الأساسي: ${SITE_URL} · sitemap.xml (${sitemapFiles.length} ملفات) + sitemap-news.xml + feed.xml + atom.xml` : "  ⚠ لم يُحدَّد siteUrl: الروابط نسبية ولم يُكتب sitemap. ضع الرابط في scripts/site.config.json أو متغير SITE_URL.");

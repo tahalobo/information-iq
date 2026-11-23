@@ -65,11 +65,21 @@
           <span class="label">نوع الرسالة</span>
           <div class="grid mt-1 mb-3" id="types" style="grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px"></div>
           <div class="form-row">
-            <div class="field"><label for="name">الاسم</label><input class="input" id="name" name="name" required maxlength="80" autocomplete="name"></div>
+            <div class="field"><label for="name" id="name-label">الاسم</label><input class="input" id="name" name="name" required maxlength="80" autocomplete="name"></div>
             <div class="field"><label for="reply">بريدك أو حسابك على إنستغرام <span class="muted small">(للرد عليك)</span></label><input class="input ltr" id="reply" name="reply" dir="ltr" required maxlength="120" placeholder="name@mail.com أو ‎@username"></div>
+          </div>
+          <div id="creator-fields" hidden>
+            <span class="label">من ترشّح؟</span>
+            <div class="cr-who mt-1" id="cr-who" role="radiogroup" aria-label="من ترشّح؟"><button type="button" class="chip active" data-who="self" role="radio" aria-checked="true">أرشّح نفسي</button><button type="button" class="chip" data-who="other" role="radio" aria-checked="false">أرشّح مبدعاً آخر</button></div>
+            <div class="field" id="cr-name-wrap" hidden><label for="cr-name">اسم المبدع الذي ترشّحه</label><input class="input" id="cr-name" name="cr_name" maxlength="80"></div>
+            <div class="form-row">
+              <div class="field"><label for="cr-field">المجال</label><input class="input" id="cr-field" name="cr_field" maxlength="40" list="cr-field-list" placeholder="رسام، مبرمج، كاتب، مصوّر…"><datalist id="cr-field-list"></datalist></div>
+              <div class="field"><label for="cr-prov">المحافظة</label><select class="select" id="cr-prov" name="cr_prov"></select></div>
+            </div>
           </div>
           <div class="field" id="extra-wrap" hidden><label for="extra" id="extra-label"></label><input class="input" id="extra" name="extra" maxlength="400"></div>
           <div class="field"><label for="msg" id="msg-label">الرسالة</label><textarea class="textarea" id="msg" name="message" required maxlength="3500"></textarea><span class="hint" id="msg-hint"></span></div>
+          <label class="cr-consent" id="cr-consent-wrap" hidden><input type="checkbox" id="cr-consent" name="cr_consent"><span id="cr-consent-text"></span></label>
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
           <div id="form-msg" class="mb-2"></div>
           <button class="btn btn-primary btn-lg" type="submit" id="submit"><i data-lucide="send"></i>إرسال</button>
