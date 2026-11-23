@@ -271,7 +271,16 @@ const V_UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTM
 const V_SKIP = /(^|\.)(t\.me|telegram\.org|facebook\.com|instagram\.com|twitter\.com|x\.com|tiktok\.com|youtube\.com|youtu\.be|pinterest\.com|linkedin\.com|reddit\.com|quora\.com|threads\.net|duckduckgo\.com|google\.[a-z.]+|bing\.com)$/i;
 const vHost = (u) => { try { return new URL(u).hostname.replace(/^www\./, ""); } catch { return ""; } };
 
-async function vSearch(q, env) {
+/* فحص الصلة: محرك بلا مفتاح قد يردّ بنتائج لا علاقة لها بالسؤال؛ نُبقي ما يشترك عنوانه مع السؤال بكلمة واحدة على الأقل */
+const vNorm = (s) => String(s || "").toLowerCase().replace(/[ً-ٰٟـ]/g, "").replace(/[أإآ]/g, "ا").replace(/ى/g, "ي").replace(/ة/g, "ه");
+const vTokens = (s) => vNorm(s).split(/[^\p{L}\p{N}]+/u).map((t) => t.replace(/^(?:وال|بال|لل|ال|و)(?=.{3})/, "")).filter((t) => t.length >= 3 && !/^\d+$/.test(t));
+function vRelevant(q, items) {
+  const qt = new Set(vTokens(q));
+  if (qt.size < 2) return items;
+  return items.filter((it) => vTokens(it.title).some((t) => qt.has(t)));
+}
+
+async function vSearch(q, env, trace = []) {
   const get = (url, init) => fetch(url, { ...init, signal: AbortSignal.timeout(7000) });
   if (env.SERPER_API_KEY) {
     const r = await get("https://google.serper.dev/search", { method: "POST", headers: { "X-API-KEY": env.SERPER_API_KEY, "Content-Type": "application/json" }, body: JSON.stringify({ q, num: 10, hl: "ar" }) });
@@ -285,16 +294,64 @@ async function vSearch(q, env) {
     const r = await get(`https://api.search.brave.com/res/v1/web/search?count=10&q=${encodeURIComponent(q)}`, { headers: { "X-Subscription-Token": env.BRAVE_API_KEY, Accept: "application/json" } });
     if (r.ok) return { engine: "Brave", items: (((await r.json()).web || {}).results || []).map((i) => ({ url: i.url, title: clean(i.title) })) };
   }
-  const r = await get(`https://html.duckduckgo.com/html/?q=${encodeURIComponent(q)}&kl=xa-ar`, { headers: { "User-Agent": V_UA, "Accept-Language": "ar,en;q=0.8" } });
-  const html = r.ok ? await r.text() : "";
-  if (!/result__a/.test(html)) throw fail("blocked", "search engine refused the request");
+  // بلا مفتاح: خلاصة أخبار Bing أولاً (تقبل طلبات خوادم Cloudflare وتعطي الرابط الأصلي للخبر)، ثم DuckDuckGo الذي يرفضها غالباً
+  // نجرّب المحركات بالترتيب، ونقبل أول محرك يعطي نتيجتين على الأقل لهما صلة بالسؤال. trace يسجّل ما ردّه كل محرك (للتشخيص).
+  const tries = [["Bing News", vBingNews], ["DuckDuckGo Lite", vDdgLite], ["DuckDuckGo", vDdgHtml]];
+  for (const [engine, run] of tries) {
+    let res;
+    try { res = await run(q, get); } catch (e) { res = { status: 0, type: String((e && e.name) || "error"), items: [] }; }
+    const items = vRelevant(q, res.items);
+    trace.push({ q, engine, status: res.status, type: res.type, found: res.items.length, relevant: items.length, sample: res.items.slice(0, 3).map((i) => i.title.slice(0, 70)) });
+    if (items.length >= 2) return { engine, items };
+  }
+  throw fail("blocked", "no search engine returned usable results");
+}
+
+const V_HEADERS = { "User-Agent": V_UA, "Accept-Language": "ar,en;q=0.8" };
+const ddgUrl = (raw) => { let url = unescapeHtml(raw); const m = url.match(/[?&]uddg=([^&]+)/); if (m) { try { url = decodeURIComponent(m[1]); } catch { url = ""; } } return url.startsWith("//") ? "https:" + url : url; };
+
+async function vDdgHtml(q, get) {
+  const r = await get(`https://html.duckduckgo.com/html/?q=${encodeURIComponent(q)}&kl=xa-ar`, { headers: V_HEADERS });
+  const type = (r.headers.get("content-type") || "").split(";")[0];
+  const html = r.status === 200 ? await readCapped(r, 600_000) : "";
   const items = [];
   for (const b of html.split(/<div class="result results_links/).slice(1)) {
     const a = b.match(/class="result__a"[^>]*href="([^"]+)"[^>]*>([\s\S]*?)<\/a>/); if (!a) continue;
-    let url = unescapeHtml(a[1]); const m = url.match(/[?&]uddg=([^&]+)/); if (m) url = decodeURIComponent(m[1]); if (url.startsWith("//")) url = "https:" + url;
-    if (!/duckduckgo\.com\/y\.js/.test(url)) items.push({ url, title: clean(a[2]) });
+    const url = ddgUrl(a[1]);
+    if (/^https?:\/\//i.test(url) && !/duckduckgo\.com\/y\.js/.test(url)) items.push({ url, title: clean(a[2]) });
   }
-  return { engine: "DuckDuckGo", items };
+  return { status: r.status, type, items };
+}
+
+/* النسخة الخفيفة من DuckDuckGo: جدول روابط بسيط، وتقبل أحياناً ما ترفضه النسخة العادية */
+async function vDdgLite(q, get) {
+  const r = await get(`https://lite.duckduckgo.com/lite/?q=${encodeURIComponent(q)}&kl=xa-ar`, { headers: V_HEADERS });
+  const type = (r.headers.get("content-type") || "").split(";")[0];
+  const html = r.status === 200 ? await readCapped(r, 600_000) : "";
+  const items = [];
+  for (const m of html.matchAll(/<a\b([^>]*\bclass=["']result-link["'][^>]*)>([\s\S]*?)<\/a>/gi)) {
+    const href = (m[1].match(/\bhref=["']([^"']+)["']/i) || [])[1]; if (!href) continue;
+    const url = ddgUrl(href);
+    if (/^https?:\/\//i.test(url) && !/duckduckgo\.com\/y\.js/.test(url)) items.push({ url, title: clean(m[2]) });
+  }
+  return { status: r.status, type, items };
+}
+
+/* خلاصة RSS لبحث أخبار Bing: كل عنصر رابطه يمرّ عبر bing.com ويحمل الرابط الأصلي في المعامل url */
+async function vBingNews(q, get) {
+  const r = await get(`https://www.bing.com/news/search?q=${encodeURIComponent(q)}&format=rss&setlang=ar&mkt=ar-XA`, { headers: { ...V_HEADERS, Accept: "application/rss+xml,application/xml,text/xml" } });
+  const type = (r.headers.get("content-type") || "").split(";")[0];
+  if (!r.ok || !/xml/i.test(type)) { try { await r.body.cancel(); } catch { /* ignore */ } return { status: r.status, type, items: [] }; }
+  const xml = await readCapped(r, 600_000);
+  const items = [];
+  for (const b of xml.split(/<item>/i).slice(1)) {
+    const link = unescapeHtml(((b.match(/<link>([\s\S]*?)<\/link>/i) || [])[1] || "").trim());
+    let url = link;
+    try { const u = new URL(link); if (/(^|\.)bing\.com$/i.test(u.hostname)) url = u.searchParams.get("url") || ""; } catch { url = ""; }
+    const title = clean(((b.match(/<title>([\s\S]*?)<\/title>/i) || [])[1] || "").replace(/^<!\[CDATA\[|\]\]>$/g, ""));
+    if (/^https?:\/\//i.test(url) && isSafeUrl(url) && !ADULT.test(vHost(url) + " " + title)) items.push({ url, title });
+  }
+  return { status: r.status, type, items };
 }
 
 async function vRead(item) {
@@ -320,17 +377,20 @@ async function vRead(item) {
 async function verifyNews(body, env) {
   const queries = (Array.isArray(body.queries) ? body.queries : []).map((q) => String(q || "").replace(/\s+/g, " ").trim().slice(0, 160)).filter((q) => q.length >= 6).slice(0, 2);
   if (!queries.length) throw fail("bad-request", "queries required");
-  const seen = new Set(); const picked = []; let engine = "";
+  const seen = new Set(); const picked = []; let engine = ""; const trace = []; const debug = body.debug === true;
   for (const q of queries) {
-    const s = await vSearch(q, env); engine = s.engine;
+    // فشل سؤال لا يُسقط الطلب كله: قد ينجح السؤال الثاني (كلمات أقل)
+    let s; try { s = await vSearch(q, env, trace); } catch (e) { if (!e.code) throw e; continue; }
+    engine = s.engine;
     for (const it of s.items) {
       const h = vHost(it.url); if (!/^https?:\/\//.test(it.url) || !h || V_SKIP.test(h) || /\.(pdf|docx?|pptx?|zip|jpg|png|mp4)(\?|$)/i.test(it.url) || seen.has(it.url)) continue;
       seen.add(it.url); picked.push(it); if (picked.length >= 10) break;
     }
     if (picked.length >= 10) break;
   }
+  if (!engine) { if (debug) return { ok: false, error: "blocked", trace }; throw fail("blocked", "no search engine returned usable results"); }
   const results = (await Promise.all(picked.map(vRead))).filter(Boolean);
-  return { ok: true, engine, searched: queries, opened: picked.length, results };
+  return { ok: true, engine, searched: queries, opened: picked.length, results, ...(debug ? { trace } : {}) };
 }
 
 /* ---------- 4) فاحص الروابط: تتبّع التحويلات وقراءة رأس الصفحة النهائية ---------- */
