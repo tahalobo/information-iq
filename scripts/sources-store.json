@@ -1,5 +1,194 @@
 {
  "posts": {
+  "14862": {
+   "hash": "9edc9f99076a",
+   "checked": "2026-11-23T21:17:57.099Z",
+   "queries": [
+    "اكتشف علماء الحفريات نوعًا جديدًا من الديناصورات في زيمبابوي أطلقوا عليه اسم Musango",
+    "تاريخ زيمبابوي تطور الديناصورات اكتشف الحفريات"
+   ],
+   "sources": [
+    {
+     "url": "https://www.youm7.com/story/2026/7/31/%D8%B9%D9%85%D8%B1%D9%87-210-%D9%85%D9%84%D8%A7%D9%8A%D9%8A%D9%86-%D8%B9%D8%A7%D9%85-%D9%86%D9%88%D8%B9-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%85%D9%86-%D8%A7%D9%84%D8%AF%D9%8A%D9%86%D8%A7%D8%B5%D9%88%D8%B1%D8%A7%D8%AA-%D9%8A%D9%83%D8%B4%D9%81-%D8%A3%D8%B3%D8%B1%D8%A7%D8%B1/7497687",
+     "name": "عمره 210 ملايين عام.. نوع جديد من الديناصورات يكشف أسرار التطور",
+     "site": "اليوم السابع",
+     "host": "youm7.com",
+     "lang": "ar",
+     "kind": "news",
+     "match": 78,
+     "quote": "كشف فريق من علماء الحفريات عن اكتشاف نوع جديد من الديناصورات في زيمبابوي، في خطوة قد تغير فهم العلماء للمراحل الأولى من تطور هذه الكائنات، بعدما أظهرت الدراسة أن جنوب القارة الأفريقية كان يضم نظمًا بيئية…"
+    },
+    {
+     "url": "https://sana.sy/miscellaneous/2570947/",
+     "name": "اكتشاف نوع جديد من الديناصورات في زيمبابوي يعود إلى 210 ملايين عام",
+     "site": "الوكالة العربية السورية للأنباء – سانا",
+     "host": "sana.sy",
+     "lang": "ar",
+     "kind": "web",
+     "match": 83,
+     "quote": "اكتشف فريق دولي من الباحثين نوعاً جديداً من الديناصورات في زيمبابوي، بعد دراسة حفريات عُثر عليها عام 2018 على ضفاف بحيرة كاريبا، في اكتشاف يلقي مزيداً من الضوء على تنوع الديناصورات في جنوب القارة الإفريقية…"
+    },
+    {
+     "url": "https://africaface.net/%D8%A7%D9%83%D8%AA%D8%B4%D8%A7%D9%81-%D8%AF%D9%8A%D9%86%D8%A7%D8%B5%D9%88%D8%B1-%D8%AC%D8%AF%D9%8A%D8%AF-%D9%8A%D8%B9%D9%8A%D8%AF-%D9%83%D8%AA%D8%A7%D8%A8%D8%A9-%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-%D8%B2/",
+     "name": "اكتشاف ديناصور جديد يعيد كتابة تاريخ زيمبابوي",
+     "site": "وجه أفريقيا",
+     "host": "africaface.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 71,
+     "quote": "إفريقيا الاكتشافات العلمية البيئة القديمة التطور التنوع البيولوجي الحفريات الحياة القديمة الديناصورات العصر الترياسي المتحف البريطاني للتاريخ الطبيعي بحيرة كاريبا بول باريت زيمبابوي علم الحفريات غوندوانا"
+    },
+    {
+     "url": "https://dailybeirut.com/%D8%AA%D9%83%D9%86%D9%88%D9%84%D9%88%D8%AC%D9%8A%D8%A7-%D9%88%D8%B9%D9%84%D9%88%D9%85/%D8%AF%D9%8A%D9%86%D8%A7%D8%B5%D9%88%D8%B1%D8%A7%D8%AA-%D8%B2%D9%8A%D9%85%D8%A8%D8%A7%D8%A8%D9%88%D9%8A-%D8%AA%D9%83%D8%B4%D9%81-%D8%B9%D9%86-%D9%85%D8%AC%D8%AA%D9%85%D8%B9-%D9%85%D8%A7-%D9%82%D8%A8%D9%84-%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE%D9%8A-%D9%81%D8%B1%D9%8A%D8%AF/",
+     "name": "ديناصور موسانغو في زيمبابوي يكشف مجتمعاً فريداً",
+     "site": "dailybeirut.com",
+     "host": "dailybeirut.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 60,
+     "quote": "لا تعد هذه الديناصورات الزيمبابوية أقرباء مقربين لجيرانها في جنوب أفريقيا."
+    },
+    {
+     "url": "https://www.africa4press.com/blog/%D8%A7%D9%83%D8%AA%D8%B4%D8%A7%D9%81-%D8%AF%D9%8A%D9%86%D8%A7%D8%B5%D9%88%D8%B1-%D8%B9%D8%A7%D8%B4-%D9%82%D8%A8%D9%84-210-%D9%85%D9%84%D8%A7%D9%8A%D9%8A%D9%86-%D8%B3%D9%86%D8%A9-%D9%81%D9%8A-%D8%B2%D9%8A%D9%85%D8%A8%D8%A7%D8%A8%D9%88%D9%8A",
+     "name": "اكتشاف ديناصور عاش قبل 210 ملايين سنة في زيمبابوي",
+     "site": "أفريكا فور برس",
+     "host": "africa4press.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 57,
+     "quote": "أفادت شبكة \"سي إن إن\" باكتشاف نوع جديد من الديناصورات في بحيرة كاريبا بزيمبابوي، يعود تاريخ وجوده إلى نحو 210 ملايين سنة، بعد سنوات من أعمال التنقيب ودراسة الأحافير التي قادتها بعثة دولية من علماء الحفريات."
+    }
+   ]
+  },
+  "14864": {
+   "hash": "15ad41ad14d1",
+   "checked": "2026-11-23T21:17:38.735Z",
+   "queries": [
+    "كان الجدري يقتل الملايين ويترك الناجين بتشوهات دائمة",
+    "إدوارد جينر القرن الثامن عشر الجدري الملايين"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A5%D8%AF%D9%88%D8%A7%D8%B1%D8%AF_%D8%AC%D9%8A%D9%86%D8%B1",
+     "name": "إدوارد جينر",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 63,
+     "quote": "فبدأ الطبيب يبحث في خفايا هذا السر، فاكتشف أن جدري البقر نوعان، يشبه أحدهما جدري الإنسان، فاستفاد منه في فكرة التلقيح، وفي 14 مايو 1796 اختار جينر طفل سليم (جيمس فيبس) كان عمره حوالي 8 سنوات ليقوم بتلقيحه بمرض…"
+    },
+    {
+     "url": "https://www.marefa.org/%D8%A5%D8%AF%D9%88%D8%A7%D8%B1%D8%AF_%D8%AC%D9%86%D8%B1",
+     "name": "إدوارد جنر - المعرفة",
+     "site": "المعرفة",
+     "host": "marefa.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 63,
+     "quote": "إدوارد جنر إنگليزية: Edward Jenner هو طبيب إنكليزي ( 17 مايو 1749 - 26 يناير 1823 ) كان أول من اكتشف لقاح لمرض الجدري ."
+    },
+    {
+     "url": "https://www.elmeezan.com/%D8%A5%D8%AF%D9%88%D8%A7%D8%B1%D8%AF-%D8%AC%D9%8A%D9%86%D8%B1/",
+     "name": "إدوارد جينر .. قصة طبيب ضحى بابنه من أجل مناعة العالم",
+     "site": "الميزان",
+     "host": "elmeezan.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 74,
+     "quote": "وعنما حقن جينر الطفل بمرض الجدري الأكثر خطورة ظل جيمس معافى ولم يمرض."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Edward_Jenner",
+     "name": "Edward Jenner",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Edward Jenner (17 May 1749 – 26 January 1823) was an English physician and scientist who pioneered the concept of vaccines and created the smallpox vaccine, the world's first vaccine. The terms vaccine and…"
+    },
+    {
+     "url": "https://www.arageek.com/bio/edward-jenner",
+     "name": "ما لا تعرفه عن إدوارد جينر .. من هو؟ سيرته الذاتية، إنجازاته وأقواله، معلومات عن إدوارد جينر",
+     "site": "أراجيك - Arageek",
+     "host": "arageek.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 65,
+     "quote": "إدوارد جينر هو طبيب بريطاني مشهور في أنحاء العالم لإيجاده لقاح وباء الجدري اللعين."
+    }
+   ]
+  },
+  "14865": {
+   "hash": "668cbffdbe5a",
+   "checked": "2026-11-23T21:17:27.942Z",
+   "queries": [
+    "يرى أنصار الوظيفية أن الوعي ينتج عن معالجة المعلومات وتنظيمها",
+    "الذكاء الاصطناعي أنصار الوظيفية"
+   ],
+   "sources": []
+  },
+  "14866": {
+   "hash": "0846e40080ad",
+   "checked": "2026-11-23T21:17:00.185Z",
+   "queries": [
+    "أصل تسمية \"الأنترنت\" وتاريخ أول رسالة تم إرسالها LOGIN",
+    "تاريخ الإنترنت أصل تسمية الأنترنت وتاريخ 1969"
+   ],
+   "sources": [
+    {
+     "url": "https://www.annahar.com/technology/356200/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA-%D8%A7%D9%84%D8%AD%D9%82%D9%8A%D9%82%D9%8A-%D8%A8%D8%AF%D8%A3-%D8%A8%D8%AD%D8%B1%D9%81%D9%8A%D9%86-%D9%81%D9%82%D8%B7-%D9%82%D8%A8%D9%84-%D8%A3%D9%83%D8%AB%D8%B1-%D9%85%D9%86-%D9%86%D8%B5%D9%81-%D9%82%D8%B1%D9%86",
+     "name": "تاريخ الإنترنت الحقيقي: من أول رسالة عام 1969 إلى الويب",
+     "site": "annahar.com",
+     "host": "annahar.com",
+     "lang": "ar",
+     "kind": "news",
+     "match": 79,
+     "quote": "جهاز IMP المستخدم لإرسال أول رسالة عبر شبكة ARPANET عام 1969."
+    },
+    {
+     "url": "https://gurumuda.net/ar/sejarah/asal-usul-dan-sejarah-perkembangan-internet.htm",
+     "name": "أصول وتاريخ تطور الإنترنت",
+     "site": "gurumuda.net",
+     "host": "gurumuda.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 81,
+     "quote": "ورغم أن الرسالة لم تتضمن سوى كلمة \"LOGIN\" (تسجيل الدخول)، مفصولة بعد الحرفين الأولين (\"LO\")، إلا أنها مثّلت الخطوة الأولى في رحلة الإنترنت الطويلة."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE_%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%B1%D9%86%D8%AA",
+     "name": "تاريخ الإنترنت",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 69,
+     "quote": "يبدأ تاريخ شبكة الإنترنت مع تطوّر الحواسيب الرقميّة في الخمسينيات من القرن الماضي."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/History_of_the_internet",
+     "name": "History of the internet",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 65,
+     "quote": "The internet originated in the efforts of scientists and engineers to build and interconnect computer networks. The internet protocol suite, the set of rules used to communicate between networks and devices on…"
+    },
+    {
+     "url": "https://kutaibashikhani.com/internet-fundamentals/history-of-the-internet/",
+     "name": "تاريخ الإنترنت: من \"مشروع عسكري سري\" إلى ثورة الويب",
+     "site": "محمد قتيبة شيخاني",
+     "host": "kutaibashikhani.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 74,
+     "quote": "هكذا كانت أول رسالة تنتقل بين حاسوبين على الشبكة التي صارت الإنترنت: كلمة مبتورة، «LO»."
+    }
+   ]
+  },
   "14867": {
    "hash": "6e684580396a",
    "checked": "2026-11-23T21:02:45.168Z",
@@ -7834,7 +8023,16 @@
     "تاريخ الأديان مصر القديمة رحلة المصريين"
    ],
    "sources": []
+  },
+  "15313": {
+   "hash": "5454ac1e1cfe",
+   "checked": "2026-11-23T21:16:32.785Z",
+   "queries": [
+    "اطلاق موقع الامبراطورية",
+    "كلمات المرور موقع الفيسبوك"
+   ],
+   "sources": []
   }
  },
- "updated": "2026-11-23T21:02:45.172Z"
+ "updated": "2026-11-23T21:17:57.103Z"
 }
