@@ -29,7 +29,7 @@ window.SITE = {
   // البحث العكسي داخل الموقع: رابط عامل Cloudflare بعد نشره (راجع worker/README.md)
   // مثال: "https://empire-reverse.yourname.workers.dev"
   // العامل مجاني وبلا مفتاح API. إذا تُرك فارغاً، تعمل الأداة بالبحث في أرشيفنا فقط مع أزرار المحركات الخارجية.
-  reverseSearchEndpoint: "",
+  reverseSearchEndpoint: "https://empire-reverse.tahalobo2.workers.dev",
 
   // فاحص الروابط (tool-link.html): يعمل بلا إعداد. وإن نُشر عامل Cloudflare (المسار /link) فيتتبّع تحويلات أي رابط
   // ويقرأ عنوان الصفحة النهائية ونماذجها. إذا تُرك فارغاً يُستعمل reverseSearchEndpoint، وإن لم يوجد فخدمات عامة مجانية.

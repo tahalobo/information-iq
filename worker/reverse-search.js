@@ -82,7 +82,7 @@ export default {
     } catch (e) {
       // لا نعيد للزائر نص الخطأ الداخلي (قد يكشف تفاصيل الخادم أو الموقع المجلوب)
       if (!e.code) console.error(e);
-      return json({ error: e.code || "engine" }, e.code === "blocked" ? 503 : e.code === "bad-request" ? 400 : 502);
+      return json({ error: e.code || "engine" }, e.code === "blocked" ? 503 : e.code === "bad-request" || e.code === "no-image" ? 400 : e.code === "too-large" ? 413 : 502);
     }
   }
 };
@@ -97,19 +97,20 @@ async function search(body, json, ctx) {
 
   // الصورة نفسها ← الجواب نفسه، من الكاش
   const key = await sha256(image || url);
-  const cacheKey = new Request(`https://cache.empire/rs2/${key}`);
+  const cacheKey = new Request(`https://cache.empire/rs3/${key}`);
   const cache = typeof caches !== "undefined" && caches.default ? caches.default : null;
   if (cache) { const hit = await cache.match(cacheKey); if (hit) { const data = await hit.json(); data.cached = true; return json(data); } }
 
+  // ياندكس لم يعد يقبل رابط الصورة مباشرة (يردّ بصفحة فارغة: imageExpired)، لذلك نجلب الصورة نحن ثم نرفعها مثل الملف
+  const bytes = image ? Uint8Array.from(atob(image), (c) => c.charCodeAt(0)) : await fetchImage(url);
   let q;
-  if (image) {
-    const bytes = Uint8Array.from(atob(image), (c) => c.charCodeAt(0));
+  {
     const up = await fetch(`${YA}/images-apphost/image-download?cbird=111&images_avatars_size=preview&images_avatars_namespace=images-cbir`, { method: "POST", headers: { ...YA_HEADERS, "Content-Type": "image/jpeg" }, body: bytes, signal: AbortSignal.timeout(15000) });
     const u = await up.json().catch(() => null);
     const orig = u && u.sizes && u.sizes.orig && u.sizes.orig.path;
     if (!up.ok || !u || !u.cbir_id || !orig) throw fail("blocked", `upload ${up.status}`);
     q = `rpt=imageview&url=${encodeURIComponent(orig)}&cbir_id=${encodeURIComponent(u.cbir_id)}`;
-  } else q = `rpt=imageview&url=${encodeURIComponent(url)}`;
+  }
 
   const r = await fetch(`${YA}/images/search?${q}`, { headers: YA_HEADERS, redirect: "follow", signal: AbortSignal.timeout(15000) });
   const html = await readCapped(r, 3_000_000);
@@ -141,6 +142,31 @@ async function search(body, json, ctx) {
   };
   if (cache && ctx) ctx.waitUntil(cache.put(cacheKey, new Response(JSON.stringify(data), { headers: { "Content-Type": "application/json", "Cache-Control": `max-age=${CACHE_TTL}` } })));
   return json(data);
+}
+
+/* يجلب صورة من رابط عام (بفحص SSRF عند كل تحويل)، بحدّ للحجم والوقت، ويرفض ما ليس صورة */
+const MAX_IMG = 3_000_000;
+async function fetchImage(url) {
+  let r;
+  try { r = await safeFetch(url, { headers: { "User-Agent": "Mozilla/5.0 (compatible; EmpireFactCheckBot/1.0; +reverse-image-verification)", Accept: "image/*,*/*;q=0.5" }, signal: AbortSignal.timeout(10000) }); }
+  catch (e) { throw e.code ? e : fail("no-image", "image fetch failed"); }
+  if (!r.ok || !r.body) throw fail("no-image", `image ${r.status}`);
+  const type = (r.headers.get("content-type") || "").toLowerCase();
+  if (type && !/^image\/|octet-stream/.test(type)) { try { await r.body.cancel(); } catch { /* ignore */ } throw fail("no-image", "not an image"); }
+  if (+(r.headers.get("content-length") || 0) > MAX_IMG) { try { await r.body.cancel(); } catch { /* ignore */ } throw fail("too-large", "image too large"); }
+  const reader = r.body.getReader(), chunks = []; let got = 0;
+  for (;;) {
+    const { done, value } = await reader.read(); if (done) break;
+    got += value.length;
+    if (got > MAX_IMG) { try { await reader.cancel(); } catch { /* ignore */ } throw fail("too-large", "image too large"); }
+    chunks.push(value);
+  }
+  const out = new Uint8Array(got); let o = 0; for (const c of chunks) { out.set(c, o); o += c.length; }
+  // توقيع الملف: JPEG / PNG / GIF / WebP / BMP / AVIF-HEIC. صفحة HTML أو ملف آخر لا يُرفع إلى محرك البحث
+  const h = out, isImg = got > 64 && ((h[0] === 0xff && h[1] === 0xd8) || (h[0] === 0x89 && h[1] === 0x50) || (h[0] === 0x47 && h[1] === 0x49) || (h[0] === 0x42 && h[1] === 0x4d) ||
+    (h[0] === 0x52 && h[1] === 0x49 && h[8] === 0x57 && h[9] === 0x45) || (h[4] === 0x66 && h[5] === 0x74 && h[6] === 0x79 && h[7] === 0x70));
+  if (!isImg) throw fail("no-image", "not an image");
+  return out;
 }
 
 /* صفحة النتائج تحمل حالتها JSON داخل الخاصية data-state */
