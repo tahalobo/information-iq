@@ -1,5 +1,5 @@
 {
-  "siteUrl": "https://tahalobo.github.io/information-iq",
+  "siteUrl": "https://iraqiempire.com",
   "_ملاحظة": "رابط الموقع النهائي بدون / في آخره. هذه القيمة الوحيدة التي تُبنى منها كل الروابط المطلقة (canonical و og و sitemap). عند شراء نطاق خاص غيّرها هنا، وضع النطاق نفسه في متغيّر المستودع SITE_URL (Settings ← Secrets and variables ← Actions ← Variables).",
   "verification": {
     "google": "",

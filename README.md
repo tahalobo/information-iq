@@ -227,8 +227,8 @@ node scripts/seo-audit.mjs     # يفحص كل الصفحات ويفشل عند 
 | `scripts/indexnow.mjs` | يخبر Bing و Yandex بالروابط الجديدة. معطّل حتى تضع متغيّر المستودع `INDEXNOW_ENABLED = true`. |
 | `scripts/seo-state.json` | مولَّد: تاريخ آخر تعديل حقيقي لكل صفحة (`lastmod` و`dateModified`). |
 
-**توثيق الموقع في محركات البحث (مرة واحدة، وهو أهم خطوة):** الموقع على مسار فرعي (`github.io/information-iq`)، فملف `robots.txt` فيه لا تقرؤه المحركات (تقرأ فقط الملف الذي في جذر النطاق)، ولن تجد الخريطة وحدها. لذلك:
-1. أضف الموقع في [Google Search Console](https://search.google.com/search-console) كـ «URL prefix» واختر التوثيق بوسم HTML، ثم ضع قيمة `content` في `scripts/site.config.json` ← `verification.google` (ومثلها `bing` و`yandex`) وأعد البناء.
+**توثيق الموقع في محركات البحث (مرة واحدة، وهو أهم خطوة):** الموقع على النطاق `iraqiempire.com` (ومتغيّر المستودع `SITE_URL` يجب أن يحمل `https://iraqiempire.com`، وإلا عاد البناء التلقائي إلى رابط github.io). المحركات لا تجد الموقع وحدها، لذلك:
+1. أضف الموقع في [Google Search Console](https://search.google.com/search-console) كـ «Domain property» ووثّقه بسجل TXT في DNS (أو بوسم HTML: ضع قيمة `content` في `scripts/site.config.json` ← `verification.google`، ومثلها `bing` و`yandex`، وأعد البناء).
 2. بعد التوثيق أرسل `sitemap.xml` و`sitemap-news.xml` من قسم Sitemaps.
 3. فعّل متغيّر المستودع `INDEXNOW_ENABLED = true`.
 

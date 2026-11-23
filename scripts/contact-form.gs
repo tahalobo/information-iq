@@ -50,7 +50,7 @@ var TYPES = {
 var LIMITS = { name: 80, reply: 120, extra: 400, message: 3500, page: 300 };
 var MAX_BODY = 20000;          // أقصى حجم للطلب كله (حروف)
 // الصفحات المسموح ظهور رابطها في الرسالة: موقعنا فقط (حتى لا يُدَسّ رابط تصيّد للفريق)
-var SITE_PREFIXES = ["https://tahalobo.github.io/information-iq/"];
+var SITE_PREFIXES = ["https://iraqiempire.com/", "https://www.iraqiempire.com/", "https://tahalobo.github.io/information-iq/"];
 var MIN_FILL_MS = 2500;        // البوتات تملأ النموذج فوراً
 var WINDOW_SEC = 600;          // نافذة العدّ: 10 دقائق
 var MAX_PER_SENDER = 3;        // رسائل لكل وسيلة رد خلال النافذة

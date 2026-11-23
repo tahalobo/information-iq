@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tahalobo.github.io/information-iq/sitemap.xml
-Sitemap: https://tahalobo.github.io/information-iq/sitemap-news.xml
+Sitemap: https://iraqiempire.com/sitemap.xml
+Sitemap: https://iraqiempire.com/sitemap-news.xml
