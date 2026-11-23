@@ -245,7 +245,7 @@ for (const [f, name] of [["assets/js/telegram-data.js", "TG"], ["assets/js/branc
   for (const need of ["node_modules/", ".claude/settings.local.json"]) if (!ignore.includes(need)) err("secret", `.gitignore لا يغطي ${need}`);
   for (const need of [".env", "*.pem", "*.key"]) if (!ignore.includes(need)) err("secret", `.gitignore لا يغطي ${need}`);
   const sc = JSON.parse(read("scripts/site.config.json"));
-  for (const k of Object.keys(sc)) if (!["siteUrl", "indexNowKey"].includes(k) && !k.startsWith("_")) warn(`scripts/site.config.json: حقل غير متوقع «${k}» (هذا الملف علني، لا تضع فيه سراً)`);
+  for (const k of Object.keys(sc)) if (!["siteUrl", "indexNowKey", "verification"].includes(k) && !k.startsWith("_")) warn(`scripts/site.config.json: حقل غير متوقع «${k}» (هذا الملف علني، لا تضع فيه سراً)`);
   if (SITE.factCheckApiKey) warn("config.js: factCheckApiKey يظهر في المتصفح. تأكد أنه مقيَّد برابط موقعك (HTTP referrer) من لوحة Google Cloud.");
 }
 

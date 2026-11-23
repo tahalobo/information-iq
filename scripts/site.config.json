@@ -1,5 +1,11 @@
 {
   "siteUrl": "https://tahalobo.github.io/information-iq",
   "_ملاحظة": "رابط الموقع النهائي بدون / في آخره. هذه القيمة الوحيدة التي تُبنى منها كل الروابط المطلقة (canonical و og و sitemap). عند شراء نطاق خاص غيّرها هنا، وضع النطاق نفسه في متغيّر المستودع SITE_URL (Settings ← Secrets and variables ← Actions ← Variables).",
+  "verification": {
+    "google": "",
+    "bing": "",
+    "yandex": "",
+    "_ملاحظة": "ضع هنا رمز التوثيق فقط (قيمة content من وسم meta الذي تعطيك إياه Google Search Console أو Bing Webmaster أو Yandex)، لا الوسم كله. يُحقن في الصفحة الرئيسية عند البناء."
+  },
   "indexNowKey": "801eb5b3c8c0b3449f9a1950d079dcae"
 }

@@ -58,6 +58,7 @@ state.posts ||= {}; state.pages ||= {}; state.urls ||= {};
 /* ---------- Helpers ---------- */
 const branchOf = (id) => BRANCHES.find((b) => b.id === id);
 const catOf = (id) => CATEGORIES.find((c) => c.id === id) || (branchOf(id) && { ...branchOf(id), name: branchOf(id).short }) || { id: "", name: "معلومات", icon: "book-open", c1: "#8a5a14", c2: "#d4a537" };
+const CR_NAME = "مبدعون عراقيون";
 const TYPE_NAMES = { fact: "معلومة", news: "خبر", event: "فعالية", discussion: "سؤال للنقاش", literature: "شعر وأدب" };
 const fmtDate = (d) => { try { return new Intl.DateTimeFormat("ar-IQ-u-nu-latn", { year: "numeric", month: "long", day: "numeric", timeZone: "Asia/Baghdad" }).format(new Date(String(d).length <= 10 ? d + "T12:00:00+03:00" : d)); } catch { return d; } };
 const iso = (d) => (String(d).length <= 10 ? `${d}T09:00:00+03:00` : String(d));
@@ -138,7 +139,7 @@ function seoTitle(it) {
   if (t.length < 42) {
     // عنوان قصير لا يقول الخبر لمحرك البحث (مثل اسم المتحدث فقط): نكمله بأول جملة من النص
     const rest = oneLine(it.plain.startsWith(raw) ? it.plain.slice(raw.length) : it.plain.startsWith(t) ? it.plain.slice(t.length) : it.plain).replace(/^[\s:،.\-–—"”»]+/, "");
-    const add = clip(noSym(rest.split(/(?<=[.؟!])\s/)[0] || rest), Math.max(30, 84 - t.length), 12).replace(/[.،\s]+$/u, "");
+    const add = clip(noSym(rest.split(/(?<=[.؟!])\s/)[0] || rest), Math.max(24, 64 - t.length), 12).replace(/[.،\s]+$/u, "");
     if (add && add.length > 8) t = `${t.replace(/[.:؟!،]+$/, "")}: ${add}`;
   }
   if (t.length > 90) t = clip(t, 90, 50);
@@ -393,12 +394,21 @@ ${preload}${FONTS}${css}
 <body ${bodyAttr}>
 <div id="site-header"></div>
 ${body}
-<div id="site-footer"></div>
+${staticFooter()}
 ${scripts}
 </body>
 </html>
 `;
 }
+/* روابط تنقّل ثابتة داخل #site-footer: يقرؤها أي زاحف لا ينفّذ JavaScript (الترويسة والتذييل الحقيقيان يرسمهما core.js
+   ويستبدل هذا العنصر كله عند التحميل). بهذا تصل كل صفحة رئيسية وكل قسم برابط ثابت من كل صفحة في الموقع. */
+const FOOT_LINKS = () => [["index.html", "الرئيسية"], ["facts.html", "مكتبة المعلومات"], ["branch.html", "أخبار الفروع"], ["channel.html", "قناة تليغرام"], ["trending.html", "الأكثر قراءة"], ["files.html", "ملفات وتغطيات"],
+  ["tools.html", "الأدوات المجانية"], ...Object.entries(TOOL_SEO).map(([f, t]) => [f, t.name]), ["quiz.html", "اختبر معلوماتك"], ["creators/index.html", CR_NAME], ["news.html", "أخبار الصفحة"],
+  ...hubs.filter((h) => h.kind === "section").map((h) => [hubUrl(h), h.name]), ["topic/index.html", "فهرس المواضيع"], ["archive/index.html", "أرشيف المنشورات"],
+  ["about.html", "من نحن"], ["methodology.html", "المنهجية والتصحيح"], ["advertise.html", "أعلن معنا"], ["contact.html", "تواصل معنا"], ["privacy.html", "سياسة الخصوصية"]];
+let footCache = "";
+const staticFooter = () => (footCache ||= `<div id="site-footer"><nav class="seo-foot" aria-label="روابط الموقع">${FOOT_LINKS().map(([h, n]) => `<a href="${esc(h)}">${esc(n)}</a>`).join("")}</nav></div>`);
+const FOOT_RE = /<div id="site-footer">(?:<nav class="seo-foot"[\s\S]*?<\/nav>)?<\/div>/;
 const LIGHT_SCRIPTS = `<script src="assets/js/vendor/lucide-subset.js"></script>
 <script src="assets/js/config.js"></script>
 <script src="assets/js/data.js"></script>
@@ -704,7 +714,7 @@ await put("404.html", notFoundPage());
    مبدعون عراقيون: فهرس creators/index.html + صفحة لكل مبدع creators/<slug>.html
    المصدر scripts/creators.json (يُقرأ ويُتحقق منه في scripts/seo/creators.mjs). الشرح: scripts/creators-guide.md
    ========================================================== */
-const CR_NAME = "مبدعون عراقيون";
+
 const crPath = (c) => `creators/${c.slug}.html`;
 const crCount = (n) => (n === 0 ? "لا مبدعين بعد" : n === 1 ? "مبدع واحد" : n === 2 ? "مبدعان" : n <= 10 ? `${n} مبدعين` : `${n} مبدعاً`);
 const crPlace = (c) => [c.city, c.province].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i).join("، ");
@@ -995,10 +1005,63 @@ function toolBlock(file, t) {
   </div>
 </section>`;
 }
+const li = (href, title, small) => `<li><a href="${esc(href)}"><strong>${esc(title)}</strong><small>${esc(small)}</small></a></li>`;
+const firstSentence = (x) => clip(String(x).split(/(?<=[.؟!])\s/)[0], 150, 60);
+function toolsIndexBlock() {
+  return `<section class="section seo-browse" aria-labelledby="seo-tools-h">
+  <div class="container">
+    <div class="section-head"><div><span class="kicker">دليل الأدوات</span><h2 id="seo-tools-h">ماذا تفعل كل أداة؟</h2></div></div>
+    <ul class="seo-list">${Object.entries(TOOL_SEO).map(([f, t]) => li(f, t.name, firstSentence(t.intro))).join("")}</ul>
+  </div>
+</section>`;
+}
+function trendingBlock() {
+  const news = items.filter((i) => i.branch && i.views);
+  const recent = news.filter((i) => NOW - new Date(iso(i.date)).getTime() < 30 * 86400e3);
+  const list = (recent.length >= 12 ? recent : news).slice().sort((a, b) => b.views - a.views).slice(0, 18);
+  if (!list.length) return { block: "", list };
+  return { list, block: `<section class="section seo-browse" aria-labelledby="seo-trend-h">
+  <div class="container">
+    <div class="section-head"><div><span class="kicker">${recent.length >= 12 ? "آخر 30 يوماً" : "كل الوقت"}</span><h2 id="seo-trend-h">أكثر الأخبار قراءة</h2></div><a class="btn btn-ghost btn-sm" href="archive/index.html">الأرشيف الكامل${ic("arrow-left")}</a></div>
+    <ol class="seo-list">${list.map((r) => li(postPath(r), r.title, `${r.c.name} · ${fmtDate(r.date)}`)).join("")}</ol>
+    <div class="seo-topics mt-3"><h3 class="seo-h">أخبار كل فرع</h3><div class="seo-chips">${chips(hubs.filter((h) => h.key.startsWith("branch:")))}<a class="chip" href="topic/index.html">كل المواضيع</a></div></div>
+  </div>
+</section>` };
+}
+function filesBlock() {
+  const list = coverage.slice(0, 12);
+  if (!list.length) return "";
+  return `<section class="section seo-browse" aria-labelledby="seo-files-h">
+  <div class="container">
+    <div class="section-head"><div><span class="kicker">${coverage.length} ملفاً</span><h2 id="seo-files-h">أحدث الملفات وأخبارها</h2></div></div>
+    ${list.map((f) => `<div class="seo-topics mb-3"><h3 class="seo-h"><a href="files.html?f=${encodeURIComponent(f.id)}">${esc(f.title)}</a> <small class="muted">(${f.n} أخبار، ${esc(fmtDate(f.from))} – ${esc(fmtDate(f.to))})</small></h3>
+    <ul class="seo-list">${f.ids.slice(-6).reverse().map((id) => byPostId.get(id)).filter(Boolean).map((r) => li(postPath(r), r.title, `${r.c.name} · ${fmtDate(r.date)}`)).join("")}</ul></div>`).join("\n    ")}
+  </div>
+</section>`;
+}
+function quizBlock() {
+  const cats = hubs.filter((h) => h.key.startsWith("cat:"));
+  return `<section class="section seo-guide" aria-labelledby="seo-quiz-h">
+  <div class="container">
+    <div class="section-head"><div><span class="kicker">عن الاختبار</span><h2 id="seo-quiz-h">كيف يعمل اختبار المعلومات العامة؟</h2></div></div>
+    <p class="seo-intro">اختبار مجاني من عشرة أسئلة في المعلومات العامة، مأخوذة من المعلومات الموثّقة التي ننشرها في ${esc(SITE.name)}: تاريخ العراق وحضارات بلاد الرافدين، والعلوم، والفضاء، وجسم الإنسان، والتقنية، والثقافة. لا يحتاج تسجيلاً، ويعمل على الهاتف والحاسوب.</p>
+    <ol class="seo-steps">
+      <li><h3>اختر نوع الأسئلة</h3><p>مزيج من كل شيء، أو أسئلة مختارة، أو أسئلة فعاليات القناة، أو أسئلة مولّدة من منشورات القناة نفسها.</p></li>
+      <li><h3>أجب عن عشرة أسئلة</h3><p>بعض الأسئلة اختيار من متعدد، وبعضها «أكمل الفراغ» أو «صح أم خطأ»، وكلها مأخوذة من نص المعلومة المنشورة.</p></li>
+      <li><h3>خذ لقبك وشارك نتيجتك</h3><p>في النهاية تنال لقباً بحسب عدد إجاباتك الصحيحة، وبطاقة جاهزة للنشر في الستوري لتتحدّى بها أصدقاءك.</p></li>
+    </ol>
+    <div class="seo-topics mt-4"><h2 class="seo-h">راجع المعلومات قبل الاختبار</h2><div class="seo-chips">${chips(cats)}<a class="chip" href="facts.html">مكتبة المعلومات</a></div></div>
+  </div>
+</section>`;
+}
 const webPageLd = (type, p, title, desc, extra = {}) => ({ "@type": type, "@id": abs(p) + "#webpage", url: abs(p), name: title, description: desc, inLanguage: "ar", isPartOf: { "@id": SITE_ID }, publisher: { "@id": ORG_ID }, ...extra });
 
+/* توثيق ملكية الموقع في أدوات مشرفي المواقع: تُكتب الرموز في scripts/site.config.json ← verification، وتُحقن في الرئيسية فقط */
+const VERIFY = Object.entries({ google: "google-site-verification", bing: "msvalidate.01", yandex: "yandex-verification" })
+  .map(([k, name]) => [name, String((siteCfg.verification || {})[k] || "").trim()]).filter(([, v]) => /^[\w-]{8,100}$/.test(v))
+  .map(([name, v]) => `<meta name="${name}" content="${v}">`).join("\n");
 const rootPages = (await fs.readdir(ROOT)).filter((f) => f.endsWith(".html")).sort();
-const SKIP_INDEX = new Set(["fact.html", "offline.html", "404.html"]);
+const SKIP_INDEX = new Set(["fact.html", "offline.html", "404.html", "saved.html"]);
 const pageMeta = {};
 for (const f of rootPages) {
   if (f === "404.html") continue;
@@ -1034,6 +1097,17 @@ for (const f of rootPages) {
     block = toolBlock(f, tool);
   } else if (f === "tools.html") {
     ld = [webPageLd("CollectionPage", f, title, desc, { mainEntity: itemListLd(TOOLS.map((t) => ({ path: t.href, name: t.title })), "الأدوات الرقمية") }), crumbsLd([["الرئيسية", ""], ["الأدوات", f]])];
+    block = toolsIndexBlock();
+  } else if (f === "trending.html") {
+    const t = trendingBlock();
+    ld = [webPageLd("CollectionPage", f, title, desc, t.list.length ? { mainEntity: itemListLd(t.list, "أكثر الأخبار قراءة") } : {}), crumbsLd([["الرئيسية", ""], ["الفروع", "branch.html"], [cfg.crumb, f]])];
+    block = t.block;
+  } else if (f === "files.html") {
+    ld = [webPageLd("CollectionPage", f, title, desc), crumbsLd([["الرئيسية", ""], [cfg.crumb, f]])];
+    block = filesBlock();
+  } else if (f === "quiz.html") {
+    ld = [webPageLd("WebPage", f, title, desc), crumbsLd([["الرئيسية", ""], [cfg.crumb, f]])];
+    block = quizBlock();
   } else if (f === "facts.html" || f === "branch.html" || f === "channel.html") {
     const pool = f === "facts.html" ? items.filter((i) => !i.branch && (i.type === "fact")) : f === "branch.html" ? items.filter((i) => i.branch) : items.filter((i) => String(i.id).startsWith("tg-"));
     const list = pool.slice(0, 12);
@@ -1044,7 +1118,7 @@ for (const f of rootPages) {
     ld = [webPageLd("AboutPage", f, title, desc, { about: { "@id": ORG_ID } }), orgNode(), crumbsLd([["الرئيسية", ""], [cfg.crumb, f]])];
   } else if (f === "contact.html") {
     ld = [webPageLd("ContactPage", f, title, desc, { about: { "@id": ORG_ID } }), crumbsLd([["الرئيسية", ""], [cfg.crumb, f]])];
-  } else if (f === "fact.html" || f === "offline.html") {
+  } else if (f === "fact.html" || f === "offline.html" || f === "saved.html") {
     robots = "noindex, follow";
   } else {
     const h1 = strip((orig.match(/<h1[^>]*>([\s\S]*?)<\/h1>/) || [])[1] || rawTitle);
@@ -1053,12 +1127,13 @@ for (const f of rootPages) {
 
   let tags = seoTags({ title, desc, path: p, ld, robots, ogTitle: rawTitle, image: ogImg(`page:${f}`) || DEF_IMG });
   if (robots) tags = tags.replace(/<link rel="canonical"[^>]*>\n/, "");
+  if (f === "index.html" && VERIFY) tags = `${VERIFY}\n${tags}`;
   head = head.replace(HEAD_RE, "").replace(OLD_TAGS, "");
   // دالة استبدال لا نص: عنوان منشور فيه $1 أو $& كان يُفسَّر كنمط استبدال فيفسد الصفحة ويوقف البناء
   head = head.replace(/(<meta name="viewport"[^>]*>)/, (m) => `${m}\n<!-- seo:head -->\n${securityMeta(f, SITE)}\n${tags}\n<!-- /seo:head -->`);
   // سكربت منع الوميض يُكتب من المصدر الواحد حتى تطابق بصمته سياسة أمن المحتوى دائماً
   head = head.replace(/<script>try\{var d=document\.documentElement[\s\S]*?<\/script>/, () => THEME_BOOT);
-  rest = rest.replace(BODY_RE, "");
+  rest = rest.replace(BODY_RE, "").replace(FOOT_RE, () => staticFooter());
   if (block) rest = rest.replace(/\n?<\/main>/, () => `\n<!-- seo:body -->\n${block}\n<!-- /seo:body -->\n</main>`);
   if (f === "fact.html") {
     // الروابط القديمة fact.html?id=… تُحوَّل إلى الصفحة الثابتة إن وُجدت (ويبقى العرض الديناميكي لغيرها)

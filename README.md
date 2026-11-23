@@ -227,6 +227,13 @@ node scripts/seo-audit.mjs     # يفحص كل الصفحات ويفشل عند 
 | `scripts/indexnow.mjs` | يخبر Bing و Yandex بالروابط الجديدة. معطّل حتى تضع متغيّر المستودع `INDEXNOW_ENABLED = true`. |
 | `scripts/seo-state.json` | مولَّد: تاريخ آخر تعديل حقيقي لكل صفحة (`lastmod` و`dateModified`). |
 
+**توثيق الموقع في محركات البحث (مرة واحدة، وهو أهم خطوة):** الموقع على مسار فرعي (`github.io/information-iq`)، فملف `robots.txt` فيه لا تقرؤه المحركات (تقرأ فقط الملف الذي في جذر النطاق)، ولن تجد الخريطة وحدها. لذلك:
+1. أضف الموقع في [Google Search Console](https://search.google.com/search-console) كـ «URL prefix» واختر التوثيق بوسم HTML، ثم ضع قيمة `content` في `scripts/site.config.json` ← `verification.google` (ومثلها `bing` و`yandex`) وأعد البناء.
+2. بعد التوثيق أرسل `sitemap.xml` و`sitemap-news.xml` من قسم Sitemaps.
+3. فعّل متغيّر المستودع `INDEXNOW_ENABLED = true`.
+
+كل صفحة تحمل داخل `#site-footer` روابط ثابتة إلى الصفحات الرئيسية والأقسام (يستبدلها `core.js` بالتذييل الحقيقي)، وصفحات `tools` و`trending` و`files` و`quiz` تأخذ قسماً ثابتاً من المحتوى عند البناء، حتى لا تبدو فارغة لزاحف لا ينفّذ JavaScript. و`saved.html` خارج الفهرسة لأنها صفحة شخصية.
+
 لإضافة موضوع جديد: أضف سطراً في `TOPICS` داخل `scripts/seo/content.mjs` ثم أعد البناء. الموضوع الذي يجمع أقل من 4 منشورات لا تُبنى له صفحة.
 
 ### معاينة الروابط في مواقع التواصل (Open Graph)
