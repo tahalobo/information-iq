@@ -1,5 +1,76 @@
 {
  "posts": {
+  "14872": {
+   "hash": "6d727871b93f",
+   "checked": "2026-11-23T20:24:22.860Z",
+   "queries": [
+    "آينشتاين:",
+    "أصحاب المصالح ألبرت آينشتاين الحروب وأصحاب 1932"
+   ],
+   "sources": []
+  },
+  "14873": {
+   "hash": "0180beb622db",
+   "checked": "2026-11-23T20:24:13.370Z",
+   "queries": [
+    "يعتمد علم الأبراج على فكرة أن مواقع النجوم والكواكب وقت الولادة تؤثر في الشخصية والمصير",
+    "تنجيم علم الأبراج مواقع والكواكب",
+    "Astrology"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AA%D9%86%D8%AC%D9%8A%D9%85",
+     "name": "تنجيم",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 62,
+     "quote": "وتجدر الإشارة إلى ان ما يُعتمد من الأبراج اليوم يتضمن أخطاءًا كثيرة، وحتى مع افتراض صدق توقعات التنجيم؛ فإن تلك الأخطاء تجعل مواقع وعدد الأبراج ونسبة البرج إلى اليوم مغلوطة كلها."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Astrology",
+     "name": "Astrology",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 59,
+     "quote": "Astrology is a range of divinatory practices, recognized as pseudoscientific since the 18th century, that propose that information about human affairs and terrestrial events may be discerned by studying the…"
+    }
+   ]
+  },
+  "14874": {
+   "hash": "c4fa297808fb",
+   "checked": "2026-11-23T20:24:07.578Z",
+   "queries": [
+    "بينما يزعم علم الفراسة أن ملامح الوجه أو شكل الجمجمة تكشف شخصية الإنسان",
+    "جمجمة علم الفراسة يزعم ملامح",
+    "Skull"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AC%D9%85%D8%AC%D9%85%D8%A9",
+     "name": "جمجمة",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "وضع الطبيب فرانز جوزيف غال حوالي عام 1800نظرية في الفيرينولوجيا (فراسة الدماغ)، والتي حاولت إظهار أن الملامح الخاصة بالجمجمة ترتبط بخلال (صفات) شخصيّة معينة أو قدرات فكريّة لصاحبها."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Skull",
+     "name": "Skull",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "The skull, or cranium, is typically a bony enclosure around the brain of a vertebrate. In some fish and amphibians, the skull is of cartilage. The skull is at the head end of the vertebrate. "
+    }
+   ]
+  },
   "14875": {
    "hash": "44debf6b3159",
    "checked": "2026-11-23T08:45:02.665Z",
@@ -7523,7 +7594,47 @@
      "quote": "عرف السومريون هذه الإلهة باسم \"إنانا\"، بينما عرفت لاحقا في الحضارة الأكادية والبابلية والآشورية باسم \"عشتار\"."
     }
    ]
+  },
+  "15310": {
+   "hash": "8a010b337b48",
+   "checked": "2026-11-23T20:23:57.914Z",
+   "queries": [
+    "ابتكر البريطانيون عام 1943 خطة استخبارية غير مألوفة لخداع ألمانيا النازية",
+    "الحرب العالمية الثانية ألمانيا النازية البريطانيون استخبارية 1943",
+    "World War II"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D8%B1%D8%A8_%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A%D8%A9_%D8%A7%D9%84%D8%AB%D8%A7%D9%86%D9%8A%D8%A9",
+     "name": "الحرب العالمية الثانية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "كانت الاختلافات تتنامى بين هاتين القوتين قبل نهاية الحرب، وبانهيار ألمانيا النازية تدنت العلاقات بينهما إلى الحضيض."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/World_War_II",
+     "name": "World War II",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "World War II, or the Second World War (1 September 1939 – 2 September 1945), was a global conflict between two coalitions: the Allies and the Axis powers. Nearly all of the world's countries were involved,…"
+    }
+   ]
+  },
+  "15311": {
+   "hash": "55e5f75fbe26",
+   "checked": "2026-11-23T20:23:44.015Z",
+   "queries": [
+    "رحلة في تاريخ الأديان والمعتقدات الموت والحياة الأخرى في مصر القديمة",
+    "تاريخ الأديان مصر القديمة رحلة المصريين"
+   ],
+   "sources": []
   }
  },
- "updated": "2026-11-23T08:45:02.669Z"
+ "updated": "2026-11-23T20:24:22.864Z"
 }
