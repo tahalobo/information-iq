@@ -1,5 +1,203 @@
 {
  "posts": {
+  "14782": {
+   "hash": "1b5d19e8e884",
+   "checked": "2026-11-23T23:47:37.328Z",
+   "queries": [
+    "ألوان النجوم"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%B5%D9%86%D9%8A%D9%81_%D9%86%D8%AC%D9%85%D9%8A",
+     "name": "تصنيف نجمي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 78,
+     "quote": "ثم لاحظت «أني كانون» بعد ذلك أن ترتيب التصنيفات يحتاج إلى تعديل، حيث تأتي النجوم-O البيضاء والزرقاء الشديدة السخونة بعد النجوم الحمراء M وN التي تقل فيها درجة الحرارة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Stellar_classification",
+     "name": "Stellar classification",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 73,
+     "quote": "In astronomy, stellar classification is the classification of stars based on their spectral characteristics. Electromagnetic radiation from the star is analyzed by splitting it with a prism or diffraction…"
+    },
+    {
+     "url": "https://www.coursoffline.com/why-stars-have-different-colors/",
+     "name": "لماذا تختلف ألوان النجوم؟ شرح علمي مبسط للطلاب",
+     "site": "دروس أوفلاين",
+     "host": "coursoffline.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 83,
+     "quote": "فالنجوم الحمراء أقل حرارة نسبيا، والنجوم الزرقاء أشد حرارة، وبينهما نجوم صفراء وبيضاء وبرتقالية."
+    },
+    {
+     "url": "https://examens.tn/encyclopedie/la-couleur-des-etoiles-ar/",
+     "name": "لون النجوم: سر ألوان السماء للأطفال",
+     "site": "Examens.TN كتب مخططات إمتحانات تفاعلية",
+     "host": "examens.tn",
+     "lang": "ar",
+     "kind": "web",
+     "match": 80,
+     "quote": "وفي المقابل، تتجاوز حرارة سطح النجوم الزرقاء والبيضاء المصفرة 20000 درجة مئوية."
+    },
+    {
+     "url": "https://ar.meteorologiaenred.com/%D9%85%D8%A7-%D9%84%D9%88%D9%86-%D8%A7%D9%84%D9%86%D8%AC%D9%88%D9%85.html",
+     "name": "ما لون النجوم: كل ما تريد معرفته",
+     "site": "Meteorología en Red",
+     "host": "ar.meteorologiaenred.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 71,
+     "quote": "يعتمد لون النجوم بشكل أساسي على درجة حرارة أسطحها."
+    }
+   ]
+  },
+  "14783": {
+   "hash": "1d23eb356b8c",
+   "checked": "2026-11-23T23:47:28.316Z",
+   "queries": [
+    "لماذا يلمع اليراع في الظلام؟",
+    "تفاعل كيميائي ضوء بارد يلمع اليراع"
+   ],
+   "sources": [
+    {
+     "url": "https://moslemon2015.blogspot.com/2026/09/Lampyridae.html",
+     "name": "هل اليراعات حقيقية فعلًا؟ السر المذهل وراء الحشرة التي تضيء في الظلام",
+     "site": "moslemon2015.blogspot.com",
+     "host": "moslemon2015.blogspot.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 76,
+     "quote": "تنتج اليراعات الضوء من خلال تفاعل كيميائي حيوي يتضمن مادة اللوسيفيرين وإنزيم اللوسيفيراز والأكسجين ومكونات أخرى."
+    },
+    {
+     "url": "https://doyouknow.app/ar/article/what-is-bioluminescence.html",
+     "name": "ما هي الإضاءة الحيوية؟",
+     "site": "doyouknow.app",
+     "host": "doyouknow.app",
+     "lang": "ar",
+     "kind": "web",
+     "match": 52,
+     "quote": "تحدث الإضاءة الحيوية عندما يتفاعل جزيء يسمى \"لوسيفيرين\" مع الأكسجين داخل خلايا الكائن الحي، بمساعدة إنزيم يسمى \"لوسيفيراز\"."
+    }
+   ]
+  },
+  "14784": {
+   "hash": "a5aa58d93263",
+   "checked": "2026-11-23T23:47:17.180Z",
+   "queries": [
+    "كيف تستطيع بعض الحيوانات تغيير جنسها خلال حياتها",
+    "سمكة المهرج الحيوانات جنسها"
+   ],
+   "sources": [
+    {
+     "url": "https://app.ebellai.org/content/szkcSy4RxMMjc2G4cX2i?lang=ar",
+     "name": "هل تعلم أن سمكة المهرج تغير جنسها لتصبح أنثى مهيمنة إذا مات شريكها؟",
+     "site": "eBell - Learn in 30 Languages",
+     "host": "app.ebellai.org",
+     "lang": "ar",
+     "kind": "web",
+     "match": 72,
+     "quote": "هل تعلم أن سمكة المهرج تغير جنسها لتصبح أنثى مهيمنة إذا مات شريكها؟"
+    },
+    {
+     "url": "https://mafahem.com/%D8%B3%D9%85%D9%83%D8%A9-%D8%A7%D9%84%D9%85%D9%87%D8%B1%D8%AC",
+     "name": "سمكة المهرج وطبيعة حياتها وكيفية تغيير جنسها",
+     "site": "Mafaheem",
+     "host": "mafahem.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 71,
+     "quote": "تستطيع سمكة المهرج أن تغير جنسها من ذكر إلى أنثى أو من أنثى إلى ذكر حيث تتمكن الأنثى من تحويل البيض الناتج منها إلى نطف بشكل تلقائي ويمكنها تبكير الذكورة."
+    },
+    {
+     "url": "https://ar.depeces.com/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D8%AA%D8%B9%D8%AA%D8%A8%D8%B1-%D8%B3%D9%85%D9%83%D8%A9-%D8%A7%D9%84%D9%85%D9%87%D8%B1%D8%AC-%D9%88%D8%A7%D8%AD%D8%AF%D8%A9-%D9%85%D9%86-%D8%A3%D9%83%D8%AB%D8%B1-%D8%A7%D9%84%D8%AD%D9%8A%D9%88%D8%A7%D9%86%D8%A7%D8%AA-%D9%81%D8%B6%D9%88%D9%84%D8%A7%D9%8B-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%B4%D8%B9%D8%A7%D8%A8-%D8%A7%D9%84%D9%85%D8%B1%D8%AC%D8%A7%D9%86%D9%8A%D8%A9.html",
+     "name": "البيولوجيا المدهشة والتعايش الاجتماعي بين أسماك المهرج",
+     "site": "De peces",
+     "host": "ar.depeces.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 68,
+     "quote": "من أكثر الحقائق إثارة للدهشة حول أسماك المهرج قدرتها على تغيير جنسها داخل المجموعة ."
+    }
+   ]
+  },
+  "14785": {
+   "hash": "373d83140ddc",
+   "checked": "2026-11-23T23:47:03.198Z",
+   "queries": [
+    "من مواد غير حية إلى خلية تنمو وتنقسم.. إنجاز علمي يقترب من صناعة الحياة!! SpudCell",
+    "علم الأحياء التركيبي جامعة مينيسوتا مواد خلية"
+   ],
+   "sources": [
+    {
+     "url": "https://www.albayan.ae/lifestyle/health/1469009",
+     "name": "لأول مرة.. علماء يبتكرون خلية اصطناعية تنمو وتنقسم من الصفر",
+     "site": "البيان",
+     "host": "albayan.ae",
+     "lang": "ar",
+     "kind": "news",
+     "match": 85,
+     "quote": "حقق فريق من الباحثين في جامعة مينيسوتا إنجازاً علمياً سيغيّر مستقبل الهندسة الحيوية، بعدما أعلن تطوير أول خلية اصطناعية تُبنى بالكامل من مكونات كيميائية غير حية، وتمكنت من النمو والانقسام وإكمال دورة حياة…"
+    },
+    {
+     "url": "https://newturkpost.com/news/115258-%D8%B9%D9%84%D9%85%D8%A7%D8%A1-%D9%8A%D8%A8%D8%AA%D9%83%D8%B1%D9%88%D9%86-%D8%AE%D9%84%D9%8A%D8%A9-%D8%A7%D8%B5%D8%B7%D9%86%D8%A7%D8%B9%D9%8A%D8%A9-%D8%AA%D8%AA%D8%BA%D8%B0%D9%89-%D9%88%D8%AA%D9%86%D9%85%D9%88-%D9%88%D8%AA%D9%86%D9%82%D8%B3%D9%85-%D8%A7%D9%86%D8%B7%D9%84%D8%A7%D9%82%D8%A7-%D9%85%D9%86-%D9%85%D9%88%D8%A7%D8%AF-%D8%BA%D9%8A%D8%B1-%D8%AD%D9%8A%D8%A9",
+     "name": "علماء يبتكرون خلية اصطناعية «تتغذّى وتنمو وتنقسم» انطلاقاً من مواد غير حيّة",
+     "site": "نيو ترك بوست",
+     "host": "newturkpost.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 74,
+     "quote": "أعلن علماء في مجال البيولوجيا التركيبية بناء خلية اصطناعية تتغذّى وتنمو وتنقسم ذاتياً، انطلاقاً من مواد كيميائية غير حيّة بالكامل."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/SpudCell",
+     "name": "SpudCell",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "A SpudCell is a type of artificial cell claimed as partially capable of metabolism and assisted reproduction. The work was initially reported only as a preprint. "
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B9%D9%84%D9%85_%D8%A7%D9%84%D8%A3%D8%AD%D9%8A%D8%A7%D8%A1_%D8%A7%D9%84%D8%AA%D8%B1%D9%83%D9%8A%D8%A8%D9%8A",
+     "name": "علم الأحياء التركيبي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "أما علم الأحياء التركيبي من الأسفل إلى الأعلى فيتضمن إنشاء أنظمة بيولوجية جديدة في المختبر من خلال الجمع بين المكونات الحيوية «غير الحية»، غالباً بهدف بناء خلية اصطناعية."
+    },
+    {
+     "url": "https://daily8news.com/ar/article/synthetic-cell-spudcell-20260707-ar/",
+     "name": "علماء أحياء يبنون خلية اصطناعية تتغذى وتنمو وتنقسم وتتطور",
+     "site": "daily8news.com",
+     "host": "daily8news.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 66,
+     "quote": "علماء أحياء يبنون خلية اصطناعية تتغذى وتنمو وتنقسم وتتطور"
+    }
+   ]
+  },
+  "14787": {
+   "hash": "83cac621c457",
+   "checked": "2026-11-23T23:46:48.919Z",
+   "queries": [
+    "أول دليل سياحي وثقافي تفاعلي ذكي للعاصمة بغداد Code",
+    "مدينة السلام تنسيق الموقع دليل سياحي 1000"
+   ],
+   "sources": []
+  },
   "14788": {
    "hash": "625d7708ffa8",
    "checked": "2026-11-23T23:32:30.424Z",
@@ -9174,5 +9372,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-23T23:32:30.429Z"
+ "updated": "2026-11-23T23:47:37.340Z"
 }
