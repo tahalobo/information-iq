@@ -1,5 +1,223 @@
 {
  "posts": {
+  "14788": {
+   "hash": "625d7708ffa8",
+   "checked": "2026-11-23T23:32:30.424Z",
+   "queries": [
+    "لماذا لا يذوب الألماس في النار؟",
+    "ألماس درجات الحرارة يذوب الألماس",
+    "Diamond"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A3%D9%84%D9%85%D8%A7%D8%B3",
+     "name": "ألماس",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 77,
+     "quote": "وللتعمق في دراسة خصائص الألماس المادية لابد من الرجوع لدراسة الخصائص الفيزيائية والكيميائية لعنصر الكربون."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Diamond",
+     "name": "Diamond",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 73,
+     "quote": "Diamond is a mineral form of the element carbon with its atoms arranged in a crystal structure called diamond cubic. Diamond is a tasteless, odorless, strong, brittle solid, a poor conductor of electricity,…"
+    },
+    {
+     "url": "https://keemiaa.com/e/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D8%AF%D8%B1%D8%AC%D8%A9-%D8%A7%D9%86%D8%B5%D9%87%D8%A7%D8%B1-%D8%A7%D9%84%D8%A3%D9%84%D9%85%D8%A7%D8%B3-%D8%B9%D8%A7%D9%84%D9%8A%D8%A9",
+     "name": "لماذا درجة انصهار الألماس عالية",
+     "site": "keemiaa.com",
+     "host": "keemiaa.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 65,
+     "quote": "يبدأ الألماس بالتحول إلى بخار (يتسامى) عند تسخينه إلى حوالي 763 درجة مئوية (1405 درجات فهرنهايت) عن طريق عملية التأكسد، التي تصف التفاعل الكيميائي بين الأكسجين والمواد الأخرى؛ كظاهرة الصدأ عند تأكسد الحديد…"
+    },
+    {
+     "url": "https://ar.kindle-tech.com/faqs/what-temperature-and-pressure-is-required-for-diamond-formation",
+     "name": "ما هي درجة الحرارة والضغط المطلوبان لتكوين الماس؟ كشف أسرار الظروف القاسية",
+     "site": "ar.kindle-tech.com",
+     "host": "ar.kindle-tech.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 57,
+     "quote": "في ظل هذه الظروف، يذوب الكربون المصدر ويعاد تبلوره على بذرة الماس، مما يؤدي إلى نمو ماسة جديدة أكبر على مدار ساعات أو أيام."
+    }
+   ]
+  },
+  "14789": {
+   "hash": "ee64345c9cde",
+   "checked": "2026-11-23T23:32:14.802Z",
+   "queries": [
+    "كيف تتكون اللآلئ السوداء؟"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%84%D8%A4%D9%84%D8%A4",
+     "name": "لؤلؤ",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 64,
+     "quote": "تنمو لآلئ المياه المالحة داخل محار اللؤلؤ، عائلة المحارات الجناحية، التي تعيش في المحيطات."
+    },
+    {
+     "url": "https://www.marefa.org/%D9%84%D8%A4%D9%84%D8%A4",
+     "name": "لؤلؤ - المعرفة",
+     "site": "المعرفة",
+     "host": "marefa.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 63,
+     "quote": "أما البطلينوس والمحار الذي يُؤكل، فأصدافه شاحبة؛ مما يجعل لؤلؤها عديم اللّمعان."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Pearl",
+     "name": "Pearl",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "A pearl is a hard, shiny object produced within the soft tissue (specifically the mantle) of a living shelled mollusk. Like the shell of a mollusk, a pearl is composed of calcium carbonate (mainly aragonite or…"
+    },
+    {
+     "url": "https://www.thesouthseapearl.com/ar/blogs/south-sea-pearls/are-black-pearls-real",
+     "name": "هل اللؤلؤ الأسود حقيقي؟ كيف يتكوّن اللؤلؤ الأسود الطبيعي",
+     "site": "The South Sea Pearl",
+     "host": "thesouthseapearl.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 57,
+     "quote": "يفرز محار اللؤلؤ ذو الشفة السوداء في بولينيزيا الفرنسية عرق لؤلؤ داكنًا بطبيعته، تصبغه المركّبات العضوية التي يضعها الحيوان بين طبقاته البلورية."
+    },
+    {
+     "url": "https://mawdoo3.com/%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A7%D8%AA_%D8%B9%D9%86_%D8%A7%D9%84%D9%84%D8%A4%D9%84%D8%A4_%D8%A7%D9%84%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A",
+     "name": "معلومات عن اللؤلؤ الطبيعي",
+     "site": "موضوع",
+     "host": "mawdoo3.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 52,
+     "quote": "الحجم: يندُر وجود اللآلئ كبيرة الحجم، الأمر الذي يجعل اللؤلؤة الأكبر حجماً هي الأثمن، في حال تساوت جمييع المعايير الأخرى."
+    }
+   ]
+  },
+  "14791": {
+   "hash": "88d0e39ccd7c",
+   "checked": "2026-11-23T23:32:05.054Z",
+   "queries": [
+    "لماذا لا يختلط ماء البحر بماء الأنهار مباشرةً؟",
+    "ماء البحر المد والجزر يختلط بماء"
+   ],
+   "sources": []
+  },
+  "14792": {
+   "hash": "6237531f517f",
+   "checked": "2026-11-23T23:31:47.703Z",
+   "queries": [
+    "كيف تتكون دوامات المحيط؟"
+   ],
+   "sources": [
+    {
+     "url": "https://www.marefa.org/%D8%AF%D9%88%D8%A7%D9%85%D8%A9_%D9%85%D8%AD%D9%8A%D8%B7%D9%8A%D8%A9",
+     "name": "دوامة محيطية",
+     "site": "المعرفة",
+     "host": "marefa.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 65,
+     "quote": "[3] يؤدي ضخ إيكمان إلى زيادة ارتفاع سطح البحر في مركز الدوامة والتيارات الدورانية الأرضية في الدوامات المحيطية شبه القطبية."
+    },
+    {
+     "url": "https://www.aljazeera.net/science/2022/6/5/%D8%A7%D9%84%D8%AF%D9%88%D8%A7%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D9%85%D8%A7%D8%A6%D9%8A%D8%A9-%D9%83%D9%8A%D9%81-%D8%AA%D8%AA%D9%83%D9%88%D9%86%D8%8C-%D9%88%D9%83%D9%8A%D9%81-%D9%8A%D9%85%D9%83%D9%86",
+     "name": "ما أخطر وأكبر 5 دوامات بحرية في العالم؟ وكيف تنجو منها؟",
+     "site": "الجزيرة نت",
+     "host": "aljazeera.net",
+     "lang": "ar",
+     "kind": "news",
+     "match": 55,
+     "quote": "تتكون الدوامات عندما تلتقي التيارات المائية التي تتحرك في اتجاهين مختلفين مع بعضها البعض (شترستوك)"
+    },
+    {
+     "url": "https://www.dorar-aliraq.net/threads/1221454-%D8%A7%D9%84%D8%AF%D9%88%D8%A7%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9-%D9%83%D9%8A%D9%81-%D8%AA%D8%AA%D9%83%D9%88%D9%86-%D9%88%D9%87%D9%84-%D9%8A%D9%85%D9%83%D9%86-%D8%A7%D9%84%D9%86%D8%AC%D8%A7%D8%A9-%D9%85%D9%86%D9%87%D8%A7%D8%9F-%D9%88%D9%85%D8%A7-%D8%A3%D8%AE%D8%B7%D8%B1-%D8%A7%D9%84%D8%AF%D9%88%D8%A7%D9%85%D8%A7%D8%AA-%D9%81%D9%8A-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D8%9F",
+     "name": "الدوامات البحرية.. كيف تتكون وهل يمكن النجاة منها؟ وما أخطر الدوامات في العالم؟",
+     "site": "درر العراق",
+     "host": "dorar-aliraq.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 55,
+     "quote": "تتكون الدوامات عندما تلتقي التيارات المائية التي تتحرك في اتجاهين مختلفين مع بعضها البعض (شترستوك)"
+    },
+    {
+     "url": "https://alkhadraasy.com/2022/06/05/%D8%A7%D9%84%D8%AF%D9%88%D8%A7%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9-%D9%83%D9%8A%D9%81-%D8%AA%D8%AA%D9%83%D9%88%D9%86-%D9%88%D9%87%D9%84-%D9%8A%D9%85%D9%83%D9%86-%D8%A7%D9%84/",
+     "name": "الدوامات البحرية.. كيف تتكون وهل يمكن النجاة منها؟ وما أخطر الدوامات في العالم؟",
+     "site": "المؤسسة الخضراء | The Green Establishment",
+     "host": "alkhadraasy.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 52,
+     "quote": "يتغير اتجاه التيارات سريعة التدفق في المحيطات والأنهار باستمرار ."
+    },
+    {
+     "url": "https://howiyapress.com/%D8%A7%D9%84%D8%AF%D9%88%D8%A7%D9%85%D8%A7%D8%AA-%D8%A7%D9%84%D8%A8%D8%AD%D8%B1%D9%8A%D8%A9-%D9%83%D9%8A%D9%81-%D8%AA%D8%AA%D9%83%D9%88%D9%86-%D9%88%D9%87%D9%84-%D9%8A%D9%85%D9%83%D9%86-%D8%A7%D9%84/",
+     "name": "الدوامات البحرية.. كيف تتكون وهل يمكن النجاة منها؟ وما أخطر الدوامات في العالم؟",
+     "site": "هوية بريس",
+     "host": "howiyapress.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 52,
+     "quote": "يتغير اتجاه التيارات سريعة التدفق في المحيطات والأنهار باستمرار."
+    }
+   ]
+  },
+  "14793": {
+   "hash": "34d362d84e19",
+   "checked": "2026-11-23T23:31:36.792Z",
+   "queries": [
+    "دفع الملايين لشراء \"الخلود\".. فأصيب بمرض لا علاج له!",
+    "براين جونسون الرنين المغناطيسي الخلود بمرض"
+   ],
+   "sources": [
+    {
+     "url": "https://lite.arabi21.com/story/1772878/%D8%A8%D8%B1%D8%A7%D9%8A%D9%86-%D8%AC%D9%88%D9%86%D8%B3%D9%88%D9%86-%D8%B5%D8%A7%D8%AD%D8%A8-%D9%85%D8%B4%D8%B1%D9%88%D8%B9-%D8%A7%D9%84%D8%AE%D9%84%D9%88%D8%AF-%D9%8A%D8%B9%D9%84%D9%86-%D8%A5%D8%B5%D8%A7%D8%A8%D8%AA%D9%87-%D8%A8%D9%85%D8%B1%D8%B6-%D9%84%D8%A7-%D8%B9%D9%84%D8%A7%D8%AC-%D9%84%D9%87",
+     "name": "براين جونسون صاحب مشروع \"الخلود\" يعلن إصابته بمرض لا علاج له",
+     "site": "عربي21 لايت",
+     "host": "lite.arabi21.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 83,
+     "quote": "براين جونسون صاحب مشروع \"الخلود\" يعلن إصابته بمرض لا علاج له"
+    },
+    {
+     "url": "https://www.arrajol.com/content/405516/%D8%B5%D8%AD%D8%A9/%D8%A7%D8%AF%D8%B9%D9%89-%D8%A7%D9%84%D8%B9%D9%8A%D8%B4-%D9%84%D8%A3%D9%84%D9%81-%D8%B9%D8%A7%D9%85-%D9%85%D8%A7-%D8%A7%D9%84%D9%85%D8%B1%D8%B6-%D8%A7%D9%84%D8%B0%D9%8A-%D9%8A%D8%B9%D8%A7%D9%86%D9%8A%D9%87-%D8%A7%D9%84%D9%85%D9%84%D9%8A%D8%A7%D8%B1%D8%AF%D9%8A%D8%B1-%D8%A8%D8%B1%D8%A7%D9%8A%D9%86-%D8%AC%D9%88%D9%86%D8%B3%D9%88%D9%86%D8%9F",
+     "name": "ادعى العيش لألف عام.. ما المرض الذي يعانيه الملياردير براين جونسون؟",
+     "site": "الرجل",
+     "host": "arrajol.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 61,
+     "quote": "في مفاجأة غير متوقعة، أعلن رجل الأعمال الأمريكي الشهير براين جونسون ، المعروف بلقب \"ملياردير الخلود\"، عن إصابته بمرض مناعي ذاتي؛ وذلك على الرغم من الأرقام الفلكية والملايين التي ينفقها سنويًا في محاولاته…"
+    },
+    {
+     "url": "https://www.elconsolto.com/cases-reports/cases-reports-news/details/2026/7/7/3014150/%D9%85%D9%84%D9%8A%D8%A7%D8%B1%D8%AF%D9%8A%D8%B1-%D8%A7%D9%84%D8%AE%D9%84%D9%88%D8%AF-%D9%85%D8%A7-%D9%87%D9%88-%D9%85%D8%B1%D8%B6-%D8%A7%D9%84%D8%B0%D9%8A-%D9%8A%D8%B9%D8%A7%D9%86%D9%8A-%D9%85%D9%86%D9%87-%D8%A8%D8%B1%D8%A7%D9%8A%D8%A7%D9%86-%D8%AC%D9%88%D9%86%D8%B3%D9%88%D9%86-",
+     "name": "مرض برايان جونسون ملياردير الخلود- دليل شامل عن التهاب المعدة المناعي",
+     "site": "الكونسلتو.كوم",
+     "host": "elconsolto.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 53,
+     "quote": "أعلن رجل الأعمال الأمريكي برايان جونسون -الملقب بـ\"ملياردير الخلود\"- عن إصابته بمرض مناعي ذاتي، رغم ملايين الدولارات التي أنفقها، للحفاظ على شبابه ومحاربة الشيخوخة."
+    }
+   ]
+  },
   "14794": {
    "hash": "5ebb99103280",
    "checked": "2026-11-23T23:17:41.661Z",
@@ -8956,5 +9174,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-23T23:17:41.720Z"
+ "updated": "2026-11-23T23:32:30.429Z"
 }
