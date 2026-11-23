@@ -1,5 +1,164 @@
 {
  "posts": {
+  "14817": {
+   "hash": "4dbe07424a3c",
+   "checked": "2026-11-23T22:33:11.851Z",
+   "queries": [
+    "اتعلم ان الدجاج كان غير مخصص للاكل البشري",
+    "مصارعة الديوك الطقوس الدينية اتعلم الدجاج 2000"
+   ],
+   "sources": []
+  },
+  "14818": {
+   "hash": "c875f8503352",
+   "checked": "2026-11-23T22:32:56.696Z",
+   "queries": [
+    "أكبر حفل موسيقي في التاريخ Stewart",
+    "كوباكبانا ريو دي جانيرو موسيقي أقيم 1994",
+    "Copacabana, Rio de Janeiro Stewart"
+   ],
+   "sources": [
+    {
+     "url": "https://www.storyteller-rod-stewart.com/news-en/2824019_legendary-concerts-30-years-ago-rod-stewart-on-the-copacabana-and-3-5-million-people-were-there",
+     "name": "Rod Stewart on the Copacabana and 3.5 million people were there / NEWS (EN)",
+     "site": "storyteller-rod-stewart.com",
+     "host": "storyteller-rod-stewart.com",
+     "lang": "de",
+     "kind": "web",
+     "match": 85,
+     "quote": "When we think of legendary Rod Stewart concerts, this show from 1994 should not be forgotten, as Sir Rod's performance on the Copacabana made his way into the music history books and also - of course - into…"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%83%D9%88%D8%A8%D8%A7%D9%83%D8%A8%D8%A7%D9%86%D8%A7",
+     "name": "كوباكبانا",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "وفي احتفالات أول رأس سنة في القرن الحادي والعشرين احتفل ما يزيد عن 3.000.000 شخص في الشاطئ بحلول العام الجديد برفقة آلاف السياح الأجانب وسط الألعاب النارية."
+    },
+    {
+     "url": "https://copacabana.com/rod-stewart-ao-vivo",
+     "name": "A história do show de Rod Stewart ao vivo em Copacabana",
+     "site": "copacabana.com",
+     "host": "copacabana.com",
+     "lang": "pt",
+     "kind": "web",
+     "match": 69,
+     "quote": "Inaugurando a era de mega espetáculos musicais na Praia de Copacabana nada melhor que um ídolo no auge da carreira:&nbsp; Rod Stewart !"
+    },
+    {
+     "url": "https://www.setlist.fm/setlist/rod-stewart/1994/praia-de-copacabana-rio-de-janeiro-brazil-33dda405.html",
+     "name": "Rod Stewart Setlist at Réveillon de Copacabana 1994/1995",
+     "site": "setlist.fm",
+     "host": "setlist.fm",
+     "lang": "en",
+     "kind": "web",
+     "match": 69,
+     "quote": "Get the Rod Stewart Setlist of the concert at Praia de Copacabana, Rio de Janeiro, Brazil on December 31, 1994 and other Rod Stewart Setlists for free on setlist.fm!"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Copacabana,_Rio_de_Janeiro",
+     "name": "Copacabana, Rio de Janeiro",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 56,
+     "quote": "Copacabana ( KOH-pə-kə-BAN-ə, US also  -⁠BAH-nə; Brazilian Portuguese: [ˌkɔpakaˈbɐnɐ]) is a Brazilian bairro (neighbourhood) located in the South Zone of the city of Rio de Janeiro, Brazil. It is most…"
+    }
+   ]
+  },
+  "14819": {
+   "hash": "70455ef7cf8c",
+   "checked": "2026-11-23T22:32:37.658Z",
+   "queries": [
+    "كانوا يثقون في 'سكرهم' أكثر من 'عقلهم'",
+    "بلاد الفرس إعلان حرب يثقون عقلهم"
+   ],
+   "sources": []
+  },
+  "14820": {
+   "hash": "b6f58bd2d223",
+   "checked": "2026-11-23T22:32:23.871Z",
+   "queries": [
+    "ألقت الشرطة اليابانية القبض على امرأة تبلغ من العمر 49 عامًا",
+    "الشرطة اليابانية ألقت امرأة"
+   ],
+   "sources": [
+    {
+     "url": "https://www.alwakeelnews.com/Section_7/%D9%85%D9%86%D9%88%D8%B9%D8%A7%D8%AA/%D8%A7%D9%84%D9%8A%D8%A7%D8%A8%D8%A7%D9%86-%D8%A7%D9%84%D8%AA%D8%AD%D9%82%D9%8A%D9%82-%D9%81%D9%8A-%D9%88%D8%A7%D9%82%D8%B9%D8%A9-%D8%AE%D9%8A%D8%A7%D8%B7%D8%A9-%D8%B4%D9%81%D8%AA%D9%8A-%D8%A7%D9%85%D8%B1%D8%A3%D8%A9_781142",
+     "name": "اليابان.. التحقيق في واقعة خياطة شفتي امرأة",
+     "site": "الوكيل الإخباري",
+     "host": "alwakeelnews.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 74,
+     "quote": "ألقت الشرطة اليابانية القبض على امرأة تبلغ من العمر 49 عامًا، للاشتباه في اعتدائها على زميلتها في السكن (42 عامًا)، بعدما اتُّهمت بخياطة شفتيها بإبرة وخيط داخل منزل في محافظة إيباراكي."
+    },
+    {
+     "url": "https://www.almasryalyoum.com/news/details/4312170",
+     "name": "«بالإبرة والخيط».. اعتقال يابانية غضبت فأغلقت فم رفيقتها فى السكن بـ«طريقة غريبة»",
+     "site": "المصري اليوم",
+     "host": "almasryalyoum.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "ألقت الشرطة اليابانية القبض على امرأة، أقدمت على خياطة شفتى رفيقتها فى السكن وإغلاقهما، وذلك وفقًا لتقارير متعددة نُقلت عن مركز شرطة «كوجا» التابع لشرطة محافظة «إيباراكي»."
+    }
+   ]
+  },
+  "14821": {
+   "hash": "9dc6ed6eb8cd",
+   "checked": "2026-11-23T22:32:04.259Z",
+   "queries": [
+    "صُنعت البجعة الفضية عام 1773",
+    "محرك كهربائي الهندسة الميكانيكية البجعة الفضية 1773"
+   ],
+   "sources": [
+    {
+     "url": "https://www.masrawy.com/howa_w_hya/relationship/details/2026/5/28/2994733/%D8%A8%D8%B9%D8%AF-253-%D8%B9%D8%A7%D9%85-%D8%A7-%D9%85%D9%86-%D8%B5%D9%86%D8%B9%D9%87%D8%A7-%D8%A7%D9%84%D8%A8%D8%AC%D8%B9%D8%A9-%D8%A7%D9%84%D9%81%D8%B6%D9%8A%D8%A9-%D9%84%D8%A7-%D8%AA%D8%B2%D8%A7%D9%84-%D8%AA%D8%B9%D9%85%D9%84-%D8%A8%D9%84%D8%A7-%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A1",
+     "name": "\"البجعة الفضية\".. آلة تعمل منذ 253 عامًا دون كهرباء تدهش العالم",
+     "site": "مصراوي.كوم",
+     "host": "masrawy.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 84,
+     "quote": "بعد 253 عامًا من صنعها..\"البجعة الفضية\" لا تزال تعمل بلا كهرباء"
+    },
+    {
+     "url": "https://www.albayan.ae/culture-art/miscellaneous/1298269",
+     "name": "بعد 253 عاماً من صنعها.. آلة غامضة تعمل يومياً بلا كهرباء",
+     "site": "البيان",
+     "host": "albayan.ae",
+     "lang": "ar",
+     "kind": "news",
+     "match": 74,
+     "quote": "في مشهد يبدو أقرب إلى الخيال الهندسي منه إلى الواقع، لا تزال آلة \"البجعة الفضية\" الميكانيكية، التي صُنعت عام 1773، تعمل بكامل دقتها داخل متحف Bowes شمال إنجلترا، رغم مرور 253 عاما على تصنيعها، ومن دون الاعتماد…"
+    },
+    {
+     "url": "https://alramtha.net/3275/",
+     "name": "بعد 253 عاماً من صنعها.. آلة غامضة تعمل يومياً بلا كهرباء",
+     "site": "الرمثا نت",
+     "host": "alramtha.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 75,
+     "quote": "في مشهد يبدو أقرب إلى الخيال الهندسي منه إلى الواقع، لا تزال آلة “البجعة الفضية” الميكانيكية، التي صُنعت عام 1773، تعمل بكامل دقتها داخل متحف Bowes شمال إنجلترا، رغم مرور 253 عاما على تصنيعها، ومن دون الاعتماد…"
+    },
+    {
+     "url": "https://albiladdaily.com/2026/05/21/%D8%A2%D9%84%D8%A9-%D8%BA%D8%A7%D9%85%D8%B6%D8%A9-%D8%AA%D8%B9%D9%85%D9%84-%D9%8A%D9%88%D9%85%D9%8A%D8%A7%D9%8B-%D8%A8%D9%84%D8%A7-%D9%83%D9%87%D8%B1%D8%A8%D8%A7%D8%A1/",
+     "name": "آلة غامضة تعمل يومياً بلا كهرباء",
+     "site": "albiladdaily.com",
+     "host": "albiladdaily.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 57,
+     "quote": "في مشهد يبدو أقرب إلى الخيال الهندسي منه إلى الواقع، لا تزال آلة “البجعة الفضية” الميكانيكية، التي صُنعت عام 1773، تعمل بكامل دقتها داخل متحف Bowes شمال إنجلترا، رغم مرور 253 عاماً على تصنيعها، ومن دون…"
+    }
+   ]
+  },
   "14822": {
    "hash": "839a6b47a609",
    "checked": "2026-11-23T22:17:08.900Z",
@@ -8356,5 +8515,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-23T22:17:08.904Z"
+ "updated": "2026-11-23T22:33:11.855Z"
 }
