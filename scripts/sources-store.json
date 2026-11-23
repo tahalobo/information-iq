@@ -1,5 +1,205 @@
 {
  "posts": {
+  "14867": {
+   "hash": "6e684580396a",
+   "checked": "2026-11-23T21:02:45.168Z",
+   "queries": [
+    "النباتات تصرخ عند قطعها.. نحن فقط لا نسمعها! Ultrasound",
+    "جامعة تل أبيب تل أبيب النباتات تصرخ",
+    "Ultrasound"
+   ],
+   "sources": [
+    {
+     "url": "https://www.webmd.com/a-to-z-guides/what-is-an-ultrasound",
+     "name": "Types of Ultrasounds",
+     "site": "WebMD",
+     "host": "webmd.com",
+     "lang": "en",
+     "kind": "science",
+     "match": 97,
+     "quote": "An ultrasound, or sonography, uses sound waves to create images of the inside of your body. Learn about the purpose, procedure, and what results mean."
+    },
+    {
+     "url": "https://www.healthline.com/health/ultrasound",
+     "name": "Ultrasound: Purpose, Procedure, and Preparation",
+     "site": "Healthline",
+     "host": "healthline.com",
+     "lang": "en",
+     "kind": "science",
+     "match": 97,
+     "quote": "Your doctor may order an ultrasound if you’re experiencing pain, swelling, or other symptoms that require an internal view of your organs. Learn more."
+    },
+    {
+     "url": "https://health.nih.gov/health-topics-a-z/ultrasound",
+     "name": "Ultrasound",
+     "site": "Health",
+     "host": "health.nih.gov",
+     "lang": "en",
+     "kind": "science",
+     "match": 97,
+     "quote": "Technology that uses high-frequency sound waves for medical imaging and therapy."
+    },
+    {
+     "url": "https://my.clevelandclinic.org/health/diagnostics/4995-ultrasound",
+     "name": "What Is an Ultrasound?",
+     "site": "Cleveland Clinic",
+     "host": "my.clevelandclinic.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Ultrasound is a noninvasive imaging test that uses high-intensity sound waves to show structures inside your body. An ultrasound picture is called a sonogram."
+    },
+    {
+     "url": "https://www.radiologyinfo.org/En/Info/Genus",
+     "name": "General Ultrasound",
+     "site": "Radiologyinfo.org",
+     "host": "radiologyinfo.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Current and accurate information for patients about ultrasound imaging (sonography). Learn what you might experience, how to prepare for the exam, benefits, risks and much more."
+    }
+   ]
+  },
+  "14868": {
+   "hash": "6fa8d3a85ae9",
+   "checked": "2026-11-23T21:02:24.057Z",
+   "queries": [
+    "هل التحلل بعد الموت حقيقة لم نعد نختبرها؟",
+    "المواد الحافظة المضادات الحيوية التحلل نختبرها"
+   ],
+   "sources": []
+  },
+  "14869": {
+   "hash": "0d4789d35e4e",
+   "checked": "2026-11-23T21:02:09.836Z",
+   "queries": [
+    "الإنترنت ليس فضائياً.. كل شفرات العالم تحت البحر!",
+    "ألياف ضوئية سفينة صيد الإنترنت فضائيا"
+   ],
+   "sources": []
+  },
+  "14870": {
+   "hash": "38374390ff0a",
+   "checked": "2026-11-23T21:01:53.224Z",
+   "queries": [
+    "كيف سقطت بغداد؟",
+    "عبد الله المستعصم بالله سقطت بغداد 1258",
+    "Al-Musta'sim"
+   ],
+   "sources": [
+    {
+     "url": "https://humansofhistory.com/person/al-musta-sim",
+     "name": "Al-Musta'sim (1213-1258): The Last Abbasid Caliph of Baghdad",
+     "site": "humansofhistory.com",
+     "host": "humansofhistory.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Al-Musta'sim (1213-1258): Who was Al-Musta'sim? Al-Musta'sim Billah was the thirty-seventh and last Abbasid caliph of Baghdad, reigning from 1242 to 1258."
+    },
+    {
+     "url": "https://kids.kiddle.co/Al-Musta%27sim",
+     "name": "al-Musta'sim Facts for Kids",
+     "site": "kids.kiddle.co",
+     "host": "kids.kiddle.co",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "al-Musta"
+    },
+    {
+     "url": "https://grokipedia.com/page/Al-Musta'sim",
+     "name": "al-Musta",
+     "site": "Grokipedia",
+     "host": "grokipedia.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 85,
+     "quote": "Abu Ahmad ʿAbd Allāh ibn al-Mustansir, who later took the regnal name al-Mustaʿsim bi-llāh, was born in 1213 in Baghdad as the son of the Abbasid caliph…"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B9%D8%A8%D8%AF_%D8%A7%D9%84%D9%84%D9%87_%D8%A7%D9%84%D9%85%D8%B3%D8%AA%D8%B9%D8%B5%D9%85_%D8%A8%D8%A7%D9%84%D9%84%D9%87",
+     "name": "عبد الله المستعصم بالله",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "بعد أن سقطت بغداد في أيديهم، أعدم هولاكو المستعصم بعد أن قام مؤيد الدين بن العلقمي بمساعدة المغول في خطتهم حيث استطاع بحكم منصبه كوزير دولة أن يحث على صرف جيش المستعصم بذريعة أمن البلاد والعباد، وبسبب جهل…"
+    },
+    {
+     "url": "https://alwataniapress.net/2026/06/17/58775/",
+     "name": "الخليفة العباسي المستعصم بالله وسقوط بغداد (656هـ/1258م)",
+     "site": "ALWATANIA PRESS",
+     "host": "alwataniapress.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 69,
+     "quote": "وقد انتهى عهده بواحدة من أعظم الكوارث السياسية والحضارية في التاريخ الإسلامي، وهي سقوط بغداد على يد المغول بقيادة هولاكو سنة 656هـ/1258م، وهو الحدث الذي أنهى الخلافة العباسية في العراق بعد أكثر من خمسة قرون من…"
+    }
+   ]
+  },
+  "14871": {
+   "hash": "6b88d375ef8d",
+   "checked": "2026-11-23T21:01:35.689Z",
+   "queries": [
+    "الألياف.. درعك الخفي ضد الامراض",
+    "انتفاخ البطن أمراض القلب الألياف درعك"
+   ],
+   "sources": [
+    {
+     "url": "https://www.sehatok.com/%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9-%D8%A7%D9%84%D8%B5%D8%AD%D9%8A%D8%A9/%D8%A7%D9%84%D8%A3%D9%84%D9%8A%D8%A7%D9%81-%D8%A7%D9%84%D8%BA%D8%B0%D8%A7%D8%A6%D9%8A%D8%A9-%D9%88%D8%B5%D8%AD%D8%A9-%D8%A7%D9%84%D8%A3%D9%85%D8%B9%D8%A7%D8%A1-%D8%AF%D9%84%D9%8A%D9%84-%D8%B4%D8%A7%D9%85%D9%84-%D9%84%D9%84%D8%A3%D8%B7%D8%B9%D9%85%D8%A9-%D9%88%D8%A7%D9%84%D9%81%D9%88%D8%A7%D8%A6%D8%AF",
+     "name": "الألياف الغذائية وصحة الأمعاء: دليل شامل للأطعمة والفوائد",
+     "site": "صحتك",
+     "host": "sehatok.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 75,
+     "quote": "الألياف الغذائية وصحة الأمعاء: دليل شامل للأطعمة والفوائد"
+    },
+    {
+     "url": "https://www.aljazeera.net/health/2026/3/9/30-%D8%BA%D8%B1%D8%A7%D9%85%D8%A7-%D9%8A%D9%88%D9%85%D9%8A%D8%A7-%D8%AA%D8%B5%D9%86%D8%B9-%D8%A7%D9%84%D9%81%D8%A7%D8%B1%D9%82-%D9%83%D9%8A%D9%81-%D8%AA%D8%AD%D9%85%D9%8A%D9%83",
+     "name": "30 غراما يوميا تصنع الفارق.. كيف تحميك الألياف من أمراض خطيرة؟",
+     "site": "الجزيرة نت",
+     "host": "aljazeera.net",
+     "lang": "ar",
+     "kind": "news",
+     "match": 65,
+     "quote": "يمكن الحصول على الألياف من مجموعة واسعة من الأطعمة الطبيعية، منها:"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%86%D8%AA%D9%81%D8%A7%D8%AE_%D8%A7%D9%84%D8%A8%D8%B7%D9%86",
+     "name": "انتفاخ البطن",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "إن الأطعمة الغنية بالكربوهيدرات خاصةً الكربوهيدرات البسيطة التي تفتقر للألياف تُسبب الانتفاخ كونها تدخل مجرى الدم بسرعة، ومن الأمثلة على تلك الأطعمة هي المعجنات، الخبز، العصائر المضاف عليها السكر، والحلويات."
+    },
+    {
+     "url": "https://www.raya.com/2026/03/22/%D8%AF%D8%B1%D8%B9-%D8%A7%D9%84-30-%D8%AC%D8%B1%D8%A7%D9%85%D8%A7-%D9%83%D9%8A%D9%81-%D8%AA%D8%B9%D9%8A%D8%AF-%D8%A7%D9%84%D8%A3%D9%84%D9%8A%D8%A7%D9%81-%D8%A7%D9%84%D8%BA%D8%B0%D8%A7%D8%A6%D9%8A%D8%A9-%D8%B5%D9%8A%D8%A7%D8%BA%D8%A9-%D8%AE%D8%B1%D9%8A%D8%B7%D8%A9-%D8%A7%D9%84%D8%B5%D8%AD%D8%A9-%D9%88%D8%A7%D9%84%D9%88%D9%82%D8%A7%D9%8A%D8%A9-%D9%85%D9%86-%D8%A7%D9%84%D8%A3%D9%85%D8%B1%D8%A7%D8%B6",
+     "name": "درع الـ 30 جرامًا.. كيف تعيد الألياف الغذائية صياغة خريطة الصحة والوقاية من الأمراض؟",
+     "site": "جريدة الراية",
+     "host": "raya.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 57,
+     "quote": "كيف تعيد الألياف الغذائية صياغة خريطة الصحة والوقاية من الأمراض؟"
+    },
+    {
+     "url": "https://drfahadclinic.com/abdominal-bloating-and-gas/",
+     "name": "أسباب انتفاخ البطن والغازات وطرق علاجها",
+     "site": "عيادة دكتور فهد الابراهيم",
+     "host": "drfahadclinic.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 53,
+     "quote": "زيادة الغازات غالبًا ما تكون نتيجة تناول أطعمة غنية بالسكريات أو الألياف أو بسبب اضطرابات هضمية مثل القولون العصبي أو الداء البطني."
+    }
+   ]
+  },
   "14872": {
    "hash": "6d727871b93f",
    "checked": "2026-11-23T20:24:22.860Z",
@@ -7636,5 +7836,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-23T20:24:22.864Z"
+ "updated": "2026-11-23T21:02:45.172Z"
 }
