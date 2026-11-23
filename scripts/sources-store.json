@@ -1,5 +1,72 @@
 {
  "posts": {
+  "14829": {
+   "hash": "6a59112a65e8",
+   "checked": "2026-11-23T21:32:14.498Z",
+   "queries": [
+    "القراد.. طفيلي صغير قد يسبب مشكلة كبيرة للبزازين",
+    "فقر دم القراد طفيلي"
+   ],
+   "sources": []
+  },
+  "14830": {
+   "hash": "d804b4c06e6d",
+   "checked": "2026-11-23T21:32:05.575Z",
+   "queries": [
+    "هل تعلم أن نحلة العسل تموت غالبًا بعد أن تلسع الإنسان؟",
+    "نحل طنان نحلة العسل تعلم تموت",
+    "Bumblebee"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%86%D8%AD%D9%84_%D8%B7%D9%86%D8%A7%D9%86",
+     "name": "نحل طنان",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 59,
+     "quote": "في حالات الطوارئ، مثل الدوس على نحلة طنانة، قد تحدث لسعة فورية."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Bumblebee",
+     "name": "Bumblebee",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 56,
+     "quote": "A bumblebee (or bumble bee, bumble-bee, or humble-bee) is any of over 250 species in the genus Bombus, part of Apidae, one of the bee families. This genus is the only extant group in the tribe Bombini, though…"
+    }
+   ]
+  },
+  "14831": {
+   "hash": "c59a2583df86",
+   "checked": "2026-11-23T21:31:58.641Z",
+   "queries": [
+    "هل الغيرة شعور يقتصر على البشر؟",
+    "الغيرة شعور يقتصر أنثى الغوريلا"
+   ],
+   "sources": []
+  },
+  "14832": {
+   "hash": "87ccd511effe",
+   "checked": "2026-11-23T21:31:50.493Z",
+   "queries": [
+    "اكتشف علماء الآثار مؤخرًا معسكرًا رومانيًا نادرًا في سلوفاكيا يعود إلى نحو 1800 عام",
+    "ماركوس أوريليوس مؤخرا معسكرا 1800"
+   ],
+   "sources": []
+  },
+  "14860": {
+   "hash": "dcbd0cf55edf",
+   "checked": "2026-11-23T21:31:41.216Z",
+   "queries": [
+    "اكتشف العلماء لأول مرة نوعًا من السكر المعقد في الفضاء",
+    "مجرة درب التبانة اكتشف لأول"
+   ],
+   "sources": []
+  },
   "14862": {
    "hash": "9edc9f99076a",
    "checked": "2026-11-23T21:17:57.099Z",
@@ -8034,5 +8101,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-23T21:17:57.103Z"
+ "updated": "2026-11-23T21:32:14.502Z"
 }
