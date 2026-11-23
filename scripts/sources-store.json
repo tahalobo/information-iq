@@ -1,5 +1,14 @@
 {
  "posts": {
+  "14828": {
+   "hash": "b62b56cdeb58",
+   "checked": "2026-11-23T22:02:39.841Z",
+   "queries": [
+    "إذا الفلوس تسوّي الناس أغنياء",
+    "الفلوس تسوي أغنياء الحكومة دينار"
+   ],
+   "sources": []
+  },
   "14829": {
    "hash": "6a59112a65e8",
    "checked": "2026-11-23T21:32:14.498Z",
@@ -5930,16 +5939,48 @@
   },
   "15210": {
    "hash": "42f403827332",
-   "checked": "2026-11-09T21:38:43.493Z",
+   "checked": "2026-11-23T22:02:29.868Z",
    "queries": [
     "يُعدّ حجر الشمس من أشهر آثار حضارة الأزتيك في المكسيك",
-    "حجر الشمس مكسيكو سيتي حضارة الأزتيك 1790"
+    "آزتك حجر الشمس حضارة الأزتيك 1790",
+    "Aztecs"
    ],
-   "sources": []
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A2%D8%B2%D8%AA%D9%83",
+     "name": "آزتك",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 58,
+     "quote": "الأزتيك كانت حضارة في أمريكا الوسطى ازدهرت في وسط المكسيك في فترة ما بعد الكلاسيكية بين عامي 1300 و1521."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Aztecs",
+     "name": "Aztecs",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 55,
+     "quote": "The Aztecs ( AZ-teks) were a Mesoamerican civilization that flourished in central Mexico from about 1300 to 1521. The Aztec people included different ethnic groups of central Mexico, particularly those who…"
+    },
+    {
+     "url": "https://ar.cultura10.com/%D8%AA%D9%82%D9%88%D9%8A%D9%85-%D8%A7%D9%84%D8%A3%D8%B2%D8%AA%D9%83-%D9%88%D8%AE%D8%B5%D8%A7%D8%A6%D8%B5%D9%87-%D8%A7%D9%84%D8%A3%D8%B3%D8%A7%D8%B3%D9%8A%D8%A9/",
+     "name": "تقويم الأزتك: أصل ورمز حجر الشمس",
+     "site": "Cultura 10",
+     "host": "ar.cultura10.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 61,
+     "quote": "حاليا، حجر الشمس هو في غرفة المكسيك بالمتحف الوطني للأنثروبولوجيا من مكسيكو سيتي."
+    }
+   ]
   },
   "15211": {
    "hash": "320a75dd0da2",
-   "checked": "2026-11-09T21:38:33.772Z",
+   "checked": "2026-11-23T22:02:15.093Z",
    "queries": [
     "هل يمكن للإنسان أن يتحكم بمشاعره حقا أم أن مشاعره هي التي تتحكم به؟",
     "تعابير الوجه عالم النفس بمشاعره تتحكم 1998"
@@ -6062,12 +6103,44 @@
   },
   "15219": {
    "hash": "af57a8329040",
-   "checked": "2026-11-09T21:37:27.069Z",
+   "checked": "2026-11-23T22:01:59.358Z",
    "queries": [
     "منارة الإسكندرية... المرآة الغامضة وسلاح الضوء",
-    "منارة الإسكندرية عجائب الدنيا السبع المرآة وسلاح"
+    "فنار الإسكندرية منارة الإسكندرية المرآة وسلاح",
+    "Lighthouse of Alexandria"
    ],
-   "sources": []
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%81%D9%86%D8%A7%D8%B1_%D8%A7%D9%84%D8%A5%D8%B3%D9%83%D9%86%D8%AF%D8%B1%D9%8A%D8%A9",
+     "name": "فنار الإسكندرية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "فنار الإسكندرية أو منارة الإسكندرية (اليونانية: Φάρος της Αλεξάνδρειας) - فاروس الإسكندرية - من عجائب الدنيا السبع التي ذكرها الإغريق، وكان موقعها على طرف شبه جزيرة فاروس وهي المكان الحالي لقلعة قايتباي بمدينة…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Lighthouse_of_Alexandria",
+     "name": "Lighthouse of Alexandria",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "The Pharos of Alexandria was a lighthouse built by the Ptolemaic Kingdom of Ancient Egypt, during the reign of Ptolemy II Philadelphus (280–247 BC). It has been estimated to have been at least 100 metres (330…"
+    },
+    {
+     "url": "https://ngalarabiya.com/article/4252927/%D9%82%D8%B5%D8%A9-%D9%85%D9%86%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%A5%D8%B3%D9%83%D9%86%D8%AF%D8%B1%D9%8A%D8%A9",
+     "name": "مجلة ناشيونال جيوغرافيك العربية",
+     "site": "National Geographic Arabia",
+     "host": "ngalarabiya.com",
+     "lang": "ar",
+     "kind": "science",
+     "match": 52,
+     "quote": "قصة منارة الإسكندرية - مجلة ناشيونال جيوغرافيك العربية"
+    }
+   ]
   },
   "15220": {
    "hash": "6b28d8e443a6",
@@ -6080,12 +6153,23 @@
   },
   "15222": {
    "hash": "232f91cf30e5",
-   "checked": "2026-11-09T21:36:56.896Z",
+   "checked": "2026-11-23T22:01:29.018Z",
    "queries": [
     "شجرة واحدة قد يتجاوز حجمها حجم عدة منازل",
     "السكويا العملاقة مترا مكعبا شجرة يتجاوز 1487"
    ],
-   "sources": []
+   "sources": [
+    {
+     "url": "https://ar.jardineriaon.com/%D9%81%D8%B6%D9%88%D9%84-%D8%A7%D9%84%D8%B3%D9%83%D9%88%D9%8A%D8%A7-%D8%A7%D9%84%D8%B9%D9%85%D9%84%D8%A7%D9%82%D8%A9.html",
+     "name": "غرائب وأسرار شجرة السيكويا العملاقة: كل شيء عن هذا العملاق",
+     "site": "Jardineria On",
+     "host": "ar.jardineriaon.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 68,
+     "quote": "الفرق بين شجرة السكويا العملاقة وخشب السكويا الساحلي"
+    }
+   ]
   },
   "15223": {
    "hash": "57b0b72adda0",
@@ -8101,5 +8185,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-23T21:47:39.260Z"
+ "updated": "2026-11-23T22:02:39.846Z"
 }
