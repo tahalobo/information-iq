@@ -1,5 +1,138 @@
 {
  "posts": {
+  "14875": {
+   "hash": "44debf6b3159",
+   "checked": "2026-11-23T08:45:02.665Z",
+   "queries": [
+    "فن التفكير الصحيح: لماذا يُعد علم المنطق أهم علم لم تتعلمه بعد؟",
+    "منطق علم المنطق التفكير الصحيح",
+    "Logic"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D9%86%D8%B7%D9%82",
+     "name": "منطق",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 68,
+     "quote": "في الحجج الصحيحة، يتبع كل من البنية المنطقية للمقدمات والاستنتاج نموذجًا يُدعى بقاعدة الاستدلال."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Logic",
+     "name": "Logic",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 63,
+     "quote": "Logic is the study of correct reasoning. It includes both formal and informal logic. Formal logic is the study of deductively valid inferences or logical truths. It examines how conclusions follow from…"
+    }
+   ]
+  },
+  "14876": {
+   "hash": "ec003a4ec8e5",
+   "checked": "2026-11-23T08:44:57.277Z",
+   "queries": [
+    "اختبار الذكاء (IQ) هو مقياس نفسي معياري طوّره ألفريد بينيه ثم ديفيد وكسلر",
+    "حاصل الذكاء ألفريد بينيه اختبار مقياس",
+    "Intelligence quotient"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AD%D8%A7%D8%B5%D9%84_%D8%A7%D9%84%D8%B0%D9%83%D8%A7%D8%A1",
+     "name": "حاصل الذكاء",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 75,
+     "quote": "حقق عالم النفس الفرنسي ألفريد بينيه والطبيب النفسي تيودور سيمون نجاحًا أكبر في عام 1905، عندما نشرا اختبار بينيه-سيمون للذكاء، والذي ركز على القدرات اللفظية."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Intelligence_quotient",
+     "name": "Intelligence quotient",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 70,
+     "quote": "An intelligence quotient (IQ) is a total score derived from a set of standardised tests or subtests designed to assess human intelligence. Originally, IQ was a quotient obtained by dividing a person's…"
+    }
+   ]
+  },
+  "14877": {
+   "hash": "c8b0f61aae19",
+   "checked": "2026-11-23T08:44:53.420Z",
+   "queries": [
+    "الذكاء الذي لا تقيسه الاختبارات: لماذا يُعد الذكاء العاطفي مفتاح النجاح الحقيقي؟",
+    "ذكاء عاطفي الذكاء العاطفي النجاح ماير",
+    "Emotional intelligence"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B0%D9%83%D8%A7%D8%A1_%D8%B9%D8%A7%D8%B7%D9%81%D9%8A",
+     "name": "ذكاء عاطفي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 88,
+     "quote": "عرّف بيتر سالوفي وجون ماير الذكاء العاطفي بأنه «القدرة على إدراك المشاعر بدقة، واستخدامها لتيسير التفكير، وفهمها، وإدارتها»."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Emotional_intelligence",
+     "name": "Emotional intelligence",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 83,
+     "quote": "Emotional intelligence (EI), also known as emotional quotient (EQ), is the ability to perceive, use, understand, manage, and handle emotions. High emotional intelligence includes emotional recognition of…"
+    }
+   ]
+  },
+  "14887": {
+   "hash": "331ab2d8926a",
+   "checked": "2026-11-23T08:44:45.581Z",
+   "queries": [
+    "\"تعفن الدماغ\" (Brain Rot) هو مصطلح يصف التأثير الذهني الناتج عن الإفراط في Brain Rot",
+    "تعفن الدماغ المحتوى الرقمي مصطلح الذهني",
+    "Brain rot Brain Rot"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%B9%D9%81%D9%86_%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D8%BA",
+     "name": "تعفن الدماغ",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "استُخدم مصطلح \"تلف الدماغ\" أو \"تعفّن العقل\" في البيئات الإلكترونية منذ عام 2004م تقريبًا."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Brain_rot",
+     "name": "Brain rot",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "In Internet culture, the term brain rot (often written as brainrot) describes digital media deemed to be of low quality or value. More broadly, the term refers to the harmful cognitive effects associated with…"
+    }
+   ]
+  },
+  "14888": {
+   "hash": "8ce39ecbe19e",
+   "checked": "2026-11-23T08:44:35.867Z",
+   "queries": [
+    "الصخور التي تستطيع الغناء",
+    "حديقة الصخور الولايات المتحدة الغناء الرنانة"
+   ],
+   "sources": []
+  },
   "14889": {
    "hash": "0e1a22fa49fa",
    "checked": "2026-11-23T01:02:22.632Z",
@@ -7392,5 +7525,5 @@
    ]
   }
  },
- "updated": "2026-11-23T01:02:22.636Z"
+ "updated": "2026-11-23T08:45:02.669Z"
 }
