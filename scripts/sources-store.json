@@ -1,5 +1,84 @@
 {
  "posts": {
+  "14662": {
+   "hash": "c8d83e5327cc",
+   "checked": "2026-11-24T02:47:25.951Z",
+   "queries": [
+    "الكلب الوحيد الذي حصل على رتبة رقيب",
+    "الرقيب ستابي الغازات السامة الوحيد رتبة",
+    "Sergeant Stubby"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B1%D9%82%D9%8A%D8%A8_%D8%B3%D8%AA%D8%A7%D8%A8%D9%8A",
+     "name": "الرقيب ستابي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "يُعتبر ستابي الكلب الحربي الأكثر حصولاً على الأوسمة في الحرب العالمية الأولى،والكلب الوحيد الذي رُشِّح ورُقِّي إلى رتبة رقيب من خلال القتال."
+    }
+   ]
+  },
+  "14663": {
+   "hash": "df11da628e5b",
+   "checked": "2026-11-24T02:47:15.002Z",
+   "queries": [
+    "في بعض المدن والمجمعات التجارية في الصين",
+    "للنساء فقط ركن السيارات والمجمعات التجارية"
+   ],
+   "sources": []
+  },
+  "14666": {
+   "hash": "78677765177d",
+   "checked": "2026-11-24T02:46:59.170Z",
+   "queries": [
+    "نعود إليكم في قناة إمبراطورية المعلومات العراقية بفعالية استثنائية ضمن سلسلة informationiq",
+    "العصور الإسلامية نعود قناة"
+   ],
+   "sources": []
+  },
+  "14693": {
+   "hash": "e0c0b3a1d51a",
+   "checked": "2026-11-24T02:46:50.630Z",
+   "queries": [
+    "تسجل القارة القطبية الجنوبية اعلى درجة حرارة (15.4°) لاول مرة منذ 1998 في شهر يونيو الحالي",
+    "القارة القطبية الجنوبية درجة حرارة يونيو الحالي 1998",
+    "Antarctica"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%82%D8%A7%D8%B1%D8%A9_%D8%A7%D9%84%D9%82%D8%B7%D8%A8%D9%8A%D8%A9_%D8%A7%D9%84%D8%AC%D9%86%D9%88%D8%A8%D9%8A%D8%A9",
+     "name": "القارة القطبية الجنوبية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 68,
+     "quote": "سجل شمال القارة القطبية الجنوبية درجة حرارة 20.8 °م (69.4 °ف) في يوم 9 فبراير عام 2020، وهي أعلى درجة حرارة مسجلة في القارة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Antarctica",
+     "name": "Antarctica",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 64,
+     "quote": "Antarctica ( ) is Earth's southernmost and least-populated continent. Situated almost entirely south of the Antarctic Circle and surrounded by the Southern Ocean (also known as the Antarctic Ocean), it…"
+    }
+   ]
+  },
+  "14694": {
+   "hash": "e4b1afb06009",
+   "checked": "2026-11-24T02:46:31.064Z",
+   "queries": [
+    "تُظهر هذه الصورة كلابًا تقف في طابور بانتظار الحصول على جرعات من الكوكايين ضمن",
+    "الجهاز العصبي تجربة علمية كلابا طابور"
+   ],
+   "sources": []
+  },
   "14696": {
    "hash": "6882ec5be654",
    "checked": "2026-11-24T02:33:22.874Z",
@@ -11019,5 +11098,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T02:33:22.880Z"
+ "updated": "2026-11-24T02:47:25.956Z"
 }
