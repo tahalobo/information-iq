@@ -1,5 +1,174 @@
 {
  "posts": {
+  "14701": {
+   "hash": "e08126a6d45e",
+   "checked": "2026-11-24T02:17:59.818Z",
+   "queries": [
+    "في تنزانيا توجد بحيرة تُسمّى بحيرة النطرون"
+   ],
+   "sources": [
+    {
+     "url": "https://mawdoo3.com/%D8%A8%D8%AD%D9%8A%D8%B1%D8%A9_%D8%A7%D9%84%D9%86%D8%B7%D8%B1%D9%88%D9%86",
+     "name": "بحيرة النطرون",
+     "site": "موضوع",
+     "host": "mawdoo3.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 68,
+     "quote": "تعتبر بحيرة النطرون (Natron lake) من البحيرات التي تقع في جمهورية تنزانيا بالجهة الشمالية على حدودها مع كينيا، تحديداً بالجهة الشرقية من الصدع الإفريقي الشرقي، وتتميّز البحيرة بملوحتها العالية والتي يُغذيها…"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A8%D8%AD%D9%8A%D8%B1%D8%A9_%D8%A7%D9%84%D9%86%D8%B7%D8%B1%D9%88%D9%86",
+     "name": "بحيرة النطرون",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "تقع بحيرة النطرون شمال تنزانيا بالقرب من الحدود مع كينيا، تحديداً في الفرع الشرقي من الصدع الشرق أفريقي."
+    },
+    {
+     "url": "https://www.saaih.com/%D8%AA%D9%86%D8%B2%D8%A7%D9%86%D9%8A%D8%A7/%D8%A8%D8%AD%D9%8A%D8%B1%D8%A9-%D8%A7%D9%84%D9%86%D8%B7%D8%B1%D9%88%D9%86",
+     "name": "بحيرة النطرون العجيبة في تنزانيا",
+     "site": "سائح",
+     "host": "saaih.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 64,
+     "quote": "السياحة في افريقيا السياحة في تنزانيا البحيرة الحمراء نهر إيواسو نيجيور السياحة الطبيعية"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Lake_Natron",
+     "name": "Lake Natron",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "Lake Natron is a highly alkaline salt lake located in north Ngorongoro District of Arusha Region in Tanzania with its far northern end crossing into Kajiado County and Narok County in Kenya. It is in the…"
+    },
+    {
+     "url": "https://www.bawabatelalam.com/%D8%A7%D9%84%D8%B1%D8%A6%D9%8A%D8%B3%D9%8A%D8%A9/%D8%A8%D8%AD%D9%8A%D8%B1%D8%A9-%D8%A7%D9%84%D9%86%D8%B7%D8%B1%D9%88%D9%86-%D8%AA%D8%AD%D9%86%D8%B7-%D9%83%D9%84-%D9%85%D9%86-%D9%8A%D9%85%D8%B1-%D8%B9%D9%84%D9%89-%D8%B3%D8%B7%D8%AD%D9%87/",
+     "name": "بحيرة النطرون.. بلون الدم.. تحنط كل من يمر عليها.. أهم 7 معلومات عنها",
+     "site": "بوابة العالم",
+     "host": "bawabatelalam.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 61,
+     "quote": "وهي كائنات مجهرية تُلبس البحيرة اللون الأحمر؛ فتنشط كلما زادت الحموضة والحرارة والمعادن وتنتج المزيد من الأحماض."
+    }
+   ]
+  },
+  "14702": {
+   "hash": "c1c8264a42d2",
+   "checked": "2026-11-24T02:17:47.264Z",
+   "queries": [
+    "دريسات العراق كأس العالم 2026 🇮🇶 STOORE",
+    "كأس العالم دريسات الاحتياطي 2026"
+   ],
+   "sources": []
+  },
+  "14708": {
+   "hash": "88e23b08eef9",
+   "checked": "2026-11-24T02:17:13.960Z",
+   "queries": [
+    "أشهر قصة أن الإله زيوس تحوّل إلى بجعة ليتقرب من ليدا Cygnus",
+    "زيوس تحول بجعة ليتقرب ليدا"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.postposmo.com/%D9%87%D9%8A%D9%84%D9%8A%D9%86%D8%A7-%D8%B7%D8%B1%D9%88%D8%A7%D8%AF%D8%A9/",
+     "name": "من هي هيلين طروادة؟، تعرف كل شيء عنها ▷➡️ Postposmo",
+     "site": "Postposmo",
+     "host": "ar.postposmo.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "في القصة التي تم إجراؤها على حياة هيلين طروادة ، يقال إن والدها هو الإله زيوس نفسه ، الذي تحول بقواه إلى بجعة كبيرة وجميلة تمكنت من جذب الانتباه وإغواء ليدا ، ثم بعد لإغواء ليدا ، كان لديه علاقات معها وفي…"
+    },
+    {
+     "url": "https://www.arageek.com/bio/helen-of-troy",
+     "name": "ما لا تعرفه عن هيلن طروادة .. من هي؟ سيرتها الذاتية، إنجازاتها وأقوالها، معلومات عن هيلن طروادة",
+     "site": "أراجيك - Arageek",
+     "host": "arageek.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 56,
+     "quote": "في معظم الأساطير تعتبر هيلين هي ابنة الإله زيوس ووالدتها ليدا، في أواخر القرن الخامس قبل الميلاد تعتبر مسرحية يوروبيدس هي المصدر الأول والأهم للرواية التي تقول أن هيلين هي ابنة زيوس، حيث كان زيوس بشكل نسر…"
+    }
+   ]
+  },
+  "14710": {
+   "hash": "e67df50ad958",
+   "checked": "2026-11-24T02:16:53.471Z",
+   "queries": [
+    "الأحلام في حضارة بابل",
+    "بلاد بابل بعض الناس الأحلام حضارة",
+    "Babylonia"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D8%A7%D9%84%D8%A3%D8%AD%D9%84%D8%A7%D9%85-%D9%81%D9%8A-%D8%AD%D8%B6%D8%A7%D8%B1%D8%A9-%D8%A8%D8%A7%D8%A8%D9%84/",
+     "name": "وكالة هنا العراق الاخبارية",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "في حضارة بابل القديمة كان يُعتقد أن الأحلام ليست خيالًا، بل رسائل ترسلها الآلهة إلى البشر، وقد تحمل تحذيرًا من خطر قادم أو بشارة بنجاح أو توجيهًا دينيًا مهمًا."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A8%D9%84%D8%A7%D8%AF_%D8%A8%D8%A7%D8%A8%D9%84",
+     "name": "بلاد بابل",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "وقد ذكر ديودروس الصقلي (كان البابليين يقضون حياتهم في المسائل الفلسفية، ولهم شهرة لا تجارى في علم التنجيم وتفسير الأحلام) وأهم علم في نظرهم العلم الخاص بحركة الكواكب السيارة الخمسة، التي يسمونها «الترجمان»…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Babylonia",
+     "name": "Babylonia",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "Babylonia (; Akkadian: 𒆳𒆍𒀭𒊏𒆠, romanized: māt Akkadī; 𒆳𒆍𒀭𒊏𒆠, māt Bābilim) was an ancient Akkadian-speaking state and cultural area based on the city of Babylon in central-southern Mesopotamia…"
+    }
+   ]
+  },
+  "14713": {
+   "hash": "4b7370be68f7",
+   "checked": "2026-11-24T02:16:30.313Z",
+   "queries": [
+    "طاعون الرقص (1518)",
+    "طاعون ستراسبورغ امرأة فراو الشارع 1518"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D8%B7%D8%A7%D8%B9%D9%88%D9%86-%D8%A7%D9%84%D8%B1%D9%82%D8%B5-1518/",
+     "name": "وكالة هنا العراق الاخبارية",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 96,
+     "quote": "بدأت الحادثة في مدينة ستراسبورغ عندما بدأت امرأة تُدعى فراو تروفيا بالرقص في الشارع دون توقف، ثم انضم إليها عشرات الأشخاص خلال أيام قليلة."
+    },
+    {
+     "url": "https://stories.amwaly.com/blog/195281/%D8%B7%D8%A7%D8%B9%D9%88%D9%86-%D8%A7%D9%84%D8%B1%D9%82%D8%B5-%D8%B9%D9%86%D8%AF%D9%85%D8%A7-%D8%B1%D9%82%D8%B5%D8%AA-%D9%85%D8%AF%D9%8A%D9%86%D8%A9-%D8%A8%D8%A3%D9%83%D9%85%D9%84%D9%87%D8%A7-%D8%AD%D8%AA%D9%89-%D8%A7%D9%84%D9%85%D9%88%D8%AA",
+     "name": "طاعون الرقص: عندما رقصت مدينة بأكملها حتى الموت!",
+     "site": "stories.amwaly.com",
+     "host": "stories.amwaly.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 80,
+     "quote": "بعد ساعات، انضم إليها آخرون، ثم عشرات الأشخاص، ثم مئات، حتى تحولت المدينة إلى مسرح لرقص متواصل استمر أيامًا وأسابيع، وانتهى بانهيارات جسدية ووفيات، في حادثة عُرفت لاحقًا باسم \"طاعون الرقص\"."
+    }
+   ]
+  },
   "14714": {
    "hash": "5bbd015220fa",
    "checked": "2026-11-24T02:03:01.012Z",
@@ -10762,5 +10931,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T02:03:01.018Z"
+ "updated": "2026-11-24T02:17:59.829Z"
 }
