@@ -1,5 +1,216 @@
 {
  "posts": {
+  "14652": {
+   "hash": "056a61018f06",
+   "checked": "2026-11-24T03:18:14.000Z",
+   "queries": [
+    "قطع الفنان الهندي براديو من كومار ماهانانديا أكثر من 11 ألف كيلومتر على دراجة",
+    "دراجة هوائية الفنان الهندي 1977"
+   ],
+   "sources": [
+    {
+     "url": "https://dkhlak.com/indian-guy-goes-on-bicycle-way-to-sweden-to-find-his-lover/",
+     "name": "شاب من الهند باع كل ما يملكه ليشتري دراجة هوائية ويقطع بها أكثر من 9000 كيلومتر من الهند إلى السويد، ليلتقي…",
+     "site": "دخلك بتعرف",
+     "host": "dkhlak.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 61,
+     "quote": "(كومار) صحبة الدراجة التي استعان بها في رحلته من الهند إلى السويد."
+    }
+   ]
+  },
+  "14653": {
+   "hash": "b9f95e84a29f",
+   "checked": "2026-11-24T03:18:02.179Z",
+   "queries": [
+    "خوسيه موخيكا – رمز التواضع Mujica"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AE%D9%88%D8%B2%D9%8A%D9%87_%D9%85%D9%88%D8%AE%D9%8A%D9%83%D8%A7",
+     "name": "خوزيه موخيكا",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 85,
+     "quote": "وُصف بـ «أفقر رئيس في العالم» بسبب أسلوب حياته التقشفي، وتبرُّعه بقرابة تسعين في المئة من راتبه الشهري الذي يساوي 12.000 دولار أمريكي للجمعيات الخيرية والشركات الناشئة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Jos%C3%A9_Mujica",
+     "name": "José Mujica",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 80,
+     "quote": "José Alberto \"Pepe\" Mujica Cordano (20 May 1935 – 13 May 2025) was a Uruguayan politician, revolutionary and farmer who served as the 40th president of Uruguay from 2010 to 2015. A former guerrilla with the…"
+    },
+    {
+     "url": "https://timelines.co.il/ar/stories/jose-pepe-mujica",
+     "name": "خوسيه بيبي موخيكا",
+     "site": "ציר הזמן",
+     "host": "timelines.co.il",
+     "lang": "ar",
+     "kind": "web",
+     "match": 88,
+     "quote": "في 2008، أعلن خوسيه بيبي موخيكا ترشحه للانتخابات الرئاسية المقرر إجراؤها في العام التالي."
+    },
+    {
+     "url": "https://www.aljazeera.net/encyclopedia/2016/1/5/%D8%AE%D9%88%D8%B3%D9%8A-%D9%85%D9%88%D8%AE%D9%8A%D9%83%D8%A7-%D8%A3%D9%81%D9%82%D8%B1-%D8%B1%D8%A6%D9%8A%D8%B3-%D9%81%D9%8A-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85",
+     "name": "سجن عامين في قاع بئر.. خوسي موخيكا رئيس الأوروغواي الفقير",
+     "site": "الجزيرة نت",
+     "host": "aljazeera.net",
+     "lang": "ar",
+     "kind": "news",
+     "match": 69,
+     "quote": "في 13 مايو/أيار 2025 أعلن رئيس أوروغواي ياماندو أورسي وفاة خوسيه موخيكا، عن عمر ناهز 89 عاما."
+    },
+    {
+     "url": "https://nolam.org/public/ar/blog/jose-mujica-1935-2025-uruguays-humble-president",
+     "name": "خوسيه موجيكا (1935–2025): رئيس أوروغواي المتواضع ورمز القيادة الأخلاقية",
+     "site": "Nwafez",
+     "host": "nolam.org",
+     "lang": "ar",
+     "kind": "web",
+     "match": 69,
+     "quote": "توفي خوسيه موخيكا في 13 مايو 2025، قبل أسبوع واحد من بلوغه التسعين."
+    }
+   ]
+  },
+  "14654": {
+   "hash": "51bca996299f",
+   "checked": "2026-11-24T03:17:42.084Z",
+   "queries": [
+    "ضفدع شجرة الشمع",
+    "مادة شمعية المضادات الحيوية ضفدع شجرة"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D8%B6%D9%81%D8%AF%D8%B9-%D8%B4%D8%AC%D8%B1%D8%A9-%D8%A7%D9%84%D8%B4%D9%85%D8%B9/",
+     "name": "وكالة هنا العراق الاخبارية",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "ضفدع شجرة الشمع كائن يعيش في بيئات حارة وجافة، ويتميّز بقدرته على إفراز مادة شمعية يوزعها على جسمه لتكوين طبقة واقية تقلل فقدان الماء وتحميه من الحرارة."
+    }
+   ]
+  },
+  "14655": {
+   "hash": "e72a9f25c2a9",
+   "checked": "2026-11-24T03:17:10.671Z",
+   "queries": [
+    "أن الاستماع إلى الموسيقى يحفّز عدة مناطق في الدماغ في الوقت نفسه",
+    "علم النفس الموسيقي الحالة النفسية الاستماع الموسيقى",
+    "Psychology of music"
+   ],
+   "sources": [
+    {
+     "url": "https://tanweir.com/%D9%83%D9%8A%D9%81-%D8%AA%D8%A4%D8%AB%D8%B1-%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%8A%D9%82%D9%89-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%86%D9%81%D8%B3-%D9%88%D8%A7%D9%84%D8%B3%D9%84%D9%88%D9%83%D8%9F-%D8%AF/",
+     "name": "كيف تؤثر الموسيقى على النفس والسلوك؟ دراسة شاملة لتأثير الألحان على العقل والمشاعر",
+     "site": "tanweir.com",
+     "host": "tanweir.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 74,
+     "quote": "كثيرًا ما يجد الإنسان صعوبة في التعبير عن مشاعره بالكلمات، وهنا تلعب الموسيقى دورًا مهمًا."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B9%D9%84%D9%85_%D8%A7%D9%84%D9%86%D9%81%D8%B3_%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%8A%D9%82%D9%8A",
+     "name": "علم النفس الموسيقي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 52,
+     "quote": "كمية كبيرة من البحوث المعنية بآليات عمل الدماغ تتعامل مع العلوم المعرفية التابعة للإدراك والأداء الموسيقي، وتتضمن دراسة هذه التصرفات على الاستماع للموسيقى والأداء والتلحين وعزف وكتابة الموسيقى والنشاطات…"
+    },
+    {
+     "url": "https://gurumuda.net/ar/psychology/the-influence-of-music-on-psychological-well-being.htm",
+     "name": "تأثير الموسيقى على الصحة النفسية",
+     "site": "gurumuda.net",
+     "host": "gurumuda.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 62,
+     "quote": "من أبرز تأثيرات الموسيقى على الصحة النفسية دورها كمتنفس عاطفي."
+    },
+    {
+     "url": "https://www.annahar.com/lifestyle/arts/300450/%D8%B9%D9%84%D8%A7%D8%AC-%D9%86%D9%81%D8%B3%D9%8A-%D8%A8%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%8A%D9%82%D9%89",
+     "name": "العلاج بالموسيقى وتأثيره على الصحة النفسية",
+     "site": "annahar.com",
+     "host": "annahar.com",
+     "lang": "ar",
+     "kind": "news",
+     "match": 54,
+     "quote": "الموسيقى لم تعد مجرّد صوت يرافق الحياة اليومية، بل أصبحت أداة علاجية تُستخدم بشكل علمي ومنظّم للتأثير على الحالة النفسية."
+    }
+   ]
+  },
+  "14656": {
+   "hash": "9d4087e11f21",
+   "checked": "2026-11-24T03:16:46.921Z",
+   "queries": [
+    "يُعد برج شنغهاي Shanghai Tower من أبرز معالم الهندسة الحديثة في العالم Shanghai Tower",
+    "برج شانغهاي Shanghai Tower شنغهاي معالم 2016",
+    "Shanghai Tower Shanghai"
+   ],
+   "sources": [
+    {
+     "url": "https://www.shanghaitourism.org/shanghai-tower-observation-deck/",
+     "name": "Shanghai Tower Observation Deck: Tickets, Tips & Views",
+     "site": "Shanghai Tourism Guide",
+     "host": "shanghaitourism.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Shanghai Tower observation deck guide: ticket prices, how to book, best time to visit, the high-speed lift, and how it compares to other decks."
+    },
+    {
+     "url": "https://intotravelchina.com/attractions/shanghai_attraction/Shanghai_Tower.html",
+     "name": "Shanghai Tower Observatory: 632m Sky-High Thrills, Glass Floor",
+     "site": "intotravelchina.com",
+     "host": "intotravelchina.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Soar to 546 meters at Shanghai Tower’s 118F & 119F Observatory for unmatched views of Shanghai’s past-meets-future skyline! Race upward in the world’s fastest elevator (18 m/s), then walk on air at the 1.7m…"
+    },
+    {
+     "url": "https://thetowerinfo.com/visit-shanghai-tower-observation-deck/",
+     "name": "Guide to visiting the Shanghai Tower Observation Deck",
+     "site": "thetowerinfo.com",
+     "host": "thetowerinfo.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 86,
+     "quote": "Detailed guide to visiting Shanghai Tower, including how to buy tickets, how to get there, what you will see on the observation deck, and some helpful tips."
+    },
+    {
+     "url": "https://shanghaitowertickets.com/",
+     "name": "Shanghai Tower Observation Deck Tours & Tickets in Shanghai Tower",
+     "site": "Shanghai Tower Observation Deck Tours",
+     "host": "shanghaitowertickets.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 86,
+     "quote": "Reserve Shanghai Tower observation deck tickets for the 118th-floor view over Lujiazui. Compare Shanghai Tower observation deck tours and skip-the-line access. Secure your slot."
+    },
+    {
+     "url": "https://www.travelchinaguide.com/attraction/shanghai/tower.htm",
+     "name": "Shanghai Tower: Tallest Building in China & 3rd in the World",
+     "site": "travelchinaguide.com",
+     "host": "travelchinaguide.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 86,
+     "quote": "Shanghai Tower, with a height of 632 meters and 127 above-ground floors, is China’s tallest and the world’s third tallest skyscraper and has the fastest elevator."
+    }
+   ]
+  },
   "14657": {
    "hash": "c8158d465c3d",
    "checked": "2026-11-24T03:03:49.088Z",
@@ -11176,5 +11387,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T03:03:49.099Z"
+ "updated": "2026-11-24T03:18:14.005Z"
 }
