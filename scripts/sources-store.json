@@ -1,5 +1,238 @@
 {
  "posts": {
+  "14528": {
+   "hash": "4f688fd9fe14",
+   "checked": "2026-11-24T06:03:09.075Z",
+   "queries": [
+    "اول شارع مُبلط في التاريخ (1876)",
+    "البيت الأبيض شارع مبلط 1876",
+    "White House"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%A8%D9%8A%D8%AA_%D8%A7%D9%84%D8%A3%D8%A8%D9%8A%D8%B6",
+     "name": "البيت الأبيض",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "يقع المبنى في شارع بنسلفانيا 1600 شمال شرق واشنطن العاصمة، وهو مقر إقامة كل رئيس أمريكي منذ عهد جون آدامز في عام 1800."
+    }
+   ]
+  },
+  "14529": {
+   "hash": "25bf008264ef",
+   "checked": "2026-11-24T06:02:50.528Z",
+   "queries": [
+    "بيت الحكمة حين كانت بغداد عاصمة العلم",
+    "بيت الحكمة العصر الذهبي للإسلام بغداد عاصمة"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D8%A8%D9%8A%D8%AA-%D8%A7%D9%84%D8%AD%D9%83%D9%85%D8%A9-%D8%AD%D9%8A%D9%86-%D9%83%D8%A7%D9%86%D8%AA-%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF-%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D8%A7%D9%84%D8%B9%D9%84%D9%85/",
+     "name": "بيت الحكمة حين كانت بغداد عاصمة العلم",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": ""
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A8%D9%8A%D8%AA_%D8%A7%D9%84%D8%AD%D9%83%D9%85%D8%A9",
+     "name": "بيت الحكمة",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 65,
+     "quote": "كان بيت الحكمة في بغداد حتى القرن الثالث عشر الميلادي مركزًا رئيسيًا للتعليم على مستوى العالم في العصور الوسطى، بني في المقام الأول كمكتبة وأصبح البيت بيتًا للحكمة القديمة والحديثة خلال العصر الذهبي للإسلام،…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/House_of_Wisdom",
+     "name": "House of Wisdom",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 61,
+     "quote": "The House of Wisdom (Arabic: بَيْت الْحِكْمَة Bayt al-Ḥikmah), also known as the Grand Library of Baghdad, was a major Abbasid-era public academy and intellectual center in Baghdad. In popular reference, it…"
+    },
+    {
+     "url": "https://www.dorar-aliraq.net/threads/1336100-%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF-%D8%AF%D8%B1%D8%A9-%D8%A7%D9%84%D8%AD%D8%B6%D8%A7%D8%B1%D8%A9-%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9-%D9%88%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D8%A7%D9%84%D8%B9%D8%B5%D9%88%D8%B1-%D8%A7%D9%84%D8%B0%D9%87%D8%A8%D9%8A%D8%A9",
+     "name": "بغداد: درة الحضارة الإسلامية وعاصمة العصور الذهبية",
+     "site": "درر العراق",
+     "host": "dorar-aliraq.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 73,
+     "quote": "بغداد: درة الحضارة الإسلامية وعاصمة العصور الذهبية"
+    },
+    {
+     "url": "https://orbisica.com/ar/articles/islamic-golden-age",
+     "name": "العصر الذهبي للإسلام: العلوم والفلسفة والثقافة في ظل الخلافة العباسية",
+     "site": "Orbisica",
+     "host": "orbisica.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 64,
+     "quote": "يُعد عهده بداية العصر الذهبي للعلم، وفي عهده أُنشئت المكتبة الكبرى في بغداد، بيت الحكمة."
+    }
+   ]
+  },
+  "14530": {
+   "hash": "971b4918878a",
+   "checked": "2026-11-24T06:02:23.083Z",
+   "queries": [
+    "تماضر بنت عمرو السُّلمية",
+    "الخنساء تماضر بنت عمرو السلمية برثاء الصادق"
+   ],
+   "sources": [
+    {
+     "url": "https://www.aljazeera.net/encyclopedia/2023/5/28/%D8%A7%D9%84%D8%AE%D9%86%D8%B3%D8%A7%D8%A1-%D8%AA%D9%85%D8%A7%D8%B6%D8%B1-%D8%A8%D9%86%D8%AA-%D8%B9%D9%85%D8%B1%D9%88-%D8%A7%D9%84%D8%B5%D8%AD%D8%A7%D8%A8%D9%8A%D8%A9",
+     "name": "تماضر بنت عمرو بن الحارث.. الخنساء السلمية شاعرة الرثاء",
+     "site": "الجزيرة نت",
+     "host": "aljazeera.net",
+     "lang": "ar",
+     "kind": "news",
+     "match": 66,
+     "quote": "تماضر بنت عمرو بن الحارث بن الشريد السلمية صحابية وشاعرة مخضرمة عرفت بالخنساء (شترستوك)"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AE%D9%86%D8%B3%D8%A7%D8%A1",
+     "name": "الخنساء",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "تُمَاضِرُ بِنْتُ عَمْرِو بْنِ الْحَارِثِ السُّلَمِيَّة، الشهيرة بالْخَنْسَاء، (575م - 24 هـ / 645م)، صحابية وشاعرة، أدركت الجاهلية والإسلام وأسلمت، واشتهرت برثائها لأخويها صخر ومعاوية اللذين قتلا في الجاهلية،…"
+    },
+    {
+     "url": "https://www.omarfadlalla.com/%D8%A7%D9%84%D8%AE%D9%86%D8%B3%D8%A7%D8%A1-%D8%AA%D9%85%D8%A7%D8%B6%D8%B1%D9%88-%D8%A8%D9%86%D8%AA-%D8%B9%D9%85%D8%B1%D9%88-%D8%A8%D9%86-%D8%A7%D9%84%D8%B4%D8%B1%D9%8A%D8%AF/",
+     "name": "الخنساء تماضرو بنت عمرو بن الشريد",
+     "site": "عمر فضل الله",
+     "host": "omarfadlalla.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "هي تماضر بنت عمرو بن الحارث بن الشريد السُلمية المعروفة باسم الخنساء بنت عمرو، (575 – 664) ، كانت شاعرة رثاء في عصر الجاهلية كانت تسكن في إقليم نجد."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Al-Khansa%27",
+     "name": "Al-Khansa'",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "Tumāḍir bint ʿAmr ibn al-Ḥārith ibn al-Sharīd al-Sulamīyah (Arabic: تماضر بنت عمرو بن الحارث بن الشريد السُلمية), usually simply referred to as al-Khansāʾ (Arabic: الخنساء, meaning \"snub-nosed\", an Arabic…"
+    },
+    {
+     "url": "https://ibnalarabi.com/tarajim/tarjamat.php?id=16645",
+     "name": "تماضر بنت عمرو بن الشريد السلمية",
+     "site": "Ibn al-Arabi · محي الدين ابن العربي",
+     "host": "ibnalarabi.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 60,
+     "quote": "تماضر بنت عمرو بن الشريد السلمية وهي الخنساء الشاعرة."
+    }
+   ]
+  },
+  "14531": {
+   "hash": "d8e92f9b7d6e",
+   "checked": "2026-11-24T06:01:53.936Z",
+   "queries": [
+    "\"الصرع (Epilepsy)\" .. حين يختلّ الدماغ للحظات Epilepsy",
+    "الخلايا العصبية دائرة كهربائية يختل الدماغ",
+    "Epilepsy"
+   ],
+   "sources": [
+    {
+     "url": "https://www.ninds.nih.gov/health-information/disorders/epilepsy-and-seizures",
+     "name": "Epilepsy and Seizures",
+     "site": "National Institute of Neurological Disorders and Stroke",
+     "host": "ninds.nih.gov",
+     "lang": "en",
+     "kind": "science",
+     "match": 97,
+     "quote": "Epilepsy is a chronic brain disorder in which groups of nerve cells, or neurons, in the brain sometimes send the wrong signals and cause seizures. Epilepsy (sometimes referred to as a seizure disorder) can…"
+    },
+    {
+     "url": "https://www.who.int/news-room/fact-sheets/detail/epilepsy",
+     "name": "Epilepsy",
+     "site": "who.int",
+     "host": "who.int",
+     "lang": "en",
+     "kind": "official",
+     "match": 97,
+     "quote": "WHO fact sheet on epilepsy, a chronic noncommunicable disorder of the brain that affects people of all ages. The fact sheet includes key facts, signs and symptoms, causes, treatment, prevention,social and…"
+    },
+    {
+     "url": "https://www.healthdirect.gov.au/conditions/brain-diseases/epilepsy",
+     "name": "symptoms, causes, diagnosis and treatments",
+     "site": "healthdirect.gov.au",
+     "host": "healthdirect.gov.au",
+     "lang": "en",
+     "kind": "official",
+     "match": 97,
+     "quote": "Epilepsy is a long-term condition where a person has repeated seizures. Learn more about the causes, how it is diagnosed and the types of seizures."
+    },
+    {
+     "url": "https://my.clevelandclinic.org/health/diseases/17636-epilepsy",
+     "name": "What Is Epilepsy and How Does It Affect My Brain?",
+     "site": "Cleveland Clinic",
+     "host": "my.clevelandclinic.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Epilepsy is a chronic brain condition that causes repeated seizures. Treatment options are available to manage symptoms."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Epilepsy",
+     "name": "Epilepsy",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Epilepsy is a group of non-communicable neurological disorders characterized by recurrent epileptic seizures. An epileptic seizure is the clinical manifestation of an abnormal, excessive, and synchronized…"
+    }
+   ]
+  },
+  "14534": {
+   "hash": "9d5d12ed5b2c",
+   "checked": "2026-11-24T06:01:30.259Z",
+   "queries": [
+    "السفارة الامريكية في العراق",
+    "سفارة الولايات المتحدة في العراق دولة الفاتيكان السفارة الامريكية 2009",
+    "Embassy of the United States, Baghdad"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B3%D9%81%D8%A7%D8%B1%D8%A9_%D8%A7%D9%84%D9%88%D9%84%D8%A7%D9%8A%D8%A7%D8%AA_%D8%A7%D9%84%D9%85%D8%AA%D8%AD%D8%AF%D8%A9_%D9%81%D9%8A_%D8%A7%D9%84%D8%B9%D8%B1%D8%A7%D9%82",
+     "name": "سفارة الولايات المتحدة في العراق",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 70,
+     "quote": "سفارة الولايات المتحدة الأمريكية في بغداد، هي البعثة الدبلوماسية للولايات المتحدة الأمريكية في جمهورية العراق."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Embassy_of_the_United_States,_Baghdad",
+     "name": "Embassy of the United States, Baghdad",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 66,
+     "quote": "The Embassy of the United States of America in Baghdad (Arabic: سفارة الولايات المتحدة، بغداد) is the diplomatic mission of the United States of America in the Republic of Iraq. Chargé d'affaires ad interim…"
+    }
+   ]
+  },
   "14535": {
    "hash": "d322e33edb37",
    "checked": "2026-11-24T05:48:31.698Z",
@@ -13209,5 +13442,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T05:48:31.703Z"
+ "updated": "2026-11-24T06:03:09.083Z"
 }
