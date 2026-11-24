@@ -1,5 +1,146 @@
 {
  "posts": {
+  "14578": {
+   "hash": "2608b6faa35a",
+   "checked": "2026-11-24T05:00:29.660Z",
+   "queries": [
+    "البحيرة التي تحول الحيوانات الى تماثيل Lake Natron",
+    "بحيرة النطرون Lake Natron البحيرة تحول",
+    "Lake Natron"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A8%D8%AD%D9%8A%D8%B1%D8%A9_%D8%A7%D9%84%D9%86%D8%B7%D8%B1%D9%88%D9%86",
+     "name": "بحيرة النطرون",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 62,
+     "quote": "على الرغم من تقارير وسائل الإعلام،فأن الحيوانات لا تتحول ببساطة إلى الحجر وتموت بعد ملامسة مياه البحيرة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Lake_Natron",
+     "name": "Lake Natron",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 58,
+     "quote": "Lake Natron is a highly alkaline salt lake located in north Ngorongoro District of Arusha Region in Tanzania with its far northern end crossing into Kajiado County and Narok County in Kenya. It is in the…"
+    }
+   ]
+  },
+  "14581": {
+   "hash": "3e8190c06cba",
+   "checked": "2026-11-24T05:00:21.272Z",
+   "queries": [
+    "السماء كالبحر الهائج",
+    "علم الأرصاد الجوية العواصف الرعدية السماء الهائج 2017"
+   ],
+   "sources": [
+    {
+     "url": "https://seventhnews.com/%D8%A7%D9%84%D8%B3%D9%85%D8%A7%D8%A1-%D9%83%D8%A7%D9%84%D8%A8%D8%AD%D8%B1-%D8%A7%D9%84%D9%87%D8%A7%D8%A6%D8%AC/",
+     "name": "وكالة السابعة نيوز الاخبارية",
+     "site": "وكالة السابعة نيوز الاخبارية",
+     "host": "seventhnews.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "تُعد سحب أسبيريتاس من أندر الظواهر السحابية وأكثرها غرابة في علم الأرصاد الجوية، إذ تتميز بتموجات كثيفة وعميقة تجعل السماء تبدو كأمواج بحر مضطرب."
+    }
+   ]
+  },
+  "14582": {
+   "hash": "487090e3e8ad",
+   "checked": "2026-11-24T04:59:37.725Z",
+   "queries": [
+    "عصير الشيطان أو عصير العبيد",
+    "عصير الشيطان العبيد اشتق ترجمته"
+   ],
+   "sources": [
+    {
+     "url": "https://seventhnews.com/%D8%B9%D8%B5%D9%8A%D8%B1-%D8%A7%D9%84%D8%B4%D9%8A%D8%B7%D8%A7%D9%86-%D8%A3%D9%88-%D8%B9%D8%B5%D9%8A%D8%B1-%D8%A7%D9%84%D8%B9%D8%A8%D9%8A%D8%AF/",
+     "name": "عصير الشيطان أو عصير العبيد.",
+     "site": "وكالة السابعة نيوز الاخبارية",
+     "host": "seventhnews.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "تصبح البيئة ملوثة وسامة للغاية لدرجة أن روحنا الحقيقية ليس لديها خيار سوى المغادرة حتى تتحسن الظروف، مما يسمح للكيانات الأخرى ذات الترددات الاهتزازية المنخفضة بأخذنا في جولة."
+    }
+   ]
+  },
+  "14583": {
+   "hash": "593174dce6df",
+   "checked": "2026-11-24T04:59:14.337Z",
+   "queries": [
+    "استعدادا_للأضحية",
+    "الأسنان اللبنية استعدادا للأضحية"
+   ],
+   "sources": []
+  },
+  "14584": {
+   "hash": "e7e283b750c8",
+   "checked": "2026-11-24T04:58:47.174Z",
+   "queries": [
+    "صورة من اجتماع أبرز علماء القرن العشرين في مؤتمر سولفاي للفيزياء في عام 1927",
+    "مؤتمرات سولفاي مؤتمر سولفاي اجتماع العشرين 1927",
+    "Solvay Conference"
+   ],
+   "sources": [
+    {
+     "url": "https://seventhnews.com/%D8%B5%D9%88%D8%B1%D8%A9-%D9%85%D9%86-%D8%A7%D8%AC%D8%AA%D9%85%D8%A7%D8%B9-%D8%A3%D8%A8%D8%B1%D8%B2-%D8%B9%D9%84%D9%85%D8%A7%D8%A1-%D8%A7%D9%84%D9%82%D8%B1%D9%86-%D8%A7%D9%84%D8%B9%D8%B4/",
+     "name": "• صورة من اجتماع أبرز علماء القرن العشرين في مؤتمر سولفاي للفيزياء في عام 1927",
+     "site": "وكالة السابعة نيوز الاخبارية",
+     "host": "seventhnews.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "• ‏في هذا المؤتمر اجتمع 29 عالمًا وتميز من بينهم 17 حصدوا جائزة نوبل حيث شكل هؤلاء العلماء معرفة وتطور كبير في علم الفيزياء امتد إلى عقودًا من الزمن"
+    },
+    {
+     "url": "https://www.rmix.it/news/the-solvay-conferences-when-the-brightest-minds-meet-to-unravel-the-mysteries-of-the-universe-en/",
+     "name": "The Solvay Conferences: When the Brightest Minds Meet",
+     "site": "rmix.it",
+     "host": "rmix.it",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Since 1911, a Journey Through the Foundations of Physics and Chemistry: The History, Key Figures, and Revolutionary Discussions That Shaped Modern Science"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%A4%D8%AA%D9%85%D8%B1%D8%A7%D8%AA_%D8%B3%D9%88%D9%84%D9%81%D8%A7%D9%8A",
+     "name": "مؤتمرات سولفاي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 72,
+     "quote": "منذ عام 1911، عقد 25 مؤتمر سولفاي في الفيزياء، منها سبعة قبل الحرب العالمية الثانية."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Solvay_Conference",
+     "name": "Solvay Conference",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 67,
+     "quote": "The Solvay Conferences (French: Congrès Solvay) have been devoted to preeminent unsolved problems in both physics and chemistry. They began with the historic invitation-only 1911 Solvay Conference on Physics,…"
+    },
+    {
+     "url": "https://cosmolearning.org/topics/solvay-conferences/",
+     "name": "Solvay Conferences",
+     "site": "CosmoLearning",
+     "host": "cosmolearning.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 79,
+     "quote": "The \"Conseils Solvay\" are probably the most famous conferences in physics and chemistry. From the very beginning, they have been attended by the best scientists"
+    }
+   ]
+  },
   "14585": {
    "hash": "55ea599f3ba1",
    "checked": "2026-11-24T04:48:04.781Z",
@@ -12572,5 +12713,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T04:48:04.793Z"
+ "updated": "2026-11-24T05:00:29.671Z"
 }
