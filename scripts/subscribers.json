@@ -3,39 +3,39 @@
     "info": {
       "channel": "informationss_iq",
       "subscribers": 19281,
-      "at": "2026-11-24T15:46:11.617Z"
+      "at": "2026-11-24T16:01:17.527Z"
     },
     "news": {
       "channel": "newss_iq",
-      "subscribers": 82740,
-      "at": "2026-11-24T15:46:12.171Z"
+      "subscribers": 82743,
+      "at": "2026-11-24T16:01:18.112Z"
     },
     "games": {
       "channel": "gamersss_iq",
       "subscribers": 8508,
-      "at": "2026-11-24T15:46:12.715Z"
+      "at": "2026-11-24T16:01:18.686Z"
     },
     "music": {
       "channel": "mussic_iq",
       "subscribers": 2303,
-      "at": "2026-11-24T15:46:13.269Z"
+      "at": "2026-11-24T16:01:19.262Z"
     },
     "anime": {
       "channel": "anime_iq3",
       "subscribers": 4500,
-      "at": "2026-11-24T15:46:13.815Z"
+      "at": "2026-11-24T16:01:19.824Z"
     },
     "sport": {
       "channel": "sportts_iq",
       "subscribers": 43693,
-      "at": "2026-11-24T15:46:14.366Z"
+      "at": "2026-11-24T16:01:20.400Z"
     },
     "movies": {
       "channel": "moviess_iq",
       "subscribers": 21923,
-      "at": "2026-11-24T15:46:14.911Z"
+      "at": "2026-11-24T16:01:20.963Z"
     }
   },
-  "total": 182948,
-  "updated": "2026-11-24T15:46:15.311Z"
+  "total": 182951,
+  "updated": "2026-11-24T16:01:21.364Z"
 }
