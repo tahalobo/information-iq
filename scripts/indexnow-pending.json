@@ -1,23 +1,15 @@
 {
- "generated": "2026-11-24T00:17:37.213Z",
- "count": 17,
+ "generated": "2026-11-24T00:33:23.899Z",
+ "count": 9,
  "paths": [
-  "branch.html",
-  "channel.html",
-  "facts.html",
-  "",
-  "trending.html",
-  "topic/علوم.html",
-  "topic/علوم-page-2.html",
-  "topic/علوم-page-3.html",
-  "topic/علوم-page-4.html",
-  "topic/طبيعة-وغرائب.html",
-  "topic/طبيعة-وغرائب-page-2.html",
-  "topic/طبيعة-وغرائب-page-3.html",
-  "topic/البحار-والمحيطات.html",
-  "topic/الولايات-المتحدة.html",
-  "post/news-124736.html",
-  "post/tg-14773.html",
-  "post/tg-14770.html"
+  "topic/تقنية.html",
+  "topic/بغداد.html",
+  "topic/علم-النفس.html",
+  "topic/الإسلام-والتاريخ-الإسلامي.html",
+  "post/sport-264002.html",
+  "post/tg-14767.html",
+  "post/tg-14765.html",
+  "post/tg-14764.html",
+  "post/tg-14763.html"
  ]
 }

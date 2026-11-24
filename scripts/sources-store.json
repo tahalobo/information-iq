@@ -1,5 +1,156 @@
 {
  "posts": {
+  "14763": {
+   "hash": "579d0c3221fd",
+   "checked": "2026-11-24T00:33:02.143Z",
+   "queries": [
+    "أول صورة نشرت على الإنترنت (1992) World Wide Web",
+    "شبكة الويب العالمية مشاركة الصور صورة الإنترنت 1992",
+    "World Wide Web Horribles Cernettes"
+   ],
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/World_Wide_Web",
+     "name": "World Wide Web",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "The World Wide Web (also known as WWW, W3, or simply the Web) is a global interconnected information system that enables content sharing over the Internet. It facilitates access to documents and other web…"
+    }
+   ]
+  },
+  "14764": {
+   "hash": "73bb7aa9fea9",
+   "checked": "2026-11-24T00:32:43.904Z",
+   "queries": [
+    "وصف الطبيب النفسي جورج بولوك ظاهرة تُعرف بـ\"رد فعل الذكرى السنوية\".",
+    "جورج بولوك الذكرى السنوية الطبيب النفسي 1986"
+   ],
+   "sources": [
+    {
+     "url": "https://arabpsychology.com/dictionary/anniversary-reaction-psychological-concept/",
+     "name": "تفاعل الذكرى السنوية: المفهوم، الآليات النفسية، والمظاهر السريرية",
+     "site": "عرب سايكلوجي",
+     "host": "arabpsychology.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 67,
+     "quote": "لفهم كيفية نشوء تفاعل الذكرى السنوية، يجب فحص التفاعل الوثيق بين الآليات الدفاعية النفسية والمسارات البيولوجية العصبية التي تحكم الذاكرة والانفعال."
+    }
+   ]
+  },
+  "14765": {
+   "hash": "f385c1b4da96",
+   "checked": "2026-11-24T00:32:27.790Z",
+   "queries": [
+    "كيف سقطت بغداد؟",
+    "العالم الإسلامي الخلافة العباسية بغداد سقوط 1258"
+   ],
+   "sources": [
+    {
+     "url": "https://www.argeoweb.com/2026/11/mongol-sack-baghdad-1258.html",
+     "name": "سقوط بغداد 1258: الغزو المغولي ونهاية الخلافة العباسية",
+     "site": "argeoweb.com",
+     "host": "argeoweb.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 75,
+     "quote": "سقوط بغداد على يد المغول وقع في فبراير 1258م حين حاصر هولاكو، حفيد جنكيز خان، عاصمة الخلافة العباسية نحو اثني عشر يومًا ثم اقتحمها فقتل الخليفة المستعصم بالله ونهب المدينة وأحرقها."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85_%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A",
+     "name": "العالم الإسلامي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "اختفت الألقاب وخصوصا لقب الخليفة والخلافة الإسلامية، بسقوط الدولة العثمانية وانتهاء حكمها للمشرق الإسلامي ورقعة كبيرة من أوروبا الشرقية."
+    },
+    {
+     "url": "https://islamonline.net/archive/%D8%B3%D9%82%D9%88%D8%B7-%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF-%D8%B9%D8%A7%D8%B5%D9%85%D8%A9-%D8%A7%D9%84%D8%AE%D9%84%D8%A7%D9%81%D8%A9-%D8%A7%D9%84%D8%B9%D8%A8%D8%A7%D8%B3%D9%8A%D8%A9/",
+     "name": "سقوط بغداد عاصمة الخلافة العباسية",
+     "site": "إسلام أون لاين",
+     "host": "islamonline.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 70,
+     "quote": "وبمقتل الخليفة العباسي في (14 من صفر 656 هـ –20 من فبراير 1258) تكون قد انتهت دولة الخلافة العباسية التي حكمت العالم الإسلامي خمسة قرون من العاصمة بغداد لتبدأ بعد قليل في القاهرة عندما أحيا الظاهر بيبرس…"
+    },
+    {
+     "url": "https://www.nabdalarab.com/%D8%A3%D8%B3%D8%A8%D8%A7%D8%A8-%D8%B3%D9%82%D9%88%D8%B7-%D8%A8%D8%BA%D8%AF%D8%A7%D8%AF/",
+     "name": "أسباب سقوط بغداد الحقيقية على يد المغول",
+     "site": "نبض العرب | بوابة الثقافة والتراث العربي",
+     "host": "nabdalarab.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 69,
+     "quote": "شكّل سقوط بغداد عام 1258 على يد المغول واحدة من أعنف الكوارث التي لحقت بالعالم الإسلامي، إذ مثل هذا الحدث انهيارًا تامًا لمنظومة الدولة العباسية التي كانت تمتد لأكثر من خمسة قرون."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Islamic_world",
+     "name": "Islamic world",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "These are the terms Islamic world and Muslim world commonly refer to the Islamic community, which is also known as the Ummah. This consists of all those who adhere to the religious beliefs, politics, and laws…"
+    }
+   ]
+  },
+  "14766": {
+   "hash": "d4fb667b5d03",
+   "checked": "2026-11-24T00:31:58.124Z",
+   "queries": [
+    "أول صورة للقمر وواحدة من أشهر الصور الفلكية في التاريخ... كادت أن تضيع إلى الأبد!",
+    "جون ويليام ويليام درابر صورة تضيع 1840"
+   ],
+   "sources": []
+  },
+  "14767": {
+   "hash": "46e0dbc4901e",
+   "checked": "2026-11-24T00:31:38.054Z",
+   "queries": [
+    "أول صورة ناجحة للشمس التُقطت في 2 أبريل 1845 على يد الفيزيائيين الفرنسيين Hippolyte Fizeau",
+    "Léon Foucault البقع الشمسية صورة ناجحة 1845",
+    "Hippolyte Fizeau Foucault"
+   ],
+   "sources": [
+    {
+     "url": "https://physicstribune.com/experiments/fizeau-speed-of-light/",
+     "name": "Fizeau Experiment: Toothed Wheel Speed of Light (1849)",
+     "site": "Physics Tribune",
+     "host": "physicstribune.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 74,
+     "quote": "How Hippolyte Fizeau timed light over an 8.6 km round trip in Paris with a spinning toothed wheel in 1849, his result, the math and why it mattered."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Hippolyte_Fizeau",
+     "name": "Hippolyte Fizeau",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Armand Hippolyte Louis Fizeau (French: [ipɔlit fizo]; 23 September 1819 – 18 September 1896) was a French physicist who, in 1849, measured the speed of light to within 5% accuracy. In 1851, he measured the…"
+    },
+    {
+     "url": "https://catholicscientists.org/scientists-of-the-past/armand-hyppolite-louis-foucault/",
+     "name": "The Society of Catholic Scientists",
+     "site": "The Society of Catholic Scientists",
+     "host": "catholicscientists.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 59,
+     "quote": "Armand Hippolyte Louis Fizeau (September 23, 1819 to September 18, 1896) Fizeau was a French physicist, most famous for his measurement of the speed of light and for the “Fizeau […]"
+    }
+   ]
+  },
   "14768": {
    "hash": "0ffb15058dc8",
    "checked": "2026-11-24T00:17:19.612Z",
@@ -9649,5 +9800,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T00:17:19.616Z"
+ "updated": "2026-11-24T00:33:02.148Z"
 }
