@@ -1,5 +1,265 @@
 {
  "posts": {
+  "14634": {
+   "hash": "b634a7b82687",
+   "checked": "2026-11-24T04:02:39.424Z",
+   "queries": [
+    "اعتباراً من 1 يوليو",
+    "زواج الأقارب الزواج القسري اعتبارا يوليو"
+   ],
+   "sources": [
+    {
+     "url": "https://www.aleqaria.com.eg/post/details/335226/1-%D9%8A%D9%88%D9%84%D9%8A%D9%88-%D8%A7%D9%84%D9%85%D9%82%D8%A8%D9%84..-%D8%AD%D8%B8%D8%B1-%D8%B2%D9%88%D8%A7%D8%AC-%D8%A7%D9%84%D8%A3%D9%82%D8%A7%D8%B1%D8%A8",
+     "name": "1 يوليو المقبل.. حظر زواج الأقارب",
+     "site": "الجريدة العقارية",
+     "host": "aleqaria.com.eg",
+     "lang": "ar",
+     "kind": "web",
+     "match": 81,
+     "quote": "في خطوة تشريعية وُصفت بأنها غير مسبوقة ضمن تعديلات قانون الأحوال الشخصية، أقرّ البرلمان السويدي قانونًا جديدًا يحظر زواج أبناء العمومة وعددًا من الزيجات بين الأقارب، على أن يدخل القرار حيّز التنفيذ اعتبارًا من…"
+    },
+    {
+     "url": "https://nabd.com/s/173123660-3156b2/%D8%A7%D9%84%D8%B3%D9%88%D9%8A%D8%AF-%D8%AA%D9%82%D8%B1-%D8%AD%D8%B8%D8%B1-%D8%B2%D9%88%D8%A7%D8%AC-%D8%A7%D9%84%D8%A3%D9%82%D8%A7%D8%B1%D8%A8.-%D9%8A%D8%AF%D8%AE%D9%84-%D8%AD%D9%8A%D8%B2-%D8%A7%D9%84%D8%AA%D9%86%D9%81%D9%8A%D8%B0-1-%D9%8A%D9%88%D9%84%D9%8A%D9%88-%D8%A7%D9%84%D9%85%D9%82%D8%A8%D9%84.-%D8%A7%D9%84%D8%A8%D8%B1%D9%84%D9%85%D8%A7%D9%86-%D8%A7%D9%84%D8%B3%D9%88%D9%8A%D8%AF%D9%8A-%D8%B5%D9%88%D8%AA-%D8%A8%D8%A7%D9%84%D9%85%D9%88%D8%A7%D9%81%D9%82%D8%A9-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D9%82%D8%A7%D9%86%D9%88%D9%86-%D8%A7%D9%84%D8%AC%D8%AF%D9%8A%D8%AF",
+     "name": "السويد تقر حظر زواج الأقارب. يدخل حيز التنفيذ 1 يوليو المقبل. البرلمان السويدي صوت بالموافقة على القانون…",
+     "site": "موقع نبض",
+     "host": "nabd.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 67,
+     "quote": "وأعلنت الحكومة السويدية أن الهدف الرئيسي من هذا التشريع، الذي حاز على موافقة البرلمان، هو حماية حقوق الأفراد «خاصة الفتيات والنساء» من الضغوط العائلية والزواج القسري، إلى جانب الحد من المخاطر الطبية والوراثية…"
+    }
+   ]
+  },
+  "14635": {
+   "hash": "e16b12bb33cb",
+   "checked": "2026-11-24T04:02:21.029Z",
+   "queries": [
+    "معركة واترلو وقعت في 18 يونيو 1815 قرب بروكسل بين نابليون والتحالف بقيادة ويلنجتون وبلوخر",
+    "معركة واترلو رسم خريطة بروكسل نابليون 1815"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D9%88%D8%A7%D8%AA%D8%B1%D9%84%D9%88",
+     "name": "معركة واترلو",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 88,
+     "quote": "كانت معركة واترلو المعركة الحاسمة في حملة واترلو، آخر حملات نابليون."
+    },
+    {
+     "url": "https://honairaqnew.iq/%D9%85%D8%B9%D8%B1%D9%83%D8%A9-%D9%88%D8%A7%D8%AA%D8%B1%D9%84%D9%88-%D9%88%D9%82%D8%B9%D8%AA-%D9%81%D9%8A-18-%D9%8A%D9%88%D9%86%D9%8A%D9%88-1815-%D9%82%D8%B1%D8%A8-%D8%A8%D8%B1%D9%88%D9%83%D8%B3%D9%84/",
+     "name": "معركة واترلو وقعت في 18 يونيو 1815 قرب بروكسل بين نابليون والتحالف بقيادة ويلنجتون وبلوخر.",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "معركة واترلو وقعت في 18 يونيو 1815 قرب بروكسل بين نابليون والتحالف بقيادة ويلنجتون وبلوخر."
+    },
+    {
+     "url": "https://www.marefa.org/%D9%85%D8%B9%D8%B1%D9%83%D8%A9_%D9%88%D8%A7%D8%AA%D8%B1%D9%84%D9%88",
+     "name": "معركة واترلو",
+     "site": "المعرفة",
+     "host": "marefa.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 84,
+     "quote": "معركة واترلو Battle of Waterloo، وقعت في 18 يونيو عام 1815 قرب بروكسل ."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Battle_of_Waterloo",
+     "name": "Battle of Waterloo",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 83,
+     "quote": "The Battle of Waterloo was fought on Sunday 18 June 1815, near Waterloo (then in the United Kingdom of the Netherlands, now in Belgium), being the last engagement with Napoleon I. The French Imperial Army…"
+    },
+    {
+     "url": "https://www.aljazeera.net/encyclopedia/2024/4/6/%D9%88%D8%A7%D8%AA%D8%B1%D9%84%D9%88-%D9%85%D8%B9%D8%B1%D9%83%D8%A9-%D8%A3%D9%86%D9%87%D8%AA-%D8%B9%D8%B5%D8%B1-%D8%A7%D9%84%D8%A5%D9%85%D8%A8%D8%B1%D8%A7%D8%B7%D9%88%D8%B1%D9%8A%D8%A9",
+     "name": "واترلو.. معركة أنهت عصر الإمبراطورية النابليونية",
+     "site": "الجزيرة نت",
+     "host": "aljazeera.net",
+     "lang": "ar",
+     "kind": "news",
+     "match": 85,
+     "quote": "جزء من الاحتفال بالذكرى المئوية الثانية لمعركة واترلو في لندن (غيتي) كان نابليون يأمل في هزيمة ويلينغتون قبل وصول البروسيين، ومع ذلك اشتبكت قوات بلوخر مع الفرنسيين في معركة ليجني باليوم نفسه، وعلى الرغم من…"
+    }
+   ]
+  },
+  "14636": {
+   "hash": "160d0ff4e72c",
+   "checked": "2026-11-24T04:02:08.870Z",
+   "queries": [
+    "الزجاج المعشق هو فن يعتمد على استخدام الزجاج الملون في النوافذ والديكورات",
+    "زجاج معشق الزجاج المعشق الملون النوافذ"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B2%D8%AC%D8%A7%D8%AC_%D9%85%D8%B9%D8%B4%D9%82",
+     "name": "زجاج معشق",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 69,
+     "quote": "لهذا السبب وصِفت النوافذ الزجاجية المعشقة بأنها «زخارف جدارية مضيئة»."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Stained_glass",
+     "name": "Stained glass",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 65,
+     "quote": "Stained glass refers to coloured glass as a material or art and architectural works created from it. Although it is traditionally made in flat panels and used as windows, the creations of modern stained glass…"
+    },
+    {
+     "url": "https://www.marefa.org/%D8%B2%D8%AC%D8%A7%D8%AC_%D9%85%D8%B9%D8%B4%D9%82",
+     "name": "زجاج معشق - المعرفة",
+     "site": "المعرفة",
+     "host": "marefa.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 56,
+     "quote": "نشأ فن النوافذ الزجاجية المعشقة في أوروبا الغربية في العصور الوسيطة."
+    },
+    {
+     "url": "https://www.beglassgroup.com/ar/blogs/%D8%B2%D8%AC%D8%A7%D8%AC-%D9%85%D8%B9%D8%B4%D9%82/",
+     "name": "زجاج معشق: الأنواع والاستخدامات 2026",
+     "site": "beglassgroup.com",
+     "host": "beglassgroup.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 68,
+     "quote": "نعم، يوجد زجاج معشق بتصميمات متنوعة تجمع بين الألوان والزخارف المختلفة، ويُستخدم في الأبواب، والشبابيك، والديكورات لإضافة لمسة جمالية تناسب الطابع المعماري للمكان."
+    },
+    {
+     "url": "https://www.ghassandecor.com/stained-glass/",
+     "name": "Ghassan Decor",
+     "site": "ghassandecor.com",
+     "host": "ghassandecor.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "وقد تميز الزجاج المعشق بمجموعة من الألوان والتصاميم المعقدة."
+    }
+   ]
+  },
+  "14637": {
+   "hash": "9a6616723e68",
+   "checked": "2026-11-24T04:01:44.177Z",
+   "queries": [
+    "البومة الثلجية",
+    "بوميات درجات الحرارة البومة الثلجية",
+    "Owl"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A8%D9%88%D9%85%D9%8A%D8%A7%D8%AA",
+     "name": "بوميات",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 62,
+     "quote": "وللبومة أهداب طويلة على جفونها العليا، وتستطيع أن تغلق بها عينيها."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Owl",
+     "name": "Owl",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 58,
+     "quote": "Owls are birds from the order Strigiformes (), which includes over 200 species of mostly solitary and nocturnal birds of prey typified by an upright stance, a large, broad head, binocular vision, binaural…"
+    },
+    {
+     "url": "https://ar.infoanimales.net/%D8%A8%D9%88%D9%87%D9%88/%D8%A7%D9%84%D8%A8%D9%88%D9%85%D8%A9-%D8%A7%D9%84%D8%AB%D9%84%D8%AC%D9%8A%D8%A9%D8%8C-%D8%A7%D9%84%D9%85%D9%81%D8%AA%D8%B1%D8%B3-%D8%A7%D9%84%D9%85%D9%87%D9%8A%D8%A8-%D9%84%D9%84%D8%AC%D9%84%D9%8A%D8%AF-%D8%A7%D9%84%D9%82%D8%B7%D8%A8%D9%8A/",
+     "name": "البومة الثلجية: خصائصها وموطنها وحياة بومة القطب الشمالي",
+     "site": "InfoAnimales",
+     "host": "ar.infoanimales.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 58,
+     "quote": "البومة الثلجية طائر نهاري وشفق متكيف مع البرد القارس في التندرا القطبية الشمالية."
+    },
+    {
+     "url": "https://www.alwatanvoice.com/arabic/news/2014/03/02/502284.html",
+     "name": "من هى البومة الثلجية",
+     "site": "دنيا الوطن",
+     "host": "alwatanvoice.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 55,
+     "quote": "تنشط البومة الثلجية بالخصوص عند الفجر و الغسق ، وتتميز الذكور بعدوانية شديدة خصوصا في موسم التزواج ."
+    }
+   ]
+  },
+  "14638": {
+   "hash": "0c37899a2bc6",
+   "checked": "2026-11-24T04:01:26.845Z",
+   "queries": [
+    "الطائر الذي ليس لديه اجنحه Zealand"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D8%A7%D9%84%D8%B7%D8%A7%D8%A6%D8%B1-%D8%A7%D9%84%D8%B0%D9%8A-%D9%84%D9%8A%D8%B3-%D9%84%D8%AF%D9%8A%D9%87-%D8%A7%D8%AC%D9%86%D8%AD%D9%87/",
+     "name": "الطائر الذي ليس لديه اجنحه",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "طائر الكيوي هو طائر لا يطير ينتمي إلى فصيلة الكيويات، ويُعد من أشهر الحيوانات الوطنية في New Zealand."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%83%D9%8A%D9%88%D9%8A_(%D8%B7%D8%A7%D8%A6%D8%B1)",
+     "name": "كيوي (طائر)",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 69,
+     "quote": "الكِيْوِي هو طائرٌ لاطَيَّار مُنتشرٌ في نيوزيلندَا يتبعُ رُتبةَ الكِيوِيَّات، والمُمَثِّلُ الوَحيد لِفَصيلة الكِيوِيَّة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Kiwi_(bird)",
+     "name": "Kiwi (bird)",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 65,
+     "quote": "Kiwi are flightless birds endemic to New Zealand of the order Apterygiformes. The five extant species fall into the family Apterygidae and genus Apteryx. Approximately the size of a domestic chicken, kiwi are…"
+    },
+    {
+     "url": "https://mafahem.com/%D8%A7%D9%8A-%D8%A7%D9%84%D8%B7%D9%8A%D9%88%D8%B1-%D9%84%D8%A7-%D8%AA%D8%B3%D8%AA%D8%B7%D9%8A%D8%B9-%D8%A7%D9%84%D8%B7%D9%8A%D8%B1%D8%A7%D9%86",
+     "name": "اي الطيور لا تستطيع الطيران؟ أشهر 9 طيور لا تطير",
+     "site": "Mafaheem",
+     "host": "mafahem.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 51,
+     "quote": "ريا العظيم هو أكبر طائر في الأمريكتين، واسم \"ريا\" مشتق من الكلمة اليونانية التي تعني \"مجنح\"، عندما يرفع أجنحته، يمكنك رؤية الأجنحة العملاقة."
+    },
+    {
+     "url": "https://ar.postposmo.com/%D8%A7%D9%84%D8%B7%D9%8A%D9%88%D8%B1-%D8%A7%D9%84%D8%AA%D9%8A-%D9%84%D8%A7-%D8%AA%D8%B7%D9%8A%D8%B1/",
+     "name": "الطيور التي لا تطير: الخصائص والأمثلة والمزيد ▷➡️ Postposmo",
+     "site": "Postposmo",
+     "host": "ar.postposmo.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 51,
+     "quote": "ليس لديهم عارضة على صدرهم ، هذا العظم يساعدهم في تنمية عضلاتهم ويسمح للطيور الطائرة بالقيام بالطيران."
+    }
+   ]
+  },
   "14639": {
    "hash": "b99f343dba7d",
    "checked": "2026-11-24T03:47:07.571Z",
@@ -11778,5 +12038,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T03:47:07.575Z"
+ "updated": "2026-11-24T04:02:39.428Z"
 }
