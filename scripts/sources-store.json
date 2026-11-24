@@ -1,5 +1,222 @@
 {
  "posts": {
+  "14592": {
+   "hash": "9e9225319253",
+   "checked": "2026-11-24T04:32:52.527Z",
+   "queries": [
+    "صراخ النباتات Cell",
+    "الطبيعة الصامتة القطاع الزراعي صراخ النباتات"
+   ],
+   "sources": [
+    {
+     "url": "https://seventhnews.com/%D8%B5%D8%B1%D8%A7%D8%AE-%D8%A7%D9%84%D9%86%D8%A8%D8%A7%D8%AA%D8%A7%D8%AA/",
+     "name": "وكالة السابعة نيوز الاخبارية",
+     "site": "وكالة السابعة نيوز الاخبارية",
+     "host": "seventhnews.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "في اكتشاف علمي لافت يغير نظرتنا للطبيعة الصامتة، توصل باحثون في دراسة حديثة نُشرت بدورية “Cell” إلى أن نباتات الطماطم والتبغ تصدر أصوات “فرقعة” بترددات فوق صوتية عند قطعها أو نقص المياه هذه الأصوات التي تعجز…"
+    },
+    {
+     "url": "https://honairaqnew.iq/%D8%B5%D8%B1%D8%A7%D8%AE-%D8%A7%D9%84%D9%86%D8%A8%D8%A7%D8%AA%D8%A7%D8%AA/",
+     "name": "وكالة هنا العراق الاخبارية",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "في اكتشاف علمي لافت يغير نظرتنا للطبيعة الصامتة، توصل باحثون في دراسة حديثة نُشرت بدورية “Cell” إلى أن نباتات الطماطم والتبغ تصدر أصوات “فرقعة” بترددات فوق صوتية عند قطعها أو نقص المياه هذه الأصوات التي تعجز…"
+    }
+   ]
+  },
+  "14594": {
+   "hash": "79b4ce2e68a4",
+   "checked": "2026-11-24T04:32:28.554Z",
+   "queries": [
+    "إدوارد جينر واكتشاف اللقاح"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A5%D8%AF%D9%88%D8%A7%D8%B1%D8%AF_%D8%AC%D9%8A%D9%86%D8%B1",
+     "name": "إدوارد جينر",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 81,
+     "quote": "إدوارد جينر (الإنجليزية: Edward Jenner) هو طبيب إنكليزي (17 مايو 1749 - 26 يناير 1823) كان أول من اكتشف لقاح لمرض الجدري، غالبًا ما يُطلق على جينر لقب «أبو علم المناعة»، ويقال إن عمله «أنقذ حياة أكثر من عمل أي…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Edward_Jenner",
+     "name": "Edward Jenner",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 76,
+     "quote": "Edward Jenner (17 May 1749 – 26 January 1823) was an English physician and scientist who pioneered the concept of vaccines and created the smallpox vaccine, the world's first vaccine. The terms vaccine and…"
+    },
+    {
+     "url": "https://maestrovirtuale.com/ar/%D8%A5%D8%AF%D9%88%D8%A7%D8%B1%D8%AF-%D8%AC%D9%8A%D9%86%D8%B1%3A-%D8%B3%D9%8A%D8%B1%D8%A9-%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9%D8%8C-%D8%A7%D9%83%D8%AA%D8%B4%D8%A7%D9%81%D8%A7%D8%AA%D8%8C-%D9%88%D9%85%D8%B3%D8%A7%D9%87%D9%85%D8%A7%D8%AA/",
+     "name": "إدوارد جينر: السيرة الذاتية والاكتشافات والمساهمات",
+     "site": "Maestrovirtuale.com",
+     "host": "maestrovirtuale.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 83,
+     "quote": "اكتشاف لقاح الجدري من قبل الطبيب إدوارد جينر: التاريخ والأهمية."
+    },
+    {
+     "url": "https://raghad.world/world/scientists/item/edward-jenner",
+     "name": "مبتكر أول لقاح في التاريخ",
+     "site": "عالم رغد",
+     "host": "raghad.world",
+     "lang": "ar",
+     "kind": "web",
+     "match": 79,
+     "quote": "طبيب ريفي إنجليزي ابتكر أول لقاح في التاريخ ضد مرض الجدري، مؤسّسًا بذلك علم المناعة الحديث ومنقذًا ملايين الأرواح عبر القرون."
+    },
+    {
+     "url": "https://mufakeroon.com/p/%D8%A5%D8%AF%D9%88%D8%A7%D8%B1%D8%AF-%D8%AC%D9%8A%D9%86%D8%B1",
+     "name": "إدوارد جينر - مفكرون",
+     "site": "mufakeroon.com",
+     "host": "mufakeroon.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 74,
+     "quote": "هو طبيب وجراح إنجليزي، يُسمى بأبي علم المناعة، وهو مكتشف لقاح مرض الجدري."
+    }
+   ]
+  },
+  "14620": {
+   "hash": "e25f154228d9",
+   "checked": "2026-11-24T04:32:03.575Z",
+   "queries": [
+    "بكتيريا تستطيع العيش داخل المفاعلات النـ.ووية وتحمل الاشعاع العالي Deinococcus",
+    "بكتيريا المفاعلات النووية وتحمل الاشعاع"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D8%A8%D9%83%D8%AA%D9%8A%D8%B1%D9%8A%D8%A7-%D8%AA%D8%B3%D8%AA%D8%B7%D9%8A%D8%B9-%D8%A7%D9%84%D8%B9%D9%8A%D8%B4-%D8%AF%D8%A7%D8%AE%D9%84-%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%B9%D9%84%D8%A7%D8%AA-%D8%A7/",
+     "name": "بكتيريا تستطيع العيش داخل المفاعلات النـ.ووية وتحمل الاشعاع العالي",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "بكتيريا تستطيع العيش داخل المفاعلات النـ.ووية وتحمل الاشعاع العالي"
+    },
+    {
+     "url": "https://bekafi.com/174661/",
+     "name": "البكتيريا المقاومة للإشعاع",
+     "site": "Bekaficom-بكفيكم",
+     "host": "bekafi.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 86,
+     "quote": "يمكن العثور على بكتيريا مقاومة للإشعاع في بيئات مختلفة، لكن مقاومتها لا تعني أنها تعيش تلقائيًا في كل جزء من المفاعلات النووية."
+    },
+    {
+     "url": "https://arsco-ai.org/publications/829",
+     "name": "بكتيريا تتحدى الإشعاع",
+     "site": "منظمة المجتمع العلمي العربي",
+     "host": "arsco-ai.org",
+     "lang": "ar",
+     "kind": "web",
+     "match": 77,
+     "quote": "وعُثِرَ عليها بصورة طبيعية في عينات تربة من مختلف البيئات، بما في ذلك التربة عالية الإشعاع في مواقع النفايات النووية، و وُجِدَت كذلك في الصخر الجيري."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Deinococcus",
+     "name": "Deinococcus",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Deinococcus (from Ancient Greek δεινός (deinós), meaning \"dreadful\", and κόκκος (kókkos), meaning \"grain\") is in the formerly monotypic family Deinococcaceae, and one genus of three in the order Deinococcales…"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A8%D9%83%D8%AA%D9%8A%D8%B1%D9%8A%D8%A7",
+     "name": "بكتيريا",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "في هذه الحالة من السبات، قد تظل هذه الكائنات على قيد الحياة لملايين السنين، وتسمح الأبواغ حتى للبكتيريا بالنجاة من التعرض إلى الفراغ والإشعاع في الفضاء."
+    }
+   ]
+  },
+  "14623": {
+   "hash": "e329da1f2081",
+   "checked": "2026-11-24T04:31:46.051Z",
+   "queries": [
+    "الخيمياء"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AE%D9%8A%D9%85%D9%8A%D8%A7%D8%A1_%D9%88%D8%A7%D9%84%D9%83%D9%8A%D9%85%D9%8A%D8%A7%D8%A1_%D9%81%D9%8A_%D8%B9%D8%B5%D8%B1_%D8%A7%D9%84%D8%AD%D8%B6%D8%A7%D8%B1%D8%A9_%D8%A7%D9%84%D8%A5%D8%B3%D9%84%D8%A7%D9%85%D9%8A%D8%A9",
+     "name": "الخيمياء والكيمياء في عصر الحضارة الإسلامية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 74,
+     "quote": "وضع جابر بن حيان أيضًا نظام العناصر المستخدم في خيمياء القرون الوسطى."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Alchemy_in_the_medieval_Islamic_world",
+     "name": "Alchemy in the medieval Islamic world",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 70,
+     "quote": "Alchemy in the medieval Islamic world refers to both traditional alchemy and early practical chemistry (the early chemical investigation of nature in general) by Muslim scholars in the medieval Islamic world.…"
+    },
+    {
+     "url": "https://khalieah.com/alchemy/",
+     "name": "ما هي الخيمياء: وما حقيقة هذا العلم الغامض وكيف أسس للكيمياء الحديثة؟",
+     "site": "خلية",
+     "host": "khalieah.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 77,
+     "quote": "إكسير الحياة الخيمياء الرازي الرمزية الخيميائية العمل العظيم الفلسفة الهرمسية الكيمياء الطبية الكيمياء القديمة باراسيلسوس تاريخ الكيمياء تحويل المعادن جابر بن حيان حجر الفلاسفة رموز الخيمياء"
+    },
+    {
+     "url": "https://www.marefa.org/%D8%AE%D9%8A%D9%85%D9%8A%D8%A7%D8%A1",
+     "name": "خيمياء - المعرفة",
+     "site": "المعرفة",
+     "host": "marefa.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "كيمياء السعادة – نص في الفلسفة الإسلامية والخيمياء الروحانية الفارسية من الغزالي (1058–1111)."
+    },
+    {
+     "url": "https://ar.uniproyecta.com/%D8%B9%D8%A7%D9%84%D9%85-%D8%A7%D9%84%D8%AE%D9%8A%D9%85%D9%8A%D8%A7%D8%A1-%D8%A7%D9%84%D8%B1%D8%A7%D8%A6%D8%B9%D8%8C-%D9%85%D9%86-%D8%AA%D8%AD%D9%88%D9%8A%D9%84-%D8%A7%D9%84%D9%85%D8%B9%D8%A7%D8%AF%D9%86-%D8%A5%D9%84%D9%89-%D8%AA%D8%B7%D9%88%D8%B1-%D8%A7%D9%84%D8%B1%D9%88%D8%AD/",
+     "name": "ما هي الخيمياء: تاريخها وأسرارها ومعناها الروحي",
+     "site": "UniProyecta",
+     "host": "ar.uniproyecta.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 67,
+     "quote": "الرئيسية » ثقافة » عالم الخيمياء الرائع: من تحويل المعادن إلى تطور الروح"
+    }
+   ]
+  },
+  "14624": {
+   "hash": "bf098bed5f0b",
+   "checked": "2026-11-24T04:31:34.381Z",
+   "queries": [
+    "لم تكن اللعبة مجرد رقعة خشبية صغيرة وقطع بلاستيكية Human Chess Match",
+    "سانت بطرسبرغ الجيش الأحمر اللعبة رقعة 1924"
+   ],
+   "sources": []
+  },
   "14625": {
    "hash": "67894897ae18",
    "checked": "2026-11-24T04:18:09.210Z",
@@ -12145,5 +12362,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T04:18:09.215Z"
+ "updated": "2026-11-24T04:32:52.533Z"
 }
