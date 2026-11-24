@@ -1,5 +1,94 @@
 {
  "posts": {
+  "14768": {
+   "hash": "0ffb15058dc8",
+   "checked": "2026-11-24T00:17:19.612Z",
+   "queries": [
+    "لأول مرة.. إزالة الكروموسوم الزائد المرتبط بمتلازمة داون داخل المختبر",
+    "البحث العلمي إزالة الكروموسوم"
+   ],
+   "sources": []
+  },
+  "14770": {
+   "hash": "bff6e4394510",
+   "checked": "2026-11-24T00:17:12.050Z",
+   "queries": [
+    "أسس نابليون بونابرت امتحان البكالوريا في فرنسا",
+    "نابليون بونابرت دول العالم امتحان البكالوريا 1808",
+    "Napoleon"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%86%D8%A7%D8%A8%D9%84%D9%8A%D9%88%D9%86_%D8%A8%D9%88%D9%86%D8%A7%D8%A8%D8%B1%D8%AA",
+     "name": "نابليون بونابرت",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 70,
+     "quote": "وفي هذه الفترة التقى بونابرت وزير خارجية فرنسا الجديد «شارل موريس آل تاليران»—الذي أبقاه نابليون في منصبه عندما أصبح إمبراطورًا لاحقًا، وأخذا يُعدّان العدة لغزو بريطانيا."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Napoleon",
+     "name": "Napoleon",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 66,
+     "quote": "Napoleon Bonaparte (born Napoleone di Buonaparte; 15 August 1769 – 5 May 1821) was Emperor of the French from 18 May 1804 until his first abdication in 1814, with a brief restoration during the Hundred Days in…"
+    }
+   ]
+  },
+  "14771": {
+   "hash": "fc1f4c5c53e4",
+   "checked": "2026-11-24T00:16:56.003Z",
+   "queries": [
+    "الصين تختبر طريقة جديدة لمواجهة الحر",
+    "مقاطعة شاندونغ درجات مئوية تختبر الحر"
+   ],
+   "sources": []
+  },
+  "14772": {
+   "hash": "8067eb48c114",
+   "checked": "2026-11-24T00:16:42.505Z",
+   "queries": [
+    "الرجل الذي ساعد الشرطة... وهو القاتل نفسه!",
+    "القاتل المتسلسل تيد بندي ساعد الشرطة"
+   ],
+   "sources": []
+  },
+  "14773": {
+   "hash": "986e2b8304a5",
+   "checked": "2026-11-24T00:16:31.944Z",
+   "queries": [
+    "أجرت الولايات المتحدة سلسلة تجارب نووية في المحيط الهادئ ضمن برنامجها العسكري",
+    "سباق التسلح النووي المحيط الهادئ الولايات المتحدة 1958",
+    "Nuclear arms race"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B3%D8%A8%D8%A7%D9%82_%D8%A7%D9%84%D8%AA%D8%B3%D9%84%D8%AD_%D8%A7%D9%84%D9%86%D9%88%D9%88%D9%8A",
+     "name": "سباق التسلح النووي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 55,
+     "quote": "بعد ستة أشهر فقط من إنشاء الجمعية العامة للأمم المتحدة، أجرت الولايات المتحدة أولى تجاربها النووية بعد الحرب."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Nuclear_arms_race",
+     "name": "Nuclear arms race",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "The nuclear arms race was an arms race competition for supremacy in nuclear warfare between the United States, the Soviet Union, and their respective allies during the Cold War. During this same period, in…"
+    }
+   ]
+  },
   "14774": {
    "hash": "711330b724fb",
    "checked": "2026-11-24T00:02:47.159Z",
@@ -9560,5 +9649,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T00:02:47.162Z"
+ "updated": "2026-11-24T00:17:19.616Z"
 }
