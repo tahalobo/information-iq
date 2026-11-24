@@ -1,5 +1,94 @@
 {
  "posts": {
+  "14522": {
+   "hash": "847a0cc6982b",
+   "checked": "2026-11-24T06:17:17.164Z",
+   "queries": [
+    "ساعة الـ 10 آلاف عام اختراع للأجيال القادمة",
+    "الأجيال القادمة ساعة ميكانيكية آلاف اختراع"
+   ],
+   "sources": []
+  },
+  "14524": {
+   "hash": "8a5125ccb562",
+   "checked": "2026-11-24T06:17:05.821Z",
+   "queries": [
+    "تغطية حفل ميت غالا - Met Gala Gala",
+    "ميت غالا السجادة الحمراء مساء الموضة"
+   ],
+   "sources": []
+  },
+  "14525": {
+   "hash": "5e95d9ec8a76",
+   "checked": "2026-11-24T06:16:58.331Z",
+   "queries": [
+    "جراحة التجميل ابتكار هندي منذ عام 600 ق.م",
+    "جراحة تجميلية جراحة التجميل ابتكار هندي",
+    "Plastic surgery"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AC%D8%B1%D8%A7%D8%AD%D8%A9_%D8%AA%D8%AC%D9%85%D9%8A%D9%84%D9%8A%D8%A9",
+     "name": "جراحة تجميلية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 63,
+     "quote": "الهند، يرجع تاريخ جراحة التجميل الي العالم القديم."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Plastic_surgery",
+     "name": "Plastic surgery",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 59,
+     "quote": "Plastic surgery is a surgical specialty involving restoration, reconstruction, or alteration of the human body. It can be divided into two main categories: reconstructive surgery and cosmetic surgery.…"
+    }
+   ]
+  },
+  "14526": {
+   "hash": "9dda49bc2297",
+   "checked": "2026-11-24T06:16:39.758Z",
+   "queries": [
+    "البرق المتجمد",
+    "درجة حرارتها درجة مئوية المتجمد صاعقة"
+   ],
+   "sources": []
+  },
+  "14527": {
+   "hash": "e858a6d11f91",
+   "checked": "2026-11-24T06:16:31.011Z",
+   "queries": [
+    "\"مسبار باركر\": الرحلة الانتحارية نحو قلب الشمس",
+    "مسبار باركر الشمسي مسبار باركر الرحلة تقني 2026",
+    "Parker Solar Probe"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%B3%D8%A8%D8%A7%D8%B1_%D8%A8%D8%A7%D8%B1%D9%83%D8%B1_%D8%A7%D9%84%D8%B4%D9%85%D8%B3%D9%8A",
+     "name": "مسبار باركر الشمسي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 83,
+     "quote": "سيكون «مسبار باركر» أول مركبة فضائية تذهب إلى الهالة الشمسية المنخفضة."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Parker_Solar_Probe",
+     "name": "Parker Solar Probe",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 78,
+     "quote": "The Parker Solar Probe (PSP; previously Solar Probe, Solar Probe Plus or Solar Probe+) is a NASA space probe launched in 2018 to make observations of the Sun's outer corona."
+    }
+   ]
+  },
   "14528": {
    "hash": "4f688fd9fe14",
    "checked": "2026-11-24T06:03:09.075Z",
@@ -13442,5 +13531,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T06:03:09.083Z"
+ "updated": "2026-11-24T06:17:17.170Z"
 }
