@@ -1,5 +1,206 @@
 {
  "posts": {
+  "14509": {
+   "hash": "e185f34e9257",
+   "checked": "2026-11-24T06:47:53.738Z",
+   "queries": [
+    "هل يمكن ان تتغير جيناتك خلال حياتك ؟ Epigenetics",
+    "الحمض النووي علم التخلق تتغير جيناتك",
+    "Epigenetics"
+   ],
+   "sources": [
+    {
+     "url": "https://www.genome.gov/genetics-glossary/Epigenetics",
+     "name": "Epigenetics",
+     "site": "Genome.gov",
+     "host": "genome.gov",
+     "lang": "en",
+     "kind": "official",
+     "match": 97,
+     "quote": "Epigenetics is an emerging field of science that studies heritable changes caused by the activation and deactivation of genes without any change in the underlying DNA sequence of the organism."
+    },
+    {
+     "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12204592/",
+     "name": "Introduction: Epigenetics",
+     "site": "pmc.ncbi.nlm.nih.gov",
+     "host": "pmc.ncbi.nlm.nih.gov",
+     "lang": "en",
+     "kind": "science",
+     "match": 97,
+     "quote": "Epigenetics emerged as the dynamic successor to classical genetics, moving beyond the static sequence of the double helix that carries the code of life. The field studies how chemical and molecular changes…"
+    },
+    {
+     "url": "https://my.clevelandclinic.org/health/articles/epigenetics",
+     "name": "What Is Epigenetics?",
+     "site": "Cleveland Clinic",
+     "host": "my.clevelandclinic.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Epigenetics is the study of the how our environment influences our genes. What we eat, exercise and more affect our epigenome, in turn, shaping our health and disease risk."
+    },
+    {
+     "url": "https://www.psychologytoday.com/us/basics/epigenetics",
+     "name": "Epigenetics",
+     "site": "Psychology Today",
+     "host": "psychologytoday.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Epigenetics explores how the environment and other factors can change gene expression. While epigenetic changes do not alter the sequence of a person's genetic code, they can play an important role in…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Epigenetics",
+     "name": "Epigenetics",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "Epigenetics is the study of changes in gene expression that occur without  altering  the DNA sequence. The Greek prefix epi- (ἐπι- \"over, outside of, around\") in epigenetics implies features that are \"on top…"
+    }
+   ]
+  },
+  "14510": {
+   "hash": "99be4b6d163b",
+   "checked": "2026-11-24T06:47:36.809Z",
+   "queries": [
+    "نظرية سرقة الغيوم و الحرب المناخية بين الحقيقة و الخيال",
+    "الاستمطار الصناعي يوديد الفضة نظرية سرقة 1989"
+   ],
+   "sources": []
+  },
+  "14511": {
+   "hash": "ca93da3f3dba",
+   "checked": "2026-11-24T06:47:13.935Z",
+   "queries": [
+    "مطاعم الوجبات السريعة في بومبي القديمة Thermopolium",
+    "وجبة سريعة مطاعم الوجبات السريعة بومبي الحفريات 2000",
+    "Fast food Thermopolium"
+   ],
+   "sources": [
+    {
+     "url": "https://www.smithsonianmag.com/smart-news/romans-loved-fast-food-much-we-do-180971845/",
+     "name": "Recently Uncovered Thermopolium Reminds Us That Romans Loved Fast Food as Much as We Do",
+     "site": "Smithsonian Magazine",
+     "host": "smithsonianmag.com",
+     "lang": "en",
+     "kind": "science",
+     "match": 97,
+     "quote": "Similar snack counters dug up throughout Pompeii were once destinations for on-the-go Romans looking for a quick bite"
+    },
+    {
+     "url": "https://honairaqnew.iq/%D9%85%D8%B7%D8%A7%D8%B9%D9%85-%D8%A7%D9%84%D9%88%D8%AC%D8%A8%D8%A7%D8%AA-%D8%A7%D9%84%D8%B3%D8%B1%D9%8A%D8%B9%D8%A9-%D9%81%D9%8A-%D8%A8%D9%88%D9%85%D8%A8%D9%8A-%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85/",
+     "name": "مطاعم الوجبات السريعة في بومبي القديمة",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": ""
+    },
+    {
+     "url": "https://allthatsinteresting.com/pompeii-thermopolium",
+     "name": "2,000-Year-Old Snack Bars Found In Pompeii Show Even Ancient Romans Liked Fast Food",
+     "site": "All That's Interesting",
+     "host": "allthatsinteresting.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "The discovery of these thermopolia in Pompeii sheds new light on how ancient Romans congregated, socialized, and feasted."
+    },
+    {
+     "url": "https://www.commonlit.org/texts/fast-food-in-ancient-rome",
+     "name": "Fast Food in Ancient Rome by Tracy Vonder Brink",
+     "site": "CommonLit",
+     "host": "commonlit.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Archeologists have made some surprising discoveries about fast food restaurants in Pompeii. Grades 3–5 non-fiction with reading questions."
+    },
+    {
+     "url": "https://www.thearchaeologist.org/blog/ancient-roman-fast-food-the-thermopolia-of-pompeii-and-herculaneum",
+     "name": "Ancient Roman Fast Food: The Thermopolia of Pompeii and Herculaneum",
+     "site": "The Archaeologist",
+     "host": "thearchaeologist.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 75,
+     "quote": "Ancient Roman Fast Food: The Thermopolia of Pompeii and Herculaneum Long before the modern drive-thru, the citizens of ancient Rome enjoyed a sophisticated \"grab-and-go\" food culture. In cities like Pompeii…"
+    }
+   ]
+  },
+  "14513": {
+   "hash": "f08bdfa21371",
+   "checked": "2026-11-24T06:46:53.612Z",
+   "queries": [
+    "نيورالينك عندما يتحدث الدماغ مع الحاسوب",
+    "نيورالينك واجهة الدماغ والحاسوب يتحدث تقنيات 2026",
+    "Neuralink"
+   ],
+   "sources": [
+    {
+     "url": "https://builtin.com/hardware/what-is-neuralink",
+     "name": "What Is Neuralink? What We Know So Far.",
+     "site": "Built In",
+     "host": "builtin.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Neuralink is a neurotechnology company founded by Elon Musk developing an implantable, brain-computer interface (BCI) to help paralyzed individuals control devices with their brain activity and potentially…"
+    },
+    {
+     "url": "https://honairaqnew.iq/%D9%86%D9%8A%D9%88%D8%B1%D8%A7%D9%84%D9%8A%D9%86%D9%83-%D8%B9%D9%86%D8%AF%D9%85%D8%A7-%D9%8A%D8%AA%D8%AD%D8%AF%D8%AB-%D8%A7%D9%84%D8%AF%D9%85%D8%A7%D8%BA-%D9%85%D8%B9-%D8%A7%D9%84%D8%AD%D8%A7%D8%B3/",
+     "name": "نيورالينك عندما يتحدث الدماغ مع الحاسوب",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 93,
+     "quote": ""
+    },
+    {
+     "url": "https://tekingame.com/ar/blog/neuralink-cyborg-era-2026-ar",
+     "name": "نيورالينك وعصر السايبورغ: عندما يتصل دماغك بالإنترنت",
+     "site": "تكين جيم",
+     "host": "tekingame.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 69,
+     "quote": "في اليوم الأخير من عام 2025، أعلن إيلون ماسك أن شركة نيورالينك (Neuralink) ستدخل مرحلة «الإنتاج الضخم» لواجهة الدماغ والحاسوب في عام 2026 مع عمليات جراحية آلية بالكامل تقريباً."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%86%D9%8A%D9%88%D8%B1%D8%A7%D9%84%D9%8A%D9%86%D9%83",
+     "name": "نيورالينك",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 52,
+     "quote": "شركة نيورالينك هي شركة أمريكية تعمل في مجال التكنولوجيا العصبية، حيث تطور واجهات الدماغ والحاسوب القابلة للزرع (BCIs) منذ عام 2024."
+    },
+    {
+     "url": "https://www.arrajol.com/content/394181/%D8%AA%D9%83%D9%86%D9%88%D9%84%D9%88%D8%AC%D9%8A%D8%A7/%D9%85%D8%A7%D8%B3%D9%83-%D9%8A%D8%B9%D9%84%D9%86-2026-%D8%B9%D8%A7%D9%85-%D8%A7%D9%84%D8%A5%D9%86%D8%AA%D8%A7%D8%AC-%D8%A7%D9%84%D8%B6%D8%AE%D9%85-%D9%84%D8%B4%D8%B1%D8%A7%D8%A6%D8%AD-%D9%86%D9%8A%D9%88%D8%B1%D8%A7%D9%84%D9%8A%D9%86%D9%83",
+     "name": "ماسك يعلن: 2026 عام الإنتاج الضخم لشرائح \"نيورالينك\"",
+     "site": "الرجل",
+     "host": "arrajol.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 59,
+     "quote": "أعلن الملياردير إيلون ماسك ، مؤسس شركة نيورالينك ، عن عزم شركته المتخصصة في التقنيات العصبية بدء الإنتاج الضخم لأجهزة واجهة الدماغ والحاسوب بحلول عام 2026، مع التحول نحو تنفيذ العمليات الجراحية بالاعتماد الكلي…"
+    }
+   ]
+  },
+  "14514": {
+   "hash": "2b3e0e7b3a10",
+   "checked": "2026-11-24T06:46:29.625Z",
+   "queries": [
+    "تأثير مانديلا عندما تخوننا الذاكرة الجماعية",
+    "ميكي ماوس نيلسون مانديلا تأثير الجماعية 2013"
+   ],
+   "sources": []
+  },
   "14515": {
    "hash": "1079c1b35db5",
    "checked": "2026-11-24T06:32:56.941Z",
@@ -13723,5 +13924,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T06:32:56.948Z"
+ "updated": "2026-11-24T06:47:53.756Z"
 }
