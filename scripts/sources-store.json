@@ -1,5 +1,150 @@
 {
  "posts": {
+  "14757": {
+   "hash": "6be92dfbdcf0",
+   "checked": "2026-11-24T00:48:15.289Z",
+   "queries": [
+    "العام الذي اختفى فيه الصيف"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D8%A7%D9%84%D8%B9%D8%A7%D9%85-%D8%A7%D9%84%D8%B0%D9%8A-%D8%A7%D8%AE%D8%AA%D9%81%D9%89-%D9%81%D9%8A%D9%87-%D8%A7%D9%84%D8%B5%D9%8A%D9%81/",
+     "name": "العام الذي اختفى فيه الصيف",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 96,
+     "quote": "في عام 1816، اختفى الصيف من مناطق واسعة حول العالم، وانخفضت درجات الحرارة بشكل غير طبيعي حتى تساقط الثلج في بعض الأماكن خلال أشهر الصيف."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AC%D8%A8%D9%84_%D8%AA%D8%A7%D9%85%D8%A8%D9%88%D8%B1%D8%A7",
+     "name": "جبل تامبورا",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "بمناسبة مرور مئتي عام على ثوران البركان أُصدر كتاب عام 2015 بعنوان \"تامبورا.."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Mount_Tambora",
+     "name": "Mount Tambora",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "Mount Tambora, or Tomboro, is an active stratovolcano in West Nusa Tenggara, Indonesia. Located on Sumbawa in the Lesser Sunda Islands, volcanism is the result of subduction zones. The 1815 eruption was the…"
+    },
+    {
+     "url": "https://storydz.com/strange-stories/year-without-summer.html",
+     "name": "السنة التي اختفى فيها الشمس",
+     "site": "storydz.com",
+     "host": "storydz.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "لكن الكارثة الحقيقية جاءت في 1816: الرماد البركاني في الغلاف الجوي حجب أشعة الشمس، فانخفضت حرارة الأرض."
+    },
+    {
+     "url": "https://ar.meteorologiaenred.com/%D8%A7%D9%84%D8%B9%D8%A7%D9%85-%D8%A8%D8%AF%D9%88%D9%86-%D8%B5%D9%8A%D9%81.html",
+     "name": "سنة بلا صيف: متى كانت ، أسبابها وعواقبها",
+     "site": "Meteorología en Red",
+     "host": "ar.meteorologiaenred.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 58,
+     "quote": "نتيجةً لثوران بركان جبل تامبورا، الواقع في باغوا، بين 5 و10 أبريل 1816، انطلقت سحب هائلة من الغبار والرماد إلى الغلاف الجوي."
+    }
+   ]
+  },
+  "14758": {
+   "hash": "1411b2438ce1",
+   "checked": "2026-11-24T00:47:52.182Z",
+   "queries": [
+    "حرب الإيمو العظمى"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AD%D8%B1%D8%A8_%D8%A7%D9%84%D8%A5%D9%8A%D9%85%D9%88",
+     "name": "حرب الإيمو",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 73,
+     "quote": "بعد انسحاب الجيش، استمرت هجمات طيور الإيمو على المحاصيل."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Emu_War",
+     "name": "Emu War",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 69,
+     "quote": "The Emu War (or Great Emu War) was a nuisance wildlife management operation undertaken by the Australian Army in late 1932."
+    },
+    {
+     "url": "https://alfallujah.tv/%D8%AD%D8%B1%D8%A8-%D8%A7%D9%84%D8%A5%D9%8A%D9%85%D9%88-%D8%A7%D9%84%D8%B9%D8%B8%D9%85%D9%89/",
+     "name": "حرب الإيمو العظمى.. قصة المواجهة التي عجز فيها الجيش الأسترالي عن هزيمة الطيور",
+     "site": "قناة الفلوجة | Alfallujah Tv",
+     "host": "alfallujah.tv",
+     "lang": "ar",
+     "kind": "web",
+     "match": 80,
+     "quote": "خلال عام 1932، اتجهت أعداد كبيرة من طيور الإيمو إلى المناطق الزراعية غرب أستراليا، في إطار تحركاتها الموسمية بحثاً عن الغذاء والمياه."
+    },
+    {
+     "url": "https://www.chinanews.uk/2026/04/20.html",
+     "name": "حرب الإيمو العظمى: قصة المواجهة بين الجيش الأسترالي و20 ألف طائر",
+     "site": "chinanews.uk",
+     "host": "chinanews.uk",
+     "lang": "ar",
+     "kind": "web",
+     "match": 78,
+     "quote": "بدأت القصة في غرب أستراليا، حيث واجه المزارعون أزمة حقيقية بعد توافد أعداد ضخمة من طيور الإيمو إلى الأراضي الزراعية."
+    },
+    {
+     "url": "https://sard360.com/2026/05/12/great-emu-war-australia-military-defeat-against-birds-1932/",
+     "name": "حرب الإيمو العظمى: القصّة الكاملة لأغرب هزيمة عسكريّة في تاريخ أستراليا -",
+     "site": "sard360.com",
+     "host": "sard360.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 71,
+     "quote": "النتيجة فشل عسكري أسترالي، انسحاب القوات، وانتصار طيور الإيمو"
+    }
+   ]
+  },
+  "14759": {
+   "hash": "e3c4af46b0c8",
+   "checked": "2026-11-24T00:47:30.774Z",
+   "queries": [
+    "الرجل الذي مرت فوقه شاحنة!",
+    "فوقه شاحنة استلقى جالين ملعب 1935"
+   ],
+   "sources": []
+  },
+  "14760": {
+   "hash": "c2f1f39439de",
+   "checked": "2026-11-24T00:46:57.207Z",
+   "queries": [
+    "لأنه لم يرد لزوجته أن تعود إلى المنزل",
+    "لزوجته المنزل وأغرق بأكملها يرغب"
+   ],
+   "sources": []
+  },
+  "14761": {
+   "hash": "2bbd8aa27b12",
+   "checked": "2026-11-24T00:46:39.207Z",
+   "queries": [
+    "استغرقت 6 أشهر لتعلم الطيران وبعد أن تعلمت استأجرت مروحية وذهبت لتهريب زوجها من السجن",
+    "سجن لا سانتيه الطيران تعلمت 1986"
+   ],
+   "sources": []
+  },
   "14763": {
    "hash": "579d0c3221fd",
    "checked": "2026-11-24T00:33:02.143Z",
@@ -9800,5 +9945,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T00:33:02.148Z"
+ "updated": "2026-11-24T00:48:15.294Z"
 }
