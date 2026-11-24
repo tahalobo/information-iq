@@ -1,5 +1,93 @@
 {
  "posts": {
+  "14696": {
+   "hash": "6882ec5be654",
+   "checked": "2026-11-24T02:33:22.874Z",
+   "queries": [
+    "يُعد الصربي مومتشيلو غافريتش من أصغر الجنود المعروفين في التاريخ الحديث",
+    "الحرب العالمية الأولى التاريخ الحديث الصربي مومتشيلو 1914",
+    "World War I"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D8%AD%D8%B1%D8%A8_%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85%D9%8A%D8%A9_%D8%A7%D9%84%D8%A3%D9%88%D9%84%D9%89",
+     "name": "الحرب العالمية الأولى",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "تضررت بلجيكا وصربيا وفرنسا كثيرًا جدًا بضحايا الجنود الذين وصل عددهم 1.4 مليون جندي دون حسبان الخسائر الأخرى."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/World_War_I",
+     "name": "World War I",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "World War I, or the First World War (28 July 1914 – 11 November 1918), also known as the Great War, was a global conflict between two coalitions: the Allies (or Entente) and the Central Powers. One of the…"
+    }
+   ]
+  },
+  "14697": {
+   "hash": "172f3b792b8b",
+   "checked": "2026-11-24T02:32:58.540Z",
+   "queries": [
+    "مرض انعدام الإحساس الخِلقي بالألم (CongenitalInsensitivity to Pain - CIP) CongenitalInsensitivity",
+    "الأعصاب الحسية انعدام الإحساس"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D9%85%D8%B1%D8%B6-%D8%A7%D9%86%D8%B9%D8%AF%D8%A7%D9%85-%D8%A7%D9%84%D8%A5%D8%AD%D8%B3%D8%A7%D8%B3-%D8%A7%D9%84%D8%AE%D9%90%D9%84%D9%82%D9%8A-%D8%A8%D8%A7%D9%84%D8%A3%D9%84%D9%85-congenitalinsensitiv/",
+     "name": "مرض انعدام الإحساس الخِلقي بالألم (CongenitalInsensitivity to Pain",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "هو اضطراب وراثي نادر يجعل المصاب غير قادر على الشعور بالألم منذ الولادة يحدث بسبب طفرات جينية تؤثر على الأعصاب الحسية المسؤولة عن نقل إشارات الألم إلى الدماغ خطورته تكمن في أن الجسم يفقد وسيلة التحذير…"
+    },
+    {
+     "url": "https://www.medicoverhospitals.in/ar/diseases/congenital-insensitivity-to-pain-with-anhidrosis/",
+     "name": "انعدام الإحساس الخلقي بالألم المصحوب بانعدام التعرق: التشخيص والعلاج",
+     "site": "medicoverhospitals.in",
+     "host": "medicoverhospitals.in",
+     "lang": "ar",
+     "kind": "web",
+     "match": 78,
+     "quote": "عدم الإحساس الخلقي بالألم مع انعدام التعرق (CIPA) هو اضطراب عصبي وراثي نادر."
+    }
+   ]
+  },
+  "14698": {
+   "hash": "640d06de6a59",
+   "checked": "2026-11-24T02:32:39.170Z",
+   "queries": [
+    "كان الصينيون في العصور القديمة يعتقدون أن الجسد والشعر هبة من الوالدين",
+    "الصينيون يعتقدون الوالدين عليهما البر"
+   ],
+   "sources": []
+  },
+  "14699": {
+   "hash": "ef0a47adf4d7",
+   "checked": "2026-11-24T02:31:52.950Z",
+   "queries": [
+    "شلون اراجع المواد بليلة الامتحان؟",
+    "اللغة العربية بليلة الامتحان"
+   ],
+   "sources": []
+  },
+  "14700": {
+   "hash": "f605b57563ed",
+   "checked": "2026-11-24T02:31:32.184Z",
+   "queries": [
+    "تُظهر بعض الدراسات أن ممارسة الخط العربي قد تنشّط مناطق في الدماغ مسؤولة عن",
+    "الخط العربي ممارسة تنشط"
+   ],
+   "sources": []
+  },
   "14701": {
    "hash": "e08126a6d45e",
    "checked": "2026-11-24T02:17:59.818Z",
@@ -10931,5 +11019,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T02:17:59.829Z"
+ "updated": "2026-11-24T02:33:22.880Z"
 }
