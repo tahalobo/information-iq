@@ -1,5 +1,174 @@
 {
  "posts": {
+  "14439": {
+   "hash": "77c10bbd2484",
+   "checked": "2026-11-24T08:03:03.981Z",
+   "queries": [
+    "تـرجو أن تكونوا قد استمتعتم بالأسئلة وقضيتم وقتًا ممتعًا ومفيدًا معنا gravity",
+    "العربة القمرية مارتن كوبر ترجو تكونوا"
+   ],
+   "sources": []
+  },
+  "14446": {
+   "hash": "2a84835cc731",
+   "checked": "2026-11-24T08:02:48.915Z",
+   "queries": [
+    "اول صورة ملونة في العالم Tartan Ribbon",
+    "صورة ملونة شريط الترتان 1861"
+   ],
+   "sources": [
+    {
+     "url": "https://thewonderbooks.com/ar/app/wonderarts/book/first_color_photograph_by_thomas_sutton_and_james_clerk_maxwell_london_uk_1861",
+     "name": "أول صورة فوتوغرافية ملونة لتوماس ساتون وجيمس كلارك ماكسويل (لندن، المملكة المتحدة",
+     "site": "WonderBooks",
+     "host": "thewonderbooks.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 70,
+     "quote": "أول صورة فوتوغرافية ملونة لتوماس ساتون وجيمس كلارك ماكسويل (لندن، المملكة المتحدة - 1861)"
+    },
+    {
+     "url": "https://ar.9unknownfacts.com/these-77-images-are-some-world-s-first-color-photos",
+     "name": "التاريخ 2026",
+     "site": "9unknownfacts",
+     "host": "ar.9unknownfacts.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 57,
+     "quote": "SSPL / Getty Images 17 من 79 صورة ملونة لمارك توين ، 1908."
+    }
+   ]
+  },
+  "14447": {
+   "hash": "df93590e75bf",
+   "checked": "2026-11-24T08:02:20.757Z",
+   "queries": [
+    "ابتكار ركبة بشرية حية قد ينهي آلام المفاصل للأبد!",
+    "آلام المفاصل جامعة كولومبيا ابتكار ركبة"
+   ],
+   "sources": [
+    {
+     "url": "https://www.sehatok.com/%D9%85%D8%B9%D9%84%D9%88%D9%85%D8%A9-%D8%AA%D9%87%D9%85%D9%83/%D8%B1%D9%83%D8%A8%D8%A9-%D8%AB%D9%84%D8%A7%D8%AB%D9%8A%D8%A9-%D8%A7%D9%84%D8%A3%D8%A8%D8%B9%D8%A7%D8%AF-%D9%82%D8%AF-%D8%AA%D9%85%D9%86%D8%AD-%D8%A3%D9%85%D9%84%D8%A7%D9%8B-%D9%84%D9%85%D8%B1%D8%B6%D9%89-%D8%A7%D9%84%D8%AA%D9%87%D8%A7%D8%A8-%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%B5%D9%84",
+     "name": "ركبة ثلاثية الأبعاد قد تمنح أملاً لمرضى التهاب المفاصل",
+     "site": "صحتك",
+     "host": "sehatok.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 90,
+     "quote": "فقد قام باحثون في جامعة كولومبيا بإنشاء هيكل داعم لمفصل الركبة باستخدام تقنية الطباعة ثلاثية الأبعاد واستخدام مواد قابلة للتحلل الحيوي، ثم أضافوا إليه خلايا عظمية وغضروفية."
+    },
+    {
+     "url": "https://www.addustour.com/articles/1559587-%D8%A7%D8%A8%D8%AA%D9%83%D8%A7%D8%B1-%D8%AB%D9%88%D8%B1%D9%8A-%D8%B1%D9%83%D8%A8%D8%A9-%D8%A8%D8%B4%D8%B1%D9%8A%D8%A9-%D8%AD%D9%8A%D8%A9-%D9%82%D8%AF-%D8%AA%D9%86%D9%87%D9%8A-%D9%85%D8%B9%D8%A7%D9%86%D8%A7%D8%A9-%D8%A2%D9%84%D8%A7%D9%85-%D8%A7%D9%84%D9%85%D9%81%D8%A7%D8%B5%D9%84",
+     "name": "ابتكار ثوري.. ركبة بشرية حية قد تنهي معاناة آلام المفاصل",
+     "site": "جريدة الدستور الاردنية",
+     "host": "addustour.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 85,
+     "quote": "وفي جامعة كولومبيا، صنع العلماء هيكلا ثلاثي الأبعاد للركبة من مواد قابلة للتحلل الحيوي، ثم أضافوا إليه خلايا العظام والغضاريف."
+    },
+    {
+     "url": "https://karbala-intel.net/arabic/17445",
+     "name": "ابتكار ثوري.. ركبة بشرية حية قد تنهي معاناة آلام المفاصل",
+     "site": "وكالة كربلاء الأن",
+     "host": "karbala-intel.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 85,
+     "quote": "وفي جامعة كولومبيا، صنع العلماء هيكلا ثلاثي الأبعاد للركبة من مواد قابلة للتحلل الحيوي، ثم أضافوا إليه خلايا العظام والغضاريف."
+    },
+    {
+     "url": "https://sana.sy/miscellaneous/2608561/",
+     "name": "باحثون يطورون مفصلاً حيوياً للركبة بالطباعة ثلاثية الأبعاد لعلاج التهاب المفاصل",
+     "site": "الوكالة العربية السورية للأنباء – سانا",
+     "host": "sana.sy",
+     "lang": "ar",
+     "kind": "web",
+     "match": 82,
+     "quote": "طوّر باحثون في جامعة كولومبيا الأميركية نموذجاً لمفصل حيوي بديل للركبة باستخدام تقنية الطباعة ثلاثية الأبعاد، يجمع بين الخلايا الحية والمواد القابلة للتحلل الحيوي، بهدف المساعدة على ترميم الأنسجة والغضاريف…"
+    },
+    {
+     "url": "https://www.maspero.eg/science-and-technology/2026/04/13/945046/%D8%B9%D9%84%D9%85%D8%A7%D8%A1-%D9%8A%D8%AA%D9%85%D9%83%D9%86%D9%88%D9%86-%D9%85%D9%86-%D8%B2%D8%B1%D8%A7%D8%B9%D8%A9-%D8%B1%D9%83%D8%A8%D8%A9-%D8%A8%D8%B4%D8%B1%D9%8A%D8%A9-%D8%AD%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D9%85%D8%AE%D8%AA%D8%A8%D8%B1",
+     "name": "علماء يتمكنون من زراعة ركبة بشرية حية في المختبر",
+     "site": "ماسبيرو - الهيئة الوطنية للإعلام",
+     "host": "maspero.eg",
+     "lang": "ar",
+     "kind": "web",
+     "match": 81,
+     "quote": "ابتكر علماء من جامعة \"كولومبيا\" طريقة جديدة لعلاج التهاب المفاصل التنكسي (الفصال العظمي) وذلك عبر زراعة ركبة بشرية حية في المختبر، في خطوة قد تغير حياة الملايين من المرضى."
+    }
+   ]
+  },
+  "14448": {
+   "hash": "88c5de5163ed",
+   "checked": "2026-11-24T08:01:59.377Z",
+   "queries": [
+    "الجزء السادس: انهيار شركات الفحم والتحولات الاقتصادية في ويست فرجينيا",
+    "صناعة الفحم مدن صناعية شركات والتحولات"
+   ],
+   "sources": []
+  },
+  "14450": {
+   "hash": "3c317d4d8efc",
+   "checked": "2026-11-24T08:01:36.839Z",
+   "queries": [
+    "وُلد فلاديمير كوماروف عام 1927 في موسكو",
+    "فلاديمير كوماروف رواد الفضاء موسكو الاتحاد 1927",
+    "Vladimir Komarov"
+   ],
+   "sources": [
+    {
+     "url": "https://allthatsinteresting.com/vladimir-komarov",
+     "name": "The Tragic Death Of Vladimir Komarov, The Man Who Fell From Space",
+     "site": "All That's Interesting",
+     "host": "allthatsinteresting.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "On April 24, 1967, Soviet cosmonaut Vladimir Komarov was heading toward Earth — but the parachute in his Soyuz I spacecraft failed to deploy."
+    },
+    {
+     "url": "https://ourwiredworld.medium.com/vladimir-komarov-the-soviet-cosmonaut-who-flew-to-his-death-e63f23cf0fc7",
+     "name": "Vladimir Komarov: The Soviet Cosmonaut Who Flew to His Death",
+     "site": "Medium",
+     "host": "ourwiredworld.medium.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Vladimir Komarov: The Soviet Cosmonaut Who Flew to His Death A spacecraft with 200 documented flaws. A launch no engineer wanted to approve. A man who said yes anyway — and exactly why. On April …"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%81%D9%84%D8%A7%D8%AF%D9%8A%D9%85%D9%8A%D8%B1_%D9%83%D9%88%D9%85%D8%A7%D8%B1%D9%88%D9%81",
+     "name": "فلاديمير كوماروف",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 75,
+     "quote": "فلاديمير ميخايلوفيتش كوماروف (بالروسية: Владимир Михайлович Комаров) رائد فضاء سوفيتي من مواليد مدينة موسكو في 16 مارس 1927م، يُعد أول رائد فضاء يصل إلى الفضاء لأكثر من مرة على متن المركبة سايوز 1 كما يُعد…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Vladimir_Komarov",
+     "name": "Vladimir Komarov",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 70,
+     "quote": "Vladimir Mikhaylovich Komarov (Russian: Владимир Михайлович Комаров, IPA: [vlɐˈdʲimʲɪr mʲɪˈxajləvʲɪtɕ kəmɐˈrof]; 16 March 1927 – 24 April 1967) was a Soviet test pilot, aerospace engineer, and cosmonaut. In…"
+    },
+    {
+     "url": "https://ar.topwar.ru/111095-vladimir-mihaylovich-komarov-sovetskiy-letchik-kosmonavt-dvazhdy-geroy-sovetskogo-soyuza.html",
+     "name": "رائد الفضاء السوفيتي الطيار، بطل الاتحاد السوفيتي مرتين فلاديمير ميخائيلوفيتش كوماروف",
+     "site": "Военное обозрение",
+     "host": "ar.topwar.ru",
+     "lang": "ar",
+     "kind": "web",
+     "match": 81,
+     "quote": "رائد الفضاء السوفيتي الطيار، بطل الاتحاد السوفيتي مرتين فلاديمير ميخائيلوفيتش كوماروف"
+    }
+   ]
+  },
   "14451": {
    "hash": "303961a4f031",
    "checked": "2026-11-24T07:48:04.487Z",
@@ -14578,5 +14747,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T07:48:04.494Z"
+ "updated": "2026-11-24T08:03:03.988Z"
 }
