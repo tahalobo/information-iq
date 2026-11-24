@@ -1,5 +1,137 @@
 {
  "posts": {
+  "14639": {
+   "hash": "b99f343dba7d",
+   "checked": "2026-11-24T03:47:07.571Z",
+   "queries": [
+    "31مايو – اليوم العالمي للامتناع عن التدخين World Health Organization",
+    "اليوم العالمي World Health Organization 31مايو للامتناع",
+    "World Health Organization"
+   ],
+   "sources": [
+    {
+     "url": "https://en.wikipedia.org/wiki/World_Health_Organization",
+     "name": "World Health Organization",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "The World Health Organization (WHO) is a specialized agency of the United Nations (UN) which coordinates responses to international public health issues and emergencies. It is headquartered in Geneva,…"
+    }
+   ]
+  },
+  "14641": {
+   "hash": "a5a82eb9b5ca",
+   "checked": "2026-11-24T03:46:59.983Z",
+   "queries": [
+    "البقعة التي تبتلع السفن",
+    "المد والجزر تحت الماء البقعة تبتلع"
+   ],
+   "sources": []
+  },
+  "14644": {
+   "hash": "8447eb264c59",
+   "checked": "2026-11-24T03:46:54.871Z",
+   "queries": [
+    "متلازمة التخمر الذاتي Auto brewery syndrome Auto",
+    "متلازمة التخمر الذاتي نسبة الكحول مصنع للخمور",
+    "Auto-brewery syndrome Auto"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%85%D8%AA%D9%84%D8%A7%D8%B2%D9%85%D8%A9_%D8%A7%D9%84%D8%AA%D8%AE%D9%85%D8%B1_%D8%A7%D9%84%D8%B0%D8%A7%D8%AA%D9%8A",
+     "name": "متلازمة التخمر الذاتي",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 90,
+     "quote": "متلازمة التخمر الذاتي (الإنجليزية: Auto-brewery syndrome) أو متلازمة تخمر القناة الهضمية الذاتي (الإنجليزية: Gut fermentation syndrome) هي حالة طبية نادرة يتم فيها إنتاج كميات سامة من الإيثانول عن طَريق التخمر…"
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Auto-brewery_syndrome",
+     "name": "Auto-brewery syndrome",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 85,
+     "quote": "Auto-brewery syndrome (ABS) (also known as gut fermentation syndrome or endogenous ethanol fermentation) is an extremely rare and underdiagnosed medical condition characterized by the fermentation of ingested…"
+    }
+   ]
+  },
+  "14645": {
+   "hash": "c68550423ed4",
+   "checked": "2026-11-24T03:46:49.341Z",
+   "queries": [
+    "النيكوتين مادة كيميائية توجد بشكل طبيعي في نبات التبغ",
+    "نيكوتين مادة كيميائية النيكوتين نبات",
+    "Nicotine"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%86%D9%8A%D9%83%D9%88%D8%AA%D9%8A%D9%86",
+     "name": "نيكوتين",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 65,
+     "quote": "يُصنَّف النيكوتين مادةً مُسبِّبةً للإدمان، ويرتبط الاعتماد عليه فسيولوجياً ونفسياً بسلوكيات تعاطي التبغ ومستحضراته."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Nicotine",
+     "name": "Nicotine",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 61,
+     "quote": "Nicotine is a stimulant and alkaloid found primarily in plants of the nightshade family, notably in tobacco; it is also synthesized. Nicotine is used recreationally for its stimulant and anxiolytic effects. In…"
+    }
+   ]
+  },
+  "14646": {
+   "hash": "1a77c678e949",
+   "checked": "2026-11-24T03:46:28.892Z",
+   "queries": [
+    "السمكة ذات الرأس الشفاف",
+    "السمكة ذات الرأس الشفاف ضوء الشمس بارالي أعماق"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D8%A7%D9%84%D8%B3%D9%85%D9%83%D8%A9-%D8%B0%D8%A7%D8%AA-%D8%A7%D9%84%D8%B1%D8%A3%D8%B3-%D8%A7%D9%84%D8%B4%D9%81%D8%A7%D9%81/",
+     "name": "وكالة هنا العراق الاخبارية",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "رأس السمكة شفاف، ويمكن رؤية جزء من أعضائها الداخلية من الخارج."
+    },
+    {
+     "url": "https://www.horusvalley.com/barreleye-fish-transparent-head-rotating-eyes/",
+     "name": "سمكة الرأس الشفاف: سر العينين الخضراوين داخل الرأس",
+     "site": "HORUS VALLEY",
+     "host": "horusvalley.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 72,
+     "quote": "الخلاصة: سمكة الرأس الشفاف ليست أسطورة ولا نتاج تعديل وراثي؛ إنها مثال حقيقي على تكيف مذهل مع ظلام أعماق المحيط."
+    },
+    {
+     "url": "http://public.amwaly.com/blog/197546/%D8%B3%D9%85%D9%83%D8%A9-%D8%A7%D9%84%D8%B1%D8%A3%D8%B3-%D8%A7%D9%84%D8%B4%D9%81%D8%A7%D9%81-barreleye-fish-%D8%A7%D9%84%D9%83%D8%A7%D8%A6%D9%86-%D8%A7%D9%84%D8%B0%D9%8A-%D9%8A%D8%B1%D9%89",
+     "name": "سمكة الرأس الشفاف (Barreleye Fish): الكائن الذي يرى العالم من خلال رأسه",
+     "site": "public.amwaly.com",
+     "host": "public.amwaly.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 57,
+     "quote": "تثبت سمكة الرأس الشفاف أن المحيطات لا تزال تخفي أسرارًا مذهلة لم يكتشفها الإنسان بالكامل."
+    }
+   ]
+  },
   "14647": {
    "hash": "fa59166980ac",
    "checked": "2026-11-24T03:33:30.190Z",
@@ -11646,5 +11778,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T03:33:30.195Z"
+ "updated": "2026-11-24T03:47:07.575Z"
 }
