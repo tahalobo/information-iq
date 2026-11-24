@@ -1,5 +1,191 @@
 {
  "posts": {
+  "14472": {
+   "hash": "847cbccccbda",
+   "checked": "2026-11-24T07:17:29.739Z",
+   "queries": [
+    "فكرة الفقرة informationiq",
+    "سنعرض مجرى تلميح سياسي أدبي"
+   ],
+   "sources": []
+  },
+  "14496": {
+   "hash": "4a5e155d2cbe",
+   "checked": "2026-11-24T07:17:08.283Z",
+   "queries": [
+    "الاجوبة: informationiq",
+    "نابليون بونابرت نيل آرمسترونغ روزا باركس"
+   ],
+   "sources": []
+  },
+  "14499": {
+   "hash": "7855d69682fe",
+   "checked": "2026-11-24T07:16:46.053Z",
+   "queries": [
+    "لماذا العناكب لا تلتصق بشباكها",
+    "العناكب تلتصق بشباكها لزجة العنكبوت"
+   ],
+   "sources": [
+    {
+     "url": "https://9newsagency.com/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D8%A7%D9%84%D8%B9%D9%86%D8%A7%D9%83%D8%A8-%D9%84%D8%A7-%D8%AA%D9%84%D8%AA%D8%B5%D9%82-%D8%A8%D8%B4%D8%A8%D8%A7%D9%83%D9%87%D8%A7/",
+     "name": "لماذا العناكب لا تلتصق بشباكها",
+     "site": "وكالة التاسعة نيوز الاخبارية",
+     "host": "9newsagency.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "تُعد العناكب من الكائنات المدهشة، ومن أبرز خصائصها قدرتها على التحرك فوق شباكها دون أن تلتصق بها، رغم أنها لزجة."
+    },
+    {
+     "url": "https://seventhnews.com/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D8%A7%D9%84%D8%B9%D9%86%D8%A7%D9%83%D8%A8-%D9%84%D8%A7-%D8%AA%D9%84%D8%AA%D8%B5%D9%82-%D8%A8%D8%B4%D8%A8%D8%A7%D9%83%D9%87%D8%A7/",
+     "name": "لماذا العناكب لا تلتصق بشباكها",
+     "site": "وكالة السابعة نيوز الاخبارية",
+     "host": "seventhnews.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "تُعد العناكب من الكائنات المدهشة، ومن أبرز خصائصها قدرتها على التحرك فوق شباكها دون أن تلتصق بها، رغم أنها لزجة."
+    },
+    {
+     "url": "https://www.honawahonak.com/%D8%B3%D8%A8%D8%A8-%D9%84%D8%A7-%D8%AA%D9%84%D8%AA%D8%B5%D9%82-%D8%A7%D9%82%D8%AF%D8%A7%D9%85-%D8%A7%D9%84%D8%B9%D9%86%D9%83%D8%A8%D9%88%D8%AA-%D8%A8%D8%B4%D8%A8%D9%83%D8%AA%D9%87%D8%A7-spider/",
+     "name": "لهذا السبب لا تلتصق اقدام العنكبوت بشبكتها Spider",
+     "site": "هنا وهناك",
+     "host": "honawahonak.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 64,
+     "quote": "معظم انواع العناكب تتميز بصنع شبك العنكبوت الشهير والذي تستخدمة كوسيلة لصيد فرائسها إذ تلتصق بهذه الشبكة اي فريسة بمجرد الوقوف عليها في حين تندفع العناكب وتهرول عبر شبكتها للإستمتاع بوجباتها دون ان تلتصق…"
+    },
+    {
+     "url": "https://archive.almanar.com.lb/1324893",
+     "name": "لماذا لا تلتصق العناكب بشباكها الخاصة ؟",
+     "site": "موقع قناة المنار - لبنان",
+     "host": "archive.almanar.com.lb",
+     "lang": "ar",
+     "kind": "web",
+     "match": 57,
+     "quote": "فأرجل العناكب مغطاة بمئات الشعيرات الصغيرة التي تُقلل من المساحة الإجمالية التي تُمسك بها الشبكة."
+    }
+   ]
+  },
+  "14500": {
+   "hash": "54e28918ff91",
+   "checked": "2026-11-24T07:16:33.556Z",
+   "queries": [
+    "أصل النظارات الشمسية"
+   ],
+   "sources": [
+    {
+     "url": "https://seventhnews.com/%D8%A3%D8%B5%D9%84-%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%B4%D9%85%D8%B3%D9%8A%D8%A9/",
+     "name": "وكالة السابعة نيوز الاخبارية",
+     "site": "وكالة السابعة نيوز الاخبارية",
+     "host": "seventhnews.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "في الصين خلال القرن الثالث عشر، كان بعض القضاة يستخدمون عدسات داكنة من الكوارتز المدخن أثناء المحاكم، ليس لحماية العين، بل لإخفاء تعابيرهم وردود أفعالهم حتى لا يفهم المتهم ما يدور في ذهن القاضي."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%86%D8%B8%D8%A7%D8%B1%D8%A9_%D8%B4%D9%85%D8%B3%D9%8A%D8%A9",
+     "name": "نظارة شمسية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 75,
+     "quote": "داخل المركبة الفضائية، يرتدي رواد الفضاء نظارات شمسية بعدسات داكنة وطبقة نحيفة من الذهب الوقائي."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Sunglasses",
+     "name": "Sunglasses",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 70,
+     "quote": "Sunglasses or sun glasses (informally called shades or sunnies; more names below) are a form of protective eyewear designed primarily to prevent bright sunlight and high-energy visible light from damaging or…"
+    },
+    {
+     "url": "https://www.almasryalyoum.com/news/details/3360683",
+     "name": "تاريخ النظارات الشمسية من عظام الحوت والكوارتز المدخن إلى هوليوود",
+     "site": "المصري اليوم",
+     "host": "almasryalyoum.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 70,
+     "quote": "تاريخ النظارات الشمسية من عظام الحوت والكوارتز المدخن إلى هوليوود"
+    },
+    {
+     "url": "https://www.arrajol.com/content/204191/%D8%A7%D9%84%D8%B7%D9%84%D8%A9-%D8%A7%D9%84%D8%A7%D9%86%D9%8A%D9%82%D8%A9/%D9%82%D8%AF%D9%85%D8%AA-%D8%A5%D9%84%D9%8A%D9%86%D8%A7-%D9%85%D9%86-%D8%B9%D8%B5%D9%88%D8%B1-%D9%85%D8%A7-%D9%82%D8%A8%D9%84-%D8%A7%D9%84%D8%AA%D8%A7%D8%B1%D9%8A%D8%AE-%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D8%B1%D8%A7%D8%AA-%D8%A7%D9%84%D8%B4%D9%85%D8%B3%D9%8A%D8%A9-%D8%B9%D8%A8%D8%B1-%D8%A7%D9%84%D8%B9%D8%B5%D9%88%D8%B1-%D8%AC%D8%B0%D9%88%D8%B1%D9%87%D8%A7",
+     "name": "قدمت إلينا من عصور ما قبل التاريخ: النظارات الشمسية عبر العصور.. جذورها ضاربة في التاريخ أكثر مما يخيل إليكم",
+     "site": "الرجل",
+     "host": "arrajol.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 61,
+     "quote": "رغم أن تجارب أيسكوف هي الأساس لعدسات النظارات الشمسية المعاصرة، فإن الحماية من الشمس كانت أبعد ما يكون عن تفكيره خلال تجاربه."
+    }
+   ]
+  },
+  "14501": {
+   "hash": "a4f2e105cf13",
+   "checked": "2026-11-24T07:16:22.402Z",
+   "queries": [
+    "شلل النوم حالة مؤقتة بين النوم واليقظة"
+   ],
+   "sources": [
+    {
+     "url": "https://www.masrawy.com/howa_w_hya/health/details/2026/11/15/3079099/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D9%86%D8%B3%D8%AA%D9%8A%D9%82%D8%B8-%D8%A3%D8%AD%D9%8A%D8%A7%D9%86-%D8%A7-%D9%88%D9%86%D8%AD%D9%86-%D8%BA%D9%8A%D8%B1-%D9%82%D8%A7%D8%AF%D8%B1%D9%8A%D9%86-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%AD%D8%B1%D9%83%D8%A9-%D8%A3%D9%88-%D8%A7%D9%84%D9%83%D9%84%D8%A7%D9%85-",
+     "name": "شلل النوم.. لماذا تستيقظ عاجزا عن الحركة والكلام؟",
+     "site": "مصراوي.كوم",
+     "host": "masrawy.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 71,
+     "quote": "شلل النوم هو حالة مؤقتة يفقد خلالها الشخص القدرة على الحركة أو الكلام عند الاستيقاظ من النوم أو أثناء الانتقال من اليقظة إلى النوم، ويحدث ذلك عندما يستعيد الدماغ وعيه بينما تظل عضلات الجسم في حالة الشلل…"
+    },
+    {
+     "url": "https://ilmondoo.com/2026/09/08/sleep-paralysis/",
+     "name": "شلل النوم: الأسباب والأعراض ولماذا لا تستطيع الحركة",
+     "site": "الموندو",
+     "host": "ilmondoo.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 69,
+     "quote": "خلال مرحلة نوم حركة العين السريعة REM يدخل الجسم في حالة تسمى الارتخاء العضلي أو atonia ، وهي آلية طبيعية تقلل حركة معظم العضلات بينما يكون الدماغ نشطًا وتحدث أحلام حيوية."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B4%D9%84%D9%84_%D8%A7%D9%84%D9%86%D9%88%D9%85",
+     "name": "شلل النوم",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "شلل النوم (الإنجليزية: sleep paralysis) حالة التي تحدث أثناء الاستيقاظ أو النوم، يكون الشخص واعيا ولكن غير قادر على التحرك أو الكلام."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Sleep_paralysis",
+     "name": "Sleep paralysis",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "Sleep paralysis is a state, during waking up or falling asleep, in which a person is conscious but in a complete state of paralysis. During an episode, the person may hallucinate (hear, feel, or see things…"
+    },
+    {
+     "url": "https://www.medanta.org/ar/pillar/sleep-paralysis-what-it-is-causes-symptoms-treatment",
+     "name": "شلل النوم: ما هو، أسبابه، أعراضه وعلاجه",
+     "site": "@Medanta",
+     "host": "medanta.org",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "يبقى المصابون به واعين تمامًا، لكنهم يفقدون مؤقتًا قدرتهم على الحركة أو الكلام."
+    }
+   ]
+  },
   "14502": {
    "hash": "09704d970457",
    "checked": "2026-11-24T07:02:38.716Z",
@@ -14124,5 +14310,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T07:02:38.721Z"
+ "updated": "2026-11-24T07:17:29.745Z"
 }
