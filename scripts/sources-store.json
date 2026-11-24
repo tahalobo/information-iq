@@ -1,5 +1,210 @@
 {
  "posts": {
+  "14714": {
+   "hash": "5bbd015220fa",
+   "checked": "2026-11-24T02:03:01.012Z",
+   "queries": [
+    "وثق الطبيب النفسي لازلو سوليوم حالة شاب يبلغ 19 عامًا يعاني من وسواس قهري شديد",
+    "اضطراب وسواسي قهري وسواس قهري الطبيب النفسي 1987",
+    "Obsessive–compulsive disorder"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%A7%D8%B6%D8%B7%D8%B1%D8%A7%D8%A8_%D9%88%D8%B3%D9%88%D8%A7%D8%B3%D9%8A_%D9%82%D9%87%D8%B1%D9%8A",
+     "name": "اضطراب وسواسي قهري",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 53,
+     "quote": "من هذه الأدوات مقياس ييل-براون الوسواسي القهري (Y-BOCS)، ممّا يسهّل على الاستشاريين النفسيين تقدير ومعالجة الحالة."
+    }
+   ]
+  },
+  "14715": {
+   "hash": "f911542a2f9b",
+   "checked": "2026-11-24T02:02:45.607Z",
+   "queries": [
+    "كنيسة سانت كاترين بإيطاليا",
+    "كنيسة كنيسة سانت كاترين بإيطاليا مثال",
+    "Church"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D9%83%D9%86%D9%8A%D8%B3%D8%A9-%D8%B3%D8%A7%D9%86%D8%AA-%D9%83%D8%A7%D8%AA%D8%B1%D9%8A%D9%86-%D8%A8%D8%A5%D9%8A%D8%B7%D8%A7%D9%84%D9%8A%D8%A7/",
+     "name": "كنيسة سانت كاترين بإيطاليا",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 100,
+     "quote": "تقع كنيسة سانت كاترين في قلب إيطاليا، وهي مثال مذهل للهندسة المعمارية الباروكية."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%83%D9%86%D9%8A%D8%B3%D8%A9",
+     "name": "كنيسة",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "تشير التقديرات إلى أن الولايات المتحدة تضم نحو 380,000 كنيسة، وهو أعلى عدد في العالم، تليها البرازيل وإيطاليا."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Church_(building)",
+     "name": "Church (building)",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "A church, church building, or church house is a building used for Christian worship services and other Christian religious activities. The earliest identified Christian church is a house church founded between…"
+    }
+   ]
+  },
+  "14716": {
+   "hash": "beb499cb2176",
+   "checked": "2026-11-24T02:02:22.701Z",
+   "queries": [
+    "القشرة الجبهية الأمامية هي الجزء المتقدم من الدماغ المسؤول عن التفكير المنطقي",
+    "جنسانية المراهقين الجهاز الحوفي القشرة الجبهية",
+    "Adolescent sexuality"
+   ],
+   "sources": [
+    {
+     "url": "https://arabpsychology.com/dictionary/frontal-cortex-neuropsychology/",
+     "name": "القشرة الجبهية: مركز القيادة والتحكم الإنساني",
+     "site": "عرب سايكلوجي",
+     "host": "arabpsychology.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 73,
+     "quote": "مثلت هذه الحالة أول دليل عيادي حاسم يثبت أن القشرة الجبهية هي الحاضنة للشخصية، والتنظيم الأخلاقي، واتخاذ القرارات العقلانية."
+    },
+    {
+     "url": "https://maestrovirtuale.com/ar/%D8%A3%D8%AC%D8%B2%D8%A7%D8%A1-%D9%88%D9%88%D8%B8%D8%A7%D8%A6%D9%81-%D9%88%D8%AE%D8%B5%D8%A7%D8%A6%D8%B5-%D8%A7%D9%84%D9%82%D8%B4%D8%B1%D8%A9-%D8%A7%D9%84%D8%AC%D8%A8%D9%87%D9%8A%D8%A9-%D8%A7%D9%84%D9%85%D8%AF%D8%A7%D8%B1%D9%8A%D8%A9/",
+     "name": "القشرة الجبهية المدارية: الأجزاء والوظائف والخصائص Maestrovirtuale.com",
+     "site": "Maestrovirtuale.com",
+     "host": "maestrovirtuale.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 69,
+     "quote": "تقع القشرة الجبهية الحجاجية في مقدمة الدماغ، وتُعنى بتنظيم العواطف واتخاذ القرارات والسلوك الاجتماعي."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AC%D9%86%D8%B3%D8%A7%D9%86%D9%8A%D8%A9_%D8%A7%D9%84%D9%85%D8%B1%D8%A7%D9%87%D9%82%D9%8A%D9%86",
+     "name": "جنسانية المراهقين",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 51,
+     "quote": "تشير الدراسات إلى أن عدة مناطق في الدماغ، خاصة في الفص الجبهي والهيبوثلاموس والقشرة الجبهية الأمامية، وهي مناطق مهمة للتحكم في الذات، التأجيل في إرضاء الرغبات، تحليل المخاطر، واتخاذ القرارات، لا تكتمل نضجها…"
+    },
+    {
+     "url": "https://yinshi.app/ar/encyclopedie/%D8%AF%D9%85%D8%A7%D8%BA-%D8%A7%D9%84%D9%85%D8%B1%D8%A7%D9%87%D9%82-%D8%AA%D8%AD%D9%88%D9%84%D8%A7%D8%AA-%D8%A7%D9%84%D8%A7%D9%83%D8%AA%D8%A6%D8%A7%D8%A8/",
+     "name": "دماغ المراهق: ورشة بناء تفسّر كل شيء",
+     "site": "Yin Shi",
+     "host": "yinshi.app",
+     "lang": "ar",
+     "kind": "web",
+     "match": 52,
+     "quote": "إرباك التواصل بين القشرة الجبهية الأمامية والجهاز الحوفي."
+    }
+   ]
+  },
+  "14718": {
+   "hash": "7b7554cead4e",
+   "checked": "2026-11-24T02:02:00.980Z",
+   "queries": [
+    "فطر الإرغوت",
+    "تسمم أرغوني فطر الإرغوت الحبوب الشعير",
+    "Ergotism"
+   ],
+   "sources": [
+    {
+     "url": "https://honairaqnew.iq/%D9%81%D8%B7%D8%B1-%D8%A7%D9%84%D8%A5%D8%B1%D8%BA%D9%88%D8%AA/",
+     "name": "وكالة هنا العراق الاخبارية",
+     "site": "وكالة هنا العراق الاخبارية",
+     "host": "honairaqnew.iq",
+     "lang": "ar",
+     "kind": "web",
+     "match": 96,
+     "quote": "الإرغوت فطر ينمو على الحبوب مثل الشعير والجاودار عند تخزينها في ظروف رطبة."
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AA%D8%B3%D9%85%D9%85_%D8%A3%D8%B1%D8%BA%D9%88%D9%86%D9%8A",
+     "name": "تسمم أرغوني",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "الغرغرينا الجافة تحدث نتيجة لتضيق الأوعية الدموية التي تسببها قلويدات الإرغوكريستين -الإرغوتامين من الفطريات."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Ergotism",
+     "name": "Ergotism",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 54,
+     "quote": "Ergotism (pronounced  UR-gət-iz-əm) is the effect of long-term ergot poisoning, frequently due to the ingestion of the alkaloids produced by the Claviceps purpurea fungus—from the Latin clava \"club\" or clavus…"
+    },
+    {
+     "url": "https://ar.vrachi.name/%D8%AA%D8%B3%D9%85%D9%85_%D8%A3%D8%B1%D8%BA%D9%88%D9%86%D9%8A/",
+     "name": "تسمم أرغوني. Медицинский портал Vrachi.name",
+     "site": "ar.vrachi.name",
+     "host": "ar.vrachi.name",
+     "lang": "ar",
+     "kind": "web",
+     "match": 57,
+     "quote": "الغرغرينا الجافة تحدث نتيجة لتضيق الأوعية الدموية التي تسببها قلويدات الإرغوكريستين-الإرغوتامين من الفطريات."
+    }
+   ]
+  },
+  "14719": {
+   "hash": "9603ad74c18f",
+   "checked": "2026-11-24T02:01:33.836Z",
+   "queries": [
+    "أول أيام الصيف في العراق",
+    "صيف الانقلاب الصيفي أيام العراق",
+    "Summer"
+   ],
+   "sources": [
+    {
+     "url": "https://www.arabiaweather.com/ar/content/%D8%A7%D9%84%D8%A7%D8%AB%D9%86%D9%8A%D9%86-1-%D9%8A%D9%88%D9%86%D9%8A%D9%88-%D8%A3%D9%88%D9%84-%D8%A3%D9%8A%D8%A7%D9%85-%D9%81%D8%B5%D9%84-%D8%A7%D9%84%D8%B5%D9%8A%D9%81-%D8%A3%D8%B1%D8%B5%D8%A7%D8%AF%D9%8A%D8%A7%D9%8B-%D9%81%D9%8A-%D8%A7%D9%84%D9%86%D8%B5%D9%81-%D8%A7%D9%84%D8%B4%D9%85%D8%A7%D9%84%D9%8A-%D9%85%D9%86-%D8%A7%D9%84%D9%83%D8%B1%D8%A9-%D8%A7%D9%84%D8%A3%D8%B1%D8%B6%D9%8A%D8%A9",
+     "name": "الاثنين 1 يونيو .. أول أيام فصل الصيف أرصادياً في النصف الشمالي من الكرة الأرضية",
+     "site": "arabiaweather.com",
+     "host": "arabiaweather.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 88,
+     "quote": "أول أيام فصل الصيف أرصادياً في النصف الشمالي من الكرة الأرضية"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B5%D9%8A%D9%81",
+     "name": "صيف",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 57,
+     "quote": "لا ترتفع درجات الحرارة اليومية بشكل ملحوظ إلا بعد أيام من الاعتدال الربيعي، لأن الأرض والماء يستغرقان وقتا ليسخنا."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Summer",
+     "name": "Summer",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 53,
+     "quote": "Summer or summertime is the hottest and brightest of the four temperate seasons, occurring after spring and before autumn. Starting on (or around) the summer solstice, daylight hours are the longest and…"
+    }
+   ]
+  },
   "14721": {
    "hash": "768b4a76a25b",
    "checked": "2026-11-24T01:48:33.399Z",
@@ -10557,5 +10762,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-24T01:48:33.406Z"
+ "updated": "2026-11-24T02:03:01.018Z"
 }
