@@ -1,5 +1,193 @@
 {
  "posts": {
+  "14774": {
+   "hash": "711330b724fb",
+   "checked": "2026-11-24T00:02:47.159Z",
+   "queries": [
+    "🇧🇬 بلغاريا تريد قطع غيار طائرات MiG-29 قبل أن تقضي عليها مسيرات جيران MiG-",
+    "قطع غيار بلغاريا طائرات"
+   ],
+   "sources": []
+  },
+  "14776": {
+   "hash": "970117d26062",
+   "checked": "2026-11-24T00:02:19.917Z",
+   "queries": [
+    "مندوحاي الحكيمة",
+    "مندوحاي الحكيمة الأويرات باغتها المخاض"
+   ],
+   "sources": []
+  },
+  "14777": {
+   "hash": "161db5f0ea3f",
+   "checked": "2026-11-24T00:02:07.566Z",
+   "queries": [
+    "لماذا تشم رائحة حريق رغم عدم وجودها؟"
+   ],
+   "sources": [
+    {
+     "url": "https://www.sehatina-sa.com/2026/08/phantom-smell-smoke-causes.html",
+     "name": "لماذا أشم رائحة دخان أو حريق ولا يوجد شيء؟ أسباب الرائحة الوهميه",
+     "site": "sehatina-sa.com",
+     "host": "sehatina-sa.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 75,
+     "quote": "يُعرف الإحساس برائحة غير موجودة باسم الشم الوهمي ، وقد يرتبط بنزلات البرد أو التهابات الجيوب الأنفية أو الحساسية أو اضطرابات الشم بعد بعض العدوى، إضافة إلى أسباب أخرى أقل شيوعًا."
+    },
+    {
+     "url": "https://nashrabayda.com/phantom-smoke-smell-causes/",
+     "name": "أشم رائحة دخان ولا يوجد دخان: الأسباب ومتى يكون خطيرًا؟",
+     "site": "النشرة البيضاء",
+     "host": "nashrabayda.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 69,
+     "quote": "لكن الرائحة وحدها لا تكفي لنسبتها إلى الصداع النصفي."
+    },
+    {
+     "url": "https://donyayadonya.com/articles/details/30520/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D9%86%D8%B4%D8%B9%D8%B1-%D8%A3%D8%AD%D9%8A%D8%A7%D9%86%D8%A7-%D8%A8%D8%B1%D8%A7%D8%A6%D8%AD%D8%A9-%D8%BA%D8%B1%D9%8A%D8%A8%D8%A9-%D9%84%D8%A7-%D9%8A%D8%B4%D9%85%D9%87%D8%A7-%D9%85%D9%86-%D8%AD%D9%88%D9%84%D9%86%D8%A7-%D9%85%D8%A7",
+     "name": "لماذا نشعر أحيانا برائحة غريبة لا يشمها من حولنا؟.. ما التفسير الطبي؟",
+     "site": "دنيا يا دنيا",
+     "host": "donyayadonya.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "يمكن أن ترتبط الهلوسة الشمية لدى بعض الأشخاص بالصداع النصفي، إذ قد يشعر المصاب برائحة غريبة قبل نوبة الصداع أو خلالها، وتكون هذه الرائحة أحيانا شبيهة بالدخان أو الاحتراق."
+    },
+    {
+     "url": "https://mareb.org/article/why-do-we-suddenly-smell-fire-when-there-is-no-f/",
+     "name": "لماذا نشم رائحة الحريق فجأة دون وجود نار؟..",
+     "site": "مأرب",
+     "host": "mareb.org",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "يشعر الكثير من الناس برائحة حريق دون وجود نار، وهي حالة تعرف بـ \"الرائحة الوهمية\" أو \"الهلوسة الشمية\"، هذه الحالة تكون مصدر إزعاجا، ولكن ما السبب وراء ذلك وكيف يمكن علاجها؟"
+    },
+    {
+     "url": "https://www.masrawy.com/howa_w_hya/relationship/details/2024/8/24/2631883/%D9%84%D9%85%D8%A7%D8%B0%D8%A7-%D9%86%D8%B4%D9%85-%D8%B1%D8%A7%D8%A6%D8%AD%D8%A9-%D8%A7%D9%84%D8%AD%D8%B1%D9%8A%D9%82-%D9%81%D8%AC%D8%A3%D8%A9-%D8%AF%D9%88%D9%86-%D9%88%D8%AC%D9%88%D8%AF-%D9%86%D8%A7%D8%B1-%D8%A7%D8%B9%D8%B1%D9%81-%D8%A7%D9%84%D8%B3%D8%B1",
+     "name": "لماذا نشم رائحة الحريق فجأة دون وجود نار؟.. اعرف السر",
+     "site": "مصراوي.كوم",
+     "host": "masrawy.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "يشعر الكثير من الناس برائحة حريق دون وجود نار، وهي حالة تعرف بـ \"الرائحة الوهمية\" أو \"الهلوسة الشمية\"، هذه الحالة تكون مصدر إزعاجا، ولكن ما السبب وراء ذلك وكيف يمكن علاجها؟"
+    }
+   ]
+  },
+  "14779": {
+   "hash": "da1d17f242ec",
+   "checked": "2026-11-24T00:01:53.106Z",
+   "queries": [
+    "هكذا يحدث داخل عقلك بسبب التوتر والعصبية",
+    "اضطرابات النوم ممارسة الرياضة هكذا عقلك"
+   ],
+   "sources": [
+    {
+     "url": "https://www.aljazeera.net/health/2026/3/19/%D8%AD%D9%8A%D9%86-%D9%8A%D8%AA%D9%83%D9%84%D9%85-%D8%A7%D9%84%D8%AC%D8%B3%D8%AF-%D8%A8%D9%84%D8%BA%D8%A9-%D8%A7%D9%84%D8%B3%D9%85%D8%A7%D8%A1-%D8%A7%D9%84%D8%AA%D9%88%D8%AA%D8%B1-%D8%A8%D9%8A%D9%86",
+     "name": "آثار التوتر ليست نفسية فقط.. هكذا يبدأ جسدك بـ \"تدمير نفسه\" مع ارتفاع الكورتيزول",
+     "site": "الجزيرة نت",
+     "host": "aljazeera.net",
+     "lang": "ar",
+     "kind": "news",
+     "match": 60,
+     "quote": "قد يؤدي التوتر المزمن إلى اضطرابات صحية مثل القرحة أو القولون العصبي، لذلك من المهم اتباع أساليب تساعد على خفض مستويات التوتر وهرمون الكورتيزول في الجسم."
+    },
+    {
+     "url": "https://bedayaccpa.com/%D9%85%D8%A7-%D9%87%D9%88-%D8%A7%D9%84%D8%AA%D9%88%D8%AA%D8%B1-%D8%A7%D9%84%D8%B9%D8%B5%D8%A8%D9%8A/",
+     "name": "المركز الاستشارى للطب النفسى وعلاج الإدمان",
+     "site": "بداية",
+     "host": "bedayaccpa.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 55,
+     "quote": "عند مواجهة التوتر العصبي، يفرز الجسم هرمونات تزيد من يقظة الدماغ، وتؤدي إلى توتر العضلات، وترفع معدل ضربات القلب، هذه الاستجابات مفيدة على المدى القصير لأنها تساعد الشخص على التعامل مع المواقف الصعبة، إذ تعد…"
+    },
+    {
+     "url": "https://www.sayidaty.net/node/1386546/%D8%B5%D8%AD%D8%A9/%D8%A7%D9%84%D8%B5%D8%AD%D8%A9-%D8%A7%D9%84%D9%86%D9%81%D8%B3%D9%8A%D8%A9/%D9%85%D8%A7%D8%B0%D8%A7-%D9%8A%D8%AD%D8%AF%D8%AB-%D9%84%D9%84%D8%AC%D8%B3%D9%85-%D8%B9%D9%86%D8%AF-%D8%A7%D9%84%D8%AA%D9%88%D8%AA%D8%B1%D8%9F",
+     "name": "ماذا يحدث للجسم عند التوتر؟",
+     "site": "موقع سيدتي",
+     "host": "sayidaty.net",
+     "lang": "ar",
+     "kind": "web",
+     "match": 53,
+     "quote": "على المدى القصير: هرمونات التوتر مثل الأدرينالين والكورتيزول تمنح جسمك طاقة إما لمحاربة الضغوط أو الهروب منها، وينتج الكبد أيضاً المزيد من السكر في الدم لمنح جسمك الطاقة."
+    },
+    {
+     "url": "https://www.webteb.com/articles/%D8%A7%D8%B9%D8%B1%D8%A7%D8%B6-%D8%A7%D9%84%D8%AA%D9%88%D8%AA%D8%B1-%D8%A7%D9%84%D8%B9%D8%B5%D8%A8%D9%8A-%D9%88%D8%AA%D8%A7%D8%AB%D9%8A%D8%B1%D9%87-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%AC%D8%B3%D9%85_22277",
+     "name": "أعراض التوتر العصبي وتأثيره على الجسم",
+     "site": "Webteb",
+     "host": "webteb.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 51,
+     "quote": "تُساعد تمارين اليوغا في التخلص من التوتر والشعور بالهدوء النفسي، وبشكل عام يُنصح بممارسة الرياضة التي تُعزز الصحة النفسية والمزاجية."
+    }
+   ]
+  },
+  "14780": {
+   "hash": "0b39c625e5b7",
+   "checked": "2026-11-24T00:01:32.712Z",
+   "queries": [
+    "لعبة اور الملكية",
+    "لعبة أور الملكية لعبة لوحية جنوب اللاعبين",
+    "Royal Game of Ur"
+   ],
+   "sources": [
+    {
+     "url": "https://ancientgames.org/the-royal-game-of-ur/",
+     "name": "The Royal Game of Ur: Rules, History & Play Online in 3D",
+     "site": "Ancient Games",
+     "host": "ancientgames.org",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "The Royal Game of Ur, the 4,500-year-old Sumerian race game from the tombs of Ur: its rules, its history, and a full 3D version you can play right here."
+    },
+    {
+     "url": "https://royalur.net/",
+     "name": "Play the Royal Game of Ur",
+     "site": "RoyalUr.net",
+     "host": "royalur.net",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "The Royal Game of Ur has captivated players for over 4500 years. Have fun playing with friends, challenging the computer, and keeping history alive!"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%84%D8%B9%D8%A8%D8%A9_%D8%A3%D9%88%D8%B1_%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A%D8%A9",
+     "name": "لعبة أور الملكية",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 74,
+     "quote": "لعبة أور الملكية وتعرف أيضاً باسم لعبة أور أو لعبة العشرين مربعاً هي لعبة لوح سباق إستراتيجيّة ثنائيّة، لعبت لأول مرة في التاريخ في بلاد الرافدين في بداية الألف الثالث قبل الميلاد."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Royal_Game_of_Ur",
+     "name": "Royal Game of Ur",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 69,
+     "quote": "The Royal Game of Ur is a two-player strategy race board game of the tables family that was first played in ancient Mesopotamia during the early third millennium BC. The game was popular across the Middle East…"
+    },
+    {
+     "url": "https://www.marefa.org/%D9%84%D8%B9%D8%A8%D8%A9_%D8%A3%D9%88%D8%B1_%D8%A7%D9%84%D9%85%D9%84%D9%83%D9%8A%D8%A9",
+     "name": "لعبة أور الملكية",
+     "site": "المعرفة",
+     "host": "marefa.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 56,
+     "quote": "قواعد اللعبة كما كانت تُلعب في بلاد الرافدين غير معروفة بالكامل لكن هناك عدد من اعادة الإنشاءات لطريقة اللعب، اعتماداً على لوح مسماري بابلي يرجع إلى 177-176 ق.م."
+    }
+   ]
+  },
   "14782": {
    "hash": "1b5d19e8e884",
    "checked": "2026-11-23T23:47:37.328Z",
@@ -9372,5 +9560,5 @@
    "sources": []
   }
  },
- "updated": "2026-11-23T23:47:37.340Z"
+ "updated": "2026-11-24T00:02:47.162Z"
 }
