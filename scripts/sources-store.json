@@ -14844,7 +14844,66 @@
      "quote": "Babylon ( BAB-il-on) was an ancient city located on the lower Euphrates river in southern Mesopotamia, within modern-day Hillah, Iraq, about 85 kilometres (53 miles) south of modern-day Baghdad. Babylon…"
     }
    ]
+  },
+  "15318": {
+   "hash": "a560b910a819",
+   "checked": "2026-11-25T09:16:40.856Z",
+   "queries": [
+    "توجد أكبر صحراء ملحية في العالم"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%B3%D8%A7%D9%84%D8%A7%D8%B1_%D8%AF%D9%88_%D8%A3%D9%88%D9%8A%D9%88%D9%86%D9%8A",
+     "name": "سالار دو أويوني",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 76,
+     "quote": "تأثير المرآة: خلال موسم الأمطار (من ديسمبر إلى مارس)، يتراكم الماء فوق القشرة الملحية ليشكل طبقة رقيقة تحول الصحراء إلى \"أكبر مرآة طبيعية في العالم\"، حيث تنعكس السماء والغيوم بالكامل على الأرض."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Salar_de_Uyuni",
+     "name": "Salar de Uyuni",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 71,
+     "quote": "Salar de Uyuni is the largest salt flat in the world, with an area of approximately 10,582 square kilometres (4,086 mi2). It is situated in southwestern Bolivia, within the Daniel Campos Province of the Potosí…"
+    },
+    {
+     "url": "https://errsal.com/environment/salar-de-uyuni-largest-salt-flat/",
+     "name": "سالار دي أويوني: أكبر صحراء ملحية في العالم",
+     "site": "errsal.com",
+     "host": "errsal.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 82,
+     "quote": "أشهر صور سالار دي أويوني لا تظهره أبيض، بل أزرق، خلال موسم الأمطار يمكن أن تغطي طبقة ضحلة من الماء أجزاء كبيرة من القشرة، وحين يكون الهواء هادئًا نسبيًا، يعمل السطح شديد الاستواء مع المياه مثل مرآة هائلة تعكس…"
+    },
+    {
+     "url": "https://almandab.com/%D8%B5%D8%AD%D8%B1%D8%A7%D8%A1-%D8%A7%D9%84%D9%85%D9%84%D8%AD-%D9%81%D9%8A-%D8%A8%D9%88%D9%84%D9%8A%D9%81%D9%8A%D8%A7",
+     "name": "صحراء الملح في بوليفيا",
+     "site": "Almandab",
+     "host": "almandab.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 70,
+     "quote": "في يوم ثابت ، تحوّل طبقة رقيقة من الماء التي تغطي الملح المسطح إلى “أكبر مرآة في العالم” تعكس السماء."
+    },
+    {
+     "url": "https://www.masrawy.com/howa_w_hya/travel/details/2023/3/10/2381258/%D8%A8%D9%88%D9%84%D9%8A%D9%81%D9%8A%D8%A7-%D9%85%D8%A7%D8%B0%D8%A7-%D8%AA%D8%B9%D8%B1%D9%81-%D8%B9%D9%86-%D8%A3%D9%83%D8%A8%D8%B1-%D8%B5%D8%AD%D8%B1%D8%A7%D8%A1-%D9%85%D9%84%D8%AD%D9%8A%D8%A9-%D9%81%D9%8A-%D8%A7%D9%84%D8%B9%D8%A7%D9%84%D9%85-",
+     "name": "بوليفيا.. ماذا تعرف عن أكبر صحراء ملحية في العالم؟",
+     "site": "مصراوي.كوم",
+     "host": "masrawy.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 63,
+     "quote": "شتهر منطقة \"سالار دي أويوني\" في بوليفيا بأنها أكبر صحراء ملحية في العالم، وتزخر هذه المنطقة بالمناظر الطبيعية الخلابة مثل الصحاري البيضاء والبحيرات الحمراء، والتي تجذب إليها السياح من جميع أنحاء العالم."
+    }
+   ]
   }
  },
- "updated": "2026-11-25T09:01:14.713Z"
+ "updated": "2026-11-25T09:16:40.856Z"
 }
