@@ -8,7 +8,7 @@
    الأمان: لا نخزّن إلا ردوداً ناجحة من موقعنا نفسه (type "basic")، ومن خطوط Google و jsDelivr بالاسم الكامل للنطاق.
    لا نخزّن ردوداً معتمة من أي نطاق آخر، ولكل ذاكرة حدّ أقصى، والصفحات تبقى «الشبكة أولاً» فلا تعلق نسخة قديمة.
    ========================================================== */
-const VERSION = "empire-v25";
+const VERSION = "empire-v26";
 const CORE = `${VERSION}-core`, PAGES = `${VERSION}-pages`, MEDIA = `${VERSION}-media`;
 const SAVED = "empire-saved"; // the reader's saved facts: survives version bumps
 const PRECACHE = [
@@ -41,7 +41,15 @@ async function networkFirst(req, cacheName, fallback) {
     if (sameOriginOk(res)) { const c = await caches.open(cacheName); c.put(req, res.clone()).then(() => trim(cacheName, PAGES_MAX)).catch(() => {}); }
     return res;
   } catch {
-    const hit = await caches.match(req) || await caches.match(req, { ignoreSearch: true });
+    let hit = await caches.match(req) || await caches.match(req, { ignoreSearch: true });
+    // روابط نظيفة: /facts و /facts.html صفحة واحدة، و / هو index.html. نجرّب الوجه الآخر قبل صفحة «بلا إنترنت»
+    if (!hit) {
+      try {
+        const u = new URL(req.url), p = u.pathname;
+        const alt = /\.html$/.test(p) ? p.replace(/\/index\.html$/, "/").replace(/\.html$/, "") : p.endsWith("/") ? p + "index.html" : /\/[^/.]+$/.test(p) ? p + ".html" : "";
+        if (alt) hit = await caches.match(u.origin + alt, { ignoreSearch: true });
+      } catch { /* ignore */ }
+    }
     if (hit) return hit;
     if (fallback) return offlinePage(fallback);
     return Response.error();

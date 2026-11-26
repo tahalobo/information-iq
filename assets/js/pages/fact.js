@@ -70,7 +70,7 @@
       .map((x) => ({ x, score: (x.cat === f.cat ? 2 : 0) + x.tags.filter((t) => f.tags.includes(t)).length + (x.image ? .2 : 0) }))
       .sort((a, b) => b.score - a.score).slice(0, 3).map((r) => r.x);
     const quizCount = window.QUIZ.filter((q) => q.fact === f.id).length;
-    const url = window.SITE_URL && window.STATIC_POSTS && window.STATIC_POSTS[f.id] ? `${window.SITE_URL}/post/${encodeURIComponent(f.id)}.html` : new URL(App.factUrl(f.id), document.baseURI).href;
+    const url = window.SITE_URL && window.STATIC_POSTS && window.STATIC_POSTS[f.id] ? `${window.SITE_URL}/post/${encodeURIComponent(f.id)}` : new URL(App.factUrl(f.id), document.baseURI).href;
     const fb = store.get("fact-feedback", {});
     const isSaved = saved.has(f.id);
     const saveWord = B ? "احفظ الخبر" : "احفظها", savedWord = B ? "محفوظ" : "محفوظة";

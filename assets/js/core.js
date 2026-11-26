@@ -216,7 +216,32 @@
   }
 
   // static page if one was generated (scripts/build-pages.mjs), otherwise the dynamic page
-  const factUrl = (id) => (window.STATIC_POSTS && window.STATIC_POSTS[id] ? `post/${encodeURIComponent(id)}.html` : `fact.html?id=${encodeURIComponent(id)}`);
+  /* روابط نظيفة بلا .html: الصفحات الثابتة تخرج نظيفة من المولّد، وهذا القسم يغطي ما يُرسم هنا (الترويسة، البطاقات، نتائج البحث…).
+     cleanHref: about.html → about ، x/index.html → x/ ، index.html → ./ (مع ?query و #hash). الروابط الخارجية لا تُمسّ. */
+  const cleanHref = (h) => {
+    if (typeof h !== "string" || !/\.html(?:[?#]|$)/.test(h) || /^(?:[a-z][a-z0-9+.-]*:|\/\/|#)/i.test(h)) return h;
+    const m = /^([^?#]*)(.*)$/.exec(h);
+    return (m[1].replace(/(^|\/)index\.html$/, "$1").replace(/\.html$/, "") || "./") + m[2];
+  };
+  const cleanLinksIn = (root) => {
+    if (!root || root.nodeType !== 1) return;
+    const fix = (a) => { const h = a.getAttribute("href"), c = cleanHref(h); if (c !== h) a.setAttribute("href", c); };
+    if (root.matches && root.matches('a[href*=".html"]')) fix(root);
+    if (root.querySelectorAll) root.querySelectorAll('a[href*=".html"]').forEach(fix);
+  };
+  if (/^https?:$/.test(location.protocol)) {
+    // من فتح رابطاً قديماً بـ .html يرى في شريط العنوان الرابط النظيف (بلا إعادة تحميل)
+    try {
+      const p = location.pathname.replace(/\/index\.html$/, "/").replace(/\.html$/, "");
+      if (p !== location.pathname) history.replaceState(history.state, "", p + location.search + location.hash);
+    } catch (e) { /* ignore */ }
+    cleanLinksIn(document.documentElement);
+    try {
+      new MutationObserver((list) => { for (const m of list) { if (m.type === "attributes") cleanLinksIn(m.target); else m.addedNodes.forEach(cleanLinksIn); } })
+        .observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
+    } catch (e) { /* ignore */ }
+  }
+  const factUrl = (id) => (window.STATIC_POSTS && window.STATIC_POSTS[id] ? `post/${encodeURIComponent(id)}` : `fact?id=${encodeURIComponent(id)}`);
   const factsSorted = () => [...window.FACTS].sort((a, b) => b.date.localeCompare(a.date) || (b.tg || 0) - (a.tg || 0));
   const coverStyle = (c) => `--c1:${c.c1};background:linear-gradient(135deg, ${c.c1}, ${c.c2})`;
   const minutesOf = (f) => f.minutes || readTime(f.body);

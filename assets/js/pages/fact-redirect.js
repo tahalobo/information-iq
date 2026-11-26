@@ -2,6 +2,6 @@
 (function () {
   try {
     var id = new URLSearchParams(location.search).get("id");
-    if (id && window.STATIC_POSTS && Object.prototype.hasOwnProperty.call(window.STATIC_POSTS, id)) location.replace("post/" + encodeURIComponent(id) + ".html" + location.hash);
+    if (id && window.STATIC_POSTS && Object.prototype.hasOwnProperty.call(window.STATIC_POSTS, id)) location.replace("post/" + encodeURIComponent(id) + location.hash);
   } catch (e) { /* ignore */ }
 })();

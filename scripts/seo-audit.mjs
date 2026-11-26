@@ -35,11 +35,13 @@ const text = (h) => unescape(String(h).replace(/<[^>]+>/g, " ")).replace(/\s+/g,
 const normText = (s) => String(s).replace(/[ً-ٰٟـ]/g, "").replace(/[^\p{L}\p{N}]+/gu, " ").trim();
 const attr = (tag, name) => { const m = tag.match(new RegExp(`\\b${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)')`, "i")); return m ? unescape(m[1] ?? m[2]) : null; };
 const fileExists = (p) => { try { return statSync(p).isFile(); } catch { return false; } };
+/* روابط نظيفة: الرابط about يخدمه الملف about.html (كما تفعل الاستضافة) */
+const withExt = (p) => (!fileExists(rel(p)) && fileExists(rel(p + ".html")) ? p + ".html" : p);
 const toPath = (url) => { // رابط مطلق من الموقع ← مسار ملف
   if (!SITE_URL || !url.startsWith(SITE_URL)) return null;
   let p = decodeURI(url.slice(SITE_URL.length).split("#")[0].split("?")[0]).replace(/^\/+/, "");
   if (p === "" || p.endsWith("/")) p += "index.html";
-  return p;
+  return withExt(p);
 };
 
 const titles = new Map(), descs = new Map(), indexable = new Set();
@@ -81,7 +83,7 @@ for (const page of pages) {
     if (!canon) err(page, "canonical مفقود");
     else if (SITE_URL) {
       if (!/^https?:\/\//.test(canon)) err(page, `canonical ليس رابطاً مطلقاً: ${canon}`);
-      else { const p = toPath(canon); if (p !== page) err(page, `canonical لا يشير إلى الصفحة نفسها: ${canon}`); }
+      else { const p = toPath(canon); if (p !== page) err(page, `canonical لا يشير إلى الصفحة نفسها: ${canon}`); else if (/\.html$/.test(canon)) err(page, `canonical بلاحقة .html (الروابط يجب أن تكون نظيفة): ${canon}`); }
     }
   }
 
@@ -148,7 +150,7 @@ for (const page of pages) {
     p = path.posix.normalize(path.posix.join(baseDir, p)).replace(/^(\.\.\/)+/, "");
     if (p === "." || p === "") p = "index.html";
     if (p.endsWith("/")) p += "index.html";
-    return p;
+    return withExt(p);
   };
   const refs = [...(html.match(/<a\b[^>]*>/gi) || []).map((t) => attr(t, "href")), ...(html.match(/<(?:link|img|script|source)\b[^>]*>/gi) || []).map((t) => attr(t, "href") ?? attr(t, "src"))];
   for (const href of refs) {
@@ -156,6 +158,7 @@ for (const page of pages) {
     if (!p) continue;
     linkCount++;
     if (!fileExists(rel(p))) err(page, `رابط داخلي مكسور: ${href}`);
+    else if (/\.html(?:[?#]|$)/.test(href)) err(page, `رابط داخلي بلاحقة .html (الروابط يجب أن تكون نظيفة): ${href}`);
   }
 
   /* JSON-LD */

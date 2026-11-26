@@ -17,6 +17,13 @@ class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *a, **kw):
         super().__init__(*a, directory=ROOT, **kw)
 
+    def translate_path(self, path):
+        # Clean URLs, like the real host: /about serves about.html when no file or folder has that exact name
+        p = super().translate_path(path)
+        if not os.path.exists(p) and not os.path.splitext(p)[1] and os.path.isfile(p + ".html"):
+            return p + ".html"
+        return p
+
     def end_headers(self):
         self.send_header("Cache-Control", "no-store")
         super().end_headers()

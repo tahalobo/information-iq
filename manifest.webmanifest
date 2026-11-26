@@ -5,7 +5,7 @@
   "lang": "ar",
   "dir": "rtl",
   "id": "./index.html",
-  "start_url": "./index.html",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
@@ -18,9 +18,9 @@
     { "src": "assets/img/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ],
   "shortcuts": [
-    { "name": "مكتبة المعلومات", "url": "./facts.html", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] },
-    { "name": "محفوظاتي", "url": "./facts.html?saved=1", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] },
-    { "name": "المحقق الذكي", "url": "./tool-ai.html", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] },
-    { "name": "اختبر معلوماتك", "url": "./quiz.html", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] }
+    { "name": "مكتبة المعلومات", "url": "./facts", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] },
+    { "name": "محفوظاتي", "url": "./facts?saved=1", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] },
+    { "name": "المحقق الذكي", "url": "./tool-ai", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] },
+    { "name": "اختبر معلوماتك", "url": "./quiz", "icons": [{ "src": "assets/img/icon-192.png", "sizes": "192x192" }] }
   ]
 }

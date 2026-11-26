@@ -81,3 +81,19 @@ node worker/dev-server.mjs
 ```bash
 python scripts/build-image-index.py
 ```
+
+## مؤقّت المزامنة (`cron-sync.js`): سحب الأخبار تلقائياً في موعده
+
+جدولة GitHub نفسها تتأخر ساعات أو تسقط في الحسابات المجانية. هذا عامل Cloudflare ثانٍ، مجاني، يشغّل «Telegram sync» كل ربع ساعة بدلاً عنها (يضغط «Run workflow» آلياً). جدولة GitHub تبقى احتياطاً.
+
+1. **رمز GitHub:** github.com ← صورتك ← Settings ← Developer settings ← Personal access tokens ← Fine-grained tokens ← Generate new token:
+   - Repository access: **Only select repositories** ← `information-iq`
+   - Permissions ← Repository permissions ← **Actions: Read and write** (ولا شيء غيرها)
+   - انسخ الرمز (يظهر مرة واحدة). حين تنتهي صلاحيته تتوقف المزامنة التلقائية حتى تضع رمزاً جديداً.
+2. **العامل:** Cloudflare ← Workers & Pages ← Create ← Start with Hello World ← الاسم `empire-cron` ← Deploy ← Edit code ← الصق `worker/cron-sync.js` كاملاً ← Deploy.
+3. **الرمز:** Settings ← Variables and Secrets ← Add ← النوع **Secret** ← الاسم `GITHUB_TOKEN` ← القيمة الرمز ← Deploy.
+4. **المؤقّت:** Settings ← Trigger Events ← Add ← Cron Triggers ← الصيغة `*/15 * * * *` ← Add.
+
+للتأكد: افتح رابط العامل في المتصفح، يجب أن يظهر `"token":true`. ثم راقب GitHub ← Actions: تظهر تشغيلات «Telegram sync» من نوع workflow_dispatch كل ربع ساعة. وسجلّ العامل (Logs) يكتب نتيجة كل محاولة: `started` أو `skipped: busy` (تشغيل سابق لم ينتهِ) أو `status: 401/403/404` (الرمز خاطئ أو منتهٍ أو بلا صلاحية).
+
+فتح رابط العامل لا يشغّل المزامنة؛ المؤقّت وحده يشغّلها.

@@ -45,7 +45,14 @@ const siteCfg = existsSync(cfgFile) ? JSON.parse(readFileSync(cfgFile, "utf8")) 
 const SITE_URL = (process.env.SITE_URL || siteCfg.siteUrl || "").replace(/\/+$/, "");
 const SITE_PATH = SITE_URL ? new URL(SITE_URL + "/").pathname : "/";
 /* رابط مطلق مرمَّز (الروابط العربية تُكتب %D8… في canonical والـ sitemap) */
-const abs = (p) => { const clean = String(p).replace(/^\/+/, ""); return SITE_URL ? encodeURI(`${SITE_URL}/${clean}`) : encodeURI(clean); };
+/* روابط نظيفة: الملفات تبقى about.html و post/x.html على القرص، لكن كل رابط يُكتب بلا اللاحقة (about ، post/x) و index.html يصير مجلده.
+   الاستضافة (GitHub Pages) تخدم الملف نفسه للرابطين، والرابط القديم بـ .html يبقى يعمل ويحمل canonical إلى النظيف. */
+const cleanPath = (p) => { const m = /^([^?#]*)(.*)$/.exec(String(p)); return m[1].replace(/(^|\/)index\.html$/, "$1").replace(/\.html$/, "") + m[2]; };
+/* يطبَّق على كل صفحة قبل كتابتها: كل href داخلي ينتهي بـ .html (مع ?query أو #hash) يُنظَّف. الروابط الخارجية (بمخطط أو //) لا تُمسّ */
+const cleanLinks = (html) => html.replace(/\bhref="(?![a-z][a-z0-9+.-]*:|\/\/|#)([^"?#]*\.html)([?#][^"]*)?"/gi, (m, p, tail = "") => `href="${cleanPath(p) || "./"}${tail}"`)
+  // رابط مطلق إلى موقعنا نفسه داخل نص منشور (مثل https://موقعنا/index.html): يُنظَّف مثله
+  .replace(/\bhref="(https?:\/\/[^"/?#]+)(\/[^"?#]*\.html)([?#][^"]*)?"/gi, (m, origin, p, tail = "") => (SITE_URL && SITE_URL.toLowerCase().startsWith(origin.toLowerCase()) && (origin + p).toLowerCase().startsWith(SITE_URL.toLowerCase() + "/") ? `href="${origin}${cleanPath(p)}${tail}"` : m));
+const abs = (p) => { const clean = cleanPath(String(p).replace(/^\/+/, "")); return SITE_URL ? encodeURI(`${SITE_URL}/${clean}`) : encodeURI(clean); };
 const absImg = (src) => (/^https?:/.test(src) ? src : abs(src));
 const TODAY = new Date().toISOString().slice(0, 10);
 const NOW = Date.now();
@@ -664,6 +671,7 @@ function notFoundPage() {
    ========================================================== */
 let written = 0;
 async function put(file, content) {
+  if (file.endsWith(".html")) content = cleanLinks(content);
   const target = rel(file);
   await fs.mkdir(path.dirname(target), { recursive: true });
   if (!existsSync(target) || readFileSync(target, "utf8") !== content) { await fs.writeFile(target, content); written++; }
@@ -1140,7 +1148,7 @@ for (const f of rootPages) {
     rest = rest.replace(/\n?<script>\/\* seo:redirect \*\/[\s\S]*?<\/script>/, "");
     if (!rest.includes("assets/js/pages/fact-redirect.js")) rest = rest.replace(/(<script src="assets\/js\/static-index\.js"><\/script>)/, (m) => `${m}\n<script src="assets/js/pages/fact-redirect.js"></script>`);
   }
-  const next = head + rest;
+  const next = cleanLinks(head + rest);
   if (next !== orig) { await fs.writeFile(file, next); written++; }
   if (!SKIP_INDEX.has(f)) {
     // lastmod الحقيقي: يتغيّر فقط حين يتغيّر محتوى الصفحة

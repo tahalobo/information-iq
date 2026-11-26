@@ -157,9 +157,9 @@
   /* =========================== RESULT =========================== */
   function siteQuizUrl() {
     const base = (window.SITE_URL || "").replace(/\/+$/, "");
-    if (base) return base + "/quiz.html";
+    if (base) return base + "/quiz";
     const local = /^(localhost|127\.|0\.0\.0\.0|\[::1\])/.test(location.hostname) || !/^https?:$/.test(location.protocol);
-    return local ? (S.links.instagram || "https://www.instagram.com/" + S.handle) : new URL("quiz.html", location.href).href;
+    return local ? (S.links.instagram || "https://www.instagram.com/" + S.handle) : new URL("quiz", location.href).href;
   }
 
   function result() {

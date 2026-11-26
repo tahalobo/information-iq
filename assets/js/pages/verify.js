@@ -405,7 +405,7 @@
       ...(sources.length ? [] : ["لم نجد أي صفحة تطابق هذا الخبر."]), "",
       ...(feat.numbers.length ? [`أرقام الخبر: ${feat.numbers.map((n) => `${n} ${v.numMiss.includes(n) ? "✗" : "✓"}`).join("، ")}`, ""] : []),
       "تحليل الصياغة:", ...(flags.length ? flags.map((f) => `${f.bad > 0 ? "⚠" : "✓"} ${f.label}${f.quote ? ` «${f.quote}»` : ""}`) : ["لا علامات تضليل في الصياغة."]), "",
-      "سجل البحث:", ...journal.map((l) => `- ${l}`), "", "تحقق آلي يقيس تطابق المصادر مع الخبر، ولا يغني عن قراءتها.", new URL("verify.html", document.baseURI).href].join("\n");
+      "سجل البحث:", ...journal.map((l) => `- ${l}`), "", "تحقق آلي يقيس تطابق المصادر مع الخبر، ولا يغني عن قراءتها.", new URL("verify", document.baseURI).href].join("\n");
     $("#vf-copy").addEventListener("click", () => copy(plain(), "نُسخ التقرير"));
     $("#vf-save").addEventListener("click", () => download(new Blob(["﻿" + plain()], { type: "text/plain;charset=utf-8" }), "تقرير-التحقق.txt"));
     $("#vf-print").addEventListener("click", () => { document.body.classList.add("vf-printing"); const done = () => { document.body.classList.remove("vf-printing"); removeEventListener("afterprint", done); }; addEventListener("afterprint", done); print(); });
