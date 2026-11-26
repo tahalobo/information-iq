@@ -15026,7 +15026,48 @@
      "quote": "لكن في مرحلة مُتأخرة بعد زرادشت أصبح (أهورا مزدا) إله الخير، و(أهرِمَن / أهريمان) إله الشر، فكانت تلك الخطوة إنتقال للديانة الزرادشتية من التوحيد للثنوية أو تثنية الإلهة"
     }
    ]
+  },
+  "15321": {
+   "hash": "f8d2ba976ceb",
+   "checked": "2026-11-26T09:16:35.146Z",
+   "queries": [
+    "رغم أن الحيتان والدلافين تتنفس الهواء باستخدام الرئتين",
+    "حوتيات صعوبة في التنفس الحيتان والدلافين",
+    "Cetacean"
+   ],
+   "sources": [
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D8%AD%D9%88%D8%AA%D9%8A%D8%A7%D8%AA",
+     "name": "حوتيات",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 70,
+     "quote": "تمتلك الحيتانيات رئتين، مما يعني أنها تتنفس الهواء."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Cetacean",
+     "name": "Cetacean",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 66,
+     "quote": "Cetaceans are marine mammals belonging to the infraorder Cetacea (), a secondarily aquatic clade of artiodactyls that include whales, dolphins, porpoises and numerous extinct groups of archaeocetes. Cetaceans…"
+    },
+    {
+     "url": "https://eferrit.com/%D8%A7%D9%84%D8%AD%D9%88%D8%AA%D9%8A%D8%A7%D8%AA-%D8%A7%D9%84%D8%AD%D9%8A%D8%AA%D8%A7%D9%86-%D9%88%D8%A7%D9%84%D8%AF%D9%84%D8%A7%D9%81%D9%8A%D9%86-%D9%88%D8%AE%D9%86%D8%A7%D8%B2%D9%8A%D8%B1/",
+     "name": "خصائص الحيتان والحقائق",
+     "site": "eferrit.com",
+     "host": "eferrit.com",
+     "lang": "ar",
+     "kind": "web",
+     "match": 62,
+     "quote": "إنهم يلدون ويعيشون صغارًا ويتنفسون الهواء عبر الرئتين تمامًا كما نفعل."
+    }
+   ]
   }
  },
- "updated": "2026-11-26T09:01:11.864Z"
+ "updated": "2026-11-26T09:16:35.147Z"
 }
