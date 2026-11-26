@@ -1,8 +1,15 @@
 {
- "generated": "2026-11-26T08:16:35.954Z",
- "count": 19,
+ "generated": "2026-11-26T09:01:35.636Z",
+ "count": 27,
  "paths": [
-  "files.html",
+  "topic/index.html",
+  "topic/أخبار-الأنمي-والمانغا.html",
+  "topic/أخبار-الأنمي-والمانغا-page-2.html",
+  "topic/أخبار-الأنمي-والمانغا-page-3.html",
+  "topic/أخبار-الأنمي-والمانغا-page-4.html",
+  "topic/أخبار-الأنمي-والمانغا-page-5.html",
+  "topic/أخبار-الأنمي-والمانغا-page-6.html",
+  "archive/",
   "archive/page-14.html",
   "archive/page-18.html",
   "archive/page-22.html",
@@ -20,6 +27,7 @@
   "archive/page-38.html",
   "archive/page-41.html",
   "archive/page-42.html",
-  "archive/page-44.html"
+  "archive/page-44.html",
+  "post/anime-10949.html"
  ]
 }
