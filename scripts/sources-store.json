@@ -15087,7 +15087,48 @@
     "هاشتاك المواهب مكرر لجهة مكررة"
    ],
    "sources": []
+  },
+  "15325": {
+   "hash": "12fca434d61a",
+   "checked": "2026-11-26T17:16:47.556Z",
+   "queries": [
+    "رحلة في تاريخ الأديان والمعتقدات الديانة الكنعانية.. الآلهة والمعتقدات في بلاد الشام",
+    "كنعانيون تاريخ الأديان والمعتقدات الكنعانية 1928",
+    "Canaan"
+   ],
+   "sources": [
+    {
+     "url": "https://www.mapsofworld.com/world-ancient-history/canaan.html",
+     "name": "Canaan Map",
+     "site": "MapsofWorld.com",
+     "host": "mapsofworld.com",
+     "lang": "en",
+     "kind": "web",
+     "match": 97,
+     "quote": "Canaan, the land promised by God to the Israelites in the Old Testament, spanned across Palestine, parts of Jordan, Syria, and Israel. The history of the Canaanite civilization is marked by frequent invasions…"
+    },
+    {
+     "url": "https://ar.wikipedia.org/wiki/%D9%83%D9%86%D8%B9%D8%A7%D9%86%D9%8A%D9%88%D9%86",
+     "name": "كنعانيون",
+     "site": "ويكيبيديا العربية",
+     "host": "ar.wikipedia.org",
+     "lang": "ar",
+     "kind": "encyclopedia",
+     "match": 60,
+     "quote": "مثل غيرهم من شعوب الشرق الأدنى القديم، كانت الديانة الكنعانية شركية، وتركز الأسر عادة على عبادة الأجداد مع الإقرار بوجود آلهة أخرى مثل بعل، عناة، وإيل."
+    },
+    {
+     "url": "https://en.wikipedia.org/wiki/Canaan",
+     "name": "Canaan",
+     "site": "Wikipedia",
+     "host": "en.wikipedia.org",
+     "lang": "en",
+     "kind": "encyclopedia",
+     "match": 56,
+     "quote": "Canaan was an ancient Semitic-speaking civilization and region of the Southern Levant during the late 2nd millennium BC. Canaan had significant geopolitical importance in the Late Bronze Age Amarna Period…"
+    }
+   ]
   }
  },
- "updated": "2026-11-26T17:01:12.886Z"
+ "updated": "2026-11-26T17:16:47.557Z"
 }
