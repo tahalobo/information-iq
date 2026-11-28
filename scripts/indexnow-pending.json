@@ -1,23 +1,15 @@
 {
- "generated": "2026-11-28T04:01:49.807Z",
- "count": 17,
+ "generated": "2026-11-28T07:01:23.121Z",
+ "count": 9,
  "paths": [
-  "archive/page-4.html",
-  "archive/page-12.html",
-  "archive/page-17.html",
-  "archive/page-19.html",
-  "archive/page-21.html",
-  "archive/page-23.html",
-  "archive/page-29.html",
-  "archive/page-31.html",
-  "archive/page-33.html",
-  "archive/page-34.html",
-  "archive/page-35.html",
-  "archive/page-38.html",
-  "archive/page-41.html",
-  "archive/page-42.html",
-  "archive/page-43.html",
-  "post/news-125006.html",
-  "post/news-125001.html"
+  "files.html",
+  "topic/أخبار-العراق-والعالم.html",
+  "topic/أخبار-العراق-والعالم-page-2.html",
+  "topic/أخبار-العراق-والعالم-page-3.html",
+  "topic/العراق.html",
+  "topic/العراق-page-2.html",
+  "topic/العراق-page-3.html",
+  "topic/العراق-page-4.html",
+  "post/news-125010.html"
  ]
 }
